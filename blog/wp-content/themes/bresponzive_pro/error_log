@@ -1,0 +1,2 @@
+[18-Oct-2014 02:20:02 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/edukart/public_html/blog/wp-content/themes/bresponzive_pro/index.php on line 1
+[18-Oct-2014 02:25:41 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/edukart/public_html/blog/wp-content/themes/bresponzive_pro/index.php on line 1

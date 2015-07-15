@@ -1,0 +1,30 @@
+.magbig-thumb img {
+box-shadow: 0 0 2px #181818;
+-moz-box-shadow: 0 0 2px #181818;
+-webkit-box-shadow: 0 0 2px #181818;
+}
+#wrapper,#blocks-wrapper,.blogposts-wrapper,.post-content,#comments,.sidebar-widget,.searchform input[type="text"],.subsform input[type="text"],.comment-avatar,.comment-wrapper,.fluid_container,#commentform input[type="text"], input[type="text"], input[type="password"], #commentform textarea, .post_content input[type="password"] {
+background: #202020;
+}
+.breaking-ticker,#header-banner468,.single-navigation,.comment-avatar img,.comment-wrapper{
+border: 1px solid #333;
+}
+.previous{
+border-right: 1px solid #333;
+}
+.next{
+border-left: 1px solid #333;
+}
+ 
+.blog-lists-blog h3,.blog-lists h3 a,.sidebar-widget a,.breaking-ticker .container a.news-item,.post_content,.tpcrn_r_p_blocks h3 a,.post-title h1 {
+color: #CCC;
+}
+.sidebar-widget li,.blog-list-big .time,.tpcrn_magazine_doublethumb,.post-meta-blog,.pagination{
+border-bottom: 1px solid #333;
+}
+li.blog-list-small,.blog-list-big .time,.post-meta-blog,#infinite-handle{
+border-top: 1px solid #333;
+}
+ul.tabs2 li, ul.tabs li{
+background: #333;
+}

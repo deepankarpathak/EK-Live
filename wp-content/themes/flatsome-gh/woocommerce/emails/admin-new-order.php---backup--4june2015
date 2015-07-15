@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body style="padding:20px;width:80%;">
+
+<?php
+/**
+ * Admin new order email
+ *
+ * @author WooThemes
+ * @package WooCommerce/Templates/Emails/HTML
+ * @version 2.0.0
+ */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
+
+<div style="" class="">
+  <table width="100%" cellspacing="0" cellpadding="10" border="0" align="center" >
+    <tbody style="" class="">
+      <tr style="" class="">
+        <td style="" class="">Dear Admin, <br style="" class="">
+          <br style="" class="">
+			You have received an order from <?php echo $order->billing_first_name . ' ' . $order->billing_last_name ; ?> . The Order details are as follows:
+		  </td>
+	  </tr>
+    </tbody>
+  </table>
+  <table width="100%" cellspacing="0" cellpadding="2" border="0" >
+    <tbody style="" class="">
+      <tr bgcolor="#CCCCCC" style="" class="">
+        <td colspan="2" style="" class=""><b style="" class="">Order Information</b></td>
+      </tr>
+      <tr style="" class="">
+        <td style="" class="">Order Number:</td>
+        <td style="" class=""><?php echo $order->get_order_number(); ?></td>
+      </tr>
+      <tr style="" class="">
+        <td style="" class="">Order Date:</td>
+        <td style="" class=""><?php echo $order->order_date; ?></td>
+      </tr>
+      <tr style="" class="">
+        <td style="" class="">Order Status:</td>
+        <td style="" class=""><b style="" class=""><?php echo $order->get_status(); ?></b></td>
+      </tr>
+      <tr bgcolor="#CCCCCC" style="" class="">
+        <td colspan="2" style="" class=""><b style="" class="">Customer Information</b></td>
+      </tr>
+    </tbody>
+  </table>
+	<table width="100%" cellspacing="0" cellpadding="2" border="0" style="" class="">
+       	<tbody style="" class="">
+       	  <tr style="" class="">
+           	<td colspan="2" style="" class=""><b style="" class="">Registration</b></td>
+       	  </tr>
+		  <tr style="" class="">
+			<td style="" class="">Email:</td>
+			<td style="" class=""><?php if ($order->billing_email) : ?><p> <?php echo $order->billing_email; ?></p><?php endif; ?></td>
+		  </tr>
+		  <tr style="" class="">
+			<td style="" class="">First Name:</td>
+			<td style="" class=""><?php echo $order->billing_first_name; ?></td>
+		  </tr>
+		  <tr style="" class="">
+			<td style="" class="">Last Name:</td>
+			<td style="" class=""><?php echo $order->billing_last_name; ?></td>
+		  </tr>
+        </tbody>
+    </table>
+	<table width="100%" cellspacing="0" cellpadding="2" border="0" >
+		<tbody style="" class="">
+			<tr style="" class="">
+				<td colspan="2" style="" class=""><b style="" class="">Registration</b></td>
+			</tr>
+			<tr style="" class="">
+				 <?php wc_get_template( 'emails/email-addresses.php', array( 'order' => $order ) ); ?>
+				 <?php echo WC()->countries->countries[$order->billing_country]; ?>
+			</tr>
+		</tbody>
+     </table>
+     <table width="100%" cellspacing="0" cellpadding="2" border="0" >
+	<tbody style="" class="">
+		<tr bgcolor="#CCCCCC" style="" class="">
+        		<td colspan="2" style="" class=""><b style="" class="">Order Items</b></td>
+		</tr>
+      		<tr style="" class="">
+        		<td colspan="2" style="" class="">
+			<table cellspacing="0" cellpadding="6" style="width: 100%; border: 1px solid #eee;" border="1" bordercolor="#eee">
+				<thead>
+				<tr>
+				<th scope="col" style="text-align:left; border: 1px solid #eee;"><?php _e( 'Product', 'woocommerce' ); ?></th>
+				<th scope="col" style="text-align:left; border: 1px solid #eee;"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
+				<th scope="col" style="text-align:left; border: 1px solid #eee;"><?php _e( 'Price', 'woocommerce' ); ?></th>
+				</tr>
+				</thead>
+				<tbody>
+					<?php echo $order->email_order_items_table( $order->is_download_permitted(), true, $order->has_status( 'processing' ) ); ?>
+				</tbody>
+				<tfoot>
+				<?php
+		$cashback_amount = get_post_meta($order->id, 'cash_back', true);
+		$cashback_code = get_post_meta($order->id, 'ir_coupon_code', true);
+		if($cashback_amount != null AND $cashback_amount != ''){
+		?>
+		<tr>
+			<th  scope="row" colspan="2" style="text-align:left; border: 1px solid #eee; <?php if ( $i == 1 ) echo 'border-top-width: 4px;'; ?>">Cash-Back : <?php echo  $cashback_code ; ?></th><td style="text-align:left; border: 1px solid #eee; <?php if ( $i == 1 ) echo 'border-top-width: 4px;'; ?>"><?php echo "Rs.".number_format_i18n( $cashback_amount, 2); ?></td>
+		</tr>
+		<?php  } ?>
+				<?php
+					if ( $totals = $order->get_order_item_totals() ) {
+						$i = 0;
+						foreach ( $totals as $total ) {
+							$i++;
+				?>
+					<tr>
+						<th scope="row" colspan="2" style="text-align:left; border: 1px solid #eee; <?php if ( $i == 1 ) echo 'border-top-width: 4px;'; ?>"><?php echo $total['label']; ?></th>
+						<td style="text-align:left; border: 1px solid #eee; <?php if ( $i == 1 ) echo 'border-top-width: 4px;'; ?>"><?php echo $total['value']; ?></td>
+					</tr>
+				<?php
+					}
+				}
+				?>
+				</tfoot>
+			</table>
+		  </td>
+      </tr>
+      <tr style="" class="">
+        <td colspan="2" style="" class=""> </td>
+      </tr>
+      <!--<tr bgcolor="#CCCCCC" style="" class="">
+        <td style="" class=""><b style="" class="">Payment Information</b></td>
+        <td style="" class=""><b style="" class=""></b></td>
+      </tr>
+      <tr style="" class="">
+        <td style="" class="">Payment Method </td>
+        <td style="" class=""><?php echo $order->get_status(); ?></td>
+      </tr>-->
+    </tbody>
+  </table>
+
+<?php  do_action( 'woocommerce_email_after_order_table', $order, true, false ); ?>
+
+<?php  do_action( 'woocommerce_email_order_meta', $order, true, false ); ?>
+
+<h2><?php // _e( 'Customer details', 'woocommerce' ); ?></h2>
+
+<?php if ( $order->billing_email ) : ?>
+	<p><strong><?php // _e( 'Email:', 'woocommerce' ); ?></strong> <?php // echo $order->billing_email; ?></p>
+<?php endif; ?>
+<?php if ( $order->billing_phone ) : ?>
+	<p><strong><?php // _e( 'Tel:', 'woocommerce' ); ?></strong> <?php // echo $order->billing_phone; ?></p>
+<?php endif; ?>
+
+<?php // wc_get_template( 'emails/email-addresses.php', array( 'order' => $order ) ); ?>
+
+<?php // do_action( 'woocommerce_email_footer' ); ?>
+	</div>
+
+ </body>
+</html>

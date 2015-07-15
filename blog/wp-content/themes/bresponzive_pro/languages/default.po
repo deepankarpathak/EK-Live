@@ -1,0 +1,1028 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bres\n"
+"POT-Creation-Date: 2013-09-17 23:20+0530\n"
+"PO-Revision-Date: 2013-09-17 23:26+0530\n"
+"Last-Translator: \n"
+"Language-Team: ThemePacific <support@themepacific.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: /home/om/public_html/bresponzive/wp-content/themes/"
+"bresponzive_pro\n"
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/functions.php:59
+msgid "Top Menu"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/functions.php:60
+msgid "Cat Menu"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/archive.php:10
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/archive.php:12
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/archive.php:14
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/archive.php:16
+#, php-format
+msgid "Articles Posted in the \" %s \" Category"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/archive.php:18
+#, php-format
+msgid "Articles Posted by the Author: %s"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/archive.php:20
+msgid "Blog Archives"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/search.php:1
+#, php-format
+msgid "Search results for \"%s\" "
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/comments.php:1
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/comments.php:1
+#, php-format
+msgid " There is <em>One</em> Comment."
+msgid_plural "There are <em>%1$s</em> Comments."
+msgstr[0] ""
+msgstr[1] ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/comments.php:1
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/comments.php:1
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/comments.php:1
+msgid "&#123; Comments are closed &#125;"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/comments.php:1
+msgid "Name"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/comments.php:1
+msgid "Email"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/comments.php:1
+msgid "Website"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/comments.php:1
+msgid "Leave a Reply"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/page-blog.php:41
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/content.php:23
+msgid "by"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/page-blog.php:42
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/single.php:41
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/content.php:24
+msgid "On"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/single.php:40
+msgid "Posted by"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/single.php:43
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:279
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:307
+msgid "Edit"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/single.php:71
+msgid "Share"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/single.php:113
+msgid "TOPICS"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/single.php:130
+msgid "About"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/single.php:137
+msgid "Author Articles"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/searchform.php:1
+msgid "Search here.."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/content.php:32
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/homepage_singlet_widget.php:90
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/homepage_doublet_widget.php:1
+msgid "Read More"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/404.php:1
+msgid "Page Not Found"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/index.php:23
+msgid "Recent Posts"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/front-end/options.php:57
+msgid "Save All Changes"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/front-end/options.php:58
+msgid "Options Reset"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/flickr-widget.php:1
+msgid "A Flickr widget to Display flickr photo streams"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/flickr-widget.php:1
+msgid "ThemePacific : Flickr"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/flickr-widget.php:1
+msgid "Flickr "
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/flickr-widget.php:1
+msgid "0"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/flickr-widget.php:1
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/popular-posts-widget.php:102
+msgid "Title:"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/flickr-widget.php:1
+msgid "Flickr ID:"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/flickr-widget.php:1
+msgid "Number of Photos to Display:"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/flickr-widget.php:1
+msgid "Type (user or group):"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/flickr-widget.php:1
+msgid "Display (random or latest):"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/widget-tweet.php:90
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/widget-tweet.php:92
+msgid "Y/m/d"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/widget-tweet.php:93
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/widget-tweet.php:93
+msgid "Y/m/d H:i:s"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/widget-tweet.php:125
+msgid "@Follow Me"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/popular-posts-widget.php:32
+msgid "A Widget to dispaly Popular Posts With Thumbs"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/popular-posts-widget.php:33
+msgid "ThemePacific : Popular Posts Widget"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/popular-posts-widget.php:98
+msgid "Popular Posts "
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/popular-posts-widget.php:108
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/slide_tabs.php:145
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/category-post-widget.php:112
+msgid "Number of Posts to Show:"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/slide_tabs.php:31
+msgid "Stylish Tabbed Widget to dispaly Popular and Recent Posts,tags"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/slide_tabs.php:32
+msgid "ThemePacific : Tabbed Widget"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/slide_tabs.php:47
+msgid "Popular"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/slide_tabs.php:48
+msgid "Recent"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/slide_tabs.php:49
+msgid "Tags"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/slide_tabs.php:142
+msgid "To Show Recent Posts and Popular Posts in Stylish Tabbed Content Format"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/socialnw-widget.php:82
+msgid "Social"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/socialnw-widget.php:82
+msgid "RSS"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/socialnw-widget.php:82
+msgid "Facebook"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/socialnw-widget.php:82
+msgid "Google+"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/socialnw-widget.php:82
+msgid "Twitter"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/login-widget.php:58
+msgid "Author Login"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/social_counter_widget.php:70
+msgid "Subscribe"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/social_counter_widget.php:70
+msgid "Subscribers"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/social_counter_widget.php:71
+msgid "Feed"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/social_counter_widget.php:80
+msgid "Followers"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/social_counter_widget.php:94
+msgid "Likes"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/category-post-widget.php:31
+msgid "A Widget to dispaly Category Posts With Thumbs"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/category-post-widget.php:32
+msgid "ThemePacific : Category Posts Widget"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/category-post-widget.php:102
+msgid "Category Name "
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/widgets/category-post-widget.php:106
+msgid "Enter category Name:"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:107
+msgid "General Settings"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:112
+msgid "<h3>General Settings</h3>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:117
+msgid "Custom Favicon"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:118
+msgid ""
+"Upload a 16px x 16px Png/Gif image that will represent your website favicon"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:123
+msgid "Custom Logo"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:124
+msgid "Upload a Png/Gif image that will represent your website Logo."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:129
+msgid "Custom Feed URL"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:130
+msgid "Enter Feedburner URL or Other"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:135
+msgid "Tracking Code"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:136
+msgid ""
+"Paste your Google Analytics (or other) tracking code here. Dont forget to "
+"add script tags,if not in the code</br><small> &lt;script&gt; ...,.. &lt;/"
+"script&gt; </small>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:140
+msgid "Show Footer Widgets"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:141
+msgid "Select to show the Footer Widgets."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:146
+msgid "Footer Text"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:147
+msgid "Add the Copyright text info."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:154
+msgid "Home Settings"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:161
+msgid "<h3>Home Page Content Organizer</h3>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:166
+msgid "Homepage Content Layout Manager"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:167
+msgid "Organize how you want the layout to appear on the homepage"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:171
+msgid "News Ticker Title"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:176
+msgid "Breaking News Ticker"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:177
+msgid "Select category for Breaking News Ticker."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:182
+msgid "Enter Number of  News Ticker Posts"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:189
+msgid "HomePage Slider"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:190
+msgid "Show HomePage slider Options"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:195
+msgid "Select a Category or use Theme Slider options"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:196
+msgid ""
+"Select category for slider. If you want to use theme slider options,then "
+"leave it to default option."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:203
+msgid "Theme Slider Options, use Page IDs"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:209
+msgid "Slider Transition "
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:210
+msgid "Select Slider transition"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:223
+msgid "Slider Loader Color"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:224
+msgid "Pick a color for the loader."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:229
+msgid "Single Posts"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:234
+msgid "<h3>Single Posts Settings</h3>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:238
+msgid "Show Featured image on posts"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:247
+msgid "Show Single Post Next/Prev navigation"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:256
+msgid "Show Breadcrumbs"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:266
+msgid "Show related posts on posts"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:267
+msgid "Check to Show related posts on posts"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:272
+msgid "Show related posts by Category Wise or Tag Wise"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:282
+msgid "Enter Number of Posts"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:290
+msgid "Show Tags on posts"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:299
+msgid "Show About Author Box "
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:300
+msgid "Select to show the Author Box in Single Posts"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:312
+msgid "<h3>Share Posts in Social Networks</h3>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:317
+msgid "Social Shares in Single Posts"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:318
+msgid "Select to enable/disable to show the social Shares in Single Posts."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:324
+msgid "Twitter Consumer Key"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:325
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:331
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:337
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:343
+msgid "For Social Counter Widget"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:330
+msgid "Twitter Consumer Secret"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:336
+msgid "Twitter Access Token"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:342
+msgid "Twitter Access Token secret"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:348
+msgid "Facebook Like"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:349
+msgid "Select to enable/disable to show the Facebook Like in Single Posts."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:354
+msgid "Google +1 button"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:355
+msgid "Select to enable/disable to show the Google +1 button in Single Posts."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:360
+msgid "Twitter Tweet"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:361
+msgid ""
+"Select to enable/disable to show the Twitter Tweet button in Single Posts."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:366
+msgid "Pin it Button"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:367
+msgid "Select to enable/disable to show the Pin it Button in Single Posts."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:372
+msgid "LinkedIn  Button"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:373
+msgid "Select to enable/disable to show the LinkedIn in Single Posts."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:378
+msgid "Stumble  Button"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:379
+msgid "Select to enable/disable to show the Stumble Button in Single Posts."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:388
+msgid "Ad Banners"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:393
+msgid "<h3>Advertisements Settings</h3>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:397
+msgid "Header Ad"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:398
+msgid "Show Header Ad box"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:403
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:424
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:446
+msgid "Upload Ad Banner Image"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:404
+msgid ""
+"Upload a 468x60 or 728x90 Banner Ad image. </br></br><li>If you want to show "
+"Banner, Upload Banner Ad Image and enter the Banner URL Below.</li><li>If "
+"you want to show Adsense like ads, then remove the Banner image and add the "
+"code below</li>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:409
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:430
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:452
+msgid "Enter AD Code or Banner AD URL"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:410
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:431
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:453
+msgid ""
+"Enter your Ad code like Adsense Scripts here OR Enter Banner AD URL only.</"
+"br></br>\n"
+"\t\t\t\t\t<li>If you want to show Adsense like ads, then add Ad code.</"
+"li><li>If you want to show Banner ad,then remove the Ad Code and add Banner "
+"URL</li>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:418
+msgid "Show Ad the in Beginning of Post"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:419
+msgid ""
+"Enter your Ad code here. This will be added into the Post after the Post "
+"title."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:425
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:447
+msgid ""
+"Upload a Banner Ad image. </br></br><li>If you want to show Banner, Upload "
+"Banner Ad Image and enter the Banner URL Below.</li><li>If you want to show "
+"Adsense like ads, then remove the Banner image and add the code below</li>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:440
+msgid "Show Ad in the End of Post"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:441
+msgid "Enter your Ad code here. This will be added into the end of the post."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:461
+msgid "Sidebar Ads"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:462
+msgid "To Show Sidebar Ad, Go to Widgets Page."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:467
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:478
+msgid "Theme Skins"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:472
+msgid "<h3>Stylish Theme Skins</h3>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:495
+msgid "Typography"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:498
+msgid "Typography Settings"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:504
+msgid "Body Font"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:505
+msgid "Specify the body font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:509
+msgid "Top Menu Navigation"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:510
+msgid "Specify the Header Top Menu font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:514
+msgid "Category Menu Navigation"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:515
+msgid "Specify the Category Menu Navigation font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:519
+msgid "Blog and Magazine Category Title"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:520
+msgid "Specify the Blog and Magazine Category Title font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:524
+msgid "HomePage Blog Post Title"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:525
+msgid "Specify the Blog  Post Title font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:529
+msgid "HomePage Magazine Post Title"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:530
+msgid "Specify the Magazine Post Title font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:534
+msgid "Sidebar Widget Title"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:535
+msgid "Specify the Sidebar Widget Title font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:539
+msgid "Footer Blocks Widget Title"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:540
+msgid "Specify the Footet Blocks Widget Title font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:545
+msgid "Typography Post elements Settings"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:553
+msgid "Post Title"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:554
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:559
+msgid "Specify the Single Post Title font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:558
+msgid "Post Meta"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:563
+msgid "Post Content"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:564
+msgid "Specify the Post Content font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:569
+msgid "Single Post Navigation"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:570
+msgid "Specify Single Post and comment navigation font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:574
+msgid "Comments Block"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:575
+msgid "Specify the Comments Block content font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:579
+msgid "Typography Post Content Headings Settings"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:586
+msgid "H1 Headings"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:587
+msgid "Specify the H1 Headings font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:592
+msgid "H2 Headings"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:593
+msgid "Specify the H2 Headings font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:598
+msgid "H3 Headings"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:599
+msgid "Specify the H3 Headings font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:604
+msgid "H4 Headings"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:605
+msgid "Specify the H4 Headings font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:610
+msgid "H5 Headings"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:611
+msgid "Specify the H5 Headings font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:616
+msgid "H6 Headings"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:617
+msgid "Specify the H6 Headings font properties"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:624
+msgid "Styling"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:626
+msgid "Site Styling Settings Page"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:634
+msgid "Body Background Color"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:635
+msgid "Pick a background color for the theme."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:641
+msgid "Background Patterns"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:649
+msgid "Upload Background Pattern"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:650
+msgid ""
+"Upload a Custom background pattern.</br></br><b>Note:</b>If you want to show "
+"default background pattern then remove the custom Pattern"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:655
+msgid "Custom Pattern as Full Screen background"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:656
+msgid "To Show Custom Pattern as Full Screen background"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:662
+msgid "Custom CSS"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:663
+msgid "Quickly add some CSS to your theme by adding it to this block."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:669
+msgid "Backup Options"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:674
+msgid "<h3>Backup and Restore</h3>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:678
+msgid "Backup and Restore Options"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:682
+msgid ""
+"You can use the two buttons below to backup your current options, and then "
+"restore it back at a later time. This is useful if you want to experiment on "
+"the options but would like to keep the old settings in case you need it back."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:685
+msgid "Transfer Theme Options Data"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.options.php:689
+msgid ""
+"You can tranfer the saved options data between different installs by copying "
+"the text inside the text box. To import data from another install, replace "
+"the data in the text box with the one from another install and click "
+"\"Import Options\".\n"
+"\t\t\t\t\t\t"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.mediauploader.php:20
+msgid "Options"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.mediauploader.php:210
+msgid "Gallery"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/functions/functions.mediauploader.php:210
+msgid "Previously Uploaded"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/classes/class.options_machine.php:993
+msgid "Last Backup : "
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/admin/classes/class.options_machine.php:1053
+msgid "Upload"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:94
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:107
+msgid "Howdy!"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:110
+msgid "Dashboard"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:111
+msgid "Your Profile"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:112
+msgid "Logout"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:120
+msgid "Username"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:121
+msgid "Password"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:122
+msgid "Log in"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:123
+msgid "Remember Me"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:127
+msgid "Register"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:128
+msgid "Lost your password?"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:212
+msgid "<i class=\"icon-double-angle-left\"></i>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:213
+msgid "<i class=\"icon-double-angle-right\"></i>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:260
+msgid "<strong>Pages</strong>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:279
+msgid "Pingback:"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:297
+#, php-format
+msgid "%1$s  %2$s  "
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:302
+#, php-format
+msgid "<span class=\"time\">%1$s </span>"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:311
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/custom_fn/tpcrn_functions.php:317
+msgid " <span><i class=\"icon-reply\"></i></span> Reply"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/includes/related.php:39
+msgid "Related Posts"
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/includes/related.php:74
+msgid "No posts found."
+msgstr ""
+
+#: /home/om/public_html/bresponzive/wp-content/themes/bresponzive_pro/includes/blog_loop.php:9
+msgid "Sorry, no posts to display!"
+msgstr ""

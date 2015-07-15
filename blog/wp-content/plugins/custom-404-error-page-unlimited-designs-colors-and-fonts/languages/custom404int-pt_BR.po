@@ -1,0 +1,209 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-08 12:13-0500\n"
+"PO-Revision-Date: 2012-06-12 17:51-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: C:\\Users\\Programador\\Documents\\xampp\\htdocs\\wpes\\wp-content\\plugins\\sharethispost\\application\\views\\\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: custom404.php:1
+msgid "Customize your 404 Error Page - Plugin Options"
+msgstr "Personalize sua página de Erro 404 - Opções do Plugin"
+
+#: custom404.php:2
+msgid "One theme, a thousand posibilities: Create amazing and unlimited themes by playing with 1000+ pre-designed elements (or uploading your own designs) and then download in fully working WP or HTML/CSS."
+msgstr "Um tema, mil possibilidades: Criar temas surpreendentes que jogam com mais de 1000 itens pré disponível (ou fazer upload de seus próprios itens) e depois importar o tema em WordPress ou formato HTML/CSS."
+
+#: custom404.php:3
+msgid "Background decoration Settings:"
+msgstr "Opções de decoração do Fundo:"
+
+#: custom404.php:4
+msgid "Background Color:"
+msgstr "Cor do Fundo:"
+
+#: custom404.php:5
+msgid "Background Pattern:"
+msgstr "Padrão do Fundo:"
+
+#: custom404.php:6
+msgid "Custom bottom image:"
+msgstr "Imagem personalizada de baixo:"
+
+#: custom404.php:7
+msgid "Useful Links Settings:"
+msgstr "Opções de Links Úteis:"
+
+#: custom404.php:8
+msgid "Text for the link 1 (optional):"
+msgstr "Texto do link 1 (opcional):"
+
+#: custom404.php:9
+msgid "Web page for the link 1 (optional):"
+msgstr "Página para o link 1 (opcional):"
+
+#: custom404.php:10
+msgid "Text for the link 2 (optional):"
+msgstr "Texto do link 2 (opcional):"
+
+#: custom404.php:11
+msgid "Web page for the link 2 (optional):"
+msgstr "Página para o link 2 (opcional):"
+
+#: custom404.php:12
+msgid "Text for the link 3 (optional):"
+msgstr "Texto do link 3 (opcional):"
+
+#: custom404.php:13
+msgid "Web page for the link 3 (optional):"
+msgstr "Página para o link 3 (opcional):"
+
+#: custom404.php:14
+msgid "Text for the link 4 (optional):"
+msgstr "Texto do link 4 (opcional):"
+
+#: custom404.php:15
+msgid "Web page for the link 4 (optional):"
+msgstr "Página para o link 4 (opcional):"
+
+#: custom404.php:16
+msgid "Text for the link 5 (optional):"
+msgstr "Texto do link 5 (opcional):"
+
+#: custom404.php:17
+msgid "Web page for the link 5 (optional):"
+msgstr "Página para o link 5 (opcional):"
+
+#: custom404.php:18
+msgid "Text and Font Settings:"
+msgstr "Configurações de texto e fonte:"
+
+#: custom404.php:19
+msgid "Title Font Type:"
+msgstr "Fonte para o Título:"
+
+#: custom404.php:20
+msgid "Font Preview"
+msgstr "Pré-visualização da Fonte"
+
+#: custom404.php:21
+msgid "Title Font Size (in pixels):"
+msgstr "Tamanho da fonte para o título (em pixéis):"
+
+#: custom404.php:22
+msgid "Title color:"
+msgstr "Cor para o Título:"
+
+#: custom404.php:23
+msgid "Default"
+msgstr "Por Defeito"
+
+#: custom404.php:24
+msgid "Other"
+msgstr "Outro"
+
+#: custom404.php:25
+msgid "All Categories"
+msgstr "Todas as Categorías"
+
+#: custom404.php:26
+msgid "Red"
+msgstr "Vermelho"
+
+#: custom404.php:27
+msgid "Blue"
+msgstr "Azul"
+
+#: custom404.php:28
+msgid "Black"
+msgstr "Preto"
+
+#: custom404.php:29
+msgid "Grayed Blue"
+msgstr "Azul do Cinza"
+
+#: custom404.php:30
+msgid "Green"
+msgstr "Verde"
+
+#: custom404.php:31
+msgid "Gray"
+msgstr "Cinza"
+
+#: custom404.php:32
+msgid "Purple"
+msgstr "Roxo"
+
+#: custom404.php:33
+msgid "Crimson"
+msgstr "Carmesim"
+
+#: custom404.php:34
+msgid "Title Content:"
+msgstr "Conteúdo do Título:"
+
+#: custom404.php:35
+msgid "Text Font Type:"
+msgstr "Tipo de Fonte ao Texto:"
+
+#: custom404.php:36
+msgid "Text Font Size (in pixels):"
+msgstr "Tamanho de Fonte ao Texto (em pixéis):"
+
+#: custom404.php:37
+msgid "Text Color:"
+msgstr "Cor do Texto:"
+
+#: custom404.php:38
+msgid "Text Content:"
+msgstr "Conteúdo do Texto:"
+
+#: custom404.php:39
+msgid "Categories Settings:"
+msgstr "Configurações de Categorías:"
+
+#: custom404.php:40
+msgid "Category to view at useful posts:"
+msgstr "Categoría aa mostrar nos 'Posts Útiles':"
+
+#: custom404.php:41
+msgid "Save Changes"
+msgstr "Salvar Alterações"
+
+#: custom404.php:42
+msgid "Text Content"
+msgstr "Conteúdo do Texto"
+
+#: custom404.php:43
+msgid "Title Content"
+msgstr "Conteúdo do Título"
+
+#: custom404.php:44
+msgid "The field"
+msgstr "O campo"
+
+#: custom404.php:45
+msgid "is required and must be Filled"
+msgstr "é necessário e deve ser Introduzido"
+
+#: custom404.php:46
+msgid "The following errors have occurred:"
+msgstr "Os seguintes erros ocorreram:"
+
+#: custom404.php:47
+msgid "Options Successfully saved!"
+msgstr "Opções gravadas com sucesso!"
+
+#: custom404.php:48
+msgid "Access is denied!"
+msgstr "Acesso negado!"
+

@@ -1,0 +1,12 @@
+#wrapper,#footer-blocks {border-top: 4px solid #6328A4;}
+.subsform input[type="submit"]{ border: 2px solid #6328A4;background: #6328A4;}
+.tpcrn-shr-post span.head,.post-tags  a:hover,.tagcloud a:hover ,
+#infinite-handle span  ,
+#catnav.secondary ul li.current-menu-item, #catnav.secondary >ul >li a:hover ,
+#catnav ul li.dropme a ,
+.pagination .current ,.pagination a, .page-numbers.dots,.tpcrn-read-more ,.tabs-wrapper2 ul li.active, .tabs-wrapper ul li.active,ul.tabs2 li:hover, ul.tabs li:hover {background: #6328A4;}
+.blog-lists-blog h3 a:hover {color:#6328A4;}
+#catnav ul li li {border-bottom: 1px solid #780DEB;}
+#commentform input#submit ,.searchform .searchbutton , .subsform .nletterbutton,input[type="submit"] {background-color: #6328A4;border-color: #6328A4;}
+#commentform input[type="text"]:focus, #commentforminput[type="email"]:focus, #commentform textarea:focus,.subsform .subsfield:focus,.searchform .searchfield:focus{border: 1px solid #6328A4;box-shadow: 0 0 7px #6328A4;
+}

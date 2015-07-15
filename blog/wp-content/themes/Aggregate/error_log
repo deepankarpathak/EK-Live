@@ -1,0 +1,8 @@
+[17-Nov-2012 05:26:32 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/edukart/public_html/blog/wp-content/themes/Aggregate/index.php on line 1
+[17-Nov-2012 05:26:35 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/edukart/public_html/blog/wp-content/themes/Aggregate/index.php on line 1
+[01-Mar-2013 12:43:39 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/edukart/public_html/blog/wp-content/themes/Aggregate/index.php on line 1
+[09-Apr-2013 08:48:53 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/edukart/public_html/blog/wp-content/themes/Aggregate/index.php on line 1
+[07-May-2013 01:51:28 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/edukart/public_html/blog/wp-content/themes/Aggregate/index.php on line 1
+[10-Aug-2013 07:54:53 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/edukart/public_html/blog/wp-content/themes/Aggregate/index.php on line 1
+[04-Sep-2013 08:56:24 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/edukart/public_html/blog/wp-content/themes/Aggregate/index.php on line 1
+[19-Dec-2013 10:15:33 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/edukart/public_html/blog/wp-content/themes/Aggregate/index.php on line 1

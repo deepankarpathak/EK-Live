@@ -1,0 +1,221 @@
+[06-Jul-2015 09:37:28 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[06-Jul-2015 09:37:28 UTC] PHP Stack trace:
+[06-Jul-2015 09:37:28 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:37:28 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 09:37:28 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[06-Jul-2015 09:37:28 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[06-Jul-2015 09:37:28 UTC] PHP Stack trace:
+[06-Jul-2015 09:37:28 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:37:28 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 09:37:28 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[06-Jul-2015 09:37:28 UTC] PHP Stack trace:
+[06-Jul-2015 09:37:28 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:37:28 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 09:37:28 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[06-Jul-2015 09:37:28 UTC] PHP Stack trace:
+[06-Jul-2015 09:37:28 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:37:28 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 09:39:05 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[06-Jul-2015 09:39:05 UTC] PHP Stack trace:
+[06-Jul-2015 09:39:05 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:39:05 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 09:39:05 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[06-Jul-2015 09:39:05 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[06-Jul-2015 09:39:05 UTC] PHP Stack trace:
+[06-Jul-2015 09:39:05 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:39:05 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 09:39:05 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[06-Jul-2015 09:39:05 UTC] PHP Stack trace:
+[06-Jul-2015 09:39:05 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:39:05 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 09:39:05 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[06-Jul-2015 09:39:05 UTC] PHP Stack trace:
+[06-Jul-2015 09:39:05 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:39:05 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 09:53:31 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[06-Jul-2015 09:53:31 UTC] PHP Stack trace:
+[06-Jul-2015 09:53:31 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:53:31 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 09:53:31 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[06-Jul-2015 09:53:31 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[06-Jul-2015 09:53:31 UTC] PHP Stack trace:
+[06-Jul-2015 09:53:31 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:53:31 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 09:53:31 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[06-Jul-2015 09:53:31 UTC] PHP Stack trace:
+[06-Jul-2015 09:53:31 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:53:31 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 09:53:31 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[06-Jul-2015 09:53:31 UTC] PHP Stack trace:
+[06-Jul-2015 09:53:31 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 09:53:31 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 10:02:09 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[06-Jul-2015 10:02:09 UTC] PHP Stack trace:
+[06-Jul-2015 10:02:09 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 10:02:09 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 10:02:09 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[06-Jul-2015 10:02:09 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[06-Jul-2015 10:02:09 UTC] PHP Stack trace:
+[06-Jul-2015 10:02:09 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 10:02:09 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 10:02:09 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[06-Jul-2015 10:02:09 UTC] PHP Stack trace:
+[06-Jul-2015 10:02:09 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 10:02:09 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[06-Jul-2015 10:02:09 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[06-Jul-2015 10:02:09 UTC] PHP Stack trace:
+[06-Jul-2015 10:02:09 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[06-Jul-2015 10:02:09 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:09:07 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[07-Jul-2015 05:09:07 UTC] PHP Stack trace:
+[07-Jul-2015 05:09:07 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:09:07 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:09:07 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[07-Jul-2015 05:09:07 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[07-Jul-2015 05:09:07 UTC] PHP Stack trace:
+[07-Jul-2015 05:09:07 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:09:07 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:09:07 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[07-Jul-2015 05:09:07 UTC] PHP Stack trace:
+[07-Jul-2015 05:09:07 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:09:07 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:09:07 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[07-Jul-2015 05:09:07 UTC] PHP Stack trace:
+[07-Jul-2015 05:09:07 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:09:07 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:10:48 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[07-Jul-2015 05:10:48 UTC] PHP Stack trace:
+[07-Jul-2015 05:10:48 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:10:48 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:10:48 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[07-Jul-2015 05:10:48 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[07-Jul-2015 05:10:48 UTC] PHP Stack trace:
+[07-Jul-2015 05:10:48 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:10:48 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:10:48 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[07-Jul-2015 05:10:48 UTC] PHP Stack trace:
+[07-Jul-2015 05:10:48 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:10:48 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:10:48 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[07-Jul-2015 05:10:48 UTC] PHP Stack trace:
+[07-Jul-2015 05:10:48 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:10:48 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:11:02 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[07-Jul-2015 05:11:02 UTC] PHP Stack trace:
+[07-Jul-2015 05:11:02 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:11:02 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:11:02 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[07-Jul-2015 05:11:02 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[07-Jul-2015 05:11:02 UTC] PHP Stack trace:
+[07-Jul-2015 05:11:02 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:11:02 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:11:02 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[07-Jul-2015 05:11:02 UTC] PHP Stack trace:
+[07-Jul-2015 05:11:02 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:11:02 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:11:02 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[07-Jul-2015 05:11:02 UTC] PHP Stack trace:
+[07-Jul-2015 05:11:02 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:11:02 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:11:43 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[07-Jul-2015 05:11:43 UTC] PHP Stack trace:
+[07-Jul-2015 05:11:43 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:11:43 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:11:43 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[07-Jul-2015 05:11:43 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[07-Jul-2015 05:11:43 UTC] PHP Stack trace:
+[07-Jul-2015 05:11:43 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:11:43 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:11:43 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[07-Jul-2015 05:11:43 UTC] PHP Stack trace:
+[07-Jul-2015 05:11:43 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:11:43 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 05:11:43 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[07-Jul-2015 05:11:43 UTC] PHP Stack trace:
+[07-Jul-2015 05:11:43 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 05:11:43 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 06:00:20 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[07-Jul-2015 06:00:20 UTC] PHP Stack trace:
+[07-Jul-2015 06:00:20 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 06:00:20 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 06:00:20 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[07-Jul-2015 06:00:20 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[07-Jul-2015 06:00:20 UTC] PHP Stack trace:
+[07-Jul-2015 06:00:20 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 06:00:20 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 06:00:20 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[07-Jul-2015 06:00:20 UTC] PHP Stack trace:
+[07-Jul-2015 06:00:20 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 06:00:20 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 06:00:20 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[07-Jul-2015 06:00:20 UTC] PHP Stack trace:
+[07-Jul-2015 06:00:20 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 06:00:20 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 11:14:17 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[07-Jul-2015 11:14:17 UTC] PHP Stack trace:
+[07-Jul-2015 11:14:17 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 11:14:17 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 11:14:17 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[07-Jul-2015 11:14:17 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[07-Jul-2015 11:14:17 UTC] PHP Stack trace:
+[07-Jul-2015 11:14:17 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 11:14:17 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 11:14:17 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[07-Jul-2015 11:14:17 UTC] PHP Stack trace:
+[07-Jul-2015 11:14:17 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 11:14:17 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[07-Jul-2015 11:14:17 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[07-Jul-2015 11:14:17 UTC] PHP Stack trace:
+[07-Jul-2015 11:14:17 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[07-Jul-2015 11:14:17 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:46:08 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[08-Jul-2015 07:46:08 UTC] PHP Stack trace:
+[08-Jul-2015 07:46:08 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:46:08 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:46:08 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[08-Jul-2015 07:46:08 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[08-Jul-2015 07:46:08 UTC] PHP Stack trace:
+[08-Jul-2015 07:46:08 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:46:08 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:46:08 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[08-Jul-2015 07:46:08 UTC] PHP Stack trace:
+[08-Jul-2015 07:46:08 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:46:08 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:46:08 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[08-Jul-2015 07:46:08 UTC] PHP Stack trace:
+[08-Jul-2015 07:46:08 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:46:08 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:49:44 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[08-Jul-2015 07:49:44 UTC] PHP Stack trace:
+[08-Jul-2015 07:49:44 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:49:44 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:49:44 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[08-Jul-2015 07:49:44 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[08-Jul-2015 07:49:44 UTC] PHP Stack trace:
+[08-Jul-2015 07:49:44 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:49:44 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:49:44 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[08-Jul-2015 07:49:44 UTC] PHP Stack trace:
+[08-Jul-2015 07:49:44 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:49:44 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:49:44 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[08-Jul-2015 07:49:44 UTC] PHP Stack trace:
+[08-Jul-2015 07:49:44 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:49:44 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:50:08 UTC] PHP Notice:  Constant ABSPATH already defined in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 19
+[08-Jul-2015 07:50:08 UTC] PHP Stack trace:
+[08-Jul-2015 07:50:08 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:50:08 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:50:08 UTC] PHP   3. define() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php:19
+[08-Jul-2015 07:50:08 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_MAIN_201 - assumed 'DOM_BZ_PATH_PG_MAIN_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 22
+[08-Jul-2015 07:50:08 UTC] PHP Stack trace:
+[08-Jul-2015 07:50:08 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:50:08 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:50:08 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_201 - assumed 'DOM_BZ_PATH_PG_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 25
+[08-Jul-2015 07:50:08 UTC] PHP Stack trace:
+[08-Jul-2015 07:50:08 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:50:08 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5
+[08-Jul-2015 07:50:08 UTC] PHP Notice:  Use of undefined constant DOM_BZ_PATH_PG_INI_201 - assumed 'DOM_BZ_PATH_PG_INI_201' in /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/cbdom_main.php on line 28
+[08-Jul-2015 07:50:08 UTC] PHP Stack trace:
+[08-Jul-2015 07:50:08 UTC] PHP   1. {main}() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:0
+[08-Jul-2015 07:50:08 UTC] PHP   2. include_once() /var/www/html/wp-content/plugins/CCAvenueMCPG_Woocommerce_BlueZeal_v3.0/cbdom/includes/domajax_validation.php:5

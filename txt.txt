@@ -1,0 +1,1000 @@
+ 1003  git status
+ 1004  git checkout media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/small_image.jpg media/catalog/product/cache/1/thumbnail/180x/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg media/catalog/product/cache/1/thumbnail/50x50/9df78eab33525d08d6e5fb8d27136e95/images/catalog/product/placeholder/thumbnail.jpg
+ 1005  git status
+ 1006  git add magmi/
+ 1007  git status
+ 1008  git add magmi/readme
+ 1009  rm magmi/readme~ 
+ 1010  git status
+ 1011  git reset magmi/.htaccess~
+ 1012  git status
+ 1013  git reset magmi/readme~
+ 1014  git add magmi/readme~
+ 1015  git reset
+ 1016  git add magmi
+ 1017  git status
+ 1018  git reset magmi/.htaccess~
+ 1019  rm magmi/.htaccess~
+ 1020  git status
+ 1021  git commit -m "Adding Magmi"
+ 1022  git status
+ 1023  git push origin dev
+ 1024  git stash
+ 1025  git pull --rebase
+ 1026  git stash pop
+ 1027  git push origin dev
+ 1028  git status
+ 1029  git add app/etc/modules/Raveinfosys_Exporter.xml app/code/community/Raveinfosys/ app/design/adminhtml/default/default/layout/exporter.xml var/raveinfosys/
+ 1030  git status
+ 1031  git commit -m "Order import export Module"
+ 1032  git status
+ 1033  git push origin dev
+ 1034  chmod -R 777 ./magmi
+ 1035  cd /var/www/html/indidel/app
+ 1036  git status
+ 1037  grep -r "n setState"
+ 1038  gedit code/local/Mage/Sales/Model/Order.php
+ 1039  grep -r "n sendNewOrderEmail"
+ 1040  gedit code/local/Mage/Sales/Model/Order.php
+ 1041  ssh root@popularjewelers.com
+ 1042  ls
+ 1043  cd /var/www/html/eslnew1/
+ 1044  git status
+ 1045  git add app/design/frontend/esl/default/template/ajaxifiedlogin/top-links-mobile.phtml app/design/frontend/esl/default/template/ajaxifiedlogin/top-links.phtml
+ 1046  git status
+ 1047  git commit -m "Order link on toplinks adjustment"
+ 1048  git push origin dev
+ 1049  ssh ec2-user@52.24.85.148
+ 1050  cd /var/www/html/khator/
+ 1051  ls
+ 1052  unzip -o khatorcode.zip 
+ 1053  ls
+ 1054  git remote add origin git@bitbucket.org:Somesh_soni/khatorepharma.git
+ 1055  git init
+ 1056  git remote add origin git@bitbucket.org:Somesh_soni/khatorepharma.git
+ 1057  ls
+ 1058  git status
+ 1059  git add
+ 1060  git add *
+ 1061  git add all
+ 1062  git add ./
+ 1063  ls
+ 1064  git status
+ 1065  git add -a
+ 1066  git add -A
+ 1067  git status
+ 1068  git commit -m "Initial commit"
+ 1069  git status
+ 1070  git push origin master
+ 1071  ls
+ 1072  ssh root@demo.pjctv.com
+ 1073  ssh pjctv.com
+ 1074  ssh ubuntu@pjctv.com
+ 1075  ssh root@demo.pjctv.com
+ 1076  sudo root@demo.pjctv.com
+ 1077  ssh root@demo.pjctv.com
+ 1078  scp /var/www/html/pjclive/magmi/.htaccess .htaccess
+ 1079  scp root@demo.pjctv.com:/var/www/html/pjclive/magmi/.htaccess .htaccess
+ 1080  scp root@demo.pjctv.com:/var/www/html/pjclive/magmi/.htpasswd .htpasswd
+ 1081  scp .htaccess ubuntu@pjctv.com:/var/www/html/pjctvproduction/magmi/
+ 1082  scp .htaccess ubuntu@pjctv.com:/var/www/html/pjctvproduction/magmi
+ 1083  scp .htpasswd ubuntu@pjctv.com:/var/www/html/pjctvproduction/magmi
+ 1084  ssh root@pjctv.com
+ 1085  sudo ssh root@pjctv.com
+ 1086  ssh ubuntu@pjctv.com
+ 1087  cd /var/www/html/
+ 1088  ls
+ 1089  git clone git@github.com:Wildhoney/Magento-on-Angular.git rnd
+ 1090  git clone git@github.com:Wildhoney/Magento-on-Angular.git mageapi
+ 1091  vi ~/.ssh/id_rsa.pub 
+ 1092  git clone git@github.com:Wildhoney/Magento-on-Angular.git mageapi
+ 1093  sudo apt-get install npm
+ 1094  sudo apt-get update
+ 1095  sudo apt-get install npm
+ 1096  sudo apt-get install bower 
+ 1097  sudo apt-get install composer
+ 1098  cd mageapi/
+ 1099  vi config.json
+ 1100  grunt
+ 1101  cd /var/www/html/
+ 1102  chmod -R 777 ./pjc/magmi/
+ 1103  sudo chmod -R 777 ./pjc/magmi/
+ 1104  ssh ubuntu@pjctv.com
+ 1105  scp ubuntu@pjctv.com://var/www/html/pjctvproduction/var/import/Excel\ Upload_06022015.csv  ./sheet.csv
+ 1106  scp ubuntu@pjctv.com://var/www/html/pjctvproduction/var/import/Excel\upload-06022015.csv  ./sheet.csv
+ 1107  scp ubuntu@pjctv.com://var/www/html/pjctvproduction/var/import/upload-06022015.csv  ./sheet.csv
+ 1108  cd Downloads/
+ 1109  ls
+ 1110  mysql -u root -proot nwgmoodle < 10.168.1.52.sql 
+ 1111  mysql -u root -proot nwgmoodle1 < 10.168.1.52.sql 
+ 1112  mysql -u root -proot nwgmoodle < 10.168.1.52.sql 
+ 1113  ls
+ 1114  mysql -u root -proot nwgmoodle < NWG_Learn_Backup.zip 
+ 1115  mysql -u root -proot nwgmoodle < nwgnetwo_moodle.sql 
+ 1116  vi nwgnetwo_moodle.sql
+ 1117  mysqldump -h 10.168.1.52 -u nwgnetwo_moodle -p nwgnetwo_moodle > nwg.sql
+ 1118  mysql -u nwgnetwo_moodle -pNuYUc7jerAc -h 10.168.1.52
+ 1119  mysql -u root -proot nwgmoodle < nwgnetwo_moodle.sql\ \(2\) 
+ 1120  cd /var/www/html/
+ 1121  chmod -R 0777 moodledata/
+ 1122  sudo apt-get install php-xml-rpc
+ 1123  sudo service apache2 restart
+ 1124  sudo apt-get install php5-xmlrpc
+ 1125  sudo service apache2 restart
+ 1126  cd elean
+ 1127  cd comic/
+ 1128  cd elearn/auth/
+ 1129  ls
+ 1130  grep -r "nwgnetwork"
+ 1131  grep -r "nwg"
+ 1132  cd ..
+ 1133  grep -r "nwgnetwork"
+ 1134  sudo vi /etc/phpmyadmin/config.inc.php
+ 1135  service apache2 restart
+ 1136  sudo service apache2 restart
+ 1137  cd /var/www/html/comic/elearn/
+ 1138  grep -r "Your session has timed out. Please login again"
+ 1139  grep -r -i "Your session has timed out"
+ 1140  grep -r -i "sessionerroruser"
+ 1141  cd auth/manual/
+ 1142  grep -r "sessionerroruser"
+ 1143  grep -r "validate_internal_user_password"
+ 1144  cd ..
+ 1145  grep -r "n validate_internal_user_password"
+ 1146  cd ..
+ 1147  grep -r "in validate_internal_user_password"
+ 1148  grep -r "n validate_internal_user_password"
+ 1149  gedit lib/moodlelib.php
+ 1150  apache2 -v
+ 1151  sudo add-apt-repository ppa:ubuntu-wine/ppa
+ 1152  sudo apt-get install wine1.6
+ 1153  ifconfig
+ 1154  exit
+ 1155  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1156  cd ~/
+ 1157  cd Downloads/
+ 1158  ls
+ 1159  scp nwgmood.sql bitnami1@bitnami-lampstack-2b4a.cloudapp.net:/opt/bitnami/apache2/
+ 1160  scp nwgmood.sql bitnami1@bitnami-lampstack-2b4a.cloudapp.net:/opt/bitnami/apache2/htdocs
+ 1161  cd /var/www/html/
+ 1162  ls
+ 1163  scp moodledata.zip bitnami1@bitnami-lampstack-2b4a.cloudapp.net:/opt/bitnami/apache2/htdocs
+ 1164  cd comic/elearn
+ 1165  scp learn.zip  bitnami1@bitnami-lampstack-2b4a.cloudapp.net:/opt/bitnami/apache2/htdocs
+ 1166  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1167  cd /var/www/html/
+ 1168  ls
+ 1169  chmod -R 0777 moodledata
+ 1170  chmod -R 0777 moodle_data
+ 1171  cd comic/elearn/theme/clean/
+ 1172  ls
+ 1173  grep -r "page-header"
+ 1174  grep -r "logo"
+ 1175  gedit layout/secure.php
+ 1176  cd ..
+ 1177  grep -r "class=\"logo\""
+ 1178  grep -r "page-header"
+ 1179  grep -r "id=\"page-header"
+ 1180  find -name "header*"
+ 1181  cd theme/bootstrapbase/
+ 1182  grep -r "page-header"
+ 1183  grep -r "paid=\"page-header"
+ 1184  grep -r "id=\"page-header"
+ 1185  cd ..
+ 1186  grep -r "class=\"logo\""
+ 1187  grep -r "wwwroot"
+ 1188  cd "wwwroot".
+ 1189  cd ..
+ 1190  grep -r "wwwroot"
+ 1191  grep -r "page-footer"
+ 1192  grep -r "id=\"page-footer"
+ 1193  grep -r "class=\"iconhelp"
+ 1194  grep -r "You are logged in as"
+ 1195  grep -r "loggedinas"
+ 1196  cd theme/clean/
+ 1197  grep -r "loggedinas"
+ 1198  cd ..
+ 1199  grep -r "loggedinas"
+ 1200  cd ..
+ 1201  cd theme/
+ 1202  grep -r "loggedinas"
+ 1203  grep -r "sitetopic"
+ 1204  grep -r " sitetopic"
+ 1205  grep -r "\"sitetopic"
+ 1206  grep -r "sitetopic"
+ 1207  grep -r "sitetopic" > temp
+ 1208  vi temp
+ 1209  rm temp
+ 1210  cd clean/
+ 1211  clear
+ 1212  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1213  ls
+ 1214  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1215  ls
+ 1216  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1217  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1218  ls
+ 1219  ls index.php --mime
+ 1220  file --mime index.php 
+ 1221  cd /var/www/html/comic/elearn
+ 1222  find -n "mcore*"
+ 1223  find -name "mcore*"
+ 1224  find -name "mcore-min.js"
+ 1225  find -name "*mcore-min.js"
+ 1226  find -name "yui-moodlesimple-min.js"
+ 1227  ls
+ 1228  cd /var/www/html/comic/elearn
+ 1229  cd auth/joomdle/
+ 1230  grep -r "get_context_instance_by_id"
+ 1231  gedit auth.php
+ 1232  sudo service apache2 restart
+ 1233  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1234  ping bitnami-lampstack-2b4a.cloudapp.net
+ 1235  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1236  ssh root@indidelights.com
+ 1237  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1238  ssh root@indidelights.com
+ 1239  cd Downloads/
+ 1240  ls
+ 1241  scp auth_emailadmin_moodle27_2012120301.zip bitnami1@bitnami-lampstack-2b4a.cloudapp.net:/opt/bitnami/apache/htdocs/auth/
+ 1242  scp auth_emailadmin_moodle27_2012120301.zip bitnami1@bitnami-lampstack-2b4a.cloudapp.net:/opt/bitnami/apache2/htdocs/auth/
+ 1243  sudo vi /var/log/apache2/error.log
+ 1244  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1245  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1246  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1247  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1248  cd /var/www/html/comic/elearn
+ 1249  ls
+ 1250  grep -r "Hello {$a->firstname},"
+ 1251  vi lang/en/moodle.php
+ 1252  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1253  cd /var/www/html/pjc/var/import/
+ 1254  ls
+ 1255  scp 21product.csv root@demo.pjctv.com:/var/www/html/pjclive/var/import/
+ 1256  ssh root@demo.pjctv.com
+ 1257  cd /var/log/apache2/
+ 1258  ls
+ 1259  vi error.log
+ 1260  cd /home/somesh/Music/
+ 1261  ls
+ 1262  mv Excel\ Upload_06152015.csv upload_06152015.csv 
+ 1263  scp upload_06152015.csv ubuntu@pjctv.com:/var/www/html/pjctvproduction/var/import/
+ 1264  scp upload_06152015.csv root@pjctv.com:/var/www/html/pjclive/var/import/
+ 1265  scp upload_06152015.csv root@demo.pjctv.com:/var/www/html/pjclive/var/import/
+ 1266  scp root@demo.pjc.com:/var/www/html/pjclive/magmi/engines/magmi_productimportengine.php magmi_productimportengine.php
+ 1267  scp root@demo.pjctv.com:/var/www/html/pjclive/magmi/engines/magmi_productimportengine.php magmi_productimportengine.php
+ 1268  scp magmi_productimportengine.php ubuntu@pjctv.com:/var/www/html/pjctvproduction/magmi/engines/magmi_productimportengine.php
+ 1269  scp ubuntu@pjctv.com:/var/www/html/pjctvproduction/var/dbbackup16jun15.sql ./
+ 1270  cd /var/www/html/eslnew1/lib/
+ 1271  grep -r "Autoloader"
+ 1272  find -name "Autoloader*"
+ 1273  ssh ubuntu@pjctv.com
+ 1274  ssh ubuntu@pjctv.com
+ 1275  ls
+ 1276  exit
+ 1277  cd /var/www/html/import
+ 1278  cd var
+ 1279  cd /var
+ 1280  cd /var/www/html/eslnew1/var/import
+ 1281  ls
+ 1282  pwd
+ 1283  ls
+ 1284  cd /var/www/html/eslnew1/
+ 1285  ls
+ 1286  rm -rf var/cache/
+ 1287  ssh ec2-user@52.24.85.148
+ 1288  cd /var/www/html/
+ 1289  cd eslnew1/
+ 1290  git status
+ 1291  git diff magmi/readme.txt
+ 1292  git difftool magmi/readme.txt
+ 1293  git status
+ 1294  git checkout app/etc/modules/Mage_XmlConnect.xml magmi/readme magmi/readme.txt magmi/state/progress.txt
+ 1295  git status
+ 1296  git stash
+ 1297  git pull --rebase
+ 1298  git stash pop
+ 1299  git branch
+ 1300  git status
+ 1301  cd js
+ 1302  grep -r "link-wishlist"
+ 1303  cd ..
+ 1304  grep -r "link-wishlist"
+ 1305  rm -rf var/cache/
+ 1306  cd app
+ 1307  grep -r "link-wishlist"
+ 1308  vi etc/local.xml
+ 1309  ifconfig
+ 1310  ssh somesh@192.168.2.133
+ 1311  cd /var/www/html/eslnew1/
+ 1312  vi app/code/core/mage/custoumer/model/session.php
+ 1313  ls app/code/core/mage/custoumer/model/session.php
+ 1314  ls app/code/core/mage/custoumer/model/
+ 1315  ls app/code/core/Mage/Custoumer/Model/
+ 1316  ls app/code/core/Mage/Customer/Model/Session.php 
+ 1317  vi app/code/core/Mage/Customer/Model/Session.php 
+ 1318  ls app/code/local/Mage/Customer/Model/Session.php 
+ 1319  cp app/code/core/Mage/Customer/Model/Session.php app/code/local/Mage/Customer/Model/Session.php
+ 1320  git status
+ 1321  git add app/code/local/Aurigait/AvailableSizes/controllers/IndexController.php app/design/frontend/esl/default/template/newarrivals/index.phtml
+ 1322  git commit -m "Size availablity issue fix"
+ 1323  git status
+ 1324  git add app/design/frontend/esl/default/template/ajaxifiedlogin/top-links.phtml skin/frontend/esl/default/js/main.js
+ 1325  git status
+ 1326  git commit -m "Ajaxified login, search click after login, cart icon after login fix"
+ 1327  git status
+ 1328  git add app/design/frontend/esl/default/template/catalog/product/view/addto.phtml
+ 1329  git status
+ 1330  git commit -m "Wishlist on pdp page fix"
+ 1331  git push origin dev
+ 1332  git stash
+ 1333  git pull --rebase
+ 1334  git stash pop
+ 1335  git push origin dev
+ 1336  git status
+ 1337  rm -rf var/cache/
+ 1338  cd app
+ 1339  grep -r "link-wishlist"
+ 1340  cd design/frontend/esl/
+ 1341  grep -r "link-wishlist"
+ 1342  git status
+ 1343  cd ../../../
+ 1344  git status
+ 1345  git checkout design/frontend/esl/default/template/newarrivals/index.phtml design/frontend/esl/default/template/lookbook/lookbook.phtml design/frontend/esl/default/template/checkout/success.phtml design/frontend/esl/default/template/catalog/product/view/addto.phtml
+ 1346  git status
+ 1347  ls -a
+ 1348  ls
+ 1349  git status
+ 1350  cd ..
+ 1351  git status
+ 1352  git add app/design/frontend/esl/default/template/catalog/product/view/addto.phtml skin/frontend/esl/default/js/main.js
+ 1353  git status
+ 1354  git commit -m "Quick view wishlist issue fix"
+ 1355  git status
+ 1356  git add app/design/frontend/esl/default/template/checkout/cart/minicart/items.phtml
+ 1357  git reset
+ 1358  git status
+ 1359  git add app/code/local/Mage/Customer/Model/Session.php
+ 1360  git status
+ 1361  git commit -m "Redirect to login page after session timeout issue fix"
+ 1362  git status
+ 1363  git push origin dev
+ 1364  git stash
+ 1365  git pull --rebase
+ 1366  git push origin dev
+ 1367  ssh ec2-user@52.24.85.148
+ 1368  ls
+ 1369  ifconfig
+ 1370  cd /var/www/html/eslnew1/
+ 1371  cd app
+ 1372  grep -r "checkmo"
+ 1373  cd ..
+ 1374  chmod -R 777 var/import/
+ 1375  rm -rf var/cache/
+ 1376  chmod -R 777 magmi
+ 1377  sudo chmod -R 777 magmi
+ 1378  vi /etc/php5/apache2/php.ini 
+ 1379  ls
+ 1380  cd code/community/Payu/
+ 1381  grep -r "$_code"
+ 1382  grep -r "_code"
+ 1383  :q
+ 1384  cd ../../../
+ 1385  cd ..
+ 1386  git status
+ 1387  git stash pop
+ 1388  git status
+ 1389  git add app/code/local/Aurigait/Remove/controllers/OnepageController.php
+ 1390  git commit -m "Checkout custom steps, setting payment method code "
+ 1391  git push origin dev
+ 1392  git stash 
+ 1393  git pull --rebase
+ 1394  git stash pop
+ 1395  git push origin dev
+ 1396  git status
+ 1397  git add app/code/local/Aurigait/Club/Model/Observer.php
+ 1398  git status
+ 1399  git commit -m "Club module issue fix"
+ 1400  git push origin dev
+ 1401  cd /var/www/html/eslnew1
+ 1402  vi var/report/167314269
+ 1403  git status
+ 1404  git add app/design/frontend/esl/default/template/smartwave/quickview/catalog/product/view.phtml app/code/local/Aurigait/AjaxifiedCart/controllers/Checkout/CartController.php skin/frontend/esl/default/quickview/js/sw_quickview.js
+ 1405  git status
+ 1406  git commit -m "Quick view add to cart redirection issue resolved"
+ 1407  rm -rf var/cache/
+ 1408  git stash
+ 1409  git pull --rebase
+ 1410  rm -rf var/cache/
+ 1411  stash pop
+ 1412  git stash pop
+ 1413  vi app/design/frontend/esl/default/template/catalog/product/view/addto.phtml
+ 1414  git status
+ 1415  git add app/design/frontend/esl/default/template/catalog/product/view/addto.phtml app/design/frontend/esl/default/template/catalog/product/view.phtml
+ 1416  git status
+ 1417  git reset
+ 1418  git status
+ 1419  git add app/design/frontend/esl/default/template/catalog/product/view/addto.phtml app/design/frontend/esl/default/template/catalog/product/view.phtml
+ 1420  git status
+ 1421  ssh ec2-user@52.24.85.148
+ 1422  cd /var/www/html/eslnew1/
+ 1423  git status
+ 1424  git difftool app/design/frontend/esl/default/template/catalog/product/view.phtml
+ 1425  git diff app/design/frontend/esl/default/template/catalog/product/view.phtml
+ 1426  dit diff
+ 1427  git diff
+ 1428  git status
+ 1429  git reser
+ 1430  git reset
+ 1431  git diff
+ 1432  git status
+ 1433  git add app/design/frontend/esl/default/template/catalog/product/view/addto.phtml app/design/frontend/esl/default/template/catalog/product/view.phtml
+ 1434  git commit -m "Configurable product issue on magmi, quickview wishlist issue"
+ 1435  git status
+ 1436  git add app/design/frontend/esl/default/template/page/html/header.phtml
+ 1437  git status
+ 1438  git commit -m "Ajaxified login checkout page redirect"
+ 1439  git stash
+ 1440  git pull --rebase
+ 1441  git stash pop
+ 1442  git push origin dev
+ 1443  git status
+ 1444  rm -rf var/cache/
+ 1445  git status
+ 1446  git add app/design/frontend/esl/default/template/customer/form/forgotpassword.phtml
+ 1447  git status
+ 1448  git add app/code/local/Aurigait/AjaxifiedLogin/controllers/AccountController.php
+ 1449  git status
+ 1450  git commit -m "hiding login page link and signup error message duplication remove"
+ 1451  git stash
+ 1452  git pull --rebae
+ 1453  git pull --rebase
+ 1454  git stash pop
+ 1455  git push origin dev
+ 1456  vi /var/log/apache2/error.log
+ 1457  git status
+ 1458  cd /var/www/html/eslnew1
+ 1459  ls
+ 1460  git status
+ 1461  git stash
+ 1462  git pull --rebase
+ 1463  git stash pop
+ 1464  git add app/design/frontend/esl/default/template/page/html/footer.phtml skin/frontend/esl/default/js/main.js
+ 1465  git status'
+ 1466  git status
+ 1467  git commit -m "adding Wishlist notification"
+ 1468  git push origin dev
+ 1469  rm -rf var/cache/
+ 1470  git status
+ 1471  git add skin/frontend/esl/default/quickview/js/sw_quickview.js app/design/frontend/esl/default/template/catalog/product/view/addto.phtml
+ 1472  git status
+ 1473  git commit -m "Share on quickview fix"
+ 1474  git pull --rebase
+ 1475  git stash
+ 1476  git pull --rebase
+ 1477  gedit app/design/frontend/esl/default/template/catalog/product/view/addto.phtml
+ 1478  git rebase --continue
+ 1479  git reset --hard HEAD~1
+ 1480  git status
+ 1481  git rebase --continue
+ 1482  git rebase --abort
+ 1483  git status
+ 1484  git stash pop
+ 1485  git status
+ 1486  git reset --hard HEAD~1
+ 1487  git status
+ 1488  git add skin/frontend/esl/default/quickview/js/sw_quickview.js
+ 1489  git status
+ 1490  git commit -m "Share on quickview fix"
+ 1491  git stash
+ 1492  git pull --rebase
+ 1493  git push origin dev
+ 1494  vi var/report/443971835
+ 1495  vi app/etc/modules/EasySocialShop_Catalog.xml 
+ 1496  vi app/code/core/Mage/Core/Model/Session/Abstract/Varien.php 
+ 1497  git status
+ 1498  git add app/design/frontend/esl/default/template/wishlist/item/column/quantity.phtml
+ 1499  git reset
+ 1500  git checkout app/design/frontend/esl/default/template/wishlist/item/column/quantity.phtml
+ 1501  git add app/design/frontend/esl/default/template/wishlist/item/column/quantity.phtml
+ 1502  git commit -m "Wishlist qty issue fixed"
+ 1503  git push origin dev
+ 1504  ssh root@indidelights.com
+ 1505  ssh ec2-user@52.24.85.148
+ 1506  cd /var/www/html/eslnew1/
+ 1507  rm -rf var/cache/
+ 1508  chmod -R 777 magmi
+ 1509  sudo chmod -R 777 magmi
+ 1510  cd /var/www/html/eslnew1/
+ 1511  ls
+ 1512  cd var/import
+ 1513  ls
+ 1514  scp import.zip ec2-user@52.24.85.148:/var/www/html/var/import/
+ 1515  ls /usr/sbin/a2enmod 
+ 1516  cd ../../
+ 1517  scp Fooman_SpeedsterAdvanced-0.8.9.zip ec2-user@52.24.85.148:/var/www/html
+ 1518  ls
+ 1519  chmod -R 777 downloader/
+ 1520  chmod -R 777 ../
+ 1521  chmod -R 777 ./
+ 1522  sudo chmod -R 777 ./
+ 1523  ls
+ 1524  git status
+ 1525  git config core.fileMode false
+ 1526  git status
+ 1527  ls
+ 1528  unzip -o Fooman_Common-1.2.8.zip 
+ 1529  unzip -o Fooman_SpeedsterAdvanced-0.8.9.zip 
+ 1530  rm -rf var/cache/
+ 1531  ls
+ 1532  rm maintenance.flag 
+ 1533  rm -rf var/cache/
+ 1534  scp Fooman_Common-1.2.8.zip ec2-user@52.24.85.148:/var/www/html
+ 1535  vi /etc/php5/apache2/php.ini 
+ 1536  which a2enmod
+ 1537  ec2-user@52.24.85.148
+ 1538  ssh ec2-user@52.24.85.148
+ 1539  ssh root@indidelights.com
+ 1540  ls
+ 1541  cd /var/www/html/eslnew1/
+ 1542  ls
+ 1543  cd var/import
+ 1544  ls
+ 1545  scp final.zip ec2-user@52.24.85.148:/var/www/html/var/import
+ 1546  cd ../../
+ 1547  ls
+ 1548  git checkout dev
+ 1549  git status
+ 1550  rm -rf app/design/adminhtml/default/default/layout/fooman_common.xml app/design/adminhtml/default/default/template/fooman/ app/design/frontend/esl/default/template/catalog/product/view/addto.phtml~ app/etc/modules/Fooman_Common.xml app/etc/modules/Fooman_SpeedsterAdvanced.xml app/etc/modules/Mage_XmlConnect.xml~ bg_wacky_business.png 
+ 1551  git status
+ 1552  git pull --rebase
+ 1553  git stash
+ 1554  git pull --rebase
+ 1555  rm -rf lib/minify/
+ 1556  git pull --rebase
+ 1557  git status
+ 1558  git rebase --continue
+ 1559  git status
+ 1560  git pull --rebase
+ 1561  rm -rf app/code/community/Fooman
+ 1562  git pull --rebase
+ 1563  rm locale/en_US/Fooman_Common.csv
+ 1564  git pull --rebase
+ 1565  git status
+ 1566  git stash pop
+ 1567  rm -rf var/cache/
+ 1568  git status
+ 1569  git add app/code/local/Aurigait/AjaxifiedCart/controllers/Checkout/CartController.php app/design/frontend/esl/default/template/categorynav/navigation.phtml
+ 1570  git status
+ 1571  git add app/code/local/Aurigait/Club/Model/Observer.php
+ 1572  git status
+ 1573  git commit -m "Cart Noitem msg, navigation issue fix, sinclub text change"
+ 1574  git pull --rebase
+ 1575  git stash
+ 1576  git pull --rebase
+ 1577  git stash pop
+ 1578  git push origin dev
+ 1579  cd ../
+ 1580  ls
+ 1581  cd Pojw
+ 1582  cd pojw/app/code/local/Ma
+ 1583  cd pojw/app/code/local/Mage/
+ 1584  ls
+ 1585  ls Adminhtml/Block/Catalog/Category/Tab/Renderer/
+ 1586  cd Adminhtml/Block/Catalog/Category/Tab/Renderer/
+ 1587  ls
+ 1588  vi Image.php
+ 1589  cd ..
+ 1590  ls
+ 1591  vi Product.php 
+ 1592  gedit Product.php 
+ 1593  cd ../../../../../
+ 1594  cd ../../../..
+ 1595  ls app/code/local/Mage/Adminhtml/Block/Catalog/Category/Tab/
+ 1596  cd ../eslnew1/
+ 1597  rm -rf var/cache/
+ 1598  ls
+ 1599  chmod -R 777 app/code/local/Mage/Adminhtml/
+ 1600  rm -rf var/cache/
+ 1601  vi var/report/1942383224
+ 1602  rm -rf var/cache/
+ 1603  git status
+ 1604  git add app/code/local/Mage/Adminhtml/
+ 1605  git status
+ 1606  cd app/code/local/Mage/Adminhtml
+ 1607  ls
+ 1608  cd Block/
+ 1609  ls
+ 1610  rm Catalog.zip 
+ 1611  ls
+ 1612  cd ..
+ 1613  ls
+ 1614  cd ..
+ 1615  ls
+ 1616  scp Adminhtml.zip  ec2-user@52.24.85.148:/var/www/html/app/code/local/Mage
+ 1617  ls
+ 1618  ssh root@indidelights.com
+ 1619  scp root@indidelights.com:/home/indidelights/public/indidelights.com/public/.htaccess htaccess.txt
+ 1620  mkdir -p aa/ab
+ 1621  ls
+ 1622  cd aa
+ 1623  ls
+ 1624  cd /var/www/html/comic/
+ 1625  ls
+ 1626  cd administrator/
+ 1627  grep -r -i "joomlde"
+ 1628  grep -r -i "joomdle"
+ 1629  cd components/com_nwg/
+ 1630  grep -r "joom"
+ 1631  grep -r "require"
+ 1632  cd ../../../..
+ 1633  cd comic/
+ 1634  cd templates/
+ 1635  grep -r "belowcontent"
+ 1636  gedit protostar/index.php
+ 1637  grep -r "log out"
+ 1638  cd ../../nwg\ backup/purity_III/purity_iii/
+ 1639  ls
+ 1640  grep -r "01332"
+ 1641  gedit tpls/blocks/header.php
+ 1642  grep -r "belowcontent"
+ 1643  cd ..
+ 1644  grep -r "belowcontent"
+ 1645  grep -r "You may access registration areas of the NWG"
+ 1646  grep -r "You may access registration"
+ 1647  grep -r "registration"
+ 1648  grep -r "Email address"
+ 1649  grep -r "position-1"
+ 1650  cd ../../../
+ 1651  cd html/eslnew1/
+ 1652  ls
+ 1653  rm -rf var/cache/
+ 1654  git status
+ 1655  git reset
+ 1656  git status
+ 1657  git log
+ 1658  git pull --rebase
+ 1659  git stash 
+ 1660  git pull --rebase
+ 1661  git stash pop
+ 1662  rm -rf var/cache/
+ 1663  git status
+ 1664  git add app/design/frontend/esl/default/template/persistent/checkout/onepage/login.phtml
+ 1665  git status
+ 1666  git commit -m "Login on checkout conflict fix"
+ 1667  git push origin dev
+ 1668  ssh root@103.3.61.211
+ 1669  cd /var/www/html/eslnew1/
+ 1670  unzip - o app.zip 
+ 1671  unzip -o app.zip 
+ 1672  rm -rf var/cache/
+ 1673  git status
+ 1674  git add app/etc/modules/Aschroder_SMTPPro.xml app/locale/en_US/Aschroder_SMTPPro.csv app/code/local/Aschroder/ 
+ 1675  git status
+ 1676  git add app/design/adminhtml/base/
+ 1677  git status
+ 1678  git commit -m "SMTP Module integration"
+ 1679  git push origin dev
+ 1680  git status
+ 1681  ls
+ 1682  scp app.zip root@eatshoplove.in:/home/admin/public_html
+ 1683  cd app
+ 1684  grep -r "Notification Not Applicable"
+ 1685  ssh root@indidelights.com
+ 1686  scp root@indidelights.com:/home/indidelights/public/indidelights.com/public/cron-auriga.php ./cron-auriga.php
+ 1687  gedit cron-auriga.php 
+ 1688  ssh ec2-user@52.24.85.148
+ 1689  cd Downloads/fbshop/
+ 1690  ls
+ 1691  scp fbstore.zip ec2-user@52.24.85.148:/var/www/html/
+ 1692  scp fbstore.zip ec2-user@52.24.85.148:/var/www/html/var/
+ 1693  ssh root@indidelights.com
+ 1694  cd ..
+ 1695  cd ..`
+ 1696  cd ~
+ 1697  ls
+ 1698  scp root@indidelights.com:/var/log/apache2/error.log.46.gz error.log.46.gz
+ 1699  cd /var/www/html/alser/
+ 1700  find . -mtime -5
+ 1701  find . -mtime -25
+ 1702  find . -mtime -85
+ 1703  find . -mtime -45
+ 1704  find . -mtime -35
+ 1705  find . -mtime -30
+ 1706  find . -mtime -33
+ 1707  find . -mtime -34
+ 1708  cd ../indidel/
+ 1709  find -name "Detect.php"
+ 1710  grep -r "Detect.php"
+ 1711  find -f -name "Detect.php"
+ 1712  find  -name "Detect.php"
+ 1713  grep -r "performance.js"
+ 1714  find -name "performance.js"
+ 1715  grep -r "mirasvit"
+ 1716  cd app
+ 1717  grep -r "mirasvit"
+ 1718  grep -r  "performance.js"
+ 1719  cd ..
+ 1720  ls
+ 1721  rm app/code/local/Mage/Core/Model/Session/Abstract/Varien.php
+ 1722  git status
+ 1723  git rm app/code/local/Mage/Core/Model/Session/Abstract/Varien.php
+ 1724  git status
+ 1725  git commit -m "Delete varien file, googlebot issue"
+ 1726  git push origin master
+ 1727  ssh root@eatshoplove.com
+ 1728  ssh root@eatshoplove.in
+ 1729  cd /var/www/html/eslnew1/
+ 1730  rm -rf var/cache/
+ 1731  cd app
+ 1732  grep -r -i  "NO PAYMENT INFORMATION REQUIRED"
+ 1733  gedit code/core/Mage/Payment/etc/config.xml
+ 1734  sudo apt-get install gksu -y
+ 1735  gksudo gedit /etc/rc.local
+ 1736  sudo rfkill unblock bluetooth
+ 1737  cd app
+ 1738  grep -r "n savePayment"
+ 1739  gedit code/core/Mage/Checkout/Model/Type/Onepage.php
+ 1740  cd ..
+ 1741  git status
+ 1742  git checkout app/code/local/Aurigait/Remove/controllers/OnepageController.php
+ 1743  git checkout app/code/community/Payu/PayuCheckout/Model/Shared.php
+ 1744  rm -rf var/cache/
+ 1745  rm -rf var/session/
+ 1746  git status
+ 1747  scp  ~/Downloads/fbshop\ \(2\)/app.zip ec2-user@52.24.85.148:/var/www/html/fbapp.zip
+ 1748  scp  ~/Downloads/fbshop\ \(2\)/app.zip ec2-user@52.24.85.148:/var/www/html/var/fbapp.zip
+ 1749  ls -l var/report/
+ 1750  vi var/report/1193312527
+ 1751  scp  ~/Downloads/fbshop\ \(3\)/app.zip ec2-user@52.24.85.148:/var/www/html/var/fbapp.zip
+ 1752  scp  /home/somesh/Downloads/fbshop\ \(3\)/fbapp1.zip  ec2-user@52.24.85.148:/var/www/html/var/fbapp.zip
+ 1753  scp  /home/somesh/Downloads/fbshop\ \(3\)/fbapp1.zip  root@eatshoplove.in:/home/admin/public_html/
+ 1754  rm -rf var/cache/
+ 1755  rm var/session/
+ 1756  rm -rf var/report/
+ 1757  vi var/report/898791683 
+ 1758  git status
+ 1759  git checkout app/code/community/Payu/PayuCheckout/Model/Shared.php app/code/core/Mage/Payment/Model/Method/Free.php app/code/local/Aurigait/Remove/controllers/OnepageController.php
+ 1760  ls
+ 1761  rm -rf var/cache/
+ 1762  rm -rf var/session/
+ 1763  rm -rf var/report/
+ 1764  git stash
+ 1765  git pull --rebase
+ 1766  git stash pop
+ 1767  rm -rf var/cache/
+ 1768  cd /var/www/html/eslnew1/
+ 1769  ls
+ 1770  vi /var/log/apache2/error.log
+ 1771  cd app
+ 1772  grep -r "NO PAYMENT INFORMATION REQUIRED"
+ 1773  grep -r -i "NO PAYMENT INFORMATION REQUIRED"
+ 1774  gedit code/core/Mage/Payment/etc/config.xml
+ 1775  cd ..
+ 1776  rm -rf var/cache/
+ 1777  vi var/report/987281873
+ 1778  rm -rf var/report/
+ 1779  rm -rf var/log/
+ 1780  rm -rf var/cache/
+ 1781  vi var/report/310248669 
+ 1782  vi var/report/1542061774 
+ 1783  vi var/report/1060864217 
+ 1784  rm -rf var/report/
+ 1785  vi var/report/734342847 
+ 1786  git status
+ 1787  git checkout skin/frontend/esl/default/js/main.js
+ 1788  git stash
+ 1789  git pull --rebase
+ 1790  git stash pop
+ 1791  git add app/code/community/Payu/PayuCheckout/Model/Shared.php app/code/local/Aurigait/Remove/controllers/OnepageController.php
+ 1792  git status
+ 1793  git branch
+ 1794  git status
+ 1795  git commit -m "Checkout payment with zero issue fix, need to activate zero checkout payment method"
+ 1796  git push origin dev
+ 1797  git status
+ 1798  rm -rf var/report/
+ 1799  vi var/report/1927906676 
+ 1800  rm -rf var/report/
+ 1801  vi var/report/2013184206 
+ 1802  rm -rf var/report/
+ 1803  git status
+ 1804  git diff app/code/local/Aurigait/Remove/controllers/OnepageController.php
+ 1805  ssh ec2-user@52.24.85.148
+ 1806  ssh root@eatshoplove.in
+ 1807  ssh ec2-user@52.24.85.148
+ 1808  exit
+ 1809  cd /var/www/html/eslnew1/
+ 1810  ls
+ 1811  rm -rf var/cache/
+ 1812  git status
+ 1813  rm -rf var/cache/
+ 1814  rm -rf var/session/
+ 1815  rm -rf var/cache/
+ 1816  git status
+ 1817  git add app/code/community/Payu/PayuCheckout/Model/Shared.php app/code/local/Aurigait/Remove/controllers/OnepageController.php
+ 1818  git status
+ 1819  git commit -m "Checkout with zero payment issue fix, we need to enable checkout with zero payment method"
+ 1820  git status
+ 1821  cd js/
+ 1822  grep -r "header-cart"
+ 1823  cd ../skin/
+ 1824  grep -r "header-cart"
+ 1825  cd ..
+ 1826  git status
+ 1827  git add app/code/local/Aurigait/AjaxifiedLogin/controllers/AccountController.php skin/frontend/esl/default/js/main.js
+ 1828  git status
+ 1829  git commit -m "Login minicart render issue fix"
+ 1830  git status
+ 1831  git stash
+ 1832  git pull --rebase
+ 1833  git stash
+ 1834  git stash pop
+ 1835  git push origin dev
+ 1836  exit
+ 1837  ssh root@indidelights.com
+ 1838  exit
+ 1839  cd /var/www/html/
+ 1840  ls
+ 1841  chmod -R 777 indidel/
+ 1842  sudo chmod -R 777 indidel/
+ 1843  cd indidel
+ 1844  rm -rf var/cache/
+ 1845  rm -rf var/session/
+ 1846  vi app/etc/local.xml
+ 1847  vi var/report/941386571
+ 1848  vi app/etc/local.xml
+ 1849  ls
+ 1850  unzip -o magmodules_snippets-3.0.3.zip 
+ 1851  git status
+ 1852  unzip -o magmodules_snippets-3.0.3.zip 
+ 1853  unzip -o Magmodules_Snippets-3.0.3.zip 
+ 1854  git status
+ 1855  git add app/code/local/Magmodules
+ 1856  git status
+ 1857  git add app/design/frontend/base/default/template/magmodules
+ 1858  git status
+ 1859  git add app/design/frontend/base/default/layout/magmodules_snippets.xml app/locale/en_US/Magmodules_Snippets.csv skin/frontend/base/default/magmodules/snippets/breadcrumbs.css skin/frontend/base/default/magmodules/snippets/snippets.css
+ 1860  git status
+ 1861  git add skin/frontend/base/default/magmodules/snippets/images/
+ 1862  git status
+ 1863  rm -rf var/cache/
+ 1864  git status
+ 1865  git commit -m "Magemodules latest version update commit"
+ 1866  git status
+ 1867  git stash
+ 1868  git pull --rebase
+ 1869  git stash pop
+ 1870  git push origin master
+ 1871  exit
+ 1872  cd /var/www/html/
+ 1873  mkdir fbstore
+ 1874  git clone https://Somesh_soni@bitbucket.org/shubhamarora168/facebook-store.git fbstore
+ 1875  sudo su
+ 1876  service winbind restart
+ 1877  sudo service winbind restart
+ 1878  cd /var/www/html/
+ 1879  ls
+ 1880  vi error.php
+ 1881  cd ~/Downloads/JoomGallery-master/
+ 1882  ls
+ 1883  grep -r "COM_JOOMGALLERY_UPLOAD_OUTPUT_IMG_NOT_CREATED"
+ 1884  gedit administrator/components/com_joomgallery/helpers/upload.php
+ 1885  scp amydus@205.147.96.38:/home/amydus/dev.amydus.com/app/code/local/Mage/CatalogSearch/Model/Resource/Fulltext.php ./
+ 1886  scp amydus@205.147.96.38:/home/amydus/dev.amydus.com/app/code/core/Mage/CatalogSearch/Model/Resource/Fulltext.php ./
+ 1887  exit
+ 1888  ssh amydus@205.147.96.38
+ 1889  cd /var/www/html/
+ 1890  mkdir mobileapp
+ 1891  git clone git@bitbucket.org:aurigait/magento-mobile-app.git mobileapp
+ 1892  cd magento/
+ 1893  unzip -o app.zip 
+ 1894  ping edukart.com
+ 1895  cd ~/.ssh/
+ 1896  ls
+ 1897  sudo chmod 400 edukart-secure-key-pair-singapore-ec2.pem 
+ 1898  ssh -i edukart-secure-key-pair-singapore-ec2.pem ubuntu@edukart.com
+ 1899  ssh -i edukart-secure-key-pair-singapore-ec2.pem root@edukart.com
+ 1900  ssh -i edukart-secure-key-pair-singapore-ec2.pem root@54.169.57.73
+ 1901  ssh -i edukart-secure-key-pair-singapore-ec2.pem ubuntu@54.169.57.73
+ 1902  cd /var/www/html/
+ 1903  ls
+ 1904  cd rnd
+ 1905  ls
+ 1906  cd ..
+ 1907  cd fbstore/
+ 1908  ls
+ 1909  zip temp.zip ./ -x \*.json\* etc/\* head\*
+ 1910  zip -r temp.zip ./ -x \*.json\* etc/\* head\*
+ 1911  zip -r temp.zip ./ -x \*.git\* etc/\* head\*
+ 1912  zip -r temp1.zip ./ -x \*.git\* skin/\* head\*
+ 1913  sudo add-apt-repository ppa:plushuang-tw/uget-stable
+ 1914  sudo apt-get install uget
+ 1915  mysql -u edukart -p -h 139.162.11.131
+ 1916  ssh root@139.162.24.50
+ 1917  ssh edukart@139.162.24.50
+ 1918  ssh edukart@139.162.11.131
+ 1919  ssh bitnami1@bitnami-lampstack-2b4a.cloudapp.net
+ 1920  ssh bitnami1@learn.nwgnetwork.org
+ 1921  exit
+ 1922  vi /var/log/apache2/error.log
+ 1923  cd Downloads/JoomGallery-master/
+ 1924  unzip -o JoomGallery-3.2.1.zip 
+ 1925  ssh edukart@139.162.24.50
+ 1926  ssh edukart@139.162.24.50
+ 1927  sudo service apache2 stop
+ 1928  sudo service apache2 start
+ 1929  sudo service nginx restart
+ 1930  ssh edukart@139.162.24.50
+ 1931  eit
+ 1932  exit
+ 1933  apt-get install nginx
+ 1934  sudo apt-get install nginx
+ 1935  sudo ls /etc/nginx/conf.d/
+ 1936  sudo ls /etc/nginx/sites-available/
+ 1937  sudo vi /etc/nginx/sites-available/default 
+ 1938  sudo vi /etc/nginx/sites-enabled/default 
+ 1939  sudo nginx -s reload
+ 1940  sudo service nginx restart
+ 1941  sudo vi /etc/nginx/sites-enabled/default 
+ 1942  sudo service nginx restart
+ 1943  sudo vi /etc/nginx/sites-enabled/default 
+ 1944  sudo service nginx restart
+ 1945  sudo service apache2 stop
+ 1946  sudo vi /etc/nginx/sites-enabled/default 
+ 1947  sudo service nginx restart
+ 1948  sudo vi /etc/nginx/sites-enabled/default 
+ 1949  sudo service nginx restart
+ 1950  sudo vi /etc/nginx/sites-enabled/default 
+ 1951  sudo service nginx restart
+ 1952  sudo vi /etc/nginx/sites-enabled/default 
+ 1953  sudo service nginx restart
+ 1954  sudo vi /etc/nginx/sites-enabled/default 
+ 1955  sudo service nginx restart
+ 1956  sudo apt-get install php5-cli php5-fpm
+ 1957  sudo apt-get update 
+ 1958  sudo apt-get install php5-cli php5-fpm
+ 1959  sudo service nginx restart
+ 1960  sudo vi /etc/nginx/sites-enabled/default 
+ 1961  cd /var/www/html/indidel/
+ 1962  ls
+ 1963  sh ./ PATCH_SUPEE-6285_CE_1.8.1.0_v1-2015-07-07-09-06-30.sh 
+ 1964  git status
+ 1965  rm app/code/local/Mage/Sales/Model/Order.php~ app/design/frontend/default/jm_megamall/template/catalog/product/region-list.phtml~ skin/frontend/default/jm_megamall/css/styles.css~ var/resource_config.json Magmodules_Snippets-3.0.3.zip PATCH_SUPEE-1533_EE_1.13.x_v1-2015-02-10-08-18-32.sh PATCH_SUPEE-5344_CE_1.8.0.0_v1-2015-02-10-08-10-38.sh PATCH_SUPEE-5994_EE_1.14.1.0_v1-2015-05-14-05-05-02.sh
+ 1966  git status
+ 1967  chmod -R 777 ./
+ 1968  rm -rf var/cache/ var/session/
+ 1969  git status
+ 1970  sudo chmod -R 777 ./
+ 1971  ls
+ 1972  sh PATCH_SUPEE-6285_CE_1.8.1.0_v1-2015-07-07-09-06-30.sh 
+ 1973  git status
+ 1974  git add
+ 1975  git add all
+ 1976  git add *
+ 1977  git status
+ 1978  git reset 
+ 1979  git status
+ 1980  git add app/
+ 1981  git status
+ 1982  git add  downloader/
+ 1983  git status
+ 1984  vi errors/processor.php
+ 1985  git add errors/processor.php
+ 1986  git status
+ 1987  git reset app/etc/local.xml
+ 1988  git status
+ 1989  git reset app/locale/de_DE/Magmodules_Snippets.csv app/locale/fr_FR/Magmodules_Snippets.csv app/locale/nl_NL/Magmodules_Snippets.csv
+ 1990  git status
+ 1991  vi .htaccess
+ 1992  git status
+ 1993  git commit -m "Security Patch SUPEE-6285"
+ 1994  git stash pop
+ 1995  git stash
+ 1996  git pull --rebase 
+ 1997  git stash pop
+ 1998  git push origin master
+ 1999  ssh bitnami1@learn.nwgnetwork.org
+ 2000  history 500 > txt.txt
+ 2001  vi txt.txt 
+ 2002  history 5000 > txt.txt

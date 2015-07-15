@@ -1,0 +1,96 @@
+
+/**
+ * 
+ * Frontend CSS can go in this file 
+ * 
+ */
+.vendor_order_notes li { 
+	margin: 7px 0 !important;
+	list-style-type:none;
+	padding: 5px 10px;
+}
+
+.vendor_order_notes .alt { 
+	background-color: #dedede;
+}
+
+.vendor_order_notes .customer_note { 
+	font-weight: bold;
+	padding-left: 0.2em;
+}
+
+.new_order_note_added, .vendor_store_message {
+	border: 1px solid #008900; 
+	background-color: #daffda; 
+	padding: 0 10px; 
+	margin-bottom: 15px
+}
+
+.new_order_note_add_error, .vendor_store_error {
+	background-color: #ffebe8;
+	border: 1px solid #cc0000;
+	padding: 0 10px; 
+	margin-bottom: 15px
+}
+
+.vendor_store_dashboard a.button, .vendor_store_dashboard-page a.button, .vendor_store_dashboard button.button, .vendor_store_dashboard-page button.button, .vendor_store_dashboard input.button, .vendor_store_dashboard-page input.button, .vendor_store_dashboard #respond input#submit, .vendor_store_dashboard-page #respond input#submit, .vendor_store_dashboard #content input.button, .vendor_store_dashboard-page #content input.button, .vendor_order a.button, .vendor_orders_table a.button {
+	font-size: 100%;
+	margin: 0;
+	line-height: 1em;
+	cursor: pointer;
+	position: relative;
+	font-family: inherit;
+	overflow: visible;
+	padding: 6px 10px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	left: auto;
+	text-shadow: 0 1px 0 #fff;
+	color: #5e5e5e;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+	border: 1px solid #c8bfc6;
+	background: #f7f6f7;
+	background: -webkit-gradient(linear,left top,left bottom,from(#f7f6f7),to(#e0dadf));
+	background: -webkit-linear-gradient(#f7f6f7,#e0dadf);
+	background: -moz-linear-gradient(center top,#f7f6f7 0,#e0dadf 100%);
+	background: -moz-gradient(center top,#f7f6f7 0,#e0dadf 100%);
+	white-space: nowrap;
+	display: inline-block;
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.075),inset 0 1px 0 rgba(255,255,255,0.3),0 1px 2px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.075),inset 0 1px 0 rgba(255,255,255,0.3),0 1px 2px rgba(0,0,0,0.1);
+	box-shadow: inset 0 -1px 0 rgba(0,0,0,0.075),inset 0 1px 0 rgba(255,255,255,0.3),0 1px 2px rgba(0,0,0,0.1);
+}
+.vendor_order a.button { margin-left: 2em }
+
+#status_updated, #tracking_updated {
+	display:none;
+	height: 2em;
+	margin-bottom: 1em;
+	padding: 0.25em 0 0.25em 0;
+	background-color: #FFFBCC;
+	width: 20em;
+	text-align:center;
+
+}
+
+.order_status_select { 
+	width: 250px;
+}
+
+.vendor_order_notes textarea {
+	clear: both;
+}
+/** Vendor Widgets */
+.widget_vendor_stores_wrap h4 {
+	font-weight: bold;
+	font-size: 1.1em;
+	margin-bottom: .75em;
+}
+
+.widget_vendor_stores_logo {
+	max-width: 200px !important;
+}
+

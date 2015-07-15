@@ -1,0 +1,259 @@
+
+Version 2.2.5 - October 13, 2014
+
+	Added additional recipient email address fallback check for use when a user requests vendor access
+	
+	Tweaked init function to run further code if logo width or height are empty
+	
+	Added filter for additional email headers in the vendor new order email
+
+Version 2.2.4 - October 8, 2014
+
+	Tweaked CSS related to display of SKU field being turned off in Vendor Stores
+
+Version 2.2.3 - September 28, 2014
+
+	Updated vendor orders template for use with WooCommerce 2.2.x
+
+Version 2.2.2 - September 26, 2014
+
+	Updated order statuses when getting orders for vendor's dashboard view
+
+Version 2.2.1 - September 25, 2014
+
+	Updated order note commenting for vendors
+
+Version 2.2 - September 18, 2014
+
+	WooCommerce 2.2 compatibility
+
+Version 2.1.18 - July 28, 2014
+
+	Don't trim decimal, and round to decimal places during commission export processing
+
+Version 2.1.17 - July 28, 2014
+
+	Updated function call within the Mass Pay code base
+
+Version 2.1.16 - July 16, 2014
+
+	Tweaked commission total to display amount + shipping + tax when necessary
+
+	Ensure vendor store description is sent through the wpautop() function
+
+Version 2.1.15 - June 22, 2014
+
+	Updated compatibility with IgniteWoo's drop shipping extensions
+
+Version 2.1.14 - June 11, 2014
+
+	Better support for variations when Per Product Shipping is in use
+
+Version 2.1.13 - June 10, 2014
+
+	Updated to support the global rate for Per Product Shipping when no per-product rate is defined
+
+Version 2.1.12 - June 8, 2014
+
+	Further enhancements to support coupons for vendors
+	
+	Tweak to fix shipping calculation error that occurred in some instances
+
+Version 2.1.11 - May 30, 2014
+
+	Added support for vendors to manage their own coupons. Current users of this plugin should be sure to read the updated documentation! ONLY WORKS WITH WooCommerce 2.1.x or newer
+
+Version 2.1.10 - May 21, 2014
+
+	Updated checks to determine if an admin notice should be sent regarding a new vendor product posting 
+
+Version 2.1.9 - May 14, 2014
+
+	Removed div wrapper on inquiry form to eliminate JS issues with some browsers
+
+Version 2.1.8 - May 12, 2014
+
+	Tweaked admin CSS for WP 3.9
+
+Version 2.1.7 - May 12, 2014
+
+	Check variable before processing to avoid PHP warning messages on hosts that don't suppress debug output even when WP_DEBUG mode is off.
+
+Version 2.1.5 - May 5, 2014
+
+	Fixed CSV commission export regarding vendor's PayPal email address - hat tip to Louis at Connected CMS
+
+Version 2.1.4 - May 5, 2014
+
+	Fixed language in templates
+
+Version 2.1.3 - April 28, 2014
+
+	Added shipping tax to the vendor commission when the related tax and shipping settings are enabled
+
+Version 2.1.2 - April 17, 2014
+
+	Removed the WooCommerce Status widget from the WordPress dashboard when a vendor is logged into their account
+
+Version 2.1.1 - April 4, 2014
+
+	Updated to support IgniteWoo's PDF Invoices & Packing Slips - vendors can print packing slips from their dashboard
+
+	Fixed intermittent bug where order items not be detected as belonging to a vendor
+	
+	Fixed "Sold by" in emails for WooCommerce 2.1.x
+	
+	Updated custom order status change Ajax
+
+Version 2.1 - April 3, 2014
+
+	Added the ability for vendors to set a custom order status for their orders
+	
+	Added the ability for vendors to add tracking numbers to their orders
+	
+	Tweaked support for drop shipping
+	
+	Fixed issues that might occur in some cases when getting shipping fees for vendors
+
+	
+Version 2.0.40 - March 29, 2014
+
+	Updated to support IgniteWoo's drop shipping plugins for vendors ( Table Rates, UPS, Fedex, and future support for any of our drop shipping plugins )
+
+Version 2.0.39 - March 28, 2014
+
+	Updated to handle Quick Edit screen. Vendor assignment cannot currently be set via Quick Edit
+
+Version 2.0.38 - March 27, 2014
+
+	Updated to support IgniteWoo's UPS Drop Shipping plugin for giving vendors the shipping cost per item
+
+Version 2.0.37 - March 11, 2014
+
+	Tweak to avoid clashing with the Groups plugin
+	
+	Tweak to forcibly disallow administrators from becoming vendors
+
+Version 2.0.36 - March 11, 2014
+
+	Added object checking in the commissions table in case a product cannot be loaded by ID number
+	
+	Fixed CSV export for WooCommerce 2.1.x compatibility
+
+Version 2.0.35 - February 25, 2014
+
+	Added setting to support Auctions Pro, admins can disallow auction owners from bidding on their own auctions
+	
+	Added setting to include shipping when calculating commissions. When enabled commission is calculated against ( line total + shipping )
+	
+	Updated templates to include consideration for the new "Include Shipping" setting.
+	
+	Fixed shipping calculations for WooCommerce 2.1
+
+Version 2.0.34 - February 24, 2014
+
+	Updated a template file to support WooCommerce 2.1
+
+Version 2.0.33 - February 11, 2014
+
+	Updated reports for vendors to support WooCommerce 2.1
+
+Version 2.0.32 - February 10, 2014
+
+	Fixed a function name typo
+	
+	Various code clean up
+
+Version 2.0.31 - February 10, 2014
+
+	Tweaked setting detection for determining if vendors can publish products without review
+
+Version 2.0.30 - February 7, 2014
+
+	Tweaked numeric displays to remove "number_format" function call formerly used when viewing the commission table
+
+Version 2.0.29 - January 22, 2014
+
+	WooCommerce 2.1 compatibility
+
+Version 2.0.28 - January 19, 2014
+
+	Tweaked setting field name
+	
+	Tweaked processing for vendor access setting. Formerly might not have always showed a button to request vendor access when mode is set to automatic.
+
+Version 2.0.27 - January 12, 2014
+
+	Tweaked new product notice processing
+
+Version 2.0.26 - January 6, 2014
+
+	Tweaked CSS display status of the product tax fields
+
+Version 2.0.25 - January 6, 2014
+
+	Tweaked function name in widget code
+
+Version 2.0.24 - January 3, 2014
+
+	Added item meta details to vendor order email
+
+Version 2.0.23 - December 31, 2013
+
+	Remove native WP HTML filters during saves of store description.
+
+Version 2.0.22 - December 30, 2013
+
+	Tweaked tab processing to always return $tabs
+
+Version 2.0.21 - November 30, 2013
+
+	Fixed field naming issue when HTML is allowed in vendor store descriptions
+
+Version 2.0.20 - November 28, 2013
+
+	Fixed incorrect function call to obtain theme direction literal path
+
+Version 2.0.19 - November 26, 2013
+
+	Ensure necessary classes are loaded during PayPal IPN requests.
+
+Version 2.0.18 - November 25, 2013
+
+	Intercept POST vars and unset shop vendor when editing a product, this prevents WordPress from interfering since we set the object relationships using our own code.
+
+Version 2.0.17 - November 21, 2013
+
+	Fixed type casting of the shop vendor taxonomy ID when used editing a product
+
+Version 2.0.16 - November 14, 2013
+
+	Fixed "Reports" link parameters in the vendor dashboard 
+
+Version 2.0.15 - November 14, 2013
+
+	Fixed request variable name that was incorrectly changed in a previous update
+
+Version 2.0.14 - November 11, 2013
+
+	Initial public release
+	
+Version 2.0.12 - September 29, 2013
+
+	Added "Sold by" labels to cart and order emails
+
+Version 2.0 - September 21, 2013
+
+	Added new vendor reports
+
+	Added new template files
+
+	Updated vendor dashboard
+	
+	Add the ability for vendors to add order notes
+
+Version 1.0 - August 14, 2013
+
+	Initial development complete
+
+	Put into private use and testing

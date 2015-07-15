@@ -1,0 +1,26 @@
+#menu-posts-shop_commission .wp-menu-image {
+  background: none;
+  background-image: url(../images/menu.png);
+  background-position: 0px -32px !important;
+  background-repeat: no-repeat;
+}
+#menu-posts-shop_commission.wp-menu-open .wp-menu-image,
+#menu-posts-shop_commission:hover .wp-menu-image {
+  background-position: 0 0 !important;
+}
+#icon-edit.icon32-posts-shop_commission, #shop_commission-icon.icon32, #icon-commission-payouts.icon32 {
+  background: transparent url(../images/menu@2x.png) no-repeat -12px -14px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2) {
+	#menu-posts-shop_commission .wp-menu-image {
+	background-image: url(../images/menu@2x.png);
+	background-size: 200px 64px;
+	}
+	#icon-edit.icon32-posts-shop_commission, #shop_commission-icon.icon32 {
+	background-image: url(../images/menu@2x.png);
+	background-size: 200px 64px;
+	}
+	#icon-edit.icon32-posts-shop_commission, #shop_commission-icon.icon32, #icon-commission-payouts.icon32 {
+	background: transparent url(../images/edit@2x.png) no-repeat left top;
+	}
+}

@@ -1,0 +1,151 @@
+.edu-nave{display:block; margin:0px; padding:0px; min-height: 326px;  border:1px solid #f0f0f0; background:#fff; -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px; border:1px solid #c8c7c8; }
+.edu-nave ul{display:block; margin:0px; padding:0px; }
+.edu-nave ul.edu_mainnave{display:block; position:relative; }
+.edu-nave ul.edu_mainnave li{display:block; float:none; clear:both; margin:0px; padding:8.4px 10px; border-bottom:1px solid #f0f0f0; color:#354b63; font-size:18px; background:url(../images/left-icon.png) right 10px center no-repeat;  }
+.edu-nave ul.edu_mainnave li:hover{background:url(../images/left-icon-h.png) right 10px center no-repeat #f0f0f0; }
+.edu-nave ul li ul.edu_subnave {
+  background: none repeat scroll 0 0 #f0f0f0;
+  border-bottom: 1px solid #c8c7c8;
+  border-right: 1px solid #c8c7c8;
+  border-top: 1px solid #c8c7c8;
+  display: none;
+  height: auto;
+  left: 99%;
+  margin: 0;
+  min-height: 328px;
+  padding: 0;
+  position: absolute;
+  top: -1px;
+  width: 172px;
+  z-index: 999999;
+}
+
+.edu-nave ul li:hover ul.edu_subnave{display:block;}
+.edu-nave ul li:hover ul.edu_subnave li {
+  font-size: 13px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+.edu-nave ul li:hover ul.edu_subnave li:hover{font-weight:bold; }
+
+
+.edu-nave ul li:hover ul.edu_subnave li .edu_subnave1 {
+  display: none;
+  left: 171px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+}
+.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1{display:block; width:600px;  height:100.6%; min-height:100%; overflow:auto; margin: -1px 0 0px;  padding:5px 10px 5% 10px; background:#fff; border:1px solid #c8c7c8; border-left:none; z-index:99999999;  }
+.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul{float:left;  display:inline-block; height:auto; margin:0px; 
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+ }
+ .edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul.edu-indent li a {
+  border-bottom: medium none;
+  padding: 3px 0 3px 5px; line-height:18px;
+}
+.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li{display:block; margin:0px; border:none; padding:0px 0px; line-height:22px; font-weight:normal; font-size:13px; background:none;}
+.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li span{border-bottom:1px solid #d3d2d2; padding:0px 0 5px 0px; }
+.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li a {
+  border-bottom: 1px dotted #e0e0e0;
+  color: #9b9b9b;
+  display: block;
+  line-height: 17px;
+  margin: 0;
+  padding: 5px 0;
+  text-decoration: none; float:left;
+}
+
+.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li a.more {
+  color: #3a94d2;
+  display: block;
+  padding: 0 0 10px;
+}
+.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li a:hover{color:#274259;  }
+.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li:hover{background:none; font-weight:normal; }
+.edu-nave ul li, .edu-nave ul li:hover, .edu_subnave li, .edu_subnave li:hover, .edu_subnave1 ul li a, .edu_subnave1 ul li a:hover
+ {-webkit-transition: all .5s ease;
+     -moz-transition: all .5s ease;
+       -o-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+          transition: all .5s ease;
+}
+.edu-nave span.hot{background:#f39c12; color:#fff; text-transform:uppercase; padding:0 3px; font-size:12px; font-weight:bold; }
+.edu-nave span.govt-certified{background:#f39c12; color:#fff; text-transform:uppercase; padding:0 3px; font-size:11px; font-weight:bold; }
+.edu-nave span.popular{background:#2ecc71; color:#fff;  text-transform:uppercase; padding:0 3px; font-size:12px; font-weight:bold;}
+.edu-nave span.discount{color:#fff; background:#e74c3c; text-transform:uppercase; padding:0 3px; font-size:12px; font-weight:bold;}
+.edu-nave span.offer{color:#fff; background:#3498db; text-transform:uppercase; padding:0 3px; font-size:12px; font-weight:bold;}
+/*------------------------------------*\
+    Flaunt JS Navigation
+\*------------------------------------*/
+/*-------------------header-*/
+.left-links {
+  display: none !important;
+}
+/*-------------------header-end-*/
+
+.edu_edu_tabs-menu {
+    height: 30px;
+    float: left;
+    clear: both;
+}
+
+.edu_tabs-menu li {
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-right: 10px;
+    display:inline; margin-top:-2px;
+}
+
+.edu_tabs-menu li.current {
+    position: relative;
+     border-top: 2px solid #ec9231;
+    z-index: 5;
+}
+.edu_tabs-menu {
+  border-top: 2px solid #cccccc;
+  display: block;
+}
+.edu_tabs-menu li a {
+  color: #999999;
+  font-size: 16px;
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase; font-size:14px; font-weight:600;
+}
+.edu_tabs-menu .current a {
+  color: #ec9231;
+}
+.edu_tab {
+     background-color: #fff;
+    float: left;
+    margin-bottom: 20px;
+    width: 100%; clear:both;
+}
+
+.edu_tab-content {
+    width: 100%;
+    padding: 20px;
+    display: none;
+}
+
+#edu_tab-1 {
+ display: block;   
+}
+.edu-nave ul.edu_mainnave li a.hedging{color:#354b63 !important; }
+.fk_d2_main_menu.fkr_nav-submenu {
+  z-index: 2147483647;
+}
+.fk_d2_main_menu.fkr_nav-submenu {
+  z-index: 2147483647;
+}
+.header-wrapper {
+  position: relative;
+  z-index: 9999 !important;
+}
