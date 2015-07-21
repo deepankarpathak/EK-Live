@@ -1,0 +1,34 @@
+version 0.0.9
+ - Add import/export
+ - Patch helper to remove default values for hitsPerPage and maxValuesPerFacet
+ - Update helperjs version to 2.0.4. Fixes conjunctive multiple selection
+
+version 0.0.8
+ - Fix issue with indexing terms
+
+version 0.0.7
+ - Add a better strategy to index content for page and post
+ - Handle content truncating
+
+version 0.0.6
+ - Fix js bug when type of search has only autocomplete
+
+version 0.0.5
+ - Fix Firefox bug
+
+version 0.0.4
+ - update php & js client
+ - fix various bug
+
+version 0.0.3
+ - Enhance taxonomie autocomplete configuration
+ - Add reset config button
+ - Possibility to have both autocomplete and instant search
+
+version 0.0.2
+ - Add the possibility to make default attributes part of the custom ranking
+ - Add possibility to order sortable attributes
+
+version 0.0.1
+ - First Release
+
