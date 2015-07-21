@@ -178,8 +178,9 @@ function remove_excerpt($text) {
 }
 
 function feed_image_extractor($description) {
-    require_once('simple_html_dom.php');
 
+    if(!class_exists('simple_html_dom_node') )
+        require_once('simple_html_dom.php');
     $post_html = str_get_html($description);
     $first_img = $post_html->find('img', 0);
 
