@@ -10,19 +10,19 @@
             {{{ _highlightResult.title.value }}}
             </div>
             <div style="clear: both;"></div>
-		</div>
-	    </div>
+        </div>
+    </div>
 </script>
 
-<script type="text/javascript" >
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
        $('button').on('click',function(e) {
     if ($(this).hasClass('grid')) {
         alert("GRID");
-        $('#view ul').removeClass('list').addClass('grid');
+        $('#view li').removeClass('list').addClass('grid');
     }
     else if($(this).hasClass('list')) {
         alert("LIST");
-        $('#view ul').removeClass('grid').addClass('list');
+        $('#view li').removeClass('grid').addClass('list');
     }
     else
     {
@@ -32,7 +32,7 @@
 </script>
 
 <script type="text/template" id="instant-content-template">
-    <div class="hits{{#facets_count}} with_facets{{/facets_count}}">
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12  hits{{#facets_count}} with_facets{{/facets_count}}">
         {{#hits.length}}
         <div class="infos">
             <div style="float: left">
@@ -50,33 +50,25 @@
                 </select>
             </div>
             {{/sorting_indices.length}}
+			<div class="button-123 right hidden-xs">
+                <button class="grid" onclick=" $('#view li').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" style="height: 30px; padding-left: 10px; width: 50px; background-color: transparent;"><img src="images/grid_view.png"/></button>
+                <button class="list" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');" style="height: 30px; padding-left: 10px; width: 50px; background-color: transparent;"><img src="images/list_view.png"/></button>
+            </div>
             <div style="clear: both;"></div>
         </div>
         {{/hits.length}}
 
-        <div class="container">
-            <div class="button-123" style="height: 30px; padding-left: 770px;">
-                <button class="grid" onclick=" $('#view ul').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" style="height: 30px; padding-left: 10px; width: 50px; background-color: transparent;"><img src="images/grid_view.png"/></button>
-                <button class="list" onclick="$('#view ul').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');" style="height: 30px; padding-left: 10px; width: 50px; background-color: transparent;"><img src="images/list_view.png"/></button>
-            </div>
-        </div>
-
-        <div id="view">
+        <ul id="view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
             {{#hits}}
-            <a href="{{permalink}}">
-                <ul class="grid">
+			<li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 grid">
+            	<div onclick="window.location='{{permalink}}'">
                     <div class="result">
-                        <div class="result-content">
-                            <div>
-                                <h4 class="result-title" style="text-align: left; padding-left: 30px; padding-top: 5px; word-wrap: break-word;">
-                                    {{{ _highlightResult.title.value }}} - {{pa_specialization}}
-                                </h4>
-                            </div>
-                            <div class="result-sub-content-grid">
+                        <div class="result-content clearfix">          
+                            <div class="result-sub-content-grid clearfix">
                                 <div class="result-thumbnail">
                                     <div class="grid-images">
                                         {{#featureImage}}
-                                            <img height=50 src="{{{ featureImage.file }}}" />
+                                            <img src="{{{ featureImage.file }}}" />
 
                                         {{/featureImage}}
                                     </div>
@@ -84,19 +76,25 @@
                                     <div style="height: 50px;"></div>
                                 {{/featureImage}}
                                 </div>
-                                <div class="result-excerpt">
-                                    <div class="institute"> Institute: {{university}}</div>
+                                <div class="result-excerpt clearfix">
+									<h4 class="result-title">
+                                    	{{{ _highlightResult.title.value }}} - {{pa_specialization}}
+                                	</h4>
+                                    <div class="institute">{{university}}</div>
                                     <div class="mode"> Study Content: {{pa_exam-mode}}</div>
-                                    <div class="provider"> Provider: {{shop_vendor}}</div>
-                                    <div class="price-grid" style="float: left;"> ₹ {{_price}}</div>
+									<div class="duration">{{pa_duration}}</div>
+                                    <div class="price-grid"> ₹ {{_price}}</div>
+									{{#pa_referral-cashback.length}}
+									<div class="referral"><span class="cashback">Cashback</span> ₹ {{pa_referral-cashback}}</div>
+									{{/pa_referral-cashback.length}}
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </ul>
-            </a>
+                    </div>               
+            	</div>
+			</li>
             {{/hits}}
-        </div>
+        </ul>
 
         {{^hits.length}}
         <div class="infos">
@@ -153,8 +151,9 @@ $('button').on('click',function(e) {
 </script> -->
 
 <script type="text/template" id="instant-facets-template">
-<div class="facets{{#count}} with_facets{{/count}}">
-    <button onclick="$('.options input:checkbox').prop('checked', false);">Clear All </button>
+<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 facets{{#count}} with_facets{{/count}}">
+	<div class="result-caption-filter">{{nbHits}} result{{^nbHits_one}}s{{/nbHits_one}}</div>
+    <button class="clear-filter-btn" onclick="$('.options input:checkbox').prop('checked', false);">Clear All </button>
     {{#facets}}
     {{#count}}
     <div class="facet">
@@ -171,7 +170,7 @@ $('button').on('click',function(e) {
                     {{name}} {{#print_count}}({{count}}){{/print_count}}
                 </div>
                 {{/type.menu}}
-               
+                
                 
 
                 {{#type.conjunctive}}
@@ -193,7 +192,7 @@ $('button').on('click',function(e) {
 
                 <div class="options">
                 {{#type.disjunctive}}
-                <div data-name="{{tax}}" data-type="disjunctive" class="{{#checked}}checked {{/checked}}sub_facet disjunctive" style="height: 15px;">
+                <div data-name="{{tax}}" data-type="disjunctive" class="{{#checked}}checked {{/checked}}sub_facet disjunctive">
                     <input data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
                     {{name}} ({{count}})
                 </div>

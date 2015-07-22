@@ -19,9 +19,11 @@
 .scroll-pane
 {
     width: 100%;
-    height: 100px;
-    overflow: auto;
-    font-size: 12px;
+    min-height: 34px;
+    max-height: 100px;
+	overflow: auto;
+	font-size: 12px;
+	
 }
 
 .twitter-typeahead .tt-input:focus
@@ -134,9 +136,6 @@
 
 #algolia_instant_selector .result-wrapper
 {
-    width: 25%;
-    display: inline;
-    float: left;
 }
 
 #algolia_instant_selector .title
@@ -151,9 +150,6 @@
 
 #algolia_instant_selector .hits.with_facets
 {
-    float: right;
-    width: 70%;
-    margin-right: 65px;
 
 }
 
@@ -175,11 +171,9 @@
     font-size: 10px;
 }
 
-#algolia_instant_selector .facets.with_facets
+#algolia_instant_selector .facets.with_facets .scroll-pane .options input
 {
-    float: left;
-    width: 20%;
-    margin-left: 61px;
+	margin: 0;
 }
 
 #algolia_instant_selector .facet
@@ -203,7 +197,7 @@
 
 #algolia_instant_selector .facet .sub_facet
 {
-    padding: 10px;
+    padding: 5px 10px;
     cursor: pointer;
 }
 
@@ -224,7 +218,7 @@
 
 #algolia_instant_selector .algolia-slider-info
 {
-    margin: 10px 5px;
+    margin: 10px;
 }
 
 #algolia_instant_selector .pagination-wrapper
@@ -293,46 +287,55 @@
 #algolia_instant_selector .result .result-sub-content-list
 {
     padding: 10px;
-    height: 120px;
+    min-height: 120px;
 }
 
 #algolia_instant_selector .result .result-sub-content-grid
 {
     padding: 10px;
-    height: 245px;
-}
-
-#algolia_instant_selector .result .result-thumbnail
-{
-    text-align: left;
-    padding-left: 44px;
+    min-height: 300px;
+    text-align: center;
 }
 
 #algolia_instant_selector .result .result-excerpt
 {
     text-align: center;
-    padding-left: 15px;
     font-size: 13px;
     padding-top: 10px;
     color: #000000;
-    height: 124;
+    min-height: 125px;
+    
 }
-
+#algolia_instant_selector .result .result-thumbnail{
+	border: 1px solid #ddd;
+}
+#algolia_instant_selector .list .result .result-thumbnail{
+	float: left;
+}
+#algolia_instant_selector .list .result .result-excerpt{
+	text-align: left;
+	margin-left: 20px;
+	float: left;
+	width: 50%;
+}
+#algolia_instant_selector .result .result-excerpt .institute{
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
 #algolia_instant_selector .list-images
 {
-    height: 100px; width: 100px; float: left;
+    height: auto; width: 100%; float: left;
 }
 
 #algolia_instant_selector .grid-images
 {
-    height: 100px; width: 100px;
+    height: auto; width: 100%;
+   	margin: 0 auto;
 }
 
 #algolia_instant_selector .result .result-excerpt .price-grid
 {
     color: #77a464;
-    padding-top: 0px;
-    padding-left: 56px;
     font-size: 17px;
 }
 
@@ -340,8 +343,8 @@
 {
     color: #77a464;
     padding-top: 12px;
-    padding-left: 330px;
     font-size: 17px;
+    display: inline-block;
 }
 
 #algolia_instant_selector .result .result-title
@@ -358,14 +361,302 @@
 #algolia_instant_selector .ui-widget-header {
     background-color: #bcbcbc;
 }
-
-#view ul{ list-style: none; }
+#algolia_instant_selector .facets.with_facets .scroll-pane .algolia-slider{
+	width: 90%;
+	margin: 20px auto 0;
+}
+#view{padding: 0;}
+#view li{ list-style: none; }
+#view .result-content{cursor: pointer;}
+#view .result-content .result-title{
+  display: inline-block;
+  border: none;
+  text-align: center;
+  word-wrap: break-word;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  text-overflow: ellipsis;
+  width: 100%;
+  }
+#view .list .result-content .result-title{
+	text-align: left;
+}
 
 #container .buttons-123 { float: right;}
 
 #view .list{ width: 100% !important;
     display: inline;
     float: left;
-    height: 167px; }
+    min-height: 167px; }
 
-#view .grid{ float: left; width: 25% !important; display: inline; height: 287px; }
+#view .grid{ float: left; display: inline; min-height: 287px; padding: 0;}
+.result-caption-filter{
+	float: left;
+	width: 65%;
+}
+.clear-filter-btn {
+  background-color: #fff;
+  color: rgb(119, 119, 119);
+  border-radius: 6px;
+  border: 1px solid rgb(119, 119, 119);
+  padding: 8px 16px;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.clear-filter-btn:hover{
+	background-color: #1b354a;
+	border-color: #1b354a;
+	color: #fff;
+}
+
+/******* referral CSS ***********/
+.edu-list-product .referral {
+    background: #fffaa7 none repeat scroll 0 0;
+    border: 2px dotted #f07746;
+    color: #8A5926;
+    float: left;
+    font-size: 18px;
+    height: 24px;
+    line-height: 20px;
+    margin-left: 10px;
+    margin-top: 6px;
+    width: 180px;
+}
+.edu-list-product .cashback {
+    background-color: #f07746 !important;
+    border-bottom: 8px solid #f07746;
+    border-right: 7px solid #ffffa7;
+    border-top: 8px solid #f07746;
+    color: #fff;
+    float: left;
+    font-weight: bold;
+    font-size: 12px;
+    font-weight: bold;
+    height: 15px;
+    line-height:1px;
+    margin-right: 10px !important;
+    margin-top: 2px !important;
+    padding-left: 3px;
+    text-transform: uppercase;
+    width: 80px !important;
+}
+
+.list .referral {
+    background: #ffffa7 none repeat scroll 0 0;
+    border: 2px dotted #f07746;
+    height: 25px !important;
+    margin: 0 8px 4px;
+    font-size:18px;
+    line-height:20px;
+    color: #8A5926;
+    width: 48%;
+    display: inline-block;
+}
+.grid .referral {
+    background: #ffffa7 none repeat scroll 0 0;
+    border: 2px dotted #f07746;
+    height: 25px !important;
+    margin: 0 8px 4px;
+    font-size:18px;
+    line-height:20px;
+    color: #8A5926;
+      width: 188px;
+  margin: 0 auto;
+}
+
+.cashback {
+    background-color: #f07746;
+    border-bottom: 8px solid #f07746;
+    border-right: 7px solid #ffffa7;
+    border-top: 8px solid #f07746;
+    color: #fff;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 16px;
+    line-height: 1px;
+    margin-left: 0 !important;
+    margin-top: 2px;
+    text-transform: uppercase;
+    padding-left:3px;
+}
+.product_detail_referral {
+    background-color: #ffffa7;
+    border: 2px dotted #f07746;
+    color: #8a5926;
+    font-size: 13px;
+    height: auto;
+    line-height:15px;
+    margin-bottom: 5px;
+}
+.product_detail_cashback {
+    background-color: #f07746;
+    border-bottom: 13px solid #f07746;
+    border-right: 12px solid #ffffa7;
+    border-top: 13px solid #f07746;
+    color: #fff;
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    height: 25px;
+    line-height: 2px;
+    margin-left: 0 !important;
+    margin-right: 5px !important;
+    margin-top: 3px;
+    padding-left: 4px;
+    text-transform: uppercase;
+}
+.referral_tc u {
+    font-size: 12px !important;
+    margin-left: 10px;
+}
+.coupon_message > span {
+    border: 1px solid #f59d47;
+    color: #f59d47;
+    font-size: 15px;
+    margin-right: 10px;
+    position: relative;
+    text-transform: uppercase;
+    top: -3px;
+}
+.coupon_successful {
+    background: #FdF7E4 none repeat scroll 0 0;
+    height: 100px;
+    margin-top: 20px;
+    padding:5px 15px;
+    text-align :center;
+    
+}
+.coupon_message {
+    background-image: url("images/tick_mark.png");
+    background-position: 5px 3px;
+    background-repeat: no-repeat;
+    font-size: 22px;
+    line-height: 30px;
+    margin-left:0.8em;
+    padding-left: 13%;
+    text-align: left;
+}
+.coupon_details_message {
+    clear: both;
+    color: #9a7c54;
+    font-size: 12px;
+    margin-top: 20px;
+    padding: 5px 10px;
+}
+.product-lightbox-inner .product_detail_referral {
+    float: left;
+    font-size: 10px;
+    height: 32px;
+    width: 100%;
+}
+.product-lightbox-inner .product_detail_cashback {
+    border-bottom: 11px solid #f07746;
+    border-right: 12px solid #ffffa7;
+    border-top: 11px solid #f07746;
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    height: auto;
+    line-height: 3px;
+    margin-left: 0 !important;
+    margin-right: 5px !important;
+    margin-top: 3px;
+    padding-left: 4px;
+    text-transform: uppercase;
+}
+.effecive_total {
+	background-color:#e9e9e9;
+	font-size:18px;
+}
+.remove_cashback {
+    font-weight: normal;
+    text-decoration: underline;
+}
+.referal_coupon_tc {
+    bottom: -20px;
+    clear: both;
+    color: #9a7c54;
+    float: left;
+    font-size: 9px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.referral_tc {
+    background-image: url("images/info_icon.png");
+    background-repeat: no-repeat;
+    font-size: 16px;
+    margin-left: 10px;
+    padding: 0 0 0 0.7em;
+}
+.payment_method_paytm img {
+    width: 70px;
+}
+.effecive_total > td {
+    font-size: 14px;
+    font-weight: normal !important;
+}
+.product-lightbox-inner .product_detail_referral .referral_tc {
+    background-position: 0 2px;
+    background-size: 15px 15px;
+    line-height: 16px;
+}
+.coupon_button{
+	background-color:gray !important;
+}
+.order-total > td {
+    font-size: 18px;
+}
+.cart_totals table {
+    font-size: 16px;
+    font-weight: bold;
+}
+.container-fluid.referrel .referrel{
+   background: #f2f4f1; 
+   float: left;
+    width: 100%;
+    padding: 0;
+}
+.container-fluid.referrel header{
+   
+    width:100%;
+    height:auto;
+    min-height: 1px;
+    float: left;
+}
+.container-fluid.referrel header [class^="col-"]{
+    padding:0
+}
+.container-fluid.referrel header .head{
+    color:#f29b1a;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.container-fluid.referrel header .head2{
+    color: #3d5267;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.container-fluid.referrel .span_bold{
+    font-weight:bold;
+    color:#33485d;
+    margin-top: 30px;
+}
+.container-fluid.referrel .paytm_logo:before{
+   content: "";
+background: transparent url("images/paytm.png") repeat scroll 0% 0%;
+width: 42px;
+height: 14px;
+display: inline-block;
+margin-right: 4px;
+}
+@media screen and (max-width: 767px){
+	.hidden-xs{
+		display: none !important;
+	}
+	
+}
