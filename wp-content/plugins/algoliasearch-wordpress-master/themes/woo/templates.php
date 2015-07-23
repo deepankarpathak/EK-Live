@@ -14,19 +14,13 @@
     </div>
 </script>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
+<script type="text/javascript">
        $('button').on('click',function(e) {
     if ($(this).hasClass('grid')) {
-        alert("GRID");
         $('#view li').removeClass('list').addClass('grid');
     }
     else if($(this).hasClass('list')) {
-        alert("LIST");
         $('#view li').removeClass('grid').addClass('list');
-    }
-    else
-    {
-        alert("Here!");
     }
 });
 </script>
@@ -36,18 +30,20 @@
         {{#hits.length}}
         <div class="infos">
             <div style="float: left">
-                {{nbHits}} result{{^nbHits_one}}s{{/nbHits_one}} found matching "<strong>{{query}}</strong>"
+                 result{{^nbHits_one}}s{{/nbHits_one}} for <strong>{{query}}</strong> ({{nbHits}} courses)
             </div>
 
             {{#sorting_indices.length}}
             <div style="float: right; margin-right: 10px; font-size: 15px">
                 Order by
-                <select id="index_to_use" style="height: 15px; width: 155px; font-size: 12px">
-                    <option {{#sortSelected}}{{relevance_index_name}}{{/sortSelected}} value="{{relevance_index_name}}">Default Sorting</option>
-                    {{#sorting_indices}}
-                    <option {{#sortSelected}}{{index_name}}{{/sortSelected}} value="{{index_name}}">{{label}}</option>
-                    {{/sorting_indices}}
-                </select>
+				<div class="select-wrapper">
+                	<select id="index_to_use" class="custom" style="height: 15px; width: 155px; font-size: 12px">
+                   		<option {{#sortSelected}}{{relevance_index_name}}{{/sortSelected}} value="{{relevance_index_name}}">Default Sorting</option>
+                    	{{#sorting_indices}}
+                    	<option {{#sortSelected}}{{index_name}}{{/sortSelected}} value="{{index_name}}">{{label}}</option>
+                    	{{/sorting_indices}}
+                	</select>
+				</div>
             </div>
             {{/sorting_indices.length}}
 			<div class="button-123 right hidden-xs">
@@ -96,31 +92,18 @@
             {{/hits}}
         </ul>
 
-        {{^hits.length}}
-        <div class="infos">
-            No results found matching "<strong>{{query}}</strong>".
-        </div>
-        {{/hits.length}}
+        
         <div style="clear: both;"></div>
     </div>
+{{^hits.length}}
+		<div class="row">
+        	<div class="col-lg-12 col-md-12">Sorry, You’re looking for <strong>{{query}}</strong> which isn't here. However, we have wide range of courses which will help you enhance your skills.<br/><br/>For Certificates, <a href="http://192.168.2.135/edukart/#q=certificate&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22
+">Click here</a>  |   For Entrance Coaching, <a href="http://192.168.2.135/edukart/#q=entrance&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here.</a>  |  For School Education, <a href="http://192.168.2.135/edukart/#q=class&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a>   |   For Degree Programs, <a href="http://192.168.2.135/edukart/#q=degree&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a>  |   For Diplomas, <a href="http://192.168.2.135/edukart/#q=diploma&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a><br/>
+        	</div>
+		</div>
+        {{/hits.length}}
 </script>
 
-<script type="text/javascript" >
-$('button').on('click',function(e) {
-    if ($(this).hasClass('grid')) {
-        alert("GRID");
-        $('#instant-content-template ul').removeClass('list').addClass('grid');
-    }
-    else if($(this).hasClass('list')) {
-        alert("LIST");
-        $('#instant-content-template ul').removeClass('grid').addClass('list');
-    }
-    else
-    {
-        alert("Here!");
-    }
-});
-</script>
 <!-- <script type="text/template" id="instant-facets-template">
 <div class="facets{{#count}} with_facets{{/count}}">
     {{#facets}}
@@ -152,9 +135,7 @@ $('button').on('click',function(e) {
 
 <script type="text/template" id="instant-facets-template">
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 facets{{#count}} with_facets{{/count}}">
-	<div class="result-caption-filter">{{nbHits}} result{{^nbHits_one}}s{{/nbHits_one}}</div>
-    <button class="clear-filter-btn" onclick="$('.options input:checkbox').prop('checked', false);">Clear All </button>
-    {{#facets}}
+	 {{#facets}}
     {{#count}}
     <div class="facet">
         <div class="name">
@@ -170,8 +151,6 @@ $('button').on('click',function(e) {
                     {{name}} {{#print_count}}({{count}}){{/print_count}}
                 </div>
                 {{/type.menu}}
-                
-                
 
                 {{#type.conjunctive}}
                 <div data-name="{{tax}}" data-type="conjunctive" class="{{#checked}}checked {{/checked}}sub_facet conjunctive">
