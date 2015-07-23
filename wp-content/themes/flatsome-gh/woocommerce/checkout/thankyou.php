@@ -18,6 +18,7 @@
 <?php
 //print_r($order->get_items());
 //$order = wc_get_order( $order_id );
+	$currency = gh_get_local_currency_symbol();
 	$i = 0;
 	foreach( $order->get_items() as $item ) {
 		$productid[$i] = wc_get_product( $item['product_id'] )->id;
@@ -26,7 +27,9 @@
 //print_r($productid);
 //echo $order->get_total(); 
 ?>
-<script type="text/javascript">var vizLayer = {geo: "sg", account_id: "VIZVRM3503", vertical: "ecommerce", type: "thank_you", pid1: <?php echo $productid[0]; ?>, pid2: <?php echo $productid[1]; ?>, pid3: <?php echo $productid[2]; ?>, orderid: <?php echo $order->id; ?>, orderprice: <?php echo $order->get_total(); ?>, currency: <order currency>}; window.vizLayer = vizLayer;</script>
+<script type="text/javascript">
+var currency_in = "<?php echo gh_get_local_currency_symbol() ; ?>";
+var vizLayer = {geo: "sg", account_id: "VIZVRM3503", vertical: "ecommerce", type: "thank_you", pid1: <?php echo (int)$productid[0]; ?>, pid2: <?php echo (int)$productid[1]; ?>, pid3: <?php echo (int)$productid[2]; ?>, orderid: <?php echo $order->id; ?>, orderprice: <?php echo $order->get_total(); ?>, currency: currency_in}; window.vizLayer = vizLayer;</script>
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 

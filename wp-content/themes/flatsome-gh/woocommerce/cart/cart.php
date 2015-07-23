@@ -70,18 +70,7 @@ jQuery( document ).ready( function() {
 
 </script>
 
-<?php 
-$items = $woocommerce->cart->get_cart();
-	$i =0;
-        foreach($items as $item => $values) { 
-            $_product = $values['data']->post; 
-            $product_id[$i] = $_product->ID;
-		$i++;
-        } 
-	
-?>
 
-<script type="text/javascript">var vizLayer = {geo: "sg", account_id: "VIZVRM3503", vertical: "ecommerce", type: "shopping_cart", pid1: <?php echo $product_id[0]; ?>, pid2: <?php echo $product_id[1]; ?>, pid3: <?php echo $product_id[2]; ?>, currency: <?php gh_get_local_currency_symbol(); ?>, cartval: <?php echo $woocommerce->cart->total; ?>}; window.vizLayer = vizLayer;</script>
 <?php if(isset($_GET['remove_coupon'])){ session_destroy(); } ?>
 
 <div class="checkout-breadcrumb">
@@ -270,7 +259,7 @@ if(isset($_COOKIE['referee']) AND $_COOKIE['referee'] != '' ){
 <?php  if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != 'null' AND $_SESSION['cash_back'] != ''){?>
 	<div class="coupon_successful">
 		<div class="coupon_message"><span>Referral Code</span>APPLIED!</div>
-		<span class="coupon_details_message">Rs <?php echo $_SESSION['cash_back'] ; ?> cash will be added to your Paytm wallet.</span>
+		<span class="coupon_details_message"><?php echo gh_get_local_currency_symbol() . ' '. gh_get_currency_updated_price((int)$_SESSION['cash_back']) ; ?> cash will be added to your Paytm wallet.</span>
 		<a class="referal_coupon_tc"><u><i>*T&C Applied.</i></u></a	>
 	</div>
 

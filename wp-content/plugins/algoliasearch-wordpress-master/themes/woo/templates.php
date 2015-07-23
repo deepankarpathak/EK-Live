@@ -36,19 +36,18 @@
             {{#sorting_indices.length}}
             <div style="float: right; margin-right: 10px; font-size: 15px">
                 Order by
-				<div class="select-wrapper">
-                	<select id="index_to_use" class="custom" style="height: 15px; width: 155px; font-size: 12px">
-                   		<option {{#sortSelected}}{{relevance_index_name}}{{/sortSelected}} value="{{relevance_index_name}}">Default Sorting</option>
-                    	{{#sorting_indices}}
-                    	<option {{#sortSelected}}{{index_name}}{{/sortSelected}} value="{{index_name}}">{{label}}</option>
-                    	{{/sorting_indices}}
-                	</select>
-				</div>
+				
+                <select id="index_to_use">
+                    <option {{#sortSelected}}{{relevance_index_name}}{{/sortSelected}} value="{{relevance_index_name}}">Default Sorting</option>
+                    {{#sorting_indices}}
+                    <option {{#sortSelected}}{{index_name}}{{/sortSelected}} value="{{index_name}}">{{label}}</option>
+                    {{/sorting_indices}}
+                </select>
             </div>
             {{/sorting_indices.length}}
 			<div class="button-123 right hidden-xs">
-                <button class="grid" onclick=" $('#view li').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" style="height: 30px; padding-left: 10px; width: 50px; background-color: transparent;"><img src="images/grid_view.png"/></button>
-                <button class="list" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');" style="height: 30px; padding-left: 10px; width: 50px; background-color: transparent;"><img src="images/list_view.png"/></button>
+                <button class="grid" onclick=" $('#view li').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" style="height: 30px; padding-left: 10px; width: 50px; background-color: transparent;"><img src="<?php echo get_site_url(); ?>/images/grid_view.png"/></button>
+                <button class="list" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');" style="height: 30px; padding-left: 10px; width: 50px; background-color: transparent;"><img src="<?php echo get_site_url(); ?>/images/list_view.png"/></button>
             </div>
             <div style="clear: both;"></div>
         </div>

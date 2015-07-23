@@ -205,7 +205,7 @@ jQuery('.bxslider').bxSlider({
 					//$_SESSION['effective_total'] = $effective_total;
 					//$_SESSION['referral_details'] = $referrer;
 					?>
-					<div class = "product_detail_referral"><span class="product_detail_cashback">Get Cashback</span>Effective Fee<b><?php echo ' Rs. '. number_format_i18n((int)$effective_total) ;?></b> <span class="referral_tc" title= "You and your friend get cash in your Paytm wallet with your referral code. With EduKart's Referral Program, one can earn cashback everytime their referral code is used." >&nbsp;&nbsp;&nbsp;</span><a style="color:#8a5926 !important;"><u><i>T&C</i></u></a></div>
+					<div class = "product_detail_referral"><span class="product_detail_cashback">Get Cashback</span>Effective Fee<b><?php echo gh_get_local_currency_symbol() . ' ' . number_format_i18n(gh_get_currency_updated_price((int)$effective_total)) ;?></b> <span class="referral_tc" title= "You and your friend get cash in your Paytm wallet with your referral code. With EduKart's Referral Program, one can earn cashback everytime their referral code is used." >&nbsp;&nbsp;&nbsp;</span><a style="color:#8a5926 !important;"><u><i>T&C</i></u></a></div>
 					<?php
 					
 				}else{
@@ -214,7 +214,7 @@ jQuery('.bxslider').bxSlider({
 					unset($_SESSION['effective_total']);
 					unset($_SESSION['referral_details']);
 		?>
-		<div class = "product_detail_referral"><span class="product_detail_cashback">cashback</span>Share your referral code with friends & get <b><?php echo 'Rs.'. number_format_i18n((int)$referral_cashback) ;?></b> cashback <span class="referral_tc" title= "You and your friend get cash in your Paytm wallet with your referral code. With EduKart's Referral Program, one can earn cashback everytime their referral code is used." >&nbsp;&nbsp;&nbsp;</span><a style="color:#8a5926 !important; cursor:pointer;"><u><i>T&C</i></u></a></div>
+		<div class = "product_detail_referral"><span class="product_detail_cashback">cashback</span>Share your referral code with friends & get <b><?php echo gh_get_local_currency_symbol() . ' ' . number_format_i18n(gh_get_currency_updated_price((int)$referral_cashback)) ;?></b> cashback <span class="referral_tc" title= "You and your friend get cash in your Paytm wallet with your referral code. With EduKart's Referral Program, one can earn cashback everytime their referral code is used." >&nbsp;&nbsp;&nbsp;</span><a style="color:#8a5926 !important; cursor:pointer;"><u><i>T&C</i></u></a></div>
 		<?php }
 			}
 

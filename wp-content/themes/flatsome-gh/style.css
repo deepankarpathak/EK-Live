@@ -446,6 +446,8 @@ ul.top-bar-nav li:last-child {
 }
 .edu-catgory-filter .sidebar-inner .widget.widget_layered_nav:last-child {
 	border-bottom: none;
+}.single-product h1 {
+    text-transform: uppercase;
 }
 .product-small .inner-wrap {
 	background: none repeat scroll 0 0 #fff;
@@ -1025,6 +1027,12 @@ ul.top-bar-nav li a:hover {
 	font-size: 16px;
 	font-weight: normal;
 }
+.coupon_cashback > td {
+    width: 37%;
+}
+.feetype {
+    font-size: 13px;
+}
 /*---product-detail-page-end---------*/ 
 /****************************************** tab-onproduct-detail-page */
 .liteTabs {
@@ -1457,7 +1465,9 @@ h1.logo-slider-h1 span {
 .email_error {
 	border: 1px solid #ff0000 !important;
 }
-.learn_more {
+.learn_more {.single-product h1 {
+    text-transform: uppercase;
+}
 	display:none;
 }
 .product-small .inner-wrap p {
@@ -2068,7 +2078,9 @@ h1.logo-slider-h1 span {
     display: block !important;
 }
 
-
+.single-product h1 {
+    text-transform: uppercase;
+}
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
@@ -2083,7 +2095,7 @@ display:block
 display:block
 }
 .mini-cart {
-top: 25px !important;
+top: 15px !important;
   right: -4em;
   position: absolute !important;
 }
@@ -3304,7 +3316,9 @@ padding:0px;
  height: 100%;
  margin: 0;
  padding: 10px 3% 0;
- text-align: left;
+ text-align: left;.single-product h1 {
+    text-transform: uppercase;
+}
  width: 100%;
 }
 .edu-order-detail-price {
@@ -3785,7 +3799,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     line-height: 20px;
     margin-left: 10px;
     margin-top: 6px;
-    width: 180px;
+    padding:0 10px 0 0;
 }
 .edu-list-product .cashback {
     background-color: #f07746 !important;
@@ -3810,7 +3824,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     background: #ffffa7 none repeat scroll 0 0;
     border: 2px dotted #f07746;
     height: 25px !important;
-    margin: 0 8px 4px;
+    margin: 0 2px 4px;
     font-size:18px;
     line-height:20px;
     color: #8A5926;
@@ -3840,6 +3854,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     height: auto;
     line-height:15px;
     margin-bottom: 5px;
+    min-height:35px;
 }
 .product_detail_cashback {
     background-color: #f07746;
@@ -4005,7 +4020,9 @@ height: 14px;
 display: inline-block;
 margin-right: 4px;
 }
-/* Main Body */
+/* Main Body */.single-product h1 {
+    text-transform: uppercase;
+}
 .container-fluid.referrel .main_body{
     background:#e5e5e5;
     text-align:center;

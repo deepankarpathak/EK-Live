@@ -103,9 +103,7 @@ global $flatsome_opt;
 </div><!-- .row-->
 </div><!-- .absolute-footer -->
 */
-
 ?>
-
 </footer><!-- .footer-wrapper -->
 </div><!-- #wrapper -->
 
@@ -255,7 +253,10 @@ window.onload = function(){
     document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
    if(oldonload){oldonload()}};
 }());
-/*AdRoll code ends */	
+</script>
+<!-- AdRoll code ends -->
+<div id='invtrflfloatbtn'></div>
+<script>	
 var invite_referrals = window.invite_referrals || {}; (function() { 
 	invite_referrals.auth = { bid_e : 'E1B12D0338B46F598D8123D7C78E9598', bid : '1576', t : '420', email : '', userParams : {'fname': ''}};	
 var script = document.createElement('script');script.async = true;

@@ -23,7 +23,7 @@ global $woocommerce,$flatsome_opt; ?>
 	<div class="large-6 columns">
 
 <?php endif; ?>
-
+<div class="large-4" style="margin:auto;">
 		<h2><?php _e( 'Login', 'woocommerce' ); ?></h2>
 
 		<form method="post" class="login">
@@ -54,7 +54,7 @@ global $woocommerce,$flatsome_opt; ?>
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
 
 		</form>
-
+</div>
 <?php if (get_option('woocommerce_enable_myaccount_registration')=='yes') : ?>
 
 	</div><!-- .large-6 columns -->

@@ -13,16 +13,16 @@ $gh_country_currency = get_option('gh_country_currency');
  *** */
 global $wp_session;
 $wp_session = WP_Session::get_instance();
-// $ip = @gh_find_visitor_ip_address();	// Disabling IP based pricing till the issue is not resolved at Alpha site
-// $wp_session['ip'] = $ip;
+ $ip = @gh_find_visitor_ip_address();	// Disabling IP based pricing till the issue is not resolved at Alpha site
+ $wp_session['ip'] = $ip;
 
-$ip = '127.0.0.1';
-$wp_session['ip'] = $ip;
-$wp_session['country'] = 'india';
-$wp_session['currency'] = 'INR';
-$wp_session['conversion_rate'] = 1;        
+//$ip = '127.0.0.1';
+//$wp_session['ip'] = $ip;
+//$wp_session['country'] = 'india';
+//$wp_session['currency'] = 'INR';
+//$wp_session['conversion_rate'] = 1;        
 
-// gh_set_ip_currency($ip); // Disabling IP based pricing till the issue is not resolved at Alpha site
+ gh_set_ip_currency($ip); // Disabling IP based pricing till the issue is not resolved at Alpha site
 
 function gh_set_ip_currency($ip){
 	global $wp_session;
@@ -35,18 +35,9 @@ function gh_set_ip_currency($ip){
 	    $wp_session['currency'] = 'INR';
 	    $wp_session['conversion_rate'] = 1;        
 	}
-	elseif($ip != $wp_session['ip']){
+	else{
 	    $wp_session['ip'] = $ip;
-		// echo "<p>LN".__LINE__." $ip</p>";
-		// echo "<p>LN ".__LINE__." ".$wp_session['ip'].' | '.$wp_session['country'].' | '.$wp_session['currency'].' | '.$wp_session['conversion_rate']." - gh_set_ip_currency</p>"; 	
-	    
-	    // $wp_session['ip'] = '54.169.160.23'; // Singapore IP | Temporarily hard-coding IP address for testing. DELETE IT AFTER TESTING
-	    // $wp_session['ip'] = '204.62.114.179'; // USA IP | Temporarily hard-coding IP address for testing. DELETE IT AFTER TESTING
-	    // $wp_session['ip'] = '122.160.51.238'; // India (GH Office) IP | Temporarily hard-coding IP address for testing. DELETE IT AFTER TESTING
-	    
-	    $wp_session['currency'] = ''; 
-	    $wp_session['conversion_rate'] = ''; 
-	    $wp_session['country'] = '';
+		
 	    
 	    $wp_session['country'] = gh_find_visitor_country($wp_session['ip']);
 
@@ -58,9 +49,8 @@ function gh_set_ip_currency($ip){
 		$wp_session['conversion_rate'] = 1;        
 	    }
 	}
-	// echo "<p>LN ".__LINE__." ".$wp_session['ip'].' | '.$wp_session['country'].' | '.$wp_session['currency'].' | '.$wp_session['conversion_rate']." - gh_set_ip_currency</p>"; 	
 }
-// ******
+
 
 add_action( 'wp_enqueue_scripts', 'enqueue_parent_theme_style' );
 add_action( 'wp_enqueue_scripts', 'gh_enqueue_menu_css' );
@@ -102,14 +92,13 @@ add_filter('woocommerce_variable_sale_price_html', 'gh_variation_sale_price', 10
 
 add_filter('woocommerce_variation_price_html', 'gh_variation_price_html', 10, 2); 
 // Following filters: 'woocommerce_get_price' and 'woocommerce_checkout_update_order_meta' are used to show price in visitor's local currency
-// add_filter('woocommerce_get_price', 'gh_return_custom_price', $product, 2);
-// add_filter('woocommerce_get_max_variation_price', 'gh_return_custom_max_variation_price', $product, 2);
-// add_filter('woocommerce_get_min_variation_price', 'gh_return_custom_min_variation_price', $product, 2);
-// add_action( 'woocommerce_checkout_update_order_meta', 'gh_update_meta_data_with_new_currency' );
+ add_filter('woocommerce_get_price', 'gh_return_custom_price', $product, 2);
+ add_filter('woocommerce_get_max_variation_price', 'gh_return_custom_max_variation_price', $product, 2);
+ add_filter('woocommerce_get_min_variation_price', 'gh_return_custom_min_variation_price', $product, 2);
+ add_action( 'woocommerce_checkout_update_order_meta', 'gh_update_meta_data_with_new_currency' );
 add_filter('raw_woocommerce_price', 'gh_return_custom_raw_price', 2);
 //add_filter('woocommerce_cart_item_price', 'gh_cart_item_price_html', 2);
-
-// add_filter('woocommerce_currency_symbol', 'gh_woocommerce_currency_symbol', 2);
+ add_filter('woocommerce_currency_symbol', 'gh_woocommerce_currency_symbol', 2);
 
 
 //for checkout page we remove to match the design
@@ -152,7 +141,7 @@ function gh_cart_item_price_html($price){
     echo '<hr>';
     echo $price;
     echo '<hr>';
-    return '<span class="amount">Rs.612.15</span>';   
+    //return '<span class="amount">Rs.612.15</span>';   
     return '';
 }
 
@@ -445,14 +434,14 @@ function gh_find_visitor_currency($country = ''){
 
 function gh_find_currency_conversion_rate( $currency = '' ){
     if( trim($currency) == ''){ return false; }
-    $endpoint = "http://www.freecurrencyconverterapi.com/api/v2/convert?q=INR_".$currency."&compact=y";
-    
+    //$endpoint = "http://www.freecurrencyconverterapi.com/api/v2/convert?q=INR_".$currency."&compact=y";
+    $endpoint = "https://apilayer.net/api/live?access_key=0d76790aafbc95fbe73cf60002658df8&source=INR";
     $data = json_decode(file_get_contents($endpoint), true);
-    
-    $currency_pair = "INR_".$currency;
+    $currency_pair = "INR".$currency;
+//	print_r($data['quotes'][$currency_pair]);
 //    echo $data[$currency_pair]['val'];
 //    exit;
-    return $data[$currency_pair]['val'];
+    return $data['quotes'][$currency_pair];
 }
 
 function gh_get_currency_updated_price($price){
@@ -467,10 +456,12 @@ function gh_get_currency_updated_price($price){
 
 function gh_get_local_currency_symbol(){
     global $wp_session;
+	
     $symbol = get_woocommerce_currency_symbol($wp_session['currency']);
     if($symbol != ''){
         return $symbol;
     }else{
+	//echo $wp_session['currency'];
         return $wp_session['currency'];
     }
 }

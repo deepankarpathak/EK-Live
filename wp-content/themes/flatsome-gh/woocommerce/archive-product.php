@@ -349,7 +349,7 @@ $redisClient->connect('127.0.0.1');
 							$time = $time_end - $time_start;
 							echo "<div id='microtime_for_redis' style='display:none;'>". $time ."seconds</div>";
                             echo $resp;
-							 //$redisClient -> flushall() ;    //to drop the redis cache 
+							 $redisClient -> flushall() ;    //to drop the redis cache 
 				if($client_ip == '122.160.51.238'){
 					$email_msg = "<p>\$client_ip = $client_ip</p><p>Position: 1</p><p>\$url = $url</p><p>\$resp = $resp</p>";
 				}
@@ -433,7 +433,7 @@ $redisClient->connect('127.0.0.1');
 
 //                            curl_close($curl);
                             echo $resp;
-							// $redisClient -> flushall() ; 		//to drop the redis cache
+							 $redisClient -> flushall() ; 		//to drop the redis cache
 				if($client_ip == '122.160.51.238'){
 					$curl_for_debug = print_r($curl, true);
 
