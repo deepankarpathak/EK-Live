@@ -175,6 +175,7 @@ jQuery(document).ready(function ($) {
             location.replace('#');
 
             $(algoliaSettings.instant_jquery_selector).html(old_content);
+            
         }
 
         engine.setHelper(helper);
@@ -422,7 +423,7 @@ jQuery(document).ready(function ($) {
             return false;
         });
 
-        $('button').on('click',function(e) {
+  /*      $('button').on('click',function(e) {
     if ($(this).hasClass('grid')) {
         alert("GRID");
         $('#view ul').removeClass('list').addClass('grid');
@@ -435,7 +436,7 @@ jQuery(document).ready(function ($) {
     {
         alert("Here!");
     }
-});
+});*/
         
         $(algoliaSettings.search_input_selector).keyup(function (e) {
             e.preventDefault();

@@ -654,6 +654,8 @@ height: 14px;
 display: inline-block;
 margin-right: 4px;
 }
+#index_to_use{margin-top:5px;}
+.changelook{height: 32px;padding: 0;width: 32px;background-color: transparent;margin: 0}
 @media screen and (max-width: 767px){
 	.hidden-xs{
 		display: none !important;
