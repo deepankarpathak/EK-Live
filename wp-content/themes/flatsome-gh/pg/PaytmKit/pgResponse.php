@@ -69,10 +69,6 @@ if($isValidChecksum === TRUE) {
 
 	gh_paynow_page_payment($_POST);
 	gh_paytm_kit_mail_to_customer($_POST);
-	
-	$_SESSION['paynow_name'] = '';
-	$_SESSION['paynow_email'] = '';
-	$_SESSION['paynow_phone'] = '';
 
 }
 else {

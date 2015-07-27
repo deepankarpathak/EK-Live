@@ -30,6 +30,11 @@ global $wp_session;
         <?php 
         if(is_product()){
             $product = get_product( get_the_ID() );
+?>
+<script type="text/javascript">
+var vizLayer = {geo: "sg", account_id: "VIZVRM3503",vertical: "ecommerce", type: "product_page", pid: <?php echo $product->id; ?>}; window.vizLayer = vizLayer;</script>
+
+<?php
             if($product){
                 $showspecialization = $product->get_attribute("show-specialization");
                 $specialization1 = $product->get_attribute("specialization");
@@ -42,7 +47,7 @@ global $wp_session;
                 }
                 $university = $university1->name; 
             }
-	}
+        }
         ?>
 
 <meta name="google-site-verification" content="3MT2zagYFUMEvpQLX6ArMfpeip_Zt0ogB8dzKIMiWyw" />
@@ -95,7 +100,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 </script>-->
 <script type="text/javascript">
 $(function() {
-$('.product_detail_referral a,.product-lightbox-inner .product_detail_referral a, .coupon_successful a').click(function() {
+$('.product_detail_referral a, .coupon_successful a').click(function() {
 $(".referal_tc").dialog({
 title: "Terms & Conditions",
 width: 500,
@@ -106,36 +111,9 @@ modal: true,
 });
 });
 </script>
-
 </head>
 
 <body <?php body_class(); ?>>
-<?php 
-if(is_product()){
-?>
-<script type="text/javascript">
-var vizLayer = {geo: "sg", account_id: "VIZVRM3503",vertical: "ecommerce", type: "product_page", pid: <?php echo $product->id; ?>}; window.vizLayer = vizLayer;</script>
-<?php } ?>
-<?php if(is_page('cart')){
-$items = $woocommerce->cart->get_cart();
-	$i =0;
-	$currency = gh_get_local_currency_symbol();
-        foreach($items as $item => $values) { 
-            $_product = $values['data']->post; 
-            $product_id[$i] = $_product->ID;
-		$i++;
-        } 
-	
-?>
-
-<script type="text/javascript">
-var currency_in = "<?php echo $currency ; ?>";
-var total = "<?php echo $woocommerce->cart->total; ?>";
-var total_value = parseInt(total);
-var vizLayer = {geo: "sg", account_id: "VIZVRM3503", vertical: "ecommerce", type: "shopping_cart", pid1: <?php echo (int)$product_id[0]; ?>, pid2: <?php echo (int)$product_id[1]; ?>, pid3: <?php echo (int)$product_id[2]; ?>, currency: currency_in, cartval: total_value}; window.vizLayer = vizLayer;</script>
-
-<?php } ?>
-
 <div id="popup-wrapper" class="referal_tc" style="font-family:roboto,arial,sans-serif !important; display:none;">
 	<ol type="decimal" style="padding-left:20px;">
 		<li>EduKart's Referral Program is an initiative to spread awareness &amp; importance of education in today's competitive world</li>

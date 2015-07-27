@@ -103,7 +103,9 @@ global $flatsome_opt;
 </div><!-- .row-->
 </div><!-- .absolute-footer -->
 */
+
 ?>
+
 </footer><!-- .footer-wrapper -->
 </div><!-- #wrapper -->
 
@@ -253,43 +255,13 @@ window.onload = function(){
     document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
    if(oldonload){oldonload()}};
 }());
-</script>
-<!-- AdRoll code ends -->
-<div id='invtrflfloatbtn'></div>
-<script>	
+/*AdRoll code ends */	
 var invite_referrals = window.invite_referrals || {}; (function() { 
 	invite_referrals.auth = { bid_e : 'E1B12D0338B46F598D8123D7C78E9598', bid : '1576', t : '420', email : '', userParams : {'fname': ''}};	
 var script = document.createElement('script');script.async = true;
 script.src = (document.location.protocol == 'https:' ? "//d11yp7khhhspcr.cloudfront.net" : "//cdn.invitereferrals.com") + '/js/invite-referrals-1.0.js';
 var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBefore(script, entry); })();
 </script>
-<script>
-// Added bu gambheer
-	$("#s").keyup(function(){
-		// Popular course tab run
-		if($("#s").val().length == 0){
-			 $.getScript( 'wp-content/themes/flatsome-gh/js/theme.js', function( data, textStatus, jqxhr ) {
-	           
-	         });
 
-	         $.getScript( 'wp-content/themes/flatsome-gh/js/gh_custom.js', function( data, textStatus, jqxhr ) {
-	           var $c = $('#edu-carousel');
-						$w = $(window);
-
-					$c.carouFredSel({
-						align: false,
-						items: 10,
-						scroll: {
-							items: 1,
-							duration: 2500,
-							timeoutDuration: 0,
-							easing: 'linear',
-							pauseOnHover: 'immediate'
-						}
-					});
-	         });
-        }
-	});
-</script>
 </body>
 </html>

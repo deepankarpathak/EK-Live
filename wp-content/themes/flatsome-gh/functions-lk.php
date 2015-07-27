@@ -1436,7 +1436,7 @@ function gh_sidebar_filter_search() {
                                 }
                                 ?> </span><span class="learn_more">Learn More</span>
                                 <?php
-                                echo '<span class="price">' . gh_get_local_currency_symbol() . '<span class="gh_max_price_in_loop">' . ($max_variation_sale_price != '' ? '<del>' . $max_variation_sale_price . '</del>' : ' ') . ' ' . $price . '</span></span>';
+                                echo '<span class="price">' . gh_get_local_currency_symbol() . '<span class="gh_max_price_in_loop">' . ($max_variation_sale_price != '' ? '<del>' . $max_variation_sale_price . '</del>' : '') . '' . $price . '</span></span>';
 
                                 if ($product_cat->term_id == "338" || $product_cat->term_id == "181" || $product_cat->term_id == "5912") {
                                     if (strlen($fee_type) < 24) {
@@ -1445,7 +1445,7 @@ function gh_sidebar_filter_search() {
                                 }
                                 if ($cashback) {
                                     ?>
-                                <div class="referral"><span class="cashback">Cashback</span> <?php echo  gh_get_local_currency_symbol() .' '. number_format_i18n(gh_get_currency_updated_price((int)$cashback)); ?></div>
+                                <div class="referral"><span class="cashback">Cashback</span> <?php echo'Rs.' . number_format_i18n((int) $cashback); ?></div>
                         <?php
                     }
                     echo '</div></div></a></li>';
@@ -1464,7 +1464,7 @@ function gh_sidebar_filter_search() {
 
     <?php
     } else {
-        echo '<p style="margin: 0px 20px 10px 20px;">Sorry, You’re looking for something which isn\'t here.</p><br> <p style="margin: 0px 20px 10px 20px;">However, we have wide range of courses which will help you enhance your skills, <a href="' . site_url() . '/courses/?view=list">click here to explore.</a></p>';
+        echo '<p style="margin: 0px 20px 10px 20px;">Sorry, You’re looking for something which isn\'t here.</p><br> <p>However, we have wide range of courses which will help you enhance your skills, <a href="' . site_url() . '/courses/?view=list">click here to explore.</a></p>';
     }
     ?>
         </div></div>
@@ -1622,13 +1622,11 @@ function gh_time_interval() {
 function gh_paytm_kit_mail_to_customer($mail_details) {
 
     $content = '<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
-    $content .='<title>Untitled Document</title></head><body><div><table width="100%" cellspacing="0" cellpadding="10" border="0" align="center" ><tbody><tr><td>Dear User, <br style="" class=""><br style="" class="">Thank you for choosing to learn with <a href="http://EduKart.com" target="_blank" style="color:#000; font-weight: bold;" class="">EduKart.com</a>. We are delighted to know that you have taken an informed decision to become more employable by enrolling for one of the industry relevant courses on <a href="http://EduKart.com" target="_blank" style="color:#000; font-weight: bold;" class="">EduKart.com</a>. You are now a step ahead of your peers! </td>';
-    $content .='<td width="47%" align="right" style="" class=""><a href="'.esc_url(home_url("/")).'" title="'.esc_attr(get_bloginfo("name", "display")) - bloginfo("description").'" ><img style= "dislay:inline-block;" src="'.get_site_url().'/wp-content/themes/flatsome-gh/images/logo.jpg" title="edukart" /> </a></td></tr>';
+    $content .='<title>Untitled Document</title></head><body><div style="" class=""><table width="100%" cellspacing="0" cellpadding="10" border="0" align="center" ><tbody style="" class=""><tr style="" class=""><td style="" class="">Dear User, <br style="" class=""><br style="" class="">Thank you for choosing to learn with <a href="http://EduKart.com" target="_blank" style="color:#000; font-weight: bold;" class="">EduKart.com</a>. We are delighted to know that you have taken an informed decision to become more employable by enrolling for one of the industry relevant courses on <a href="http://EduKart.com" target="_blank" style="color:#000; font-weight: bold;" class="">EduKart.com</a>. You are now a step ahead of your peers! </td>';
+    $content .='<td width="47%" align="right" style="" class=""><a href="'.esc_url(home_url("/")).'" title="'.esc_attr(get_bloginfo("name", "display")) - bloginfo("description").'" rel="home"><img style= "dislay:inline-block;" src="'.get_site_url().'/wp-content/themes/flatsome-gh/images/logo.jpg" title="edukart" /> </a></td></tr>';
     $content .='<tr bgcolor="white" style="" class=""><td style="" class=""><h3 style="" class=""><b style="" class="">Invoice</b></h3></td></tr></tbody></table>';
     $content .='<table width="100%" cellspacing="0" cellpadding="2" border="0" ><tbody style="" class=""><tr bgcolor="#CCCCCC" style="" class=""><td colspan="2" style="" class=""><b style="" class="">Order Information</b></td></tr><tr style="" class=""><td style="" class="">Order Number:</td><td style="" class="">'. $mail_details["ORDERID"] .'</td></tr>';
     $content .='<tr style="" class=""><td style="" class="">Order Date:</td><td style="" class="">'. $mail_details["TXNDATE"] .'</td></tr>';
-    $content .='<tr style="" class=""><td style="" class="">Name:</td><td style="" class="">'. $_SESSION['paynow_name'] .'</td></tr>';
-    $content .='<tr style="" class=""><td style="" class="">Phone:</td><td style="" class="">'. $_SESSION["paynow_phone"] .'</td></tr>';
     $content .='<tr style="" class=""><td style="" class="">Order Status:</td><td style="" class=""><b style="" class=""><b>Successful</b></b></td></tr>';
     $content .='<tr style="" class=""><td colspan="2" style="" class=""> </td></tr><tr bgcolor="#CCCCCC" style="" class=""><td colspan="2" style="" class=""><b style="" class="">Amount</b></td><td style="" class="">'.$mail_details["TXNAMOUNT"].'</td></tr>';
     $content .='<tr bgcolor="#CCCCCC" style="" class=""><td colspan="2" style="" class=""><b style="" class="">Currency</b></td><td style="" class="">'.$mail_details["CURRENCY"].'</td> </tr>';
@@ -1637,14 +1635,14 @@ function gh_paytm_kit_mail_to_customer($mail_details) {
     $content .='<tr bgcolor="#CCCCCC" style="" class=""><td colspan="2" style="" class=""><b style="" class="">Payment Mode</b></td><td style="" class="">'.$mail_details["PAYMENTMODE"].'</td></tr>';
     $content .='<tr style="" class=""><td colspan="2" style="" class=""> </td></tr><tr bgcolor="#CCCCCC" style="" class=""><td style="" class=""><b style="" class="">Payment Information</b></td><td style="" class=""><b>Successful</b></td></tr></tbody></table><br style="" class=""><br style="" class="">';
     $content .='<table style="" class=""><tbody style="" class=""> <tr valign="top" style="" class=""><td width="53%" align="left" style="" class=""><div style="" class="">Please feel free to contact us for your queries related to the course by calling us on +91-11-49323333 or email us at <a href="mailto:support@EduKart.com" style="" class="">support@EduKart.com</a> . We look forward to being with you as you go through the course on <a href="http://EduKart.com" target="_blank" style="" class="">EduKart.com</a> .</div><br style="" class="">Enjoy your learning! <br style="" class=""><br style="" class="">Thank you,<br style="" class="">Customer Relations<br style="" class=""><a href="http://EduKart.com" target="_blank" style="" class="">EduKart.com</a><br style="" class="">Telephonic Support:+91-11-49323333<br style="" class="">Email Support: <a href="mailto:support@EduKart.com" style="" class="">support@EduKart.com</a><br style="" class=""></td></tr><tr style="" class=""><td style="" class=""><hr style="" class=""><div style="font-size: 9px;" class=""> Declaration:<br style="" class=""><a href="http://EduKart.com" target="_blank" style="" class="">EduKart.com</a> is a trademark of Earth Education Valley Pvt. Ltd. This invoice shows the final selling price of the course and is inclusive of all taxes, shipping and handling charges. <br style="" class="">Company&#39;s PAN: AACCE6152C <br style="" class="">Company&#39;s Service Tax No: AACCE6152CSD001 <br style="" class="">            CIN: U80302DL2011PTC213971 </div><div style="font-size: 9px;" class=""> Terms and Conditions:<br style="" class=""> 1)The sale is governed by the Cancellation and Refund Policy as mentioned on <a target="_blank" href="http://www.edukart.com" style="" class="">www.edukart.com</a>.<br style="" class="">2)Interest @ 24% per annum will be charged on overdue accounts.<br style="" class="">3)Subject to Delhi jurisdiction only.<br style="" class=""></div><hr style="" class=""></td></tr></tbody></table><style>table h3 {  display: none !important; } </style> </div></body></html>';
-	$mailtopaynow = array();
+
     $adminmail = get_option('admin_email');
-    array_push($mailtopaynow, $adminmail);
-    $customermail = $_SESSION['paynow_email'];
-    array_push($mailtopaynow, $customermail);
+    //array_push($mailto, $adminmail);
+    //$customermail =
+	$MAILTO = array("lokesh.garg@greenhonchos.com","garglokesh123@yopmail.com"); 
     $subject = "Payment Confiramtion mail";
     add_filter('wp_mail_content_type', create_function('', 'return "text/html"; '));
-    wp_mail($customermail, $subject, $content);
+    wp_mail($adminmail, $subject, $content);
 }
 
 add_action('wp_ajax_referral_validation', 'gh_referral_validation');
@@ -2139,9 +2137,9 @@ add_action('init', 'paynow_paytm');
     global $wpdb;
     //$referto = $order->billing_first_name . $order->billing_last_name ;
     $order_no = $order_details["ORDERID"];
-    $first_name = $_SESSION['paynow_name'];
-    $customer_email = $_SESSION['paynow_email'];
-    $phone = $_SESSION['paynow_phone'];
+    $first_name = '';
+    $customer_email = '';
+    $phone = '';
     $txnid = $order_details["TXNID"];
     $bank_name = $order_details["BANKNAME"];
     $amount = $order_details["TXNAMOUNT"];

@@ -81,7 +81,7 @@ $order = wc_get_order( $order_id );
 		if($cashback_amount != null AND $cashback_amount != ''){
 		?>
 		<tr>
-			<th  scope="row">Cash-Back</th><td><?php echo gh_get_local_currency_symbol() . ' '.number_format_i18n( gh_get_currency_updated_price($cashback_amount), 2); ?></td>
+			<th  scope="row">Cash-Back</th><td><?php echo "Rs.".number_format_i18n( $cashback_amount, 2); ?></td>
 		</tr>
 		<?php  } ?>
 		<?php

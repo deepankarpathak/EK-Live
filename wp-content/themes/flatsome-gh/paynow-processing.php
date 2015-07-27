@@ -26,10 +26,10 @@ if(!isset($_POST['pay_with_paytm']) AND !isset($_POST['pay_with_paypal']) AND !i
         }else{
             $course = trim($_POST['course']);
         }
-        if(empty($_POST['first_name'])){
+        if(empty($_POST['name'])){
             $name_err = "Name is required.";
         }else{
-            $student_name = trim($_POST['first_name']);
+            $student_name = trim($_POST['name']);
         }
         if(empty($_POST['email'])){
             $email_err = "Email is required.";
@@ -186,9 +186,6 @@ if(!isset($_POST['pay_with_paytm']) AND !isset($_POST['pay_with_paypal']) AND !i
 			$number  = $_POST['phone'];
 			$gh_cust = str_split($number, 5);
 			$gh_cust_id = $gh_cust[0]."15".$gh_cust[1];
-			$_SESSION['paynow_name'] = $_POST['first_name'];
-			$_SESSION['paynow_email'] = $_POST['email'];
-			$_SESSION['paynow_phone'] = $_POST['phone'];
             echo '
                 <form method ="post" action="'.$action_url.'" id="payment_process">
 				

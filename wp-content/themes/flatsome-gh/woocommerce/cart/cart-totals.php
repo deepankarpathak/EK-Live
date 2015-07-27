@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</tr>
 
 		<tr class="coupon_cashback" <?php if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != null ){ echo "style='display:table-row;'";}else{echo "style='display:none;'";}?>><th>CASHBACK: <span><?php echo $_SESSION['ir_coupon_code']; ?></span></th><td><span style="color:#f39c11!important;">
-<?php echo gh_get_local_currency_symbol() .' '. number_format_i18n(gh_get_currency_updated_price((int)$_SESSION['cash_back']),2); ?> </span><a class="remove_cashback" style="text-decoration:none;color:#777; font-size:10px;"><b>[Remove]</b></a>
+<?php echo 'Rs.'. number_format_i18n( $_SESSION['cash_back'],2); ?> </span><a class="remove_cashback" style="text-decoration:none;color:#777; font-size:10px;"><b>[Remove]</b></a>
 </td></tr>
 
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
@@ -76,15 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<th><?php _e( 'Payable Amount ', 'woocommerce' ); ?><span style="text-transform:none !important; font-weight:normal; font-size:10px;">(incl. all taxes)</span></th>
 			<td><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
-		<?php 		global $woocommerce;
-				$total1 = $woocommerce->cart->total;
-				$cbkamt = $_SESSION['cash_back'];
-
-				$efctv_ttl = (int)$total1 - (int)$cbkamt;
-			
-
-		?>
-		<tr class="effecive_total" <?php if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != null ){ echo "style='display:table; width:173%;margin-left:-6%;margin-top:-2%;'";}else{echo "style='display:none;'";}?>><td colspan="2">Effective Total: <span style="margin-right:10px;"><?php echo gh_get_local_currency_symbol() .' '.number_format_i18n(gh_get_currency_updated_price($efctv_ttl) ,2); ?></span>
+		<tr class="effecive_total" <?php if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != null ){ echo "style='display:table; width:173%;margin-left:-6%;margin-top:-2%;'";}else{echo "style='display:none;'";}?>><td colspan="2">Effective Total: <span style="margin-right:10px;">Rs.<?php echo number_format_i18n( $_SESSION['effective_total'],2); ?></span>
 </td></tr>
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
 

@@ -115,7 +115,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 		if($cashback_amount != null AND $cashback_amount != ''){
 		?>
 		<tr>
-			<th  scope="row" colspan="2" style="text-align:left; border: 1px solid #eee; <?php if ( $i == 1 ) echo 'border-top-width: 4px;'; ?>">Cash-Back : <?php echo  $cashback_code ; ?></th><td style="text-align:left; border: 1px solid #eee; <?php if ( $i == 1 ) echo 'border-top-width: 4px;'; ?>"><?php  echo gh_get_local_currency_symbol() . ' '.number_format_i18n( gh_get_currency_updated_price($cashback_amount), 2); ?></td>
+			<th  scope="row" colspan="2" style="text-align:left; border: 1px solid #eee; <?php if ( $i == 1 ) echo 'border-top-width: 4px;'; ?>">Cash-Back : <?php echo  $cashback_code ; ?></th><td style="text-align:left; border: 1px solid #eee; <?php if ( $i == 1 ) echo 'border-top-width: 4px;'; ?>"><?php echo "Rs.".number_format_i18n( $cashback_amount, 2); ?></td>
 		</tr>
 		<?php  } ?>
 		

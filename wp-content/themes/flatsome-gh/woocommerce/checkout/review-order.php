@@ -79,7 +79,7 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 <input type="hidden" value="<?php echo $product_id; ?>" name="product_id" id="product_id">
 <?php $cashback = $_SESSION['cash_back'] ;?>
 			<tr class="coupon_cashback" <?php if(isset($cashback) AND $cashback != null ){ echo "style='display:table-row;'";}else{echo "style='display:none;'";}?>><th>CASHBACK: <span><?php echo $_SESSION['ir_coupon_code']; ?></th><td>
-<span style="color:#f39c11!important;"><?php echo gh_get_local_currency_symbol() . ' '. number_format_i18n(gh_get_currency_updated_price($cashback),2); ?></span><a class="remove_cashback" style="text-decoration:none;color:#777; font-size:10px;"><b>[Remove]</b></a>
+<span style="color:#f39c11!important;"><?php echo 'Rs.'. number_format_i18n($cashback,2); ?></span><a class="remove_cashback" style="text-decoration:none;color:#777; font-size:10px;"><b>[Remove]</b></a>
 </td></tr>
 			<?php foreach ( WC()->cart->get_coupons( 'cart' ) as $code => $coupon ) : ?>
 				<tr class="cart-discount coupon-<?php echo esc_attr( $code ); ?>">
@@ -129,18 +129,13 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 			<?php endforeach; ?>
 
 			<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
-			<?php 		
-				global $woocommerce;
-				$total1 = $woocommerce->cart->total;
-				$cbkamt = $_SESSION['cash_back'];
-				$efctv_ttl = (int)$total1 - (int)$cbkamt;
-			?>
+
 			<tr class="order-total">
 				<th><?php _e( 'Payable Amount ', 'woocommerce' ); ?><span style="text-transform:none !important; font-weight:normal; font-size:10px;">(incl. all taxes)</span></th>
 				<td><?php wc_cart_totals_order_total_html(); ?></td>
 			</tr>
 <?php $effect_total =  $_SESSION['effective_total'] ; ?>
-			<tr class="effecive_total" <?php if(isset($cashback) AND $cashback != null ){ echo "style='display:table; width:171%;margin-left:-6%;margin-top:-2%;'";}else{echo "style='display:none;'";}?>><td colspan="2" style="text-align:right!important;">Effective Total: <span style="margin-right:15px;"><?php echo gh_get_local_currency_symbol() . ' '. number_format_i18n( gh_get_currency_updated_price($efctv_ttl),2); ?></span>
+			<tr class="effecive_total" <?php if(isset($cashback) AND $cashback != null ){ echo "style='display:table; width:154%;margin-left:-6%;margin-top:-2%;'";}else{echo "style='display:none;'";}?>><td colspan="2" style="text-align:right!important;">Effective Total: <span style="margin-right:15px;">Rs.<?php echo number_format_i18n( $effect_total,2); ?></span>
 </td></tr>
 			<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
 
@@ -243,7 +238,7 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 		<?php if(isset($cashback) AND $cashback != 'null' AND $cashback != ''){?>
 	<div class="coupon_successful">
 		<div class="coupon_message"><span>Referral Code</span>APPLIED!</div>
-		<span class="coupon_details_message"><?php echo gh_get_local_currency_symbol() . ' ' . gh_get_currency_updated_price($cashback) ; ?> cash will be added to your Paytm wallet</span>
+		<span class="coupon_details_message">Rs <?php echo $cashback ; ?> cash will be added to your Paytm wallet</span>
 		<div class="referal_coupon_tc"><a style= "color:#9a7c54; cursor:pointer;"><u><i>*T&amp;C Applied.</i></u></a></div>
 	</div>
 
