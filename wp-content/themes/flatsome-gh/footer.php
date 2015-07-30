@@ -262,6 +262,16 @@ var script = document.createElement('script');script.async = true;
 script.src = (document.location.protocol == 'https:' ? "//d11yp7khhhspcr.cloudfront.net" : "//cdn.invitereferrals.com") + '/js/invite-referrals-1.0.js';
 var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBefore(script, entry); })();
 </script>
-
+<input type="hidden" id="theme_dir" value="<?php echo get_site_url(); ?>"/>
+<script>
+// Added by gambheer
+$("#s").keyup(function(){
+	var theme_dir = $("#theme_dir").val();
+	if($("#s").val().length == 0){
+	    $.getScript( theme_dir+'/wp-content/themes/flatsome/js/after_algolia.js', function( data, textStatus, jqxhr ) {
+	     });  
+	}
+});
+</script>
 </body>
 </html>
