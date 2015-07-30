@@ -80,8 +80,23 @@ $items = $woocommerce->cart->get_cart();
         } 
 	
 ?>
+<script type="text/javascript">
+  window.vizLayer = {
+    geo: "sg",
+    account_id: "VIZVRM3503",
+    vertical: "ecommerce",
+    type: "shopping_cart",
+pid1: <?php echo $product_id[0]; ?>, 
+pid2: <?php echo $product_id[1]; ?>, 
+pid3: <?php echo $product_id[2]; ?>, 
+currency: <?php gh_get_local_currency_symbol(); ?>, 
+cartval: <?php echo $woocommerce->cart->total; ?>
+}; 
 
-<script type="text/javascript">var vizLayer = {geo: "sg", account_id: "VIZVRM3503", vertical: "ecommerce", type: "shopping_cart", pid1: <?php echo $product_id[0]; ?>, pid2: <?php echo $product_id[1]; ?>, pid3: <?php echo $product_id[2]; ?>, currency: <?php gh_get_local_currency_symbol(); ?>, cartval: <?php echo $woocommerce->cart->total; ?>}; window.vizLayer = vizLayer;</script>
+(function(){try{var viz = document.createElement("script"); viz.type = "text/javascript";viz.async = true; viz.src = ("https:" == document.location.protocol ?"https://in-tags.vizury.com" : "http://in-tags.vizury.com")+ "/analyze/pixel.php?account_id=vst";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(viz, s);viz.onload = function() {try {pixel.parse();} catch(i){}};viz.onreadystatechange = function() {if (viz.readyState == "complete" || viz.readyState == "loaded"){try {pixel.parse();}catch(i){}}};}catch(i){}})();
+
+</script>
+
 <?php if(isset($_GET['remove_coupon'])){ session_destroy(); } ?>
 
 <div class="checkout-breadcrumb">

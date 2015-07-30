@@ -35,7 +35,6 @@
 
             {{#sorting_indices.length}}
             <div style="float: right; margin-right: 10px; font-size: 15px">
-                Order by
                 <select id="index_to_use">
                     <option {{#sortSelected}}{{relevance_index_name}}{{/sortSelected}} value="{{relevance_index_name}}">Default Sorting</option>
                     {{#sorting_indices}}
