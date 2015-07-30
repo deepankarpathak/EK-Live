@@ -26,7 +26,25 @@
 //print_r($productid);
 //echo $order->get_total(); 
 ?>
-<script type="text/javascript">var vizLayer = {geo: "sg", account_id: "VIZVRM3503", vertical: "ecommerce", type: "thank_you", pid1: <?php echo $productid[0]; ?>, pid2: <?php echo $productid[1]; ?>, pid3: <?php echo $productid[2]; ?>, orderid: <?php echo $order->id; ?>, orderprice: <?php echo $order->get_total(); ?>, currency: <order currency>}; window.vizLayer = vizLayer;</script>
+
+<script type="text/javascript">
+  window.vizLayer = {
+    geo: "sg",
+    account_id: "VIZVRM3503",
+    vertical: "ecommerce",
+    type: "thank_you",
+    pid1: <?php echo $productid[0]; ?>, 
+    pid2: <?php echo $productid[1]; ?>, 
+    pid3: <?php echo $productid[2]; ?>, 
+    orderid: <?php echo $order->id; ?>, 
+    orderprice: <?php echo $order->get_total(); ?>, 
+    currency: <order currency>
+ };
+
+(function(){try{var viz = document.createElement("script"); viz.type = "text/javascript";viz.async = true; viz.src = ("https:" == document.location.protocol ?"https://in-tags.vizury.com" : "http://in-tags.vizury.com")+ "/analyze/pixel.php?account_id=vst";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(viz, s);viz.onload = function() {try {pixel.parse();} catch(i){}};viz.onreadystatechange = function() {if (viz.readyState == "complete" || viz.readyState == "loaded"){try {pixel.parse();}catch(i){}}};}catch(i){}})();
+
+</script>
+
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
