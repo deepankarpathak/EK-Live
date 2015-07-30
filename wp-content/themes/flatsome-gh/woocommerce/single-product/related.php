@@ -41,7 +41,7 @@ if($flatsome_opt['related_products'] == 'slider' || !isset($flatsome_opt['relate
 <script type="text/javascript">
 	$(document).ready(function($) {
 		/*$(window).load(function() {*/
-	console.log('dfsdfs');
+	//console.log('dfsdfs');
 		$('#slider_related').iosSlider({
 			snapToChildren: true,
 			desktopClickDrag: true,

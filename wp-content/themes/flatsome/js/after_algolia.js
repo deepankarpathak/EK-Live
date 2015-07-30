@@ -31,17 +31,35 @@
 		  return false;
 		});
 
-		// Product Page description panels
+		// Product Page description  and related products slider
 
 		$( '.woocommerce-tabs ul.tabs li a' ).click( function() {
+			var $tab = $( this ),
+				$tabs_wrapper = $tab.closest( '.woocommerce-tabs' );
 
-		var $tab = $( this ),
-			$tabs_wrapper = $tab.closest( '.woocommerce-tabs' );
+			$( 'ul.tabs li', $tabs_wrapper ).removeClass( 'active' );
+			$( 'div.panel', $tabs_wrapper ).hide();
+			$( 'div.panel').addClass('active');
+			$( 'div' + $tab.attr( 'href' ), $tabs_wrapper).show();
+			$tab.parent().addClass( 'active' );
 
-		$( 'ul.tabs li', $tabs_wrapper ).removeClass( 'active' );
-		$( 'div.panel', $tabs_wrapper ).hide();
-		$( 'div' + $tab.attr( 'href' ), $tabs_wrapper).show();
-		$tab.parent().addClass( 'active' );
-
-		return false;
+			return false;
 	    });
+
+	    // Tab content course structure
+
+	    jQuery(document).ready(function() {
+
+			jQuery(".tab_content").hide();
+			jQuery(".tab_content:first").show(); 
+
+			jQuery("ul.tabs-in li").click(function() {
+				jQuery("ul.tabs-in li").removeClass("active");
+				jQuery(this).addClass("active");
+				jQuery(".tab_content").hide();
+				var activeTab = jQuery(this).attr("rel"); 
+				jQuery("#"+activeTab).fadeIn(); 
+			});
+		});
+		
+		$("#slider_related").resize();
