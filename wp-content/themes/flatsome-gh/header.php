@@ -37,7 +37,7 @@ global $wp_session;
     account_id: "VIZVRM3503",
     vertical: "ecommerce",
     type: "product_page",
-    pid: <?php echo $product->id; ?>
+    pid: <?php echo $product->id;?> 
  };
 
 (function(){try{var viz = document.createElement("script"); viz.type = "text/javascript";viz.async = true; viz.src = ("https:" == document.location.protocol ?"https://in-tags.vizury.com" : "http://in-tags.vizury.com")+ "/analyze/pixel.php?account_id=vst";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(viz, s);viz.onload = function() {try {pixel.parse();} catch(i){}};viz.onreadystatechange = function() {if (viz.readyState == "complete" || viz.readyState == "loaded"){try {pixel.parse();}catch(i){}}};}catch(i){}})();
@@ -193,7 +193,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
                                                 <?php } ?>
 						
 						
-						<ul style="float:right;width:20%;margin-bottom:0;list-style:none;">
+						<ul style="" class="minicart">
 						<!-- Show mini cart if Woocommerce is activated -->
 					<?php if(!isset($flatsome_opt['show_cart']) || $flatsome_opt['show_cart'] == 1) { ?>
 					<?php if(function_exists('wc_print_notices')) { ?> 
