@@ -660,5 +660,26 @@ margin-right: 4px;
 	.hidden-xs{
 		display: none !important;
 	}
-	
+}
+
+.dock_undock{
+    background:url("../../../../themes/flatsome-gh/images/detail-tab-icon.png");
+    width: 15px;
+    height:14px;
+    padding: 0px;
+    float: right;
+}
+
+.dock_down{
+    background:url("../../../../themes/flatsome-gh/images/detail-tab-iconh.png");
+}
+
+.name:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px){
+    .dock_this{
+        display: none;
+    }
 }

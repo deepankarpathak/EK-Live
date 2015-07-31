@@ -37,7 +37,7 @@ global $wp_session;
     account_id: "VIZVRM3503",
     vertical: "ecommerce",
     type: "product_page",
-    pid: <?php echo $product->id; 
+    pid: <?php echo $product->id; ?>
  };
 
 (function(){try{var viz = document.createElement("script"); viz.type = "text/javascript";viz.async = true; viz.src = ("https:" == document.location.protocol ?"https://in-tags.vizury.com" : "http://in-tags.vizury.com")+ "/analyze/pixel.php?account_id=vst";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(viz, s);viz.onload = function() {try {pixel.parse();} catch(i){}};viz.onreadystatechange = function() {if (viz.readyState == "complete" || viz.readyState == "loaded"){try {pixel.parse();}catch(i){}}};}catch(i){}})();
@@ -277,7 +277,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 		<header id="masthead" class="site-header" role="banner">
 			<div class="row"> 
 				<div class="large-12 columns header-container">
-					<div class="mobile-menu show-for-small"><a href="#open-menu"><span class="icon-menu"></span></a></div><!-- end mobile menu -->
+					<?php /*<div class="mobile-menu show-for-small"><a href="#open-menu"><span class="icon-menu"></span></a></div><!-- end mobile menu --> */?>
 					
 					<?php if($flatsome_opt['logo_position'] == 'left') : ?> 
                     <div class="small-12    large-3  columns">

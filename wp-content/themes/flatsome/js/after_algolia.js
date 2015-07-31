@@ -63,3 +63,5 @@
 		});
 		
 		$("#slider_related").resize();
+	    $(".product_detail_referral").css("float","left");
+

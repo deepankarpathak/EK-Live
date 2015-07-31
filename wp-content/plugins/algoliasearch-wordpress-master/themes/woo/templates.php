@@ -15,6 +15,11 @@
 </script>
 
 <script type="text/javascript">
+
+function dock_undock(args){
+    $(args).next('.dock_this').slideToggle();
+    $(args).children('.dock_undock').toggleClass("dock_down");;
+}
        $('button').on('click',function(e) {
     if ($(this).hasClass('grid')) {
         $('#view li').removeClass('list').addClass('grid');
@@ -136,10 +141,12 @@
 	 {{#facets}}
     {{#count}}
     <div class="facet">
-        <div class="name">
+        <div class="name" onclick="dock_undock(this)">
             {{ facet_categorie_name }}
+           <button class="dock_undock"></button>     
         </div>
-        <div>
+        <div class="dock_this">
+        
         <div class = "scroll-pane" >
             {{#sub_facets}}
 
