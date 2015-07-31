@@ -1416,6 +1416,7 @@ h1.logo-slider-h1 span {
 }
 #tab-course-structure {
 	text-align: left;
+	height:100%;
 }
 .fee_tab.active.colortab, .fee_tab.active.colortab a {
 	background: none repeat scroll 0 0 #2b3d4f;
@@ -1743,7 +1744,7 @@ h1.logo-slider-h1 span {
 #tab-course-structure ul.tabs-in {
 	margin: 10px 0 0 0;
 	padding: 0;
-	float: left;
+/*	float: left; */
 	list-style: none;
 	height: 32px;
 	border-top: 2px solid #ccc;
@@ -1754,7 +1755,7 @@ h1.logo-slider-h1 span {
 	float: left;
 	margin: -2px 0 0 0;
 	cursor: pointer;
-	padding: 0px 21px;
+	margin-right:42px;
 	height: 31px;
 	line-height: 31px;
 	font-weight: bold;
@@ -1786,8 +1787,8 @@ h1.logo-slider-h1 span {
 	font-size: 1.2em;
 	display: none;
 }
-#tab-course-structure ul.tabs-in li:first-child {
-	padding-left: 0;
+#tab-course-structure ul.tabs-in li:last-child {
+	padding-right: 0;
 }
 /*------------------tabs-end-------------*/
 #products .vendor {
@@ -3148,7 +3149,7 @@ border:none;
 color:#fff !important;
 }
 .entry-content.active {
- background: none repeat scroll 0 0 #f2f2f2;
+ /*background: none repeat scroll 0 0 #f2f2f2;*/
  margin: 0 0 0 0;
  padding: 10px;
  text-align: justify;
@@ -4139,4 +4140,28 @@ margin-right: 4px;
 .coupon_one_message{
 	text-align:center;
 	padding-top:5px;
+}
+.minicart{
+	float: right;
+ 	 width: 20%;
+  	margin-bottom: 0;
+  	list-style: none;
+}
+  	
+.clearfix:after {
+   content: " ";
+   display: block;
+   clear: both;
+}
+@media only screen and (max-width: 767px){
+	.minicart{
+  position: absolute;
+  top: -14px;
+  right: 29%;}
+}
+
+@media only screen and (max-width: 480px){
+	#tab-course-structure ul.tabs-in li {
+		width:100%;
+	}
 }
