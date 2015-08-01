@@ -678,8 +678,38 @@ margin-right: 4px;
     cursor: pointer;
 }
 
+#filter_filter{
+    width: 96%;
+    margin: 0px auto;
+    border-radius: 8px;
+    display:none;
+}
+
+.default_sorting{
+    float: right; 
+    margin-right: 10px; 
+    font-size: 15px;
+}
+
+#result_for{
+    float:left;
+}
 @media screen and (max-width: 480px){
     .dock_this{
         display: none;
     }
+
+    .facets{
+        margin-top:15px;
+    }
+   
+   .default_sorting{
+       float: left;
+       width: 100%;
+       font-size: 16px;
+   }
+
+   #result_for{
+    float:none;
+   }
 }

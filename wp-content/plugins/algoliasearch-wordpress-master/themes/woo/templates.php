@@ -15,31 +15,60 @@
 </script>
 
 <script type="text/javascript">
-
+/*Gambheer Docking Undocking on filters*/
 function dock_undock(args){
     $(args).next('.dock_this').slideToggle();
     $(args).children('.dock_undock').toggleClass("dock_down");;
 }
-       $('button').on('click',function(e) {
-    if ($(this).hasClass('grid')) {
-        $('#view li').removeClass('list').addClass('grid');
+
+/*Gambheer Filter search*/
+/*function filter(args){
+    var len = $(args).parent().children(".options").length;
+    var i=0;
+    var parent = $(args).parent();
+    var arr = [];
+    var ch = ($(args).val()).trim().toLowerCase();
+    
+    for(i=0; i<len; i++){
+        var child = $(parent.children(".options")[i]);
+        arr[i] = (child['context'].innerText).toLowerCase();
     }
-    else if($(this).hasClass('list')) {
-        $('#view li').removeClass('grid').addClass('list');
+    
+    for(i=0; i<len; i++){
+      if(ch.length > 0){  
+          if(arr[i].indexOf(ch) > 0){
+            $(parent.children(".options")[i]).show();
+          }
+          else{
+            $(parent.children(".options")[i]).hide();
+          }
+      }
+      else{
+        $(parent.children(".options")).show();
+      }    
     }
-});
+}*/
+
+    $('button').on('click',function(e) {
+        if ($(this).hasClass('grid')) {
+            $('#view li').removeClass('list').addClass('grid');
+        }
+        else if($(this).hasClass('list')) {
+            $('#view li').removeClass('grid').addClass('list');
+        }
+    });
 </script>
 
 <script type="text/template" id="instant-content-template">
     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12  hits{{#facets_count}} with_facets{{/facets_count}}">
         {{#hits.length}}
         <div class="infos">
-            <div style="float: left">
+            <div id="result_for">
                  result{{^nbHits_one}}s{{/nbHits_one}} for <strong>{{query}}</strong> ({{nbHits}} courses)
             </div>
 
             {{#sorting_indices.length}}
-            <div style="float: right; margin-right: 10px; font-size: 15px">
+            <div class="default_sorting">
                 <select id="index_to_use">
                     <option {{#sortSelected}}{{relevance_index_name}}{{/sortSelected}} value="{{relevance_index_name}}">Default Sorting</option>
                     {{#sorting_indices}}
@@ -100,8 +129,8 @@ function dock_undock(args){
     </div>
 {{^hits.length}}
 		<div class="row">
-        	<div class="col-lg-12 col-md-12">Sorry, You’re looking for <strong>{{query}}</strong> which isn't here. However, we have wide range of courses which will help you enhance your skills.<br/><br/>For Certificates, <a href="http://192.168.2.135/edukart/#q=certificate&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22
-">Click here</a>  |   For Entrance Coaching, <a href="http://192.168.2.135/edukart/#q=entrance&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here.</a>  |  For School Education, <a href="http://192.168.2.135/edukart/#q=class&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a>   |   For Degree Programs, <a href="http://192.168.2.135/edukart/#q=degree&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a>  |   For Diplomas, <a href="http://192.168.2.135/edukart/#q=diploma&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a><br/>
+        	<div class="col-lg-12 col-md-12">Sorry, You’re looking for <strong>{{query}}</strong> which isn’t here. However, we have wide range of courses which will help you enhance your skills.<br/><br/>For Certificates, <a href="http://edukart.com/edukart/#q=certificate&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22
+">Click here</a>  |   For Entrance Coaching, <a href="http://edukart.com/edukart/#q=entrance&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here.</a>  |  For School Education, <a href="http://edukart.com/edukart/#q=class&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a>   |   For Degree Programs, <a href="http://edukart.com/edukart/#q=degree&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a>  |   For Diplomas, <a href="http://edukart.com/edukart/#q=diploma&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a><br/>
         	</div>
 		</div>
         {{/hits.length}}
@@ -136,6 +165,10 @@ function dock_undock(args){
 </div>
 </script> -->
 
+<script type="text/javascript">
+    $(".facets").find("#filter_filter").hide();
+</script>
+
 <script type="text/template" id="instant-facets-template">
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 facets{{#count}} with_facets{{/count}}">
 	 {{#facets}}
@@ -146,9 +179,10 @@ function dock_undock(args){
            <button class="dock_undock"></button>     
         </div>
         <div class="dock_this">
-        
-        <div class = "scroll-pane" >
-            {{#sub_facets}}
+           
+          <div class = "scroll-pane" >
+            <input type="text" id="filter_filter" placeholder="Search..." onkeyup="filter(this)" />
+                {{#sub_facets}}
 
                 {{#type.menu}}
                 <div data-tax="{{tax}}" data-name="{{nameattr}}" data-type="menu" class="{{#checked}}checked {{/checked}}sub_facet menu">
