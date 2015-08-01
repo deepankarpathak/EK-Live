@@ -22,7 +22,7 @@ function dock_undock(args){
 }
 
 /*Gambheer Filter search*/
-/*function filter(args){
+function filter(args){
     var len = $(args).parent().children(".options").length;
     var i=0;
     var parent = $(args).parent();
@@ -47,7 +47,7 @@ function dock_undock(args){
         $(parent.children(".options")).show();
       }    
     }
-}*/
+}
 
     $('button').on('click',function(e) {
         if ($(this).hasClass('grid')) {
@@ -165,10 +165,6 @@ function dock_undock(args){
 </div>
 </script> -->
 
-<script type="text/javascript">
-    $(".facets").find("#filter_filter").hide();
-</script>
-
 <script type="text/template" id="instant-facets-template">
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 facets{{#count}} with_facets{{/count}}">
 	 {{#facets}}
@@ -181,7 +177,7 @@ function dock_undock(args){
         <div class="dock_this">
            
           <div class = "scroll-pane" >
-            <input type="text" id="filter_filter" placeholder="Search..." onkeyup="filter(this)" />
+            <input type="text" id="filter_filter" class="filter_filter" placeholder="Search..." onkeyup="filter(this)" />
                 {{#sub_facets}}
 
                 {{#type.menu}}

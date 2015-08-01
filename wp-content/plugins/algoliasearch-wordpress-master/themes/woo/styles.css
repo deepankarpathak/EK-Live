@@ -682,7 +682,6 @@ margin-right: 4px;
     width: 96%;
     margin: 0px auto;
     border-radius: 8px;
-    display:none;
 }
 
 .default_sorting{
@@ -694,6 +693,11 @@ margin-right: 4px;
 #result_for{
     float:left;
 }
+
+.facet:first-child .filter_filter:first-child{
+    display:none;
+}
+
 @media screen and (max-width: 480px){
     .dock_this{
         display: none;
