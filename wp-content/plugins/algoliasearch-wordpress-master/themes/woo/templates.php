@@ -23,31 +23,75 @@ function dock_undock(args){
 
 /*Gambheer Filter search*/
 function filter(args){
-    var len = $(args).parent().children(".options").length;
+    var course_search = $(args).parent();
+    var scroll_pane = $(course_search).next(".scroll-pane");
+    var len = scroll_pane.find(".options").length;
     var i=0;
-    var parent = $(args).parent();
     var arr = [];
     var ch = ($(args).val()).trim().toLowerCase();
     
     for(i=0; i<len; i++){
-        var child = $(parent.children(".options")[i]);
+        var child = $(scroll_pane.children(".options")[i]);
         arr[i] = (child['context'].innerText).toLowerCase();
     }
     
     for(i=0; i<len; i++){
       if(ch.length > 0){  
           if(arr[i].indexOf(ch) > 0){
-            $(parent.children(".options")[i]).show();
+            $(scroll_pane.children(".options")[i]).show();
           }
           else{
-            $(parent.children(".options")[i]).hide();
+            $(scroll_pane.children(".options")[i]).hide();
           }
       }
       else{
-        $(parent.children(".options")).show();
+        $(scroll_pane.children(".options")).show();
       }    
     }
 }
+
+function clear_all(){
+    var len = $(".facet_value").length;
+    var checkboxes = $(".facet_value");
+    for(var i=0; i<len; i++){
+        if($(checkboxes[i]).is(':checked')){
+            $(checkboxes[i]).trigger("click");
+        }
+    }
+}
+
+function clear_filter(args){
+    var checkboxes = jQuery(args).nextAll('.scroll-pane').find(".facet_value");
+    var slider = jQuery(args).nextAll('.scroll-pane').find(".algolia-slider");
+    var len = checkboxes.length;
+    var temp = 0;
+    for(var i=0; i<len; i++){
+        if($(checkboxes[i]).is(':checked')){
+            $(checkboxes[i]).trigger('click');
+            temp = 1;
+        }
+    }
+
+    if(temp == 1){
+        $(checkboxes[0]).trigger('click');
+        $(checkboxes[0]).trigger('click');
+    }
+    
+    if(slider[0]){
+       clear_price_slider();
+    }
+}
+
+function clear_price_slider(){
+    var sliders = $(".algolia-slider").children(".ui-corner-all");
+    $(sliders[0]).css("width","100%");
+    $(sliders[0]).css("left","0%");
+    $(sliders[1]).css("left","0%");
+    $(sliders[2]).css("left","100%");
+    $(".algolia-slider-info .min").text("0");
+    $(".algolia-slider-info .max").text("440000");
+}
+
 
     $('button').on('click',function(e) {
         if ($(this).hasClass('grid')) {
@@ -167,17 +211,26 @@ function filter(args){
 
 <script type="text/template" id="instant-facets-template">
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 facets{{#count}} with_facets{{/count}}">
-	 {{#facets}}
+    
+    <div class="clear_all_div">
+       <button class="clear_all" onclick="clear_all()">Clear All</button>
+    </div>
+    
+    {{#facets}}
     {{#count}}
+
     <div class="facet">
         <div class="name" onclick="dock_undock(this)">
             {{ facet_categorie_name }}
-           <button class="dock_undock"></button>     
+            
+            <button class="dock_undock"></button>     
         </div>
         <div class="dock_this">
-           
+          <span id="clear" class="clear_filter" onclick="clear_filter(this)">CLEAR</span>
+          <div class="course-search">
+            <input type="text" id="filter_filter" class="filter_filter" placeholder="Search..." onkeyup="filter(this)" />    
+          </div>         
           <div class = "scroll-pane" >
-            <input type="text" id="filter_filter" class="filter_filter" placeholder="Search..." onkeyup="filter(this)" />
                 {{#sub_facets}}
 
                 {{#type.menu}}
