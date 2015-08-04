@@ -32,7 +32,8 @@ function filter(args){
     
     for(i=0; i<len; i++){
         var child = $(scroll_pane.children(".options")[i]);
-        arr[i] = (child['context'].innerText).toLowerCase();
+        console.log(child);
+        arr[i] = child['context'].textContent.toLowerCase();
     }
     
     for(i=0; i<len; i++){
@@ -51,45 +52,34 @@ function filter(args){
 }
 
 function clear_all(){
-    var len = $(".facet_value").length;
-    var checkboxes = $(".facet_value");
-    for(var i=0; i<len; i++){
-        if($(checkboxes[i]).is(':checked')){
-            $(checkboxes[i]).trigger("click");
-        }
-    }
+    $(".facets").find("input[type='checkbox']").each(function (i) {
+        $(this).prop("checked", false);
+        engine.helper.clearRefinements($(this).attr("data-tax"));
+    });
+    clear_price_slider();
+    engine.helper.search(engine.helper.state.query, function(){});  
 }
 
 function clear_filter(args){
-    var checkboxes = jQuery(args).nextAll('.scroll-pane').find(".facet_value");
     var slider = jQuery(args).nextAll('.scroll-pane').find(".algolia-slider");
-    var len = checkboxes.length;
-    var temp = 0;
-    for(var i=0; i<len; i++){
-        if($(checkboxes[i]).is(':checked')){
-            $(checkboxes[i]).trigger('click');
-            temp = 1;
-        }
-    }
-
-    if(temp == 1){
-        $(checkboxes[0]).trigger('click');
-        $(checkboxes[0]).trigger('click');
-    }
-    
     if(slider[0]){
-       clear_price_slider();
+        clear_price_slider();
+        engine.helper.search(engine.helper.state.query, function(){});
     }
+    else{
+        $(args).nextAll('.scroll-pane').find("input[type='checkbox']").each(function (i) {
+                        $(this).prop("checked", false);
+
+                        engine.helper.clearRefinements($(this).attr("data-tax"));
+                    });
+        engine.helper.search(engine.helper.state.query, function(){});
+    } 
 }
 
 function clear_price_slider(){
-    var sliders = $(".algolia-slider").children(".ui-corner-all");
-    $(sliders[0]).css("width","100%");
-    $(sliders[0]).css("left","0%");
-    $(sliders[1]).css("left","0%");
-    $(sliders[2]).css("left","100%");
-    $(".algolia-slider-info .min").text("0");
-    $(".algolia-slider-info .max").text("440000");
+    var slide_dom = $(".algolia-slider");
+    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
+    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
 }
 
 
@@ -228,7 +218,7 @@ function clear_price_slider(){
         <div class="dock_this">
           <span id="clear" class="clear_filter" onclick="clear_filter(this)">CLEAR</span>
           <div class="course-search">
-            <input type="text" id="filter_filter" class="filter_filter" placeholder="Search..." onkeyup="filter(this)" />    
+            <input type="text" id="filter_filter" class="filter_filter" placeholder="Type {{ facet_categorie_name }}" onkeyup="filter(this)" />    
           </div>         
           <div class = "scroll-pane" >
                 {{#sub_facets}}

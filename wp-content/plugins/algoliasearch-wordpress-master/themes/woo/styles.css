@@ -680,6 +680,10 @@ margin-right: 4px;
     box-shadow: none;
     border-radius: 0;
     height:26px;
+    position: absolute;
+    top:7px;
+    left:2px;
+    padding-bottom: 4px;
 }
 
 .course-search {
@@ -688,6 +692,7 @@ margin-right: 4px;
     width: 93%;
     margin: 0 auto;
     margin-bottom: 10px;
+    height: 34px;
 }
 
 .course-search::before {
@@ -729,9 +734,9 @@ margin-right: 4px;
     display:none;
 }
 
-.facet:nth-child(2) .clear_filter{
+/*.facet:nth-child(2) .clear_filter{
     display:none;
-}
+}*/
 
 .clear_all_div{
     width:100%;
