@@ -138,7 +138,7 @@ if ( $order ) : ?>
 
 <?php endif; ?>
 
-<?php if($order->payment_method_title == 'Credit / Debit Card / Net Banking'){ ?>
+<?php if($order->payment_method == 'paytm' || $order->payment_method=='ccavenue' ){ ?>
 <form action="<?php echo get_site_url(); ?>/referral" method="POST" name ="referral_generate">
 	<input type="hidden" name = "order_referal_email" value = "<?php echo $order->billing_email ;?>" >
 	<input type="hidden" name = "order_referal_name" value = "<?php echo $order->billing_first_name ; ?>" >
