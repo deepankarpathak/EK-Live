@@ -729,14 +729,6 @@ margin-right: 4px;
     float:right;
 }
 
-/*Remove first child of*/
-.facet:nth-child(2) .course-search{
-    display:none;
-}
-
-/*.facet:nth-child(2) .clear_filter{
-    display:none;
-}*/
 
 .clear_all_div{
     width:100%;
