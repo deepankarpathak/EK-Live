@@ -159,6 +159,7 @@ jQuery(document).ready(function ($) {
             $(algoliaSettings.instant_jquery_selector).html(html_content);
 
             updateSliderValues();
+            $(".algolia-slider").parent().prev().css("display","none");
         }
 
         function activateInstant()

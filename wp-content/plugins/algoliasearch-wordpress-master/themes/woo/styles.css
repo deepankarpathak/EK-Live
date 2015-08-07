@@ -293,7 +293,7 @@
 #algolia_instant_selector .result .result-sub-content-grid
 {
     padding: 10px;
-    min-height: 382px;
+    min-height: 387px;
     text-align: center;
 }
 
@@ -304,6 +304,7 @@
     padding-top: 10px;
     color: #000000;
     min-height: 125px;
+    line-height:20px;
     
 }
 #algolia_instant_selector .result .result-thumbnail{
@@ -656,11 +657,6 @@ margin-right: 4px;
 }
 #index_to_use{margin-top:5px;}
 .changelook{height: 32px;padding: 0;width: 32px;background-color: transparent;margin: 0}
-@media screen and (max-width: 767px){
-	.hidden-xs{
-		display: none !important;
-	}
-}
 
 .dock_undock{
     background:url("../../../../themes/flatsome-gh/images/detail-tab-icon.png");
@@ -681,8 +677,43 @@ margin-right: 4px;
 #filter_filter{
     width: 96%;
     margin: 0px auto;
-    border-radius: 8px;
-    display:none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    height:26px;
+    position: absolute;
+    top:7px;
+    left:2px;
+    padding-bottom: 4px;
+}
+
+.course-search {
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    width: 93%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    height: 34px;
+}
+
+.course-search::before {
+  border-right: 1px solid #ccc;
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 0;
+  width: 1px;
+  height: 11px;
+}
+
+.course-search::after{
+  border-left: 1px solid #ccc;
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: 0;
+  width: 1px;
+  height: 11px;
 }
 
 .default_sorting{
@@ -694,6 +725,49 @@ margin-right: 4px;
 #result_for{
     float:left;
 }
+
+.dock_undock{
+    float:right;
+}
+
+
+.clear_all_div{
+    width:100%;
+    text-align:right;
+}
+
+.clear_all_div button{
+    background:#fff;
+    height:20px;
+    border-radius:10px;
+    color:#000;
+    border:1px solid #000;
+    font-size:10px;
+    margin:0px;
+    line-height:1px;
+}
+
+.clear_filter{
+  float: right;
+  margin-right: 6px;
+  font-size: 13px;
+  margin-top:-26px;
+}
+
+.clear_filter:hover{
+    cursor:pointer;
+}
+
+@media screen and (max-width: 800px){
+    .hidden-xs{
+        display: none !important;
+    }
+
+   .course-search::before, .course-search::after {
+    top: 22px;
+   }
+}
+
 @media screen and (max-width: 480px){
     .dock_this{
         display: none;

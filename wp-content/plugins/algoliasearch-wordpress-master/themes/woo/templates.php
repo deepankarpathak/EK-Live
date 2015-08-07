@@ -22,32 +22,66 @@ function dock_undock(args){
 }
 
 /*Gambheer Filter search*/
-/*function filter(args){
-    var len = $(args).parent().children(".options").length;
+function filter(args){
+    var course_search = $(args).parent();
+    var scroll_pane = $(course_search).next(".scroll-pane");
+    var len = scroll_pane.find(".options").length;
     var i=0;
-    var parent = $(args).parent();
     var arr = [];
     var ch = ($(args).val()).trim().toLowerCase();
     
     for(i=0; i<len; i++){
-        var child = $(parent.children(".options")[i]);
-        arr[i] = (child['context'].innerText).toLowerCase();
+        var child = $(scroll_pane.children(".options")[i]);
+        console.log(child);
+        arr[i] = child['context'].textContent.toLowerCase();
     }
     
     for(i=0; i<len; i++){
       if(ch.length > 0){  
           if(arr[i].indexOf(ch) > 0){
-            $(parent.children(".options")[i]).show();
+            $(scroll_pane.children(".options")[i]).show();
           }
           else{
-            $(parent.children(".options")[i]).hide();
+            $(scroll_pane.children(".options")[i]).hide();
           }
       }
       else{
-        $(parent.children(".options")).show();
+        $(scroll_pane.children(".options")).show();
       }    
     }
-}*/
+}
+
+function clear_all(){
+    $(".facets").find("input[type='checkbox']").each(function (i) {
+        $(this).prop("checked", false);
+        engine.helper.clearRefinements($(this).attr("data-tax"));
+    });
+    clear_price_slider();
+    engine.helper.search(engine.helper.state.query, function(){});  
+}
+
+function clear_filter(args){
+    var slider = jQuery(args).nextAll('.scroll-pane').find(".algolia-slider");
+    if(slider[0]){
+        clear_price_slider();
+        engine.helper.search(engine.helper.state.query, function(){});
+    }
+    else{
+        $(args).nextAll('.scroll-pane').find("input[type='checkbox']").each(function (i) {
+                        $(this).prop("checked", false);
+
+                        engine.helper.clearRefinements($(this).attr("data-tax"));
+                    });
+        engine.helper.search(engine.helper.state.query, function(){});
+    } 
+}
+
+function clear_price_slider(){
+    var slide_dom = $(".algolia-slider");
+    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
+    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
+}
+
 
     $('button').on('click',function(e) {
         if ($(this).hasClass('grid')) {
@@ -165,23 +199,28 @@ function dock_undock(args){
 </div>
 </script> -->
 
-<script type="text/javascript">
-    $(".facets").find("#filter_filter").hide();
-</script>
-
 <script type="text/template" id="instant-facets-template">
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 facets{{#count}} with_facets{{/count}}">
-	 {{#facets}}
+    
+    <div class="clear_all_div">
+       <button class="clear_all" onclick="clear_all()">Clear All</button>
+    </div>
+    
+    {{#facets}}
     {{#count}}
+
     <div class="facet">
         <div class="name" onclick="dock_undock(this)">
             {{ facet_categorie_name }}
-           <button class="dock_undock"></button>     
+            
+            <button class="dock_undock"></button>     
         </div>
         <div class="dock_this">
-           
+          <span id="clear" class="clear_filter" onclick="clear_filter(this)">CLEAR</span>
+          <div class="course-search">
+            <input type="text" id="filter_filter" class="filter_filter" placeholder="Type {{ facet_categorie_name }}" onkeyup="filter(this)" />    
+          </div>         
           <div class = "scroll-pane" >
-            <input type="text" id="filter_filter" placeholder="Search..." onkeyup="filter(this)" />
                 {{#sub_facets}}
 
                 {{#type.menu}}
