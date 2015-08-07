@@ -293,7 +293,7 @@
 #algolia_instant_selector .result .result-sub-content-grid
 {
     padding: 10px;
-    min-height: 382px;
+    min-height: 387px;
     text-align: center;
 }
 
@@ -304,6 +304,7 @@
     padding-top: 10px;
     color: #000000;
     min-height: 125px;
+    line-height:20px;
     
 }
 #algolia_instant_selector .result .result-thumbnail{
