@@ -290,7 +290,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					<?php /*<div class="mobile-menu show-for-small"><a href="#open-menu"><span class="icon-menu"></span></a></div><!-- end mobile menu --> */?>
 					
 					<?php if($flatsome_opt['logo_position'] == 'left') : ?> 
-                    <div class="small-6 large-3  columns header-logo">
+                    <div class="header-logo">
 					<div id="logo" class="logo-left">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home">
 							<?php if($flatsome_opt['site_logo']){
@@ -306,10 +306,11 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					</div><!-- .logo -->
                     </div>
 					<?php endif; ?>
-                    <div class="left-links">
+
+<!--                     <div class="left-links">
  				<ul id="site-navigation" class="header-nav">
  				</ul>
-                    </div><!-- .left-links -->
+                    </div> --><!-- .left-links -->
              
              <script type="text/javascript">
              jQuery(function() {
@@ -335,7 +336,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					?>       
                                     </div>
                                 <?php } else{ ?>
-                                    <div class="small-12    large-6  menu-features columns">
+                                    <div class="menu-features">
                                         <?php 
                                             //get_product_search_form();
 					?>    
@@ -383,69 +384,6 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					</div><!-- .logo -->
                     
 					<?php } ?>
-				<div class="small-12    large-2  columns">
-					<div class="right-links">
-						<?php if(!$flatsome_opt['catalog_mode']) { ?> 
-						<ul <?php if($flatsome_opt['nav_position'] == 'top_right'){ ?>id="site-navigation"<?php } ?> class="header-nav">
-							
-						<?php if($flatsome_opt['nav_position'] == 'top_right'){ ?>
-								<?php if ( has_nav_menu( 'primary' ) ) { ?>
-								
-								<?php if (!isset($flatsome_opt['search_pos']) || $flatsome_opt['search_pos'] == 'left') { ?>
-								<li class="search-dropdown">
-									<a href="#" class="nav-top-link icon-search" onClick="return false;"></a>
-									<div class="nav-dropdown">
-										<?php if(function_exists('get_product_search_form')) {
-											get_product_search_form();
-										} else {
-											get_search_form();
-										} ?>	
-									</div><!-- .nav-dropdown -->
-								</li><!-- .search-dropdown -->
-								<?php } ?>
-
-									<?php  
-									wp_nav_menu(array(
-										'theme_location' => 'primary',
-										'container'       => false,
-										'items_wrap'      => '%3$s',
-										'depth'           => 0,
-										'walker'          => new FlatsomeNavDropdown
-									));
-								?>
-
-								<?php if (isset($flatsome_opt['search_pos']) && $flatsome_opt['search_pos'] == 'right') { ?>
-								<li class="search-dropdown">
-									<a href="#" class="nav-top-link icon-search"></a>
-									<div class="nav-dropdown">
-										<?php if(function_exists('get_product_search_form')) {
-											get_product_search_form();
-										} else {
-											get_search_form();
-										} ?>		
-									</div><!-- .nav-dropdown -->
-								</li><!-- .search-dropdown -->
-								<?php } ?>
-		                    <?php } ?>		
-		                   	<?php } // primary-nav right style ?>
-
-							<?php if($flatsome_opt['top_right_text']) { ?>
-							<li class="html-block">
-								<div class="html-block-inner hide-for-small"><?php echo do_shortcode($flatsome_opt['top_right_text']); ?></div>
-							</li>
-							<?php } ?>
-							
-
-					
-				</ul><!-- .header-nav -->
-				<?php } else { ?>
-				<div class="catalog-mode-header">
-					<?php echo do_shortcode($flatsome_opt['catalog_mode_header']); ?>
-				</div>
-				<?php } ?>
-
-			</div><!-- .right-links -->
-            </div>
 		</div><!-- .large-12 -->
 	</div>
 	<?php //get_search_form( true ); 

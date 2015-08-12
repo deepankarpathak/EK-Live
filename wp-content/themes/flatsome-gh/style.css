@@ -307,10 +307,10 @@ ul.top-bar-nav li:last-child {
 	font-style: normal;
 	font-weight: bold;
 }
-#masthead .header-container #logo > a {
+/*#masthead .header-container #logo > a {
 	padding-top: 20px;
 }
-#edu_logo_slider .ux_slider_wrapper {
+*/#edu_logo_slider .ux_slider_wrapper {
 	height: 90px;
 }
 #edu_popular_courses .vertical-tabs ul.tabs-nav li a {
@@ -336,12 +336,19 @@ ul.top-bar-nav li:last-child {
 #edu_popular_courses {
 	background: #eef2f3;
 }
-.edu-contact-detail span {
-	color: #646463;
-	float: left;
-	font-size: 18px;
+.edu-contact-detail div {
+	color:#30B6E9;
+	font-size: 16px;
 	line-height: 21px;
+	white-space: nowrap;
+	font-weight: bold;
 }
+
+.edu-contact-detail div:last-child {
+	color: #646463;
+	font-size: 15px;
+}
+
 #four_highlights .column-inner:hover img {
 	-webkit-transition: 2s;
 	-moz-transition: 2s;
@@ -361,8 +368,8 @@ ul.top-bar-nav li:last-child {
 	margin: 0 5px 0 0;
 }
 .edu-contact-detail {
-	float: right;
-	margin: 18px 0 0;
+/*	float: right;
+*/	margin: 18px 0 0;
 }
 #edu-testimonial1 > span {
 	color: #fff;
@@ -1720,6 +1727,21 @@ h1.logo-slider-h1 span {
 .product_meta {
 	display: none;
 }
+
+.logo-slider{
+margin:35px 0px;
+}
+
+.logo-slider h1{
+font-size:45px;
+color:#2D3E50;
+text-align:center;
+}
+
+#edu_popular_courses .tabbed-content ul.tabs li:first-child{
+margin:0px;
+}
+
 /*---------------------------order-sucsess-page--*/
 .edu-oder-received {
 	color: #f49c30;
@@ -2100,13 +2122,10 @@ h1.logo-slider-h1 span {
     display: block !important;
 }
 
-.header-logo {
-  width: 20%;
-}
 
-.menu-features {
-  width: 55%;
-  padding-top: 20px;
+.menu-features, .menu-features + div, .header-logo{
+/*	padding: 14px 5px;
+*/	display: inline-block;
 }
 
 .menu-features ul li a{
@@ -2132,6 +2151,24 @@ h1.logo-slider-h1 span {
 	border-right: none !important;
 }
 
+
+#masthead #logo {
+  width: auto !important;
+}
+
+
+
+
+/*------------------------------------*\
+   modify-css-educart-Media Queries
+\*------------------------------------*/
+
+ @media only screen and (min-width: 1062px){
+ 	.edu-contact-detail {
+    	margin-left: 28px;
+	}
+}
+
 @media only screen and (max-width: 1062px) {
 	.topper-menu{
 		width: 70%;		
@@ -2140,31 +2177,32 @@ h1.logo-slider-h1 span {
 		width:30%;
 	}
 
-	.call-icons{
+/*	.call-icons{
 		width: 19%;
 	}
-
-	.edu-contact-detail span {
+*/
+	.edu-contact-detail div {
     	font-size: 14px;
+    	white-space:nowrap;
 	}
 
-	.menu-features {
+/*	.menu-features {
     width: 60%;
 	}
-
-	.header-logo {
+*/
+/*	.header-logo {
     	width: 20%;
 	}
-}
+*/}
 
 @media only screen and (max-width:960px) {
-	.call-icons{
+/*	.call-icons{
 		width: 20%;
 	}
 	.menu-features {
     width: 65%;
 	}
-
+*/
 	.edu-contact-detail img{
 		height: 30px;
 		width: 30px;
@@ -2181,7 +2219,7 @@ h1.logo-slider-h1 span {
 	.menu-features ul li a{
 		font-size: 12px !important;
 	}
-	.edu-contact-detail span {
+	.edu-contact-detail div {
     	font-size: 12px;
 	}
 }
@@ -2204,9 +2242,21 @@ h1.logo-slider-h1 span {
 	}
 }
 
-/*------------------------------------*\
-   modify-css-educart-Media Queries
-\*------------------------------------*/
+@media only screen and (max-width:850px) {
+	.header_logo {
+    	width: 120px !important;
+	}
+	.edu-contact-detail div span{
+   	 	display: block;
+   	 	margin-left: 32px;
+	}
+
+	.edu-contact-detail div span:last-child{
+		position: absolute;
+	}
+
+}
+
 @media only screen and (max-width: 768px) {
 /* .top-bar-nav {
 display: none;
@@ -2276,6 +2326,14 @@ margin-left:5px !important;
 }
 
 /******* for referal end********/
+
+.menu-features{
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 9px;
+}
+
 .fkr_nav {
  display: block;
  float: none;
@@ -2338,8 +2396,9 @@ width:100%;
 ul.top-bar-nav li {
  background-size: 13% auto !important;
  border-left: 1px solid #dad9da !important;
- padding: 5px 10px 5px 15% !important;
- text-align: left;
+/* padding: 5px 10px 5px 15% !important;
+*/ text-align: left;
+	display: inline-block;;
 }
 .nave-main.fkr_nav .menu_drop.fkr_nav-item .fkr_nav-submenu.fkr_nav-active {
 display:block !important;
@@ -2461,7 +2520,7 @@ clear:both;
 #masthead .header-container #logo > a {
  display: block;
  padding-top: 5px !important;
- text-align: center;
+ text-align: left;
 }
 #masthead .header-container #logo a img {
  /*width: 50%;*/
@@ -2693,7 +2752,7 @@ z-index:99;
 #masthead .header-container #logo > a {
  display: block;
  padding-top: 5px !important;
- text-align: center;
+ text-align: left;
 }
 #masthead .header-container #logo a img {
  /*width: 50%;*/
@@ -3919,7 +3978,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	background-repeat:no-repeat;
 	padding-left:35px;
 	padding-right:5px;
-	background-position: 0 0;
+	background-position: 0px 4px;
 }
 
 /******* referral CSS ***********/
