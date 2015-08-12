@@ -398,6 +398,8 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 	<?php }?>	
 </div>
 <!-- .row -->
+
+
 </header><!-- .header -->
 
 <?php if($flatsome_opt['nav_position'] == 'bottom' || $flatsome_opt['nav_position'] == 'bottom_center') { ?>
