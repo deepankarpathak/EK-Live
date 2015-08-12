@@ -336,7 +336,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					?>       
                                     </div>
                                 <?php } else{ ?>
-                                    <div class="menu-features">
+                                    <div class="menu-features custom-hide-small">
                                         <?php 
                                             //get_product_search_form();
 					?>    
