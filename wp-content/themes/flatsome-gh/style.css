@@ -32,8 +32,8 @@ Template:     flatsome
 	z-index: 999;
 }
 #mega_menu_and_slider {
-	background: url("images/home-facewall-background-LL.png") no-repeat scroll center top rgba(0, 0, 0, 0);
-	padding: 20px 0 218px;
+	/*background: url("images/home-facewall-background-LL.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+	padding: 20px 0 218px;*/
 }
 .edu_bg_slider {
 	background: #1b354a !important;
@@ -251,17 +251,17 @@ ul.top-bar-nav li:last-child {
 }
 .row.collapse.search-wrapper {
 	background: none repeat scroll 0 0 #374a5f !important;
-	margin: 17px 0;
+	/*margin: 17px 0;*/
 	padding: 7px;
-	border-radius: 5px 5px 5px 5px;
+	/*border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
-	-webkit-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;*/
 	border: 0px solid #000000;
 }
 .row.collapse.search-wrapper form input {
-	border-radius: 3px 0px 0px 3px;
+	/*border-radius: 3px 0px 0px 3px;
 	-moz-border-radius: 3px 0px 0px 3px;
-	-webkit-border-radius: 3px 0px 0px 3px;
+	-webkit-border-radius: 3px 0px 0px 3px;*/
 	border: 0px solid #000000;
 }
 .blog_date_gh {
@@ -888,7 +888,7 @@ ul.top-bar-nav li a:hover {
 	background: none repeat scroll 0 0 #fff !important;
 }
 .header-wrapper.before-sticky {
-	border-bottom: 1px solid #d9d9d9;
+	/*border-bottom: 1px solid #d9d9d9;*/
 }
 .product-page .product-info h4, .product-page .product-info h4 a {
 	color: #354b63;
@@ -2156,8 +2156,61 @@ margin:0px;
   width: auto !important;
 }
 
+.search-div{
+	float:right;
+}
 
+.browse-cat{
+	background:#DFDFDF;
+	color:#777;
+	padding:15px;
+	font-weight:bold;
+	border-bottom:5px solid #ccc;
+	height:46px;
+	padding-left:25px;
+}
 
+.browse-cat:hover{
+	cursor:pointer;
+}
+
+.edu-nave{
+	border-radius:0px;
+}
+
+.stuck .search-div{
+	top: -58px;
+	position: relative;
+	left: -284px;
+	width: 54%;
+}
+
+.stuck .browse-cat{
+	display:none !important;
+}
+
+.stuck .textwidget{
+	margin-left:90px;
+}
+
+.stuck #mega-menu{
+	display:none;
+}
+
+#mega-menu2{
+	display:none;
+	position: absolute;
+  	top: 106px;
+  	width: 30%;
+  	z-index: 999;
+  	left: 7.5%;
+}
+
+.mega-menu2{
+	display:block;
+	position:inherit;
+	width:100%;
+}
 
 /*------------------------------------*\
    modify-css-educart-Media Queries
@@ -2502,7 +2555,7 @@ clear:both;
 .row.collapse.search-wrapper {
  background: none repeat scroll 0 0 #e0e0e0 !important;
  border: 0 solid #000000;
- border-radius: 5px;
+ border-radius: 0px !important;
  margin: 0;
  padding: 1px;
 }

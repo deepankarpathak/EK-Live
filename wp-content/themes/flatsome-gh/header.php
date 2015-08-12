@@ -286,7 +286,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="row"> 
-				<div class="large-12 columns header-container">
+				<div class="large-12 header-container">
 					<?php /*<div class="mobile-menu show-for-small"><a href="#open-menu"><span class="icon-menu"></span></a></div><!-- end mobile menu --> */?>
 					
 					<?php if($flatsome_opt['logo_position'] == 'left') : ?> 
@@ -306,23 +306,35 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					</div><!-- .logo -->
                     </div>
 					<?php endif; ?>
-
-<!--                     <div class="left-links">
- 				<ul id="site-navigation" class="header-nav">
- 				</ul>
-                    </div> --><!-- .left-links -->
-             
-             <script type="text/javascript">
+            <?php if(is_page(array('cart', 'checkout'))) { ?>
+                <div class="small-12 large-6  columns cart_page">
+                    <?php 
+                        wp_nav_menu(array(
+								'theme_location' => 'gh_logged_out_top_bar_menu_location',
+								'menu_class' => 'top-bar-nav',
+								'before' => '',
+								'after' => '',
+								'link_before' => '',
+								'link_after' => '',
+								'depth' => 1,
+								'fallback_cb' => false,
+								'walker' => new FlatsomeNavDropdown
+		                                            ));          
+			?>       
+                </div>
+                                <?php } else{ ?>
+            <script type="text/javascript">
              jQuery(function() {
-	jQuery('.nav-top-link').tooltipster({
-		offsetY: 3,
-	});
- });</script>
-                    
-                                <?php if(is_page(array('cart', 'checkout'))) { ?>
-                                    <div class="small-12 large-6  columns cart_page">
-                                        <?php 
-                                            wp_nav_menu(array(
+				jQuery('.nav-top-link').tooltipster({
+					offsetY: 3,
+				});	
+ 			  });
+            </script>
+    <div class="menu-features">
+		<div class="right-text right edu_topbar">
+		     <?php 
+	               if ( has_nav_menu( 'top_bar_nav' )  ) { 
+					     wp_nav_menu(array(
 						'theme_location' => 'gh_logged_out_top_bar_menu_location',
 						'menu_class' => 'top-bar-nav',
 						'before' => '',
@@ -332,66 +344,60 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 						'depth' => 1,
 						'fallback_cb' => false,
 						'walker' => new FlatsomeNavDropdown
-                                            ));          
-					?>       
-                                    </div>
-                                <?php } else{ ?>
-                                    <div class="menu-features">
-                                        <?php 
-                                            //get_product_search_form();
-					?>    
-					<!-- removed search by sachin -->
-
-						<!--<div class="left-text left">
-		<div class="html"><?php // echo do_shortcode( $flatsome_opt['topbar_left']);?></div>
-	</div>-->
-	<!-- right text -->
-	<div class="right-text right edu_topbar">
-	 <?php 
-               if ( has_nav_menu( 'top_bar_nav' )  ) { 
-			wp_nav_menu(array(
-				'theme_location' => 'gh_logged_out_top_bar_menu_location',
-				'menu_class' => 'top-bar-nav',
-				'before' => '',
-				'after' => '',
-				'link_before' => '',
-				'link_after' => '',
-				'depth' => 1,
-				'fallback_cb' => false,
-				'walker' => new FlatsomeNavDropdown
-			));                                                    
-                }else{ ?>
-                  Define your top bar navigation in <b>Apperance > Menus</b>
-                                                <?php } ?>
-
-
-                               <?php } ?> 
- 
-					<?php if($flatsome_opt['logo_position'] == 'center') { ?> 
-                    
-					<div id="logo">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home">
-							<?php if($flatsome_opt['site_logo']){
-								$site_title = esc_attr( get_bloginfo( 'name', 'display' ) );
-								echo '<img src="'.$flatsome_opt['site_logo'].'" class="header_logo" alt="'.$site_title.'"/>';
-								if ( is_page_template( 'page-transparent-header-light.php' )) {
-								  if($flatsome_opt['site_logo_dark']){
-								  	echo '<img src="'.$flatsome_opt['site_logo_dark'].'" class="header_logo_dark" alt="'.$site_title.'"/>';
-								  }
-								}
-							} else {bloginfo( 'name' );}?>
-						</a>
-					</div><!-- .logo -->
-                    
-					<?php } ?>
-		</div><!-- .large-12 -->
-	</div>
-	<?php //get_search_form( true ); 
-			dynamic_sidebar("gh_header_contact_widget_area");
+				    ));                                                    
+	                }else{ ?>
+	                  Define your top bar navigation in <b>Apperance > Menus</b>
+	                <?php } ?>
+        <?php } ?> 
+	 
+		<?php if($flatsome_opt['logo_position'] == 'center') { ?> 
+				<div id="logo">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home">
+						<?php if($flatsome_opt['site_logo']){
+							$site_title = esc_attr( get_bloginfo( 'name', 'display' ) );
+							echo '<img src="'.$flatsome_opt['site_logo'].'" class="header_logo" alt="'.$site_title.'"/>';
+							if ( is_page_template( 'page-transparent-header-light.php' )) {
+							  if($flatsome_opt['site_logo_dark']){
+							  	echo '<img src="'.$flatsome_opt['site_logo_dark'].'" class="header_logo_dark" alt="'.$site_title.'"/>';
+							  }
+							}
+						} else {bloginfo( 'name' );}?>
+					</a>
+				</div><!-- .logo -->
+		<?php } ?>
+	</div><!-- .large-12 -->
+</div>
+	<?php 
+		dynamic_sidebar("gh_header_contact_widget_area");
 	?>
+</div>	
+<div class="large-12 search-menu-container">
+	<?php if (!is_page(array('cart', 'checkout'))){ ?>
+				<div class="search-box-row search-div large-8">
+					<div class="row collapse search-wrapper">
+						<form method="GET" id="searchform" class="searchform" action="<?php echo site_url();?>/courses/">
+			  				<div class="large-10 small-10 columns">
+			   					<input type="search" class="field" name="s" id="s" value="<?php echo $_GET['s']; ?>" placeholder="<?php echo _e( 'Search the courses e.g. MBA, BA, BBA, ', 'woocommerce' ); ?>&hellip;" />
+			  				</div><!-- input -->
+				  			<div class="large-2 small-2 columns">
+			              		<input type="submit" class="button secondary postfix gh_search_form" value="GO">
+				  			</div><!-- button -->
+						</form>
+					</div><!-- row -->
+				</div>
+				<div class="no-padding menu-container large-4">
+					<div class="browse-cat hide-for-small" id="browse-cat">Browse Course Categories
+						<span style="float:right"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/detail-tab-icon.png" style="width:20px"/></span>
+					</div>
+					<div id="mega-menu" <?php if (!is_front_page()){echo "style='display:none';";}?> >
+						<?php 
+							echo do_shortcode('[block id="mega-menu"]'); 
+						?>
+					</div>
+				</div>
+	<?php }?>	
+</div>
 <!-- .row -->
-
-
 </header><!-- .header -->
 
 <?php if($flatsome_opt['nav_position'] == 'bottom' || $flatsome_opt['nav_position'] == 'bottom_center') { ?>
