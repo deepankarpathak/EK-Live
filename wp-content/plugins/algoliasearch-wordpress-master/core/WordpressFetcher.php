@@ -37,7 +37,7 @@ class WordpressFetcher
         if ($type == 'datetime')
             return strtotime($value, current_time('timestamp'));
 
-        return $value; //utf8_encode ?
+        return html_entity_decode($value); //utf8_encode ?
     }
 
     private function try_cast($value)
@@ -48,7 +48,7 @@ class WordpressFetcher
         if (is_numeric($value))
             return floatval($value);
 
-        return $value;
+        return html_entity_decode($value);
     }
 
     public function getImage($id)
@@ -251,7 +251,7 @@ class WordpressFetcher
             if (isset($algolia_registry->metas['tax']) && isset($algolia_registry->metas['tax'][$tax]))
             {
                 $obj->$tax = array_map(function ($obj) {
-                    return $obj->name;
+                    return html_entity_decode($obj->name);
                 }, $terms);
             }
         }
