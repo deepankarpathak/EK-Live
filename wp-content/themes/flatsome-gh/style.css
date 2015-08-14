@@ -397,7 +397,7 @@ ul.top-bar-nav li:last-child {
 }
 .edu_pg_pc span {
 	clear: none;
-	color: #2D3E50;
+	color: #2C3E50;
 	display: inherit;
 	float: left;
 	font-size: 44px;
@@ -800,13 +800,14 @@ ul.top-bar-nav li:last-child {
 }
 .edu_top_courses .textwidget h3 {
 	font-size: 17px;
-	font-weight: normal;
+	font-weight: bold;
 	text-transform: uppercase;
 }
 .edu_top_courses .textwidget p {
 	font-size: 15px;
-	line-height: 28px;
+	line-height: 20px;
 	text-align: left;
+	margin-bottom: 0px;
 }
 .edu_top_courses .textwidget a {
 	color: #7d7d7d;
@@ -820,6 +821,10 @@ ul.top-bar-nav li:last-child {
 .edu_footer_payment .textwidget p:first-child {
 	font-size: 11px;
 	margin: 0;
+	border-top: 1px solid #bbb;
+	border-bottom: 1px solid #bbb;
+	padding: 10px;
+	margin-bottom: 10px;
 }
 .edu_footer_payment .textwidget img {
 	clear: both;
@@ -1070,19 +1075,38 @@ ul.top-bar-nav li a:hover {
 }
 
 .feature-tabs{
-	margin-top: 5px;
+	margin-top: 10px;
 }
 
 .custom-column{
 	width: 20%;
 	padding: 0 8px;
-	float: left;
+	float: left !important;
 }
 
 .feature-tabs .panels{
 	padding: 0 30px;
 }
 
+#four_highlights .our-feature-wrap {
+	margin: 20px auto;
+}
+
+#four_highlights .heading-frs{
+	font-size: 44px;
+	font-weight: bold;
+	text-align: center;
+	color: #2C3E50;
+	margin-bottom:15px;
+}
+
+#four_highlights .content-frs{
+	font-size: 24px;
+	color: #9c9c9c;
+	text-align: center;
+	font-weight: 600;
+	margin-bottom: 10px
+}
 
 .feature-tabs .tabbed-content ul.tabs li.tab{
 	margin: 0 -3px;
@@ -1222,7 +1246,7 @@ ul.top-bar-nav li a:hover {
 	border:2px solid #dd9e3d;
 }
 .edu-enquiry-bg {
-	background: none repeat scroll 0 0 #2d3e50;
+	background: none repeat scroll 0 0 #2C3E50;
 	height: 100%;
 	left: 0;
 	opacity: 0.6;
@@ -1454,15 +1478,14 @@ h1.logo-slider-h1 {
 	size:100%;
 }
 h2.logo-slider-h1 {
-	background: url("images/30-ui-bg1.png") no-repeat scroll left center rgba(0, 0, 0, 0);
-	color: #999999;
+	color: #2C3E50;
 	display: block;
-	font-size: 33px;
+	font-size: 44px;
 	font-weight: normal;
+	font-weight: bold;
 	margin: 65px 0 10px;
 	padding: 0;
 	text-align: center;
-	text-transform: uppercase;
 }
 h1.logo-slider-h1 span {
 	background: none;
@@ -1784,7 +1807,7 @@ margin:35px 0px;
 
 .logo-slider h1{
 font-size:45px;
-color:#2D3E50;
+color:#2C3E50;
 text-align:center;
 }
 
