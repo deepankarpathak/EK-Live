@@ -330,6 +330,23 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 				});	
  			  });
             </script>
+    <!-- Sticky search hidden -->
+<div class="search-menu-container sticky-hidden">
+	<div class="search-box-row">
+		<div class="row collapse search-wrapper">
+			<form method="GET" id="searchform" class="searchform" action="<?php echo site_url();?>/courses/">
+  				<div class="large-10 small-10 columns">
+   					<input type="search" class="field" name="s" id="s" value="<?php echo $_GET['s']; ?>" placeholder="<?php echo _e( 'Search the courses e.g. MBA, BA, BBA, ', 'woocommerce' ); ?>&hellip;" />
+  				</div><!-- input -->
+	  			<div class="large-2 small-2 columns">
+              		<input type="submit" class="button secondary postfix gh_search_form" value="GO">
+	  			</div><!-- button -->
+			</form>
+		</div><!-- row -->
+	</div>
+</div>
+<!-- End Sticky search hidden -->
+
     <div class="menu-features">
 		<div class="right-text right edu_topbar">
 		     <?php 
@@ -373,7 +390,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 </div>	
 <div class="large-12 search-menu-container">
 	<?php if (!is_page(array('cart', 'checkout'))){ ?>
-				<div class="search-box-row search-div large-8">
+				<div class="search-box-row search-div large-8 small-12">
 					<div class="row collapse search-wrapper">
 						<form method="GET" id="searchform" class="searchform" action="<?php echo site_url();?>/courses/">
 			  				<div class="large-10 small-10 columns">
