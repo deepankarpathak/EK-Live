@@ -2285,6 +2285,15 @@ margin-left: 0 !important;
 	pointer-events: auto;
 }
 
+.no-padding.menu-container.large-4{
+	width: 29%;
+}
+
+.search-box-row.search-div.large-8.small-12{
+	width: 71%;
+	float: right;
+}
+
 
 
 .stuck .search-menu-container{
@@ -2358,6 +2367,11 @@ margin-left: 0 !important;
   margin-top: -17px;
 }
 
+
+#four_highlights .column-inner{
+	text-align: center;
+}
+
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
@@ -2409,6 +2423,11 @@ margin-left: 0 !important;
     width: 65%;
 	}
 */
+
+	.browse-cat {
+	    padding: 15px 10px 15px 6px;
+	    font-size: 14px !important;
+	}
 	.edu-contact-detail img{
 		height: 30px;
 		width: 30px;
@@ -2467,7 +2486,14 @@ margin-left: 0 !important;
 	}
 	.edu-contact-detail div span{
    	 	display: block;
-   	 	margin-left: 32px;
+	}
+
+	.edu-contact-detail div:last-child {
+    	font-size: 12px;
+	}
+
+	.edu-contact-detail div {
+    	font-size: 11px;
 	}
 
 	.edu-contact-detail div span:last-child{
@@ -2478,6 +2504,16 @@ margin-left: 0 !important;
 
 
 @media only screen and (max-width: 767px) {
+
+.button.secondary.postfix.gh_search_form {
+	height: 32px;
+	border-radius: 0;
+}
+
+.search-box-row.search-div.large-8.small-12 {
+    width: 100%;
+}
+
 	 .top-bar-nav {
 	display: none;
 	}
@@ -2539,13 +2575,9 @@ margin-left:5px !important;
 }
 
 
- @media only screen and (min-width: 320px) and (max-width: 768px) {
+ @media only screen and (min-width: 320px) and (max-width: 767px) {
 /******* for referal ********/
 
-.button.secondary.postfix.gh_search_form {
-	height: 32px;
-	border-radius: 0;
-}
 
 
 */ #jPanelMenu-menu .top-bar-nav {
@@ -2557,6 +2589,47 @@ display:block
 
 .menu-features.custom-hide-small{
 	display: none;
+}
+
+.custom-hide-small{
+	display: none;
+}
+
+#four_highlights .small-3.large-12.columns,#four_highlights .small-9.large-12.columns{
+	padding: 0;
+}
+
+#four_highlights .small-9.large-12.columns{
+	padding-left: 10px;
+}
+
+#four_highlights .small-12.large-3.columns{
+	border-top: 1px solid #bbb;
+	padding: 0;
+	padding-top: 10px;
+	margin-bottom: 0;
+} 
+
+#four_highlights .small-12.large-3.columns:last-child{
+	border-bottom: 1px solid #bbb;
+}
+
+#four_highlights h2 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#four_highlights p {
+    font-size: 13px;
+}
+
+#four_highlights .column-inner{
+	text-align: left;
+}
+
+.footer.dark {
+    background: #DDD;
+    color:#999;
 }
 
 .stuck .search-menu-container.sticky-hidden{
