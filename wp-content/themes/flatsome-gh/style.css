@@ -2328,10 +2328,10 @@ margin-left: 0 !important;
 	width: 54%;
 }
 
-.stuck .header-container .header-logo{
+/*.stuck .header-container .header-logo{
 	top:0 !important;
 }
-
+*/
 .stuck .header-container .menu-features{
 	display: none;
 }
@@ -2368,6 +2368,7 @@ margin-left: 0 !important;
 
 .call-icons .call-wrap{
 	display: inline-block;
+	text-align: left;
 }
 
 .top-bar-nav{
@@ -2395,14 +2396,6 @@ margin-left: 0 !important;
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
-
- @media only screen and (min-width: 1062px){
- 	.edu-contact-detail {
-    	margin-left: 28px;
-	}
-}
-
-
 
 @media only screen and (max-width: 1062px) {
 	.topper-menu{
@@ -2552,10 +2545,10 @@ margin-left: 0 !important;
 		padding: 5px 15px
 	}
 
-	.stuck .header_logo{
+/*	.stuck .header_logo{
 		 margin-top: 10px;
 	}
-
+*/
 	.stuck .search-wrapper{
 		display: block !important;
 	}
@@ -2660,6 +2653,7 @@ display:block
 	display: block !important;
 	position: absolute;
 	width: 100%;
+	top:40px;
 }
 
 .sticky-wrapper{
