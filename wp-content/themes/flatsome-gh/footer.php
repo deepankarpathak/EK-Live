@@ -288,13 +288,18 @@ jQuery(document).ready(function() {
 				    $("#mega-menu2").css('top','106px');
 				    $("#mega-menu2").css('z-index','999');
 				    $("#mega-menu2").css('left','8.5%');
+				    if($( window ).width() > 768 && $( window ).width() < 1080){
+				    	$("#mega-menu2").css('left','0%');
+				    }
 				    $("#mega-menu2 #mega_menu_and_slider").css("padding","0px");
 				    $("#mega-menu2 .container").css("padding","0px");
 	                $("#mega-menu").hide();
 	        } 
 	        else{
-	           $("#mega-menu2").hide();
-	           $("#mega-menu").show();
+	        	<?php if(is_front_page()) {?>
+		           $("#mega-menu2").hide();
+		           $("#mega-menu").show();
+		        <?php }?>
 	        }
     	}
     });
