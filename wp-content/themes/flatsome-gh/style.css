@@ -2506,6 +2506,15 @@ margin-left: 0 !important;
    	 	display: block;
 	}
 
+	.call-icons{
+		margin-top: -9px;
+		margin-right: 5px;
+	}
+
+	.stuck .head-phone-no span{
+		display: block !important;
+	}
+
 	.edu-contact-detail div:last-child {
     	font-size: 12px;
 	}
