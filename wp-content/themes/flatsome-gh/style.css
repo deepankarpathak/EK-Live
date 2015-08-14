@@ -1105,7 +1105,8 @@ ul.top-bar-nav li a:hover {
 	color: #9c9c9c;
 	text-align: center;
 	font-weight: 600;
-	margin-bottom: 10px
+	margin-bottom: 10px;
+	line-height:34px;
 }
 
 .feature-tabs .tabbed-content ul.tabs li.tab{
@@ -2117,6 +2118,16 @@ margin-left: 0 !important;
 	margin-top: 20px;
 	height:10px;
 }
+
+.edu-nave ul.edu_mainnave ul.edu_subnave li,.edu-nave ul.edu_mainnave ul.edu_subnave li:hover {
+	background: none !important;
+}
+
+.edu-nave ul.edu_mainnave ul.edu_subnave li:hover{
+	background-color: #E3E3E3 !important;
+}
+
+
 .amount1 span {
 	width:20px;
 	float:left;
@@ -2218,6 +2229,14 @@ margin-left: 0 !important;
 */	display: inline-block;
 }
 
+.menu-features{
+	margin-top: 20px;
+}
+
+.header-container{
+	text-align: center;
+}
+
 .menu-features + div{
 	float: right;
 }
@@ -2225,6 +2244,7 @@ margin-left: 0 !important;
 .header-logo{
 	position: relative;
 	top: 8px !important;
+	float: left;
 }
 
 .menu-features ul li a{
@@ -2354,7 +2374,7 @@ margin-left: 0 !important;
 	margin-top: 22px;
 }
 
-.fkr_nav-item:hover:after {
+.edu-nave ul.edu_mainnave ul.edu_subnave li:hover:after {
   content: "";
   display: inline-block;
   height: 0;
@@ -2454,6 +2474,11 @@ margin-left: 0 !important;
 	}
 */
 
+	.menu-features {
+	    margin-top: 0px;
+	}
+
+
 	.browse-cat {
 	    padding: 15px 10px 15px 6px;
 	    font-size: 14px !important;
@@ -2466,7 +2491,7 @@ margin-left: 0 !important;
 
 	.header-logo {
     	width: 18% !important;
-    	top: 0 !important;
+    	top: 15px !important;
 	}
 
 	.header_logo{
@@ -2531,7 +2556,6 @@ margin-left: 0 !important;
 	}
 
 }
-
 
 @media only screen and (max-width: 767px) {
 
