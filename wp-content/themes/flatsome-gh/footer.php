@@ -284,7 +284,7 @@ jQuery(document).ready(function() {
 	        if (jQuery(this).scrollTop() > offset) {
 	                $("#mega-menu2").show();
 	                $("#mega-menu2").css('position','absolute');
-				    $("#mega-menu2").css('width','28%');
+				    $("#mega-menu2").css('width','24%');
 				    $("#mega-menu2").css('top','106px');
 				    $("#mega-menu2").css('z-index','999');
 				    $("#mega-menu2").css('left','8.5%');
