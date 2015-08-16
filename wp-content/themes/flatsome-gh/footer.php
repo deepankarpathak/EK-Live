@@ -272,6 +272,88 @@ $("#s").keyup(function(){
 	     });  
 	}
 });
+
+$("#browse-cat").click(function(){
+	$("#mega-menu").slideToggle();
+});
+
+jQuery(document).ready(function() {
+    var offset = 100;
+    jQuery(window).scroll(function() {
+    	if($( window ).width() > 768){
+	        if (jQuery(this).scrollTop() > offset) {
+	                $("#mega-menu2").show();
+	                $("#mega-menu2").css('position','absolute');
+				    $("#mega-menu2").css('width','24%');
+				    $("#mega-menu2").css('top','106px');
+				    $("#mega-menu2").css('z-index','999');
+				    $("#mega-menu2").css('left','8.5%');
+				    if($( window ).width() > 768 && $( window ).width() < 1080){
+				    	$("#mega-menu2").css('left','0%');
+				    }
+				    $("#mega-menu2 #mega_menu_and_slider").css("padding","0px");
+				    $("#mega-menu2 .container").css("padding","0px");
+	                $("#mega-menu").hide();
+	        } 
+	        else{
+	        	<?php if(is_front_page()) {?>
+		           $("#mega-menu2").hide();
+		           $("#mega-menu").show();
+		        <?php }?>
+	        }
+    	}
+    });
+
+     jQuery(window).resize(function(){
+     	megamenu_adjust();
+     });
+     megamenu_adjust();
+ });
+
+function megamenu_adjust(){
+	if($( window ).width() < 768){
+		$("#mega-menu").hide();
+		$("#mega-menu2").show();
+	    $("#mega-menu2").css('position','inherit');
+	    $("#mega-menu2").css('width','100%');
+	    $("#mega-menu2 #mega_menu_and_slider").css("padding","0px");
+	    $("#mega-menu2 .container").css("padding","0px");
+	    $(".edu-nave ul.edu_mainnave li").css("background","#fff");
+	    $(".fkr_nav").css("background","#fff");
+	}
+	else{
+	    $("#mega-menu2").hide();
+	}  
+}
+
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://edukart.com/about-us",
+      "name": "About_Us"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "https://edukart.com/career",
+      "name": "Career"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "https://edukart.com/blog",
+      "name": "Blog"
+    }
+  }]
+}
 </script>
 </body>
 </html>

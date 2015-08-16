@@ -9,10 +9,10 @@ ob_start();
 
 	/* Set FONTS */
 	<?php if(!isset($flatsome_opt['disable_fonts']) || !$flatsome_opt['disable_fonts']) {?> 
-	.top-bar-nav a.nav-top-link,body,p,#top-bar,.cart-inner .nav-dropdown,.nav-dropdown{font-family: <?php echo $flatsome_opt['type_texts'] ?>,helvetica,arial,sans-serif!important;}
-	.header-nav a.nav-top-link{font-family: <?php echo $flatsome_opt['type_nav'] ?>,helvetica,arial,sans-serif!important;}
-	h1,h2,h3,h4,h5,h6{font-family: <?php echo $flatsome_opt['type_headings'] ?>,helvetica,arial,sans-serif!important;}
-	.alt-font{font-family: <?php echo $flatsome_opt['type_alt'] ?>,Georgia,serif!important;}
+	.top-bar-nav a.nav-top-link,body,p,#top-bar,.cart-inner .nav-dropdown,.nav-dropdown{font-family: robotolight,helvetica,arial,sans-serif!important;}
+	.header-nav a.nav-top-link{font-family:robotolight,helvetica,arial,sans-serif!important;}
+	h1,h2,h3,h4,h5,h6{font-family: robotolight,helvetica,arial,sans-serif!important;}
+	.alt-font{font-family: robotolight,Georgia,serif!important;}
 	<?php }?>
 
 	/* CUSTOM LAYOUT */
