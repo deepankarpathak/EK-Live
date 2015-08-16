@@ -116,10 +116,10 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 <div class="large-12 small-12 columns">
 
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
-<div class="cart-wrapper">
-<table class="shop_table cart responsive" cellspacing="0">
+<div class="cart-wrapper custom-cart">
+<div class="shop_table cart responsive" cellspacing="0">
 	
-	<tbody>
+	<div>
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
 		
@@ -133,10 +133,10 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 
 				?>
-				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+				<div class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 					<input type="hidden" value="<?php echo $product_id; ?>" name="product_id" id="product_id">
 
-					<td class="product-thumbnail">
+					<div class="product-thumbnail">
 						<?php
 							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', str_replace( array( 'http:', 'https:' ), '', $_product->get_image() ), $cart_item, $cart_item_key );
 
@@ -145,9 +145,9 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 							else
 								printf( '<a href="%s">%s</a>', $_product->get_permalink(), $thumbnail );
 						?>
-					</td>
+					</div>
 
-					<td class="product-name">
+					<div class="product-name">
 						<?php
 							if ( ! $_product->is_visible() )
 								echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key );
@@ -158,17 +158,21 @@ cartval: <?php echo $woocommerce->cart->total; ?>
                				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
                					echo '<p class="backorder_notification">' . __( 'Available on backorder', 'woocommerce' ) . '</p>';
 						?>
-					</td>
+						<div class="describtion">Narsee Monjee Institute of Management Studies</div>
+					</div>
 
-					<td class="product-subtotal">
+					<div class="product-provider">
+					</div>
+
+					<div class="product-subtotal">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
 							// Meta data
 							echo WC()->cart->get_item_data( $cart_item );
 						?>
-					</td>
+					</div>
 
-					<td class="remove-product">
+					<div class="remove-product">
 						<?php
 							//echo $_product->get_attribute("referral-cashback");
 							//echo WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] );
@@ -176,9 +180,9 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 								$ga = $ga + (int)$_product->get_attribute("referral-cashback");
 								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove" title="%s"><span class="icon-close"></span></a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
 							?>
-					</td>
+					</div>
 					<input type="hidden" id="cart_subtotal" value = "<?php echo  $woocommerce->cart->get_cart_total(); ?>">
-				</tr>
+				</div>
 				
 				<?php
 			}
@@ -210,8 +214,8 @@ if(isset($_COOKIE['referee']) AND $_COOKIE['referee'] != '' ){
 
 		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 
-	</tbody>
-</table>
+	</div>
+</div>
 
 
 
