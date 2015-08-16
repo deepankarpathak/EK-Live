@@ -163,19 +163,26 @@ if (is_user_logged_in()) {
 
 
 </div><!-- .large-12 -->
+
 <form name="checkout" method="post" class="checkout" action="<?php echo esc_url($get_checkout_url); ?>">
-        <div class ="checkout-group">
+<!--         <div class ="checkout-group">
             <h3><?php _e( 'Billing Details', 'woocommerce' ); ?></h3>
         </div>
-        <div class="large-3 columns email_login">
-            
-            <p class="form-row form-row-first">
-                    <label for="username"><?php _e( 'Email Address', 'woocommerce' ); ?> <span class="required">*</span></label>
-                    <input type="text" class="input-text" name="username" id="username" autocomplete="off" />
-            </p>
-        </div>
+ --> 
+    <div class="large-12 columns email_login custom-form-row">
+        <input type="text" class="input-text" name="username" id="username" autocomplete="off" placeholder="Email*" />
+    </div>
     <div class="clear"></div>
-    <div id="customer_details" class="large-7  columns">
+
+    <div class="large-12" style="border:1px solid #ccc; padding:20px">
+        Address
+    </div>
+
+    <div class="large-12" style="border:1px solid #ccc; padding:20px">
+        Payment
+    </div>
+
+    <div id="customer_details" class="large-12 columns custom-form-row">
 
 
 
@@ -199,7 +206,7 @@ if (is_user_logged_in()) {
 
 
         </div><!-- .large-7 -->
-        <div class="large-5  columns">
+        <div class="large-12  columns custom-form-row">
 
 
             <div class="order-review">

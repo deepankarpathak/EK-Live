@@ -905,6 +905,110 @@ ul.top-bar-nav li a:hover {
 	text-decoration: none !important;
 }
 /*cart-page-css-start-end-------------*/
+
+/*---------------Cart Checkout Start---------------*/
+.custom-cart{
+	padding-right: 0;
+}
+.custom-cart .cart_item{
+	border:2px dotted #bbb;
+	padding: 10px 5px;
+	display: table;
+	width: 100%;
+	margin-bottom: 3px;
+}
+
+.custom-cart .cart_item > div{
+	display: table-cell;
+	vertical-align: middle;
+	min-height: 74px;
+	padding: 0 7px;
+}
+.custom-cart .cart_item .product-name{
+	width: 35%;
+}
+
+.custom-cart .cart_item .product-name a{
+	color:#2C3E50;
+	font-weight: bold;
+}
+
+.custom-cart .cart_item .product-name .describtion{
+		color:#777;
+		padding-top: 10px;
+}
+
+.custom-cart .cart_item .product-provider{
+	width: 20%;
+}
+
+.custom-cart .cart_item .product-subtotal{
+	width: 25%;
+	color: #3AC475;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.custom-cart .cart_item .product-subtotal dl.variation dd{
+	color: #777;
+	margin: 0;
+}
+
+.custom-cart .cart_item .product-subtotal dl dt{
+	display: none;
+}
+
+.custom-cart .cart_item .remove-product{
+	width: 8%;
+	text-align: right;
+	margin: 0;
+}
+.custom-cart .cart_item .remove-product .icon-close{
+	margin: 0;
+}
+
+.entry-content{
+	margin: 0;
+}
+
+.custom-form-row{
+	border:1px solid #DDD;
+	padding: 15px 0;
+	padding-left: 6%;
+}
+
+.woocommerce .order-review, .woocommerce-checkout form.login {
+    border: none;
+    padding: 0px;
+}
+
+
+.entry-content .woocommerce:nth-of-type(2) .email_login{
+	padding: 15px 0;
+	padding-left: 6%;
+}
+
+.entry-content .woocommerce:nth-of-type(2) .input-text{
+	margin: 0;
+	max-width: 280px;
+	border-radius: 3px;
+	font-size: 15px;
+	font-weight: bold;
+	color: #777;
+}
+
+.entry-content .woocommerce:nth-of-type(2) .input-text:active,.entry-content .woocommerce:nth-of-type(2) .input-text:focus{
+	border-color: #66afe9;
+}
+
+.entry-content .woocommerce form{
+	margin: 0;
+}
+
+
+/*---------------Cart Checkout End---------------*/
+
+
 /*product-detail-page--------------*/
 .single-product.woocommerce.woocommerce-page #wrapper .site-main.light {
 	background: none repeat scroll 0 0 #fff !important;
@@ -1976,6 +2080,7 @@ margin-left: 0 !important;
 /**************** GH Changes ********************/
 .checkout-group.woo-billing {
 	padding: 0 15px;
+	padding-left: 0;
 }
 #my_checkbox1_field {
 	margin-bottom: 0 !important;
