@@ -1645,23 +1645,7 @@ h1.logo-slider-h1 span {
 .edu-ins-name {
 	display: none;
 }
-.cart_page ul.top-bar-nav li {
-	 background-position: 2px 7px;
-	background-size: 23% auto !important;
- 	margin: 0;
-	display: inline-block;
-  padding-left: 31px !important;
-}
-.cart_page #menu-top-bar-menu-with-icons-logged-out{
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-}
-.cart_page ul.top-bar-nav li a {
-	color: #767676;
-	font-size: 12px;
-	font-weight: normal;
-}
+
 .small-12.large-6.columns.cart_page {
 	margin: 22px 0 0;
 	padding: 0;
@@ -2423,6 +2407,47 @@ margin-left: 0 !important;
 	background:#000;
 }
 
+/* Carg page css by Gambheer
+*/
+.cart_page_call_icon
+{
+	float:right;
+	width:25%;
+}
+
+.cart_page ul.top-bar-nav li:first-child{
+	border:none !important;
+}
+
+.cart_page ul.top-bar-nav li:last-child{
+	border-right:none !important;
+}
+
+.cart_page ul.top-bar-nav li {
+  background-position: 8px 2px;
+  background-size: 28% auto !important;
+  margin: 0;
+  display: inline-block;
+  padding-left: 44px !important;
+}
+
+.cart_page #menu-top-bar-menu-with-icons-logged-out{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    opacity:0.5;
+}
+.cart_page ul.top-bar-nav li a {
+	color: #767676;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+.woocommerce-cart .header-wrapper.before-sticky{
+	  border-bottom: 1px solid #000;
+}
+
+/*End cart page by gambheer*/
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
