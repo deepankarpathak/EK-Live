@@ -99,7 +99,7 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 
 <?php if(isset($_GET['remove_coupon'])){ session_destroy(); } ?>
 
-<div class="checkout-breadcrumb">
+<!-- <div class="checkout-breadcrumb">
 		<h1>
 			<span class="title-cart"><?php _e('Applied Courses', 'flatsome'); ?></span>
                         <span class="icon-angle-right divider"></span>    
@@ -107,25 +107,18 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 			<span class="icon-angle-right divider"></span>  
 			<span class="title-thankyou"><?php _e('Enrollment Complete', 'flatsome'); ?></span>
 		</h1>
-</div>
+</div> -->
 <?php wc_print_notices(); ?>
 <?php do_action( 'woocommerce_before_cart' ); ?>
 
 <form action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
  <div class="row">
-<div class="large-8 small-12 columns">
+<div class="large-12 small-12 columns">
 
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 <div class="cart-wrapper">
 <table class="shop_table cart responsive" cellspacing="0">
-	<thead>
-		<tr>
-			<th class="product-name" colspan="3"><?php _e( 'Product', 'woocommerce' ); ?></th>
-			<th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th>
-			<th class="product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
-			<th class="product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></th>
-		</tr>
-	</thead>
+	
 	<tbody>
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
@@ -141,16 +134,7 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 
 				?>
 				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-	<input type="hidden" value="<?php echo $product_id; ?>" name="product_id" id="product_id">
-					<td class="remove-product">
-						<?php
-							//echo $_product->get_attribute("referral-cashback");
-							//echo WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] );
-
-								$ga = $ga + (int)$_product->get_attribute("referral-cashback");
-								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove" title="%s"><span class="icon-close"></span></a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
-							?>
-						</td>
+					<input type="hidden" value="<?php echo $product_id; ?>" name="product_id" id="product_id">
 
 					<td class="product-thumbnail">
 						<?php
@@ -170,41 +154,28 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 							else
 								echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', $_product->get_permalink(), $_product->get_title() ), $cart_item, $cart_item_key );
 
-							// Meta data
-							echo WC()->cart->get_item_data( $cart_item );
-
                				// Backorder notification
                				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
                					echo '<p class="backorder_notification">' . __( 'Available on backorder', 'woocommerce' ) . '</p>';
 						?>
 					</td>
 
-					<td class="product-price">
-						<?php
-							echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
-						?>
-					</td>
-					
-					<td class="product-quantity">
-						<?php
-							if ( $_product->is_sold_individually() ) {
-								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-							} else {
-								$product_quantity = woocommerce_quantity_input( array(
-									'input_name'  => "cart[{$cart_item_key}][qty]",
-									'input_value' => $cart_item['quantity'],
-									'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
-								), $_product, false );
-							}
-
-							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key );
-						?>
-					</td>
-
 					<td class="product-subtotal">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+							// Meta data
+							echo WC()->cart->get_item_data( $cart_item );
 						?>
+					</td>
+
+					<td class="remove-product">
+						<?php
+							//echo $_product->get_attribute("referral-cashback");
+							//echo WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] );
+
+								$ga = $ga + (int)$_product->get_attribute("referral-cashback");
+								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove" title="%s"><span class="icon-close"></span></a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
+							?>
 					</td>
 					<input type="hidden" id="cart_subtotal" value = "<?php echo  $woocommerce->cart->get_cart_total(); ?>">
 				</tr>
@@ -249,50 +220,6 @@ if(isset($_COOKIE['referee']) AND $_COOKIE['referee'] != '' ){
 
 </div><!-- .cart-wrapper -->
 </div><!-- .large-9 -->
-
-
-
-<div class="large-4 small-12 columns edu-cart-sidebar">
-<div class="cart-sidebar">
-
-
-	<?php woocommerce_cart_totals(); ?>
-
-	
-	<!--<input type="submit" class="checkout-button secondary expand button" name="proceed" value="<?php _e( 'Proceed to Checkout', 'woocommerce' ); ?>" />-->
-	
-	<?php // do_action('woocommerce_proceed_to_checkout'); ?>
-		<?php wp_nonce_field( 'woocommerce-cart' ); ?>
-
-		<?php if ( WC()->cart->coupons_enabled() ) { ?>
-		<div class="coupon">
-        <div class="row">
-        
-			<!--<h3 class="widget-title"><?php // _e( 'Coupon', 'woocommerce' ); ?></h3>-->
-			<div class="large-6 small-12 columns"><input type="text" name="coupon_code"  id="coupon_code" value="" placeholder="<?php _e( 'Coupon Code', 'flatsome' ); ?>"/> </div>
-			<div class="large-6 small-12 columns"><input type ="hidden" value = "<?php echo $_SESSION['ir_coupon_code'] ; ?>" name="apply_coupon" id="apply_coupon"><input type = "button" class ="<?php  if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != 'null' AND $_SESSION['cash_back'] != ''){ echo "button small expand" ;}else {echo "button small expand coupon_button";} ?>"  value="Apply Coupon"><input type="submit" style="display:none;" class="button small expand" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" /></div>
-			<?php do_action('woocommerce_cart_coupon'); ?>
-</div>
-		</div>
-		<?php } ?>
-	<div class="coupon_one_message" style = "display:none"><p style="color:red;font-size:10px;">Only one coupon can be applied.</p></div>
-	
-	<?php woocommerce_shipping_calculator(); ?>
-
-</div><!-- .cart-sidebar -->
-</div><!-- .large-3 -->
-<div class="large-4 small-12 columns refer_code_message">
-<?php  if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != 'null' AND $_SESSION['cash_back'] != ''){?>
-	<div class="coupon_successful">
-		<div class="coupon_message"><span>Referral Code</span>APPLIED!</div>
-		<span class="coupon_details_message">Rs <?php echo $_SESSION['cash_back'] ; ?> cash will be added to your Paytm wallet.</span>
-		<a class="referal_coupon_tc"><u><i>*T&C Applied.</i></u></a	>
-	</div>
-
-
-<?php } ?>
-
-</div><!-- .large-3 -->
 </div><!-- .row -->
 
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
