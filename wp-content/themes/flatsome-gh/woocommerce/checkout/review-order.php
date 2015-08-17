@@ -31,10 +31,10 @@ jQuery( document ).ready( function() {
 
 
 </script>
-<?php if ( ! $is_ajax ) : ?><div id="order_review"><?php endif; ?>
+<?php if ( ! $is_ajax ) : ?><div id="order_review" class="clearfix"><?php endif; ?>
 
-	<table class="shop_table">
-		<thead>
+	<table class="shop_table small-12 large-5 columns">
+		<!-- <thead>
 			<tr>
 				<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
 				<th class="product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
@@ -69,11 +69,11 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 
 				do_action( 'woocommerce_review_order_after_cart_contents' );
 			?>
-		</tbody>
+		</tbody> -->
 		<tfoot>
 
 			<tr class="cart-subtotal">
-				<th><?php _e( 'Cart Subtotal', 'woocommerce' ); ?></th>
+				<th><?php _e( 'Subtotal', 'woocommerce' ); ?></th>
 				<td><?php wc_cart_totals_subtotal_html(); ?></td>
 			</tr>
 <input type="hidden" value="<?php echo $product_id; ?>" name="product_id" id="product_id">
@@ -156,7 +156,7 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 	<input type ="hidden" name = "ir_coupon_code" value = "<?php echo $_SESSION['ir_coupon_code'] ; ?>">
 	<?php do_action( 'woocommerce_review_order_before_payment' ); ?>
 
-	<div id="payment">
+	<div id="payment" class="small-12 large-6 columns payment-way ">
 		<?php if ( WC()->cart->needs_payment() ) : ?>
 		<ul class="payment_methods methods">
 			<?php
@@ -201,7 +201,7 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 		</ul>
 		<?php endif; ?>
 
-		<div class="form-row place-order">
+		<div class="form-row place-order order-aggrement">
 
 			<noscript><?php _e( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ); ?><br/><input type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php _e( 'Update totals', 'woocommerce' ); ?>" /></noscript>
 
@@ -219,12 +219,21 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 				</p>
 			<?php } ?>
                         
-                        <?php
-			$order_button_text = apply_filters( 'woocommerce_order_button_text', __( 'Pay Fee', 'woocommerce' ) );
+<!--                         <?php
+			$order_button_text = apply_filters( 'woocommerce_order_button_text', __( 'Pay', 'woocommerce' ) );
 
 			echo apply_filters( 'woocommerce_order_button_html', '<input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '" />' );
 			?>
 			<?php do_action( 'woocommerce_review_order_after_submit' ); ?>
+ -->
+
+                        <?php
+/*			$order_button_text = apply_filters( 'woocommerce_order_button_text', __( 'Pay', 'woocommerce' ) );
+*/			//$rate = ;
+			echo apply_filters( 'woocommerce_order_button_html', '<button type="submit" class="button alt pay-btn" name="woocommerce_checkout_place_order" id="place_order" data-value="' . esc_attr( $order_button_text ) . '"><div class="btn-main-text">PAY '.WC()->cart->get_total().'</div><div class="btn-sub-menu">(Inclusive of all taxes)</div></button>' );
+			?>
+			<?php do_action( 'woocommerce_review_order_after_submit' ); ?>
+
 
 		</div>
 
