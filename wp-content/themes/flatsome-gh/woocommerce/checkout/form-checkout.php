@@ -240,6 +240,7 @@ $("#billing_phone").attr("placeholder","Phone*");
 $("#billing_city").attr("placeholder","Town / City*");
 $("#billing_address_1").attr("placeholder","Full Address*");
 $("#billing_postcode").attr("placeholder","Postcode / Zip*");
+$("#billing_postcode").val("");
 
 $("#edit_address").click(function(){
     $("#customer_details").show();
@@ -254,14 +255,33 @@ function validate_billing_form(){
     var phone = $("#billing_phone").val();
     var billing_address_1 = $("#billing_address_1").val();
     var billing_city = $("#billing_city").val();
-    var billing_state = $("#billing_state").val();
+    var billing_state = $("#billing_state option:selected").text();
     var billing_country = $("#billing_country").val();
+    var country_name = $("#billing_country option:selected").text();
     var billing_postcode = $("#billing_postcode").val();
+    var phoneno = /^\d{10}$/;
+    var pincode = /^\d{6}$/;
 
     var full_name_phone = "<strong>"+fname+ " " + lname + "</strong><br>"+phone;
-    var full_address = billing_address_1+", "+billing_city+", "+billing_state+", "+billing_country+" - "+billing_postcode;
+    var full_address = billing_address_1+", "+billing_city+", "+billing_state+", "+country_name+" - "+billing_postcode;
+    
     if(fname == "" || lname == "" || phone == "" || billing_address_1 == "" || billing_city == "" || billing_postcode == ""){
         $("#customer_details_error").show()
+        return false;
+    }
+    else if(!phone.match(phoneno)){
+        $("#customer_details_error").show();
+        $("#customer_details_error").text("Invalid Phone Number (Contains only 10 digits).");
+        return false;
+    }
+    else if(billing_state =="Select State..."){
+        $("#customer_details_error").show();
+        $("#customer_details_error").text("Please select State.");
+        return false;
+    }
+    else if(!billing_postcode.match(pincode)){
+        $("#customer_details_error").show();
+        $("#customer_details_error").text("Invalid Postal-Code Number (Contains only 6 digits).");
         return false;
     }
     else{
@@ -270,9 +290,10 @@ function validate_billing_form(){
         $("#customer_details").hide();
         $("#name_phone").html(full_name_phone);
         $("#full_address").html(full_address);
+        $(".order-review").show();
+        $(".order-detail").addClass("active");
     }
-    $(".order-review").show();
-    $(".order-detail").addClass("active");
+    
     return false;
 }
 </script>

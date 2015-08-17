@@ -2786,7 +2786,7 @@ margin-left: 0 !important;
 }
 
 #customer_details_filled{
-	display:inline-block;
+	display:none;
 	float: right;
 	width: 84%;
 }
@@ -2805,7 +2805,7 @@ margin-left: 0 !important;
 	float:left;
 }
 
-/*#edit_address{
+#edit_address{
 	margin-left:40px;
 }
 
