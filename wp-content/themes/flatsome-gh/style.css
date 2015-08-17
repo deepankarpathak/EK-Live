@@ -905,11 +905,23 @@ ul.top-bar-nav li a:hover {
 	text-decoration: none !important;
 }
 /*cart-page-css-start-end-------------*/
-
 /*---------------Cart Checkout Start---------------*/
 .custom-cart{
 	padding-right: 0;
 }
+
+.custom-cart .cart-desc{
+	padding:15px 0;
+	color: #333; 
+	float: left;
+}
+
+.custom-cart .pay-opt{
+	float: right;
+	filter: grayscale(100%);
+	opacity: 0.4;
+}
+
 .custom-cart .cart_item{
 	border:2px dotted #bbb;
 	padding: 10px 5px;
@@ -965,7 +977,16 @@ ul.top-bar-nav li a:hover {
 }
 .custom-cart .cart_item .remove-product .icon-close{
 	margin: 0;
+	background: #ddd;
+	color: #fff;
+	border:none;
+	padding-top: 6px;
 }
+
+.custom-cart .cart_item .remove-product .icon-close:hover{
+	background: #ccc;
+}
+
 
 .entry-content{
 	margin: 0;
@@ -973,19 +994,52 @@ ul.top-bar-nav li a:hover {
 
 .custom-form-row{
 	border:1px solid #DDD;
-	padding: 15px 0;
+	padding: 20px 15px;
 	padding-left: 6%;
+}
+
+.custom-form-row h2{
+	margin: 0;
+	color: #2C3E52;
+}
+
+.custom-form-row.active:before{
+	background: #5BB95B;
+}
+
+.custom-form-row:before{
+	background: #2C3E52;
+	display: block;
+	height: 32px;
+	width: 32px;
+	border: 2px solid #FFF;
+	border-radius: 50%;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	box-shadow: 1px 0px 0px 0px #aaa;
+	position: absolute;
+	left: -21px;
+	top: 21px;
+	padding: 6px;
+}
+
+.custom-form-row.email_login:before{
+	content: "1";
+}
+
+.custom-form-row.customer-info:before
+{
+content: "2";
+}
+
+.custom-form-row.order-detail:before{
+	content: "3";
 }
 
 .woocommerce .order-review, .woocommerce-checkout form.login {
     border: none;
     padding: 0px;
-}
-
-
-.entry-content .woocommerce:nth-of-type(2) .email_login{
-	padding: 15px 0;
-	padding-left: 6%;
 }
 
 .entry-content .woocommerce:nth-of-type(2) .input-text{
@@ -995,6 +1049,21 @@ ul.top-bar-nav li a:hover {
 	font-size: 15px;
 	font-weight: bold;
 	color: #777;
+	display: inline-block;
+}
+
+.entry-content .woocommerce:nth-of-type(2) .input-text + span{
+	font-size: 13px;
+	padding-left: 10px;
+}
+
+.edit-btn{
+	display: inline-block;
+	float: right;
+	background: #EEE;
+	color: #888;
+	padding: 3px 15px;
+	border-radius: 25px;
 }
 
 .entry-content .woocommerce:nth-of-type(2) .input-text:active,.entry-content .woocommerce:nth-of-type(2) .input-text:focus{

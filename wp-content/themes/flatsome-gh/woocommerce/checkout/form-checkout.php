@@ -169,58 +169,42 @@ if (is_user_logged_in()) {
             <h3><?php _e( 'Billing Details', 'woocommerce' ); ?></h3>
         </div>
  --> 
-    <div class="large-12 columns email_login custom-form-row">
+    <div class="large-12 small-12 columns email_login custom-form-row active">
         <input type="text" class="input-text" name="username" id="username" autocomplete="off" placeholder="Email*" />
+        <span>This email would be used for your EduKart account and all communicaton.</span><a class="edit-btn" href="#">Edit</a>
     </div>
     <div class="clear"></div>
 
-    <div class="large-12" style="border:1px solid #ccc; padding:20px">
-        Address
+    <div class="large-12 small-12 columns customer-info custom-form-row">
+            <h2>Address</h2>
+            <div id="customer_details" class="large-12 columns">
+                <!--<div class="row">-->
+                <?php if (sizeof($checkout->checkout_fields) > 0) : ?>
+
+                <?php do_action('woocommerce_checkout_before_customer_details'); ?>
+
+                <div class="checkout-group woo-billing">
+                    <?php do_action('woocommerce_checkout_billing'); ?>
+                </div>
+                <div class="checkout-group woo-shipping">
+                    <?php do_action('woocommerce_checkout_shipping'); ?>
+                </div>
+            </div><!-- .large-7 -->
     </div>
 
-    <div class="large-12" style="border:1px solid #ccc; padding:20px">
-        Payment
+    <div class="large-12 small-12 order-detail columns custom-form-row">
+            <h2>Payment</h2>
+            <div class="large-12 columns">
+                <div class="order-review">
+                    <?php do_action('woocommerce_checkout_after_customer_details'); ?>
+                    <?php endif; ?>
+                    <?php do_action('woocommerce_checkout_order_review'); ?>
+                </div>
+                <!-- .large-5 -->
+            </div><!-- .row -->
     </div>
 
-    <div id="customer_details" class="large-12 columns custom-form-row">
 
-
-
-        <!--<div class="row">-->
-
-
-        <?php if (sizeof($checkout->checkout_fields) > 0) : ?>
-
-            <?php do_action('woocommerce_checkout_before_customer_details'); ?>
-
-            <div class="checkout-group woo-billing">
-                <?php do_action('woocommerce_checkout_billing'); ?>
-
-            </div>
-
-            <div class="checkout-group woo-shipping">
-                <?php do_action('woocommerce_checkout_shipping'); ?>
-            </div>
-
-
-
-
-        </div><!-- .large-7 -->
-        <div class="large-12  columns custom-form-row">
-
-
-            <div class="order-review">
-
-                <?php do_action('woocommerce_checkout_after_customer_details'); ?>
-                <h3 id="order_review_heading"><?php _e('Your order', 'woocommerce'); ?></h3>
-
-            <?php endif; ?>
-
-            <?php do_action('woocommerce_checkout_order_review'); ?>
-
-        </div>
-        <!-- .large-5 -->
-    </div><!-- .row -->
 </form><!-- .checkout -->
 
 
