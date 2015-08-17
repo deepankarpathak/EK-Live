@@ -268,8 +268,11 @@ var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBe
 $("#s").keyup(function(){
 	var theme_dir = $("#theme_dir").val();
 	if($("#s").val().length == 0){
+	    engine.helper.removeNumericRefinement("_price", ">=");
+	    engine.helper.removeNumericRefinement("_price", "<=");
 	    $.getScript( theme_dir+'/wp-content/themes/flatsome/js/after_algolia.js', function( data, textStatus, jqxhr ) {
 	     });  
+	    
 	}
 });
 
