@@ -7,7 +7,7 @@ Version: 3.0
 Author: bluezeal.in
 Author URI: https://www.bluezeal.in/
 
-Copyright: © 2014-2015 bluezeal.in
+Copyright: ï¿½ 2014-2015 bluezeal.in
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -432,7 +432,13 @@ function wc_ccavenue_pay_gateway() {
 				'desc_tip'    => true,	
 				'placeholder' => __( 'Encryption Key', 'woocommerce' ),				
                 'description' =>  __('Encrypted/Working key Given to Merchant by CCAvenue', 'bluezeal')
-                )
+                ),
+				'redirect_page_id' => array(
+						'title' => __('Return Page'),
+						'type' => 'select',
+						'options' => $this -> get_pages('Select Page'),
+						'description' => "URL of success page"
+				)
 			);
 		}
 
@@ -568,7 +574,8 @@ function wc_ccavenue_pay_gateway() {
 								$order->payment_complete();
 								$order->add_order_note('CCAvenue payment successful<br/>Bank Ref Number: '.$bank_ref_no);
 								$order->add_order_note($msg['message']);
-								$woocommerce->cart->empty_cart();
+								$woocommerce->cart->empty_cart(); 
+								$primaryRedirectUrl = $order->get_checkout_order_received_url();
 							}
 
 							else if($order_status == "Aborted")	{
@@ -618,6 +625,9 @@ function wc_ccavenue_pay_gateway() {
 								$woocommerce->set_messages();
 							}
 							$redirect_url = get_permalink(woocommerce_get_page_id('myaccount'));	
+							if(!empty($primaryRedirectUrl)){
+								$redirect_url = $primaryRedirectUrl;
+							}
 							wp_redirect( $redirect_url );		
 						}
 					}
