@@ -177,7 +177,7 @@ if (is_user_logged_in()) {
  --> 
     <div class="large-12 small-12 columns email_login custom-form-row active">
         <input type="text" class="input-text" name="username" id="username" autocomplete="off" placeholder="Email*" />
-        <span>This email would be used for your EduKart account and all communicaton.</span>
+        <div class="email-text">This email would be used for your EduKart account and all communicaton.</div>
         <a class="edit-btn" id="edit_email">Edit</a>
     </div>
     <div class="clear"></div>
@@ -214,7 +214,7 @@ if (is_user_logged_in()) {
 
     <div class="large-12 small-12 order-detail columns custom-form-row">
             <h2>Payment</h2>
-            <div class="large-12 columns">
+            <div class="large-12 columns total-amount">
                 <div class="order-review">
                     <?php do_action('woocommerce_checkout_after_customer_details'); ?>
                     <?php endif; ?>

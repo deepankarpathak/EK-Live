@@ -928,14 +928,16 @@ ul.top-bar-nav li a:hover {
 	float: left;
 }
 
+.custom-cart > .shop_table{
+	width: 100%;
+}
+
 .custom-cart .pay-opt{
 	float: right;
 	filter: grayscale(100%);
 	 -webkit-filter: grayscale(100%);
 	opacity: 0.4;
-	width: 100%;
-	max-width: 500px;
-	min-width: 280px;
+	width: 47%;
 	position: relative;
 	top: 5px;
 }
@@ -960,8 +962,20 @@ ul.top-bar-nav li a:hover {
 	vertical-align: middle;
 }
 
+.pro-totl-rem{
+	width: 30%;
+}
+
 .pro-nm-pro{
 	width: 65%;
+}
+
+.shop_table .product-thumbnail{
+	width: 20%;
+}
+
+.shop_table .product-thumbnail img{
+	width: 90px;
 }
 
 .custom-cart .cart_item .product-name{
@@ -987,6 +1001,10 @@ ul.top-bar-nav li a:hover {
 	color: #3AC475;
 	font-size: 18px;
 	font-weight: bold;
+}
+
+.custom-form-row h2{
+	font-size: 1.1em;
 }
 
 .custom-cart .cart_item .product-subtotal dl.variation dd{
@@ -1095,14 +1113,16 @@ content: "2";
 .username_back{
 	background-repeat: no-repeat !important;
     background-position: 251px 6px !important;
-	padding-right: 30px !important;
+	padding-right: 25px !important;
 	background-image: url("images/tick.png") !important;
+	margin-right:10px !important;
 }
 
 /* tick validate end*/
-.entry-content .woocommerce:nth-of-type(2) .input-text + span{
+.entry-content .woocommerce:nth-of-type(2) .email-text{
 	font-size: 13px;
-	padding-left: 10px;
+	padding: 10px 0;
+	display: inline-block;
 }
 
 .edit-btn{
@@ -1123,6 +1143,69 @@ content: "2";
 	margin: 0;
 }
 
+.total-amount{
+	padding: 0;
+}
+
+.total-amount #order_review .shop_table{
+	margin-top: 40px;
+}
+
+.shop_table tfoot th{
+	text-transform:initial; 
+}
+
+.shop_table tfoot th,.shop_table tfoot td{
+	padding: 10px 0;
+}
+
+.shop_table .cart-subtotal {
+	border-top: none;
+}
+
+.shop_table .order-total {
+    border-bottom: 1px solid #DDD;
+}
+
+.shop_table .order-total th , .shop_table .order-total td{
+	color: #444;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+table tfoot tr th, table tfoot tr td {
+	font-size: 13px;
+}
+
+#order_review .shop_table{
+	float: left;
+}
+
+.payment-way{
+	float: right;
+}
+
+.order-aggrement{
+	max-width: 320px;
+}
+
+.pay-btn{
+	background-color: #5BB95B !important;
+	text-transform:initial;
+	font-weight: bolder;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.btn-main-text{
+	font-size: 22px;
+	color: #fff;
+	margin-bottom: 5px;
+}
+
+.btn-sub-menu{
+	font-size: 15px;
+}
 
 /*---------------Cart Checkout End---------------*/
 
@@ -2601,6 +2684,9 @@ margin-left: 0 !important;
 	text-align: center;
 }
 
+#main-content{
+	margin: 0 15px;
+}
 
 .cat_tab{
 	color: #fff;
@@ -2700,8 +2786,9 @@ margin-left: 0 !important;
 }
 
 #customer_details_filled{
-	margin-left:8%;
-	display: none;
+	display:inline-block;
+	float: right;
+	width: 84%;
 }
 
 .customer-info h2{
@@ -2709,7 +2796,7 @@ margin-left: 0 !important;
 }
 
 #name_phone{
-	width:20%;
+	width:26%;
 	float:left;
 }
 
@@ -2718,7 +2805,7 @@ margin-left: 0 !important;
 	float:left;
 }
 
-#edit_address{
+/*#edit_address{
 	margin-left:40px;
 }
 
@@ -2869,6 +2956,25 @@ margin-left: 0 !important;
 
 }
 
+@media only screen and (max-width: 768px) {
+	.cart-wrapper, .shop_table.wishlist_table {
+	    box-shadow:none;
+	}
+
+	#main-content {
+    	margin: 0px;
+	}
+
+	.edu-trust{
+		display: none;
+	}
+
+	.custom-cart{
+		padding: 0 15px;
+		border:none;
+	}
+}
+
 @media only screen and (max-width: 767px) {
 
 .button.secondary.postfix.gh_search_form {
@@ -2925,6 +3031,7 @@ margin-left: 0 !important;
 	margin-top: 10px;
 	padding-top: 10px;
 	min-height: 45px;
+	width: 100%;
 }
 
 .pro-totl-rem > div{
@@ -2948,6 +3055,20 @@ margin-left: 0 !important;
 
 
 }
+
+@media only screen and (max-width: 620px) {
+	.entry-content .woocommerce:nth-of-type(2) .email-text{
+		display: none;
+	}
+	#name_phone,#full_address{
+		display: none;
+	}
+	#customer_details_filled{
+		width: auto;
+	}
+
+}
+
 @media only screen and (max-width: 538px) {
 .product_detail_referral {
 	height:auto !important;
@@ -2978,6 +3099,13 @@ margin-left:5px !important;
 }
 }
 
+.btn-main-text {
+    font-size: 16px;
+}
+
+.btn-sub-menu {
+    font-size: 13px;
+}
 
  @media only screen and (min-width: 320px) and (max-width: 767px) {
 /******* for referal ********/
