@@ -1474,6 +1474,7 @@ content: "2";
 }
 #customer_details {
 	display:none;
+	padding:10px 0px 0px 0px;
 }
 #login_form_check {
 	display:none;
@@ -2621,6 +2622,54 @@ margin-left: 0 !important;
 	  border-bottom: 1px solid #000;
 }
 
+.woocommerce .checkout-group label{
+	display: none;
+}
+
+#billing_country, #billing_state{
+	width:62.6%;
+}
+
+#billing_first_name_field, #billing_last_name_field, #billing_email_field, #billing_phone_field{
+	width:32%;
+}
+
+#billing_state_field, #billing_country_field{
+	margin-bottom:10px;
+}
+
+#billing_city_field, #billing_address_1_field{
+	margin-bottom:20px;
+	width:32%;
+	float:left;
+}
+#billing_next_btn{
+	float:right;
+	margin-right:39%;
+}
+
+#customer_details_filled{
+	display:inline-block;
+	margin-left:8%;
+}
+
+.customer-info h2{
+	display: inline-block;
+}
+
+#name_phone{
+	width:20%;
+	float:left;
+}
+
+#full_address{
+	width:60%;
+	float:left;
+}
+
+#edit_address{
+	margin-left:40px;
+}
 /*End cart page by gambheer*/
 /*------------------------------------*\
    modify-css-educart-Media Queries

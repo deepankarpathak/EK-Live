@@ -99,7 +99,12 @@ if (is_user_logged_in()) {
 //                            var user_id = ID; */
                             //alert(user_id);
                             $("#customer_details").show();
+                            $("#username").blur(); 
                             $('#loading_ajax').hide();
+                            $("#edit_email").click(function(){
+                                $("#username").removeAttr("disabled"); 
+                                $("#username").focus();
+                            });
                         }
                     });
                 }
@@ -110,9 +115,7 @@ if (is_user_logged_in()) {
             }
 
         });
-
     });
-
 </script>
 
 <div class="large-7 columns">
@@ -171,12 +174,21 @@ if (is_user_logged_in()) {
  --> 
     <div class="large-12 small-12 columns email_login custom-form-row active">
         <input type="text" class="input-text" name="username" id="username" autocomplete="off" placeholder="Email*" />
-        <span>This email would be used for your EduKart account and all communicaton.</span><a class="edit-btn" href="#">Edit</a>
+        <span>This email would be used for your EduKart account and all communicaton.</span>
+        <a class="edit-btn" id="edit_email">Edit</a>
     </div>
     <div class="clear"></div>
 
     <div class="large-12 small-12 columns customer-info custom-form-row">
             <h2>Address</h2>
+            <div id="customer_details_filled">
+                <div id="name_phone"><strong>Gambheer Singh</strong><br>8952070183</div>
+                <div id="full_address">
+                    5th floor, HB twin tower 1, Netaji Subhas Place, Pitampura,
+                    New Delhi, India - 110001
+                </div>
+                <a class="edit-btn" id="edit_address">Edit</a>
+            </div>
             <div id="customer_details" class="large-12 columns">
                 <!--<div class="row">-->
                 <?php if (sizeof($checkout->checkout_fields) > 0) : ?>
@@ -185,10 +197,15 @@ if (is_user_logged_in()) {
 
                 <div class="checkout-group woo-billing">
                     <?php do_action('woocommerce_checkout_billing'); ?>
+                    <button id="billing_next_btn" onclick="return validate_billing_form()">Next</button>
                 </div>
-                <div class="checkout-group woo-shipping">
-                    <?php do_action('woocommerce_checkout_shipping'); ?>
-                </div>
+                <!-- <div class="checkout-group woo-shipping">
+                    <?php 
+                    /* Remove Addition information from address
+                        do_action('woocommerce_checkout_shipping');
+                    */
+                    ?>
+                </div> -->
             </div><!-- .large-7 -->
     </div>
 
@@ -208,6 +225,17 @@ if (is_user_logged_in()) {
 </form><!-- .checkout -->
 
 
-<?php do_action('woocommerce_after_checkout_form', $checkout); ?>
+<?php //do_action('woocommerce_after_checkout_form', $checkout); ?>
 
 
+<script>
+//Add Placeholders to the address fields
+$("#billing_first_name").attr("placeholder","First Name*");
+$("#billing_last_name").attr("placeholder","Last Name*");
+$("#billing_email").attr("placeholder","testing@edukart.com*");
+$("#billing_phone").attr("placeholder","Phone*");
+function validate_billing_form(){
+    alert(1);
+    return false;
+}
+</script>
