@@ -118,8 +118,8 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 <div class="cart-wrapper custom-cart">
 	<div class="clearfix">
-		<div class="cart-desc">Safe and Secure Transaction Guarantee</div>
-		<img class="size-medium pay-opt" src="http://edukart.com/wp-content/uploads/2015/01/pay-option.jpg" alt="pay-option">
+		<div class="cart-desc"><img class="lock" src="../wp-content/themes/flatsome-gh/images/lock.png"> Safe and Secure Transaction Guarantee</div>
+		<img class="edu-trust" src="../wp-content/themes/flatsome-gh/images/trust.png"> <img class="size-medium pay-opt" src="http://edukart.com/wp-content/uploads/2015/01/pay-option.jpg" alt="pay-option">
 	</div>	
 <div class="shop_table cart responsive" cellspacing="0">
 	
@@ -151,6 +151,7 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 						?>
 					</div>
 
+				<div class="pro-nm-pro">
 					<div class="product-name">
 						<?php
 							if ( ! $_product->is_visible() )
@@ -167,7 +168,9 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 
 					<div class="product-provider">
 					</div>
+				</div>
 
+				<div class="pro-totl-rem clearfix">
 					<div class="product-subtotal">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
@@ -186,7 +189,8 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 							?>
 					</div>
 					<input type="hidden" id="cart_subtotal" value = "<?php echo  $woocommerce->cart->get_cart_total(); ?>">
-				</div>
+				</div>	
+			</div>
 				
 				<?php
 			}
