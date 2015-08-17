@@ -114,9 +114,22 @@ add_filter('raw_woocommerce_price', 'gh_return_custom_raw_price', 2);
 
 //for checkout page we remove to match the design
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+/* Hide Product ::Algolia-Search upper Category ::Somesh*/
+add_action( 'template_redirect', 'hideProduct' );
+function hideProduct(){
+	$id=get_the_ID();
+  	$product=get_product((int)$id);
+	if(strtolower($product->get_attribute("hide_prod"))=="yes")
+	{
+		$product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
+		$qstring="";
+		if(!empty($product_cats)){$qstring="?q=".$product_cats[0]->name;}
+		wp_redirect(home_url().$qstring);
+	}
+}
+/*Hide Product Ends*/
 
-
-function gh_remove_woocommerce_styles_from_unwanted_places_func(){
+function gh_edirectemove_woocommerce_styles_from_unwanted_places_func(){
 	//remove generator meta tag
 	remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
 
