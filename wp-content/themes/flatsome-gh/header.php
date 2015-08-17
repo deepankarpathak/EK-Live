@@ -167,9 +167,6 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
                     <?php if (!is_page(array('cart', 'checkout'))){ ?>
 		<div id="top-bar">
 			<div class="row">
-
-<!-- Menu removed by Sachin -->
-
 			   <div class="large-12 columns">
 				<?php 
 					$args = array(
@@ -322,14 +319,12 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 		                                            ));          
 			?>       
                 </div>
-                                <?php } else{ ?>
-            <script type="text/javascript">
-             jQuery(function() {
-				jQuery('.nav-top-link').tooltipster({
-					offsetY: 3,
-				});	
- 			  });
-            </script>
+            <div class="cart_page_call_icon">    
+	            <?php 
+					dynamic_sidebar("gh_header_contact_widget_area");
+				?>
+			</div>
+	<?php } else{ ?>
     <!-- Sticky search hidden -->
 <div class="search-menu-container sticky-hidden">
 	<div class="search-box-row">
@@ -365,8 +360,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 	                }else{ ?>
 	                  Define your top bar navigation in <b>Apperance > Menus</b>
 	                <?php } ?>
-        <?php } ?> 
-	 
+        
 		<?php if($flatsome_opt['logo_position'] == 'center') { ?> 
 				<div id="logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home">
@@ -382,11 +376,12 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					</a>
 				</div><!-- .logo -->
 		<?php } ?>
-	</div><!-- .large-12 -->
-</div>
-	<?php 
-		dynamic_sidebar("gh_header_contact_widget_area");
+	    </div><!-- .large-12 -->
+    </div>
+    <?php 
+    	dynamic_sidebar("gh_header_contact_widget_area");
 	?>
+    <?php } ?> 
 </div>	
 <div class="large-12 search-menu-container">
 	<?php if (!is_page(array('cart', 'checkout'))){ ?>
