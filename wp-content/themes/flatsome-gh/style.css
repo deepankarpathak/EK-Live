@@ -1088,11 +1088,15 @@ content: "2";
 
 /* tick validate start*/
 
-#username{
-	padding-right: 30px;
-    background-image: url("images/tick.png");
-    background-repeat: no-repeat;
-    background-position: 251px 6px;
+/*#username{
+    
+}*/
+
+.username_back{
+	background-repeat: no-repeat !important;
+    background-position: 251px 6px !important;
+	padding-right: 30px !important;
+	background-image: url("images/tick.png") !important;
 }
 
 /* tick validate end*/
@@ -2691,11 +2695,13 @@ margin-left: 0 !important;
 #billing_next_btn{
 	float:right;
 	margin-right:39%;
+	background-color: #5BB85D;
+  	font-weight: bold;
 }
 
 #customer_details_filled{
-	display:inline-block;
 	margin-left:8%;
+	display: none;
 }
 
 .customer-info h2{
@@ -2715,6 +2721,17 @@ margin-left: 0 !important;
 #edit_address{
 	margin-left:40px;
 }
+
+#customer_details_error{
+	display:none;
+	color:red;
+	font-size:15px;
+}
+
+.order-review{
+	display:none;
+}
+
 /*End cart page by gambheer*/
 /*------------------------------------*\
    modify-css-educart-Media Queries

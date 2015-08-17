@@ -73,8 +73,8 @@ if (is_user_logged_in()) {
                         data: 'action=validate_email&username=' + emailadd,
                         success: function(result) {
                             //alert(result);
-			// disabling customer details autofill. 
-                        /*    var user_info = jQuery.parseJSON(result);
+			                // disabling customer details autofill. 
+                        /*  var user_info = jQuery.parseJSON(result);
                             var billing_first_name  = user_info.billing_first_name;
                             var billing_last_name  = user_info.billing_last_name;
                             var billing_company  = user_info.billing_company;
@@ -99,10 +99,12 @@ if (is_user_logged_in()) {
 //                            var user_id = ID; */
                             //alert(user_id);
                             $("#customer_details").show();
-                            $("#username").blur(); 
                             $('#loading_ajax').hide();
+                            $("#username").addClass("username_back");
+                            $(".customer-info").addClass("active");
+                            $('select[name=billing_state] option:eq(0)').text("Select State...");
                             $("#edit_email").click(function(){
-                                $("#username").removeAttr("disabled"); 
+                                $("#username").removeClass("username_back");
                                 $("#username").focus();
                             });
                         }
@@ -110,6 +112,7 @@ if (is_user_logged_in()) {
                 }
             }
             else {
+                $("#username").removeClass("username_back");
                 jQuery("#username").addClass("email_error");
                 $("#customer_details").hide();
             }
@@ -182,11 +185,8 @@ if (is_user_logged_in()) {
     <div class="large-12 small-12 columns customer-info custom-form-row">
             <h2>Address</h2>
             <div id="customer_details_filled">
-                <div id="name_phone"><strong>Gambheer Singh</strong><br>8952070183</div>
-                <div id="full_address">
-                    5th floor, HB twin tower 1, Netaji Subhas Place, Pitampura,
-                    New Delhi, India - 110001
-                </div>
+                <div id="name_phone"></div>
+                <div id="full_address"></div>
                 <a class="edit-btn" id="edit_address">Edit</a>
             </div>
             <div id="customer_details" class="large-12 columns">
@@ -198,6 +198,9 @@ if (is_user_logged_in()) {
                 <div class="checkout-group woo-billing">
                     <?php do_action('woocommerce_checkout_billing'); ?>
                     <button id="billing_next_btn" onclick="return validate_billing_form()">Next</button>
+                    <div id="customer_details_error">
+                        Kindly fill all the (*) marked fields.
+                    </div>
                 </div>
                 <!-- <div class="checkout-group woo-shipping">
                     <?php 
@@ -234,8 +237,42 @@ $("#billing_first_name").attr("placeholder","First Name*");
 $("#billing_last_name").attr("placeholder","Last Name*");
 $("#billing_email").attr("placeholder","testing@edukart.com*");
 $("#billing_phone").attr("placeholder","Phone*");
+$("#billing_city").attr("placeholder","Town / City*");
+$("#billing_address_1").attr("placeholder","Full Address*");
+$("#billing_postcode").attr("placeholder","Postcode / Zip*");
+
+$("#edit_address").click(function(){
+    $("#customer_details").show();
+    $("#customer_details_filled").hide();
+    $(".order-review").hide();
+    $(".order-detail").removeClass("active");
+});
+
 function validate_billing_form(){
-    alert(1);
+    var fname  = $("#billing_first_name").val();
+    var lname  = $("#billing_last_name").val();
+    var phone = $("#billing_phone").val();
+    var billing_address_1 = $("#billing_address_1").val();
+    var billing_city = $("#billing_city").val();
+    var billing_state = $("#billing_state").val();
+    var billing_country = $("#billing_country").val();
+    var billing_postcode = $("#billing_postcode").val();
+
+    var full_name_phone = "<strong>"+fname+ " " + lname + "</strong><br>"+phone;
+    var full_address = billing_address_1+", "+billing_city+", "+billing_state+", "+billing_country+" - "+billing_postcode;
+    if(fname == "" || lname == "" || phone == "" || billing_address_1 == "" || billing_city == "" || billing_postcode == ""){
+        $("#customer_details_error").show()
+        return false;
+    }
+    else{
+        $("#customer_details_error").hide()
+        $("#customer_details_filled").css("display", "inline-block");
+        $("#customer_details").hide();
+        $("#name_phone").html(full_name_phone);
+        $("#full_address").html(full_address);
+    }
+    $(".order-review").show();
+    $(".order-detail").addClass("active");
     return false;
 }
 </script>
