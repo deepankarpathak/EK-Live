@@ -821,9 +821,9 @@ ul.top-bar-nav li:last-child {
 .edu_footer_payment .textwidget p:first-child {
 	font-size: 11px;
 	margin: 0;
-	border-top: 1px solid #bbb;
+/*	border-top: 1px solid #bbb;
 	border-bottom: 1px solid #bbb;
-	padding: 10px;
+*/	padding: 10px;
 	margin-bottom: 10px;
 }
 .edu_footer_payment .textwidget img {
@@ -967,11 +967,11 @@ ul.top-bar-nav li a:hover {
 }
 
 .pro-nm-pro{
-	width: 65%;
+	width: 60%;
 }
 
 .shop_table .product-thumbnail{
-	width: 20%;
+	width: 10%;
 }
 
 .shop_table .product-thumbnail img{
@@ -979,7 +979,7 @@ ul.top-bar-nav li a:hover {
 }
 
 .custom-cart .cart_item .product-name{
-	width: 35%;
+	width: 30%;
 }
 
 .custom-cart .cart_item .product-name a{
@@ -2684,10 +2684,6 @@ margin-left: 0 !important;
 	text-align: center;
 }
 
-#main-content{
-	margin: 0 15px;
-}
-
 .cat_tab{
 	color: #fff;
   font-size: 14px;
@@ -2762,13 +2758,20 @@ margin-left: 0 !important;
 }
 
 #billing_country, #billing_state{
-	width:62.6%;
+	width:100%;
 }
 
-#billing_first_name_field, #billing_last_name_field, #billing_email_field, #billing_phone_field{
+#billing_first_name_field, #billing_last_name_field, #billing_email_field, #billing_phone_field, #billing_country_field, #billing_state_field{
 	width:32%;
 }
 
+.form-row select{
+	height: 36px;
+	border-radius: 3px;
+	border: 1px solid rgb(204, 204, 204);
+	background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+	max-width: 280px;
+}
 #billing_state_field, #billing_country_field{
 	margin-bottom:10px;
 }
@@ -3076,16 +3079,18 @@ margin-left: 0 !important;
 }
 
 @media only screen and (max-width: 480px) {
+
 	.logo-slider h1,h2.logo-slider-h1,.edu-best,.edu_pg_pc span{
     	font-size: 20px;
 	}
-		.edu-best-name{
+	.edu-best-name{
 		font-size: 18px;
 	}
-
+	.product-name{
+		font-size: 14px;
+	}
 }
 
-}
 @media only screen and (max-width: 380px) {
 .product_detail_referral {
 font-size:11.5px !important;
