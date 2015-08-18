@@ -988,6 +988,7 @@ ul.top-bar-nav li a:hover {
 .custom-cart .cart_item .product-name a{
 	color:#2C3E50;
 	font-weight: bold;
+	line-height: 22px;
 }
 
 .custom-cart .cart_item .product-name .describtion{
@@ -1203,7 +1204,7 @@ table tfoot tr th, table tfoot tr td {
 }
 
 .btn-main-text{
-	font-size: 22px;
+	font-size: 24px;
 	color: #fff;
 	margin-bottom: 5px;
 }
@@ -2781,14 +2782,23 @@ margin-left: 0 !important;
 	margin-bottom:10px;
 }
 
+#billing_state_field{
+	width: 50%;
+}
+
 #billing_city_field, #billing_address_1_field{
 	margin-bottom:20px;
 	width:32%;
 	float:left;
 }
+
+#billing_address_1{
+	margin-left: 5px;
+}
+
 #billing_next_btn{
 	float:right;
-	margin-right:39%;
+	margin-right:37%;
 	background-color: #5BB85D;
   	font-weight: bold;
 }
