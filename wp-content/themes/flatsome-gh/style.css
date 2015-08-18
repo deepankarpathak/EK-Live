@@ -309,7 +309,13 @@ ul.top-bar-nav li:last-child {
 /*#masthead .header-container #logo > a {
 	padding-top: 20px;
 }
-*/#edu_logo_slider .ux_slider_wrapper {
+*/
+
+#searchform .field{
+	height: 34px;
+}
+
+#edu_logo_slider .ux_slider_wrapper {
 	height: 90px;
 }
 #edu_popular_courses .vertical-tabs ul.tabs-nav li a {
@@ -822,8 +828,19 @@ ul.top-bar-nav li:last-child {
 	font-size: 11px;
 	margin: 0;
 	padding: 10px;
-	margin-bottom: 10px;
 }
+
+.edu_footer_payment .textwidget p:nth-of-type(2){
+	border-top: 1px solid #BBB;
+	padding-top: 15px;
+}
+
+.footer .edu_top_courses .textwidget p{
+	border-bottom: 1px solid #BBB;
+	padding-bottom: 15px;
+}
+
+
 .edu_footer_payment .textwidget img {
 	clear: both;
 	display: block;
