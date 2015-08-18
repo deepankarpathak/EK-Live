@@ -145,7 +145,7 @@ if (is_user_logged_in()) {
     if (!defined('ABSPATH'))
         exit; // Exit if accessed directly
     if (is_user_logged_in() || !$checkout->enable_signup) {
-        
+
     } else {
         $info_message = apply_filters('woocommerce_checkout_login_message', __('', 'woocommerce'));
         ?>
@@ -291,6 +291,7 @@ function validate_billing_form(){
         $("#name_phone").html(full_name_phone);
         $("#full_address").html(full_address);
         $(".order-review").show();
+        $(".customer-info").addClass("active");
         $(".order-detail").addClass("active");
     }
     

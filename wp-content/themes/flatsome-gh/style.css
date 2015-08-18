@@ -905,7 +905,7 @@ ul.top-bar-nav li a:hover {
 /*cart-page-css-start-end-------------*/
 /*---------------Cart Checkout Start---------------*/
 
-.page-wrapper,.footer-wrapper{
+.woocommerce-page .page-wrapper,.footer-wrapper{
 	background: #F4F6F5;
 }
 
@@ -2835,6 +2835,10 @@ margin-left: 0 !important;
 
 .order-review{
 	display:none;
+}
+
+.referal_page .text-center{
+	text-align: left;
 }
 
 /*End cart page by gambheer*/
