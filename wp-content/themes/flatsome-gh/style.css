@@ -1057,6 +1057,7 @@ ul.top-bar-nav li a:hover {
 .custom-form-row h2{
 	margin: 0;
 	color: #2C3E52;
+	font-size: 25px;
 }
 
 .custom-form-row.active:before{
@@ -3095,6 +3096,10 @@ margin-left: 0 !important;
 	}
 	#customer_details_filled{
 		width: auto;
+	}
+
+	.custom-form-row h2 {
+    	font-size: 1.1em;
 	}
 
 }
