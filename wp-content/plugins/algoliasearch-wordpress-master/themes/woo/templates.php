@@ -98,8 +98,15 @@ function clear_price_slider(){
         {{#hits.length}}
         <div class="infos">
             <div id="result_for">
-                 result{{^nbHits_one}}s{{/nbHits_one}} for <strong>{{query}}</strong> ({{nbHits}} courses)
-            </div>
+            <?php 
+            	if(!empty($_SESSION['alogolia_notfound'])):
+            		echo $_SESSION['alogolia_notfound']." ({{nbHits}} courses)";
+            		unset($_SESSION['alogolia_notfound']);
+            	else:
+            ?>           
+			result{{^nbHits_one}}s{{/nbHits_one}} for <strong>{{query}}</strong> ({{nbHits}} courses)
+      		<?php endif; ?>
+			</div>
 
             {{#sorting_indices.length}}
             <div class="default_sorting">

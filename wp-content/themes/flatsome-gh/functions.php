@@ -123,7 +123,8 @@ function hideProduct(){
 	{
 		$product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
 		$qstring="";
-		if(!empty($product_cats)){$qstring="?q=".$product_cats[0]->name;}
+		if(!empty($product_cats)){$qstring="?s=".$product_cats[0]->name;}
+		$_SESSION['alogolia_notfound']= $product->post->post_title." is not available, You might be interested in \"".$product_cats[0]->name."\"";
 		wp_redirect(home_url().$qstring);
 	}
 }
