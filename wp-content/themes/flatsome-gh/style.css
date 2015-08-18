@@ -309,7 +309,13 @@ ul.top-bar-nav li:last-child {
 /*#masthead .header-container #logo > a {
 	padding-top: 20px;
 }
-*/#edu_logo_slider .ux_slider_wrapper {
+*/
+
+#searchform .field{
+	height: 34px;
+}
+
+#edu_logo_slider .ux_slider_wrapper {
 	height: 90px;
 }
 #edu_popular_courses .vertical-tabs ul.tabs-nav li a {
@@ -821,11 +827,20 @@ ul.top-bar-nav li:last-child {
 .edu_footer_payment .textwidget p:first-child {
 	font-size: 11px;
 	margin: 0;
-	border-top: 1px solid #bbb;
-	border-bottom: 1px solid #bbb;
 	padding: 10px;
-	margin-bottom: 10px;
 }
+
+.edu_footer_payment .textwidget p:nth-of-type(2){
+	border-top: 1px solid #BBB;
+	padding-top: 15px;
+}
+
+.footer .edu_top_courses .textwidget p{
+	border-bottom: 1px solid #BBB;
+	padding-bottom: 15px;
+}
+
+
 .edu_footer_payment .textwidget img {
 	clear: both;
 	display: block;
@@ -907,6 +922,10 @@ ul.top-bar-nav li a:hover {
 /*cart-page-css-start-end-------------*/
 /*---------------Cart Checkout Start---------------*/
 
+.page-wrapper,.footer-wrapper{
+	background: #F4F6F5;
+}
+
 .custom-cart{
 	padding-right: 0;
 }
@@ -948,6 +967,7 @@ ul.top-bar-nav li a:hover {
 	display: table;
 	width: 100%;
 	margin-bottom: 3px;
+	background-color: #fff;
 }
 
 .custom-cart .cart_item > div{
@@ -967,11 +987,11 @@ ul.top-bar-nav li a:hover {
 }
 
 .pro-nm-pro{
-	width: 65%;
+	width: 60%;
 }
 
 .shop_table .product-thumbnail{
-	width: 20%;
+	width: 10%;
 }
 
 .shop_table .product-thumbnail img{
@@ -979,12 +999,13 @@ ul.top-bar-nav li a:hover {
 }
 
 .custom-cart .cart_item .product-name{
-	width: 35%;
+	width: 30%;
 }
 
 .custom-cart .cart_item .product-name a{
 	color:#2C3E50;
 	font-weight: bold;
+	line-height: 22px;
 }
 
 .custom-cart .cart_item .product-name .describtion{
@@ -1048,11 +1069,13 @@ ul.top-bar-nav li a:hover {
 	border:1px solid #DDD;
 	padding: 20px 15px;
 	padding-left: 6%;
+	background-color: #fff;
 }
 
 .custom-form-row h2{
 	margin: 0;
 	color: #2C3E52;
+	font-size: 25px;
 }
 
 .custom-form-row.active:before{
@@ -1198,7 +1221,7 @@ table tfoot tr th, table tfoot tr td {
 }
 
 .btn-main-text{
-	font-size: 22px;
+	font-size: 24px;
 	color: #fff;
 	margin-bottom: 5px;
 }
@@ -2684,10 +2707,6 @@ margin-left: 0 !important;
 	text-align: center;
 }
 
-#main-content{
-	margin: 0 15px;
-}
-
 .cat_tab{
 	color: #fff;
   font-size: 14px;
@@ -2762,15 +2781,26 @@ margin-left: 0 !important;
 }
 
 #billing_country, #billing_state{
-	width:62.6%;
+	width:100%;
 }
 
-#billing_first_name_field, #billing_last_name_field, #billing_email_field, #billing_phone_field{
+#billing_first_name_field, #billing_last_name_field, #billing_email_field, #billing_phone_field, #billing_country_field, #billing_state_field{
 	width:32%;
 }
 
+.form-row select{
+	height: 36px;
+	border-radius: 3px;
+	border: 1px solid rgb(204, 204, 204);
+	background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+	max-width: 280px;
+}
 #billing_state_field, #billing_country_field{
 	margin-bottom:10px;
+}
+
+#billing_state_field{
+	width: 50%;
 }
 
 #billing_city_field, #billing_address_1_field{
@@ -2778,9 +2808,14 @@ margin-left: 0 !important;
 	width:32%;
 	float:left;
 }
+
+#billing_address_1{
+	margin-left: 5px;
+}
+
 #billing_next_btn{
 	float:right;
-	margin-right:39%;
+	margin-right:37%;
 	background-color: #5BB85D;
   	font-weight: bold;
 }
@@ -2956,6 +2991,12 @@ margin-left: 0 !important;
 
 }
 
+@media only screen and (min-width: 768px) {
+	.entry-content {
+    	margin: 0px 15px;
+	}
+}
+
 @media only screen and (max-width: 768px) {
 	.cart-wrapper, .shop_table.wishlist_table {
 	    box-shadow:none;
@@ -2965,8 +3006,13 @@ margin-left: 0 !important;
     	margin: 0px;
 	}
 
-	.edu-trust{
+	.pay-opt{
 		display: none;
+	}
+
+	.edu-trust{
+		right: 15px;
+		left: auto;
 	}
 
 	.custom-cart{
@@ -2980,6 +3026,10 @@ margin-left: 0 !important;
 .button.secondary.postfix.gh_search_form {
 	height: 32px;
 	border-radius: 0;
+}
+
+.custom-cart .cart_item {
+    border: 1px solid #DDD;
 }
 
 .search-box-row.search-div.large-8.small-12 {
@@ -3050,6 +3100,14 @@ margin-left: 0 !important;
 	padding-top: 5px;
 }
 
+.footer{
+	background: #F4F6F5;
+}
+.footer .footer_nav li{
+	display: block;
+	text-align: center;
+}
+
 
 /*Cart page end*/
 
@@ -3059,12 +3117,16 @@ margin-left: 0 !important;
 @media only screen and (max-width: 620px) {
 	.entry-content .woocommerce:nth-of-type(2) .email-text{
 		display: none;
-	}
+	}		
 	#name_phone,#full_address{
-		display: none;
+		display: none;																																																								
 	}
 	#customer_details_filled{
 		width: auto;
+	}
+
+	.custom-form-row h2 {
+    	font-size: 1.1em;
 	}
 
 }
@@ -3073,39 +3135,96 @@ margin-left: 0 !important;
 .product_detail_referral {
 	height:auto !important;
 	line-height:15px !important;
-}
+	}
+}				
 
 @media only screen and (max-width: 480px) {
+
 	.logo-slider h1,h2.logo-slider-h1,.edu-best,.edu_pg_pc span{
     	font-size: 20px;
 	}
-		.edu-best-name{
+	.edu-best-name{
 		font-size: 18px;
 	}
+	.product-name{
+		font-size: 12px;
+		font-weight: normal;
+		color:#102234;
+		line-height: 16px;
+	}
+
+	.product-name .describtion{
+		font-size: 11px;
+	}
+
+	.custom-cart .cart-desc {
+		font-size: 12px;
+		padding-bottom: 5px;
+	}
+	.lock{
+		width:18px;
+	}
+	.edu-trust{
+		width: 55px;
+		top: -5px;
+	}
+	.entry-content .woocommerce:nth-of-type(2) .input-text {
+		width: 220px;
+		font-size: 13px;
+	}
+	.edit-btn{
+		padding: 5px 10px;
+		font-size: 12px;
+	}
+
+	.custom-form-row h2 {
+    	color: #999;
+	}
+
+	.shop_table .product-thumbnail img {
+    	width: 65px;
+	}
+
 
 }
 
-}
 @media only screen and (max-width: 380px) {
-.product_detail_referral {
-font-size:11.5px !important;
-}	
-.product_detail_cashback {
+	.product_detail_referral {
+		font-size:11.5px !important;
+	}	
+	.product_detail_cashback {
 		font-size:12px !important;
 		margin-right: 0px !important;
 	}
-.referral_tc{
-margin-left:5px !important;
-}
+	.referral_tc{
+		margin-left:5px !important;
+	}
+	.btn-main-text {
+	    font-size: 16px;
+	}
+	.btn-sub-menu {
+	    font-size: 13px;
+	}
+	.product-name {
+    	font-size: 11px;
+	}
 }
 
-.btn-main-text {
-    font-size: 16px;
+@media only screen and (max-width: 345px) {
+	.custom-cart .cart-desc {
+    	font-size: 11px;
+	}
+
+	.lock {
+    	width: 15px;
+	}
+
+	.edu-trust {
+	    width: 40px;
+	    top: 1px;
+	}
 }
 
-.btn-sub-menu {
-    font-size: 13px;
-}
 
  @media only screen and (min-width: 320px) and (max-width: 767px) {
 /******* for referal ********/
@@ -3748,10 +3867,9 @@ color:#e0e0e0;
 text-align:center;
 }
 .edu_footer_payment {
- background: none repeat scroll 0 0 #4f606a;
  display: block;
- margin: -30px 0 0;
- padding: 5px 0;
+/* margin: -30px 0 0;
+*/ padding: 5px 0;
  text-align: center;
 border-top:1px solid #fff;
 }
@@ -3760,7 +3878,7 @@ border-top:1px solid #fff;
  font-size: 26px;
 }
 .edu_footer_payment .textwidget p {
- color: #fff;
+ color: #888;
  font-size: 15px !important;
 }
 .edu_footer_payment .textwidget > p img {
