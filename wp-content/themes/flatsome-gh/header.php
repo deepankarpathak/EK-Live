@@ -228,7 +228,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 									</ul>
 								</div><!-- end account dropdown -->
 								<?php } else { ?>
-								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.PNG" alt="my account image" title="login"/>									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-	content/themes/flatsome-gh/images/down-arrow.png" alt="my account arrow image" title="my account"/></span></a>
+								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" alt="my account image" title="login"/>									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-	content/themes/flatsome-gh/images/down-arrow.png" alt="my account arrow image" title="my account"/></span></a>
 								<?php }  ?>						
 							</li>
 					<?php } ?>
