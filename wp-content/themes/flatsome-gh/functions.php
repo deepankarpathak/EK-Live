@@ -12,7 +12,7 @@ $gh_country_currency = get_option('gh_country_currency');
  * 3. Conversion Rate (INR to visitor's local currency)
  *** */
 global $wp_session;
-$wp_session = WP_Session::get_instance();
+$wp_session = $_SESSION;//WP_Session::get_instance();
 // $ip = @gh_find_visitor_ip_address();	// Disabling IP based pricing till the issue is not resolved at Alpha site
 // $wp_session['ip'] = $ip;
 
@@ -119,7 +119,7 @@ add_action( 'template_redirect', 'hideProduct' );
 function hideProduct(){
 	$id=get_the_ID();
   	$product=get_product((int)$id);
-	if(strtolower($product->get_attribute("hide_prod"))=="yes")
+	if($product && strtolower($product->get_attribute("hide_prod"))=="yes")
 	{
 		$product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
 		$qstring="";
