@@ -2401,7 +2401,7 @@ margin-left: 0 !important;
 
 .cat_tab{
 	color: #fff;
-	font-size: 11px;
+	font-size: 14px;
 	font-weight: bold;
 	padding: 5px 7px 3px!important;
 	margin-left: 10px;
@@ -2594,6 +2594,10 @@ margin-left: 0 !important;
 
 @media only screen and (max-width: 767px) {
 
+.cat_tab{
+	font-size: 11px;
+}
+
 .footer-wrapper .mob-footer .footer_nav{
 	display: block;
 	background-color: #F4F6F5;
@@ -2781,8 +2785,16 @@ margin-left: 0 !important;
 
 .mobile-side-menu .edu-nave ul li ul.edu_subnave li .edu_subnave1 ul.edu-indent li a {
   border-bottom: medium none;
-  padding: 3px 0 3px 5px;
-  line-height: 18px;
+  padding: 0;
+  padding-left: 15px;
+  line-height: 25px;
+  color: #555;
+}
+.mobile-side-menu .edu-nave ul li ul.edu_subnave li:hover .edu_subnave1 ul.edu-indent li a{
+  padding: 0;
+  padding-left: 15px;
+  line-height: 25px;
+  color: #555;
 }
 
 .mobile-side-menu .account-menu li:last-child{
@@ -3359,6 +3371,7 @@ padding:0px 0px;
 font-weight:normal;
 font-size:13px;
 background:none;
+border-bottom: 1px solid #ddd;
 }
 .edu-nave ul li ul.edu_subnave li .edu_subnave1 ul li span {
  border-bottom: 1px solid #d3d2d2;
@@ -3382,8 +3395,8 @@ font-weight:normal;
  .edu-nave ul li ul.edu_subnave li a {
  font-size: 12px;
  font-weight: normal;
- padding: 0 10px;
- text-transform: uppercase;
+ padding: 0 40px 0 0;
+ color: #555;
 }
  .edu-nave ul.edu_mainnave li:hover {
 background-image:none;
