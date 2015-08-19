@@ -2430,6 +2430,14 @@ margin-left: 0 !important;
 	background:#000;
 }
 
+.mob-footer .footer_nav{
+	display: none;
+}
+
+.mob-footer .edu_footer_payment .textwidget p:nth-of-type(2){
+	display: block;
+}
+
 
 /*------------------------------------*\
    modify-css-educart-Media Queries
@@ -2585,6 +2593,37 @@ margin-left: 0 !important;
 
 
 @media only screen and (max-width: 767px) {
+
+.footer-wrapper .mob-footer .footer_nav{
+	display: block;
+	background-color: #F4F6F5;
+	text-align: center;
+	border-top: 1px solid #ddd;
+}
+
+.mob-footer ul{
+	list-style-type: none;
+	margin-bottom: 35px;
+}
+
+.mob-footer ul li a {
+    color: #999;
+    font-size: 15px;
+    padding: 0px 10px;
+}
+
+.mob-footer .edu_footer_payment {
+    background: transparent;
+    border-top: none;
+}
+
+.mob-footer .edu_footer_payment .textwidget p:first-child{
+	color: #777;
+}
+
+.mob-footer .edu_footer_payment .textwidget p:nth-of-type(2){
+	display: none;
+}
 
 .side-menu-icon{
 	display: inline-block;
@@ -3449,12 +3488,10 @@ line-height: 28px;
 .footer.footer-2 .large-3 {
  display: none;
 }
-.footer.footer-2 .large-3:first-child {
- display: block;
-}
 .edu_top_courses {
  display: none;
 }
+
 .edu_footer_payment .textwidget p:last-child {
  display: none;
 font-size:7px !important;
@@ -3515,9 +3552,7 @@ border-top:1px solid #fff;
  clear: none;
  float: left;
 }
-.large-3.columns.widget.left.widget_text {
- display:none;
-}
+
 .large-3.columns.widget.left.widget_text .edu-share {
  display: block;
  margin: 6px auto;
