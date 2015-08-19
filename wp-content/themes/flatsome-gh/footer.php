@@ -358,5 +358,19 @@ function megamenu_adjust(){
   }]
 }
 </script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	    $(".side-menu-icon").click(function(){
+	        $("#masthead").addClass("slide-menu");
+	        $(".header-wrapper").css("position","initial")
+	    });
+   	    $(".overlay").click(function(){
+	        $("#masthead").removeClass("slide-menu");
+	        $(".header-wrapper").css("position","relative")
+	    });
+
+	});
+</script>
 </body>
 </html>
