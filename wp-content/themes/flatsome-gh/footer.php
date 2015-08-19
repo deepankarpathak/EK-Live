@@ -265,14 +265,18 @@ var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBe
 <input type="hidden" id="theme_dir" value="<?php echo get_site_url(); ?>"/>
 <script>
 // Added by gambheer
-$("#s").keyup(function(){
+$(".search_home").keyup(function(){
 	var theme_dir = $("#theme_dir").val();
-	if($("#s").val().length == 0){
+	$("#mega-menu").slideUp();
+	if($(".search_home").val().length == 0){
 	    engine.helper.removeNumericRefinement("_price", ">=");
 	    engine.helper.removeNumericRefinement("_price", "<=");
 	    $.getScript( theme_dir+'/wp-content/themes/flatsome/js/after_algolia.js', function( data, textStatus, jqxhr ) {
 	     });  
-	    
+	    <?php if(is_front_page()) {?>
+	        if($("#algolia_instant_selector").length <= 1)
+	           $("#mega-menu").slideDown();
+		<?php }?>
 	}
 });
 
@@ -301,7 +305,8 @@ jQuery(document).ready(function() {
 	        else{
 	        	<?php if(is_front_page()) {?>
 		           $("#mega-menu2").hide();
-		           $("#mega-menu").show();
+		           if($("#algolia_instant_selector").length == 0)
+		              $("#mega-menu").show();
 		        <?php }?>
 	        }
     	}

@@ -2873,6 +2873,13 @@ margin-left: 0 !important;
   	font-weight: bold;
   	display: none;
 }
+.main-content{
+	margin-top:46px;
+}
+
+#algolia_instant_selector{
+	margin-top:60px;
+}
 
 /*End cart page by gambheer*/
 /*------------------------------------*\

@@ -18,7 +18,35 @@
 				pauseOnHover: 'immediate'
 			}
 		});
+		// Home Page Horizontol slider
+		$('.shortcode_tabgroup ul.tabs li a').click(function(e){
+		  e.preventDefault();
+		  $(this).parent().parent().parent().find('ul li').removeClass('active');
+		  $(this).parent().addClass('active');
+		  var currentTab = $(this).attr('href');
+		  $(this).parent().parent().parent().find('div.panel').removeClass('active');
+		  $(currentTab).addClass('active');
+		  $(currentTab).find('p script').unwrap();
 
+		  // Find iosSliders and update them and go to slide 1.
+		  var iOS = ( navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry)/g) ? true : false );
+		  if($(currentTab).find('.iosSlider') && iOS) {
+		    $(currentTab).find('.iosSlider').each(function(){
+		      var id = $(this).attr('id');
+		      $('#'+id).iosSlider('update').iosSlider('goToSlide', 1);
+		    });
+		  }
+		  $(window).resize();
+		  return false;
+		});
+
+
+		$('.product-details .tabbed-content .tabs a').click(function(){
+		  var panel = $(this).attr('href');
+		  $(panel).addClass('active');
+		  return false;
+		});
+		
 		// Home Page Vertical slider
 		$('.shortcode_tabgroup_vertical ul.tabs-nav li a').click(function(e){
 		  e.preventDefault();

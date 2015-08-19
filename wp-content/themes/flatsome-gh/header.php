@@ -334,7 +334,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 		<div class="row collapse search-wrapper">
 			<form method="GET" id="searchform" class="searchform" action="<?php echo site_url();?>/courses/">
   				<div class="large-10 small-10 columns">
-   					<input type="search" class="field" name="s" id="s" value="<?php echo $_GET['s']; ?>" placeholder="<?php echo _e( 'Search the courses e.g. MBA, BA, BBA, ', 'woocommerce' ); ?>&hellip;" />
+   					<input type="search" class="field search_sticky" name="s" id="s" value="<?php echo $_GET['s']; ?>" placeholder="<?php echo _e( 'Search the courses e.g. MBA, BA, BBA, ', 'woocommerce' ); ?>&hellip;" />
   				</div><!-- input -->
 	  			<div class="large-2 small-2 columns">
               		<input type="submit" class="button secondary postfix gh_search_form" value="GO">
@@ -382,8 +382,9 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 		<?php } ?>
 	    </div><!-- .large-12 -->
     </div>
-    <?php 
-    	//dynamic_sidebar("gh_header_contact_widget_area");
+    <?php if (!is_page(array('cart', 'checkout'))){ 
+    	dynamic_sidebar("gh_header_contact_widget_area");
+       }
 	?>
     <?php //} ?> 
 </div>	
@@ -393,7 +394,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					<div class="row collapse search-wrapper">
 						<form method="GET" id="searchform" class="searchform" action="<?php echo site_url();?>/courses/">
 			  				<div class="large-10 small-10 columns">
-			   					<input type="search" class="field" name="s" id="s" value="<?php echo $_GET['s']; ?>" placeholder="<?php echo _e( 'Search the courses e.g. MBA, BA, BBA, ', 'woocommerce' ); ?>&hellip;" />
+			   					<input type="search" class="field search_home" name="s" id="s" value="<?php echo $_GET['s']; ?>" placeholder="<?php echo _e( 'Search the courses e.g. MBA, BA, BBA, ', 'woocommerce' ); ?>&hellip;" />
 			  				</div><!-- input -->
 				  			<div class="large-2 small-2 columns">
 			              		<input type="submit" class="button secondary postfix gh_search_form" value="GO">
