@@ -360,11 +360,13 @@ function megamenu_adjust(){
 	$(document).ready(function(){
 	    $(".side-menu-icon").click(function(){
 	        $("#masthead").addClass("slide-menu");
-	        $(".header-wrapper").css("position","initial")
+	        $(".header-wrapper").css("position","initial");
+	        $("html").css("overflow","hidden");
 	    });
    	    $(".overlay").click(function(){
 	        $("#masthead").removeClass("slide-menu");
-	        $(".header-wrapper").css("position","relative")
+	        $(".header-wrapper").css("position","relative");
+	        $("html").css("overflow","initial");
 	    });
 
 	});
