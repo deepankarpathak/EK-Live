@@ -309,13 +309,7 @@ ul.top-bar-nav li:last-child {
 /*#masthead .header-container #logo > a {
 	padding-top: 20px;
 }
-*/
-
-#searchform .field{
-	height: 34px;
-}
-
-#edu_logo_slider .ux_slider_wrapper {
+*/#edu_logo_slider .ux_slider_wrapper {
 	height: 90px;
 }
 #edu_popular_courses .vertical-tabs ul.tabs-nav li a {
@@ -828,19 +822,8 @@ ul.top-bar-nav li:last-child {
 	font-size: 11px;
 	margin: 0;
 	padding: 10px;
+	margin-bottom: 10px;
 }
-
-.edu_footer_payment .textwidget p:nth-of-type(2){
-	border-top: 1px solid #BBB;
-	padding-top: 15px;
-}
-
-.footer .edu_top_courses .textwidget p{
-	border-bottom: 1px solid #BBB;
-	padding-bottom: 15px;
-}
-
-
 .edu_footer_payment .textwidget img {
 	clear: both;
 	display: block;
@@ -922,7 +905,7 @@ ul.top-bar-nav li a:hover {
 /*cart-page-css-start-end-------------*/
 /*---------------Cart Checkout Start---------------*/
 
-.page-wrapper,.footer-wrapper{
+.woocommerce-cart, .woocommerce-cart .page-wrapper, .footer-wrapper{
 	background: #F4F6F5;
 }
 
@@ -2852,6 +2835,18 @@ margin-left: 0 !important;
 
 .order-review{
 	display:none;
+}
+
+.referal_page .text-center{
+	text-align: left;
+}
+
+#term-error{
+	margin-left: 10px;
+  	font-size: 14px;
+  	color: red;
+  	font-weight: bold;
+  	display: none;
 }
 
 /*End cart page by gambheer*/
