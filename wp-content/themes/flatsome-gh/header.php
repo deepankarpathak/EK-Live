@@ -225,7 +225,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 									</ul>
 								</div><!-- end account dropdown -->
 								<?php } else { ?>
-								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.PNG" title="login"/>									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-	content/themes/flatsome-gh/images/down-arrow.png" title="my account"/></span></a>
+								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" title="login"/>									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-	content/themes/flatsome-gh/images/down-arrow.png" title="my account"/></span></a>
 								<?php }  ?>						
 							</li>
 					<?php } ?>
@@ -489,3 +489,10 @@ if (strpos($flatsome_opt['header_bg'],'#fff') !== false && $flatsome_opt['nav_po
 
 <!-- woocommerce message -->
 <?php  if(function_exists('wc_print_notices')) {wc_print_notices();}?>
+<script>
+ jQuery(function() {
+	jQuery('.nav-top-link').tooltipster({
+		offsetY: 3,
+	});
+ });
+ </script>

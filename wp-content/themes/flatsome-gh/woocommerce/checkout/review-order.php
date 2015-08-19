@@ -230,7 +230,8 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
                         <?php
 /*			$order_button_text = apply_filters( 'woocommerce_order_button_text', __( 'Pay', 'woocommerce' ) );
 */			//$rate = ;
-			echo apply_filters( 'woocommerce_order_button_html', '<button type="submit" class="button alt pay-btn" name="woocommerce_checkout_place_order" id="place_order" data-value="' . esc_attr( $order_button_text ) . '"><div class="btn-main-text">PAY '.WC()->cart->get_total().'</div><div class="btn-sub-menu">(Inclusive of all taxes)</div></button>' );
+			echo "<div id='term-error'>* Please accept terms & conditions. </div>";
+			echo apply_filters( 'woocommerce_order_button_html', '<button type="submit" class="button alt pay-btn" name="woocommerce_checkout_place_order" id="place_order" data-value="' . esc_attr( $order_button_text ) . '" onclick="return validate_payment()"><div class="btn-main-text">PAY '.WC()->cart->get_total().'</div><div class="btn-sub-menu">(Inclusive of all taxes)</div></button>' );
 			?>
 			<?php do_action( 'woocommerce_review_order_after_submit' ); ?>
 
@@ -253,3 +254,17 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 
 
 <?php } ?>
+
+<script>
+function validate_payment(){
+	var check = document.getElementById('terms').checked;
+	if(check == true){
+		$("#term-error").fadeOut();
+		return true;
+	}
+	else{
+		$("#term-error").fadeIn();
+		return false;
+	}
+}
+</script>

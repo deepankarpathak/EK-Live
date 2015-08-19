@@ -297,4 +297,6 @@ function validate_billing_form(){
     
     return false;
 }
+<?php global $woocommerce;?>
+$("#billing_postcode").val(<?php echo $woocommerce->customer->get_postcode();?>);
 </script>
