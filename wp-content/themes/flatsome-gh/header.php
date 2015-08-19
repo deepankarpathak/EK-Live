@@ -191,7 +191,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					for($i=0; $i<count($menus); $i++){
 						if($menus[$i]['menu_name'] == "GET REWARD POINTS"){
 				?>
-							<li class='reward-points'><a><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/grade_icon.png" title="grade reward points"/>
+							<li class='reward-points'><a><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/grade_icon.png" alt="grade icon image" title="grade reward points"/>
 				<?php
 							echo $menus[$i]['menu_name']; 
 						}
@@ -208,8 +208,8 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 								<?php
 								if ( is_user_logged_in() ) { ?> 
 								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-login">
-									<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" title="my account"/>
-									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/down-arrow.png" title="my account"/></span>
+									<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" alt="my account image" title="my account"/>
+									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/down-arrow.png" alt="my account arrow image" title="my account"/></span>
 								</a>
 								<div class="nav-dropdown">
 									<ul>
@@ -228,7 +228,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 									</ul>
 								</div><!-- end account dropdown -->
 								<?php } else { ?>
-								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.PNG" title="login"/>									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-	content/themes/flatsome-gh/images/down-arrow.png" title="my account"/></span></a>
+								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.PNG" alt="my account image" title="login"/>									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-	content/themes/flatsome-gh/images/down-arrow.png" alt="my account arrow image" title="my account"/></span></a>
 								<?php }  ?>						
 							</li>
 					<?php } ?>
@@ -247,7 +247,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 								                        <div class="custom-cart-count">
 								                        	<?php echo $woocommerce->cart->cart_contents_count; ?>
 								                        </div>
-								                        <img class="custom-cart-icon" src="<?php echo $flatsome_opt['custom_cart_icon']?>"/> 
+								                        <img alt="cart-image" class="custom-cart-icon" src="<?php echo $flatsome_opt['custom_cart_icon']?>"/> 
 							                        </div><!-- .custom-cart-inner -->
 							                        <?php } else { ?> 
 							                        <strong>
@@ -290,6 +290,18 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					<?php /*<div class="mobile-menu show-for-small"><a href="#open-menu"><span class="icon-menu"></span></a></div><!-- end mobile menu --> */?>
 					
 					<?php if($flatsome_opt['logo_position'] == 'left') : ?> 
+					<img alt="Menu icon image" class="side-menu-icon" src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/menu_icon.png">
+                    <div class="overlay"></div>
+                	<div class="mobile-side-menu">
+                		<ul class="account-menu">
+                			<li><a href="#">Account</a><a class="sign-in-out" href="#">(Sign In)</a></li>
+                			<li><a href="#">Dashboard</a></li>
+                			<li><a href="#">My Order</a></li>
+                			<li><a href="#">My Referral</a></li>
+                			<li><a href="#">Edit Address</a></li>
+                			<li><a href="#">My Account</a></li>
+                		</ul>
+                	</div>
                     <div class="header-logo">
 					<div id="logo" class="logo-left">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home">
@@ -404,7 +416,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 				</div>
 				<div class="no-padding menu-container large-4">
 					<div class="browse-cat hide-for-small" id="browse-cat">Browse Course Categories
-						<span style="float:right"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/detail-tab-icon.png" style="width:20px"/></span>
+						<span style="float:right"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/detail-tab-icon.png" alt="tab icon image" style="width:20px"/></span>
 					</div>
 					<div id="mega-menu" <?php if (!is_front_page()){echo "style='display:none';";}?> >
 						<?php 
