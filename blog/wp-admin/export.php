@@ -71,11 +71,7 @@ if ( isset( $_GET['download'] ) ) {
 		if ( $_GET['post_author'] )
 			$args['author'] = (int) $_GET['post_author'];
 
-		if ( $_GET['post_start_date'] || $_GET['post_end_date'] ) {
-			$args['start_date'] = $_GET['post_start_date'];
-			$args['end_date'] = $_GET['post_end_date'];
-		}
-
+		
 		if ( $_GET['post_status'] )
 			$args['status'] = $_GET['post_status'];
 	} else if ( 'pages' == $_GET['content'] ) {
@@ -93,6 +89,11 @@ if ( isset( $_GET['download'] ) ) {
 			$args['status'] = $_GET['page_status'];
 	} else {
 		$args['content'] = $_GET['content'];
+	}
+	
+	if ( $_GET['post_start_date'] || $_GET['post_end_date'] ) {
+		$args['start_date'] = $_GET['post_start_date'];
+		$args['end_date'] = $_GET['post_end_date'];
 	}
 
 	/**
