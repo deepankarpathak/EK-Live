@@ -228,19 +228,31 @@ if (is_user_logged_in()) {
 </form><!-- .checkout -->
 
 
-<?php //do_action('woocommerce_after_checkout_form', $checkout); ?>
+<?php do_action('woocommerce_after_checkout_form', $checkout); ?>
 
 
 <script>
 //Add Placeholders to the address fields
-$("#billing_first_name").attr("placeholder","First Name*");
-$("#billing_last_name").attr("placeholder","Last Name*");
-$("#billing_email").attr("placeholder","testing@edukart.com*");
+$("#billing_first_name").attr("placeholder","Name*");
+/*$("#billing_last_name").attr("placeholder","Last Name*");
+$("#billing_email").attr("placeholder","testing@edukart.com*");*/
 $("#billing_phone").attr("placeholder","Phone*");
 $("#billing_city").attr("placeholder","Town / City*");
 $("#billing_address_1").attr("placeholder","Full Address*");
 $("#billing_postcode").attr("placeholder","Postcode / Zip*");
-$("#billing_postcode").val("");
+/*$("#billing_postcode").val("");*/
+$("#username").val($("#billing_email").val());
+
+if($("#username").val() != ""){
+    $("#customer_details").show();
+}
+
+/*if($(".woocommerce-remove-coupon").length > 0){
+    $("#customer_details_filled").show();
+    $(".order-review").show();
+    $(".customer-info").addClass("active");
+    $(".order-detail").addClass("active");
+}*/
 
 $("#edit_address").click(function(){
     $("#customer_details").show();
@@ -259,20 +271,26 @@ function validate_billing_form(){
     var billing_country = $("#billing_country").val();
     var country_name = $("#billing_country option:selected").text();
     var billing_postcode = $("#billing_postcode").val();
-    var phoneno = /^\d{10}$/;
+    // For 10 digtis mobile number : var phoneno = /^\d{10}$/;
+    var phoneno = /^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
     var pincode = /^\d{6}$/;
 
     var full_name_phone = "<strong>"+fname+ " " + lname + "</strong><br>"+phone;
     var full_address = billing_address_1+", "+billing_city+", "+billing_state+", "+country_name+" - "+billing_postcode;
     
-    if(fname == "" || lname == "" || phone == "" || billing_address_1 == "" || billing_city == "" || billing_postcode == ""){
+    if(fname == "" || phone == "" || billing_address_1 == "" || billing_city == "" || billing_postcode == ""){
         $("#customer_details_error").show()
         return false;
     }
     else if(!phone.match(phoneno)){
         $("#customer_details_error").show();
-        $("#customer_details_error").text("Invalid Phone Number (Contains only 10 digits).");
+        $("#customer_details_error").text("Invalid Phone Number only digits accepted.");
         return false;
+    }
+    else if(phone.length < 10){
+        $("#customer_details_error").show();
+        $("#customer_details_error").text("Invalid Phone Number only digits accepted.");
+        return false;   
     }
     else if(billing_state =="Select State..."){
         $("#customer_details_error").show();

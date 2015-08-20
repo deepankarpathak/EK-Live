@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<table cellspacing="0">
 
 		<tr class="cart-subtotal">
-			<th><?php _e( 'Cart Subtotal', 'woocommerce' ); ?></th>
+			<th><?php //_e( 'Cart Subtotal', 'woocommerce' ); ?>Subtotal</th>
 			<td><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
 
@@ -73,7 +73,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
 		<tr class="order-total">
-			<th><?php _e( 'Payable Amount ', 'woocommerce' ); ?><span style="text-transform:none !important; font-weight:normal; font-size:10px;">(incl. all taxes)</span></th>
+			<th><?php //_e( 'Payable Amount ', 'woocommerce' ); ?><strong id="you-pay">You Pay</strong><!-- <span style="text-transform:none !important; font-weight:normal; font-size:10px;">(incl. all taxes)</span> --></th>
 			<td><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
 		<tr class="effecive_total" <?php if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != null ){ echo "style='display:table; width:173%;margin-left:-6%;margin-top:-2%;'";}else{echo "style='display:none;'";}?>><td colspan="2">Effective Total: <span style="margin-right:10px;">Rs.<?php echo number_format_i18n( $_SESSION['effective_total'],2); ?></span>
