@@ -195,7 +195,7 @@ if (is_user_logged_in()) {
 
                 <?php do_action('woocommerce_checkout_before_customer_details'); ?>
 
-                <div class="checkout-group woo-billing">
+                <div class="checkout-group woo-billing clearfix">
                     <?php do_action('woocommerce_checkout_billing'); ?>
                     <button id="billing_next_btn" onclick="return validate_billing_form()">Next</button>
                     <div id="customer_details_error">
