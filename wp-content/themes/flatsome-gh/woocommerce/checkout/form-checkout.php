@@ -12,8 +12,8 @@ if (!defined('ABSPATH'))
 global $woocommerce, $flatsome_opt;
 
 wc_print_notices();
-?>
 
+?>
 
 <script type="text/javascript">
 
@@ -262,20 +262,25 @@ $("#edit_address").click(function(){
 });
 
 function validate_billing_form(){
+    var email = $("#username").val();
     var fname  = $("#billing_first_name").val();
-    var lname  = $("#billing_last_name").val();
+    //var lname  = $("#billing_last_name").val();
     var phone = $("#billing_phone").val();
     var billing_address_1 = $("#billing_address_1").val();
-    var billing_city = $("#billing_city").val();
-    var billing_state = $("#billing_state option:selected").text();
     var billing_country = $("#billing_country").val();
     var country_name = $("#billing_country option:selected").text();
+    var billing_state1 = $("#billing_state").val();
+    var billing_state = $("#billing_state option:selected").text();
+    var billing_city = $("#billing_city").val();
     var billing_postcode = $("#billing_postcode").val();
+    var form_data = email + "$" + fname + "$" + phone + "$" + billing_address_1 + "$" + billing_country + "$" + billing_state1 + "$" + billing_city + "$" + billing_postcode;
+    $.cookie("form_data",  form_data);
+
     // For 10 digtis mobile number : var phoneno = /^\d{10}$/;
     var phoneno = /^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
     var pincode = /^\d{6}$/;
 
-    var full_name_phone = "<strong>"+fname+ " " + lname + "</strong><br>"+phone;
+    var full_name_phone = "<strong>"+fname+"</strong><br>"+phone;
     var full_address = billing_address_1+", "+billing_city+", "+billing_state+", "+country_name+" - "+billing_postcode;
     
     if(fname == "" || phone == "" || billing_address_1 == "" || billing_city == "" || billing_postcode == ""){
@@ -316,3 +321,29 @@ function validate_billing_form(){
     return false;
 }
 </script>
+
+<?php
+
+    if(isset($_COOKIE['form_data'])){
+        $form_data = explode("$", $_COOKIE['form_data']);
+        ?>
+        <script>
+            $("#username").val("<?php echo $form_data[0];?>");
+            $("#billing_email").val("<?php echo $form_data[0];?>");
+            $("#billing_first_name").val("<?php echo $form_data[1];?>");
+            $("#billing_phone").val("<?php echo $form_data[2];?>");
+            $("#billing_address_1").val("<?php echo $form_data[3];?>");
+            $("#billing_country").val("<?php echo $form_data[4];?>");
+            $("#billing_state").val("<?php echo $form_data[5];?>");
+            $("#billing_city").val("<?php echo $form_data[6];?>");
+            $("#billing_postcode").val("<?php echo $form_data[7];?>");
+            $("#customer_details").show();
+            $(".customer-info").addClass("active");
+            /*$(".order-review").show();
+            $(".order-detail").addClass("active");*/
+        </script>
+        <?php
+        unset($_COOKIE['form_data']);
+    }
+
+?>
