@@ -10,7 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
 <script>
-jQuery( document ).ready( function() {
+/*jQuery( document ).ready( function() {
 	jQuery( '.remove_cashback').click( function( ev ) {
         var code = '';
 	var prod_id = jQuery( 'input#product_id').val();
@@ -27,7 +27,7 @@ jQuery( document ).ready( function() {
             }
         })
     }); 
-});
+});*/
 
 
 </script>
@@ -141,6 +141,51 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 
 		</tfoot>
 	</table>
+
+<div class="large-4 small-12 columns edu-cart-sidebar">
+<div class="cart-sidebar">
+
+
+	<?php woocommerce_cart_totals(); ?>
+
+	
+	<!--<input type="submit" class="checkout-button secondary expand button" name="proceed" value="<?php _e( 'Proceed to Checkout', 'woocommerce' ); ?>" />-->
+	
+	<?php // do_action('woocommerce_proceed_to_checkout'); ?>
+		<?php wp_nonce_field( 'woocommerce-cart' ); ?>
+
+
+
+
+		<?php 
+		// Coupon Code Here
+		if ( WC()->cart->coupons_enabled() ) { ?>
+			<div class="coupon">
+	        <div class="row">
+				<!--<h3 class="widget-title"><?php // _e( 'Coupon', 'woocommerce' ); ?></h3>-->
+				<div class="large-6 small-12 columns"><input type="text" name="coupon_code"  id="coupon_code" value="" placeholder="<?php _e( 'Coupon Code', 'flatsome' ); ?>"/> </div>
+				<div class="large-6 small-12 columns">
+					<input type ="hidden" value = "<?php echo $_SESSION['ir_coupon_code'] ; ?>" name="apply_coupon" id="apply_coupon">
+						<input type = "button" class ="<?php  if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != 'null' AND $_SESSION['cash_back'] != ''){ echo "button small expand" ;}else {echo "button small expand coupon_button";} ?>"  value="Apply Coupon">
+						<input type="submit" style="display:none;" class="button small expand" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" /></div>
+				<?php do_action('woocommerce_cart_coupon'); ?>
+			</div>
+			</div>
+		<?php } ?>
+	<div class="coupon_one_message" style = "display:none"><p style="color:red;font-size:10px;">Only one coupon can be applied.</p></div>
+	
+	<?php woocommerce_shipping_calculator(); ?>
+
+</div><!-- .cart-sidebar -->
+</div><!-- .large-3 -->
+
+
+
+
+
+
+
+
 	<?php $refer = $_SESSION['referral_details']; 
 		if(!is_array($refer)){
 			$refree_name = $refer->referrer_name;

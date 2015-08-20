@@ -34,7 +34,7 @@ if(isset($current_user->user_email)){
 </div>
 <script>
 	$(".referralStats").click(function(){
-		alert(1);
+		
 	});
 </script>
 <?php

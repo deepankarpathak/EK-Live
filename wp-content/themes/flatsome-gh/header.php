@@ -307,7 +307,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
                     </div>
 					<?php endif; ?>
             <?php if(is_page(array('cart', 'checkout'))) { ?>
-                <div class="small-12 large-6  columns cart_page">
+                <div class="menu-features comman-feature">
                     <?php 
                         wp_nav_menu(array(
 								'theme_location' => 'gh_logged_out_top_bar_menu_location',
@@ -345,7 +345,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 </div>
 <!-- End Sticky search hidden -->
 
-    <div class="menu-features">
+    <div class="menu-features home-feature">
 		<div class="right-text right edu_topbar">
 		     <?php 
 	               if ( has_nav_menu( 'top_bar_nav' )  ) { 
@@ -382,9 +382,10 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 		<?php } ?>
 	    </div><!-- .large-12 -->
     </div>
-    <?php if (!is_page(array('cart', 'checkout'))){ 
-    	dynamic_sidebar("gh_header_contact_widget_area");
-       }
+    <?php 
+	    if(!is_page(array('cart', 'checkout'))){
+	    	dynamic_sidebar("gh_header_contact_widget_area");
+	    }
 	?>
     <?php //} ?> 
 </div>	

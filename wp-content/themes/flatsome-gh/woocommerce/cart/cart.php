@@ -52,7 +52,7 @@ jQuery( document ).ready( function() {
     }); 
 	jQuery( '.remove_cashback, .woocommerce-remove-coupon ').click( function( ev ) {
         var code = '';
-	var prod_id = jQuery( 'input#product_id').val();
+	    var prod_id = jQuery( 'input#product_id').val();
         data = {
             action: 'remove_cashback',
             coupon_code: code,
