@@ -1763,6 +1763,10 @@ table tfoot tr th, table tfoot tr td {
 }
 /*-------------------------akhand-today-changes---------*/
 
+#main-content{
+	margin-top: 46px;
+}
+
 .side-menu-icon{
 	display:none;
 }
@@ -1777,6 +1781,11 @@ table tfoot tr th, table tfoot tr td {
 	margin: 0 auto;
 	width: 100%;
 }
+
+#searchform .field{
+	height: 34px;
+}
+
 #edu_popular_courses .inner-wrap {
 	background: none repeat scroll 0 0 #fff;
 	border: 1px solid #e6e8e7;
@@ -2760,11 +2769,13 @@ margin-left: 0 !important;
 
 .cat_tab{
 	color: #fff;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 1px 7px;
-  margin-left: 10px;
-  font-family: Roboto;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 5px 7px 3px!important;
+	margin-left: 10px;
+	font-family: Roboto;
+	display: inline-block;
+	line-height: 10px;
 }
 
 .small_cat_tab{
@@ -2785,6 +2796,13 @@ margin-left: 0 !important;
 
 .black{
 	background:#000;
+}
+.mob-footer .footer_nav{
+	display: none;
+}
+
+.mob-footer .edu_footer_payment .textwidget p:nth-of-type(2){
+	display: block;
 }
 
 /* Carg page css by Gambheer
@@ -3030,7 +3048,9 @@ margin-left: 0 !important;
 	.head-phone-no span{
 		display: block;
 	}
-
+.stuck .head-phone-no span{
+			display: inline-block;
+	}
 	.edu-contact-detail div:last-child {
 	    font-size: 12px;
 	}
@@ -3131,16 +3151,40 @@ margin-left: 0 !important;
 	}
 }
 
+.cat_tab{
+	font-size: 11px;
+}
 
+.footer-wrapper .mob-footer .footer_nav{
+	display: block;
+	text-align: center;
+	border-top: 1px solid #ddd;
+}
 
 @media only screen and (max-width: 767px) {
 #customer_details .woocommerce-billing-fields > p{
 	width: 50%;
 }
 
-select {
-	    margin: 0
-	}
+.mob-footer ul li a {
+    color: #999;
+    font-size: 15px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+.mob-footer .edu_footer_payment {
+    background: transparent;
+    border-top: none;
+}
+
+.mob-footer .edu_footer_payment .textwidget p:first-child{
+	color: #777;
+}
+
+.mob-footer .edu_footer_payment .textwidget p:nth-of-type(2){
+	display: none;
+}
 
 .side-menu-icon{
 	display: inline-block;
@@ -3164,7 +3208,7 @@ select {
 }
 
 .mobile-side-menu{
-	position: absolute;
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0px;
@@ -3173,6 +3217,8 @@ select {
 	width: 240px;
 	z-index: 60;
 	display: block;
+	overflow-y: auto;
+	height: 100%;
 	-moz-transform: translate3d(-320px, 0, 0);
 	-webkit-transform: translate3d(-320px, 0, 0);
 	transform: translate3d(-320px, 0, 0);
@@ -3187,6 +3233,55 @@ select {
 	transition: transform 0.5s cubic-bezier(0.5, -0.5, 0.5, 1.5) 0s;
 }
 
+.mobile-side-menu #mega_menu_and_slider {
+    padding: 0px;
+}
+
+.mobile-side-menu #mega_menu_and_slider .container{
+	padding: 0;
+}
+
+.mobile-side-menu #mega_menu_and_slider .fkr_nav {
+    padding: 0px;
+}
+
+.mobile-side-menu .edu-nave ul.edu_mainnave li {
+    padding: 0px 10px 0px 20px;
+    height: auto;
+    text-transform: initial;
+    font-weight: normal;
+   	color: #555;
+}
+
+.mobile-side-menu .fkr_nav-click {
+    width: 92%;
+}
+
+.mobile-side-menu .fk_d2_main_menu.fkr_nav-submenu .edu_subnave {
+	margin: 0;
+	background: transparent;
+}
+
+.mobile-side-menu .cat_tab{
+	display: none;
+}
+
+.mobile-side-menu .edu-nave ul.edu_mainnave ul.edu_subnave li:hover {
+  background-color: transparent !important;
+  color: #222;
+}
+
+.mobile-side-menu .edu-nave ul li ul.edu_subnave li {
+    font-size: 12px;
+   	color: #555;
+}
+
+.edu-nave ul li:hover ul.edu_subnave li {
+  font-size: 12px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
 .slide-menu .mobile-side-menu{
 	-moz-transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
@@ -3198,18 +3293,36 @@ select {
 	text-align: left;
 }
 
-.mobile-side-menu .account-menu li:first-child{
+.mobile-side-menu .side-menu-heading{
 	background-color: #E6E6E6;
+	font-size: 12px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 22px;
 }
+
+.mobile-side-menu .mega-menu-title{
+	text-align: left;
+	padding: 7px 10px 6px 20px;
+	border-bottom: 1px solid #ddd;
+	font-size: 12px;
+	color: #555;
+}
+
 
 .mobile-side-menu .account-menu li{
 	border-bottom: 1px solid #ddd;
 	padding: 0 10px 0 20px;	
 }
 
+.mobile-side-menu .account-menu > li{
+	padding: 3px 10px 3px 20px;
+	color: #555;	
+}
+
 .mobile-side-menu .account-menu li a{
 	color: #555;
-	font-size: 14px;
+	font-size: 12px;
 	padding:5px 0;	
 }
 
@@ -3220,11 +3333,33 @@ select {
 .mobile-side-menu .account-menu li .sign-in-out{
 	margin-left: 10px;
 	color: #2525A7;
-	font-size: 13px;
+	font-size: 12px;
 }
 
 .mobile-side-menu .account-menu li .sign-in-out:hover{
 	color: #02027B;
+}
+
+.mobile-side-menu .edu-nave ul li ul.edu_subnave li .edu_subnave1 ul.edu-indent li a {
+  border-bottom: medium none;
+  padding: 0;
+  padding-left: 15px;
+  line-height: 25px;
+  color: #555;
+}
+.mobile-side-menu .edu-nave ul li ul.edu_subnave li:hover .edu_subnave1 ul.edu-indent li a{
+  padding: 0;
+  padding-left: 15px;
+  line-height: 25px;
+  color: #555;
+}
+
+.mobile-side-menu .account-menu li:last-child{
+	display: none;
+}
+
+.mobile-side-menu .account-menu li:first-child{
+	display: block;
 }
 
 .side-menu-icon:hover,.side-menu-icon:focus,.side-menu-icon:active{
@@ -3241,7 +3376,7 @@ select {
 }
 
 .button.secondary.postfix.gh_search_form {
-	height: 32px;
+	height: 34px;
 	border-radius: 0;
 }
 
@@ -3764,7 +3899,7 @@ clear:both;
  border-radius: 0px !important;
  margin: 0;
  padding: 1px;
- height:36px !important;
+ height:45px !important;
 }
 .mobile-menu.show-for-small {
  float: right;
@@ -3881,7 +4016,7 @@ display:block !important;
  text-transform: uppercase;
 }
 .menu_drop.fkr_nav-item .fk_d2_main_menu.fkr_nav-submenu.fkr_nav-active .edu_subnave1 {
- background: none repeat scroll 0 0 #f2f2f2 !important;
+ background: none repeat scroll 0 0 transparent !important;
  border: medium none;
  margin: 5px 0 0;
  max-height: 201px;
@@ -3907,8 +4042,9 @@ display:block;
 background: none repeat scroll 0 0 #fff;
 font-size: 16px;
 }
+
 .edu-nave ul li ul.edu_subnave li:hover {
-font-weight:bold;
+font-weight:normal !important;
 }
 .edu-nave ul li ul.edu_subnave li .edu_subnave1 {
 position:relative;
@@ -3948,10 +4084,11 @@ display:block;
 height:auto;
 margin:0px;
 border:none;
-padding:5px 0px;
+padding:0px 0px;
 font-weight:normal;
 font-size:13px;
 background:none;
+border-bottom: 1px solid #ddd;
 }
 .edu-nave ul li ul.edu_subnave li .edu_subnave1 ul li span {
  border-bottom: 1px solid #d3d2d2;
@@ -3975,8 +4112,8 @@ font-weight:normal;
  .edu-nave ul li ul.edu_subnave li a {
  font-size: 12px;
  font-weight: normal;
- padding: 0 10px;
- text-transform: uppercase;
+ padding: 0 40px 0 0;
+ color: #555;
 }
  .edu-nave ul.edu_mainnave li:hover {
 background-image:none;
@@ -5643,7 +5780,6 @@ margin-right: 4px;
 	#tab-course-structure ul.tabs-in li {
 		width:100%;
 	}
-
 
 	#four_highlights .small-9.large-12.columns{
 		padding-left: 10px;

@@ -290,6 +290,32 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					<?php /*<div class="mobile-menu show-for-small"><a href="#open-menu"><span class="icon-menu"></span></a></div><!-- end mobile menu --> */?>
 					
 					<?php if($flatsome_opt['logo_position'] == 'left') : ?> 
+					<img alt="Menu icon image" class="side-menu-icon" src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/menu_icon.png">
+                    <div class="overlay"></div>
+                	<div class="mobile-side-menu">
+                		<div class="side-menu-heading mega-menu-title">Browse Courses</div>
+                		<?php echo do_shortcode('[block id="mobile-mega-menu"]'); ?>
+                		<ul class="account-menu">
+                		<li class="side-menu-heading">Account
+                		<?php if ( is_user_logged_in() ) { ?>
+                			<a class="sign-in-out" href="<?php echo get_site_url(); ?>/my-account/customer-logout">(Sign Out)</a>
+                		<?php } else{?>
+                			<a class="sign-in-out" href="<?php echo get_site_url(); ?>/my-account">(Sign In)</a>
+                		<?php }?>
+                		</li>
+                		<?php if ( is_user_logged_in() ) { ?>
+                		<?php if ( has_nav_menu( 'my_account' ) ) : ?>
+										<?php  
+										wp_nav_menu(array(
+											'theme_location' => 'my_account',
+											'container'       => false,
+											'items_wrap'      => '%3$s',
+											'depth'           => 0,
+										));
+										endif;
+						}?>
+						</ul>
+                	</div>
                     <div class="header-logo">
 					<div id="logo" class="logo-left">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home">

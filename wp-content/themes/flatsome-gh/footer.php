@@ -54,9 +54,19 @@ global $flatsome_opt;
 <?php } ?>
 <!-- FOOTER 3: Payment Logos -->
 <?php if ( is_active_sidebar( 'gh_footer_payment_logos_widget_area' ) ) : ?>
-<div class="footer" >
+<div class="footer mob-footer" >
 	<div class="row">
             <?php if(is_page(array('cart', 'checkout'))){ ?>
+            <ul class="footer_nav">
+                <li><a href="<?php echo get_site_url()?>/privacy-policy">Privacy Policy</a></li>
+                <li><a href="<?php echo get_site_url()?>/terms-and-conditions">Terms & Conditions</a></li>
+                <li><a href="<?php echo get_site_url()?>/disclaimer">Disclaimer</a></li>
+                <li><a href="<?php echo get_site_url()?>/cancellation-and-refund-policy">Cancellation & Refund Policy</a></li>
+                <li><a href="<?php echo get_site_url()?>/shipping-and-delivery-policy">Shipping & Delievery Policy</a></li>
+                
+            </ul>
+            <?php } ?>
+            <?php if(is_front_page()){ ?>
             <ul class="footer_nav">
                 <li><a href="<?php echo get_site_url()?>/privacy-policy">Privacy Policy</a></li>
                 <li><a href="<?php echo get_site_url()?>/terms-and-conditions">Terms & Conditions</a></li>
@@ -368,11 +378,13 @@ function megamenu_adjust(){
 	$(document).ready(function(){
 	    $(".side-menu-icon").click(function(){
 	        $("#masthead").addClass("slide-menu");
-	        $(".header-wrapper").css("position","initial")
+	        $(".header-wrapper").css("position","initial");
+	        $("html").css("overflow","hidden");
 	    });
    	    $(".overlay").click(function(){
 	        $("#masthead").removeClass("slide-menu");
-	        $(".header-wrapper").css("position","relative")
+	        $(".header-wrapper").css("position","relative");
+	        $("html").css("overflow","initial");
 	    });
 
 	});
