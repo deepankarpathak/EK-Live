@@ -42,8 +42,9 @@ function wc_notice_count( $notice_type = '' ) {
 		}
 
 	}
-
-	return $notice_count;
+	//Remove for successfully checkout
+	//return $notice_count;
+	return 0;
 }
 
 /**

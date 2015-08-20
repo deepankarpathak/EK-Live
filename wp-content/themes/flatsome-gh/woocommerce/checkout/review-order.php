@@ -10,7 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
 <script>
-jQuery( document ).ready( function() {
+/*jQuery( document ).ready( function() {
 	jQuery( '.remove_cashback').click( function( ev ) {
         var code = '';
 	var prod_id = jQuery( 'input#product_id').val();
@@ -27,7 +27,7 @@ jQuery( document ).ready( function() {
             }
         })
     }); 
-});
+});*/
 
 
 </script>
@@ -142,7 +142,7 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 		</tfoot>
 	</table>
 
-<div class="large-5 small-12 columns edu-cart-sidebar">
+<div class="large-4 small-12 columns edu-cart-sidebar">
 <div class="cart-sidebar">
 
 

@@ -845,7 +845,7 @@ ul.top-bar-nav li:last-child {
 }
 
 .cart-sidebar .coupon_button{
-	background: #ddd !important;
+	background: #808080 !important;
 	height: 32px;
 	font-family: robotobold;
 }
@@ -1659,11 +1659,11 @@ table tfoot tr th, table tfoot tr td {
 .checkout {
 	position:relative;
 }
-.page-checkout .large-5.columns {
+/*.page-checkout .large-5.columns {
 	position: absolute;
 	right: 0;
 	top: 0;
-}
+}*/
 .page-wrapper.page-checkout {
 	/*min-height: 1000px;*/
 }

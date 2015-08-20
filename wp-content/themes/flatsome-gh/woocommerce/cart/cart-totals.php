@@ -12,6 +12,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
+<script>
+jQuery( document ).ready( function() {
+	jQuery( '.remove_cashback').click( function( ev ) {
+        var code = '';
+	var prod_id = jQuery( 'input#product_id').val();
+        data = {
+            action: 'remove_cashback',
+            coupon_code: code,
+	    product_id: prod_id,
+        }
+       jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
+
+            if( returned_data == 'failed' ) {
+		<?php //session_destroy(); ?>
+		location.reload();
+            }
+        })
+    }); 
+});
+</script>
 <div class="cart_totals <?php if ( WC()->customer->has_calculated_shipping() ) echo 'calculated_shipping'; ?>">
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
