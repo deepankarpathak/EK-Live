@@ -855,8 +855,8 @@ ul.top-bar-nav li:last-child {
 	background:#fff;
 }
 .edu-cart-sidebar .coupon {
-	border-bottom: 1px solid #cccccc;
-	border-top: 1px solid #cccccc;
+	/*border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;*/
 	margin: 0;
 	padding: 10px 0;
 }
@@ -905,7 +905,7 @@ ul.top-bar-nav li a:hover {
 /*cart-page-css-start-end-------------*/
 /*---------------Cart Checkout Start---------------*/
 
-.woocommerce-cart, .woocommerce-cart .page-wrapper, .footer-wrapper{
+.woocommerce-cart,.woocommerce-checkout .page-wrapper, .woocommerce-cart .page-wrapper, .footer-wrapper{
 	background: #F4F6F5;
 }
 
@@ -1155,6 +1155,7 @@ content: "2";
 
 .total-amount #order_review .shop_table{
 	margin-top: 40px;
+	display:none;
 }
 
 .shop_table tfoot th{
@@ -1626,7 +1627,7 @@ table tfoot tr th, table tfoot tr td {
 	top: 0;
 }
 .page-wrapper.page-checkout {
-	min-height: 1000px;
+	/*min-height: 1000px;*/
 }
 .cd-tabs-navigation {
 	width: 360px;
@@ -2305,8 +2306,8 @@ margin-left: 0 !important;
 	float:left;
 }
 .page-checkout .large-12.columns.checkout_page_error {
-	margin: -61px 0 0;
-	position: absolute;
+	margin: -170px 0 0;
+	/*position: absolute;*/
 	top: 0;
 	z-index: 999;
 }
@@ -2849,6 +2850,42 @@ margin-left: 0 !important;
   	display: none;
 }
 
+.edu-cart-sidebar{
+	background:none;
+}
+
+.wc-proceed-to-checkout{
+	display: none;
+}
+.woocommerce-checkout .woocommerce .order-review{
+	background:#fff !important;
+}
+.edu-cart-sidebar .cart_totals h2{
+	display: none;
+}
+.cart-subtotal{
+	border:none;
+}
+.cart_totals .order-total, .shop_table .order-total{
+	border-bottom:1px solid #dddddd;
+	border-top:1px solid #dddddd;
+}
+.order-total strong{
+	color: #3E3E3E;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Roboto;
+}
+#billing_email_field{
+	display: none;
+}
+#billing_last_name_field{
+	display:none;
+}
+
+/*.woocommerce-billing-fields .clear{
+	display:none;
+}*/
 /*End cart page by gambheer*/
 /*------------------------------------*\
    modify-css-educart-Media Queries
