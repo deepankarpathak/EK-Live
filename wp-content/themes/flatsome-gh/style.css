@@ -2594,13 +2594,21 @@ margin-left: 0 !important;
 
 @media only screen and (max-width: 767px) {
 
+#best_education .row .columns, #best_education .img_wrapper img{
+	padding: 0 5px;
+}
+
+#best_education .column-inner img{
+	height: 20px !important;
+	width: auto;
+}
+
 .cat_tab{
 	font-size: 11px;
 }
 
 .footer-wrapper .mob-footer .footer_nav{
 	display: block;
-	background-color: #F4F6F5;
 	text-align: center;
 	border-top: 1px solid #ddd;
 }
@@ -2613,7 +2621,8 @@ margin-left: 0 !important;
 .mob-footer ul li a {
     color: #999;
     font-size: 15px;
-    padding: 0px 10px;
+    padding: 5px 10px;
+    display: inline-block;
 }
 
 .mob-footer .edu_footer_payment {
