@@ -547,20 +547,6 @@ function gh_validate_email(){
     
     die();
 }
-add_action( 'admin_bar_menu', 'toolbar_link_to_mypage', 999 );
-
-function toolbar_link_to_mypage( $wp_admin_bar ) {
-	$url = get_site_url().'/wp-admin/db_migration/migration.php';
-	$args = array(
-		'id'    => 'migrate_db',
-		'title' => 'Migrate DB',
-		'href'  => $url,
-		'meta'  => array( 'class' => 'migrate-db')
-	);
-	$wp_admin_bar->add_node( $args );
-	//echo "<pre>";var_dump($wp_admin_bar);die;
-}
-
 add_action('wp_ajax_validate_email', 'gh_validate_email');
 add_action('wp_ajax_nopriv_validate_email', 'gh_validate_email');//for users that are not logged in.
 
