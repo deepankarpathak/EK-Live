@@ -1135,7 +1135,7 @@ content: "2";
 
 .username_back{
 	background-repeat: no-repeat !important;
-    background-position: 251px 6px !important;
+    background-position: right center !important;
 	padding-right: 25px !important;
 	background-image: url("images/tick.png") !important;
 	margin-right:10px !important;
@@ -2786,6 +2786,10 @@ margin-left: 0 !important;
 
 #billing_first_name_field, #billing_last_name_field, #billing_email_field, #billing_phone_field, #billing_country_field, #billing_state_field{
 	width:32%;
+	min-width: 195px;
+	max-width: 280px;
+	padding: 0;
+	margin-right: 20px;
 }
 
 .form-row select{
@@ -2793,24 +2797,23 @@ margin-left: 0 !important;
 	border-radius: 3px;
 	border: 1px solid rgb(204, 204, 204);
 	background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+	min-width: 195px;
 	max-width: 280px;
 }
 #billing_state_field, #billing_country_field{
 	margin-bottom:10px;
+	min-width: 195px;
+	max-width: 280px;
 }
 
-#billing_state_field{
-	width: 50%;
-}
 
 #billing_city_field, #billing_address_1_field{
-	margin-bottom:20px;
 	width:32%;
 	float:left;
-}
-
-#billing_address_1{
-	margin-left: 5px;
+	min-width: 195px;
+	max-width: 280px;
+	margin-right: 25px;
+	margin-bottom: 25px;
 }
 
 #billing_next_btn{
@@ -3004,6 +3007,7 @@ margin-left: 0 !important;
 @media only screen and (max-width: 768px) {
 	.cart-wrapper, .shop_table.wishlist_table {
 	    box-shadow:none;
+	    overflow-x: hidden;
 	}
 
 	#main-content {
@@ -3096,6 +3100,12 @@ margin-left: 0 !important;
 	float: left;
 	width: 75%;
 	text-align: left;
+	padding-top: 7px;
+}
+
+.pro-totl-rem .product-subtotal .variation{
+	display: inline-block;
+	padding-left: 10px;
 }
 
 .custom-cart .cart_item .pro-totl-rem .remove-product{
@@ -3173,7 +3183,7 @@ margin-left: 0 !important;
 		top: -5px;
 	}
 	.entry-content .woocommerce:nth-of-type(2) .input-text {
-		width: 220px;
+		min-width: 197px;
 		font-size: 13px;
 	}
 	.edit-btn{
@@ -3188,8 +3198,13 @@ margin-left: 0 !important;
 	.shop_table .product-thumbnail img {
     	width: 65px;
 	}
+}
 
-
+@media only screen and (max-width: 420px) {
+	.pro-totl-rem .product-subtotal .variation{
+		display:block;
+		padding-left: 0;
+	}
 }
 
 @media only screen and (max-width: 380px) {
