@@ -2903,6 +2903,8 @@ margin-left: 0 !important;
 
 .order-review{
 	display:none;
+	padding:0px;
+	margin-top:10px;
 }
 
 .referal_page .text-center{
@@ -2961,6 +2963,10 @@ margin-left: 0 !important;
 /*.woocommerce-billing-fields .clear{
 	display:none;
 }*/
+.order-review{
+	padding:0px;
+	margin-top:10px;
+}
 /*End cart page by gambheer*/
 /*------------------------------------*\
    modify-css-educart-Media Queries

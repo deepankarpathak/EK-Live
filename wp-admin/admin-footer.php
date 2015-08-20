@@ -1,31 +1,4 @@
-<style tytext/csspe="text/css">
-	.loading{
-		top:0;
-		left: 0;
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		/*display: block;*/
-		background: #CCC;
-		/* IE */
-		-moz-opacity: 0.6;
-		/* Mozilla */
-		opacity: 0.6;
-		z-index: 999999
-	}
 
-	.loading-icon{
-		height: 100px;
-		position: absolute;
-		top:50%;
-		margin-top:-50px; 
-		left: 50%;
-		margin-left: -50px;
-	}
-	.migrate-db{
-		  cursor: pointer;
-	}
-</style>
 
 <?php
 /**
@@ -39,40 +12,6 @@
 if ( !defined('ABSPATH') )
 	die('-1');
 ?>
-<script type="text/javascript">
-
-document.getElementById('wp-admin-bar-migrate_db').onclick=function(){
-	
-	var r = confirm("Do you really want to migrate alpha DB with Live DB?");
-	if (r == true) {
-		jQuery('#loading').css('display','block');
-		window.location.href = '<?php echo get_site_url(); ?>/wp-admin/db_migration/migration.php';
-		//alert('Done');
-		// jQuery('#loading').css('display','block');
-		// //Ajax REquest
-		// var xhr = new XMLHttpRequest();
-		// xhr.open('GET', encodeURI('<?php echo get_site_url(); ?>/wp-admin/migration.php'));
-		// xhr.onload = function() {
-		//     if (xhr.status === 200) {
-		//        jQuery('#loading').css('display','none');
-		//        if(xhr.responseText == 'error'){
-		//       	  alert('You need to log-in as admin to execute that Migration script!!!')
-		//        }
-		//     }
-		//     else {
-		//         alert('Request failed.  Returned status of ' + xhr.status);
-		//     }
-		// };
-		// xhr.send();
-		//jQuery('#loading').css('display','none');
-		//window.location.assign("http://localhost/edukart/wp-admin/migration.php");
-	}else{
-	    alert('You clicked to cancel Migration!!!');
-	    return false;
-	}
-};
-
-</script>
 <div class="loading" id="loading" style="display:none;">
 <img class="loading-icon" src="<?php echo get_site_url() . '/wp-admin/images/page-loading.gif';?>" altr= "Loading..."/>
 </div>
