@@ -483,17 +483,17 @@ function order_fields($fields) {
     $fields["billing"] = $ordered_fields;
     return $fields;
 }
-// If cart empty redirect to other page^M
+// If cart empty redirect to other page
 
-add_action( 'init', 'woocommerce_empty_cart_redirect' );
-function woocommerce_empty_cart_redirect() {
-               global $woocommerce;
-               $cart_url = get_site_url()."/cart/";
-               if ( preg_match('/checkout/',$_SERVER["REQUEST_URI"]) && !sizeof( $woocommerce->cart->get_cart() )) {
-                   wp_redirect( $cart_url );
-                       exit;
-           }
+if(!is_admin()){
+	add_action( 'init', 'woocommerce_empty_cart_redirect' );
+	function woocommerce_empty_cart_redirect() {
+       global $woocommerce;
+       $cart_url = get_site_url()."/cart/";
+       if ( preg_match('/checkout/',$_SERVER["REQUEST_URI"]) && !sizeof( $woocommerce->cart->get_cart() )) {
+           wp_redirect( $cart_url );
+               exit;
+  		}
+	}
 }
-
-
 ?>

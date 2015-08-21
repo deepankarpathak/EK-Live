@@ -23,7 +23,6 @@ jQuery( document ).ready( function() {
 	    product_id: prod_id,
         }
        jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
-
             if( returned_data == 'failed' ) {
 		<?php //session_destroy(); ?>
 		location.reload();

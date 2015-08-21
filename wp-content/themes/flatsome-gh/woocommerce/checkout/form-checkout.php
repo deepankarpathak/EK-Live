@@ -237,6 +237,7 @@ $("#billing_first_name").attr("placeholder","Name*");
 /*$("#billing_last_name").attr("placeholder","Last Name*");
 $("#billing_email").attr("placeholder","testing@edukart.com*");*/
 $("#billing_phone").attr("placeholder","Phone*");
+$("#billing_phone").attr('maxlength','15');
 $("#billing_city").attr("placeholder","Town / City*");
 $("#billing_address_1").attr("placeholder","Full Address*");
 $("#billing_postcode").attr("placeholder","Postcode / Zip*");
@@ -246,13 +247,6 @@ $("#username").val($("#billing_email").val());
 if($("#username").val() != ""){
     $("#customer_details").show();
 }
-
-/*if($(".woocommerce-remove-coupon").length > 0){
-    $("#customer_details_filled").show();
-    $(".order-review").show();
-    $(".customer-info").addClass("active");
-    $(".order-detail").addClass("active");
-}*/
 
 $("#edit_address").click(function(){
     $("#customer_details").show();
@@ -277,7 +271,7 @@ function validate_billing_form(){
     $.cookie("form_data",  form_data);
 
     // For 10 digtis mobile number : var phoneno = /^\d{10}$/;
-    var phoneno = /^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
+    var phoneno = /^\d+$/;///^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
     var pincode = /^\d{6}$/;
 
     var full_name_phone = "<strong>"+fname+"</strong><br>"+phone;
@@ -294,7 +288,7 @@ function validate_billing_form(){
     }
     else if(phone.length < 10){
         $("#customer_details_error").show();
-        $("#customer_details_error").text("Invalid Phone Number only digits accepted.");
+        $("#customer_details_error").text("Invalid Phone Number not less then 10 digits.");
         return false;   
     }
     else if(billing_state =="Select State..."){
@@ -323,9 +317,11 @@ function validate_billing_form(){
 </script>
 
 <?php
-
-    if(isset($_COOKIE['form_data'])){
+//print_r($_COOKIE); die;
+    if(isset($_COOKIE['form_data'])/* && $_COOKIE['form_data'] != ""*/){
         $form_data = explode("$", $_COOKIE['form_data']);
+        unset($_COOKIE['form_data']);
+        $_COOKIE['form_data'] = "";
         ?>
         <script>
             $("#username").val("<?php echo $form_data[0];?>");
@@ -341,9 +337,8 @@ function validate_billing_form(){
             $(".customer-info").addClass("active");
             /*$(".order-review").show();
             $(".order-detail").addClass("active");*/
+
         </script>
         <?php
-        unset($_COOKIE['form_data']);
-    }
-
-?>
+       }
+    ?>

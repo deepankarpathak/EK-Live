@@ -40,11 +40,20 @@ function wc_notice_count( $notice_type = '' ) {
 		foreach ( $all_notices as $notices ) {
 			$notice_count += absint( sizeof( $all_notices ) );
 		}
-
 	}
+
+	// Check for empty notices on checkout page
+	if ( preg_match('/woocommerce_checkout/',$_SERVER["REQUEST_URI"])){
+		$count=0;
+		foreach ( $all_notices['error'] as $notices ){
+			if(!empty($notices))
+				  $count++;
+		}
+		return $count;
+	}
+
 	//Remove for successfully checkout
-	//return $notice_count;
-	return 0;
+	return $notice_count;
 }
 
 /**
