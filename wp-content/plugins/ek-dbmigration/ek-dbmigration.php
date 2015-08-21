@@ -116,8 +116,10 @@ function migration_process()
 			//file_put_contents($a["path"]."/log.txt", print_r($plugin,true), FILE_APPEND | LOCK_EX);
 			
 			$livehost = $values['livedbhost'];
+
 			$livehostuser = $values['livehostuser'];
 			$livehostpwd= $values['livehostpwd'];
+
 			$livedb = $values['livedbname'];
 			$liveuser = $values['livedbuser'];
 			$livepwd= $values['livedbpass'];
@@ -125,6 +127,7 @@ function migration_process()
 			$new_live_db = $values['livenewdbname'];
 			
 			$alphahost = $values['alphadbhost'];
+
 			$alphahostuser = $values['alphahostuser'];
 			$alphahostpwd= $values['alphahostpwd'];
 			$alphadb = $values['alphadbname'];
