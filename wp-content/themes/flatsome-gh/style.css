@@ -2464,6 +2464,12 @@ margin-left: 0 !important;
 .select2-container-multi .select2-choices .select2-search-choice {
 	line-height: 22px;
 }
+
+.edu-nave ul li:hover ul.edu_subnave{
+  font-family: robotoregular !important;
+}
+
+
 .edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul.edu_subnavebar li span {
 	border: medium none;
 	font-size: 9px;
