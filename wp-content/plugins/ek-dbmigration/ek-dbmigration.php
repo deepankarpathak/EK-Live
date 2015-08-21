@@ -49,6 +49,8 @@ function admin_hscripts($hook)
 </style>
 <script>
 window.onload =function(){
+
+	jQuery('#loading').css('display','none');
 	document.getElementById('wp-admin-bar-migrate_db').onclick=function(){
 	var r = confirm("Do you really want to migrate alpha DB with Live DB?");
 	if (r == true) {
@@ -103,7 +105,9 @@ function migration_process()
 		$a=get_option("ek_db_mi_info");
 		$values=unserialize($a);
 		
-		if (!empty($values['livedbhost']) && !empty($values['livedbname']) && !empty($values['livedbuser']) && !empty($values['livedbpass']) && !empty($values['livenewdbname']) && !empty($values['alphadbhost']) && !empty($values['alphadbname']) && !empty($values['alphadbuser'])&& !empty($values['alphadbpass'])&& !empty($values['orderfromdate'])){
+
+		if (!empty($values['livedbhost']) && !empty($values['livedbname']) && !empty($values['livedbuser']) && !empty($values['livedbpass']) && !empty($values['livenewdbname']) && !empty($values['alphadbhost']) && !empty($values['alphadbname']) && !empty($values['alphadbuser'])&& !empty($values['alphadbpass'])&& !empty($values['orderfromdate']) && !empty($_POST['alphamediapath']) ){
+
 
 			$upload=wp_upload_dir();
 			$upload=$upload["path"]."/migration/";
@@ -112,6 +116,10 @@ function migration_process()
 			//file_put_contents($a["path"]."/log.txt", print_r($plugin,true), FILE_APPEND | LOCK_EX);
 			
 			$livehost = $values['livedbhost'];
+
+			$livehostuser = $values['livehostuser'];
+			$livehostpwd= $values['livehostpwd'];
+
 			$livedb = $values['livedbname'];
 			$liveuser = $values['livedbuser'];
 			$livepwd= $values['livedbpass'];
@@ -119,27 +127,56 @@ function migration_process()
 			$new_live_db = $values['livenewdbname'];
 			
 			$alphahost = $values['alphadbhost'];
+
+			$alphahostuser = $values['alphahostuser'];
+			$alphahostpwd= $values['alphahostpwd'];
 			$alphadb = $values['alphadbname'];
 			$alphauser = $values['alphadbuser'];
 			$alphapwd= $values['alphadbpass'];
+			$alphamediapath= $values['alphamediapath'];
 			
 			$post_start_date = $values['orderfromdate'];
-			$post_end_date = '2015-08-20';
+			//$post_end_date = '2015-08-20';
 		
-			file_put_contents($upload.'migration_log.txt',"\n\nDB Migration Started".date('yyyy-m-d').":\n", FILE_APPEND | LOCK_EX);
+			file_put_contents($upload.'migration_log.txt',"\n\nDB Migration Started".date('yyyy-m-d').":\n", FILE_APPEND);
+
+			if($livehost == $alphahost){
+				try {
+					exec('rsync -avW -e --delete-before '.$alphamediapath.' '.$upload["path"]);
+				} catch (Exception $e) {
+					echo 'Caught exception in Uploads rsync completed.: ',  $e->getMessage(), "\n";
+					die("Exception");
+				}
+			}else{
+				try {
+					exec('sshpass -p '.$alphahostpwd.' rsync --progress -avz -e ssh '.$alphahostuser.'@'.$alphahost.':'.$alphamediapath.' '.$upload["path"]);
+				} catch (Exception $e) {
+					echo 'Caught exception in Uploads rsync completed.: ',  $e->getMessage(), "\n";
+					die("Exception");
+				}
+			}
+			file_put_contents($upload.'migration_log.txt',"Rsync Command get executed.\n", FILE_APPEND);
+
 		
-			file_put_contents($upload.'migration_log.txt',"Step1:Live DB backup started.\n", FILE_APPEND | LOCK_EX);
+			file_put_contents($upload.'migration_log.txt',"Step1:Live DB backup started.\n", FILE_APPEND);
 			//Step1
 			try {
-				exec("mysqldbcopy --source=".$liveuser.":".$livepwd."@".$livehost." --destination=".$liveuser.":".$livepwd."@".$livehost." ".$livedb.":".$livedb."_backup_".date('Ymd'));
+				//exec("mysqldbcopy --source=".$liveuser.":".$livepwd."@".$livehost." --destination=".$liveuser.":".$livepwd."@".$livehost." ".$livedb.":".$livedb."_backup_".date('Ymd'));
+				// $fname_bzip2 = time().'_'.'edukart_live_'.date('d-M-Y').'.sql.bz2';
+				// exec("mysqldump -h ". $livehost ." -u ". $liveuser ." -p'". $livepwd ."' ". $livedb . " | bzip2 > ". $upload.$fname_bzip2);
+
+				$filename = time().'_'.'edukart_live_'.date('d-M-Y').'.sql.gz';
+			    exec("mysqldump --user=".$liveuser." --password=".$livepwd." --host=".$livehost.' '.$livedb."|gzip > ".$upload.$filename);
+
 			} catch (Exception $e) {
 				echo 'Caught exception in Step1(Live DB backup): ',  $e->getMessage(), "\n";
 				die("Exception");
 			}
 		
 		
-			file_put_contents($upload.'migration_log.txt',"Step1:Live DB backup Ended.\n", FILE_APPEND | LOCK_EX);
-			file_put_contents($upload.'migration_log.txt',"Step2:Alpha's clone created.\n", FILE_APPEND | LOCK_EX);
+			file_put_contents($upload.'migration_log.txt',"Step1:Live DB backup Ended.\n", FILE_APPEND);
+			file_put_contents($upload.'migration_log.txt',"Step2:Alpha's clone created.\n", FILE_APPEND);
+
 			//Step2
 			try{
 				exec("mysqldbcopy --source=".$alphauser.":".$alphapwd."@".$alphahost." --destination=".$liveuser.":".$livepwd."@".$livehost." ".$alphadb.":".$new_live_db);
@@ -147,8 +184,10 @@ function migration_process()
 				echo 'Caught exception in Step2(Alpha db clone): ',  $e->getMessage(), "\n";
 				die("Exception");
 			}
-			file_put_contents($upload.'migration_log.txt',"Step2:Alpha's clone completed.\n", FILE_APPEND | LOCK_EX);
-			file_put_contents($upload.'migration_log.txt',"Step3:Orders.xml exporting.\n", FILE_APPEND | LOCK_EX);
+
+			file_put_contents($upload.'migration_log.txt',"Step2:Alpha's clone completed.\n", FILE_APPEND);
+			file_put_contents($upload.'migration_log.txt',"Step3:Orders.xml exporting.\n", FILE_APPEND);
+
 			//Step3
 			try{
 				header("Location: ".get_site_url()."/wp-admin/export.php?download=true&post_author=0&post_start_date=".$post_start_date."&post_end_date=0&post_status=0&page_author=0&page_start_date=0&page_end_date=0&page_status=0&content=shop_order&submit=Download+Export+File");
@@ -156,8 +195,10 @@ function migration_process()
 				echo 'Caught exception in Step3(Orders.xml exporting): ',  $e->getMessage(), "\n";
 				die("Exception");
 			}
-			file_put_contents($upload.'migration_log.txt',"Step3:Orders.xml exported.\n", FILE_APPEND | LOCK_EX);
-			file_put_contents($upload.'migration_log.txt',"Step4:exporting table users,user_meta,options.\n", FILE_APPEND | LOCK_EX);
+
+			file_put_contents($upload.'migration_log.txt',"Step3:Orders.xml exported.\n", FILE_APPEND);
+			file_put_contents($upload.'migration_log.txt',"Step4:exporting table users,user_meta,options.\n", FILE_APPEND);
+
 			//Step4
 			try{
 				exec("mysqldump --user=".$liveuser." --password=".$livepwd." --host=".$livehost.' '.$livedb." edkwp_users > ".$upload."edkwp_users".date('Ymd').".sql");
@@ -167,7 +208,9 @@ function migration_process()
 				echo 'Caught exception in Step4(exporting table users,user_meta,options): ',  $e->getMessage(), "\n";
 				die("Exception");
 			}
-			file_put_contents($upload.'migration_log.txt',"Step5:Importing table users,user_meta,options.\n", FILE_APPEND | LOCK_EX);
+
+			file_put_contents($upload.'migration_log.txt',"Step5:Importing table users,user_meta,options.\n", FILE_APPEND);
+
 			//Step5
 			try{
 				exec("mysql --user=".$liveuser." --password=".$livepwd." --host=".$livehost.' '.$new_live_db." < ".$upload."edkwp_users".date('Ymd').".sql");
@@ -178,7 +221,9 @@ function migration_process()
 				die("Exception");
 			}
 		
-			file_put_contents($upload.'migration_log.txt',"Step6&7:updateing all links using wordpress migration queries.\n", FILE_APPEND | LOCK_EX);
+
+			file_put_contents($upload.'migration_log.txt',"Step6&7:updateing all links using wordpress migration queries.\n", FILE_APPEND);
+
 			//Step6&7
 			try{
 				$conn = new mysqli($livehost, $liveuser, $livepwd, $new_live_db);
@@ -199,7 +244,9 @@ function migration_process()
 				echo 'Caught exception in (Step6&7)updateing all links using wordpress migration queries: ',  $e->getMessage(), "\n";
 				die("Exception");
 			}
-			file_put_contents($upload.'migration_log.txt',"Step8:Updateing wp-config.php DB name.\n", FILE_APPEND | LOCK_EX);
+
+			file_put_contents($upload.'migration_log.txt',"Step8:Updateing wp-config.php DB name.\n", FILE_APPEND);
+
 			//Step8
 			try{
 				$str=file_get_contents(ABSPATH.'wp-config.php');
@@ -245,6 +292,18 @@ function admin_view()
 			</tr> 
 			
 			<tr>
+
+				<td>Live Host User : </td>
+				<td><input type="text" name="livehostuser" value="<?php echo @$values["livehostuser"] ? $values["livehostuser"] : "";?>"/></td>
+			</tr> 
+
+			<tr>
+				<td>Live Host Password : </td>
+				<td><input type="text" name="livehostpwd" value="<?php echo @$values["livehostpwd"] ? $values["livehostpwd"] : "";?>"/></td>
+			</tr>
+
+			<tr>
+
 				<td>Live DB Name : </td>
 				<td><input type="text" name="livedbname" value="<?php echo @$values["livedbname"] ? $values["livedbname"] : "";?>"/></td>
 			</tr> 
@@ -270,6 +329,18 @@ function admin_view()
 			</tr> 
 			
 			<tr>
+
+				<td>Alpha Host User : </td>
+				<td><input type="text" name="alphahostuser" value="<?php echo @$values["alphahostuser"] ? $values["alphahostuser"] : "";?>"/></td>
+			</tr> 
+
+			<tr>
+				<td>Alpha Host Password : </td>
+				<td><input type="text" name="alphahostpwd" value="<?php echo @$values["alphahostpwd"] ? $values["alphahostpwd"] : "";?>"/></td>
+			</tr>
+
+			<tr>
+
 				<td>Alpha DB Name : </td>
 				<td><input type="text" name="alphadbname" value="<?php echo @$values["alphadbname"] ? $values["alphadbname"] : "";?>"/></td>
 			</tr> 
@@ -283,12 +354,18 @@ function admin_view()
 				<td>Alpha DB User Password : </td>
 				<td><input type="password" name="alphadbpass" value="<?php echo @$values["alphadbpass"] ? $values["alphadbpass"] : "";?>"/></td>
 			</tr> 	
-			
+
+			<tr>
+				<td>Alpha Media Directory ABSPATH </td>
+				<td><input type="text" name="alphamediapath" value="<?php echo @$values["alphamediapath"] ? $values["alphamediapath"] : "";?>"/></td>
+			</tr> 
+
 			<tr>
 				<td>Order From Date </td>
 				<td><input type="text" name="orderfromdate" value="<?php echo @$values["orderfromdate"] ? $values["orderfromdate"] : "";?>" placeholder="yyyy-mm-dd"/></td>
 			</tr> 
 			
+
 			<tr><td>
 			<input type="submit"/>
 		   	<input type="hidden" name="action" value="db_mi_save" />
@@ -300,7 +377,9 @@ function admin_view()
 }
 function admin_post_db_mi_save (){
 
-	if (!empty($_POST['livedbhost']) && !empty($_POST['livedbname']) && !empty($_POST['livedbuser']) && !empty($_POST['livedbpass']) && !empty($_POST['livenewdbname']) && !empty($_POST['alphadbhost']) && !empty($_POST['alphadbname']) && !empty($_POST['alphadbuser'])&& !empty($_POST['alphadbpass'])&& !empty($_POST['orderfromdate'])){
+
+	if (!empty($_POST['livedbhost']) && !empty($_POST['livedbname']) && !empty($_POST['livedbuser']) && !empty($_POST['livedbpass']) && !empty($_POST['livenewdbname']) && !empty($_POST['alphadbhost']) && !empty($_POST['alphadbname']) && !empty($_POST['alphadbuser'])&& !empty($_POST['alphadbpass'])&& !empty($_POST['orderfromdate']) && !empty($_POST['alphamediapath'])){
+
 		$serialize_arr=serialize($_POST);
 		update_option("ek_db_mi_info",$serialize_arr);
 		wp_redirect('admin.php?page=ek-mi-settings');
