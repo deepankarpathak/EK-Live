@@ -348,13 +348,8 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 		                                            ));          
 			?>       
                 </div>
-            <div class="cart_page_call_icon">    
-	            <?php 
-					dynamic_sidebar("gh_header_contact_widget_area");
-				?>
-			</div>
-	<?php } else{ ?>
-    <!-- Sticky search hidden -->
+                                <?php } else{ ?>
+<!-- Sticky search hidden -->
 <div class="search-menu-container sticky-hidden">
 	<div class="search-box-row">
 		<div class="row collapse search-wrapper">
@@ -413,7 +408,6 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 	    	dynamic_sidebar("gh_header_contact_widget_area");
 	    }
 	?>
-    <?php //} ?> 
 </div>	
 <div class="large-12 search-menu-container">
 	<?php if (!is_page(array('cart', 'checkout'))){ ?>
