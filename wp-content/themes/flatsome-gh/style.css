@@ -41,25 +41,37 @@ Template:     flatsome
 #mega_menu_and_slider .ux_banner {
 	background:none;
 }
+
 #four_highlights h2 {
 	color: #7c7c7c;
 	font-size: 26px;
 	font-weight: normal;
+	font-family: robotoregular !important;
 }
 #four_highlights p {
 	color: #2c3e50;
 	font-size: 15px;
 	line-height: 22px;
+	font-family: robotoregular !important;
 }
 .section-title.clearfix.title_center > span {
 	color: #999;
 	font-size: 33px;
 	font-weight: normal;
 }
+
+#content .bx-wrapper .bx-viewport{
+	height: auto !important;
+}
+
+#top-bar .row > div.large-12.columns{
+	padding: 0;
+}
+
 .edu-best {
 	color: #f39c12;
 	display: block;
-	font-size: 41px;
+	font-size: 44px;
 	text-align: center;
 }
 .edu-best-name {
@@ -68,8 +80,10 @@ Template:     flatsome
 	font-size: 28px;
 	font-style: italic;
 	line-height: 44px;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
+	margin-top: 10px;
 	text-align: center;
+	font-family: robotoregular !important;
 }
 .bx-wrapper img {
 	width: 100%;
@@ -90,11 +104,6 @@ Template:     flatsome
 .edu-left {
 	float: left !important;
 }
-.my-account-title{
-	color:#999;
-	text-transform: uppercase;
-	font-size: 13px;
-}
 
 .my-account-title img{
 	margin-top: -4px;
@@ -106,8 +115,8 @@ Template:     flatsome
 	margin:0px;
 }
 
-.reward-points{
-	font-weight:bold;
+ul.topper-menu li.reward-points a{
+	font-family: robotobold !important;
 }
 
 ul.topper-menu li{
@@ -116,17 +125,27 @@ ul.topper-menu li{
 	list-style-type: none;
 }
 
-ul.topper-menu li a{
+ul.topper-menu li a, .my-account-title,.cart-name.hide-for-small{
 	color:#999 !important;
-	font-size: 13px;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-family: robotoregular !important;
+	font-weight: normal;
 }
 
 ul.top-bar-nav li {
-	background-size: 26% auto !important;
+	background-size: 32% auto !important;
 	border-left: 1px solid #dad9da !important;
 	padding: 5px 10px 5px 38px !important;
 	text-align: left;
+	opacity: .5;
 }
+
+ul.top-bar-nav li:first-child {
+    border: 0px none;
+    background-size: 28% auto !important;
+}
+
 .top-divider {
 	border-top: medium none;
 	display: none;
@@ -218,6 +237,7 @@ ul.top-bar-nav li:last-child {
 	font-size: 20px;
 	font-weight: normal;
 	padding-bottom: 5px;
+	font-family: robotoregular !important;
 }
 .footer.footer-2.dark .tx-div.small {
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -241,6 +261,7 @@ ul.top-bar-nav li:last-child {
 	float: left;
 	font-size: 20px;
 	font-weight: normal;
+	font-family: robotoregular !important;	
 }
 .footer.footer-1.light .tx-div.small {
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -397,11 +418,11 @@ ul.top-bar-nav li:last-child {
 }
 .edu_pg_pc span {
 	clear: none;
-	color: #2C3E50;
+	color: #2D3E50;
 	display: inherit;
 	float: left;
 	font-size: 44px;
-	font-weight: bold;
+	font-family: robotoregular !important;
 }
 .edu_pg_pc > span:first-child {
 	color: #7d7d7d;
@@ -437,7 +458,7 @@ ul.top-bar-nav li:last-child {
 
 #best_education {
 	display: block;
-	margin: 30px 0 50px;
+	margin: 30px 0 65px;
 }
 .edu-share {
 	display: block;
@@ -799,15 +820,17 @@ ul.top-bar-nav li:last-child {
 	font-size: 14px;
 }
 .edu_top_courses .textwidget h3 {
-	font-size: 17px;
-	font-weight: bold;
+	font-size: 15px;
 	text-transform: uppercase;
+	font-family: robotoregular !important;
+	color: #888;
 }
 .edu_top_courses .textwidget p {
 	font-size: 15px;
 	line-height: 20px;
 	text-align: left;
 	margin-bottom: 0px;
+	font-family: robotoregular !important;
 }
 .edu_top_courses .textwidget a {
 	color: #7d7d7d;
@@ -819,7 +842,7 @@ ul.top-bar-nav li:last-child {
 	font-size: 14px;
 }
 .edu_footer_payment .textwidget p:first-child {
-	font-size: 12px;
+	font-size: 11px;
 	margin: 0;
 	border-top: 1px solid #bbb;
 	border-bottom: 1px solid #bbb;
@@ -827,6 +850,7 @@ ul.top-bar-nav li:last-child {
 	margin-bottom: 10px;
 	font-family: robotoregular !important;
 	color:#999;
+	line-height: 25px;
 }
 .edu_footer_payment .textwidget img {
 	clear: both;
@@ -1410,7 +1434,7 @@ table tfoot tr th, table tfoot tr td {
 	color: #333;
 	margin: 0;
 	font-size:14px;
-	padding:10px;
+	padding:12px 10px;
 	border:1px solid #bbb;
 	font-weight:normal;
 }
@@ -1422,7 +1446,7 @@ table tfoot tr th, table tfoot tr td {
 }
 
 .tabbed-content ul.tabs li.active a{
-	font-weight: bold;
+	font-family: robotobold !important;
 }
 
 .feature-tabs{
@@ -1445,19 +1469,19 @@ table tfoot tr th, table tfoot tr td {
 
 #four_highlights .heading-frs{
 	font-size: 44px;
-	font-weight: bold;
 	text-align: center;
 	color: #2C3E50;
-	margin-bottom:15px;
+	margin-bottom:5px;
+	font-family: robotoregular !important;
 }
 
 #four_highlights .content-frs{
 	font-size: 24px;
 	color: #9c9c9c;
 	text-align: center;
-	font-weight: 600;
 	margin-bottom: 10px;
 	line-height:34px;
+	font-family: robotoregular !important;
 }
 
 .feature-tabs .tabbed-content ul.tabs li.tab{
@@ -1788,6 +1812,7 @@ table tfoot tr th, table tfoot tr td {
 
 #searchform .field{
 	height: 34px;
+	font-family: robotoregular !important;
 }
 
 #edu_popular_courses .inner-wrap {
@@ -1857,7 +1882,7 @@ h2.logo-slider-h1 {
 	display: block;
 	font-size: 44px;
 	font-weight: normal;
-	font-weight: bold;
+	font-family: robotoregular !important;
 	margin: 65px 0 10px;
 	padding: 0;
 	text-align: center;
@@ -1880,7 +1905,7 @@ h1.logo-slider-h1 span {
 }
 .footer-wrapper .footer {
 	border: medium none;
-	padding: 10px 0;
+	padding: 20px 0 10px;
 }
 .footer-wrapper .widget {
 	margin: 0;
@@ -2024,7 +2049,7 @@ h1.logo-slider-h1 span {
 	background-size: 23% auto !important;
  	margin: 0;
 	display: inline-block;
-  padding-left: 31px !important;
+ 	padding-left: 31px !important;
 }
 .cart_page #menu-top-bar-menu-with-icons-logged-out{
     display: inline-block;
@@ -2181,9 +2206,11 @@ margin:35px 0px;
 }
 
 .logo-slider h1{
-font-size:45px;
-color:#2C3E50;
-text-align:center;
+	font-size:46px;
+	color:#2D3E50;
+	text-align:center;
+	font-weight: normal;
+	font-family: robotoregular !important;
 }
 
 #edu_popular_courses{
@@ -2454,6 +2481,7 @@ margin-left: 0 !important;
 }
 .footer-wrapper .textwidget a {
 	color: #777;
+	font-family: robotoregular !important;
 }
 .footer-wrapper .textwidget a:hover {
 	color: #274159;
@@ -2479,6 +2507,7 @@ margin-left: 0 !important;
 	padding: 5px 0;
 	font-size:14px;
 	text-transform:capitalize;
+	font-family: robotoregular !important;
 }
 .gh_ajax_filter {
 	width:100%;
@@ -2606,6 +2635,8 @@ margin-left: 0 !important;
 
 .menu-features{
 	margin-top: 20px;
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
 }
 
 .header-container{
@@ -2624,7 +2655,7 @@ margin-left: 0 !important;
 
 .menu-features ul li a{
 	font-size: 14px !important;
-	color: #888;
+	color: #555;
 }
 
 .menu-features ul li:hover a,.menu-features ul li:active a,.menu-features ul li:focus a{
@@ -2749,6 +2780,10 @@ margin-left: 0 !important;
 	text-align: left;
 }
 
+.head-phone-no{
+	font-family: robotoregular;
+}
+
 .top-bar-nav{
 	margin-top: 22px;
 }
@@ -2792,6 +2827,7 @@ margin-left: 0 !important;
 
 .mob-footer .edu_footer_payment .textwidget p:nth-of-type(2){
 	display: block;
+	font-family: robotoregular !important;
 }
 /* Carg page css by Gambheer
 */
@@ -2811,7 +2847,7 @@ margin-left: 0 !important;
 
 .cart_page ul.top-bar-nav li {
   background-position: 8px 2px;
-  background-size: 28% auto !important;
+  background-size: 27% auto !important;
   margin: 0;
   display: inline-block;
   padding-left: 44px !important;
@@ -3051,10 +3087,6 @@ margin-left: 0 !important;
     	margin: 8px 0px 0px;
 	}
 
-	.site-header.move_down .edu-contact-detail{
-    	margin: 0;
-	}
-
 	ul.topper-menu li {
     	padding: 0px 5px !important;
 	}
@@ -3125,6 +3157,10 @@ margin-left: 0 !important;
 	  right: 0;
 	  margin-top: -17px;
 	}
+	.edu_mainnave > .menu_drop{
+		padding-left: 25px;
+	}
+
 }
 @media only screen and (max-width: 768px) {
 	.cart-wrapper, .shop_table.wishlist_table {
@@ -5070,7 +5106,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	height:65px;
 }
 .bxslider {
-	height: 326px;
+	height: 328px;
 	overflow: hidden;
 }
 /*.caroufredsel_wrapper {
@@ -5368,11 +5404,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 #top-bar .right-text.right.edu_topbar {
     max-width: 595px;
 }
-.cart-name.hide-for-small {
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: normal;
-}
+
 .cart-image {
     background: none repeat scroll 0 0 #04CA77;
     border-radius: 10px;
@@ -5384,6 +5416,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     line-height:22px;
     text-align:center;
 	font-family: robotoregular;
+	margin-left: 2px;
 }
 .cart-link{
 	line-height:20px;
@@ -5767,6 +5800,7 @@ margin-right: 4px;
   	margin-bottom: 0;
   	list-style: none;
   	text-align: right;
+  	padding-right: 0;
 }
 
 .minicart li{

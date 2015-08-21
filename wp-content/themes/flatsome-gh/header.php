@@ -238,7 +238,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 									<div class="cart-inner">
 										<?php // Edit this content in inc/template-tags.php. Its gets relpaced with Ajax! ?>
 										<a href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" class="cart-link">
-											<strong class="cart-name hide-for-small"><?php _e('Cart', 'woocommerce'); ?></strong> 
+											<span class="cart-name hide-for-small"><?php _e('Cart', 'woocommerce'); ?></span> 
 											<span class="cart-price hide-for-small">/ <?php echo $woocommerce->cart->get_cart_total(); ?></span> 
 												<!-- cart icon -->
 												<div class="cart-image">
@@ -348,7 +348,10 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 		                                            ));          
 			?>       
                 </div>
-                                <?php } else{ ?>
+	            <?php 
+					dynamic_sidebar("gh_header_contact_widget_area");
+				?>
+	<?php } else{ ?>
 <!-- Sticky search hidden -->
 <div class="search-menu-container sticky-hidden">
 	<div class="search-box-row">
