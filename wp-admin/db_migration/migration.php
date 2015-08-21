@@ -1,11 +1,13 @@
 <?php
 require('../../wp-blog-header.php');
+file_put_contents('migration_log.txt',"\n\nDB Migration Started".date('yyyy-m-d').":\n", FILE_APPEND | LOCK_EX);
 
 if( is_user_logged_in() &&  current_user_can( 'administrator')) {
 
 //exec('rsync -avW -e --delete-before /var/www/html/d1/ /var/www/html/d2');
+file_put_contents('migration_log.txt',"rsync command is getting started.\n", FILE_APPEND | LOCK_EX);	
 exec('rsync -avW -e --delete-before /home/edukart/public_html/dev/wp-content/uploads/ /home/edukart/public_html/alpha/wp-content/uploads/');
-
+file_put_contents('migration_log.txt',"rsync command is getting completed.\n", FILE_APPEND | LOCK_EX);
 $livehost = '139.162.28.92';
 $livedb = 'edukart_devalpha';
 $liveuser = 'edukart_devuser';
@@ -21,7 +23,6 @@ $alphapwd= 'cjdqavrq';
 $post_start_date = '2015-08-15';
 $post_end_date = '2015-08-20';
 
-file_put_contents('migration_log.txt',"\n\nDB Migration Started".date('yyyy-m-d').":\n", FILE_APPEND | LOCK_EX);
 
 file_put_contents('migration_log.txt',"Step1:Live DB backup started.\n", FILE_APPEND | LOCK_EX);	  
 //Step1
