@@ -5106,7 +5106,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	height:65px;
 }
 .bxslider {
-	height: 328px;
+	max-height: 328px;
 	overflow: hidden;
 }
 /*.caroufredsel_wrapper {
