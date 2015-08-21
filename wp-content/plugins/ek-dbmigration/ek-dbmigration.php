@@ -229,6 +229,8 @@ function migration_process()
 				$conn = new mysqli($livehost, $liveuser, $livepwd, $new_live_db);
 				if ($conn->connect_error) { // Check connection
 					die("Connection failed: " . $conn->connect_error);
+				}else{
+					file_put_contents($upload.'migration_log.txt',"Step6&7:Connection Established with new DB.\n", FILE_APPEND);
 				}
 		
 				$sql = "set @oldurl = 'http://alpha.edukart.com', @newurl = 'http://edukart.com';
