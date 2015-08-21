@@ -208,7 +208,7 @@ function migration_process()
 				echo 'Caught exception in Step4(exporting table users,user_meta,options): ',  $e->getMessage(), "\n";
 				die("Exception");
 			}
-
+			file_put_contents($upload.'migration_log.txt',"Step4:exported table users,user_meta,options.\n", FILE_APPEND);
 			file_put_contents($upload.'migration_log.txt',"Step5:Importing table users,user_meta,options.\n", FILE_APPEND);
 
 			//Step5
@@ -221,7 +221,7 @@ function migration_process()
 				die("Exception");
 			}
 		
-
+			file_put_contents($upload.'migration_log.txt',"Step5:Imported table users,user_meta,options.\n", FILE_APPEND);
 			file_put_contents($upload.'migration_log.txt',"Step6&7:updateing all links using wordpress migration queries.\n", FILE_APPEND);
 
 			//Step6&7
