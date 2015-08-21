@@ -106,7 +106,7 @@ function migration_process()
 		$values=unserialize($a);
 		
 
-		if (!empty($values['livedbhost']) && !empty($values['livedbname']) && !empty($values['livedbuser']) && !empty($values['livedbpass']) && !empty($values['livenewdbname']) && !empty($values['alphadbhost']) && !empty($values['alphadbname']) && !empty($values['alphadbuser'])&& !empty($values['alphadbpass'])&& !empty($values['orderfromdate']) && !empty($_POST['alphamediapath']) ){
+		if (!empty($values['livedbhost']) && !empty($values['livedbname']) && !empty($values['livedbuser']) && !empty($values['livedbpass']) && !empty($values['livenewdbname']) && !empty($values['alphadbhost']) && !empty($values['alphadbname']) && !empty($values['alphadbuser'])&& !empty($values['alphadbpass'])&& !empty($values['orderfromdate']) && !empty($values['alphamediapath']) ){
 
 
 			$upload=wp_upload_dir();
