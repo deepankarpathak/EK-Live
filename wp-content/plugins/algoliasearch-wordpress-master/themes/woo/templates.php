@@ -104,7 +104,7 @@ function clear_price_slider(){
             		unset($_SESSION['alogolia_notfound']);
             	else:
             ?>           
-			result{{^nbHits_one}}s{{/nbHits_one}} for <strong>{{query}}</strong> ({{nbHits}} courses)
+			Result{{^nbHits_one}}s{{/nbHits_one}} for <strong>{{query}}</strong> ({{nbHits}} courses)
       		<?php endif; ?>
 			</div>
 
