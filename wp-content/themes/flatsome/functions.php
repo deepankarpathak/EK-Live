@@ -352,7 +352,7 @@ add_action( 'ux_woocommerce_navigate_products', 'woocommerce_catalog_ordering', 
 include_once('inc/class-wc-product-data-fields.php');
 include_once('inc/custom-wc-fields.php');
 
-// remoce checkout from checkout page if not set
+// remove coupon from checkout page if not set
 if(!$flatsome_opt['coupon_checkout'] || !isset($flatsome_opt['coupon_checkout'])){
 	remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 }
@@ -459,7 +459,7 @@ function new_logout_url($logouturl, $redir)
 }
 
 // Change order of billing fields
-
+/*
 add_filter("woocommerce_checkout_fields", "order_fields");
 
 function order_fields($fields) {
@@ -483,9 +483,10 @@ function order_fields($fields) {
     $fields["billing"] = $ordered_fields;
     return $fields;
 }
+*/
 // If cart empty redirect to other page
-
-if(!is_admin()){
+/*print_r($_GET);die;*/
+if(!is_admin() || isset($_GET['remove_item'])){
 	add_action( 'init', 'woocommerce_empty_cart_redirect' );
 	function woocommerce_empty_cart_redirect() {
        global $woocommerce;
