@@ -234,8 +234,8 @@ if (is_user_logged_in()) {
 <script>
 //Add Placeholders to the address fields
 $("#billing_first_name").attr("placeholder","Name*");
-/*$("#billing_last_name").attr("placeholder","Last Name*");
-$("#billing_email").attr("placeholder","testing@edukart.com*");*/
+$("#billing_last_name").attr("placeholder","Last Name*");
+$("#billing_email").attr("placeholder","testing@edukart.com*");
 $("#billing_phone").attr("placeholder","Phone*");
 $("#billing_phone").attr('maxlength','15');
 $("#billing_city").attr("placeholder","Town / City*");
@@ -243,7 +243,9 @@ $("#billing_address_1").attr("placeholder","Full Address*");
 $("#billing_postcode").attr("placeholder","Postcode / Zip*");
 /*$("#billing_postcode").val("");*/
 $("#username").val($("#billing_email").val());
-
+if($("#billing_email").val() == ""){
+    $("#billing_email").val($("#username").val());
+}
 if($("#username").val() != ""){
     $("#customer_details").show();
 }

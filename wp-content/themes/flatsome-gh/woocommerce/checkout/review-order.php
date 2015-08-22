@@ -176,6 +176,27 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 	
 	<?php woocommerce_shipping_calculator(); ?>
 
+<?php
+		do_action( 'woocommerce_cart_contents' );
+		?>
+
+		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
+
+	
+
+
+<?php do_action('woocommerce_cart_collaterals'); ?>
+
+
+
+
+<?php do_action( 'woocommerce_after_cart_table' ); ?>
+
+
+<?php do_action( 'woocommerce_after_cart' ); ?>
+
+
+
 </div><!-- .cart-sidebar -->
 </div><!-- .large-3 -->
 
