@@ -550,10 +550,10 @@ function gh_validate_email(){
 add_action('wp_ajax_validate_email', 'gh_validate_email');
 add_action('wp_ajax_nopriv_validate_email', 'gh_validate_email');//for users that are not logged in.
 
-// Change return to shop url to Home page
-function wc_empty_cart_redirect_url() {
-	return get_site_url();
-}
-add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
+// // Change return to shop url to Home page
+// function wc_empty_cart_redirect_url() {
+// 	return get_site_url();
+// }
+// add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
 
 include 'functions-lk.php';
