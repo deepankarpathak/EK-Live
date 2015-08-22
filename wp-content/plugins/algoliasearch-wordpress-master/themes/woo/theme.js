@@ -150,16 +150,25 @@ jQuery(document).ready(function ($) {
             }
 
             html_content += engine.getHtmlForResults(resultsTemplate, content, facets);
-
+            
+            list=0
+            if($('#view li')[0]!==undefined)
+            {
+            	if($($('#view li')[0]).hasClass("list"))
+            		list=1;
+            }            
             if (content.hits.length > 0)
                 html_content += engine.getHtmlForPagination(paginationTemplate, content, pages, facets);
 
             html_content += "</div>";
-
             $(algoliaSettings.instant_jquery_selector).html(html_content);
-
+            
             updateSliderValues();
             $(".algolia-slider").parent().prev().css("display","none");
+           if(list)
+           {
+        	   $("button.list").trigger("click");
+           }
         }
 
         function activateInstant()
