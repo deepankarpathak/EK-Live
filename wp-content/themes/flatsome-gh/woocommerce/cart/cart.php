@@ -40,7 +40,10 @@ jQuery( document ).ready( function() {
        jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
 
             if( returned_data == 'failed' ) {
-		jQuery('input[type="submit"]').trigger('click');
+            	
+           $("#form1 #coupon_code1").val(code);
+		   jQuery('#form1 input[type="submit"]').trigger('click');
+		//jQuery("#form1").submit();
             } else {
 		var returnedData = JSON.parse(returned_data);
 		location.reload();
@@ -61,7 +64,7 @@ jQuery( document ).ready( function() {
        jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
 
             if( returned_data == 'failed' ) {
-		jQuery('input[type="submit"]').trigger('click');
+		jQuery('#form1 input[type="submit"]').trigger('click');
             }
         })
     }); 
@@ -111,7 +114,7 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 <?php wc_print_notices(); ?>
 <?php do_action( 'woocommerce_before_cart' ); ?>
 
-<form action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
+<form id="form1" action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
  <div class="row">
 <div class="large-12 small-12 columns">
 
@@ -218,3 +221,77 @@ if(isset($_COOKIE['referee']) AND $_COOKIE['referee'] != '' ){
 ?>
 
 <input type="hidden" id="cart_cashback_amount" value = "<?php echo $ga; ?>">
+</div>
+</div>
+
+
+
+
+
+
+<div class="large-4 small-12 columns edu-cart-sidebar" style="display:none">
+<div class="cart-sidebar">
+
+
+	<?php woocommerce_cart_totals(); ?>
+
+	
+	<!--<input type="submit" class="checkout-button secondary expand button" name="proceed" value="<?php _e( 'Proceed to Checkout', 'woocommerce' ); ?>" />-->
+	
+	<?php // do_action('woocommerce_proceed_to_checkout'); ?>
+		<?php wp_nonce_field( 'woocommerce-cart' ); ?>
+
+
+
+
+		<?php 
+		// Coupon Code Here
+		if ( WC()->cart->coupons_enabled() ) { ?>
+			<div class="coupon">
+	        <div class="row">
+				<!--<h3 class="widget-title"><?php // _e( 'Coupon', 'woocommerce' ); ?></h3>-->
+				<div class="large-6 small-12 columns"><input type="text" name="coupon_code"  id="coupon_code1" value="" placeholder="<?php _e( 'Coupon Code', 'flatsome' ); ?>"/> </div>
+				<div class="large-6 small-12 columns">
+					<input type ="hidden" value = "<?php echo $_SESSION['ir_coupon_code'] ; ?>" name="apply_coupon" id="apply_coupon1">
+						<input type = "button" class ="<?php  if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != 'null' AND $_SESSION['cash_back'] != ''){ echo "button small expand" ;}else {echo "button small expand coupon_button";} ?>"  value="Apply Coupon">
+						<input type="submit" style="display:none;" class="button small expand" name="apply_coupon" value="Apply Coupon" /></div>
+				<?php do_action('woocommerce_cart_coupon'); ?>
+			</div>
+			</div>
+		<?php } ?>
+	<div class="coupon_one_message" style = "display:none"><p style="color:red;font-size:10px;">Only one coupon can be applied.</p></div>
+	
+	<?php woocommerce_shipping_calculator(); ?>
+
+<?php
+		do_action( 'woocommerce_cart_contents' );
+		?>
+
+		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
+
+	
+
+
+<?php do_action('woocommerce_cart_collaterals'); ?>
+
+
+
+
+<?php do_action( 'woocommerce_after_cart_table' ); ?>
+
+
+<?php do_action( 'woocommerce_after_cart' ); ?>
+
+
+
+</div><!-- .cart-sidebar -->
+</div><!-- .large-3 -->
+
+
+
+
+
+
+
+
+</form>
