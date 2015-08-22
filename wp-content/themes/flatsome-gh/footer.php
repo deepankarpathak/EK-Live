@@ -284,8 +284,10 @@ $(".search_home").keyup(function(){
 	    $.getScript( theme_dir+'/wp-content/themes/flatsome/js/after_algolia.js', function( data, textStatus, jqxhr ) {
 	     });  
 	    <?php if(is_front_page()) {?>
-	        if($("#algolia_instant_selector").length <= 1)
-	           $("#mega-menu").slideDown();
+	    	if($( window ).width() > 768){
+		        if($("#algolia_instant_selector").length <= 1)
+		           $("#mega-menu").slideDown();
+			}		
 		<?php }?>
 	}
 });

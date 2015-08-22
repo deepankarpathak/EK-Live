@@ -172,11 +172,13 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 
 				<div class="pro-totl-rem clearfix">
 					<div class="product-subtotal">
-						<?php
-							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
-							// Meta data
-							echo WC()->cart->get_item_data( $cart_item );
-						?>
+						<div class="product-subtotal-wrapper">
+							<?php
+								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+								// Meta data
+								echo WC()->cart->get_item_data( $cart_item );
+							?>
+						</div>
 					</div>
 
 					<div class="remove-product">

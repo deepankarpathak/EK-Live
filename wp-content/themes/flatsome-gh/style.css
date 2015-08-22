@@ -841,16 +841,23 @@ ul.top-bar-nav li:last-child {
 	font-size: 14px;
 }
 .edu_footer_payment .textwidget p:first-child {
-	font-size: 12px;
+	font-size: 10px;
 	margin: 0;
-/*	border-top: 1px solid #bbb;
-	border-bottom: 1px solid #bbb;
-	padding: 10px;
-*/	margin-bottom: 10px;
+	margin-bottom: 10px;
 	font-family: robotobold !important;
 	color:#999;
 	line-height: 25px;
 }
+
+.woocommerce-checkout .edu_footer_payment .textwidget p:first-child {
+	font-size: 10px;
+	margin: 0;
+	margin-bottom: 10px;
+	font-family: robotobold !important;
+	color:#999;
+	line-height: 25px;
+}
+
 .edu_footer_payment .textwidget img {
 	clear: both;
 	display: block;
@@ -871,15 +878,46 @@ ul.top-bar-nav li:last-child {
 
 .cart-sidebar .coupon_button{
 	background: #808080 !important;
-	height: 38px;
+	height: 32px;
 	font-family: robotobold;
-	font-size: 14px;
+	font-size: 13px;
 }
+
+.select2-container .select2-choice {
+	height: 35px;
+	line-height: 33px;
+	padding-left: 10px;
+    border-radius: 3px;
+    border-color: #ccc;
+}
+
+.select2-container .select2-choice>.select2-chosen{
+	font-family: robotoregular;
+	font-size: 17px;
+	color: #555;
+}
+
+.select2-container .select2-choice .select2-arrow b{
+	background: transparent !important;
+}
+
+.select2-container .select2-choice .select2-arrow b:after{
+    margin-left: -4px;
+    margin-top: -2px;
+}
+
+.select2-dropdown-open .select2-choice .select2-arrow b:after{
+	margin-top: -8px;
+}
+
+.select2-container .select2-choice{
+	background-image: none;
+}
+
 
 .edu-cart-sidebar {
 	background: none repeat scroll 0 0 #f7f7f7;
-	padding-top:10px;
-	padding-bottom:10px;
+	padding:10px 0;
 }
 .edu-cart-sidebar .cart_totals h2 {
 	color: #2c3e50;
@@ -888,7 +926,7 @@ ul.top-bar-nav li:last-child {
 .edu-cart-sidebar .coupon input {
 	margin: 0;
 	background:#fff;
-	height: 38px;
+	height: 34px;
 }
 .edu-cart-sidebar .coupon {
 	/*border-bottom: 1px solid #cccccc;
@@ -899,7 +937,7 @@ ul.top-bar-nav li:last-child {
 .woocommerce-checkout .woocommerce .order-review, .woocommerce-checkout .woocommerce form.login {
 	background: none repeat scroll 0 0 #f7f7f7;
 	border: medium none;
-	padding: 15px;
+	padding: 15px 0;
 }
 .checkout-group h3 {
 	font-weight: normal;
@@ -1030,15 +1068,15 @@ input[type="checkbox"]{
 
 .custom-cart .cart_item .product-name a{
 	color:#2C3E50;
-	line-height: 22px;
+	line-height: 20px;
 	font-family: robotoregular !important;
 	font-size: 18px;
 }
 
 .custom-cart .cart_item .product-name .describtion{
-		color:#999;
-		padding-top: 10px;
-		font-size: 17px;
+		color:#aaa;
+		padding-top: 5px;
+		font-size: 16px;
 }
 
 .custom-cart .cart_item .product-provider{
@@ -1048,7 +1086,7 @@ input[type="checkbox"]{
 .custom-cart .cart_item .product-subtotal{
 	width: 25%;
 	color: #3AC475;
-	font-size: 23px;
+	font-size: 21px;
 	font-family: robotoregular;
 }
 
@@ -1056,15 +1094,19 @@ input[type="checkbox"]{
 	font-size: 1.1em;
 }
 
+.custom-cart .cart_item .product-subtotal dl.variation{
+	line-height: 10px;
+}
+
 .custom-cart .cart_item .product-subtotal dl.variation dd p{
-	color: #777;
+	color: #333;
 	margin: 0;
-	font-size: 15px;
+	font-size: 13px;
 	font-family: robotoregular !important;
 }
 
 .custom-cart .shop_table dl.variation dd {
-    margin-right: 25px;
+    margin-right: 0px;
 }
 .custom-cart .cart_item .product-subtotal dl dt{
 	display: none;
@@ -1077,12 +1119,13 @@ input[type="checkbox"]{
 }
 .custom-cart .cart_item .remove-product .icon-close{
 	margin: 0;
-	background: #ddd;
 	color: #fff;
 	border:none;
 	padding-top: 0;
+	height: 25px;
+	width: 25px;
 	border-radius: 50%;
-	background: #DDD url("images/close.png") repeat scroll 2px 1px;
+	background: #e5e5e5 url("images/close.png") repeat scroll -1px -1px;
 }
 
 .custom-cart .cart_item .remove-product .icon-close:hover{
@@ -1108,21 +1151,21 @@ input[type="checkbox"]{
 .custom-form-row h2{
 	margin: 0;
 	color: #2C3E52;
-	font-size: 29px;
+	font-size: 26px;
 	font-weight: normal;
 	font-family: robotoregular !important;
 }
 
 .custom-form-row.active:before{
-	background: #5BB95B;
+	background: #5DB75D;
 }
 
 .custom-form-row:before{
 	background: #2C3E52;
 	display: block;
-	height: 35px;
-	width: 35px;
-	border: 3px solid #FFF;
+	height: 32px;
+	width: 32px;
+	border: 2px solid #FFF;
 	border-radius: 50%;
 	text-align: center;
 	color: #fff;
@@ -1130,9 +1173,9 @@ input[type="checkbox"]{
 	position: absolute;
 	left: -21px;
 	top: 21px;
-	line-height: 32px;
+	line-height: 29px;
 	font-family: robotobold;
-	font-size: 22px;
+	font-size: 21px;
 
 }
 
@@ -1156,11 +1199,11 @@ content: "2";
 
 .entry-content .woocommerce:nth-of-type(2) .input-text{
 	border-radius: 3px;
-	font-size: 20px;
+	font-size: 17px;
 	color: #555;
 	font-family: robotoregular;
 	padding: 0 10px;
-	height: 39px;
+	height: 35px;
 }
 
 .entry-content .woocommerce:nth-of-type(2) .email_login .input-text{
@@ -1187,7 +1230,7 @@ content: "2";
 
 /* tick validate end*/
 .entry-content .woocommerce:nth-of-type(2) .email-text{
-	font-size: 15px;
+	font-size: 13px;
 	padding: 10px 0;
 	display: inline-block;
 	color: #888;
@@ -1198,17 +1241,20 @@ content: "2";
 	display: inline-block;
 	float: right;
 	background: #EEE;
-	color: #888;
-	padding: 3px 15px;
+	color: #aaa;
+	padding: 3px 13px 1px;
 	border-radius: 25px;
 	margin-top: 6px;
 	font-family: robotoregular;
-	font-size: 19px;
+	font-size: 17px;
 }
 
 
 .cart_totals .cart-subtotal th, .cart_totals .cart-subtotal td{
-	font-size: 16px;
+	font-size: 14px;
+    font-family: robotoregular;
+    font-weight: normal;
+    padding-bottom: 15px;
 }
 
 .entry-content .woocommerce:nth-of-type(2) .input-text:active,.entry-content .woocommerce:nth-of-type(2) .input-text:focus{
@@ -1244,12 +1290,6 @@ content: "2";
     border-bottom: 1px solid #DDD;
 }
 
-.shop_table .order-total th , .shop_table .order-total td{
-	color: #444;
-	font-weight: bold;
-	font-size: 13px;
-}
-
 table tfoot tr th, table tfoot tr td {
 	font-size: 13px;
 }
@@ -1276,17 +1316,18 @@ ul.payment_methods p{
 	text-transform:initial;
 	width: 100%;
 	margin-top: 20px;
+	padding: 9px;
 }
 
 .btn-main-text{
-	font-size: 29px;
+	font-size: 26px;
 	color: #fff;
 	margin-bottom: 5px;
 	font-family: robotobold;
 }
 
 .btn-sub-menu{
-	font-size: 18px;
+	font-size: 17px;
 	font-family: robotoregular;
 }
 
@@ -2124,8 +2165,8 @@ h1.logo-slider-h1 span {
 	display: inline-block;
 }
 .woocommerce-checkout .footer_nav li a, .woocommerce-cart .footer_nav li a {
-	color: #999;
-	font-size: 16px;
+	color: #aaa;
+	font-size: 15px;
 	padding: 0px 10px;
 	font-family: robotoregular;
 }
@@ -2857,6 +2898,12 @@ margin-left: 0 !important;
 	display: none;
 }
 
+.woocommerce-checkout .mob-footer .footer_nav{
+	display: block;
+}
+
+
+
 .mob-footer .edu_footer_payment .textwidget p:nth-of-type(2){
 	display: block;
 	font-family: robotoregular !important;
@@ -3005,15 +3052,20 @@ margin-left: 0 !important;
 }
 .order-total strong{
 	color: #666;
-	font-weight: normal;
-	font-size: 16px;
-	font-family: robotobold;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: robotobold;
 }
 #billing_email_field{
 	display: none;
 }
 #billing_last_name_field{
 	display:none;
+}
+
+.product-subtotal-wrapper{
+	display: inline-block;
+	text-align: left;
 }
 
 /*.woocommerce-billing-fields .clear{
@@ -3027,6 +3079,12 @@ margin-left: 0 !important;
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
+
+@media only screen and (max-width: 1090px) {
+	.custom-cart{
+		padding: 0 30px;
+	}
+}
 
 @media only screen and (max-width: 1062px) {
 	.topper-menu{
@@ -3222,7 +3280,6 @@ margin-left: 0 !important;
 	}
 
 	.custom-cart{
-		padding: 0 15px;
 		border:none;
 	}
 }
@@ -3234,6 +3291,10 @@ margin-left: 0 !important;
 	  top: 12px;
 	  right: 0;
 	  width: 130px;
+	}
+
+	#billing_next_btn {
+	    padding: 0 15px;
 	}
 
 	#customer_details .woocommerce-billing-fields > p{
@@ -4989,8 +5050,8 @@ padding:0px;
 }
 .page-checkout .woocommerce .large-7.columns {
  background: none repeat scroll 0 0 #f2f2f2;
- border-bottom: 1px solid #e0e0e0;
- margin-bottom: 5px;
+/* border-bottom: 1px solid #e0e0e0;
+*/ margin-bottom: 5px;
  padding: 0;
 }
 .woocommerce-checkout span.title-checkout, .woocommerce-cart span.title-checkout {
