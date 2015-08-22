@@ -1852,13 +1852,14 @@ ul.payment_methods p{
 }
 /*-------------------------akhand-today-changes---------*/
 
-#main-content{
+.home #main-content{
 	margin-top: 45px;
 	border-top: 2px solid #666;
 }
 
-.woocommerce-checkout #main-content{
+#main-content{
 	margin-top: 0px;
+	border-top: 1px solid #666;
 }
 
 .side-menu-icon{
