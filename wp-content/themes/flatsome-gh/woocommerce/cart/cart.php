@@ -216,28 +216,3 @@ if(isset($_COOKIE['referee']) AND $_COOKIE['referee'] != '' ){
 ?>
 
 <input type="hidden" id="cart_cashback_amount" value = "<?php echo $ga; ?>">
-<?php
-		do_action( 'woocommerce_cart_contents' );
-		?>
-
-		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-
-	</div>
-</div>
-
-
-
-<?php do_action('woocommerce_cart_collaterals'); ?>
-
-
-</div><!-- .cart-wrapper -->
-</div><!-- .large-9 -->
-</div><!-- .row -->
-
-<?php do_action( 'woocommerce_after_cart_table' ); ?>
-
-</form>
-
-<?php do_action( 'woocommerce_after_cart' ); ?>
-
-

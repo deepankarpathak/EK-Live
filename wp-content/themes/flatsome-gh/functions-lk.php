@@ -503,14 +503,15 @@ function incomplete_order_option_page() {
         $fields2['billing']['billing_last_name'] = $fields['billing']['billing_last_name'];
         $fields2['billing']['billing_email'] = $fields['billing']['billing_email'];
         $fields2['billing']['billing_phone'] = $fields['billing']['billing_phone'];
+        $fields2['billing']['billing_address_1'] = $fields['billing']['billing_address_1'];
         $fields2['billing']['billing_country'] = $fields['billing']['billing_country'];
         $fields2['billing']['billing_state'] = $fields['billing']['billing_state'];
         $fields2['billing']['billing_city'] = $fields['billing']['billing_city'];
-        $fields2['billing']['billing_address_1'] = $fields['billing']['billing_address_1'];
         $fields2['billing']['billing_postcode'] = $fields['billing']['billing_postcode'];
 
         $fields['billing'] = $fields2['billing'];
-
+        // Remove Last name field
+        unset($fields['billing']['billing_last_name']);
         return $fields;
     }
 
