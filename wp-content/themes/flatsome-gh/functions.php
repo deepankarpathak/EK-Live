@@ -12,7 +12,7 @@ $gh_country_currency = get_option('gh_country_currency');
  * 3. Conversion Rate (INR to visitor's local currency)
  *** */
 global $wp_session;
-$wp_session = $_SESSION;//WP_Session::get_instance();
+$wp_session = WP_Session::get_instance();
 // $ip = @gh_find_visitor_ip_address();	// Disabling IP based pricing till the issue is not resolved at Alpha site
 // $wp_session['ip'] = $ip;
 

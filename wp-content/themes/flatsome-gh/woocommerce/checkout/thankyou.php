@@ -9,6 +9,7 @@
 ?>
 <?php if ($order->payment_method_title != 'Cash on Delivery'){ ?>
 <script type="text/javascript" charset="utf-8">
+$(".woocommerce")[0].style.display="none";
   window.setTimeout(function() {
     document.forms['referral_generate'].submit()
   }, 20000);
