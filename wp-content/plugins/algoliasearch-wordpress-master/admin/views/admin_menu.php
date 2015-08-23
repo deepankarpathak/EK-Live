@@ -33,7 +33,7 @@
 
     <div class="wrapper">
         <?php if ($algolia_registry->validCredential) : ?>
-        <div style="clear: both;"</div>
+        <div style="clear: both;"></div>
         <?php endif; ?>
 
         <div id="results-wrapper" style="display: none;">
