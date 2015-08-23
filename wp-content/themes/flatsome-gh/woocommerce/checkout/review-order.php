@@ -200,6 +200,18 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 
 
 </div><!-- .cart-sidebar -->
+
+<?php do_action( 'woocommerce_review_order_after_payment' ); ?>
+		<?php if(isset($cashback) AND $cashback != 'null' AND $cashback != ''){?>
+	<div class="coupon_successful">
+		<div class="coupon_message">
+			<span><?php echo $_SESSION['ir_coupon_code']; ?></span>Applied!
+		</div>
+		<span class="coupon_details_message">Rs <?php echo $cashback ; ?> cash will be added to your Paytm wallet<a style= "color:#9a7c54; cursor:pointer;margin-left:9px; font-size:9px"><u><i>*T&amp;C Applied.</i></u></a></span>
+		<!-- <div class="referal_coupon_tc"></div> -->
+	</div>
+<?php } ?>
+
 </div><!-- .large-3 -->
 
 
@@ -312,17 +324,6 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 
 	
 <?php if ( ! $is_ajax ) : ?></div><?php endif; ?>
-<?php do_action( 'woocommerce_review_order_after_payment' ); ?>
-		<?php if(isset($cashback) AND $cashback != 'null' AND $cashback != ''){?>
-	<div class="coupon_successful">
-		<div class="coupon_message"><span>Referral Code</span>APPLIED!</div>
-		<span class="coupon_details_message">Rs <?php echo $cashback ; ?> cash will be added to your Paytm wallet</span>
-		<div class="referal_coupon_tc"><a style= "color:#9a7c54; cursor:pointer;"><u><i>*T&amp;C Applied.</i></u></a></div>
-	</div>
-
-
-<?php } ?>
-
 <script>
 function validate_payment(){
 	var check = document.getElementById('terms').checked;

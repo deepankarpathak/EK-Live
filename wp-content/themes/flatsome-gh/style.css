@@ -5644,29 +5644,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     margin-left: 10px;
 }
 .coupon_message > span {
-    border: 1px solid #f59d47;
-    color: #f59d47;
-    font-size: 15px;
-    margin-right: 10px;
-    position: relative;
-    text-transform: uppercase;
-    top: -3px;
+  border: 1px solid #CEA770;
+  color: #CEA770;
+  font-size: 15px;
+  margin-right: 10px;
+  position: relative;
+  text-transform: uppercase;
+  top: -3px;
+  padding: 1px 10px;
+  font-family: robotoregular !important;
 }
 .coupon_successful {
-    background: #FdF7E4 none repeat scroll 0 0;
+    background: #FFF none repeat scroll 0 0;
     height: 100px;
-    margin-top: 20px;
-    padding:5px 15px;
+    margin-top: 0px;
+    padding:0px;
     text-align :center;
     
 }
 .coupon_message {
     background-image: url("images/tick_mark.png");
-    background-position: 5px 3px;
+   	color: #8B6D3B;
+  	font-family: robotoregular;
+    background-position: 3px 3px;
     background-repeat: no-repeat;
     font-size: 22px;
     line-height: 30px;
-    margin-left:0.8em;
+    margin-left:0em;
     padding-left: 13%;
     text-align: left;
 }
@@ -5676,6 +5680,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     font-size: 12px;
     margin-top: 20px;
     padding: 5px 10px;
+    font-family: robotoregular;
+  	margin-left: -18px !important;
 }
 .product-lightbox-inner .product_detail_referral {
     float: left;

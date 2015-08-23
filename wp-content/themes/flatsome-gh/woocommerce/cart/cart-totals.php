@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <script>
-jQuery( document ).ready( function() {
+/*jQuery( document ).ready( function() {
 	jQuery( '.remove_cashback').click( function( ev ) {
         var code = '';
 	var prod_id = jQuery( 'input#product_id').val();
@@ -29,7 +29,7 @@ jQuery( document ).ready( function() {
             }
         })
     }); 
-});
+});*/
 </script>
 <div class="cart_totals <?php if ( WC()->customer->has_calculated_shipping() ) echo 'calculated_shipping'; ?>">
 

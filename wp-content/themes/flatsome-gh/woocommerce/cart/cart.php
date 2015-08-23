@@ -27,8 +27,8 @@ jQuery( document ).ready( function() {
 	}	
        jQuery( 'input[type="button"]').click( function( ev ) {
         var code = jQuery( 'input#coupon_code').val();
- 	var cb_amount = jQuery( 'input#cart_cashback_amount').val();
-	var cart_total = jQuery( 'input#cart_subtotal').val();
+	 	var cb_amount = jQuery( 'input#cart_cashback_amount').val();
+		var cart_total = jQuery( 'input#cart_subtotal').val();
 
         data = {
             action: 'referral_validation',
@@ -38,34 +38,43 @@ jQuery( document ).ready( function() {
         }
 
        jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
-
-            if( returned_data == 'failed' ) {
-            	
+       if( returned_data == 'failed' ) {
            $("#form1 #coupon_code1").val(code);
 		   jQuery('#form1 input[type="submit"]').trigger('click');
-		//jQuery("#form1").submit();
-            } else {
-		var returnedData = JSON.parse(returned_data);
-		location.reload();
-		jQuery('tr.coupon_cashback td').html( returnedData.cashback);
-		jQuery('tr.effecive_total td').html( returnedData.effectivetotal);
-		//jQuery('').attr('disabled','disabled');
+        } else {
+			var returnedData = JSON.parse(returned_data);
+			location.reload();
+			jQuery('tr.coupon_cashback td').html( returnedData.cashback);
+			jQuery('tr.effecive_total td').html( returnedData.effectivetotal);
+			//jQuery('').attr('disabled','disabled');
             }
+            /*$("#customer_details").hide();
+		    $("#customer_details_filled").show();
+		    $(".order-review").show();
+		    $(".order-detail").addClass("active");*/
         })
     }); 
+
 	jQuery( '.remove_cashback, .woocommerce-remove-coupon ').click( function( ev ) {
         var code = '';
 	    var prod_id = jQuery( 'input#product_id').val();
         data = {
             action: 'remove_cashback',
             coupon_code: code,
-	    product_id: prod_id,
+	        product_id: prod_id,
         }
-       jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
+        jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
 
-            if( returned_data == 'failed' ) {
-		jQuery('#form1 input[type="submit"]').trigger('click');
+        if( returned_data == 'failed' ) {
+		   jQuery('input[type="submit"]').trigger('click');
+        }
+        else{
+           	location.reload();
             }
+            $("#customer_details").hide();
+		    $("#customer_details_filled").show();
+		    $(".order-review").show();
+		    $(".order-detail").addClass("active");
         })
     }); 
 });
@@ -166,7 +175,7 @@ cartval: <?php echo $woocommerce->cart->total; ?>
                				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
                					echo '<p class="backorder_notification">' . __( 'Available on backorder', 'woocommerce' ) . '</p>';
 						?>
-						<div class="describtion">Narsee Monjee Institute of Management Studies</div>
+						<!-- <div class="describtion">Narsee Monjee Institute of Management Studies</div> -->
 					</div>
 
 					<div class="product-provider">
@@ -175,13 +184,11 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 
 				<div class="pro-totl-rem clearfix">
 					<div class="product-subtotal">
-						<div class="product-subtotal-wrapper">
-							<?php
-								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
-								// Meta data
-								echo WC()->cart->get_item_data( $cart_item );
-							?>
-						</div>
+						<?php
+							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+							// Meta data
+							echo WC()->cart->get_item_data( $cart_item );
+						?>
 					</div>
 
 					<div class="remove-product">

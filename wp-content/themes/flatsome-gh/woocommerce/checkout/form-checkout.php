@@ -335,11 +335,11 @@ function validate_billing_form(){
             $("#billing_state").val("<?php echo $form_data[5];?>");
             $("#billing_city").val("<?php echo $form_data[6];?>");
             $("#billing_postcode").val("<?php echo $form_data[7];?>");
-            $("#customer_details").show();
             $(".customer-info").addClass("active");
             /*$(".order-review").show();
             $(".order-detail").addClass("active");*/
-
+            $("#customer_details").show();
+            $("#customer_details").addClass("active");
         </script>
         <?php
        }
