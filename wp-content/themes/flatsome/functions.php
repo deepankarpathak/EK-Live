@@ -489,6 +489,8 @@ function order_fields($fields) {
 if(!is_admin() || isset($_GET['remove_item'])){
 	add_action( 'init', 'woocommerce_empty_cart_redirect' );
 	function woocommerce_empty_cart_redirect() {
+		if(strpos($_SERVER["REQUEST_URI"], 'order'))
+			return;
        global $woocommerce;
        $cart_url = get_site_url()."/cart/";
        if ( preg_match('/checkout/',$_SERVER["REQUEST_URI"]) && !sizeof( $woocommerce->cart->get_cart() )) {
