@@ -124,7 +124,7 @@ modal: true,
 </head>
 
 <body <?php body_class(); ?>>
-<div id="popup-wrapper" class="referal_tc" style="font-family:roboto,arial,sans-serif !important; display:none;">
+<div id="popup-wrapper" class="referal_tc" style="font-family:robotolight,arial,sans-serif !important; display:none;">
 	<ol type="decimal" style="padding-left:20px;">
 		<li>EduKart's Referral Program is an initiative to spread awareness &amp; importance of education in today's competitive world</li>
 		<li>No discount or cashback is offered by any of the course providers on any of the courses listed on EduKart</li>
@@ -161,113 +161,123 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 
 	<div id="wrapper"<?php if($flatsome_opt['box_shadow']) echo ' class="box-shadow"';?>>
 		<div class="header-wrapper before-sticky">
+
 		<?php do_action( 'before' ); ?>
 		<?php if(!isset($flatsome_opt['topbar_show']) || $flatsome_opt['topbar_show']){ ?>
                     <?php if (!is_page(array('cart', 'checkout'))){ ?>
 		<div id="top-bar">
-        
-        
 			<div class="row">
-				<div class="large-12 columns">
-					<!-- left text -->
-					<!--<div class="left-text left">
-						<div class="html"><?php // echo do_shortcode( $flatsome_opt['topbar_left']);?></div>
-					</div>-->
-					<!-- right text -->
-					<div class="right-text right edu_topbar">
-						 <?php 
-                                                 if ( has_nav_menu( 'top_bar_nav' )  ) { 
-								wp_nav_menu(array(
-									'theme_location' => 'gh_logged_out_top_bar_menu_location',
-									'menu_class' => 'top-bar-nav',
-									'before' => '',
-									'after' => '',
-									'link_before' => '',
-									'link_after' => '',
-									'depth' => 1,
-									'fallback_cb' => false,
-									'walker' => new FlatsomeNavDropdown
-								));                                                    
-                                                }else{ ?>
-                                                Define your top bar navigation in <b>Apperance > Menus</b>
-                                                <?php } ?>
-						
-						
-						<ul style="" class="minicart">
-						<!-- Show mini cart if Woocommerce is activated -->
-					<?php if(!isset($flatsome_opt['show_cart']) || $flatsome_opt['show_cart'] == 1) { ?>
-					<?php if(function_exists('wc_print_notices')) { ?> 
-					<li class="mini-cart">
-						<div class="cart-inner">
-							<?php // Edit this content in inc/template-tags.php. Its gets relpaced with Ajax! ?>
-							<a href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" class="cart-link">
-								<strong class="cart-name hide-for-small"><?php _e('Cart', 'woocommerce'); ?></strong> 
-								<span class="cart-price hide-for-small">/ <?php echo $woocommerce->cart->get_cart_total(); ?></span> 
-									<!-- cart icon -->
-									<div class="cart-image">
-				                        <?php if ($flatsome_opt['custom_cart_icon']){ ?> 
-				                        <div class="custom-cart-inner">
-					                        <div class="custom-cart-count"><?php echo $woocommerce->cart->cart_contents_count; ?></div>
-					                        <img class="custom-cart-icon" src="<?php echo $flatsome_opt['custom_cart_icon']?>"/> 
-				                        </div><!-- .custom-cart-inner -->
-				                        <?php } else { ?> 
-				                         <strong><?php echo $woocommerce->cart->cart_contents_count; ?></strong>
-				                         <span class="cart-icon-handle"></span>
-				                        <?php }?>
-									</div><!-- end cart icon -->
-							</a>
-							<div class="nav-dropdown">
-							  	<div class="nav-dropdown-inner">
-								<!-- Add a spinner before cart ajax content is loaded -->
-									<?php if ($woocommerce->cart->cart_contents_count == 0) {
-										echo '<p class="empty">'.__('No products in the cart.','woocommerce').'</p>';
-										?> 
-									<?php } else { //add a spinner ?> 
-										<div class="loading"><i></i><i></i><i></i><i></i></div>
-									<?php } ?>
-									</div><!-- nav-dropdown-innner -->
-							</div><!-- .nav-dropdown -->
-						</div><!-- .cart-inner -->
-					</li><!-- .mini-cart -->
-					
-					<?php } ?>
-					<?php } ?>
+
+<!-- Menu removed by Sachin -->
+
+			   <div class="large-12 columns">
+				<?php 
+					$args = array(
+					       'order'                  => 'ASC',
+					       'orderby'                => 'menu_order',
+					       'post_type'              => 'nav_menu_item',
+					       'post_status'            => 'publish',
+					       'output'                 => ARRAY_A,
+					       'output_key'             => 'menu_order',
+					       'nopaging'               => true,
+					       'update_post_term_cache' => false ); 
+					$i = 0;
+					$raw = wp_get_nav_menu_items("Topper Menu",$args);
+					foreach($raw as $menu){
+						$menus[$i]['menu_name'] = $menu->post_title;
+						$i++;
+					}
+					echo "<ul class='topper-menu large-9 columns  hide-for-small'>";
+					for($i=0; $i<count($menus); $i++){
+						if($menus[$i]['menu_name'] == "GET REWARD POINTS"){
+				?>
+							<li class='reward-points'><a><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/grade_icon.png" alt="grade icon image" title="grade reward points"/>
+				<?php
+							echo $menus[$i]['menu_name']; 
+						}
+						else{
+						 echo "<li class=''><a>".$menus[$i]['menu_name']."</a></li>";
+						}
+					}
+				   echo "</ul>"; 
+				?>
+				<ul class="minicart  small-2 large-3 columns">
+					<!-- Show mini cart if Woocommerce is activated -->
 					<?php if(!isset($flatsome_opt['myaccount_dropdown']) || $flatsome_opt['myaccount_dropdown']) { ?>
-							<li class="account-dropdown hide-for-small">
+							<li class="account-dropdown">
 								<?php
 								if ( is_user_logged_in() ) { ?> 
 								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-login">
-									<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.PNG" title="my account"/>
+									<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" alt="my account image" title="my account"/>
+									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/down-arrow.png" alt="my account arrow image" title="my account"/></span>
 								</a>
 								<div class="nav-dropdown">
 									<ul>
-									<?php if ( has_nav_menu( 'my_account' ) ) : ?>
-									<?php  
-									wp_nav_menu(array(
-										'theme_location' => 'my_account',
-										'container'       => false,
-										'items_wrap'      => '%3$s',
-										'depth'           => 0,
-									));
-									?>
-			                        <?php else: ?>
-			                            <li>Define your My Account dropdown menu in <b>Apperance > Menus</b></li>
-			                        <?php endif; ?>	
+										<?php if ( has_nav_menu( 'my_account' ) ) : ?>
+										<?php  
+										wp_nav_menu(array(
+											'theme_location' => 'my_account',
+											'container'       => false,
+											'items_wrap'      => '%3$s',
+											'depth'           => 0,
+										));
+										?>
+				                        <?php else: ?>
+				                            <li>Define your My Account dropdown menu in <b>Apperance > Menus</b></li>
+				                        <?php endif; ?>	
 									</ul>
 								</div><!-- end account dropdown -->
-								
-							<?php } else { ?>
-							<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.PNG" title="login"/></a>
-
-							<?php
-						}
-						?>						
-						</li>
+								<?php } else { ?>
+								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" alt="my account image" title="login"/>									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-	content/themes/flatsome-gh/images/down-arrow.png" alt="my account arrow image" title="my account"/></span></a>
+								<?php }  ?>						
+							</li>
 					<?php } ?>
-						</ul>
-					</div><!-- .pos-text -->
+					<?php if(!isset($flatsome_opt['show_cart']) || $flatsome_opt['show_cart'] == 1) { 
+							if(function_exists('wc_print_notices')) { ?> 
+								<li class="mini-cart">
+									<div class="cart-inner">
+										<?php // Edit this content in inc/template-tags.php. Its gets relpaced with Ajax! ?>
+										<a href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" class="cart-link">
+											<span class="cart-name hide-for-small"><?php _e('Cart', 'woocommerce'); ?></span> 
+											<span class="cart-price hide-for-small">/ <?php echo $woocommerce->cart->get_cart_total(); ?></span> 
+												<!-- cart icon -->
+												<div class="cart-image">
+							                        <?php if ($flatsome_opt['custom_cart_icon']){ ?> 
+							                        <div class="custom-cart-inner">
+								                        <div class="custom-cart-count">
+								                        	<?php echo $woocommerce->cart->cart_contents_count; ?>
+								                        </div>
+								                        <img alt="cart-image" class="custom-cart-icon" src="<?php echo $flatsome_opt['custom_cart_icon']?>"/> 
+							                        </div><!-- .custom-cart-inner -->
+							                        <?php } else { ?> 
+							                        <strong>
+							                         	<?php echo $woocommerce->cart->cart_contents_count; ?>
+							                        </strong>
+							                        <span class="cart-icon-handle"></span>
+							                        <?php }?>
+												</div><!-- end cart icon -->
+										</a>
+										<div class="nav-dropdown">
+										  	<div class="nav-dropdown-inner">
+											<!-- Add a spinner before cart ajax content is loaded -->
+												<?php if ($woocommerce->cart->cart_contents_count == 0) {
+													echo '<p class="empty">'.__('No products in the cart.','woocommerce').'</p>';
+												?> 
+												<?php } else { //add a spinner ?> 
+													<div class="loading"><i></i><i></i><i></i><i></i></div>
+												<?php } ?>
+											</div><!-- nav-dropdown-innner -->
+										</div><!-- .nav-dropdown -->
+									</div><!-- .cart-inner -->
+								</li><!-- .mini-cart -->
+					  <?php } ?>
+					<?php } ?>
+				</ul>	
+			</div><!-- .large-12 columns -->
 
-				</div><!-- .large-12 columns -->
+
+
+
 			</div><!-- .row -->
 		</div><!-- .#top-bar -->
                     <?php } ?>
@@ -276,11 +286,37 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="row"> 
-				<div class="large-12 columns header-container">
+				<div class="large-12 header-container">
 					<?php /*<div class="mobile-menu show-for-small"><a href="#open-menu"><span class="icon-menu"></span></a></div><!-- end mobile menu --> */?>
 					
 					<?php if($flatsome_opt['logo_position'] == 'left') : ?> 
-                    <div class="small-12    large-3  columns">
+					<img alt="Menu icon image" class="side-menu-icon" src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/menu_icon.png">
+                    <div class="overlay"></div>
+                	<div class="mobile-side-menu">
+                		<div class="side-menu-heading mega-menu-title">Browse Courses</div>
+                		<?php echo do_shortcode('[block id="mobile-mega-menu"]'); ?>
+                		<ul class="account-menu">
+                		<li class="side-menu-heading">Account
+                		<?php if ( is_user_logged_in() ) { ?>
+                			<a class="sign-in-out" href="<?php echo get_site_url(); ?>/my-account/customer-logout">(Sign Out)</a>
+                		<?php } else{?>
+                			<a class="sign-in-out" href="<?php echo get_site_url(); ?>/my-account">(Sign In)</a>
+                		<?php }?>
+                		</li>
+                		<?php if ( is_user_logged_in() ) { ?>
+                		<?php if ( has_nav_menu( 'my_account' ) ) : ?>
+										<?php  
+										wp_nav_menu(array(
+											'theme_location' => 'my_account',
+											'container'       => false,
+											'items_wrap'      => '%3$s',
+											'depth'           => 0,
+										));
+										endif;
+						}?>
+						</ul>
+                	</div>
+                    <div class="header-logo">
 					<div id="logo" class="logo-left">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home">
 							<?php if($flatsome_opt['site_logo']){
@@ -296,25 +332,48 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					</div><!-- .logo -->
                     </div>
 					<?php endif; ?>
-                    
-                    
-                    
-                    <div class="left-links">
- 				<ul id="site-navigation" class="header-nav">
- 				</ul>
-                    </div><!-- .left-links -->
-             
-             <script type="text/javascript">
-             jQuery(function() {
-	jQuery('.nav-top-link').tooltipster({
-		offsetY: 3,
-	});
- });</script>
-                    
-                                <?php if(is_page(array('cart', 'checkout'))) { ?>
-                                    <div class="small-12 large-6  columns cart_page">
-                                        <?php 
-                                            wp_nav_menu(array(
+            <?php if(is_page(array('cart', 'checkout'))) { ?>
+                <div class="menu-features comman-feature">
+                    <?php 
+                        wp_nav_menu(array(
+								'theme_location' => 'gh_logged_out_top_bar_menu_location',
+								'menu_class' => 'top-bar-nav',
+								'before' => '',
+								'after' => '',
+								'link_before' => '',
+								'link_after' => '',
+								'depth' => 1,
+								'fallback_cb' => false,
+								'walker' => new FlatsomeNavDropdown
+		                                            ));          
+			?>       
+                </div>
+	            <?php 
+					dynamic_sidebar("gh_header_contact_widget_area");
+				?>
+	<?php } else{ ?>
+<!-- Sticky search hidden -->
+<div class="search-menu-container sticky-hidden">
+	<div class="search-box-row">
+		<div class="row collapse search-wrapper">
+			<form method="GET" id="searchform" class="searchform" action="<?php echo site_url();?>/courses/">
+  				<div class="large-10 small-10 columns">
+   					<input type="search" class="field search_sticky" name="s" id="s" value="<?php echo $_GET['s']; ?>" placeholder="<?php echo _e( 'Search the courses e.g. MBA, BA, BBA, ', 'woocommerce' ); ?>&hellip;" />
+  				</div><!-- input -->
+	  			<div class="large-2 small-2 columns">
+              		<input type="submit" class="button secondary postfix gh_search_form" value="GO">
+	  			</div><!-- button -->
+			</form>
+		</div><!-- row -->
+	</div>
+</div>
+<!-- End Sticky search hidden -->
+
+    <div class="menu-features home-feature">
+		<div class="right-text right edu_topbar">
+		     <?php 
+	               if ( has_nav_menu( 'top_bar_nav' )  ) { 
+					     wp_nav_menu(array(
 						'theme_location' => 'gh_logged_out_top_bar_menu_location',
 						'menu_class' => 'top-bar-nav',
 						'before' => '',
@@ -324,114 +383,62 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 						'depth' => 1,
 						'fallback_cb' => false,
 						'walker' => new FlatsomeNavDropdown
-                                            ));          
-					?>       
-                                    </div>
-                                <?php } else{ ?>
-                                    <div class="small-12    large-6  columns">
-                                        <?php 
-                                            //get_product_search_form();
-					?>    
-                                            <div class="row collapse search-wrapper">
-<form method="GET" id="searchform" class="searchform" action="<?php echo site_url();?>/courses/">
-	  <div class="large-10 small-10 columns">
-	   		<input type="search" class="field" name="s" id="s" value="<?php echo $_GET['s']; ?>" placeholder="<?php echo _e( 'Search the courses e.g. MBA, BA, BBA, ', 'woocommerce' ); ?>&hellip;" />
-	  </div><!-- input -->
-	  <div class="large-2 small-2 columns">
-              <input type="submit" class="button secondary postfix gh_search_form" value="GO">
-	  </div><!-- button -->
-</form>
-</div><!-- row -->
-                                    </div>
-                               <?php } ?> 
- 					<?php 
-                                                //get_search_form( true ); 
-						dynamic_sidebar("gh_header_contact_widget_area");
-					?> 
-                                
- 
-					<?php if($flatsome_opt['logo_position'] == 'center') { ?> 
-                    
-					<div id="logo">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home">
-							<?php if($flatsome_opt['site_logo']){
-								$site_title = esc_attr( get_bloginfo( 'name', 'display' ) );
-								echo '<img src="'.$flatsome_opt['site_logo'].'" class="header_logo" alt="'.$site_title.'"/>';
-								if ( is_page_template( 'page-transparent-header-light.php' )) {
-								  if($flatsome_opt['site_logo_dark']){
-								  	echo '<img src="'.$flatsome_opt['site_logo_dark'].'" class="header_logo_dark" alt="'.$site_title.'"/>';
-								  }
-								}
-							} else {bloginfo( 'name' );}?>
-						</a>
-					</div><!-- .logo -->
-                    
-					<?php } ?>
-<div class="small-12    large-2  columns">
-					<div class="right-links">
-						<?php if(!$flatsome_opt['catalog_mode']) { ?> 
-						<ul <?php if($flatsome_opt['nav_position'] == 'top_right'){ ?>id="site-navigation"<?php } ?> class="header-nav">
-							
-						<?php if($flatsome_opt['nav_position'] == 'top_right'){ ?>
-								<?php if ( has_nav_menu( 'primary' ) ) { ?>
-								
-								<?php if (!isset($flatsome_opt['search_pos']) || $flatsome_opt['search_pos'] == 'left') { ?>
-								<li class="search-dropdown">
-									<a href="#" class="nav-top-link icon-search" onClick="return false;"></a>
-									<div class="nav-dropdown">
-										<?php if(function_exists('get_product_search_form')) {
-											get_product_search_form();
-										} else {
-											get_search_form();
-										} ?>	
-									</div><!-- .nav-dropdown -->
-								</li><!-- .search-dropdown -->
-								<?php } ?>
-
-									<?php  
-									wp_nav_menu(array(
-										'theme_location' => 'primary',
-										'container'       => false,
-										'items_wrap'      => '%3$s',
-										'depth'           => 0,
-										'walker'          => new FlatsomeNavDropdown
-									));
-								?>
-
-								<?php if (isset($flatsome_opt['search_pos']) && $flatsome_opt['search_pos'] == 'right') { ?>
-								<li class="search-dropdown">
-									<a href="#" class="nav-top-link icon-search"></a>
-									<div class="nav-dropdown">
-										<?php if(function_exists('get_product_search_form')) {
-											get_product_search_form();
-										} else {
-											get_search_form();
-										} ?>		
-									</div><!-- .nav-dropdown -->
-								</li><!-- .search-dropdown -->
-								<?php } ?>
-		                    <?php } ?>		
-		                   	<?php } // primary-nav right style ?>
-
-							<?php if($flatsome_opt['top_right_text']) { ?>
-							<li class="html-block">
-								<div class="html-block-inner hide-for-small"><?php echo do_shortcode($flatsome_opt['top_right_text']); ?></div>
-							</li>
-							<?php } ?>
-							
-
-					
-				</ul><!-- .header-nav -->
-				<?php } else { ?>
-				<div class="catalog-mode-header">
-					<?php echo do_shortcode($flatsome_opt['catalog_mode_header']); ?>
+				    ));                                                    
+	                }else{ ?>
+	                  Define your top bar navigation in <b>Apperance > Menus</b>
+	                <?php } ?>
+        <?php } ?> 
+	 
+		<?php if($flatsome_opt['logo_position'] == 'center') { ?> 
+				<div id="logo">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home">
+						<?php if($flatsome_opt['site_logo']){
+							$site_title = esc_attr( get_bloginfo( 'name', 'display' ) );
+							echo '<img src="'.$flatsome_opt['site_logo'].'" class="header_logo" alt="'.$site_title.'"/>';
+							if ( is_page_template( 'page-transparent-header-light.php' )) {
+							  if($flatsome_opt['site_logo_dark']){
+							  	echo '<img src="'.$flatsome_opt['site_logo_dark'].'" class="header_logo_dark" alt="'.$site_title.'"/>';
+							  }
+							}
+						} else {bloginfo( 'name' );}?>
+					</a>
+				</div><!-- .logo -->
+		<?php } ?>
+	    </div><!-- .large-12 -->
+    </div>
+    <?php 
+	    if(!is_page(array('cart', 'checkout'))){
+	    	dynamic_sidebar("gh_header_contact_widget_area");
+	    }
+	?>
+</div>	
+<div class="large-12 search-menu-container">
+	<?php if (!is_page(array('cart', 'checkout'))){ ?>
+				<div class="search-box-row search-div large-8 small-12">
+					<div class="row collapse search-wrapper">
+						<form method="GET" id="searchform" class="searchform" action="<?php echo site_url();?>/courses/">
+			  				<div class="large-10 small-10 columns">
+			   					<input type="search" class="field search_home" name="s" id="s" value="<?php echo $_GET['s']; ?>" placeholder="<?php echo _e( 'Search the courses e.g. MBA, BA, BBA, ', 'woocommerce' ); ?>&hellip;" />
+			  				</div><!-- input -->
+				  			<div class="large-2 small-2 columns">
+			              		<input type="submit" class="button secondary postfix gh_search_form" value="GO">
+				  			</div><!-- button -->
+						</form>
+					</div><!-- row -->
 				</div>
-				<?php } ?>
-
-			</div><!-- .right-links -->
-            </div>
-		</div><!-- .large-12 -->
-	</div><!-- .row -->
+				<div class="no-padding menu-container large-4">
+					<div class="browse-cat hide-for-small" id="browse-cat">Browse Course Categories
+						<span style="float:right"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/detail-tab-icon.png" alt="tab icon image" style="width:20px"/></span>
+					</div>
+					<div id="mega-menu" <?php if (!is_front_page()){echo "style='display:none';";}?> >
+						<?php 
+							echo do_shortcode('[block id="mega-menu"]'); 
+						?>
+					</div>
+				</div>
+	<?php }?>	
+</div>
+<!-- .row -->
 
 
 </header><!-- .header -->
@@ -511,3 +518,10 @@ if (strpos($flatsome_opt['header_bg'],'#fff') !== false && $flatsome_opt['nav_po
 
 <!-- woocommerce message -->
 <?php  if(function_exists('wc_print_notices')) {wc_print_notices();}?>
+<script>
+ jQuery(function() {
+	jQuery('.nav-top-link').tooltipster({
+		offsetY: 3,
+	});
+ });
+ </script>

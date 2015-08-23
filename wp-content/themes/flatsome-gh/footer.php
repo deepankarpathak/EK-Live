@@ -54,9 +54,19 @@ global $flatsome_opt;
 <?php } ?>
 <!-- FOOTER 3: Payment Logos -->
 <?php if ( is_active_sidebar( 'gh_footer_payment_logos_widget_area' ) ) : ?>
-<div class="footer" >
+<div class="footer mob-footer" >
 	<div class="row">
             <?php if(is_page(array('cart', 'checkout'))){ ?>
+            <ul class="footer_nav">
+                <li><a href="<?php echo get_site_url()?>/privacy-policy">Privacy Policy</a></li>
+                <li><a href="<?php echo get_site_url()?>/terms-and-conditions">Terms & Conditions</a></li>
+                <li><a href="<?php echo get_site_url()?>/disclaimer">Disclaimer</a></li>
+                <li><a href="<?php echo get_site_url()?>/cancellation-and-refund-policy">Cancellation & Refund Policy</a></li>
+                <li><a href="<?php echo get_site_url()?>/shipping-and-delivery-policy">Shipping & Delievery Policy</a></li>
+                
+            </ul>
+            <?php } ?>
+            <?php if(is_front_page()){ ?>
             <ul class="footer_nav">
                 <li><a href="<?php echo get_site_url()?>/privacy-policy">Privacy Policy</a></li>
                 <li><a href="<?php echo get_site_url()?>/terms-and-conditions">Terms & Conditions</a></li>
@@ -265,13 +275,121 @@ var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBe
 <input type="hidden" id="theme_dir" value="<?php echo get_site_url(); ?>"/>
 <script>
 // Added by gambheer
-$("#s").keyup(function(){
+$(".search_home").keyup(function(){
 	var theme_dir = $("#theme_dir").val();
-	if($("#s").val().length == 0){
+	$("#mega-menu").slideUp();
+	if($(".search_home").val().length == 0){
+	    engine.helper.removeNumericRefinement("_price", ">=");
+	    engine.helper.removeNumericRefinement("_price", "<=");
 	    $.getScript( theme_dir+'/wp-content/themes/flatsome/js/after_algolia.js', function( data, textStatus, jqxhr ) {
 	     });  
+	    <?php if(is_front_page()) {?>
+	    	if($( window ).width() > 768){
+		        if($("#algolia_instant_selector").length <= 1)
+		           $("#mega-menu").slideDown();
+			}		
+		<?php }?>
 	}
 });
+
+$("#browse-cat").click(function(){
+	$("#mega-menu").slideToggle();
+});
+
+jQuery(document).ready(function() {
+    var offset = 100;
+    jQuery(window).scroll(function() {
+    	if($( window ).width() > 768){
+	        if (jQuery(this).scrollTop() > offset) {
+	                $("#mega-menu2").show();
+	                $("#mega-menu2").css('position','absolute');
+				    $("#mega-menu2").css('width','24%');
+				    $("#mega-menu2").css('top','106px');
+				    $("#mega-menu2").css('z-index','999');
+				    $("#mega-menu2").css('left','8.5%');
+				    if($( window ).width() > 768 && $( window ).width() < 1080){
+				    	$("#mega-menu2").css('left','0%');
+				    }
+				    $("#mega-menu2 #mega_menu_and_slider").css("padding","0px");
+				    $("#mega-menu2 .container").css("padding","0px");
+	                $("#mega-menu").hide();
+	        } 
+	        else{
+	        	<?php if(is_front_page()) {?>
+		           $("#mega-menu2").hide();
+		           if($("#algolia_instant_selector").length == 0)
+		              $("#mega-menu").show();
+		        <?php }?>
+	        }
+    	}
+    });
+
+     jQuery(window).resize(function(){
+     	megamenu_adjust();
+     });
+     megamenu_adjust();
+ });
+
+function megamenu_adjust(){
+	if($( window ).width() < 768){
+		$("#mega-menu").hide();
+		$("#mega-menu2").show();
+	    $("#mega-menu2").css('position','inherit');
+	    $("#mega-menu2").css('width','100%');
+	    $("#mega-menu2 #mega_menu_and_slider").css("padding","0px");
+	    $("#mega-menu2 .container").css("padding","0px");
+	    $(".edu-nave ul.edu_mainnave li").css("background","#fff");
+	    $(".fkr_nav").css("background","#fff");
+	}
+	else{
+	    $("#mega-menu2").hide();
+	}  
+}
+
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://edukart.com/about-us",
+      "name": "About_Us"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "https://edukart.com/career",
+      "name": "Career"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "https://edukart.com/blog",
+      "name": "Blog"
+    }
+  }]
+}
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	    $(".side-menu-icon").click(function(){
+	        $("#masthead").addClass("slide-menu");
+	        $(".header-wrapper").css("position","initial");
+	        $("html").css("overflow","hidden");
+	    });
+   	    $(".overlay").click(function(){
+	        $("#masthead").removeClass("slide-menu");
+	        $(".header-wrapper").css("position","relative");
+	        $("html").css("overflow","initial");
+	    });
+
+	});
 </script>
 </body>
 </html>

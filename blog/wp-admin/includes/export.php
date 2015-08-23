@@ -75,14 +75,14 @@ function export_wp( $args = array() ) {
 	if ( 'post' == $args['content'] || 'page' == $args['content'] ) {
 		if ( $args['author'] )
 			$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_author = %d", $args['author'] );
-
-		if ( $args['start_date'] )
-			$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_date >= %s", date( 'Y-m-d', strtotime($args['start_date']) ) );
-
-		if ( $args['end_date'] )
-			$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_date < %s", date( 'Y-m-d', strtotime('+1 month', strtotime($args['end_date'])) ) );
 	}
 
+	if ( $args['start_date'] )
+			$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_date >= %s", date( 'Y-m-d', strtotime($args['start_date']) ) );
+
+	if ( $args['end_date'] )
+		$where .= $wpdb->prepare( " AND {$wpdb->posts}.post_date < %s", date( 'Y-m-d', strtotime('+1 month', strtotime($args['end_date'])) ) );
+		
 	// Grab a snapshot of post IDs, just in case it changes during the export.
 	$post_ids = $wpdb->get_col( "SELECT ID FROM {$wpdb->posts} $join WHERE $where" );
 

@@ -1,0 +1,25 @@
+
+
+DB Migration Started15151515-08-20:
+Step1:Live DB backup started.
+Step1:Live DB backup Ended.
+Step2:Alpha's clone created.
+Step2:Alpha's clone completed.
+Step3:Orders.xml exporting.
+Step3:Orders.xml exported.
+Step4:exporting table users,user_meta,options.
+Step5:Importing table users,user_meta,options.
+Step6&7:updateing all links using wordpress migration queries.
+Step8:Updateing wp-config.php DB name.
+
+
+DB Migration Started15151515-08-20:
+Step1:Live DB backup started.
+Step1:Live DB backup Ended.
+Step2:Alpha's clone created.
+Step2:Alpha's clone completed.
+Step3:Orders.xml exporting.
+Step3:Orders.xml exported.
+Step4:exporting table users,user_meta,options.
+Step5:Importing table users,user_meta,options.
+Step6&7:updateing all links using wordpress migration queries.

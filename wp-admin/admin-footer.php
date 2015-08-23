@@ -1,3 +1,5 @@
+
+
 <?php
 /**
  * WordPress Administration Template Footer
@@ -10,6 +12,9 @@
 if ( !defined('ABSPATH') )
 	die('-1');
 ?>
+<div class="loading" id="loading" style="display:none;">
+<img class="loading-icon" src="<?php echo get_site_url() . '/wp-admin/images/page-loading.gif';?>" altr= "Loading..."/>
+</div>
 
 <div class="clear"></div></div><!-- wpbody-content -->
 <div class="clear"></div></div><!-- wpbody -->

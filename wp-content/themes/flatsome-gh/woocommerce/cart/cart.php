@@ -27,8 +27,8 @@ jQuery( document ).ready( function() {
 	}	
        jQuery( 'input[type="button"]').click( function( ev ) {
         var code = jQuery( 'input#coupon_code').val();
- 	var cb_amount = jQuery( 'input#cart_cashback_amount').val();
-	var cart_total = jQuery( 'input#cart_subtotal').val();
+	 	var cb_amount = jQuery( 'input#cart_cashback_amount').val();
+		var cart_total = jQuery( 'input#cart_subtotal').val();
 
         data = {
             action: 'referral_validation',
@@ -38,31 +38,43 @@ jQuery( document ).ready( function() {
         }
 
        jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
-
-            if( returned_data == 'failed' ) {
-		jQuery('input[type="submit"]').trigger('click');
-            } else {
-		var returnedData = JSON.parse(returned_data);
-		location.reload();
-		jQuery('tr.coupon_cashback td').html( returnedData.cashback);
-		jQuery('tr.effecive_total td').html( returnedData.effectivetotal);
-		//jQuery('').attr('disabled','disabled');
+       if( returned_data == 'failed' ) {
+           $("#form1 #coupon_code1").val(code);
+		   jQuery('#form1 input[type="submit"]').trigger('click');
+        } else {
+			var returnedData = JSON.parse(returned_data);
+			location.reload();
+			jQuery('tr.coupon_cashback td').html( returnedData.cashback);
+			jQuery('tr.effecive_total td').html( returnedData.effectivetotal);
+			//jQuery('').attr('disabled','disabled');
             }
+            /*$("#customer_details").hide();
+		    $("#customer_details_filled").show();
+		    $(".order-review").show();
+		    $(".order-detail").addClass("active");*/
         })
     }); 
+
 	jQuery( '.remove_cashback, .woocommerce-remove-coupon ').click( function( ev ) {
         var code = '';
-	var prod_id = jQuery( 'input#product_id').val();
+	    var prod_id = jQuery( 'input#product_id').val();
         data = {
             action: 'remove_cashback',
             coupon_code: code,
-	    product_id: prod_id,
+	        product_id: prod_id,
         }
-       jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
+        jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
 
-            if( returned_data == 'failed' ) {
-		jQuery('input[type="submit"]').trigger('click');
+        if( returned_data == 'failed' ) {
+		   jQuery('input[type="submit"]').trigger('click');
+        }
+        else{
+           	location.reload();
             }
+            $("#customer_details").hide();
+		    $("#customer_details_filled").show();
+		    $(".order-review").show();
+		    $(".order-detail").addClass("active");
         })
     }); 
 });
@@ -99,7 +111,7 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 
 <?php if(isset($_GET['remove_coupon'])){ session_destroy(); } ?>
 
-<div class="checkout-breadcrumb">
+<!-- <div class="checkout-breadcrumb">
 		<h1>
 			<span class="title-cart"><?php _e('Applied Courses', 'flatsome'); ?></span>
                         <span class="icon-angle-right divider"></span>    
@@ -107,26 +119,23 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 			<span class="icon-angle-right divider"></span>  
 			<span class="title-thankyou"><?php _e('Enrollment Complete', 'flatsome'); ?></span>
 		</h1>
-</div>
+</div> -->
 <?php wc_print_notices(); ?>
 <?php do_action( 'woocommerce_before_cart' ); ?>
 
-<form action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
+<form id="form1" action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
  <div class="row">
-<div class="large-8 small-12 columns">
+<div class="large-12 small-12 columns">
 
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
-<div class="cart-wrapper">
-<table class="shop_table cart responsive" cellspacing="0">
-	<thead>
-		<tr>
-			<th class="product-name" colspan="3"><?php _e( 'Product', 'woocommerce' ); ?></th>
-			<th class="product-price"><?php _e( 'Price', 'woocommerce' ); ?></th>
-			<th class="product-quantity"><?php _e( 'Quantity', 'woocommerce' ); ?></th>
-			<th class="product-subtotal"><?php _e( 'Total', 'woocommerce' ); ?></th>
-		</tr>
-	</thead>
-	<tbody>
+<div class="cart-wrapper custom-cart">
+	<div class="clearfix">
+		<div class="cart-desc"><img class="lock" src="../wp-content/themes/flatsome-gh/images/lock.png"> Safe and Secure Transaction Guarantee</div>
+		<img class="edu-trust" src="../wp-content/themes/flatsome-gh/images/trust.png"> <img class="size-medium pay-opt" src="http://edukart.com/wp-content/uploads/2015/01/pay-option.jpg" alt="pay-option">
+	</div>	
+<div class="shop_table cart responsive" cellspacing="0">
+	
+	<div>
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
 		
@@ -140,19 +149,10 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 
 				?>
-				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-	<input type="hidden" value="<?php echo $product_id; ?>" name="product_id" id="product_id">
-					<td class="remove-product">
-						<?php
-							//echo $_product->get_attribute("referral-cashback");
-							//echo WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] );
+				<div class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+					<input type="hidden" value="<?php echo $product_id; ?>" name="product_id" id="product_id">
 
-								$ga = $ga + (int)$_product->get_attribute("referral-cashback");
-								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove" title="%s"><span class="icon-close"></span></a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
-							?>
-						</td>
-
-					<td class="product-thumbnail">
+					<div class="product-thumbnail">
 						<?php
 							$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', str_replace( array( 'http:', 'https:' ), '', $_product->get_image() ), $cart_item, $cart_item_key );
 
@@ -161,53 +161,48 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 							else
 								printf( '<a href="%s">%s</a>', $_product->get_permalink(), $thumbnail );
 						?>
-					</td>
+					</div>
 
-					<td class="product-name">
+				<div class="pro-nm-pro">
+					<div class="product-name">
 						<?php
 							if ( ! $_product->is_visible() )
 								echo apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key );
 							else
 								echo apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', $_product->get_permalink(), $_product->get_title() ), $cart_item, $cart_item_key );
 
-							// Meta data
-							echo WC()->cart->get_item_data( $cart_item );
-
                				// Backorder notification
                				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
                					echo '<p class="backorder_notification">' . __( 'Available on backorder', 'woocommerce' ) . '</p>';
 						?>
-					</td>
+						<!-- <div class="describtion">Narsee Monjee Institute of Management Studies</div> -->
+					</div>
 
-					<td class="product-price">
-						<?php
-							echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
-						?>
-					</td>
-					
-					<td class="product-quantity">
-						<?php
-							if ( $_product->is_sold_individually() ) {
-								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-							} else {
-								$product_quantity = woocommerce_quantity_input( array(
-									'input_name'  => "cart[{$cart_item_key}][qty]",
-									'input_value' => $cart_item['quantity'],
-									'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
-								), $_product, false );
-							}
+					<div class="product-provider">
+					</div>
+				</div>
 
-							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key );
-						?>
-					</td>
-
-					<td class="product-subtotal">
+				<div class="pro-totl-rem clearfix">
+					<div class="product-subtotal">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+							// Meta data
+							echo WC()->cart->get_item_data( $cart_item );
 						?>
-					</td>
+					</div>
+
+					<div class="remove-product">
+						<?php
+							//echo $_product->get_attribute("referral-cashback");
+							//echo WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] );
+
+								$ga = $ga + (int)$_product->get_attribute("referral-cashback");
+								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove" title="%s"><span class="icon-close"></span></a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
+							?>
+					</div>
 					<input type="hidden" id="cart_subtotal" value = "<?php echo  $woocommerce->cart->get_cart_total(); ?>">
-				</tr>
+				</div>	
+			</div>
 				
 				<?php
 			}
@@ -233,26 +228,15 @@ if(isset($_COOKIE['referee']) AND $_COOKIE['referee'] != '' ){
 ?>
 
 <input type="hidden" id="cart_cashback_amount" value = "<?php echo $ga; ?>">
-<?php
-		do_action( 'woocommerce_cart_contents' );
-		?>
-
-		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-
-	</tbody>
-</table>
+</div>
+</div>
 
 
 
-<?php do_action('woocommerce_cart_collaterals'); ?>
-
-
-</div><!-- .cart-wrapper -->
-</div><!-- .large-9 -->
 
 
 
-<div class="large-4 small-12 columns edu-cart-sidebar">
+<div class="large-4 small-12 columns edu-cart-sidebar" style="display:none">
 <div class="cart-sidebar">
 
 
@@ -264,41 +248,57 @@ if(isset($_COOKIE['referee']) AND $_COOKIE['referee'] != '' ){
 	<?php // do_action('woocommerce_proceed_to_checkout'); ?>
 		<?php wp_nonce_field( 'woocommerce-cart' ); ?>
 
-		<?php if ( WC()->cart->coupons_enabled() ) { ?>
-		<div class="coupon">
-        <div class="row">
-        
-			<!--<h3 class="widget-title"><?php // _e( 'Coupon', 'woocommerce' ); ?></h3>-->
-			<div class="large-6 small-12 columns"><input type="text" name="coupon_code"  id="coupon_code" value="" placeholder="<?php _e( 'Coupon Code', 'flatsome' ); ?>"/> </div>
-			<div class="large-6 small-12 columns"><input type ="hidden" value = "<?php echo $_SESSION['ir_coupon_code'] ; ?>" name="apply_coupon" id="apply_coupon"><input type = "button" class ="<?php  if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != 'null' AND $_SESSION['cash_back'] != ''){ echo "button small expand" ;}else {echo "button small expand coupon_button";} ?>"  value="Apply Coupon"><input type="submit" style="display:none;" class="button small expand" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" /></div>
-			<?php do_action('woocommerce_cart_coupon'); ?>
-</div>
-		</div>
+
+
+
+		<?php 
+		// Coupon Code Here
+		if ( WC()->cart->coupons_enabled() ) { ?>
+			<div class="coupon">
+	        <div class="row">
+				<!--<h3 class="widget-title"><?php // _e( 'Coupon', 'woocommerce' ); ?></h3>-->
+				<div class="large-6 small-12 columns"><input type="text" name="coupon_code"  id="coupon_code1" value="" placeholder="<?php _e( 'Coupon Code', 'flatsome' ); ?>"/> </div>
+				<div class="large-6 small-12 columns">
+					<input type ="hidden" value = "<?php echo $_SESSION['ir_coupon_code'] ; ?>" name="apply_coupon" id="apply_coupon1">
+						<input type = "button" class ="<?php  if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != 'null' AND $_SESSION['cash_back'] != ''){ echo "button small expand" ;}else {echo "button small expand coupon_button";} ?>"  value="Apply Coupon">
+						<input type="submit" style="display:none;" class="button small expand" name="apply_coupon" value="Apply Coupon" /></div>
+				<?php do_action('woocommerce_cart_coupon'); ?>
+			</div>
+			</div>
 		<?php } ?>
 	<div class="coupon_one_message" style = "display:none"><p style="color:red;font-size:10px;">Only one coupon can be applied.</p></div>
 	
 	<?php woocommerce_shipping_calculator(); ?>
 
-</div><!-- .cart-sidebar -->
-</div><!-- .large-3 -->
-<div class="large-4 small-12 columns refer_code_message">
-<?php  if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != 'null' AND $_SESSION['cash_back'] != ''){?>
-	<div class="coupon_successful">
-		<div class="coupon_message"><span>Referral Code</span>APPLIED!</div>
-		<span class="coupon_details_message">Rs <?php echo $_SESSION['cash_back'] ; ?> cash will be added to your Paytm wallet.</span>
-		<a class="referal_coupon_tc"><u><i>*T&C Applied.</i></u></a	>
-	</div>
+<?php
+		do_action( 'woocommerce_cart_contents' );
+		?>
+
+		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
+
+	
 
 
-<?php } ?>
+<?php do_action('woocommerce_cart_collaterals'); ?>
 
-</div><!-- .large-3 -->
-</div><!-- .row -->
+
+
 
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
 
-</form>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
 
 
+
+</div><!-- .cart-sidebar -->
+</div><!-- .large-3 -->
+
+
+
+
+
+
+
+
+</form>
