@@ -12,7 +12,7 @@ global $flatsome_opt;
 </div><!-- #main-content -->
 
 
-<footer class="footer-wrapper" role="contentinfo">	
+<footer class="footer-wrapper clearfix" role="contentinfo">	
 <?php if(isset($flatsome_opt['html_before_footer'])){
 	// BEFORE FOOTER HTML BLOCK
 	echo do_shortcode($flatsome_opt['html_before_footer']);
@@ -55,7 +55,7 @@ global $flatsome_opt;
 <!-- FOOTER 3: Payment Logos -->
 <?php if ( is_active_sidebar( 'gh_footer_payment_logos_widget_area' ) ) : ?>
 <div class="footer mob-footer" >
-	<div class="row">
+	<div class="clearfix">
             <?php if(is_page(array('cart', 'checkout'))){ ?>
             <ul class="footer_nav">
                 <li><a href="<?php echo get_site_url()?>/privacy-policy">Privacy Policy</a></li>
@@ -76,7 +76,7 @@ global $flatsome_opt;
                 
             </ul>
             <?php } ?>
-     <div class="edu_footer_payment columns">
+     <div class="edu_footer_payment row">
    		<?php dynamic_sidebar('gh_footer_payment_logos_widget_area'); ?>  
         </div>      
 	</div><!-- end row -->
@@ -391,5 +391,32 @@ function megamenu_adjust(){
 
 	});
 </script>
+
+<script type="text/javascript">
+/*	$(document).ready(function(){  
+		$(".mobile-side-menu .edu_mainnave > li").click(function(e){
+			$(".edu_mainnave > li > div").removeClass("fkr_nav-active");	
+		    $(".edu_mainnave > li > span > i").removeClass("fkr_nav-rotate");   
+		});
+	});
+*/
+
+$(document).ready(function(){  
+	$(".mobile-side-menu .edu_mainnave > li").click(function(e){
+		if($(e.target).parents().hasClass("menu_drop") && $(e.target).parents().hasClass("fkr_nav-active")) return;
+		$(".edu_mainnave > li > div").removeClass("fkr_nav-active");
+		$(".edu_mainnave > li > span > i").removeClass("fkr_nav-rotate");
+	});
+	$(".mobile-side-menu .edu_subnave > li").click(function(e){
+		if($(e.target).parents().hasClass("edu_subnavebar")) return;
+		$(".edu_subnave > li > div").removeClass("fkr_nav-active");
+		$(".edu_subnave > li > span > i").removeClass("fkr_nav-rotate");
+	});
+});
+
+
+</script>
+
+
 </body>
 </html>
