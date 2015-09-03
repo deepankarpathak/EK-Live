@@ -883,6 +883,30 @@ ul.top-bar-nav li:last-child {
 	font-size: 13px;
 }
 
+.cart-sidebar .coupon_button:after{
+	background: red;
+	content:"hello";
+	width:20px;
+	height:20px;
+}
+
+.cart-sidebar .coupon_loader{
+    position: relative;
+    top: -34px;
+    right: 65px;
+    display:none;
+}
+
+
+.cart-sidebar .coupon_loader img{
+	width:35px;
+}
+
+#coupon_error{
+	color:red;
+	display:none;
+}
+
 .select2-container .select2-choice {
 	height: 35px;
 	line-height: 33px;
@@ -2477,7 +2501,7 @@ margin-left: 0 !important;
 	float:left;
 }
 .page-checkout .large-12.columns.checkout_page_error {
-	margin: -148px 0 0;
+	margin: -142px 0 0;
 	/*position: absolute;*/
 	top: 0;
 	z-index: 999;
@@ -3018,7 +3042,7 @@ margin-left: 0 !important;
 	text-align: left;
 }
 
-#term-error{
+#term-error, #coupon_error{
 	margin-left: 10px;
   	font-size: 14px;
   	color: red;
@@ -3027,6 +3051,12 @@ margin-left: 0 !important;
   	font-family: robotoregular;
   	margin-top: 20px;
 }
+
+#coupon_error{
+	position:relative;
+	top:5px;
+}
+
 .main-content{
 	margin-top:46px;
 }
@@ -3077,6 +3107,101 @@ margin-left: 0 !important;
 	margin-top:10px;
 }
 /*End cart page by gambheer*/
+/* Algolia search page CSS*/
+.labels .label{
+  display: inline-block;
+  background: #E5E7E6;
+  color: #222;
+  border: 1px solid #ccc;
+  margin: 0px 10px 10px 0px;
+  font-size: 10px;
+  font-family: robotoregular;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.labels .label .close_label{
+	margin-left: 3px;
+}
+
+.labels .label .close_label:hover{
+	cursor:pointer;
+}
+.quick_view_overlay{
+	position: absolute;
+	top:0;right:0;bottom:0;left:0;
+	background:rgba(0,0,0,0.5);
+	display:none;
+}
+
+.result-content{
+	position:relative;
+}
+
+.result-content:hover .quick_view_overlay{
+	display: block;
+}
+
+.quick_view_overlay_display_data{
+	position:fixed;
+	background:rgba(0,0,0,0.5);
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	z-index: 9999999;
+	display:none;
+}
+
+.quick_view_overlay_display_data .data_quick_view{
+	width:60%;
+	height:auto;
+	position: relative;
+	top:7%;
+	margin:0px auto;
+	background:#fff;
+}
+.quick_view_overlay_display_data .data_quick_view .close_quick_view{
+	float:right;
+	padding:10px;
+	color:#000;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.quick_view_overlay_display_data .data_quick_view .close_quick_view:hover{
+	background:#ccc;
+}
+
+.quick_view_link{
+	color:#fff;
+	font-weight: bold;
+}
+
+.quick_view_link:hover{
+	color:red;
+	cursor: pointer;
+}
+
+/*As in press slider*/
+.press_slider{
+	width:100%;
+	overflow: hidden;
+}
+.press_slider ul{
+	margin:0px;
+	padding:0px;
+	position:relative;
+}
+.press_slider ul li{
+	display: inline-block;
+	text-align: center;
+	width:100%;
+	margin:0px;
+	padding:0px;
+	position:relative;
+}
+/*Algolia search page ended*/
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/

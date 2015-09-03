@@ -458,32 +458,6 @@ function new_logout_url($logouturl, $redir)
 	return $logouturl . '&amp;redirect_to=' . urlencode($redir);
 }
 
-// Change order of billing fields
-/*
-add_filter("woocommerce_checkout_fields", "order_fields");
-
-function order_fields($fields) {
-    $order = array(
-        "billing_first_name", 
-        "billing_last_name", 
-        "billing_email", 
-        "billing_phone",
-        "billing_address_1",
-        "billing_country", 
-        "billing_state",
-        "billing_city", 
-        "billing_postcode"
-
-    );
-    foreach($order as $field)
-    {
-        $ordered_fields[$field] = $fields["billing"][$field];
-    }
-
-    $fields["billing"] = $ordered_fields;
-    return $fields;
-}
-*/
 // If cart empty redirect to other page
 /*print_r($_GET);die;*/
 if(!is_admin() && !isset($_GET['remove_item'])&&!strpos($_SERVER["REQUEST_URI"], 'order')){

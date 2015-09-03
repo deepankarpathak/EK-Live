@@ -136,7 +136,7 @@ jQuery(document).ready(function ($) {
         {
             var html_content = "";
 
-            html_content += "<div id='algolia_instant_selector'>";
+            html_content += "<div id='algolia_instant_selector' class='row'><div class='row banner_img_container' style='text-align:center;'></div><div class='row university_logo_desc'></div>";
 
             var facets = [];
             var pages = [];
@@ -163,6 +163,26 @@ jQuery(document).ready(function ($) {
             html_content += "</div>";
             $(algoliaSettings.instant_jquery_selector).html(html_content);
             
+            // Create labels on algolia serach page:Gambheer
+            // Get selected filters
+            $(".sub_facet").find("input[type='checkbox']").each(function (i) {
+               if($(this).is(':checked') == true){
+                var data_name = $(this).attr("data-name");
+                var data_tax = $(this).attr("data-tax");
+                var raw_label_html = $(".raw_labels").html();
+                if($(".raw_labels").html().indexOf(data_name)<=0){
+                    $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>X</span></div>");
+                    }
+               }
+            });
+
+            // Get Labels from footer on load of algolia search filter
+            $(".labels").html($(".raw_labels").html());
+            // Get Banner from footer on load of algolia search filter
+            $(".banner_img_container").html($(".raw_banner_image").html());
+            //Get university institute logo and description
+            $(".university_logo_desc").html($(".raw_university_logo_desc").html());
+
             updateSliderValues();
             $(".algolia-slider").parent().prev().css("display","none");
            if(list)
@@ -543,4 +563,31 @@ jQuery(document).ready(function ($) {
             $(algoliaSettings.search_input_selector+':first').focus();
         }
     }
+
+    // Hide mega menu if we directly open any product page
+    if($(".search_home").val() != ""){
+        $("#mega-menu").hide();  
+    }    
+ 
+    // Quick View in algolia search page
+
+    $("body").on("click", ".quick_view_link", function (e) {
+       /* add loader  */
+       $(this).after('<div class="loading dark" style="background:green; color:red;"><i></i><i></i><i></i><i></i></div>');
+       $(this).parent().css("display","block");
+       var product_id = $(this).attr('data-prod');
+       var data = { action: 'jck_quickview', product: product_id};
+        $.post(ajaxURL.ajaxurl, data, function(response) {
+            $(".quick_view_overlay_display_data").fadeIn("slow");
+            $(".quick_view_overlay_display_data .edu_quickview").remove();
+            $(".data_quick_view").html($(".data_quick_view").html()+response);
+            $(".loading, .dark").remove();
+            $(".quick_view_overlay").removeAttr("style");
+        });
+        
+        $("body").on("click", ".close_quick_view", function (e) {
+            $(".quick_view_overlay_display_data").fadeOut("slow");
+        });
+    });
+
 });

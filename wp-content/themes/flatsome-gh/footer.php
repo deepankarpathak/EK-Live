@@ -274,8 +274,8 @@ var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBe
 </script>
 <input type="hidden" id="theme_dir" value="<?php echo get_site_url(); ?>"/>
 <script>
-// Added by gambheer
-$(".search_home").keyup(function(){
+// Added by gambheer after algolia search make the sliders workable
+$(".search_home, .search_sticky").keyup(function(){
 	var theme_dir = $("#theme_dir").val();
 	$("#mega-menu").slideUp();
 	if($(".search_home").val().length == 0){
@@ -289,6 +289,13 @@ $(".search_home").keyup(function(){
 		           $("#mega-menu").slideDown();
 			}		
 		<?php }?>
+	}
+	else{
+		// Scroll up the screen when searching through sticky search text
+		$('html, body').animate({scrollTop: '0px'}, 1000);
+		setTimeout(function(){
+    		$(".search_home").focus();
+		}, 1200);
 	}
 });
 
@@ -390,6 +397,199 @@ function megamenu_adjust(){
 	    });
 
 	});
+
+/* Algolia labels AND Banner Images AND University Logo and description*/
+
+$("body").on("click", ".sub_facet", function () {
+	var facet = $(this).find("input[type='checkbox']");
+    facet.each(function (i) {
+        var data_name = $(this).attr("data-name");
+        var data_tax = $(this).attr("data-tax");
+        if($(this).is(':checked') == false){
+            var raw_label_html = $(".raw_labels").html();
+            $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>X</span></div>");
+        }
+        else{
+        	$(".raw_labels").find($(".label")).each(function(){
+        		if(data_name == $(this).attr("data-name")){
+        			$(this).remove();
+        		}
+        	});
+        }
+    });
+
+    if(facet.attr("data-tax") == "product_cat"){
+    	getCategoryBanner(facet);
+    }
+    if(facet.attr("data-tax") == "university"){
+    	getUniversityLogoDesc(facet);
+    }
+
+});
+
+// Category banner
+function getCategoryBanner(facet){
+	var parent = facet.parent().parent().parent();
+    var checkboxes = parent.find("input[type='checkbox']");
+    if(facet.is(':checked') == false){
+    	var count = 0;
+    	checkboxes.each(function (i) {
+    		if($(this).is(':checked')){
+    			count++;
+    		}
+    	});
+        if(count == 0){
+   			var data_name = facet.attr("data-name");
+	        for(var i=0; i<cat_banners.length; i++){
+	            if(cat_banners[i].name == data_name){
+	                if(cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "jpg" || cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "png"){
+	                    $(".raw_banner_image img").attr("src", cat_banners[i].banner);
+	                    $(".raw_university_logo_desc .univ_logo img").attr("src", "");
+	   					$(".raw_university_logo_desc .univ_description").text("");
+	                }
+	                else{
+	                	$(".raw_banner_image img").attr("src", "<?php echo get_site_url()?>/wp-content/uploads/Default_banner.jpg");	
+	                }
+	            }
+	        }
+	    }
+	    else{
+	    	$(".raw_banner_image img").attr("src", "<?php echo get_site_url()?>/wp-content/uploads/Default_banner.jpg");
+	    }
+    }
+    else{
+    	var dataname =  facet.attr("data-name");
+    	var data_name;
+    	var count = 0;
+    	checkboxes.each(function (i) {
+    		if($(this).is(':checked')){
+    			if($(this).attr("data-name") != dataname){
+    				data_name = $(this).attr("data-name");
+    			}
+    			count++;
+    		}
+    	});
+    	
+        if(count == 2){
+	        for(var i=0; i<cat_banners.length; i++){
+	            if(cat_banners[i].name == data_name){
+	                if(cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "jpg" || cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "png"){
+	                    $(".raw_banner_image img").attr("src", cat_banners[i].banner);
+	                    $(".raw_university_logo_desc .univ_logo img").attr("src", "");
+	   					$(".raw_university_logo_desc .univ_description").text("");
+	                }
+	                else{
+	                	$(".raw_banner_image img").attr("src", "<?php echo get_site_url()?>/wp-content/uploads/Default_banner.jpg");	
+	                }
+	            }
+	        }
+	    }
+	    else{
+	    	$(".raw_banner_image img").attr("src", "<?php echo get_site_url()?>/wp-content/uploads/Default_banner.jpg");
+	    	$(".raw_university_logo_desc .univ_logo img").attr("src", "");
+	   		$(".raw_university_logo_desc .univ_description").text("");
+	    }
+    }
+}
+// University LOGO and Description
+function getUniversityLogoDesc(facet){
+	var parent = facet.parent().parent().parent() 
+    var checkboxes = parent.find("input[type='checkbox']");
+    if(facet.is(':checked') == false){
+    	var count = 0;
+    	checkboxes.each(function (i) {
+    		if($(this).is(':checked')){
+    			count++;
+    		}
+    	});
+        if(count == 0){
+   			var data_name = facet.attr("data-name");
+	        for(var i=0; i<university_data.length; i++){
+	            if(university_data[i].name == data_name){
+	                if(university_data[i].logo.substr(university_data[i].logo.length - 3) == "jpg" || university_data[i].logo.substr(university_data[i].logo.length - 3) == "png"){
+	                    $(".raw_university_logo_desc .univ_logo img").attr("src", university_data[i].logo);
+	                }
+	                else{
+	                	$(".raw_university_logo_desc .univ_logo img").attr("src", "");	
+	                }
+	                $(".raw_university_logo_desc .univ_description").text(university_data[i].description);
+	                $(".raw_banner_image img").attr("src", "");
+	            }
+	        }
+	    }
+	    else{
+	    	$(".raw_university_logo_desc .univ_logo img").attr("src", "");
+	    	$(".raw_university_logo_desc .univ_description").text("");
+	    	$(".raw_banner_image img").attr("src", "<?php echo get_site_url()?>/wp-content/uploads/Default_banner.jpg");
+	    }
+    }
+     else{
+    	var dataname =  facet.attr("data-name");
+    	var data_name;
+    	var count = 0;
+    	checkboxes.each(function (i) {
+    		if($(this).is(':checked')){
+    			if($(this).attr("data-name") != dataname){
+    				data_name = $(this).attr("data-name");
+    			}
+    			count++;
+    		}
+    	});
+    	
+        if(count == 2){
+	        for(var i=0; i<university_data.length; i++){
+	            if(university_data[i].name == data_name){
+	                if(university_data[i].logo.substr(university_data[i].logo.length - 3) == "jpg" || university_data[i].logo.substr(university_data[i].logo.length - 3) == "png"){
+	                    $(".raw_university_logo_desc .univ_logo img").attr("src", university_data[i].logo);
+	                }
+	                else{
+	                	$(".raw_university_logo_desc .univ_logo img").attr("src", "");	
+	                }
+	                $(".raw_university_logo_desc .univ_description").text(university_data[i].description);
+	                $(".raw_banner_image img").attr("src", "");
+	            }
+	        }
+	    }
+	    else{
+	    	$(".raw_banner_image img").attr("src", "<?php echo get_site_url()?>/wp-content/uploads/Default_banner.jpg");
+	    }
+    }
+}
+/*Algolia labels end*/
+</script>
+
+<div class="raw_labels" style="display:none"></div>
+<div class="raw_banner_image" style="display:none"><img src="<?php echo get_site_url()?>/wp-content/uploads/Default_banner.jpg" /></div>
+<div class="raw_university_logo_desc" style="display:none">
+	<div class="large-3 columns univ_logo"><img /></div>
+	<div class="large-9 columns univ_description"></div>
+</div>
+
+<?php 
+	/*Algolia page product category banner and university logo and description*/
+  	  $terms = get_terms('product_cat');
+	  $cat_banners = array(); $i = 0;
+	  foreach ($terms as $t){
+	  		$cat_banners[$i]['term_id'] = $t->term_id;
+	  		$cat_banners[$i]['name'] = $t->name;
+	  		$cat_banners[$i]['banner'] = get_the_guid ( get_woocommerce_term_meta($t->term_id, 'banner_img_id', true) );
+	  		$i++;
+	  }	
+
+	  $univ = get_terms('university');
+	  $university_data = array(); $i = 0;
+	  foreach ($univ as $u){
+	  		$university_data[$i]['term_id'] = $u->term_id;
+	  		$university_data[$i]['name'] = $u->name;
+	  		$university_data[$i]['logo'] = get_the_guid ( get_term_meta($u->term_id, 'university_logo_image', true) );
+	  		$university_data[$i]['description'] = get_term($u->term_id, 'university')->description;
+	  		$i++;
+	  }	
+?>
+<script>
+	/*Store in json format category banners and university logo and description*/
+	var cat_banners = <?php echo json_encode($cat_banners); ?> 
+	var university_data = <?php echo json_encode($university_data); ?>
 </script>
 </body>
 </html>
