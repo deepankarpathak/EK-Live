@@ -2,9 +2,8 @@
 -moz-border-radius: 5px;
 border-radius: 5px; border:1px solid #c8c7c8; }
 .edu-nave ul{display:block; margin:0px; padding:0px; }
-.edu-nave ul.edu_mainnave{display:block; position:relative; }
-.edu-nave ul.edu_mainnave li{display:block; float:none; clear:both; margin:0px; padding:8.4px 10px; border-bottom:1px solid #f0f0f0; color:#354b63; font-size:18px; background:url(../images/left-icon.png) right 10px center no-repeat;  }
-.edu-nave ul.edu_mainnave li:hover{background:url(../images/left-icon-h.png) right 10px center no-repeat #f0f0f0; }
+.edu-nave ul.edu_mainnave{display:block; position:relative;cursor: pointer;}
+.edu-nave ul.edu_mainnave li{display:block; float:none; clear:both; margin:0px; padding:8.4px 10px; border-bottom:1px solid #f0f0f0; color:#354b63; font-size:18px;}
 .edu-nave ul li ul.edu_subnave {
   background: none repeat scroll 0 0 #f0f0f0;
   border-bottom: 1px solid #c8c7c8;

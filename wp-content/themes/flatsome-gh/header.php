@@ -191,9 +191,9 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					for($i=0; $i<count($menus); $i++){
 						if($menus[$i]['menu_name'] == "GET REWARD POINTS"){
 				?>
-							<li class='reward-points'><a><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/grade_icon.png" alt="grade icon image" title="grade reward points"/>
-				<?php
-							echo $menus[$i]['menu_name']; 
+							<li class='reward-points'><a><span class="reward-point-img sprite"></span><span><?php
+							echo $menus[$i]['menu_name'];?></span>
+				</a></li><?php
 						}
 						else{
 						 echo "<li class=''><a>".$menus[$i]['menu_name']."</a></li>";
@@ -208,7 +208,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 								<?php
 								if ( is_user_logged_in() ) { ?> 
 								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-login">
-									<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" alt="my account image" title="my account"/>
+									<span class="account-img sprite"></span>
 									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/down-arrow.png" alt="my account arrow image" title="my account"/></span>
 								</a>
 								<div class="nav-dropdown">
@@ -228,16 +228,17 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 									</ul>
 								</div><!-- end account dropdown -->
 								<?php } else { ?>
-								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" alt="my account image" title="login"/>									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-	content/themes/flatsome-gh/images/down-arrow.png" alt="my account arrow image" title="my account"/></span></a>
+								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><span class="account-img sprite"></span><span class="my-account-title hide-for-small">My Account</span><span class="account-arrow sprite"></span></a>
 								<?php }  ?>						
 							</li>
 					<?php } ?>
 					<?php if(!isset($flatsome_opt['show_cart']) || $flatsome_opt['show_cart'] == 1) { 
 							if(function_exists('wc_print_notices')) { ?> 
 								<li class="mini-cart">
-									<div class="cart-inner">
+									<div class="cart-inner"><span class="cart-img sprite"></span>
 										<?php // Edit this content in inc/template-tags.php. Its gets relpaced with Ajax! ?>
 										<a href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" class="cart-link">
+											
 											<span class="cart-name hide-for-small"><?php _e('Cart', 'woocommerce'); ?></span> 
 											<span class="cart-price hide-for-small">/ <?php echo $woocommerce->cart->get_cart_total(); ?></span> 
 												<!-- cart icon -->
@@ -290,7 +291,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					<?php /*<div class="mobile-menu show-for-small"><a href="#open-menu"><span class="icon-menu"></span></a></div><!-- end mobile menu --> */?>
 					
 					<?php if($flatsome_opt['logo_position'] == 'left') : ?> 
-					<img alt="Menu icon image" class="side-menu-icon" src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/menu_icon.png">
+					<span class="side-menu-icon"></span>
                     <div class="overlay"></div>
                 	<div class="mobile-side-menu">
                 		<div class="side-menu-heading mega-menu-title">Browse Courses</div>
@@ -427,8 +428,8 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					</div><!-- row -->
 				</div>
 				<div class="no-padding menu-container large-4">
-					<div class="browse-cat hide-for-small" id="browse-cat">Browse Course Categories
-						<span style="float:right"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/detail-tab-icon.png" alt="tab icon image" style="width:20px"/></span>
+					<div class="browse-cat hide-for-small" id="browse-cat">
+					<span>Browse Course Categories</span><span class="sprite detail-tab-icon"></span>
 					</div>
 					<div id="mega-menu" <?php if (!is_front_page()){echo "style='display:none';";}?> >
 						<?php 

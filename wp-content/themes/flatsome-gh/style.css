@@ -130,23 +130,21 @@ ul.topper-menu li{
 	opacity: 1;
 }
 ul.top-bar-nav li {
-	background-size: 32%;
 	border-left: 1px solid #dad9da;
-	padding: 5px 10px 5px 38px;
+	padding: 5px 10px;
 	text-align: left;
 	opacity: .5;
 }
 ul.top-bar-nav li:first-child {
     border: 0px none;
-    background-size: 28%;
 }
 .trusted_partner {
 	background: url("images/trusted.png") no-repeat scroll left 5px center rgba(0, 0, 0, 0);
 }
-.edu_support {
+/*.edu_support {
 	background: url("images/24-support.png") no-repeat scroll left 5px center rgba(0, 0, 0, 0);
 }
-.book-online {
+*/.book-online {
 	background: url("images/book-online.png") no-repeat scroll left 5px center rgba(0, 0, 0, 0);
 }
 .get_Certified {
@@ -166,7 +164,7 @@ ul.top-bar-nav li:first-child {
 .edu_myaccount {
 	background: url("images/edu-my-account.png") no-repeat scroll left 5px center rgba(0, 0, 0, 0);
 }
-.transparent_information {
+/*.transparent_information {
 	background: url("images/transparent_information.png") no-repeat scroll left 5px center rgba(0, 0, 0, 0);
 }
 .genuine_fee {
@@ -178,7 +176,7 @@ ul.top-bar-nav li:first-child {
 .university_credibility {
 	background: url("images/university-credibility.png") no-repeat scroll left 5px center rgba(0, 0, 0, 0);
 }
-.duration_below_title span a {
+*/.duration_below_title span a {
 	color: #b3b3b3;
 	text-decoration: none;
 }
@@ -413,9 +411,9 @@ ul.top-bar-nav li:first-child {
 }
 #edu_popular_courses .feature-crs img, #edu_popular_courses .feature-crs .pp-c{
 	display: inline-block;
-	top: -11px;
 	position: relative;
 	float: none;
+	vertical-align: middle;
 }
 #best_education {
 	display: block;
@@ -924,7 +922,10 @@ ul.top-bar-nav li a:hover {
 	padding-right: 0;
 }
 .lock{
-	vertical-align: bottom;
+	background-position: -107px -52px;
+	width: 24px;
+	height: 29px;
+	vertical-align: bottom !important;
 }
 .edu-trust{
 	position: absolute;
@@ -1034,13 +1035,14 @@ input[type="checkbox"]{
 	color: #fff;
 	border:none;
 	padding-top: 0;
-	height: 25px;
-	width: 25px;
 	border-radius: 50%;
-	background: #e5e5e5 url("images/close.png") repeat scroll -1px -1px;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	background: #ededed url("images/sprite/sprites.png") repeat scroll -108px -204px;
 }
 .custom-cart .cart_item .remove-product .icon-close:hover{
-	background: #CCC url("images/close.png") repeat scroll 2px 1px;
+	background: #ddd url("images/sprite/sprites.png") repeat scroll -108px -204px;
 }
 .custom-cart .cart_item .remove-product .icon-close:before{
 	content: "" !important;
@@ -1355,10 +1357,12 @@ ul.payment_methods p{
 	padding:12px 10px;
 	border:1px solid #bbb;
 	font-weight:normal;
+	border-left: none;
 }
 .tabbed-content ul.tabs li.active a, .tabbed-content ul.tabs li a:hover{
 	border:1px solid #bbb;
 	border-bottom: none;
+	border-left: none;
 	color: #F49B01;
 }
 .tabbed-content ul.tabs li.active a{
@@ -1394,7 +1398,7 @@ ul.payment_methods p{
 	font-family: robotoregular;
 }
 .feature-tabs .tabbed-content ul.tabs li.tab{
-	margin: 0 -3px;
+	margin-left:-4px;
 }
 #tab-description {
 	font-size: 14px;
@@ -2090,6 +2094,9 @@ margin:35px 0px;
 #edu_popular_courses .tabbed-content ul.tabs li:first-child{
 	margin-right:-1px;
 	margin-left: 0 !important;
+}
+#edu_popular_courses .tabbed-content ul.tabs li:first-child a{
+	border-left: 1px solid #bbb;
 }
 /*-------------Banner---------*/
 .bxslider{
@@ -3170,13 +3177,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 .cart-link{
 	line-height:20px;
 	font-size: 20px;
-	background-image:url("images/cart.png");
-	background-repeat:no-repeat;
-	padding-left:35px;
 	padding-right:5px;
-	background-position: 0px 4px;
 }
-
 /******* referral CSS ***********/
 .edu-list-product .referral {
     background: #fffaa7 none repeat scroll 0 0;
@@ -3516,6 +3518,96 @@ margin-right: 4px;
 	padding-top:5px;
 }
 
+/*Header changes*/
+.menu-features-menu-desc{
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 5px;
+}
+.sprite{
+	background-image: url("images/sprite/sprites.png");
+	display: inline-block !important;
+	vertical-align: middle;
+}
+.reward-point-img{
+	background-position: -201px -52px;
+	width: 34px;
+	height: 23px;
+}
+.account-img{
+	background-position: -158px -103px;
+	width: 25px;
+	height: 23px;
+}
+.account-arrow{
+	background-position: -108px -158px;
+	width: 16px;
+	height: 11px;
+}
+.cart-img{
+	background-position: -102px -108px;
+	width: 26px;
+	height: 23px;
+}
+.transparent_information{
+	background-position: -6px -3px;
+	width: 28px;
+	height: 28px;
+}
+.genuine-fee{
+	background-position: -55px -3px;
+	width: 30px;
+	height: 28px;
+}
+.s-24-support{
+	background-position: -104px 0;
+	width: 28px;
+	height: 28px;
+}
+.study-material{
+	background-position: -151px 0;
+	width: 33px;
+	height: 28px;
+}
+.university-credibility{
+	background-position: -206px -1px;
+	width: 28px;
+	height: 28px;
+}
+.detail-tab-icon{
+	background-position: -215px -206px;
+    width: 15px;
+    height: 14px;
+    float: right;
+    background-size: 310px;
+}
+
+/*menu icon*/
+.mega-menu-arrow-wrap{
+	position: relative;
+	padding-right: 30px;
+}
+.left-icon{
+background-position: -16px -208px;
+width: 8px;
+height: 14px;
+position: absolute;
+right: 10px;
+top: 50%;
+margin-top: -7px;
+}
+.edu-nave ul.edu_mainnave li:hover .left-icon{
+background-position: -66px -208px;
+}
+/* popular courses*/
+.edu_pg_pc .pg-pc{
+background-position: -50px -43px;
+width: 38px;
+height: 38px;
+float: none;
+}
+
+
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
@@ -3742,11 +3834,13 @@ margin-right: 4px;
 		text-align: center;
 	}
 	.side-menu-icon{
+		background: url("images/sprite/sprites.png");
+		background-position: -159px -57px;
+		width: 23px;
+		height: 16px;
 		display: inline-block;
 		float: left;
-		margin-left: 8px;
-		margin-top: 8px;
-		padding: 7px;
+		margin: 15px 8px 0 16px;
 	}
 	.overlay{
 		position: fixed;
@@ -4269,10 +4363,11 @@ margin-right: 4px;
 		display:none;
 	}
 	.fkr_nav-click i {
-		background: url(images/pls.png) top center no-repeat;
-		display: block;
-		height: 21px;
+		background: url("images/sprite/sprites.png");
+		background-position: -9px -156px;
 		width: 21px;
+		height: 21px;		
+		display: block;
 		margin:2px 10px 0 0px;
 		float:right;
 	}
@@ -4298,11 +4393,11 @@ margin-right: 4px;
 		padding:0 0 0 5px;
 	}
 	.fkr_nav-click i.fkr_nav-rotate {
-		background:url(images/min.png) top center no-repeat;
-		display: block;
+		background: url("images/sprite/sprites.png");
+		background-position: -59px -152px;
+		width: 21px;
 		height: 21px;
 		float:right;
-		width: 21px;
 	}
 	.fkr_nav-item a {
 		display:block;
