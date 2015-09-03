@@ -166,11 +166,19 @@ class WC_Admin_Taxonomies {
 
 		$display_type = get_woocommerce_term_meta( $term->term_id, 'display_type', true );
 		$thumbnail_id = absint( get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true ) );
+		$banner_img = absint( get_woocommerce_term_meta( $term->term_id, 'banner_img_id', true ) );
 
 		if ( $thumbnail_id ) {
 			$image = wp_get_attachment_thumb_url( $thumbnail_id );
 		} else {
 			$image = wc_placeholder_img_src();
+		}
+
+		if( $banner_img ){
+			$banner_image = wp_get_attachment_thumb_url($banner_img);
+		}
+		else{
+			$banner_image = wc_placeholder_img_src();
 		}
 		?>
 		<tr class="form-field">
@@ -187,21 +195,20 @@ class WC_Admin_Taxonomies {
 		<tr class="form-field">
 			<th scope="row" valign="top"><label><?php _e( 'Thumbnail', 'woocommerce' ); ?></label></th>
 			<td>
-				<div id="product_cat_thumbnail" style="float:left;margin-right:10px;"><img src="<?php echo $image; ?>" width="60px" height="60px" /></div>
+				<div id="product_cat_thumbnail1" style="float:left;margin-right:10px;"><img src="<?php echo $image; ?>" width="60px" height="60px" /></div>
 				<div style="line-height:60px;">
-					<input type="hidden" id="product_cat_thumbnail_id" name="product_cat_thumbnail_id" value="<?php echo $thumbnail_id; ?>" />
-					<button type="submit" class="upload_image_button button"><?php _e( 'Upload/Add image', 'woocommerce' ); ?></button>
-					<button type="submit" class="remove_image_button button"><?php _e( 'Remove image', 'woocommerce' ); ?></button>
+					<input type="hidden" id="product_cat_thumbnail_id1" name="product_cat_thumbnail_id" value="<?php echo $thumbnail_id; ?>" />
+					<button type="submit" id="upload_thumbnail_image_button" class="upload_image_button1 button"><?php _e( 'Upload/Add image', 'woocommerce' ); ?></button>
+					<button type="submit" id="remove_thumbnail" class="remove_image_button1 button"><?php _e( 'Remove image', 'woocommerce' ); ?></button>
 				</div>
 				<script type="text/javascript">
 
 					// Uploading files
 					var file_frame;
-
-					jQuery( document ).on( 'click', '.upload_image_button', function( event ) {
-
+					var check = 0;
+					jQuery( document ).on( 'click', '#upload_thumbnail_image_button', function( event ) {
 						event.preventDefault();
-
+						check = 1;
 						// If the media frame already exists, reopen it.
 						if ( file_frame ) {
 							file_frame.open();
@@ -219,21 +226,98 @@ class WC_Admin_Taxonomies {
 
 						// When an image is selected, run a callback.
 						file_frame.on( 'select', function() {
-							attachment = file_frame.state().get('selection').first().toJSON();
-
-							jQuery('#product_cat_thumbnail_id').val( attachment.id );
-							jQuery('#product_cat_thumbnail img').attr('src', attachment.sizes.thumbnail.url );
-							jQuery('.remove_image_button').show();
+							if(check == 1){
+								attachment = file_frame.state().get('selection').first().toJSON();
+								jQuery('#product_cat_thumbnail_id1').val( attachment.id );
+								jQuery('#product_cat_thumbnail1 img').attr('src', attachment.sizes.thumbnail.url );
+								jQuery('#remove_thumbnail').show();
+								check = 0;
+							}
+							else{
+								attachment = file_frame.state().get('selection').first().toJSON();
+								jQuery('#product_cat_banner_img_id').val( attachment.id );
+								jQuery('#product_cat_banner_img1 img').attr('src', attachment.sizes.thumbnail.url );
+								jQuery('#remove_banner_img_button').show();
+								check = 0;
+							}
 						});
 
 						// Finally, open the modal.
 						file_frame.open();
 					});
 
-					jQuery( document ).on( 'click', '.remove_image_button', function( event ) {
-						jQuery('#product_cat_thumbnail img').attr('src', '<?php echo wc_placeholder_img_src(); ?>');
-						jQuery('#product_cat_thumbnail_id').val('');
-						jQuery('.remove_image_button').hide();
+					jQuery( document ).on( 'click', '#remove_thumbnail', function( event ) {
+						event.preventDefault();
+						jQuery('#product_cat_thumbnail1 img').attr('src', '<?php echo wc_placeholder_img_src(); ?>');
+						jQuery('#product_cat_thumbnail_id1').val('');
+						jQuery('#remove_thumbnail').hide();
+						return false;
+					});
+
+				</script>
+				<div class="clear"></div>
+			</td>
+		</tr>
+
+		<tr class="form-field">
+			<th scope="row" valign="top"><label><?php _e( 'Banner Image', 'woocommerce' ); ?></label></th>
+			<td>
+				<div id="product_cat_banner_img1" style="float:left;margin-right:10px;"><img src="<?php echo $banner_image; ?>" width="60px" height="60px" /></div>
+				<div style="line-height:60px;">
+					<input type="hidden" id="product_cat_banner_img_id" name="product_cat_banner_img_id" value="<?php echo $banner_img_id; ?>" />
+					<button type="submit" id="upload_baner_img_button" class="upload_image_button1 button"><?php _e( 'Upload/Add image', 'woocommerce' ); ?></button>
+					<button type="submit" id="remove_banner_img_button" class="remove_image_button1 button"><?php _e( 'Remove image', 'woocommerce' ); ?></button>
+				</div>
+				<script type="text/javascript">
+
+					// Uploading files
+					var file_frame;
+					var check1 = 0;
+					jQuery( document ).on( 'click', '#upload_baner_img_button', function( event ) {
+						event.preventDefault();
+						check1 = 1;
+						// If the media frame already exists, reopen it.
+						if ( file_frame ) {
+							file_frame.open();
+							return;
+						}
+
+						// Create the media frame.
+						file_frame = wp.media.frames.downloadable_file = wp.media({
+							title: '<?php _e( 'Choose an image', 'woocommerce' ); ?>',
+							button: {
+								text: '<?php _e( 'Use image', 'woocommerce' ); ?>',
+							},
+							multiple: false
+						});
+
+						// When an image is selected, run a callback.
+						file_frame.on( 'select', function() {
+							if(check1 == 1){
+								attachment = file_frame.state().get('selection').first().toJSON();
+								jQuery('#product_cat_banner_img_id').val( attachment.id );
+								jQuery('#product_cat_banner_img1 img').attr('src', attachment.sizes.thumbnail.url );
+								jQuery('#remove_banner_img_button').show();
+								check1 = 0;
+							}
+							else{
+								attachment = file_frame.state().get('selection').first().toJSON();
+								jQuery('#product_cat_thumbnail_id1').val( attachment.id );
+								jQuery('#product_cat_thumbnail1 img').attr('src', attachment.sizes.thumbnail.url );
+								jQuery('#remove_thumbnail').show();
+								check1 = 0;
+							}
+						});
+					
+						// Finally, open the modal.
+						file_frame.open();
+					});
+
+					jQuery( document ).on( 'click', '#remove_banner_img_button', function( event ) {
+						event.preventDefault();
+						jQuery('#product_cat_banner_img1 img').attr('src', '<?php echo wc_placeholder_img_src(); ?>');
+						jQuery('#product_cat_banner_img_id').val('');
+						jQuery('#remove_banner_img_button').hide();
 						return false;
 					});
 
@@ -256,6 +340,10 @@ class WC_Admin_Taxonomies {
 
 		if ( isset( $_POST['product_cat_thumbnail_id'] ) ) {
 			update_woocommerce_term_meta( $term_id, 'thumbnail_id', absint( $_POST['product_cat_thumbnail_id'] ) );
+		}
+
+		if(isset($_POST['product_cat_banner_img_id'])){
+			update_woocommerce_term_meta( $term_id, 'banner_img_id', absint( $_POST['product_cat_banner_img_id'] ) );
 		}
 	}
 

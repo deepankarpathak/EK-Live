@@ -112,7 +112,25 @@ $(window).load(function(){
  			
 });
   // logo-slider-end //
- 
+// As in press slider
+jQuery(document).ready(function () {
+	var count = $(".press_slider ul li").length;
+	var li_width = $(".press_slider ul li").width();
+	var ul_width = count * li_width;
+	$(".press_slider ul li").css("width",(ul_width/4-3));
+	$('.press_slider ul').css({ width: ul_width});
+	setInterval(function () {
+        moveRight();
+    }, 5000);
+	function moveRight() {
+        $('.press_slider ul').animate({
+            left: - li_width
+        }, 1000, function () {
+            $('.press_slider ul li:first-child').appendTo('.press_slider ul');
+            $('.press_slider ul').css('left', '');
+        });
+    }
+});  
 // grayslale-effact//
 // $(".item img").css({"display":"none");
 // On window load. This waits until images have loaded which is essential

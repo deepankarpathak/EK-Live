@@ -185,18 +185,20 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					$raw = wp_get_nav_menu_items("Topper Menu",$args);
 					foreach($raw as $menu){
 						$menus[$i]['menu_name'] = $menu->post_title;
+						$menus[$i]['url'] = $menu->url;
 						$i++;
 					}
+					//print_r($raw); die;
 					echo "<ul class='topper-menu large-9 columns  hide-for-small'>";
 					for($i=0; $i<count($menus); $i++){
 						if($menus[$i]['menu_name'] == "GET REWARD POINTS"){
 				?>
-							<li class='reward-points'><a><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/grade_icon.png" alt="grade icon image" title="grade reward points"/>
+							<li class='reward-points'><a href="<?php echo $menus[$i]['url'];?>"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/grade_icon.png" alt="grade icon image" title="grade reward points"/>
 				<?php
 							echo $menus[$i]['menu_name']; 
 						}
 						else{
-						 echo "<li class=''><a>".$menus[$i]['menu_name']."</a></li>";
+						 echo "<li class=''><a href=".$menus[$i]['url'].">".$menus[$i]['menu_name']."</a></li>";
 						}
 					}
 				   echo "</ul>"; 
@@ -228,7 +230,10 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 									</ul>
 								</div><!-- end account dropdown -->
 								<?php } else { ?>
-								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" alt="my account image" title="login"/>									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-	content/themes/flatsome-gh/images/down-arrow.png" alt="my account arrow image" title="my account"/></span></a>
+								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in">
+									<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" alt="my account image" title="login"/>
+									<span class="my-account-title hide-for-small">Login</span>
+								</a>
 								<?php }  ?>						
 							</li>
 					<?php } ?>
@@ -290,6 +295,9 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					<?php /*<div class="mobile-menu show-for-small"><a href="#open-menu"><span class="icon-menu"></span></a></div><!-- end mobile menu --> */?>
 					
 					<?php if($flatsome_opt['logo_position'] == 'left') : ?> 
+					<?php  // Check mobile 
+					if(preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"])){
+						?>
 					<img alt="Menu icon image" class="side-menu-icon" src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/menu_icon.png">
                     <div class="overlay"></div>
                 	<div class="mobile-side-menu">
@@ -305,17 +313,18 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
                 		</li>
                 		<?php if ( is_user_logged_in() ) { ?>
                 		<?php if ( has_nav_menu( 'my_account' ) ) : ?>
-										<?php  
-										wp_nav_menu(array(
-											'theme_location' => 'my_account',
-											'container'       => false,
-											'items_wrap'      => '%3$s',
-											'depth'           => 0,
-										));
-										endif;
+								<?php  
+								wp_nav_menu(array(
+									'theme_location' => 'my_account',
+									'container'       => false,
+									'items_wrap'      => '%3$s',
+									'depth'           => 0,
+								));
+								endif;
 						}?>
 						</ul>
                 	</div>
+                	<?php } //Check mobile close?>
                     <div class="header-logo">
 					<div id="logo" class="logo-left">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>" rel="home">
@@ -432,7 +441,9 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					</div>
 					<div id="mega-menu" <?php if (!is_front_page()){echo "style='display:none';";}?> >
 						<?php 
-							echo do_shortcode('[block id="mega-menu"]'); 
+							if(!preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"])){
+							  	echo do_shortcode('[block id="mega-menu"]'); 
+							}
 						?>
 					</div>
 				</div>

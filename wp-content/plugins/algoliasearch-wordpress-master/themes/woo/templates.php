@@ -32,7 +32,6 @@ function filter(args){
     
     for(i=0; i<len; i++){
         var child = $(scroll_pane.children(".options")[i]);
-        console.log(child);
         arr[i] = child['context'].textContent.toLowerCase();
     }
     
@@ -58,6 +57,10 @@ function clear_all(){
     });
     clear_price_slider();
     engine.helper.search(engine.helper.state.query, function(){});  
+    // Remove banner and university logo and description when clear all filters
+    $(".raw_university_logo_desc .univ_logo img").attr("src", "");
+    $(".raw_university_logo_desc .univ_description").text("");
+    $(".raw_banner_image img").attr("src", "<?php echo get_site_url()?>/wp-content/uploads/Default_banner.jpg");
 }
 
 function clear_filter(args){
@@ -81,16 +84,32 @@ function clear_price_slider(){
     engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
     engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
 }
+$('button').on('click',function(e) {
+    if ($(this).hasClass('grid')) {
+        $('#view li').removeClass('list').addClass('grid');
+    }
+    else if($(this).hasClass('list')) {
+        $('#view li').removeClass('grid').addClass('list');
+    }
+});
 
-
-    $('button').on('click',function(e) {
-        if ($(this).hasClass('grid')) {
-            $('#view li').removeClass('list').addClass('grid');
-        }
-        else if($(this).hasClass('list')) {
-            $('#view li').removeClass('grid').addClass('list');
+// Clear Labels and refinement
+$("body").on("click", ".labels .close_label", function () {
+    var data_tax = $(this).parent().attr("data-tax");
+    var data_name = $(this).parent().attr("data-name");
+    $(".sub_facet").find("input[type='checkbox']").each(function (i) {
+        if($(this).attr("data-tax") == data_tax && $(this).attr("data-name") == data_name){
+            $(this).prop("checked", false);
+            engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
         }
     });
+    engine.helper.search(engine.helper.state.query, function(){});
+    $(".raw_labels").find($(".label")).each(function(){
+        if(data_name == $(this).attr("data-name")){
+            $(this).remove();
+        }
+    });
+});
 </script>
 
 <script type="text/template" id="instant-content-template">
@@ -123,13 +142,15 @@ function clear_price_slider(){
                 <button class="list changelook" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');"><img src="<?php echo get_site_url(); ?>/images/list_view.png" height="16px" width="16px"/></button>
             </div>
             <div style="clear: both;"></div>
+            <div class="labels left"></div>
         </div>
+        
         {{/hits.length}}
 
         <ul id="view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
             {{#hits}}
 			
-			<li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 grid"><a href="{{permalink}}">
+			<li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid">
                     <div class="result">
                         <div class="result-content clearfix">          
                             <div class="result-sub-content-grid clearfix">
@@ -149,7 +170,7 @@ function clear_price_slider(){
                                     	{{{ _highlightResult.title.value }}} - {{pa_specialization}}
                                 	</h4>
                                     <div class="institute">{{university}}</div>
-                                    <div class="mode"> Study Content: {{pa_exam-mode}}</div>
+                                    <div class="mode"> Study Content: {{pa_study-content}}</div>
 									<div class="duration">{{pa_duration}}</div>
                                     <div class="price-grid"> ₹ {{_price}}</div>
 									{{#pa_referral-cashback.length}}
@@ -157,9 +178,13 @@ function clear_price_slider(){
 									{{/pa_referral-cashback.length}}
                                 </div>
                             </div>
+                            <div class="quick_view_overlay">
+                                <div class="quick_view_link" data-prod={{objectID}}>Quick View</div>
+                                <div class="learn_more_link"><a href="{{permalink}}" target="_blank">Learn More</a></div>
+                            </div>
                         </div>
-                    </div>               
-            	</a>
+                    </div>         
+            	
 			</li>
 			
             {{/hits}}
@@ -208,7 +233,6 @@ function clear_price_slider(){
 
 <script type="text/template" id="instant-facets-template">
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 facets{{#count}} with_facets{{/count}}">
-    
     <div class="clear_all_div">
        <button class="clear_all" onclick="clear_all()">Clear All</button>
     </div>
@@ -270,6 +294,11 @@ function clear_price_slider(){
 </div>
     {{/count}}
     {{/facets}}
+</div>
+<div class="quick_view_overlay_display_data">
+    <div class="data_quick_view">
+        <div class="close_quick_view">X</div>        
+    </div>
 </div>
 </script>
 
