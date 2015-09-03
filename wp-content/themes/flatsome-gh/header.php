@@ -70,57 +70,8 @@ _TConnecto.initConnecto = function() {
     _TConnecto.addVariable("course", "<?php echo $course_name ;?>");
     _TConnecto.addVariable("university", "<?php echo $university ;?>");
 };
-
-(function() {
-  var con = document.createElement('script'); con.type = 'text/javascript';
-  var host = (document.location.protocol === 'http:') ? 'http://cdn' : 'https://server';
-  con.src = host + '.connecto.io/javascripts/connect.prod.min.js';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(con, s);
-})();
 </script>
 <!--End of Connecto Script-->
-
-        <script type="text/javascript">
- //   $(document).ready(function() {    
-        function submitLead_gh(data){
-            $.ajax({
-                url: "<?php echo get_site_url() . "/wp-admin/admin-ajax.php" ?>",
-                type: 'POST',
-                data: {action: 'connect_form', Data:data},
-                success: function() {
-
-                }
-            });
-        }
-   //     });
-</script>
-<script type="text/javascript">
-setTimeout(function(){var a=document.createElement("script");
-var b=document.getElementsByTagName("script")[0];
-a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0028/1146.js?"+Math.floor(new Date().getTime()/3600000);
-a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-</script> 
-
-<!--<link href="modalPopLite1.3.1/modalPopLite.css" rel="stylesheet" type="text/css" /> 
-<script type="text/javascript" src="modalPopLite1.3.1/modalPopLite.min.js"></script>
-
-<script type="text/javascript">
-	 $(function () {     $('#popup-wrapper').modalPopLite({ openButton: '#popup-wrapper', closeButton: '#close-btn' }); }); 
-</script>-->
-<script type="text/javascript">
-$(function() {
-$('.product_detail_referral a, .coupon_successful a').click(function() {
-$(".referal_tc").dialog({
-title: "Terms & Conditions",
-width: 500,
-height: 400,
-top:200,
-modal: true,
-});
-});
-});
-</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -519,10 +470,3 @@ if (strpos($flatsome_opt['header_bg'],'#fff') !== false && $flatsome_opt['nav_po
 
 <!-- woocommerce message -->
 <?php  if(function_exists('wc_print_notices')) {wc_print_notices();}?>
-<script>
- jQuery(function() {
-	jQuery('.nav-top-link').tooltipster({
-		offsetY: 3,
-	});
- });
- </script>
