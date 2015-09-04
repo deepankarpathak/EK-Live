@@ -8071,7 +8071,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "robotolight",arial,sans-serif !important;
+  font-family: "robotolight",arial,sans-serif;
   font-weight: bold;
   font-style: normal;
   color: #555555;

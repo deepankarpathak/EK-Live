@@ -70,57 +70,8 @@ _TConnecto.initConnecto = function() {
     _TConnecto.addVariable("course", "<?php echo $course_name ;?>");
     _TConnecto.addVariable("university", "<?php echo $university ;?>");
 };
-
-(function() {
-  var con = document.createElement('script'); con.type = 'text/javascript';
-  var host = (document.location.protocol === 'http:') ? 'http://cdn' : 'https://server';
-  con.src = host + '.connecto.io/javascripts/connect.prod.min.js';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(con, s);
-})();
 </script>
 <!--End of Connecto Script-->
-
-        <script type="text/javascript">
- //   $(document).ready(function() {    
-        function submitLead_gh(data){
-            $.ajax({
-                url: "<?php echo get_site_url() . "/wp-admin/admin-ajax.php" ?>",
-                type: 'POST',
-                data: {action: 'connect_form', Data:data},
-                success: function() {
-
-                }
-            });
-        }
-   //     });
-</script>
-<script type="text/javascript">
-setTimeout(function(){var a=document.createElement("script");
-var b=document.getElementsByTagName("script")[0];
-a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0028/1146.js?"+Math.floor(new Date().getTime()/3600000);
-a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-</script> 
-
-<!--<link href="modalPopLite1.3.1/modalPopLite.css" rel="stylesheet" type="text/css" /> 
-<script type="text/javascript" src="modalPopLite1.3.1/modalPopLite.min.js"></script>
-
-<script type="text/javascript">
-	 $(function () {     $('#popup-wrapper').modalPopLite({ openButton: '#popup-wrapper', closeButton: '#close-btn' }); }); 
-</script>-->
-<script type="text/javascript">
-$(function() {
-$('.product_detail_referral a, .coupon_successful a').click(function() {
-$(".referal_tc").dialog({
-title: "Terms & Conditions",
-width: 500,
-height: 400,
-top:200,
-modal: true,
-});
-});
-});
-</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -188,7 +139,6 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 						$menus[$i]['url'] = $menu->url;
 						$i++;
 					}
-					//print_r($raw); die;
 					echo "<ul class='topper-menu large-9 columns  hide-for-small'>";
 					for($i=0; $i<count($menus); $i++){
 						if($menus[$i]['menu_name'] == "GET REWARD POINTS"){
@@ -210,7 +160,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 								<?php
 								if ( is_user_logged_in() ) { ?> 
 								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-login">
-									<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" alt="my account image" title="my account"/>
+									<span class="account-img sprite"></span>
 									<span class="my-account-title hide-for-small">My Account<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/down-arrow.png" alt="my account arrow image" title="my account"/></span>
 								</a>
 								<div class="nav-dropdown">
@@ -230,17 +180,14 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 									</ul>
 								</div><!-- end account dropdown -->
 								<?php } else { ?>
-								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in">
-									<img src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/myaccount.png" alt="my account image" title="login"/>
-									<span class="my-account-title hide-for-small">Login</span>
-								</a>
+								<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="nav-top-link nav-top-not-logged-in"><span class="account-img sprite"></span><span class="my-account-title hide-for-small">My Account</span><span class="account-arrow sprite"></span></a>
 								<?php }  ?>						
 							</li>
 					<?php } ?>
 					<?php if(!isset($flatsome_opt['show_cart']) || $flatsome_opt['show_cart'] == 1) { 
 							if(function_exists('wc_print_notices')) { ?> 
 								<li class="mini-cart">
-									<div class="cart-inner">
+									<div class="cart-inner"><span class="cart-img sprite"></span>
 										<?php // Edit this content in inc/template-tags.php. Its gets relpaced with Ajax! ?>
 										<a href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" class="cart-link">
 											<span class="cart-name hide-for-small"><?php _e('Cart', 'woocommerce'); ?></span> 
@@ -298,7 +245,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					<?php  // Check mobile 
 					if(preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"])){
 						?>
-					<img alt="Menu icon image" class="side-menu-icon" src="<?php echo get_site_url(); ?>/wp-content/themes/flatsome-gh/images/menu_icon.png">
+					<span class="side-menu-icon"></span>
                     <div class="overlay"></div>
                 	<div class="mobile-side-menu">
                 		<div class="side-menu-heading mega-menu-title">Browse Courses</div>
@@ -529,10 +476,3 @@ if (strpos($flatsome_opt['header_bg'],'#fff') !== false && $flatsome_opt['nav_po
 
 <!-- woocommerce message -->
 <?php  if(function_exists('wc_print_notices')) {wc_print_notices();}?>
-<script>
- jQuery(function() {
-	jQuery('.nav-top-link').tooltipster({
-		offsetY: 3,
-	});
- });
- </script>
