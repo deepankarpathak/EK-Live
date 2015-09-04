@@ -238,7 +238,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="row"> 
-				<div class="large-12 header-container">
+				<div class="large-12 header-container clearfix">
 					<?php /*<div class="mobile-menu show-for-small"><a href="#open-menu"><span class="icon-menu"></span></a></div><!-- end mobile menu --> */?>
 					
 					<?php if($flatsome_opt['logo_position'] == 'left') : ?> 
@@ -312,7 +312,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 <div class="search-menu-container sticky-hidden">
 	<div class="search-box-row">
 		<div class="row collapse search-wrapper">
-			<form method="GET" id="searchform" class="searchform" action="<?php echo site_url();?>/courses/">
+			<form method="GET" id="searchform" class="searchform clearfix" action="<?php echo site_url();?>/courses/">
   				<div class="large-10 small-10 columns">
    					<input type="search" class="field search_sticky" name="s" id="s" value="<?php echo $_GET['s']; ?>" placeholder="<?php echo _e( 'Search the courses e.g. MBA, BA, BBA, ', 'woocommerce' ); ?>&hellip;" />
   				</div><!-- input -->
@@ -372,7 +372,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 	<?php if (!is_page(array('cart', 'checkout'))){ ?>
 				<div class="search-box-row search-div large-8 small-12">
 					<div class="row collapse search-wrapper">
-						<form method="GET" id="searchform" class="searchform" action="<?php echo site_url();?>/courses/">
+						<form method="GET" id="searchform" class="searchform clearfix" action="<?php echo site_url();?>/courses/">
 			  				<div class="large-10 small-10 columns">
 			   					<input type="search" class="field search_home" name="s" id="s" value="<?php echo $_GET['s']; ?>" placeholder="<?php echo _e( 'Search the courses e.g. MBA, BA, BBA, ', 'woocommerce' ); ?>&hellip;" />
 			  				</div><!-- input -->
