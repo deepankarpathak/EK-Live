@@ -136,7 +136,7 @@ jQuery(document).ready(function ($) {
         {
             var html_content = "";
 
-            html_content += "<div id='algolia_instant_selector' class='row'><div class='row banner_img_container' style='text-align:center;'></div><div class='row university_logo_desc'></div>";
+            html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix' style='background:#ccc;display:none'><div class='university_logo_desc row'></div></div><div class='row'><div class='banner_img_container row' style='text-align:center;'></div>";
 
             var facets = [];
             var pages = [];
@@ -154,13 +154,13 @@ jQuery(document).ready(function ($) {
             list=0
             if($('#view li')[0]!==undefined)
             {
-            	if($($('#view li')[0]).hasClass("list"))
-            		list=1;
+                if($($('#view li')[0]).hasClass("list"))
+                    list=1;
             }            
             if (content.hits.length > 0)
                 html_content += engine.getHtmlForPagination(paginationTemplate, content, pages, facets);
 
-            html_content += "</div>";
+            html_content += "</div></div>";
             $(algoliaSettings.instant_jquery_selector).html(html_content);
             
             // Create labels on algolia serach page:Gambheer
@@ -181,13 +181,17 @@ jQuery(document).ready(function ($) {
             // Get Banner from footer on load of algolia search filter
             $(".banner_img_container").html($(".raw_banner_image").html());
             //Get university institute logo and description
-            $(".university_logo_desc").html($(".raw_university_logo_desc").html());
+            
+            if($(".raw_university_logo_desc .univ_logo img").attr("src") != undefined){
+                $(".univ_logo_outer").show();
+                $(".university_logo_desc").html($(".raw_university_logo_desc").html());
+            }
 
             updateSliderValues();
             $(".algolia-slider").parent().prev().css("display","none");
            if(list)
            {
-        	   $("button.list").trigger("click");
+               $("button.list").trigger("click");
            }
         }
 
