@@ -8,11 +8,11 @@ border-radius: 5px; border:1px solid #c8c7c8; }
 .edu-nave ul li ul.edu_subnave {
   background: none repeat scroll 0 0 #f0f0f0;
   border-bottom: 1px solid #c8c7c8;
-  border-right: 1px solid #c8c7c8;
+  border-left: 1px solid #ccc;
   border-top: 1px solid #c8c7c8;
   display: none;
   height: auto;
-  left: 99%;
+  left: 100%;
   margin: 0;
   min-height: 328px;
   padding: 0;
@@ -39,7 +39,7 @@ border-radius: 5px; border:1px solid #c8c7c8; }
   position: absolute;
   top: 0;
 }
-.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1{display:block; width:600px;  height:100.6%; min-height:100%; overflow:auto; margin: -1px 0 0px;  padding:5px 10px 5% 10px; background:#fff; border:1px solid #c8c7c8; border-left:none; z-index:99999999;  }
+.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1{display:block; width:596px;  height:100.6%; min-height:100%; overflow:auto; margin: -1px 0 0px;  padding:5px 10px 5% 10px; background:#fff; border:1px solid #c8c7c8; border-left:none; z-index:99999999;  }
 .edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul{float:left;  display:inline-block; height:auto; margin:0px; 
 -webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
@@ -47,10 +47,9 @@ border-radius: 5px; border:1px solid #c8c7c8; }
  }
  .edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul.edu-indent li a {
   border-bottom: medium none;
-/*  padding: 3px 0 3px 5px;
-*/  line-height:18px;
+  line-height:18px;
 }
-.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li{display:block; margin:0px; border:none; padding:0px 0px; line-height:22px; font-weight:normal; font-size:13px; background:none;}
+.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li{display:block; margin:0px; border:none; padding:0px 0px; line-height:18px; font-weight:normal; font-size:13px; background:none;}
 .edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li span{border-bottom:1px solid #d3d2d2; padding:0px 0 5px 0px; }
 .edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li a {
   border-bottom: 1px dotted #e0e0e0;
@@ -58,8 +57,8 @@ border-radius: 5px; border:1px solid #c8c7c8; }
   display: block;
   line-height: 17px;
   margin: 0;
-  padding: 5px 0;
-  text-decoration: none; float:left;
+  padding: 0;
+  text-decoration: none;
 }
 
 .edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li a.more {
