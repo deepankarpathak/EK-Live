@@ -273,7 +273,7 @@ function validate_billing_form(){
     $.cookie("form_data",  form_data);
 
     // For 10 digtis mobile number : var phoneno = /^\d{10}$/;
-    var phoneno = /^\d+$/;///^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
+    var phoneno = /^\d+$/;//^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
     var pincode = /^\d{6}$/;
 
     var full_name_phone = "<strong>"+fname+"</strong><br>"+phone;
@@ -320,7 +320,7 @@ function validate_billing_form(){
 
 <?php
 //print_r($_COOKIE); die;
-    if(isset($_COOKIE['form_data'])/* && $_COOKIE['form_data'] != ""*/){
+    if(isset($_COOKIE['form_data'])){
         $form_data = explode("$", $_COOKIE['form_data']);
         unset($_COOKIE['form_data']);
         $_COOKIE['form_data'] = "";
@@ -335,11 +335,15 @@ function validate_billing_form(){
             $("#billing_state").val("<?php echo $form_data[5];?>");
             $("#billing_city").val("<?php echo $form_data[6];?>");
             $("#billing_postcode").val("<?php echo $form_data[7];?>");
+            var full_name_phone = "<strong><?php echo $form_data[1];?></strong><br><?php echo $form_data[2];?>";
+            var full_address = "<?php echo $form_data[3];?>, <?php echo $form_data[6];?>, "+$("#billing_state option:selected").text()+", "+$("#billing_country option:selected").text()+" - <?php echo $form_data[7];?>";
+            $("#name_phone").html(full_name_phone);
+            $("#full_address").html(full_address);
             $(".customer-info").addClass("active");
-            /*$(".order-review").show();
-            $(".order-detail").addClass("active");*/
-            $("#customer_details").show();
-            $("#customer_details").addClass("active");
+            $("#customer_details_filled").css("display", "inline-block");
+            $("#customer_details").hide();
+            $(".order-review").show();
+            $(".order-detail").addClass("active");
         </script>
         <?php
        }

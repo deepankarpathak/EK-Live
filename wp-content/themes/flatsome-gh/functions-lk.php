@@ -443,6 +443,7 @@ function incomplete_order_option_page() {
             <label for="university_short_name"><?php _e('University Short-Name'); ?></label>
             <input name="university__short_name" id="university_short_name" type="text" value="" size="40" />
         </div>
+
         <?php
     }
 
@@ -468,6 +469,71 @@ function incomplete_order_option_page() {
                 <input name="university_short_name" id="university_short_name" type="text" value="<?php echo get_term_meta($tag->term_id, 'university_short_name', true); ?>" size="40" />
             </td>
         </tr>
+
+        <?php
+            $logo_img = absint( get_term_meta( $tag->term_id, 'university_logo_image', true ) );
+            if( $logo_img ){
+                $logo_image = wp_get_attachment_thumb_url($logo_img);
+            }
+            else{
+                $logo_image = wc_placeholder_img_src();
+            }
+        ?>
+        <tr class="form-field">
+            <th scope="row" valign="top"><label><?php _e( 'Logo Image', 'woocommerce' ); ?></label></th>
+            <td>
+                <div id="university_logo_img" style="float:left;margin-right:10px;"><img src="<?php echo $logo_image; ?>" width="60px" height="60px" /></div>
+                <div style="line-height:60px;">
+                    <input type="hidden" id="university_logo_img_id" name="university_logo_image" value="<?php echo $logo_img; ?>" />
+                    <button type="submit" id="upload_logo_img_button" class="upload_image_button button"><?php _e( 'Upload/Add image', 'woocommerce' ); ?></button>
+                    <button type="submit" id="remove_logo_img_button" class="remove_image_button button"><?php _e( 'Remove image', 'woocommerce' ); ?></button>
+                </div>
+                <script type="text/javascript">
+
+                    // Uploading files
+                    var file_frame;
+                    jQuery( document ).on( 'click', '#upload_logo_img_button', function( event ) {
+                        event.preventDefault();
+                        // If the media frame already exists, reopen it.
+                        if ( file_frame ) {
+                            file_frame.open();
+                            return;
+                        }
+
+                        // Create the media frame.
+                        file_frame = wp.media.frames.downloadable_file = wp.media({
+                            title: '<?php _e( 'Choose an image', 'woocommerce' ); ?>',
+                            button: {
+                                text: '<?php _e( 'Use image', 'woocommerce' ); ?>',
+                            },
+                            multiple: false
+                        });
+
+                        // When an image is selected, run a callback.
+                        file_frame.on( 'select', function() {
+                                attachment = file_frame.state().get('selection').first().toJSON();
+                                jQuery('#university_logo_img_id').val( attachment.id );
+                                jQuery('#university_logo_img img').attr('src', attachment.sizes.thumbnail.url );
+                                jQuery('#remove_logo_img_button').show();
+                        });
+                    
+                        // Finally, open the modal.
+                        file_frame.open();
+                    });
+
+                    jQuery( document ).on( 'click', '#remove_logo_img_button', function( event ) {
+                        event.preventDefault();
+                        jQuery('#university_logo_img img').attr('src', '<?php echo wc_placeholder_img_src(); ?>');
+                        jQuery('#university_logo_img_id').val('');
+                        jQuery('#remove_logo_img_button').hide();
+                        return false;
+                    });
+
+                </script>
+                <div class="clear"></div>
+            </td>
+        </tr>
+
         <?php
     }
 
@@ -476,6 +542,8 @@ function incomplete_order_option_page() {
             update_term_meta($term_id, 'university_type', esc_attr($_POST['university_meta_type']));
         if (isset($_POST['university_short_name']))
             update_term_meta($term_id, 'university_short_name', esc_attr($_POST['university_short_name']));
+        if (isset($_POST['university_logo_image']))
+            update_term_meta($term_id, 'university_logo_image', esc_attr($_POST['university_logo_image']));
     }
 
 // function is defined to set default view as list view and it is called on the archive-product.php 

@@ -14,85 +14,6 @@
     </div>
 </script>
 
-<script type="text/javascript">
-/*Gambheer Docking Undocking on filters*/
-function dock_undock(args){
-    $(args).next('.dock_this').slideToggle();
-    $(args).children('.dock_undock').toggleClass("dock_down");;
-}
-
-/*Gambheer Filter search*/
-function filter(args){
-    var course_search = $(args).parent();
-    var scroll_pane = $(course_search).next(".scroll-pane");
-    var len = scroll_pane.find(".options").length;
-    var i=0;
-    var arr = [];
-    var ch = ($(args).val()).trim().toLowerCase();
-    
-    for(i=0; i<len; i++){
-        var child = $(scroll_pane.children(".options")[i]);
-        console.log(child);
-        arr[i] = child['context'].textContent.toLowerCase();
-    }
-    
-    for(i=0; i<len; i++){
-      if(ch.length > 0){  
-          if(arr[i].indexOf(ch) > 0){
-            $(scroll_pane.children(".options")[i]).show();
-          }
-          else{
-            $(scroll_pane.children(".options")[i]).hide();
-          }
-      }
-      else{
-        $(scroll_pane.children(".options")).show();
-      }    
-    }
-}
-
-function clear_all(){
-    $(".facets").find("input[type='checkbox']").each(function (i) {
-        $(this).prop("checked", false);
-        engine.helper.clearRefinements($(this).attr("data-tax"));
-    });
-    clear_price_slider();
-    engine.helper.search(engine.helper.state.query, function(){});  
-}
-
-function clear_filter(args){
-    var slider = jQuery(args).nextAll('.scroll-pane').find(".algolia-slider");
-    if(slider[0]){
-        clear_price_slider();
-        engine.helper.search(engine.helper.state.query, function(){});
-    }
-    else{
-        $(args).nextAll('.scroll-pane').find("input[type='checkbox']").each(function (i) {
-                        $(this).prop("checked", false);
-
-                        engine.helper.clearRefinements($(this).attr("data-tax"));
-                    });
-        engine.helper.search(engine.helper.state.query, function(){});
-    } 
-}
-
-function clear_price_slider(){
-    var slide_dom = $(".algolia-slider");
-    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
-    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
-}
-
-
-    $('button').on('click',function(e) {
-        if ($(this).hasClass('grid')) {
-            $('#view li').removeClass('list').addClass('grid');
-        }
-        else if($(this).hasClass('list')) {
-            $('#view li').removeClass('grid').addClass('list');
-        }
-    });
-</script>
-
 <script type="text/template" id="instant-content-template">
     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12  hits{{#facets_count}} with_facets{{/facets_count}}">
         {{#hits.length}}
@@ -123,13 +44,15 @@ function clear_price_slider(){
                 <button class="list changelook" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');"><img src="<?php echo get_site_url(); ?>/images/list_view.png" height="16px" width="16px"/></button>
             </div>
             <div style="clear: both;"></div>
+            <div class="labels left"></div>
         </div>
+        
         {{/hits.length}}
 
         <ul id="view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
             {{#hits}}
 			
-			<li class="col-lg-3 col-md-4 col-sm-6 col-xs-12 grid"><a href="{{permalink}}">
+			<li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid">
                     <div class="result">
                         <div class="result-content clearfix">          
                             <div class="result-sub-content-grid clearfix">
@@ -149,7 +72,7 @@ function clear_price_slider(){
                                     	{{{ _highlightResult.title.value }}} - {{pa_specialization}}
                                 	</h4>
                                     <div class="institute">{{university}}</div>
-                                    <div class="mode"> Study Content: {{pa_exam-mode}}</div>
+                                    <div class="mode"> Study Content: {{pa_study-content}}</div>
 									<div class="duration">{{pa_duration}}</div>
                                     <div class="price-grid"> ₹ {{_price}}</div>
 									{{#pa_referral-cashback.length}}
@@ -177,38 +100,8 @@ function clear_price_slider(){
         {{/hits.length}}
 </script>
 
-<!-- <script type="text/template" id="instant-facets-template">
-<div class="facets{{#count}} with_facets{{/count}}">
-    {{#facets}}
-    {{#count}}
-    <div class="facet">
-        <div class="name">
-            {{ facet_categorie_name }}
-        </div>
-        <div>
-        {{#sub_facets}}
-
-         {{#type.slider}}
-                <div class="algolia-slider algolia-slider-true" data-tax="{{tax}}" data-min="{{min}}" data-max="{{max}}"></div>
-                <div class="algolia-slider-info">
-                    <div class="min" style="float: left;">{{current_min}}</div>
-                    <div class="max" style="float: right;">{{current_max}}</div>
-                    <div style="clear: both"></div>
-                </div>
-                {{/type.slider}}
-
-            {{/sub_facets}}
-        </div>
-    </div>
-</div>
-    {{/count}}
-    {{/facets}}
-</div>
-</script> -->
-
 <script type="text/template" id="instant-facets-template">
 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 facets{{#count}} with_facets{{/count}}">
-    
     <div class="clear_all_div">
        <button class="clear_all" onclick="clear_all()">Clear All</button>
     </div>
@@ -270,6 +163,11 @@ function clear_price_slider(){
 </div>
     {{/count}}
     {{/facets}}
+</div>
+<div class="quick_view_overlay_display_data">
+    <div class="data_quick_view">
+        <div class="close_quick_view">X</div>        
+    </div>
 </div>
 </script>
 
