@@ -80,10 +80,6 @@
 									{{/pa_referral-cashback.length}}
                                 </div>
                             </div>
-                            <div class="quick_view_overlay">
-                                <div class="quick_view_link" data-prod={{objectID}}>Quick View</div>
-                                <div class="learn_more_link"><a href="{{permalink}}" target="_blank">Learn More</a></div>
-                            </div>
                         </div>
                     </div>               
             	</a>
