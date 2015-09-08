@@ -298,5 +298,15 @@ jQuery(document).ready(function() {
   }]
 }
 </script>
+
+<div class="raw_labels" style="display:none"></div>
+<div class="raw_banner_image" style="display:none">
+	<img src="<?php echo get_site_url();?>/wp-content/uploads/Default_banner.jpg" />
+</div>
+<div class="raw_university_logo_desc" style="display:none">
+	<div class="large-3 columns univ_logo"><img /></div>
+	<div class="large-9 columns univ_description"></div>
+</div>
+
 </body>
 </html>
