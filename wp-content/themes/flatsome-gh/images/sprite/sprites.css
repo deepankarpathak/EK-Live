@@ -1,0 +1,142 @@
+.s-24-support, .call_icon, .cart, .detail-tab-icon, .down-arrow, .genuine-fee, .grade_icon, .grid_view, .left-icon, .list_view, .lock, .menu_icon, .min, .myaccount, .pls, .product-detail-calander, .study-material, .tick, .transparent_information, .university-credibility, .pg-pc, .left-icon-h, .close{
+	background: url(sprites.png) no-repeat;
+}
+
+.s-24-support{
+	background-position: -104px 0;
+	width: 28px;
+	height: 28px;
+}
+
+.call_icon{
+	background-position: 0 -47px ;
+	width: 36px;
+	height: 36px;
+}
+
+.cart{
+	background-position: -102px -108px ;
+	width: 26px;
+	height: 23px;
+}
+
+.detail-tab-icon{
+	background-position: -160px -156px ;
+	width: 15px;
+	height: 14px;
+}
+
+.down-arrow{
+	background-position: -108px -158px ;
+	width: 16px;
+	height: 11px;
+}
+
+.genuine-fee{
+	background-position: -55px -3px ;
+	width: 30px;
+	height: 28px;
+}
+
+.grade_icon{
+	background-position: -201px -52px ;
+	width: 34px;
+	height: 23px;
+}
+
+.grid_view{
+	background-position: -60px -107px ;
+	width: 16px;
+	height: 16px;
+}
+
+.left-icon{
+	background-position: -16px -208px ;
+	width: 8px;
+	height: 14px;
+}
+
+.list_view{
+	background-position: -8px -108px ;
+	width: 16px;
+	height: 16px;
+}
+
+.lock{
+	background-position: -107px -52px ;
+	width: 24px;
+	height: 29px;
+}
+
+.menu_icon{
+	background-position: -159px -57px ;
+	width: 23px;
+	height: 16px;
+}
+
+.min{
+	background-position: -59px -152px ;
+	width: 21px;
+	height: 21px;
+}
+
+.myaccount{
+	background-position: -158px -103px ;
+	width: 25px;
+	height: 23px;
+}
+
+.pls{
+	background-position: -9px -156px ;
+	width: 21px;
+	height: 21px;
+}
+
+.product-detail-calander{
+	background-position: -207px -104px ;
+	width: 22px;
+	height: 19px;
+}
+
+.study-material{
+	background-position: -151px 0;
+	width: 33px;
+	height: 28px;
+}
+
+.tick{
+	background-position: -205px -159px ;
+	width: 23px;
+	height: 19px;
+}
+
+.transparent_information{
+	background-position: -6px -3px ;
+	width: 28px;
+	height: 28px;
+}
+
+.university-credibility{
+	background-position: -206px -1px ;
+	width: 28px;
+	height: 28px;
+}
+
+.pg-pc{
+	background-position: -50px -43px ;
+	width: 38px;
+	height: 38px;
+}
+
+.left-icon-h{
+	background-position: -66px -208px ;
+	width: 8px;
+	height: 14px;
+}
+
+.close{
+	background-position: -107px -203px ;
+	width: 27px;
+	height: 27px;
+}
+

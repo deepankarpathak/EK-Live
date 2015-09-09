@@ -18,7 +18,7 @@ function ux_tabgroup( $params, $content = null ) {
 		foreach( $GLOBALS['tabs'] as $key => $tab ){
 			$active = $key == 0 ? ' active' : ''; // Set first tab active by default.
 			$tabs[] = '<li class="tab'.$active.'"><a href="#panel'.$randomid.$i.'">'.$tab['title'].'</a></li>';
-			$panes[] = '<div class="panel'.$active.'" id="panel'.$randomid.$i.'">'.fixShortcode($tab['content']).'</div>';
+			$panes[] = '<div class="clearfix panel'.$active.'" id="panel'.$randomid.$i.'">'.fixShortcode($tab['content']).'</div>';
 			$i++;
 		}
 		if($title) $title = '<h3>'.$title.'</h3>';

@@ -36,7 +36,7 @@ wc_print_notices();
 
     }
 
-    $(document).ready(function() {
+    jQuery(document).ready(function() {
         var show_billing_form;
 <?php
 if (is_user_logged_in()) {
@@ -72,32 +72,7 @@ if (is_user_logged_in()) {
                         type: 'POST',
                         data: 'action=validate_email&username=' + emailadd,
                         success: function(result) {
-                            //alert(result);
-			                // disabling customer details autofill. 
-                        /*  var user_info = jQuery.parseJSON(result);
-                            var billing_first_name  = user_info.billing_first_name;
-                            var billing_last_name  = user_info.billing_last_name;
-                            var billing_company  = user_info.billing_company;
-                            var billing_address_1  = user_info.billing_address_1;
-                            var billing_address_2  = user_info.billing_address_2;
-                            var billing_city  = user_info.billing_city;
-                            var billing_postcode  = user_info.billing_postcode;
-                            var billing_state  = user_info.billing_state;
-                            var billing_country  = user_info.billing_country;
-                            var billing_phone  = user_info.billing_phone;
-                            $("#billing_first_name").val(billing_first_name);
-                            $("#billing_last_name").val(billing_last_name);
-                            $("#billing_company").val(billing_company);
-                            $("#billing_address_1").val(billing_address_1);
-                            $("#billing_address_2").val(billing_address_2);
-                            $("#billing_city").val(billing_city);
-                            $("#billing_postcode").val(billing_postcode);
-                            $("#billing_state").val(billing_state);
-                            $("#billing_country").val(billing_country);
-                            $("#billing_phone").val(billing_phone);
-//                            document.getElementById("name").innerHTML = result[0];
-//                            var user_id = ID; */
-                            //alert(user_id);
+                       
                             $("#customer_details").show();
                             $('#loading_ajax').hide();
                             $("#username").addClass("username_back");
@@ -232,7 +207,7 @@ if (is_user_logged_in()) {
 
 
 <script>
-//Add Placeholders to the address fields
+jQuery(document).ready(function(){
 $("#billing_first_name").attr("placeholder","Name*");
 $("#billing_last_name").attr("placeholder","Last Name*");
 $("#billing_email").attr("placeholder","testing@edukart.com*");
@@ -256,6 +231,7 @@ $("#edit_address").click(function(){
     $(".order-review").hide();
     $(".order-detail").removeClass("active");
 });
+});
 
 function validate_billing_form(){
     var email = $("#username").val();
@@ -273,7 +249,7 @@ function validate_billing_form(){
     $.cookie("form_data",  form_data);
 
     // For 10 digtis mobile number : var phoneno = /^\d{10}$/;
-    var phoneno = /^\d+$/;///^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
+    var phoneno = /^\d+$/;//^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
     var pincode = /^\d{6}$/;
 
     var full_name_phone = "<strong>"+fname+"</strong><br>"+phone;
@@ -320,12 +296,13 @@ function validate_billing_form(){
 
 <?php
 //print_r($_COOKIE); die;
-    if(isset($_COOKIE['form_data'])/* && $_COOKIE['form_data'] != ""*/){
+    if(isset($_COOKIE['form_data'])){
         $form_data = explode("$", $_COOKIE['form_data']);
         unset($_COOKIE['form_data']);
         $_COOKIE['form_data'] = "";
         ?>
         <script>
+	jQuery(document).ready(function(){
             $("#username").val("<?php echo $form_data[0];?>");
             $("#billing_email").val("<?php echo $form_data[0];?>");
             $("#billing_first_name").val("<?php echo $form_data[1];?>");
@@ -335,11 +312,16 @@ function validate_billing_form(){
             $("#billing_state").val("<?php echo $form_data[5];?>");
             $("#billing_city").val("<?php echo $form_data[6];?>");
             $("#billing_postcode").val("<?php echo $form_data[7];?>");
+            var full_name_phone = "<strong><?php echo $form_data[1];?></strong><br><?php echo $form_data[2];?>";
+            var full_address = "<?php echo $form_data[3];?>, <?php echo $form_data[6];?>, "+$("#billing_state option:selected").text()+", "+$("#billing_country option:selected").text()+" - <?php echo $form_data[7];?>";
+            $("#name_phone").html(full_name_phone);
+            $("#full_address").html(full_address);
             $(".customer-info").addClass("active");
-            /*$(".order-review").show();
-            $(".order-detail").addClass("active");*/
-            $("#customer_details").show();
-            $("#customer_details").addClass("active");
+            $("#customer_details_filled").css("display", "inline-block");
+            $("#customer_details").hide();
+            $(".order-review").show();
+            $(".order-detail").addClass("active");
+	});
         </script>
         <?php
        }

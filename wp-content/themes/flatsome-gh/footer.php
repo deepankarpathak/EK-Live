@@ -149,58 +149,8 @@ echo "<div id='microtime_for_redis_gh_in_header' style='display:none;'>retrieve 
 //exit;
 //if (!empty($term)){
 ?>
-
-
 <div id='invtrflfloatbtn'></div>
-<script> 
-var invite_referrals = window.invite_referrals || {}; (function() { 
-	invite_referrals.auth = { 
-		bid_e : 'E1B12D0338B46F598D8123D7C78E9598', 
-		bid : '1576', 
-		t : '420', 
-		email : '', 
-		mobile : '', 
-		userParams : {'fname': '', 'lname': '', 'birthday': '', 'gender': ''}, 
-		referrerCode : '',
-		orderID : '', 
-		purchaseValue : '', 
-		userCustomParams : {'customValue': '', 'shareLink': '', 'shareTitle': '', 'shareDesc': '', 'shareImg': ''}, 
-		showWidget : '' 
-	};
-	var script = document.createElement('script');script.async = true; script.src = (document.location.protocol == 'https:' ? "//d11yp7khhhspcr.cloudfront.net" : "//cdn.invitereferrals.com") + '/js/invite-referrals-1.0.js'; var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBefore(script, entry); })(); 
-</script>
-<!--<div id='invtrflfloatbtn'></div>
-<script>	
-var invite_referrals = window.invite_referrals || {}; (function() { 
-	invite_referrals.auth = { 
-		bid_e : '27296738CA663EAF0E219C01FEA8E38C',
-		bid : '6044',
-		t : '420',
-		email : '',
-		mobile : '',
-		userParams : {'fname': '', 'lname': '', 'birthday': '', 'gender': ''},
-		referrerCode : '',
-		orderID : '', purchaseValue : '',
-		userCustomParams : {'customValue': '', 'shareLink': '', 'shareTitle': '', 'shareDesc': '', 'shareImg': ''},
-		showWidget : ''
-	};	
-var script = document.createElement('script');script.async = true;
-script.src = (document.location.protocol == 'https:' ? "//d11yp7khhhspcr.cloudfront.net" : "//cdn.invitereferrals.com") + '/js/invite-referrals-1.0.js';
-var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBefore(script, entry); })();
-</script>-->
-
-
-
-
-<script type="text/javascript">
-setTimeout(function(){var a=document.createElement("script");
-var b=document.getElementsByTagName("script")[0];
-a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0028/1146.js?"+Math.floor(new Date().getTime()/3600000);
-a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-</script>
-
 <!-- Web engage Starts-->
-
 <script id="_webengage_script_tag" type="text/javascript">
   var _weq = _weq || {};
   _weq['webengage.licenseCode'] = '~47b664c1';
@@ -216,8 +166,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   })(document);
 </script>
 <!-- Web engage ends-->
-
-
 <!-- GA code starts -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -247,35 +195,26 @@ var google_remarketing_only = true;
 </div>
 </noscript>
 <!-- Google Adwords Remarketing Tags - ends -->
-
-<!-- AdRoll code starts -->
-<script type="text/javascript">
-adroll_adv_id = "KFQPYGFXBVFOVMVN7J3KS2";
-adroll_pix_id = "MZT422LAGFGSDDRJV3RYWM";
-(function () {
-var oldonload = window.onload;
-window.onload = function(){
-   __adroll_loaded=true;
-   var scr = document.createElement("script");
-   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
-   scr.setAttribute('async', 'true');
-   scr.type = "text/javascript";
-   scr.src = host + "/j/roundtrip.js";
-   ((document.getElementsByTagName('head') || [null])[0] ||
-    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
-   if(oldonload){oldonload()}};
-}());
-/*AdRoll code ends */	
-var invite_referrals = window.invite_referrals || {}; (function() { 
-	invite_referrals.auth = { bid_e : 'E1B12D0338B46F598D8123D7C78E9598', bid : '1576', t : '420', email : '', userParams : {'fname': ''}};	
-var script = document.createElement('script');script.async = true;
-script.src = (document.location.protocol == 'https:' ? "//d11yp7khhhspcr.cloudfront.net" : "//cdn.invitereferrals.com") + '/js/invite-referrals-1.0.js';
-var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBefore(script, entry); })();
-</script>
 <input type="hidden" id="theme_dir" value="<?php echo get_site_url(); ?>"/>
 <script>
 // Added by gambheer
-$(".search_home").keyup(function(){
+jQuery(document).ready(function() {
+	function megamenu_adjust(){
+    	if($( window ).width() < 768){
+    		$("#mega-menu").hide();
+    		$("#mega-menu2").show();
+    	    $("#mega-menu2").css('position','inherit');
+    	    $("#mega-menu2").css('width','100%');
+    	    $("#mega-menu2 #mega_menu_and_slider").css("padding","0px");
+    	    $("#mega-menu2 .container").css("padding","0px");
+    	    $(".edu-nave ul.edu_mainnave li").css("background","#fff");
+    	    $(".fkr_nav").css("background","#fff");
+    	}
+    	else{
+    	    $("#mega-menu2").hide();
+    	}  
+    }
+	$(".search_home, .search_sticky").keyup(function(){
 	var theme_dir = $("#theme_dir").val();
 	$("#mega-menu").slideUp();
 	if($(".search_home").val().length == 0){
@@ -290,14 +229,15 @@ $(".search_home").keyup(function(){
 			}		
 		<?php }?>
 	}
+	else{
+		// Scroll up the screen when searching through sticky search text
+		$('html, body').animate({scrollTop: '0px'}, 1000);
+		setTimeout(function(){
+    		$(".search_home").focus();
+		}, 1200);
+	}
 });
-
-$("#browse-cat").click(function(){
-	$("#mega-menu").slideToggle();
-});
-
-jQuery(document).ready(function() {
-    var offset = 100;
+	var offset = 100;
     jQuery(window).scroll(function() {
     	if($( window ).width() > 768){
 	        if (jQuery(this).scrollTop() > offset) {
@@ -329,23 +269,6 @@ jQuery(document).ready(function() {
      });
      megamenu_adjust();
  });
-
-function megamenu_adjust(){
-	if($( window ).width() < 768){
-		$("#mega-menu").hide();
-		$("#mega-menu2").show();
-	    $("#mega-menu2").css('position','inherit');
-	    $("#mega-menu2").css('width','100%');
-	    $("#mega-menu2 #mega_menu_and_slider").css("padding","0px");
-	    $("#mega-menu2 .container").css("padding","0px");
-	    $(".edu-nave ul.edu_mainnave li").css("background","#fff");
-	    $(".fkr_nav").css("background","#fff");
-	}
-	else{
-	    $("#mega-menu2").hide();
-	}  
-}
-
 </script>
 <script type="application/ld+json">
 {
@@ -374,22 +297,6 @@ function megamenu_adjust(){
     }
   }]
 }
-</script>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-	    $(".side-menu-icon").click(function(){
-	        $("#masthead").addClass("slide-menu");
-	        $(".header-wrapper").css("position","initial");
-	        $("html").css("overflow","hidden");
-	    });
-   	    $(".overlay").click(function(){
-	        $("#masthead").removeClass("slide-menu");
-	        $(".header-wrapper").css("position","relative");
-	        $("html").css("overflow","initial");
-	    });
-
-	});
 </script>
 </body>
 </html>

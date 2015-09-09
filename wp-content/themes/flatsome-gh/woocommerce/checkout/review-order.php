@@ -163,15 +163,21 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 		// Coupon Code Here
 		if ( WC()->cart->coupons_enabled() ) { ?>
 			<div class="coupon">
-	        <div class="row">
-				<!--<h3 class="widget-title"><?php // _e( 'Coupon', 'woocommerce' ); ?></h3>-->
-				<div class="large-6 small-12 columns"><input type="text" name="coupon_code"  id="coupon_code" value="" placeholder="<?php _e( 'Coupon Code', 'flatsome' ); ?>"/> </div>
-				<div class="large-6 small-12 columns">
-					<input type ="hidden" value = "<?php echo $_SESSION['ir_coupon_code'] ; ?>" name="apply_coupon" id="apply_coupon">
-						<input type = "button" class ="<?php  if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != 'null' AND $_SESSION['cash_back'] != ''){ echo "button small expand" ;}else {echo "button small expand coupon_button";} ?>"  value="Apply Coupon">
-						<input type="submit" style="display:none;" class="button small expand" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" /></div>
-				<?php do_action('woocommerce_cart_coupon'); ?>
-			</div>
+		        <div class="row">
+					<!--<h3 class="widget-title"><?php // _e( 'Coupon', 'woocommerce' ); ?></h3>-->
+					<div class="large-6 small-12 columns"><input type="text" name="coupon_code"  id="coupon_code" value="" placeholder="<?php _e( 'Coupon Code', 'flatsome' ); ?>"/> </div>
+					<div class="large-6 small-12 columns">
+						<input type ="hidden" value = "<?php echo $_SESSION['ir_coupon_code'] ; ?>" name="apply_coupon" id="apply_coupon">
+							<input type = "button" class ="<?php  if(isset($_SESSION['cash_back']) AND $_SESSION['cash_back'] != 'null' AND $_SESSION['cash_back'] != ''){ echo "button small expand" ;}else {echo "button small expand coupon_button";} ?>"  value="Apply Coupon">
+							<?php $coupon_loader = get_site_url()."/wp-content/themes/flatsome-gh/images/clock.svg";?>
+							<span class="coupon_loader">
+									<img src="<?php echo $coupon_loader;?>"/>
+							</span>
+							<input type="submit" style="display:none;" class="button small expand" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
+					</div>
+					<?php do_action('woocommerce_cart_coupon'); ?>
+				</div>
+				<span id="coupon_error">* Please enter a Coupon Code !</span>
 			</div>
 		<?php } ?>
 	<div class="coupon_one_message" style = "display:none"><p style="color:red;font-size:10px;">Only one coupon can be applied.</p></div>
@@ -310,8 +316,9 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
                         <?php
 /*			$order_button_text = apply_filters( 'woocommerce_order_button_text', __( 'Pay', 'woocommerce' ) );
 */			//$rate = ;
-			echo "<div id='term-error'>* Please accept terms & conditions. </div>";
-			echo apply_filters( 'woocommerce_order_button_html', '<button type="submit" class="button alt pay-btn" name="woocommerce_checkout_place_order" id="place_order" data-value="' . esc_attr( $order_button_text ) . '" onclick="return validate_payment()"><div class="btn-main-text">PAY '.WC()->cart->get_total().'</div><div class="btn-sub-menu">(Inclusive of all taxes)</div></button>' );
+			$pay_loader = get_site_url()."/wp-content/themes/flatsome-gh/images/pay-loader.gif";
+			echo "<div id='term-error'>* Please accept terms & conditions.</div>";
+			echo apply_filters( 'woocommerce_order_button_html', '<button type="submit" class="button alt pay-btn" name="woocommerce_checkout_place_order" id="place_order" data-value="' . esc_attr( $order_button_text ) . '" onclick="return validate_payment()"><div class="btn-main-text">PAY '.WC()->cart->get_total().'</div><div class="btn-sub-menu">(Inclusive of all taxes)</div><span style="display:none" id="pay-loader"><img src="'.$pay_loader.'"/></span></button>' );
 			?>
 			<?php do_action( 'woocommerce_review_order_after_submit' ); ?>
 
@@ -327,13 +334,34 @@ $product_id = apply_filters( 'woocommerce_cart_item_name', $_product->id, $cart_
 <script>
 function validate_payment(){
 	var check = document.getElementById('terms').checked;
+	var check2 = document.getElementById('my_checkbox1').checked;
+	var check3 = document.getElementById('my_checkbox2').checked;
+	
 	if(check == true){
 		$("#term-error").fadeOut();
-		return true;
 	}
 	else{
+		$("#term-error").text("* Please accept terms & conditions.")
 		$("#term-error").fadeIn();
 		return false;
 	}
+	if(check2 == true){
+		$("#term-error").fadeOut();
+	}
+	else{
+		$("#term-error").text("* You must accept the Disclaimer")
+		$("#term-error").fadeIn();
+		return false;
+	}
+	if(check3 == true){
+		$("#term-error").fadeOut();	
+	}
+	else{
+		$("#term-error").text("* You must accept signup for the selected course.")
+		$("#term-error").fadeIn();
+		return false;
+	}
+	$("#pay-loader").fadeIn();
+	return true;	
 }
 </script>

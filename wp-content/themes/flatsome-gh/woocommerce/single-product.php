@@ -16,20 +16,7 @@ get_header('shop'); ?>
 <?php
 echo '<div id="ses_de_gh" style="display:none;">'.$wp_session['ip'].' | '.$wp_session['country'].' | '.$wp_session['currency'].' | '.$wp_session['conversion_rate'].' | '.$wp_session['ip_type'].' | '.$wp_session['all_ip'].'</div>';
 ?>
-<script type="text/javascript">
-    $(document).ready(function() {    
-        function submitLead_gh(data){
-            $.ajax({
-                url: "<?php echo get_site_url() . "/wp-admin/admin-ajax.php" ?>",
-                type: 'POST',
-                data: {action: 'connect_form', Data:data},
-                success: function() {
 
-                }
-            });
-        }
-        });
-</script>
 <div class="row product-page">
 <div class="large-12 columns">
 

@@ -39,9 +39,8 @@ if($flatsome_opt['related_products'] == 'slider' || !isset($flatsome_opt['relate
 <h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
 
 <script type="text/javascript">
-	$(document).ready(function($) {
-		/*$(window).load(function() {*/
-	//console.log('dfsdfs');
+	jQuery(document).ready(function($) {
+		
 		$('#slider_related').iosSlider({
 			snapToChildren: true,
 			desktopClickDrag: true,
