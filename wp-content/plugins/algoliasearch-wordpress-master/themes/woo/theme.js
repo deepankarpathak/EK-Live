@@ -123,7 +123,7 @@ jQuery(document).ready(function ($) {
         {
             var html_content = "";
 
-            html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix' style='background:#ccc;display:none'><div class='university_logo_desc row'></div></div><div class='row'><div class='banner_img_container row' style='text-align:center;'></div>";
+            html_content += "<div id='algolia_instant_selector'>";
 
             var facets = [];
             var pages = [];
@@ -147,7 +147,7 @@ jQuery(document).ready(function ($) {
             if (content.hits.length > 0)
                 html_content += engine.getHtmlForPagination(paginationTemplate, content, pages, facets);
 
-            html_content += "</div></div>";
+            html_content += "</div>";
             $(algoliaSettings.instant_jquery_selector).html(html_content);
             
             // Create labels on algolia serach page:Gambheer

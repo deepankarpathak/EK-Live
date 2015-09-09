@@ -315,7 +315,7 @@ function gh_custom_cart_button_text() {
 /*** Now the list of functions required for any of the above listed hooks ***/
 
 function enqueue_parent_theme_style() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+    //wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 }
 
 function gh_enqueue_menu_css(){
