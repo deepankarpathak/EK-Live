@@ -12,7 +12,7 @@ $gh_country_currency = get_option('gh_country_currency');
  * 3. Conversion Rate (INR to visitor's local currency)
  *** */
 global $wp_session;
-$wp_session = $_SESSION;//WP_Session::get_instance();
+$wp_session = WP_Session::get_instance();
 // $ip = @gh_find_visitor_ip_address();	// Disabling IP based pricing till the issue is not resolved at Alpha site
 // $wp_session['ip'] = $ip;
 
@@ -130,7 +130,7 @@ function hideProduct(){
 }
 /*Hide Product Ends*/
 
-function gh_edirectemove_woocommerce_styles_from_unwanted_places_func(){
+function gh_remove_woocommerce_styles_from_unwanted_places_func(){
 	//remove generator meta tag
 	remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
 
@@ -315,7 +315,7 @@ function gh_custom_cart_button_text() {
 /*** Now the list of functions required for any of the above listed hooks ***/
 
 function enqueue_parent_theme_style() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+    //wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 }
 
 function gh_enqueue_menu_css(){
@@ -332,7 +332,7 @@ function gh_enqueue_custom_js(){
         wp_dequeue_script("flatsome-theme-js");
         wp_deregister_script("flatsome-theme-js");
     
-        wp_enqueue_script( 'gh_jquery_min', get_stylesheet_directory_uri().'/js/jquery.min.js' );
+       //wp_enqueue_script( 'gh_jquery_min', get_stylesheet_directory_uri().'/js/jquery.min.js' );
         wp_enqueue_script( 'gh_add_too_cart', get_stylesheet_directory_uri().'/js/add-to-cart-variation.js' );
  	wp_enqueue_script( 'gh_homepage_mega_menu', get_stylesheet_directory_uri().'/js/flaunt.js' );
 	wp_enqueue_script( 'gh_change_catalog_view', get_stylesheet_directory_uri().'/js/gh_custom.js' );

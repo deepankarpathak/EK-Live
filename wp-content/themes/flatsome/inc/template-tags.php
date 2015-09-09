@@ -503,7 +503,20 @@ function jck_quickview() {
     die();
 }
 
+/**Get Category banner on serach page*/
 
+/*add_action('wp_ajax_get_banner', 'get_banner');
+add_action('wp_ajax_nopriv_get_banner', 'get_banner');*/
+
+/** Get banner of category **/
+/*function get_banner() {
+    global $post, $product, $woocommerce;
+    $product_cat = $_POST['product_cat'];
+    $category_id = get_term_by('name', $product_cat, 'product_cat');
+    $banner_id = get_woocommerce_term_meta($category_id->term_id, 'banner_img_id', true);
+    echo get_the_guid ( $banner_id );
+    die;
+}*/
 
 /* PRODUCT QUICK VIEW HOOKS */
 add_action( 'woocommerce_single_product_lightbox_summary', 'woocommerce_template_single_price', 10 );

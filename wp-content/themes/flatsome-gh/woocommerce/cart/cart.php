@@ -29,7 +29,15 @@ jQuery( document ).ready( function() {
         var code = jQuery( 'input#coupon_code').val();
 	 	var cb_amount = jQuery( 'input#cart_cashback_amount').val();
 		var cart_total = jQuery( 'input#cart_subtotal').val();
-
+		if(code == "" || code == undefined){
+			$("#coupon_error").fadeIn();
+			return false;
+		}
+		else{
+			$("#coupon_error").fadeOut();	
+			$(".coupon_loader").slideDown();
+		}
+		$("#form1 #coupon_code1").val(code);
         data = {
             action: 'referral_validation',
             coupon_code: code,
@@ -39,7 +47,6 @@ jQuery( document ).ready( function() {
 
        jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
        if( returned_data == 'failed' ) {
-           $("#form1 #coupon_code1").val(code);
 		   jQuery('#form1 input[type="submit"]').trigger('click');
         } else {
 			var returnedData = JSON.parse(returned_data);
@@ -66,7 +73,8 @@ jQuery( document ).ready( function() {
         jQuery.post( woocommerce_params.ajax_url, data, function( returned_data ) {
 
         if( returned_data == 'failed' ) {
-		   jQuery('input[type="submit"]').trigger('click');
+		   //jQuery('input[type="submit"]').trigger('click');
+		   jQuery('#form1 input[type="submit"]').trigger('click');
         }
         else{
            	location.reload();
@@ -130,7 +138,7 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 <div class="cart-wrapper custom-cart">
 	<div class="clearfix">
-		<div class="cart-desc"><img class="lock" src="../wp-content/themes/flatsome-gh/images/lock.png"> Safe and Secure Transaction Guarantee</div>
+		<div class="cart-desc"><span class="lock sprite"></span> Safe and Secure Transaction Guarantee</div>
 		<img class="edu-trust" src="../wp-content/themes/flatsome-gh/images/trust.png"> <img class="size-medium pay-opt" src="http://edukart.com/wp-content/uploads/2015/01/pay-option.jpg" alt="pay-option">
 	</div>	
 <div class="shop_table cart responsive" cellspacing="0">
@@ -141,7 +149,7 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 		
 		<?php
 			$ga = 0;
-
+//print_r(WC()->cart->get_cart()); die;
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 			$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 			$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
@@ -175,7 +183,7 @@ cartval: <?php echo $woocommerce->cart->total; ?>
                				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
                					echo '<p class="backorder_notification">' . __( 'Available on backorder', 'woocommerce' ) . '</p>';
 						?>
-						<!-- <div class="describtion">Narsee Monjee Institute of Management Studies</div> -->
+						<div class="describtion"><?php echo wc_get_product_terms($product_id, 'shop_vendor')[0]->name;?></div>
 					</div>
 
 					<div class="product-provider">
@@ -294,11 +302,8 @@ if(isset($_COOKIE['referee']) AND $_COOKIE['referee'] != '' ){
 </div><!-- .cart-sidebar -->
 </div><!-- .large-3 -->
 
-
-
-
-
-
-
-
+</div>
+</div>
+</div>
 </form>
+<?php do_action( 'woocommerce_after_cart' ); ?>

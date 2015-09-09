@@ -2612,14 +2612,14 @@ EOL;
 		#Load as external script async so we don't slow page down.
 		echo <<<EOL
 <script type="text/javascript">
-(function(url){
+setTimeout((function(url){ 
 if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
 var wfscr = document.createElement('script');
 wfscr.type = 'text/javascript';
 wfscr.async = true;
 wfscr.src = url + '&r=' + Math.random();
 (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
-})('$URL');
+})('$URL'),3000);
 </script>
 EOL;
 	}

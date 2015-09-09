@@ -30,7 +30,7 @@ echo '<div id="ses_de_gh" style="display:none;">'.$wp_session['ip'].' | '.$wp_se
         }
         });
 </script>
-<div class="clearfix product-page">
+<div class="row product-page">
 <div class="large-12 columns">
 
 	<?php

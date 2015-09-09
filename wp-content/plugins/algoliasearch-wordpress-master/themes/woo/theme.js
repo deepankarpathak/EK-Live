@@ -119,19 +119,6 @@ jQuery(document).ready(function ($) {
             engine.updateUrl(push_state);
         }
 
-        $(function()
-        {
-            $('.scroll-pane')
-            .jScrollPane()
-            .bind(
-                'mousewheel',
-                function(e)
-                {
-                    e.preventDefault();
-                }
-            );
-        });
-
         function searchCallback(content)
         {
             var html_content = "";
@@ -154,8 +141,8 @@ jQuery(document).ready(function ($) {
             list=0
             if($('#view li')[0]!==undefined)
             {
-            	if($($('#view li')[0]).hasClass("list"))
-            		list=1;
+                if($($('#view li')[0]).hasClass("list"))
+                    list=1;
             }            
             if (content.hits.length > 0)
                 html_content += engine.getHtmlForPagination(paginationTemplate, content, pages, facets);
@@ -163,11 +150,31 @@ jQuery(document).ready(function ($) {
             html_content += "</div>";
             $(algoliaSettings.instant_jquery_selector).html(html_content);
             
+            // Create labels on algolia serach page:Gambheer
+            // Get selected filters
+            $(".sub_facet").find("input[type='checkbox']").each(function (i) {
+               if($(this).is(':checked') == true){
+                var data_name = $(this).attr("data-name");
+                var data_tax = $(this).attr("data-tax");
+               }
+            });
+
+            // Get Labels from footer on load of algolia search filter
+            $(".labels").html($(".raw_labels").html());
+            // Get Banner from footer on load of algolia search filter
+            $(".banner_img_container").html($(".raw_banner_image").html());
+            //Get university institute logo and description
+            
+            if($(".raw_university_logo_desc .univ_logo img").attr("src") != undefined){
+                $(".univ_logo_outer").show();
+                $(".university_logo_desc").html($(".raw_university_logo_desc").html());
+            }
+
             updateSliderValues();
             $(".algolia-slider").parent().prev().css("display","none");
            if(list)
            {
-        	   $("button.list").trigger("click");
+               $("button.list").trigger("click");
            }
         }
 
@@ -543,4 +550,31 @@ jQuery(document).ready(function ($) {
             $(algoliaSettings.search_input_selector+':first').focus();
         }
     }
+
+    // Hide mega menu if we directly open any product page
+    if($(".search_home").val() != ""){
+        $("#mega-menu").hide();  
+    }    
+ 
+    // Quick View in algolia search page
+
+    $("body").on("click", ".quick_view_link", function (e) {
+       /* add loader  */
+       $(this).after('<div class="loading dark" style="background:green; color:red;"><i></i><i></i><i></i><i></i></div>');
+       $(this).parent().css("display","block");
+       var product_id = $(this).attr('data-prod');
+       var data = { action: 'jck_quickview', product: product_id};
+        $.post(ajaxURL.ajaxurl, data, function(response) {
+            $(".quick_view_overlay_display_data").fadeIn("slow");
+            $(".quick_view_overlay_display_data .edu_quickview").remove();
+            $(".data_quick_view").html($(".data_quick_view").html()+response);
+            $(".loading, .dark").remove();
+            $(".quick_view_overlay").removeAttr("style");
+        });
+        
+        $("body").on("click", ".close_quick_view", function (e) {
+            $(".quick_view_overlay_display_data").fadeOut("slow");
+        });
+    });
+
 });

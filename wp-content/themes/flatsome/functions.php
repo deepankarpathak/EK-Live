@@ -283,7 +283,7 @@ function flatsome_scripts() {
  		wp_enqueue_script( 'flatsome-plugins', get_template_directory_uri() .'/js/plugins.js?v=2.0.5', array( 'jquery' ), '2.1.1', true );
 		wp_enqueue_script( 'flatsome-iosslider', get_template_directory_uri() .'/js/jquery.iosslider.min.js?v=2.02', array( 'jquery' ), '2.1.1', true );
 		wp_enqueue_script( 'flatsome-magnific-popup', get_template_directory_uri() .'/js/jquery.magnific-popup.js?v=2.0.5', array( 'jquery' ), '2.1.1', true );
-		wp_enqueue_script( 'flatsome-theme-js', get_template_directory_uri() .'/js/theme.js?v=2.0.5', array( 'jquery' ), '2.1.1', true );
+		wp_enqueue_script( 'flatsome-theme-js', get_template_directory_uri() .'/js/theme.js?v=2.0.5', array( 'jquery','flatsome-plugins' ), '2.1.1', true );
 	} else {
 		wp_enqueue_script( 'flatsome-theme-js-minified', get_template_directory_uri() .'/js/flatsome.min.js?v=2.0.5', array( 'jquery' ), '2.1.1', true );
 	}
@@ -458,43 +458,30 @@ function new_logout_url($logouturl, $redir)
 	return $logouturl . '&amp;redirect_to=' . urlencode($redir);
 }
 
-// Change order of billing fields
-/*
-add_filter("woocommerce_checkout_fields", "order_fields");
-
-function order_fields($fields) {
-    $order = array(
-        "billing_first_name", 
-        "billing_last_name", 
-        "billing_email", 
-        "billing_phone",
-        "billing_address_1",
-        "billing_country", 
-        "billing_state",
-        "billing_city", 
-        "billing_postcode"
-
-    );
-    foreach($order as $field)
-    {
-        $ordered_fields[$field] = $fields["billing"][$field];
-    }
-
-    $fields["billing"] = $ordered_fields;
-    return $fields;
-}
-*/
 // If cart empty redirect to other page
 /*print_r($_GET);die;*/
-if(!is_admin() || isset($_GET['remove_item'])){
-	add_action( 'init', 'woocommerce_empty_cart_redirect' );
-	function woocommerce_empty_cart_redirect() {
-       global $woocommerce;
-       $cart_url = get_site_url()."/cart/";
-       if ( preg_match('/checkout/',$_SERVER["REQUEST_URI"]) && !sizeof( $woocommerce->cart->get_cart() )) {
-           wp_redirect( $cart_url );
-               exit;
-  		}
-	}
+if(!is_admin() && !isset($_GET['remove_item'])&&!strpos($_SERVER["REQUEST_URI"], 'order')){
+function woocommerce_show_checkout() {
+        global $woocommerce;
+
+        $cart_number = sprintf(_n('%d', '%d', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);
+
+        if ($cart_number == 0) {
+                return false;
+        } else {
+                return true;
+        }
+
 }
+add_action('template_redirect', 'redirection_function');
+function redirection_function(){
+    global $woocommerce;
+    $cartNumber = woocommerce_show_checkout();
+
+    if( is_checkout() and $cartNumber == false ) {
+        wp_redirect( home_url()."/cart" ); exit;
+    }
+}
+}
+
 ?>
