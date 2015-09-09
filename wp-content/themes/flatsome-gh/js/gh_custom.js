@@ -227,6 +227,20 @@ jQuery(document).ready(function(){
 	a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0028/1146.js?"+Math.floor(new Date().getTime()/3600000);
 	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 3000);
 
+	//window.vizLayer
+	(function(){try{var viz = document.createElement("script"); viz.type = "text/javascript";viz.async = true; viz.src = ("https:" == document.location.protocol ?"https://in-tags.vizury.com" : "http://in-tags.vizury.com")+ "/analyze/pixel.php?account_id=vst";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(viz, s);viz.onload = function() {try {pixel.parse();} catch(i){}};viz.onreadystatechange = function() {if (viz.readyState == "complete" || viz.readyState == "loaded"){try {pixel.parse();}catch(i){}}};}catch(i){}})();
+	
+	//realtime user monitoring pingdom
+	var _prum = [['id', '55ea8c12abe53d69527b3eff'],
+	             ['mark', 'firstbyte', (new Date()).getTime()]];
+	(function() {
+	    var s = document.getElementsByTagName('script')[0]
+	      , p = document.createElement('script');
+	    p.async = 'async';
+	    p.src = '//rum-static.pingdom.net/prum.min.js';
+	    s.parentNode.insertBefore(p, s);
+	})();
+	
 	 $(".side-menu-icon").click(function(){
 	        $("#masthead").addClass("slide-menu");
 	        $(".header-wrapper").css("position","initial");
@@ -251,85 +265,6 @@ jQuery(document).ready(function(){
 			$("#mega-menu").slideToggle();
 		});
 	    /*Algolia scrips start*/
-	    /*Gambheer Docking Undocking on filters*/
-		/*Gambheer Docking Undocking on filters*/
-		function dock_undock(args){
-		    $(args).next('.dock_this').slideToggle();
-		    $(args).children('.dock_undock').toggleClass("dock_down");;
-		}
-
-		/*Gambheer Filter search*/
-		function filter(args){
-		    var course_search = $(args).parent();
-		    var scroll_pane = $(course_search).next(".scroll-pane");
-		    var len = scroll_pane.find(".options").length;
-		    var i=0;
-		    var arr = [];
-		    var ch = ($(args).val()).trim().toLowerCase();
-		    
-		    for(i=0; i<len; i++){
-		        var child = $(scroll_pane.children(".options")[i]);
-		        arr[i] = child['context'].textContent.toLowerCase();
-		    }
-		    
-		    for(i=0; i<len; i++){
-		      if(ch.length > 0){  
-		          if(arr[i].indexOf(ch) > 0){
-		            $(scroll_pane.children(".options")[i]).show();
-		          }
-		          else{
-		            $(scroll_pane.children(".options")[i]).hide();
-		          }
-		      }
-		      else{
-		        $(scroll_pane.children(".options")).show();
-		      }    
-		    }
-		}
-
-		function clear_all(){
-		    $(".facets").find("input[type='checkbox']").each(function (i) {
-		        $(this).prop("checked", false);
-		        engine.helper.clearRefinements($(this).attr("data-tax"));
-		    });
-		    clear_price_slider();
-		    engine.helper.search(engine.helper.state.query, function(){});  
-		    // Remove banner and university logo and description when clear all filters
-		    $(".raw_university_logo_desc .univ_logo img").attr("src", "");
-		    $(".raw_university_logo_desc .univ_description").text("");
-		    $(".raw_banner_image img").attr("src", "<?php echo get_site_url()?>/wp-content/uploads/Default_banner.jpg");
-		}
-
-		function clear_filter(args){
-		    var slider = jQuery(args).nextAll('.scroll-pane').find(".algolia-slider");
-		    if(slider[0]){
-		        clear_price_slider();
-		        engine.helper.search(engine.helper.state.query, function(){});
-		    }
-		    else{
-		        $(args).nextAll('.scroll-pane').find("input[type='checkbox']").each(function (i) {
-		                        $(this).prop("checked", false);
-
-		                        engine.helper.clearRefinements($(this).attr("data-tax"));
-		                    });
-		        engine.helper.search(engine.helper.state.query, function(){});
-		    } 
-		}
-
-		function clear_price_slider(){
-		    var slide_dom = $(".algolia-slider");
-		    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
-		    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
-		}
-		$('button').on('click',function(e) {
-		    if ($(this).hasClass('grid')) {
-		        $('#view li').removeClass('list').addClass('grid');
-		    }
-		    else if($(this).hasClass('list')) {
-		        $('#view li').removeClass('grid').addClass('list');
-		    }
-		});
-
 		// Clear Labels and refinement
 		$("body").on("click", ".labels .close_label", function () {
 		    var data_tax = $(this).parent().attr("data-tax");
@@ -546,4 +481,80 @@ jQuery(document).ready(function(){
 	        		showWidget : '' 
 	        	};
 	        	var script = document.createElement('script');script.async = true; script.src = (document.location.protocol == 'https:' ? "//d11yp7khhhspcr.cloudfront.net" : "//cdn.invitereferrals.com") + '/js/invite-referrals-1.0.js'; var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBefore(script, entry); })(); 
+});
+function dock_undock(args){
+    $(args).next('.dock_this').slideToggle();
+    $(args).children('.dock_undock').toggleClass("dock_down");;
+}
+
+/*Gambheer Filter search*/
+function filter(args){
+    var course_search = $(args).parent();
+    var scroll_pane = $(course_search).next(".scroll-pane");
+    var len = scroll_pane.find(".options").length;
+    var i=0;
+    var arr = [];
+    var ch = ($(args).val()).trim().toLowerCase();
+    
+    for(i=0; i<len; i++){
+        var child = $(scroll_pane.children(".options")[i]);
+        arr[i] = child['context'].textContent.toLowerCase();
+    }
+    
+    for(i=0; i<len; i++){
+      if(ch.length > 0){  
+          if(arr[i].indexOf(ch) > 0){
+            $(scroll_pane.children(".options")[i]).show();
+          }
+          else{
+            $(scroll_pane.children(".options")[i]).hide();
+          }
+      }
+      else{
+        $(scroll_pane.children(".options")).show();
+      }    
+    }
+}
+
+function clear_all(){
+    $(".facets").find("input[type='checkbox']").each(function (i) {
+        $(this).prop("checked", false);
+        engine.helper.clearRefinements($(this).attr("data-tax"));
+    });
+    clear_price_slider();
+    engine.helper.search(engine.helper.state.query, function(){});  
+    // Remove banner and university logo and description when clear all filters
+    $(".raw_university_logo_desc .univ_logo img").attr("src", "");
+    $(".raw_university_logo_desc .univ_description").text("");
+    $(".raw_banner_image img").attr("src", "<?php echo get_site_url()?>/wp-content/uploads/Default_banner.jpg");
+}
+
+function clear_filter(args){
+    var slider = jQuery(args).nextAll('.scroll-pane').find(".algolia-slider");
+    if(slider[0]){
+        clear_price_slider();
+        engine.helper.search(engine.helper.state.query, function(){});
+    }
+    else{
+        $(args).nextAll('.scroll-pane').find("input[type='checkbox']").each(function (i) {
+                        $(this).prop("checked", false);
+
+                        engine.helper.clearRefinements($(this).attr("data-tax"));
+                    });
+        engine.helper.search(engine.helper.state.query, function(){});
+    } 
+}
+
+function clear_price_slider(){
+    var slide_dom = $(".algolia-slider");
+    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
+    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
+}
+$('button').on('click',function(e) {
+    if ($(this).hasClass('grid')) {
+        $('#view li').removeClass('list').addClass('grid');
+    }
+    else if($(this).hasClass('list')) {
+        $('#view li').removeClass('grid').addClass('list');
+    }
 });

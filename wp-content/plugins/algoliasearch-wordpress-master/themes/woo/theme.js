@@ -119,19 +119,6 @@ jQuery(document).ready(function ($) {
             engine.updateUrl(push_state);
         }
 
-        $(function()
-        {
-            $('.scroll-pane')
-            .jScrollPane()
-            .bind(
-                'mousewheel',
-                function(e)
-                {
-                    e.preventDefault();
-                }
-            );
-        });
-
         function searchCallback(content)
         {
             var html_content = "";
