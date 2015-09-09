@@ -156,10 +156,6 @@ jQuery(document).ready(function ($) {
                if($(this).is(':checked') == true){
                 var data_name = $(this).attr("data-name");
                 var data_tax = $(this).attr("data-tax");
-                var raw_label_html = $(".raw_labels").html();
-                if($(".raw_labels").html().indexOf(data_name)<=0){
-                    $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>X</span></div>");
-                    }
                }
             });
 
