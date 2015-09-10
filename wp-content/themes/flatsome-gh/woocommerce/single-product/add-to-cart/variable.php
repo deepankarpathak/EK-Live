@@ -18,7 +18,7 @@ global $woocommerce, $product, $post;
 
 <?php  do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 <script>
-    $(document).ready(function(){
+    jQuery(document).ready(function(){
        $('.see_fee').click(function(){
         $('.tabs li').removeClass('active');
          $('.fee_tab').addClass('active colortab');  

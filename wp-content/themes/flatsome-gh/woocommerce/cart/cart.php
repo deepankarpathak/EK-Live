@@ -138,7 +138,7 @@ cartval: <?php echo $woocommerce->cart->total; ?>
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 <div class="cart-wrapper custom-cart">
 	<div class="clearfix">
-		<div class="cart-desc"><img class="lock" src="../wp-content/themes/flatsome-gh/images/lock.png"> Safe and Secure Transaction Guarantee</div>
+		<div class="cart-desc"><span class="lock sprite"></span> Safe and Secure Transaction Guarantee</div>
 		<img class="edu-trust" src="../wp-content/themes/flatsome-gh/images/trust.png"> <img class="size-medium pay-opt" src="http://edukart.com/wp-content/uploads/2015/01/pay-option.jpg" alt="pay-option">
 	</div>	
 <div class="shop_table cart responsive" cellspacing="0">

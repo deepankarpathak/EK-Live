@@ -119,24 +119,11 @@ jQuery(document).ready(function ($) {
             engine.updateUrl(push_state);
         }
 
-        $(function()
-        {
-            $('.scroll-pane')
-            .jScrollPane()
-            .bind(
-                'mousewheel',
-                function(e)
-                {
-                    e.preventDefault();
-                }
-            );
-        });
-
         function searchCallback(content)
         {
             var html_content = "";
 
-            html_content += "<div id='algolia_instant_selector' class='row'><div class='row banner_img_container' style='text-align:center;'></div><div class='row university_logo_desc'></div>";
+            html_content += "<div id='algolia_instant_selector'>";
 
             var facets = [];
             var pages = [];
@@ -154,8 +141,8 @@ jQuery(document).ready(function ($) {
             list=0
             if($('#view li')[0]!==undefined)
             {
-            	if($($('#view li')[0]).hasClass("list"))
-            		list=1;
+                if($($('#view li')[0]).hasClass("list"))
+                    list=1;
             }            
             if (content.hits.length > 0)
                 html_content += engine.getHtmlForPagination(paginationTemplate, content, pages, facets);
@@ -169,10 +156,6 @@ jQuery(document).ready(function ($) {
                if($(this).is(':checked') == true){
                 var data_name = $(this).attr("data-name");
                 var data_tax = $(this).attr("data-tax");
-                var raw_label_html = $(".raw_labels").html();
-                if($(".raw_labels").html().indexOf(data_name)<=0){
-                    $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>X</span></div>");
-                    }
                }
             });
 
@@ -181,13 +164,17 @@ jQuery(document).ready(function ($) {
             // Get Banner from footer on load of algolia search filter
             $(".banner_img_container").html($(".raw_banner_image").html());
             //Get university institute logo and description
-            $(".university_logo_desc").html($(".raw_university_logo_desc").html());
+            
+            if($(".raw_university_logo_desc .univ_logo img").attr("src") != undefined){
+                $(".univ_logo_outer").show();
+                $(".university_logo_desc").html($(".raw_university_logo_desc").html());
+            }
 
             updateSliderValues();
             $(".algolia-slider").parent().prev().css("display","none");
            if(list)
            {
-        	   $("button.list").trigger("click");
+               $("button.list").trigger("click");
            }
         }
 

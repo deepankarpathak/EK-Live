@@ -283,7 +283,7 @@ function flatsome_scripts() {
  		wp_enqueue_script( 'flatsome-plugins', get_template_directory_uri() .'/js/plugins.js?v=2.0.5', array( 'jquery' ), '2.1.1', true );
 		wp_enqueue_script( 'flatsome-iosslider', get_template_directory_uri() .'/js/jquery.iosslider.min.js?v=2.02', array( 'jquery' ), '2.1.1', true );
 		wp_enqueue_script( 'flatsome-magnific-popup', get_template_directory_uri() .'/js/jquery.magnific-popup.js?v=2.0.5', array( 'jquery' ), '2.1.1', true );
-		wp_enqueue_script( 'flatsome-theme-js', get_template_directory_uri() .'/js/theme.js?v=2.0.5', array( 'jquery' ), '2.1.1', true );
+		wp_enqueue_script( 'flatsome-theme-js', get_template_directory_uri() .'/js/theme.js?v=2.0.5', array( 'jquery','flatsome-plugins' ), '2.1.1', true );
 	} else {
 		wp_enqueue_script( 'flatsome-theme-js-minified', get_template_directory_uri() .'/js/flatsome.min.js?v=2.0.5', array( 'jquery' ), '2.1.1', true );
 	}

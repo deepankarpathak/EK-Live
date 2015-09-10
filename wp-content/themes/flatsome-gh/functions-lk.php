@@ -1759,15 +1759,16 @@ function gh_referral_validation() {
         //echo $_SESSION['effective_total'];
         echo json_encode($referal_arr);
     } else {
+    	$cookie_name = 'referee';
+    	$cookie_value = '';
+    	setcookie($cookie_name, $cookie_value, time() + (86400 * 30), '/');
+    	
+    	unset($_SESSION['cash_back']);
+    	unset($_SESSION['ir_coupon_code']);
+    	unset($_SESSION['effective_total']);
+    	unset($_SESSION['referral_details']);
         echo 'failed';
         //session_destroy();
-        unset($_SESSION['cash_back']);
-        unset($_SESSION['ir_coupon_code']);
-        unset($_SESSION['effective_total']);
-        unset($_SESSION['referral_details']);
-        $cookie_name = 'referee';
-        $cookie_value = '';
-        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), '/');
     }
     //$_SESSION['coupon'] = $_REQUEST['coupon_code'];
     die();
