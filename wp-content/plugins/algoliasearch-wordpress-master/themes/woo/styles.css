@@ -184,8 +184,8 @@
 
 #algolia_instant_selector .facet:not(:first-child)
 {
-    margin-top: 10px;
-}
+/*    margin-top: 10px;
+*/}
 
 #algolia_instant_selector .facet .name
 {
@@ -286,7 +286,6 @@
 
 #algolia_instant_selector .result .result-sub-content-list
 {
-    padding: 10px;
     min-height: 120px;
 }
 
@@ -318,11 +317,15 @@
 	margin-left: 20px;
 	float: left;
 	width: 50%;
+    font-weight: normal;
+    font-family: robotoregular;
 }
 #algolia_instant_selector .result .result-excerpt .institute{
   padding-bottom: 5px;
-  border-bottom: 1px solid #ddd;
+  font-size: 11px;
+  color: #999;
 }
+
 #algolia_instant_selector .list-images
 {
     height: auto; width: 100%; float: left;
@@ -336,8 +339,9 @@
 
 #algolia_instant_selector .result .result-excerpt .price-grid
 {
-    color: #77a464;
-    font-size: 17px;
+    color: #17a959;
+    font-size: 20px;
+    font-family: robotobold;
 }
 
 #algolia_instant_selector .result .result-excerpt .price-list
@@ -380,6 +384,10 @@
   text-overflow: ellipsis;
   width: 100%;
   }
+
+.result-title{
+      font-size: 1.26em;
+}
 #view .list .result-content .result-title{
 	text-align: left;
 }
@@ -457,25 +465,26 @@
 .grid .referral {
     background: #ffffa7 none repeat scroll 0 0;
     border: 2px dotted #f07746;
-    height: 25px !important;
+    height: 22px !important;
     margin: 0 8px 4px;
-    font-size:18px;
+    font-size:15px;
+    font-family: robotoregular;
     line-height:20px;
     color: #8A5926;
-      width: 188px;
-  margin: 0 auto;
+    margin: 0 auto;
+    margin-bottom: 7px;
 }
 
 .cashback {
     background-color: #f07746;
-    border-bottom: 8px solid #f07746;
+    border-bottom: 7px solid #f07746;
     border-right: 7px solid #ffffa7;
-    border-top: 8px solid #f07746;
+    border-top: 7px solid #f07746;
     color: #fff;
     float: left;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
-    height: 16px;
+    height: 14px;
     line-height: 1px;
     margin-left: 0 !important;
     margin-top: 2px;
@@ -656,7 +665,7 @@ display: inline-block;
 margin-right: 4px;
 }
 #index_to_use{margin-top:5px;}
-.changelook{height: 32px;padding: 0;width: 32px;background-color: transparent;margin: 0}
+.changelook{padding: 0;background-color: transparent;margin: 0}
 
 .dock_undock{
     background:url("../../../../themes/flatsome-gh/images/detail-tab-icon.png");
@@ -722,29 +731,33 @@ margin-right: 4px;
     font-size: 15px;
 }
 
-#result_for{
+/*#result_for{
     float:left;
 }
-
+*/
 .dock_undock{
     float:right;
 }
 
 
 .clear_all_div{
-    width:100%;
-    text-align:right;
+    width: 100%;
+    text-align: right;
+    border: 1px solid #ddd;
+    padding: 5px;
 }
 
 .clear_all_div button{
     background:#fff;
-    height:20px;
-    border-radius:10px;
-    color:#000;
-    border:1px solid #000;
-    font-size:10px;
+    height:22px;
+    border-radius:4px;
+    color:#555;
+    border:1px solid #777;
+    font-size:13px;
     margin:0px;
     line-height:1px;
+    font-family: robotoregular;
+    padding: 6px;
 }
 
 .clear_filter{
@@ -758,6 +771,52 @@ margin-right: 4px;
     cursor:pointer;
 }
 
+
+/*-----Search page start-----*/
+
+.banner_img_container img{
+    width: 100%;
+    padding: 10px 0 20px;
+}
+.refresh{
+    background-position: -115px -209px;
+    width: 12px;
+    height: 12px;
+    margin: 0 7px;
+    position: relative;
+    top: -2px;
+}
+.button-123{
+    margin-bottom: 20px;
+}
+
+.button-123 select{
+    background: #fff;
+    color: #666;
+    border-color: #ccc;
+    font-size: 14px;
+    width:100px;
+    margin: 0;
+}
+
+#algolia_instant_selector .result .result-excerpt .mode{
+    color: #555;
+    font-family: robotoregular;
+    font-size: 14px;
+}
+
+#algolia_instant_selector .result .result-excerpt .price-coupan-wrapper{
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+}
+
+#algolia_instant_selector .result .result-excerpt .mode-duration-wrapper{
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+}
+/*-----Search page end-----*/
+
+
 @media screen and (max-width: 800px){
     .hidden-xs{
         display: none !important;
@@ -766,6 +825,21 @@ margin-right: 4px;
    .course-search::before, .course-search::after {
     top: 22px;
    }
+}
+
+@media screen and (min-width: 768px){
+/*-----Search page start-----*/
+    .row .min-pad{
+        padding: 0 5px;
+    }
+    .row .left-pad-none{
+        padding-left: 0;
+    }
+    .row .right-pad-none{
+        padding-right: 0;
+    }
+
+/*-----Search page end-----*/    
 }
 
 @media screen and (max-width: 480px){

@@ -2815,18 +2815,25 @@ margin:35px 0px;
 /* Algolia search page CSS*/
 .labels .label{
   display: inline-block;
-  background: #E5E7E6;
   color: #222;
   border: 1px solid #ccc;
-  margin: 0px 10px 10px 0px;
+  margin-right: 5px;
   font-size: 10px;
   font-family: robotoregular;
   padding: 3px;
-  border-radius: 5px;
+  border-radius: 3px;
+}
+
+.infos > div.labels{
+  text-align: left;
+  background: #EEE;
+  padding: 6px 8px 8px;
 }
 
 .labels .label .close_label{
 	margin-left: 3px;
+	font-size: 11px;
+    font-weight: bold;
 }
 
 .labels .label .close_label:hover{
@@ -2907,7 +2914,6 @@ margin:35px 0px;
 	position:relative;
 }
 /*Algolia search page ended*/
-
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
@@ -5237,14 +5243,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 .cashback {
     background-color: #f07746;
-    border-bottom: 8px solid #f07746;
+    border-bottom: 7px solid #f07746;
     border-right: 7px solid #ffffa7;
-    border-top: 8px solid #f07746;
+    border-top: 7px solid #f07746;
     color: #fff;
     float: left;
-    font-size: 12px;
-    font-weight: bold;
-    height: 16px;
+    font-size: 10px;
+    font-family: robotobold;
+    height: 14px;
     line-height: 1px;
     margin-left: 0 !important;
     margin-top: 2px;
