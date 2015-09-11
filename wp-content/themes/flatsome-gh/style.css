@@ -2885,16 +2885,6 @@ margin:35px 0px;
 	background:#ccc;
 }
 
-.quick_view_link{
-	color:#fff;
-	font-weight: bold;
-}
-
-.quick_view_link:hover{
-	color:red;
-	cursor: pointer;
-}
-
 /*As in press slider*/
 .press_slider{
 	width:100%;

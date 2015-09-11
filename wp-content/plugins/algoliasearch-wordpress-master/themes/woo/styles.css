@@ -155,7 +155,7 @@
 
 #algolia_instant_selector .hits .infos
 {
-    margin: 0 10px 10px 10px;
+    margin: 0 3px 10px 3px;
     padding: 0px;
     background-color: #FFFFFF;
     text-align: center;
@@ -281,8 +281,18 @@
 {
     border: solid 1px #dddddd;
     background-color: white;
-    margin: 20px 10px;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
 }
+
+#algolia_instant_selector .list .result
+{
+    margin: 5px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
 
 #algolia_instant_selector .result .result-sub-content-list
 {
@@ -302,7 +312,7 @@
     font-size: 13px;
     padding-top: 10px;
     color: #000000;
-    min-height: 125px;
+    min-height: 107px;
     line-height:20px;
     
 }
@@ -311,12 +321,14 @@
 }
 #algolia_instant_selector .list .result .result-thumbnail{
 	float: left;
+    border: none;
+    border-right: 1px solid #ddd;
+    width: 25%;
 }
 #algolia_instant_selector .list .result .result-excerpt{
 	text-align: left;
-	margin-left: 20px;
 	float: left;
-	width: 50%;
+	width: 75%;
     font-weight: normal;
     font-family: robotoregular;
 }
@@ -328,9 +340,8 @@
 
 #algolia_instant_selector .list-images
 {
-    height: auto; width: 100%; float: left;
+    height: auto; width: 100%; float: left;text-align: center;
 }
-
 #algolia_instant_selector .grid-images
 {
     height: auto; width: 100%;
@@ -346,10 +357,11 @@
 
 #algolia_instant_selector .result .result-excerpt .price-list
 {
-    color: #77a464;
     padding-top: 12px;
-    font-size: 17px;
     display: inline-block;
+    color: #17a959;
+    font-size: 20px;
+    font-family: robotobold;
 }
 
 #algolia_instant_selector .result .result-title
@@ -397,7 +409,9 @@
 #view .list{ width: 100% !important;
     display: inline;
     float: left;
-    min-height: 167px; }
+    min-height: 122px;
+    padding: 0 3px;
+}
 
 #view .grid{ float: left; display: inline; min-height: 287px; padding: 0;}
 .result-caption-filter{
@@ -454,13 +468,17 @@
 .list .referral {
     background: #ffffa7 none repeat scroll 0 0;
     border: 2px dotted #f07746;
-    height: 25px !important;
-    margin: 0 8px 4px;
-    font-size:18px;
+    height: 22px !important;
+    margin: 0 0 4px 0;
+    font-size:15px;
     line-height:20px;
     color: #8A5926;
-    width: 48%;
+    width: 100%;
+    max-width: 142px;
     display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 38px;
 }
 .grid .referral {
     background: #ffffa7 none repeat scroll 0 0;
@@ -789,7 +807,6 @@ margin-right: 4px;
 .button-123{
     margin-bottom: 20px;
 }
-
 .button-123 select{
     background: #fff;
     color: #666;
@@ -798,21 +815,100 @@ margin-right: 4px;
     width:100px;
     margin: 0;
 }
+#algolia_instant_selector .list-images img{
+    height: 120px;
+    width: 120px;
+}
 
+#algolia_instant_selector .list .result .result-title, #algolia_instant_selector .list .result .institute, #algolia_instant_selector .list .result .mode-duration-wrapper {
+    padding-left: 10px;
+}
+#algolia_instant_selector .list .result .mode-duration-wrapper {
+    text-align: right;
+}
 #algolia_instant_selector .result .result-excerpt .mode{
     color: #555;
     font-family: robotoregular;
     font-size: 14px;
 }
-
+#algolia_instant_selector .list .result .result-excerpt .title-institute-wrapper{
+    min-height: 76px;
+}
+#algolia_instant_selector .list .result .result-excerpt .mode{
+    padding: 0 10px;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
 #algolia_instant_selector .result .result-excerpt .price-coupan-wrapper{
     border-top: 1px solid #ddd;
     padding-top: 5px;
 }
-
+#algolia_instant_selector .list .result .result-excerpt .price-coupan-wrapper{
+    border:none;
+    padding: 0 10px;
+}
 #algolia_instant_selector .result .result-excerpt .mode-duration-wrapper{
     border-top: 1px solid #ddd;
-    padding-top: 5px;
+    padding: 5px 0; 
+}
+#algolia_instant_selector .list .result .result-excerpt .price-list {
+    padding-top: 0;
+}
+#algolia_instant_selector .list .result .mode,#algolia_instant_selector .list .result .price-coupan-wrapper{
+    display: inline-block;
+}
+#algolia_instant_selector .list .result .duration{
+    display: inline-block;
+}
+.quick_view_link, .learn_more_link,.compare_link{
+    border: 1px solid #fff;
+    color: #fff;
+}
+.quick_view_link:hover{
+    background-color: black;
+    border: 1px solid #fff;
+}
+.learn_more_link{
+    background: #2DCC70;    
+}
+.learn_more_link a,.learn_more_link a:hover{
+    color: #fff;
+}
+.learn_more_link:hover{
+    background: #17A959;    
+}
+.compare_link:hover{
+    background: #F59B0F;
+}
+
+.btn-wrapper{
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    margin-top: -60px;
+    left: 50%;
+    margin-left: -90px;
+}
+
+#algolia_instant_selector .list .result .btn-wrapper{
+    margin-top: -26px;
+    width: 100%;
+    margin-left: -5px;
+    left: 0;
+    text-align: right;
+}
+.link-btn{
+    display: inline-block;
+    width: 128px;
+    font-size: 17px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px 15px;
+    color: #fff;
+    font-family: robotoregular;
+}
+#algolia_instant_selector .list .result .link-btn{
+        margin: 8px;
 }
 /*-----Search page end-----*/
 
@@ -825,6 +921,9 @@ margin-right: 4px;
    .course-search::before, .course-search::after {
     top: 22px;
    }
+    #algolia_instant_selector .list .result .link-btn{
+            margin: 2px;
+    }
 }
 
 @media screen and (min-width: 768px){

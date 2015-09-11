@@ -64,10 +64,12 @@
                                 {{/featureImage}}
                                 </div>
                                 <div class="result-excerpt clearfix">
+                                    <div class="title-institute-wrapper">
 									<h4 class="result-title">
                                     	{{{ _highlightResult.title.value }}} - {{pa_specialization}}
                                 	</h4>
                                     <div class="institute">{{university}}</div>
+                                    </div>
                                     <div class="mode-duration-wrapper">
                                     <div class="mode"> Study Content: {{pa_study-content}}</div>
 									<div class="duration">{{pa_duration}}</div>
@@ -80,8 +82,11 @@
                                 </div>
                             </div>
                             <div class="quick_view_overlay">
-                                <div class="quick_view_link" data-prod={{objectID}}>Quick View</div>
-                                <div class="learn_more_link"><a href="{{permalink}}" target="_blank">Learn More</a></div>
+                                <div class="btn-wrapper">                        
+                                    <div class="compare_link link-btn" data-prod={{objectID}}>Compare</div>
+                                    <div class="quick_view_link link-btn" data-prod={{objectID}}>Quick View</div>
+                                    <div class="learn_more_link link-btn"><a href="{{permalink}}" target="_blank">Learn More</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>               
