@@ -937,8 +937,17 @@ margin-right: 4px;
     .row .right-pad-none{
         padding-right: 0;
     }
-
 /*-----Search page end-----*/    
+}
+
+@media screen and (max-width: 768px){
+    #algolia_instant_selector .hits .infos{
+        height: auto;
+        padding: 10px;
+        color: #374A5F;
+        font-family: robotoregular;
+        font-size: 15px;
+    }
 }
 
 @media screen and (max-width: 480px){
@@ -955,8 +964,15 @@ margin-right: 4px;
        width: 100%;
        font-size: 16px;
    }
-
    #result_for{
     float:none;
    }
+
+   .link-btn {
+        display: inline-block;
+        font-size: 13px;
+        padding: 5px 10px;
+        width: auto;
+    }
+
 }

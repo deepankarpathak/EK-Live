@@ -40,7 +40,7 @@
             </div>
             {{/sorting_indices.length}}
             <div style="clear: both;"></div>
-            <div class="labels"></div>
+            <div class="labels custom-hide-small"></div>
         </div>
         
         {{/hits.length}}
@@ -99,7 +99,7 @@
         
         <div style="clear: both;"></div>
     </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min-pad right-pad-none">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min-pad right-pad-none custom-hide-small">
         <div class="button-123 hidden-xs">
             <select>
                 <option>Popularity</option>
@@ -121,7 +121,7 @@
 </script>
 
 <script type="text/template" id="instant-facets-template">
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad facets{{#count}} with_facets{{/count}}">
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad custom-hide-small facets{{#count}} with_facets{{/count}}">
     <div class="clear_all_div">
        <button class="clear_all" onclick="clear_all()"><span class="refresh sprite"></span><span class="clear-btn">Clear All</span></button>
     </div> 
@@ -193,7 +193,7 @@
 
 
 <script type="text/template" id="instant-pagination-template">
-<div class="pagination-wrapper{{#facets_count}} with_facets{{/facets_count}}">
+<div class="pagination-wrapper{{#facets_count}} with_facets{{/facets_count}} custom-hide-small">
     <div class="text-center">
         <ul class="algolia-pagination">
             <a href="#" data-page="{{prev_page}}">

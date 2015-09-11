@@ -3080,6 +3080,9 @@ margin:35px 0px;
 	}
 }
 @media only screen and (max-width: 767px) {
+	.wrap-bg{
+		background: #F4F6F5;
+	}
 	.minicart{
 		position: absolute;
 		top: 12px;
@@ -3607,7 +3610,7 @@ margin:35px 0px;
 		top:40px;
 	}
 	.sticky-wrapper{
-		height: 80px !important;
+		height: 89px !important;
 	}
 	.account-dropdown.hide-for-small{
 		top:0 !important;
@@ -4194,7 +4197,6 @@ margin:35px 0px;
 		border-bottom: 1px solid #e0e0e0 !important;
 	}
 	.header-wrapper.before-sticky {
-		float: left;
 		width: 100%;
 	}
 	#logo-slider {
