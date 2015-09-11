@@ -48,12 +48,12 @@
         <ul id="view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
             {{#hits}}
 			
-			<li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 grid">
+			<li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 <?php if ( wp_is_mobile() ){echo 'list';}else{echo 'grid';}?>">
                     <div class="result">
                         <div class="result-content clearfix">          
-                            <div class="result-sub-content-grid clearfix">
+                            <div class="<?php if ( wp_is_mobile() ){echo 'result-sub-content-list';}else{echo 'result-sub-content-grid';}?> clearfix">
                                 <div class="result-thumbnail">
-                                    <div class="grid-images">
+                                    <div class="<?php if ( wp_is_mobile() ){echo 'list-images';}else{echo 'grid-images';}?>">
                                         {{#featureImage}}
                                             <img src="{{{ featureImage.file }}}" />
 
@@ -71,13 +71,13 @@
                                     <div class="institute">{{university}}</div>
                                     </div>
                                     <div class="mode-duration-wrapper">
-                                    <div class="mode"> Study Content: {{pa_study-content}}</div>
-									<div class="duration">{{pa_duration}}</div>
+                                    <div class="mode">{{pa_study-content}}</div>
+									<div class="duration"><img src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>"{{pa_duration}}</div>
                                     <div class="price-coupan-wrapper">
 									{{#pa_referral-cashback.length}}
 									<div class="referral"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
 									{{/pa_referral-cashback.length}}
-                                    <div class="price-grid"> Rs. {{_price}}</div>
+                                    <div class="<?php if ( wp_is_mobile() ){echo 'list-grid';}else{echo 'price-grid';}?>"> Rs. {{_price}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -105,10 +105,9 @@
                 <option>Popularity</option>
             </select>
             <button class="list changelook" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');"><img src="<?php echo get_site_url(); ?>/images/list.png"/></button>
-            <button class="grid changelook" onclick=" $('#view li').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" ><img src="<?php echo get_site_url(); ?>/images/grid.png"/></button>
+            <button class="grid changelook" onclick="$('#view li').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" ><img src="<?php echo get_site_url(); ?>/images/grid.png"/></button>
         </div>
-        <img src="http://localhost/edukart/wp-content/uploads/ad1.jpg" alt="advertise">
-        <img src="http://localhost/edukart/wp-content/uploads/ad2.jpg" alt="advertise">
+        <?php echo do_shortcode('[block id="advertisement"]'); ?>
     </div>
 
 {{^hits.length}}
