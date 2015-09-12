@@ -16,6 +16,7 @@
 
 <script type="text/template" id="instant-content-template">
     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 min-pad hits{{#facets_count}} with_facets{{/facets_count}}">
+        <span class="filter-icon"></span>
         {{#hits.length}}
         <div class="infos">
             <div id="result_for">
@@ -75,7 +76,7 @@
 									<div class="duration"><img src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>"{{pa_duration}}</div>
                                     <div class="price-coupan-wrapper">
 									{{#pa_referral-cashback.length}}
-									<div class="referral"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
+									<div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
 									{{/pa_referral-cashback.length}}
                                     <div class="<?php if ( wp_is_mobile() ){echo 'list-grid';}else{echo 'price-grid';}?>"> Rs. {{_price}}</div>
                                     </div>
@@ -119,8 +120,8 @@
         {{/hits.length}}
 </script>
 
-<script type="text/template" id="instant-facets-template">
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad custom-hide-small facets{{#count}} with_facets{{/count}}">
+<script type="text/template" id="instant-facets-template"><?php if(!wp_is_mobile()) { ?>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad facets{{#count}} with_facets{{/count}}">
     <div class="clear_all_div">
        <button class="clear_all" onclick="clear_all()"><span class="refresh sprite"></span><span class="clear-btn">Clear All</span></button>
     </div> 
@@ -183,11 +184,71 @@
     {{/count}}
     {{/facets}}
 </div>
+
 <div class="quick_view_overlay_display_data">
     <div class="data_quick_view">
         <div class="close_quick_view">X</div>        
     </div>
 </div>
+<?php } else{ ?>
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 facets{{#count}} with_facets{{/count}} mobile-filter">
+    <div class="filter-head clearfix">
+        <div class="pull-left filters-titl"><span class="sprite"></span><span>Filters</span></div>
+        <div class="pull-right reset">reset</div>
+    </div>
+    <div class="sort-by"><div class="col-xs-4">Sort by</div><div class="col-xs-8">relevence</div></div>
+     {{#facets}}
+    {{#count}}
+    <div class="facet">
+        <div class="name">
+            {{ facet_categorie_name }}
+        </div>
+        <div>
+        <div class = "scroll-pane" >
+            {{#sub_facets}}
+
+                {{#type.menu}}
+                <div data-tax="{{tax}}" data-name="{{nameattr}}" data-type="menu" class="{{#checked}}checked {{/checked}}sub_facet menu">
+                    <input style="display: none;" data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
+                    {{name}} {{#print_count}}({{count}}){{/print_count}}
+                </div>
+                {{/type.menu}}
+
+                {{#type.conjunctive}}
+                <div data-name="{{tax}}" data-type="conjunctive" class="{{#checked}}checked {{/checked}}sub_facet conjunctive">
+                    <input style="display: none;" data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
+                    {{name}} ({{count}})
+                </div>
+                {{/type.conjunctive}}
+                
+
+                {{#type.slider}}
+                <div class="algolia-slider algolia-slider-true" data-tax="{{tax}}" data-min="{{min}}" data-max="{{max}}" id="term"></div>
+                <div class="algolia-slider-info">
+                    <div class="min" style="float: left;">{{current_min}}</div>
+                    <div class="max" style="float: right;">{{current_max}}</div>
+                    <div style="clear: both"></div>
+                </div>
+                {{/type.slider}}
+
+                <div class="options">
+                {{#type.disjunctive}}
+                <div data-name="{{tax}}" data-type="disjunctive" class="{{#checked}}checked {{/checked}}sub_facet disjunctive">
+                    <input data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
+                    {{name}} ({{count}})
+                </div>
+                {{/type.disjunctive}}
+                </div>
+                
+
+            {{/sub_facets}}
+        </div>
+    </div>
+</div>
+    {{/count}}
+    {{/facets}}
+</div>
+<?php }?>
 </script>
 
 

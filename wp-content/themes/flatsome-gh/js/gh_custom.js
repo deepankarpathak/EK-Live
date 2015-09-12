@@ -250,6 +250,20 @@ jQuery(document).ready(function(){
 		$("#browse-cat").click(function(){
 			$("#mega-menu").slideToggle();
 		});
+
+		/*Algolia filter menu*/
+		$(".filter-icon").click(function(){
+	        $("#algolia_instant_selector").addClass("toggle-filter");
+	        $(".header-wrapper").css("height","0");
+	        $(".header-wrapper").css("overflow","hidden");
+	    });
+	    $(".mobile-filter").click(function(){
+	        $("#algolia_instant_selector").removeClass("toggle-filter");
+	        $(".header-wrapper").css("height","auto");
+	        $(".header-wrapper").css("overflow","none");
+	    });
+
+
 	    /*Algolia scrips start*/
 	    /*Gambheer Docking Undocking on filters*/
 		/*Gambheer Docking Undocking on filters*/

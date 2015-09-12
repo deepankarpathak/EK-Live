@@ -2903,6 +2903,13 @@ margin:35px 0px;
 	padding:0px;
 	position:relative;
 }
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right;
+}
+
 /*Algolia search page ended*/
 /*------------------------------------*\
    modify-css-educart-Media Queries
@@ -3409,7 +3416,7 @@ margin:35px 0px;
 		display: block;
 	}
 	.custom-hide-small{
-		display: none;
+		display: none !important;
 	}
 
 	.account-arrow.sprite{
