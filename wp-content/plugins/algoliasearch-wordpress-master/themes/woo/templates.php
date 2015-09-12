@@ -21,14 +21,14 @@
         <div class="infos">
             <div id="result_for">
             <?php 
-            	if(!empty($_SESSION['alogolia_notfound'])):
-            		echo $_SESSION['alogolia_notfound']." ({{nbHits}} courses)";
-            		unset($_SESSION['alogolia_notfound']);
-            	else:
+                if(!empty($_SESSION['alogolia_notfound'])):
+                    echo $_SESSION['alogolia_notfound']." ({{nbHits}} courses)";
+                    unset($_SESSION['alogolia_notfound']);
+                else:
             ?>           
-			Result{{^nbHits_one}}s{{/nbHits_one}} for <strong>{{query}}</strong> ({{nbHits}} courses)
-      		<?php endif; ?>
-			</div>
+            Result{{^nbHits_one}}s{{/nbHits_one}} for <strong>{{query}}</strong> ({{nbHits}} courses)
+            <?php endif; ?>
+            </div>
 
             {{#sorting_indices.length}}
             <div class="default_sorting">
@@ -48,8 +48,8 @@
 
         <ul id="view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
             {{#hits}}
-			
-			<li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 <?php if ( wp_is_mobile() ){echo 'list';}else{echo 'grid';}?>">
+            
+            <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 <?php if ( wp_is_mobile() ){echo 'list';}else{echo 'grid';}?>">
                     <div class="result">
                         <div class="result-content clearfix">          
                             <div class="<?php if ( wp_is_mobile() ){echo 'result-sub-content-list';}else{echo 'result-sub-content-grid';}?> clearfix">
@@ -66,34 +66,39 @@
                                 </div>
                                 <div class="result-excerpt clearfix">
                                     <div class="title-institute-wrapper">
-									<h4 class="result-title">
-                                    	{{{ _highlightResult.title.value }}} - {{pa_specialization}}
-                                	</h4>
+                                    <h4 class="result-title">
+                                        {{{ _highlightResult.title.value }}} - {{pa_specialization}}
+                                    </h4>
                                     <div class="institute">{{university}}</div>
                                     </div>
                                     <div class="mode-duration-wrapper">
                                     <div class="mode">{{pa_study-content}}</div>
-									<div class="duration"><img src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>"{{pa_duration}}</div>
+                                    <div class="duration"><img src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>"{{pa_duration}}</div>
                                     <div class="price-coupan-wrapper">
-									{{#pa_referral-cashback.length}}
-									<div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
-									{{/pa_referral-cashback.length}}
+                                    {{#pa_referral-cashback.length}}
+                                    <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
+                                    {{/pa_referral-cashback.length}}
                                     <div class="<?php if ( wp_is_mobile() ){echo 'list-grid';}else{echo 'price-grid';}?>"> Rs. {{_price}}</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="quick_view_overlay">
-                                <div class="btn-wrapper">                        
-                                    <div class="compare_link link-btn" data-prod={{objectID}}>Compare</div>
-                                    <div class="quick_view_link link-btn" data-prod={{objectID}}>Quick View</div>
-                                    <div class="learn_more_link link-btn"><a href="{{permalink}}" target="_blank">Learn More</a></div>
+                            
+                                <div class="quick_view_overlay">
+                                    <div class="btn-wrapper"> 
+                                    <?php if ( !wp_is_mobile() ){ ?>                       
+                                        <div class="compare_link link-btn" data-prod={{objectID}}>Compare</div>
+                                        <div class="quick_view_link link-btn" data-prod={{objectID}}>Quick View</div>
+                                    <?php }?>
+                                        <div class="learn_more_link link-btn"><a href="{{permalink}}" target="_blank">Learn More</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            
                         </div>
                     </div>               
-            	</a>
-			</li>
-			
+                </a>
+            </li>
+            
             {{/hits}}
         </ul>
 
@@ -112,11 +117,11 @@
     </div>
 
 {{^hits.length}}
-		<div class="row">
-        	<div class="col-lg-12 col-md-12 ">Sorry, You’re looking for <strong>{{query}}</strong> which isn’t here. However, we have wide range of courses which will help you enhance your skills.<br/><br/>For Certificates, <a href="http://edukart.com/edukart/#q=certificate&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22
+        <div class="row">
+            <div class="col-lg-12 col-md-12 ">Sorry, You’re looking for <strong>{{query}}</strong> which isn’t here. However, we have wide range of courses which will help you enhance your skills.<br/><br/>For Certificates, <a href="http://edukart.com/edukart/#q=certificate&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22
 ">Click here</a>  |   For Entrance Coaching, <a href="http://edukart.com/edukart/#q=entrance&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here.</a>  |  For School Education, <a href="http://edukart.com/edukart/#q=class&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a>   |   For Degree Programs, <a href="http://edukart.com/edukart/#q=degree&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a>  |   For Diplomas, <a href="http://edukart.com/edukart/#q=diploma&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a><br/>
-        	</div>
-		</div>
+            </div>
+        </div>
         {{/hits.length}}
 </script>
 
@@ -184,7 +189,6 @@
     {{/count}}
     {{/facets}}
 </div>
-
 <div class="quick_view_overlay_display_data">
     <div class="data_quick_view">
         <div class="close_quick_view">X</div>        
@@ -193,60 +197,72 @@
 <?php } else{ ?>
 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 facets{{#count}} with_facets{{/count}} mobile-filter">
     <div class="filter-head clearfix">
-        <div class="pull-left filters-titl"><span class="sprite"></span><span>Filters</span></div>
+        <div class="pull-left filters-titl"><span class="sprite close_filter">X</span><span>Filters</span></div>
         <div class="pull-right reset">reset</div>
     </div>
-    <div class="sort-by"><div class="col-xs-4">Sort by</div><div class="col-xs-8">relevence</div></div>
-     {{#facets}}
+
+    <div class="filter_options" style="width: 30%; font-size: 12px; float: left;">
+    {{#facets}}
     {{#count}}
-    <div class="facet">
+    
+    <div class="facet {{ facet_categorie_name }}" id="{{ facet_categorie_name }}">
         <div class="name">
             {{ facet_categorie_name }}
         </div>
-        <div>
-        <div class = "scroll-pane" >
-            {{#sub_facets}}
-
-                {{#type.menu}}
-                <div data-tax="{{tax}}" data-name="{{nameattr}}" data-type="menu" class="{{#checked}}checked {{/checked}}sub_facet menu">
-                    <input style="display: none;" data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
-                    {{name}} {{#print_count}}({{count}}){{/print_count}}
-                </div>
-                {{/type.menu}}
-
-                {{#type.conjunctive}}
-                <div data-name="{{tax}}" data-type="conjunctive" class="{{#checked}}checked {{/checked}}sub_facet conjunctive">
-                    <input style="display: none;" data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
-                    {{name}} ({{count}})
-                </div>
-                {{/type.conjunctive}}
-                
-
-                {{#type.slider}}
-                <div class="algolia-slider algolia-slider-true" data-tax="{{tax}}" data-min="{{min}}" data-max="{{max}}" id="term"></div>
-                <div class="algolia-slider-info">
-                    <div class="min" style="float: left;">{{current_min}}</div>
-                    <div class="max" style="float: right;">{{current_max}}</div>
-                    <div style="clear: both"></div>
-                </div>
-                {{/type.slider}}
-
-                <div class="options">
-                {{#type.disjunctive}}
-                <div data-name="{{tax}}" data-type="disjunctive" class="{{#checked}}checked {{/checked}}sub_facet disjunctive">
-                    <input data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
-                    {{name}} ({{count}})
-                </div>
-                {{/type.disjunctive}}
-                </div>
-                
-
-            {{/sub_facets}}
-        </div>
     </div>
-</div>
     {{/count}}
     {{/facets}}
+    </div>
+
+    <div class="filter_options_result" style="width: 70%;float: right;">
+    {{#facets}}
+    {{#count}}
+    <div class ="all_results result_{{ facet_categorie_name }}">
+            <div class = "scroll-pane" >
+                {{#sub_facets}}
+
+                    {{#type.menu}}
+                    <div data-tax="{{tax}}" data-name="{{nameattr}}" data-type="menu" class="{{#checked}}checked {{/checked}}sub_facet_mobile menu">
+                        <input style="display: none;" data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
+                        {{name}} {{#print_count}}({{count}}){{/print_count}}
+                    </div>
+                    {{/type.menu}}
+
+                    {{#type.conjunctive}}
+                    <div data-name="{{tax}}" data-type="conjunctive" class="{{#checked}}checked {{/checked}}sub_facet_mobile conjunctive">
+                        <input style="display: none;" data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
+                        {{name}} ({{count}})
+                    </div>
+                    {{/type.conjunctive}}
+                    
+
+                    {{#type.slider}}
+                    <div class="algolia-slider algolia-slider-true" data-tax="{{tax}}" data-min="{{min}}" data-max="{{max}}" id="term"></div>
+                    <div class="algolia-slider-info">
+                        <div class="min" style="float: left;">{{current_min}}</div>
+                        <div class="max" style="float: right;">{{current_max}}</div>
+                        <div style="clear: both"></div>
+                    </div>
+                    {{/type.slider}}
+
+                    <div class="options">
+                    {{#type.disjunctive}}
+                    <div data-name="{{tax}}" data-type="disjunctive" class="{{#checked}}checked {{/checked}}sub_facet_mobile disjunctive">
+                        <input data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
+                        {{name}} ({{count}})
+                    </div>
+                    {{/type.disjunctive}}
+                    </div>
+                    
+
+                {{/sub_facets}}
+            </div>
+        </div>
+        {{/count}}
+        {{/facets}}
+    </div>
+
+<div class="pull-right apply">Apply</div>
 </div>
 <?php }?>
 </script>

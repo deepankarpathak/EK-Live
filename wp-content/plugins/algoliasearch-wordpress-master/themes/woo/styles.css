@@ -977,7 +977,55 @@ margin-right: 4px;
 .sort-by{
     padding: 5px;
 }
+/*By GAmbheer*/
+.all_results{
+    display: none;
+}
 
+.all_results:first-child{
+    display:block;
+}
+
+.all_results .scroll-pane{
+    height:100%;
+    min-height:100%;
+    overflow:scroll;
+    max-height:100%;
+}
+
+.all_results .facet_value{
+    display: none;
+}
+
+.sub_facet_mobile{
+    border:1px solid green;
+    color:red;
+    padding:5px;
+    border-radius:5px;
+}
+
+.change_color{
+    border:2px solid black;
+    color:blue;
+    font-weight:bold;
+}
+
+.filter_options_result .scroll_pane{
+    margin:10px;
+}
+
+.apply{
+    margin-left: -15px;
+    width: 100%;
+    text-align: center;
+    background: blue;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 92%;
+}
+
+/*By GAmbheer End*/
 /*-----Search page end-----*/
 
 
