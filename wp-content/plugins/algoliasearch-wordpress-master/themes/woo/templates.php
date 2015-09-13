@@ -15,7 +15,7 @@
 </script>
 
 <script type="text/template" id="instant-content-template">
-    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 min-pad hits{{#facets_count}} with_facets{{/facets_count}}">
+    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 min-pad hits{{#facets_count}} with_facets{{/facets_count}} mob-view">
         <span class="filter-icon"></span>
         {{#hits.length}}
         <div class="infos">
@@ -196,7 +196,7 @@
         <div class="pull-left filters-titl"><span class="sprite"></span><span>Filters</span></div>
         <div class="pull-right reset">reset</div>
     </div>
-    <div class="sort-by"><div class="col-xs-4">Sort by</div><div class="col-xs-8">relevence</div></div>
+    <div class="sort-by-wrapper clearfix"><div class="col-xs-4 sort-by-titl">Sort by</div><div class="col-xs-8 filter-selected-wrapper"><span class="filter-selected">relevence</span></div></div>
      {{#facets}}
     {{#count}}
     <div class="facet">
