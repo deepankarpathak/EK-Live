@@ -364,9 +364,16 @@ if (algoliaSettings.type_of_search.indexOf("instant") !== -1)
                 return results_html;
             };
 
-            this.getHtmlForFacets = function (facetsTemplate, facets) {
+            this.getHtmlForFacets = function (facetsTemplate, facets,content) {
 
                 var facets_html = facetsTemplate.render({
+		/*Somesh : Loading contents */
+			hits: content.hits,
+                    nbHits: content.nbHits,
+                    nbHits_zero: (content.nbHits === 0),
+                    nbHits_one: (content.nbHits === 1),
+                    nbHits_many: (content.nbHits > 1),
+                    query: this.helper.state.query,
                     facets: facets,
                     count: facets.length,
                     getDate: this.getDate,

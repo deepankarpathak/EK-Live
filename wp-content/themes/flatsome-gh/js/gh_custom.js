@@ -255,13 +255,17 @@ jQuery(document).ready(function(){
 		/*Algolia filter menu*/
 		$("body").on("click", ".filter-icon", function () {
 	        $("#algolia_instant_selector").addClass("toggle-filter");
-	        $(".header-wrapper").css("height","0");
-	        $(".header-wrapper").css("overflow","hidden");
+	        $(".header-wrapper").css("display","none");
+	        $(".apply").show();
+	        $("body").css("overflow","hidden");
+	        $(".jPanelMenu").css("overflow","hidden");
 	    });
-	    $("body").on("click", ".close_filter", function () {
+	    $("body").on("click", ".close_filter, .apply ", function () {
 	        $("#algolia_instant_selector").removeClass("toggle-filter");
-	        $(".header-wrapper").css("height","auto");
-	        $(".header-wrapper").css("overflow","none");
+	        $(".header-wrapper").css("display","block");
+	        $(".apply").hide();
+	        $("body").css("overflow","initial");
+	        $(".jPanelMenu").css("overflow","initial");
 	    });
 
 

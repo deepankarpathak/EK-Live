@@ -136,7 +136,7 @@ jQuery(document).ready(function ($) {
         {
             var html_content = "";
 
-            html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix' style='background:#ccc;display:none'><div class='university_logo_desc row'></div></div><div class='row'><div class='banner_img_container' style='text-align:center;'><img src='http://localhost/edukart/wp-content/themes/flatsome-gh/images/loader.gif' style='height:77px;width:50px'/></div>";
+            html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix' style='background:#ccc;display:none'><div class='university_logo_desc row'></div></div><div class='row'><div class='banner_img_container custom-hide-small' style='text-align:center;'><img src='http://localhost/edukart/wp-content/themes/flatsome-gh/images/loader.gif' style='height:77px;width:50px'/></div>";
 
             var facets = [];
             var pages = [];
@@ -146,7 +146,7 @@ jQuery(document).ready(function ($) {
                 facets = engine.getFacets(content);
                 pages = engine.getPages(content);
 
-                html_content += engine.getHtmlForFacets(facetsTemplate, facets);
+                html_content += engine.getHtmlForFacets(facetsTemplate, facets,content);
             }
 
             html_content += engine.getHtmlForResults(resultsTemplate, content, facets);
@@ -458,6 +458,10 @@ jQuery(document).ready(function ($) {
         });
 
         $("body").on("click", ".mobile-filter .facet", function () {
+            $(".mobile-filter .facet").removeClass("active-tab");
+            $(this).addClass("active-tab");
+            $(".mobile-filter .facet .name").css({"color":"#2c3e50","font-family":"robotoregular"});
+            $(this).find(".name").css({"color":"#169f84","font-family":"robotobold"});
             if($(this).attr("id").indexOf(" ") > 0)
               var cls = $(this).attr("id").substr(0, $(this).attr("id").indexOf(" "));
             else
