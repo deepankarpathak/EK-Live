@@ -2443,8 +2443,10 @@ margin:35px 0px;
 	width:100px;
 }
 .ui-slider-handle.ui-state-default.ui-corner-all {
-	height: 17px;
-	width: 14px;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background: #808080;
 }
 /*------------------banner-slider------------------------*/
 #logo-slider .ux_slider_wrapper .column-inner {
@@ -2817,17 +2819,17 @@ margin:35px 0px;
   display: inline-block;
   color: #222;
   border: 1px solid #ccc;
-  margin-right: 5px;
+  margin: 8px 3px;
   font-size: 10px;
   font-family: robotoregular;
   padding: 3px;
   border-radius: 3px;
 }
 
-.infos > div.labels{
+.with_facets > div.labels{
   text-align: left;
   background: #EEE;
-  padding: 6px 8px 8px;
+  padding: 0 3px;
 }
 
 .labels .label .close_label{
@@ -5150,7 +5152,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   padding-right: 5px;
 }
 .ui-widget-header {
-  background: url("images/ui-bg_gloss-wave_35_f6a828_500x100.png") repeat-x scroll 50% 50% #f6a828;
+  background: #47AFD6;
   border: 1px solid #e78f08;
   color: #fff;
   font-weight: bold;

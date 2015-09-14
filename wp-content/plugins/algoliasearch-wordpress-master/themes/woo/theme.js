@@ -136,7 +136,7 @@ jQuery(document).ready(function ($) {
         {
             var html_content = "";
 
-            html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix' style='background:#ccc;display:none'><div class='university_logo_desc row'></div></div><div class='row wrap-bg'><div class='banner_img_container custom-hide-small' style='text-align:center;'></div>";
+            html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix' style='background:#ccc;display:none'><div class='university_logo_desc row'></div></div><div class='row'><div class='banner_img_container custom-hide-small' style='text-align:center;'></div>";
 
             var facets = [];
             var pages = [];
@@ -146,7 +146,7 @@ jQuery(document).ready(function ($) {
                 facets = engine.getFacets(content);
                 pages = engine.getPages(content);
 
-                html_content += engine.getHtmlForFacets(facetsTemplate, facets);
+                html_content += engine.getHtmlForFacets(facetsTemplate, facets,content);
             }
 
             html_content += engine.getHtmlForResults(resultsTemplate, content, facets);
@@ -163,7 +163,7 @@ jQuery(document).ready(function ($) {
             html_content += "</div></div>";
             $(algoliaSettings.instant_jquery_selector).html(html_content);
             
-            // Create labels on algolia serach page:Gambheer
+            // Create labels on algolia search page:Gambheer
             // Get selected filters
             $(".sub_facet").find("input[type='checkbox']").each(function (i) {
                if($(this).is(':checked') == true){
@@ -175,6 +175,13 @@ jQuery(document).ready(function ($) {
                     }
                }
             });
+
+            $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
+               if($(this).is(':checked') == true){
+                    $(this).parent().addClass('change_color');
+                }
+            });       
+
 
             // Get Labels from footer on load of algolia search filter
             $(".labels").html($(".raw_labels").html());
@@ -412,6 +419,50 @@ jQuery(document).ready(function ($) {
             performQueries(true);
         });
 
+        // Mobile filters
+        $("body").on("click", ".sub_facet_mobile", function () {
+                $(this).toggleClass('change_color');
+                $(this).find("input[type='checkbox']").each(function (i) {
+                $(this).prop("checked", !$(this).prop("checked"));
+
+                engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
+            });
+
+            $("body").on("click", ".apply", function () {
+                engine.helper.search(engine.helper.state.query);
+                engine.updateUrl(true);
+            });
+        });
+        
+        $("body").on("click", ".reset", function () {
+            $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
+               if($(this).is(':checked') == true){
+                    $(this).toggleClass('change_color');
+                    $(this).prop("checked", !$(this).prop("checked"));
+                    engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
+                }
+            });
+            var slide_dom = $(".algolia-slider");
+            engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
+            engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
+            engine.helper.search(engine.helper.state.query);
+            engine.updateUrl(true);
+        });
+
+        $("body").on("click", ".mobile-filter .facet", function () {
+            $(".mobile-filter .facet").removeClass("active-tab");
+            $(this).addClass("active-tab");
+            $(".mobile-filter .facet .name").css({"color":"#2c3e50","font-family":"robotoregular"});
+            $(this).find(".name").css({"color":"#169f84","font-family":"robotobold"});
+            if($(this).attr("id").indexOf(" ") > 0)
+              var cls = $(this).attr("id").substr(0, $(this).attr("id").indexOf(" "));
+            else
+              var cls = $(this).attr("id");  
+            
+            $(".all_results").fadeOut();
+            $(".result_"+cls).fadeIn();
+        });
+        // Mobile filters end
 
         $("body").on("slide", "", function (event, ui) {
             updateSlideInfos(ui);
