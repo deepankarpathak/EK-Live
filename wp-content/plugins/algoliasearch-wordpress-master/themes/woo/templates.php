@@ -16,35 +16,9 @@
 
 <script type="text/template" id="instant-content-template">
     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 min-pad hits{{#facets_count}} with_facets{{/facets_count}}">
-        <span class="filter-icon"></span>
-        {{#hits.length}}
-        <div class="infos">
-            <div id="result_for">
-            <?php 
-                if(!empty($_SESSION['alogolia_notfound'])):
-                    echo $_SESSION['alogolia_notfound']." ({{nbHits}} courses)";
-                    unset($_SESSION['alogolia_notfound']);
-                else:
-            ?>           
-            Result{{^nbHits_one}}s{{/nbHits_one}} for <strong>{{query}}</strong> ({{nbHits}} courses)
-            <?php endif; ?>
-            </div>
-
-            {{#sorting_indices.length}}
-            <div class="default_sorting">
-                <select id="index_to_use">
-                    <option {{#sortSelected}}{{relevance_index_name}}{{/sortSelected}} value="{{relevance_index_name}}">Sort Price</option>
-                    {{#sorting_indices}}
-                    <option {{#sortSelected}}{{index_name}}{{/sortSelected}} value="{{index_name}}">{{label}}</option>
-                    {{/sorting_indices}}
-                </select>
-            </div>
-            {{/sorting_indices.length}}
-            <div style="clear: both;"></div>
-            <div class="labels custom-hide-small"></div>
-        </div>
-        
-        {{/hits.length}}
+        <span class="filter-icon sprite"></span>
+        <div style="clear: both;"></div>
+        <div class="labels custom-hide-small"></div>
 
         <ul id="view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
             {{#hits}}
@@ -73,7 +47,7 @@
                                     </div>
                                     <div class="mode-duration-wrapper">
                                     <div class="mode">{{pa_study-content}}</div>
-                                    <div class="duration"><img src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>"{{pa_duration}}</div>
+                                    <div class="duration"><img class="calander-img" alt="calander-img" src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>"{{pa_duration}}</div>
                                     <div class="price-coupan-wrapper">
                                     {{#pa_referral-cashback.length}}
                                     <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
@@ -107,9 +81,18 @@
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min-pad right-pad-none custom-hide-small">
         <div class="button-123 hidden-xs">
-            <select>
-                <option>Popularity</option>
-            </select>
+         {{#hits.length}}
+           {{#sorting_indices.length}}
+            <div class="default_sorting">
+                <select id="index_to_use">
+                    <option {{#sortSelected}}{{relevance_index_name}}{{/sortSelected}} value="{{relevance_index_name}}">Sort Price</option>
+                    {{#sorting_indices}}
+                    <option {{#sortSelected}}{{index_name}}{{/sortSelected}} value="{{index_name}}">{{label}}</option>
+                    {{/sorting_indices}}
+                </select>
+            </div>
+            {{/sorting_indices.length}}
+            {{/hits.length}}
             <button class="list changelook" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');"><img src="<?php echo get_site_url(); ?>/images/list.png"/></button>
             <button class="grid changelook" onclick="$('#view li').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" ><img src="<?php echo get_site_url(); ?>/images/grid.png"/></button>
         </div>
@@ -125,8 +108,27 @@
         {{/hits.length}}
 </script>
 
-<script type="text/template" id="instant-facets-template"><?php if(!wp_is_mobile()) { ?>
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad facets{{#count}} with_facets{{/count}}">
+<script type="text/template" id="instant-facets-template">
+{{#hits.length}}
+        <div class="infos">
+            <div id="result_for">
+            <?php 
+                if(!empty($_SESSION['alogolia_notfound'])):
+                    echo $_SESSION['alogolia_notfound']." ({{nbHits}} courses)";
+                    unset($_SESSION['alogolia_notfound']);
+                else:
+            ?>           
+            Result{{^nbHits_one}}s{{/nbHits_one}} for <strong>{{query}}</strong> ({{nbHits}} courses)
+            <?php endif; ?>
+            </div>
+            
+            
+        </div>
+        
+        {{/hits.length}}
+<?php if(!wp_is_mobile()) { ?>
+
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad desk-filter-wrapper facets{{#count}} with_facets{{/count}}">
     <div class="clear_all_div">
        <button class="clear_all" onclick="clear_all()"><span class="refresh sprite"></span><span class="clear-btn">Clear All</span></button>
     </div> 
@@ -197,11 +199,19 @@
 <?php } else{ ?>
 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 facets{{#count}} with_facets{{/count}} mobile-filter">
     <div class="filter-head clearfix">
-        <div class="pull-left filters-titl"><span class="sprite close_filter">X</span><span>Filters</span></div>
+        <div class="pull-left filters-titl"><span class="sprite close_filter"></span><span>Filters</span></div>
         <div class="pull-right reset">reset</div>
     </div>
-
-    <div class="filter_options" style="width: 30%; font-size: 12px; float: left;">
+    <div class="sort-by-wrapper clearfix">
+        <div class="col-xs-4 sort-by-titl">Sort by</div>
+        <div class="col-xs-8 filter-selected-wrapper">
+            <span class="filter-selected">Fee </span>
+            <span class="arrow-bottom">&#9660;</sapn>
+            <span class="arrow-top">&#9650;</span>
+        </div>
+    </div>
+    <div class="clearfix filter-tab-wrapper">
+    <div class="filter_options">
     {{#facets}}
     {{#count}}
     
@@ -214,7 +224,7 @@
     {{/facets}}
     </div>
 
-    <div class="filter_options_result" style="width: 70%;float: right;">
+    <div class="filter_options_result">
     {{#facets}}
     {{#count}}
     <div class ="all_results result_{{ facet_categorie_name }}">
@@ -261,12 +271,11 @@
         {{/count}}
         {{/facets}}
     </div>
-
-<div class="pull-right apply">Apply</div>
 </div>
+</div>
+<div class="apply">Apply</div>
 <?php }?>
 </script>
-
 
 <script type="text/template" id="instant-pagination-template">
 <div class="pagination-wrapper{{#facets_count}} with_facets{{/facets_count}} custom-hide-small">
@@ -294,7 +303,4 @@
         </ul>
     </div>
 </div>
-</script>
-<script type="text/javascript">
-//alert($(".labels").text()); 
 </script>

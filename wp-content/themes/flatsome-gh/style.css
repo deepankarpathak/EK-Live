@@ -15,10 +15,6 @@ Template:     flatsome
 @import url("css/foundation5/foundation.min.css");
 */
 @import url("css/foundation.css?v=2.0.5");
-/*.edu-nave ul li:hover ul.edu_subnave li:hover .edu_subnave1 ul li{
-	border-bottom: 1px solid #ddd !important;
-}
-*/
 ul{
 	list-style-type: none;
 }
@@ -921,7 +917,6 @@ ul.payment_methods li label {
 	font-size: 14px;
 	margin-left: 10px;
 	text-transform: uppercase;
-	width: 85%;
 }
 .form-row.place-order input[type="submit"] {
 	background: none repeat scroll 0 0 #26ad61;
@@ -2449,8 +2444,10 @@ margin:35px 0px;
 	width:100px;
 }
 .ui-slider-handle.ui-state-default.ui-corner-all {
-	height: 17px;
-	width: 14px;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	background: #808080;
 }
 /*------------------banner-slider------------------------*/
 #logo-slider .ux_slider_wrapper .column-inner {
@@ -2822,18 +2819,25 @@ margin:35px 0px;
 /* Algolia search page CSS*/
 .labels .label{
   display: inline-block;
-  background: #E5E7E6;
   color: #222;
   border: 1px solid #ccc;
-  margin: 0px 10px 10px 0px;
+  margin: 8px 3px;
   font-size: 10px;
   font-family: robotoregular;
   padding: 3px;
-  border-radius: 5px;
+  border-radius: 3px;
+}
+
+.with_facets > div.labels{
+  text-align: left;
+  background: #EEE;
+  padding: 0 3px;
 }
 
 .labels .label .close_label{
 	margin-left: 3px;
+	font-size: 11px;
+    font-weight: bold;
 }
 
 .labels .label .close_label:hover{
@@ -2885,16 +2889,6 @@ margin:35px 0px;
 	background:#ccc;
 }
 
-.quick_view_link{
-	color:#fff;
-	font-weight: bold;
-}
-
-.quick_view_link:hover{
-	color:red;
-	cursor: pointer;
-}
-
 /*As in press slider*/
 .press_slider{
 	width:100%;
@@ -2913,8 +2907,13 @@ margin:35px 0px;
 	padding:0px;
 	position:relative;
 }
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right;
+}
 /*Algolia search page ended*/
-
 #logo-slider:hover .iosSlider .sliderNav a.nextSlide span, #logo-slider:hover .sliderNav a.prevSlide span {
 	opacity: 1; /*bug*/
 }
@@ -3928,6 +3927,9 @@ float: none;
 	}
 }
 @media only screen and (max-width: 767px) {
+	.wrap-bg{
+		background: #F4F6F5;
+	}
 	.minicart{
 		position: absolute;
 		top: 12px;
@@ -4257,7 +4259,7 @@ float: none;
 		display: block;
 	}
 	.custom-hide-small{
-		display: none;
+		display: none !important;
 	}
 
 	.account-arrow.sprite{
@@ -4472,7 +4474,7 @@ float: none;
 		top:40px;
 	}
 	.sticky-wrapper{
-		height: auto;
+		height: 89px !important;
 	}
 	.account-dropdown.hide-for-small{
 		top:0 !important;
@@ -4713,7 +4715,6 @@ float: none;
 		height: auto;
 		overflow: inherit;
 	}
-
 /*-------------------header-end----------*/
 
 /*------------------------------------*\
@@ -5056,7 +5057,6 @@ float: none;
 		border-bottom: 1px solid #e0e0e0 !important;
 	}
 	.header-wrapper.before-sticky {
-		float: left;
 		width: 100%;
 	}
 	#logo-slider {
