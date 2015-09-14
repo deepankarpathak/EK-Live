@@ -136,7 +136,7 @@ jQuery(document).ready(function ($) {
         {
             var html_content = "";
 
-            html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix' style='background:#ccc;display:none'><div class='university_logo_desc row'></div></div><div class='row'><div class='banner_img_container custom-hide-small' style='text-align:center;'><img src='http://localhost/edukart/wp-content/themes/flatsome-gh/images/loader.gif' style='height:77px;width:50px'/></div>";
+            html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix' style='background:#ccc;display:none'><div class='university_logo_desc row'></div></div><div class='row'><div class='banner_img_container custom-hide-small' style='text-align:center;'></div>";
 
             var facets = [];
             var pages = [];
@@ -186,10 +186,11 @@ jQuery(document).ready(function ($) {
             // Get Labels from footer on load of algolia search filter
             $(".labels").html($(".raw_labels").html());
             // Get Banner from footer on load of algolia search filter
-            setTimeout(
+            $(".banner_img_container").html($(".raw_banner_image").html());
+            /*setTimeout(
                 function(){
                 $(".banner_img_container").html($(".raw_banner_image").html());
-            }, 2000);
+            }, 2000);*/
                         
             //Get university institute logo and description
             
