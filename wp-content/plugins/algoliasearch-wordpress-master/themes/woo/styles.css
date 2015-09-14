@@ -864,6 +864,9 @@ margin-right: 4px;
     border: 1px solid #fff;
     color: #fff;
 }
+.compare_link{
+    display:none !important;
+}
 .quick_view_link:hover{
     background-color: black;
     border: 1px solid #fff;

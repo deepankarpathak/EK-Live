@@ -33,7 +33,7 @@
             {{#sorting_indices.length}}
             <div class="default_sorting">
                 <select id="index_to_use">
-                    <option {{#sortSelected}}{{relevance_index_name}}{{/sortSelected}} value="{{relevance_index_name}}">Default Sorting</option>
+                    <option {{#sortSelected}}{{relevance_index_name}}{{/sortSelected}} value="{{relevance_index_name}}">Sort Price</option>
                     {{#sorting_indices}}
                     <option {{#sortSelected}}{{index_name}}{{/sortSelected}} value="{{index_name}}">{{label}}</option>
                     {{/sorting_indices}}
@@ -49,12 +49,12 @@
         <ul id="view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
             {{#hits}}
             
-            <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 <?php if ( wp_is_mobile() ){echo 'list';}else{echo 'grid';}?>">
+            <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 list">
                     <div class="result">
                         <div class="result-content clearfix">          
-                            <div class="<?php if ( wp_is_mobile() ){echo 'result-sub-content-list';}else{echo 'result-sub-content-grid';}?> clearfix">
+                            <div class="result-sub-content-list clearfix">
                                 <div class="result-thumbnail">
-                                    <div class="<?php if ( wp_is_mobile() ){echo 'list-images';}else{echo 'grid-images';}?>">
+                                    <div class="list-images">
                                         {{#featureImage}}
                                             <img src="{{{ featureImage.file }}}" />
 
@@ -78,7 +78,7 @@
                                     {{#pa_referral-cashback.length}}
                                     <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
                                     {{/pa_referral-cashback.length}}
-                                    <div class="<?php if ( wp_is_mobile() ){echo 'list-grid';}else{echo 'price-grid';}?>"> Rs. {{_price}}</div>
+                                    <div class="list-grid"> Rs. {{_price}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -294,4 +294,7 @@
         </ul>
     </div>
 </div>
+</script>
+<script type="text/javascript">
+//alert($(".labels").text()); 
 </script>
