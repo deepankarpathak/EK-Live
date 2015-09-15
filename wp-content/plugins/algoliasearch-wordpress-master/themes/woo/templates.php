@@ -109,6 +109,23 @@
 </script>
 
 <script type="text/template" id="instant-facets-template">
+{{#hits.length}}
+        <div class="infos">
+            <div id="result_for">
+            <?php 
+                if(!empty($_SESSION['alogolia_notfound'])):
+                    echo $_SESSION['alogolia_notfound']." ({{nbHits}} courses)";
+                    unset($_SESSION['alogolia_notfound']);
+                else:
+            ?>           
+            Result{{^nbHits_one}}s{{/nbHits_one}} for <span>{{query}}</span> ({{nbHits}} courses)
+            <?php endif; ?>
+            </div>
+            
+            
+        </div>
+        
+        {{/hits.length}}
 <?php if(!wp_is_mobile()) { ?>
 
 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad desk-filter-wrapper facets{{#count}} with_facets{{/count}}">
