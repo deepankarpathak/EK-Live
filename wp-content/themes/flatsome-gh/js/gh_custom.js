@@ -523,7 +523,6 @@ jQuery(document).ready(function(){
 		    else{
 		    	$(".raw_university_logo_desc .univ_logo img").attr("src", "");
 		        $(".raw_university_logo_desc .univ_description").text("");
-	            $(".raw_banner_image img").attr("src", default_banner);
 		    	$(".raw_banner_image img").attr("src", default_banner);
 		    }
 		}

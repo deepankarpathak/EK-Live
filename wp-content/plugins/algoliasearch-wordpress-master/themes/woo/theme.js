@@ -199,7 +199,7 @@ jQuery(document).ready(function ($) {
             }, 2000);*/
                         
             //Get university institute logo and description
-            
+           
             if($(".raw_university_logo_desc .univ_logo img").attr("src") != undefined){
                 $(".univ_logo_outer").show();
                 $(".university_logo_desc").html($(".raw_university_logo_desc").html());
@@ -207,6 +207,9 @@ jQuery(document).ready(function ($) {
                     $(".banner_img_container").hide();
                 }
             }
+            if($(".raw_university_logo_desc .univ_logo img").attr("src") == "")
+                $(".univ_logo_outer").hide();
+
 
             updateSliderValues();
             $(".algolia-slider").parent().prev().css("display","none");
