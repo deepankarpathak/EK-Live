@@ -334,8 +334,8 @@ jQuery(document).ready(function() {
 	<img src="<?php echo get_site_url();?>/wp-content/uploads/default_banner.jpg" height="50"/>
 </div>
 <div class="raw_university_logo_desc" style="display:none">
-	<div class="large-3 columns univ_logo"><img /></div>
-	<div class="large-9 columns univ_description"></div>
+	<div class="large-2 columns univ_logo"><img /></div>
+	<div class="large-10 columns univ_description"></div>
 </div>
 
 </body>

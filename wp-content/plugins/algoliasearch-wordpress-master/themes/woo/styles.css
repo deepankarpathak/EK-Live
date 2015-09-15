@@ -802,7 +802,9 @@ button.changelook:focus, button.changelook:hover{
 
 .banner_img_container img{
     width: 100%;
+    max-width: 1080px;
     padding: 10px 0;
+    height: 125px;
 }
 .refresh{
     background-position: -115px -209px;
@@ -920,10 +922,12 @@ button.changelook:focus, button.changelook:hover{
     font-family: robotoregular;
 }
 #algolia_instant_selector .list .result .link-btn{
-        margin: 0 8px;
+    margin: 0 8px;
 }
 .side-ad{
     margin:8px 0;
+    width: 100%;
+    max-width: 175px;
 }
 #algolia_instant_selector .mobile-filter{
     position: fixed;
@@ -1015,6 +1019,33 @@ button.changelook:focus, button.changelook:hover{
 }
 .filter-icon.sprite{
     display: none !important;
+}
+
+.univ_logo_outer{
+    background: #eee;
+    display: none;
+    margin-bottom: 10px;
+}
+#algolia_instant_selector .univ_logo{
+    padding-left:0;
+    padding-right: 5px;
+}
+#algolia_instant_selector .univ_logo img{
+    max-height: 180px;
+    width: 100%;
+    max-width: 180px;
+}
+.univ_name{
+    color: #2c3e50;    
+}
+.univ_description{
+    color: #2c3e50;
+    font-size: 15px;
+    font-family: robotoregular;
+    line-height: 20px;
+}
+.university_logo_desc{
+    padding: 10px 0;
 }
 
 /*By GAmbheer*/
