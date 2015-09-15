@@ -308,8 +308,8 @@ jQuery(document).ready(function(){
 		        var data_name = $(this).attr("data-name");
 		        var data_tax = $(this).attr("data-tax");
 		        if($(this).is(':checked') == true){
-		            var raw_label_html = $(".raw_labels").html();
-		            $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");
+		            /*var raw_label_html = $(".raw_labels").html();
+		            $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");*/
 		        }
 		        else{
 		        	$(".raw_labels").find($(".label")).each(function(){
@@ -368,6 +368,15 @@ jQuery(document).ready(function(){
 	        		showWidget : '' 
 	        	};
 	        	var script = document.createElement('script');script.async = true; script.src = (document.location.protocol == 'https:' ? "//d11yp7khhhspcr.cloudfront.net" : "//cdn.invitereferrals.com") + '/js/invite-referrals-1.0.js'; var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBefore(script, entry); })(); 
+
+        	$('button').on('click',function(e) {
+			    if ($(this).hasClass('grid')) {
+			        $('#view li').removeClass('list').addClass('grid');
+			    }
+			    else if($(this).hasClass('list')) {
+			        $('#view li').removeClass('grid').addClass('list');
+			    }
+			});
 });
 
 // Algolia Functions
@@ -406,14 +415,14 @@ jQuery(document).ready(function(){
 		    } 
 
 		    var facet = jQuery(args).nextAll('.scroll-pane').find("input[type='checkbox']");
+		    var data_tax = facet.attr("data-tax");
+		    
 		    facet.each(function (i) {
-		        var data_name = $(this).attr("data-name");
-		        var data_tax = $(this).attr("data-tax");
-		        	$(".raw_labels").find($(".label")).each(function(){
-		        		if(data_name == $(this).attr("data-name")){
-		        			$(this).remove();
-		        		}
-		        	});
+	        	$(".raw_labels").find($(".label")).each(function(){
+	        		if(data_tax == $(this).attr("data-tax")){
+	        			$(this).remove();
+	        		}
+	        	});
 		    });   
 		    $(".raw_banner_image img").attr("src", default_banner);	 	
 		}
@@ -451,14 +460,6 @@ jQuery(document).ready(function(){
 		    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
 		    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
 		}
-		$('button').on('click',function(e) {
-		    if ($(this).hasClass('grid')) {
-		        $('#view li').removeClass('list').addClass('grid');
-		    }
-		    else if($(this).hasClass('list')) {
-		        $('#view li').removeClass('grid').addClass('list');
-		    }
-		});
 
 		function dock_undock(args){
 		    $(args).next('.dock_this').slideToggle();
