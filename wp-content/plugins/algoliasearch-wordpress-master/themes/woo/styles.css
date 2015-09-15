@@ -276,14 +276,14 @@
 {
     border: solid 1px #dddddd;
     background-color: white;
-    margin: 10px;
+    margin: 0 10px 20px;
     border-radius: 10px;
     overflow: hidden;
 }
 
 #algolia_instant_selector .list .result
 {
-    margin: 5px 0;
+    margin: 0 0 10px;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -678,7 +678,14 @@ display: inline-block;
 margin-right: 4px;
 }
 #index_to_use{margin-top:5px;}
-.changelook{padding: 0;background-color: transparent;margin: 0}
+.changelook{outline: 1px solid transparent;padding: 1px;background-color: transparent;margin: 0}
+
+button.changelook:focus, button.changelook:hover{
+    outline: 1px solid #999;
+    padding: 1px;
+    box-shadow: none;
+    background-color:#fff;
+}
 
 .dock_undock{
     background:url("../../../../themes/flatsome-gh/images/detail-tab-icon.png");
@@ -795,7 +802,9 @@ margin-right: 4px;
 
 .banner_img_container img{
     width: 100%;
+    max-width: 1080px;
     padding: 10px 0;
+    height: 125px;
 }
 .refresh{
     background-position: -115px -209px;
@@ -913,10 +922,12 @@ margin-right: 4px;
     font-family: robotoregular;
 }
 #algolia_instant_selector .list .result .link-btn{
-        margin: 0 8px;
+    margin: 0 8px;
 }
 .side-ad{
     margin:8px 0;
+    width: 100%;
+    max-width: 175px;
 }
 #algolia_instant_selector .mobile-filter{
     position: fixed;
@@ -991,7 +1002,12 @@ margin-right: 4px;
 }
 #result_for{
     text-align: center;
+    color: #BCC2C2;
 }
+#result_for span{
+    color: #2c3e50;    
+}
+
 .arrow-bottom,.arrow-top{
     font-size: 10px;
     position: relative;
@@ -1003,6 +1019,33 @@ margin-right: 4px;
 }
 .filter-icon.sprite{
     display: none !important;
+}
+
+.univ_logo_outer{
+    background: #eee;
+    display: none;
+    margin-bottom: 10px;
+}
+#algolia_instant_selector .univ_logo{
+    padding-left:0;
+    padding-right: 5px;
+}
+#algolia_instant_selector .univ_logo img{
+    max-height: 180px;
+    width: 100%;
+    max-width: 180px;
+}
+.univ_name{
+    color: #2c3e50;    
+}
+.univ_description{
+    color: #2c3e50;
+    font-size: 15px;
+    font-family: robotoregular;
+    line-height: 20px;
+}
+.university_logo_desc{
+    padding: 10px 0;
 }
 
 /*By GAmbheer*/
@@ -1112,7 +1155,7 @@ margin-right: 4px;
     #algolia_instant_selector{
         background-color: #F4F6F5;
     }
-    .desk-filter-wrapper{
+    .desk-filter-wrapper > div{
         background-color: #fff;
     }
     #algolia_instant_selector .facet .name {

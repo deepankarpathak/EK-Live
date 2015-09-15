@@ -56,18 +56,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="quick_view_overlay">
-                                <div class="btn-wrapper">                        
-                                    <div class="compare_link link-btn" data-prod={{objectID}}>Compare</div>
-                                    <div class="quick_view_link link-btn" data-prod={{objectID}}>Quick View</div>
-                                    <div class="learn_more_link link-btn"><a href="{{permalink}}" target="_blank">Learn More</a></div>
+                            
+                                <div class="quick_view_overlay">
+                                    <div class="btn-wrapper"> 
+                                    <?php if ( !wp_is_mobile() ){ ?>                       
+                                        <div class="compare_link link-btn" data-prod={{objectID}}>Compare</div>
+                                        <div class="quick_view_link link-btn" data-prod={{objectID}}>Quick View</div>
+                                    <?php }?>
+                                        <div class="learn_more_link link-btn"><a href="{{permalink}}" target="_blank">Learn More</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            
                         </div>
                     </div>               
-            	</a>
-			</li>
-			
+                </a>
+            </li>
+            
             {{/hits}}
         </ul>
 
@@ -105,7 +110,8 @@
 
 <script type="text/template" id="instant-facets-template">
 <?php if(!wp_is_mobile()) { ?>
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad facets{{#count}} with_facets{{/count}}">
+
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad desk-filter-wrapper facets{{#count}} with_facets{{/count}}">
     <div class="clear_all_div">
        <button class="clear_all" onclick="clear_all()"><span class="refresh sprite"></span><span class="clear-btn">Clear All</span></button>
     </div> 
@@ -174,8 +180,22 @@
     </div>
 </div>
 <?php } else{ ?>
-<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 facets{{#count}} with_facets{{/count}}">
-     {{#facets}}
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 facets{{#count}} with_facets{{/count}} mobile-filter">
+    <div class="filter-head clearfix">
+        <div class="pull-left filters-titl"><span class="sprite close_filter"></span><span>Filters</span></div>
+        <div class="pull-right reset">reset</div>
+    </div>
+    <div class="sort-by-wrapper clearfix">
+        <div class="col-xs-4 sort-by-titl">Sort by</div>
+        <div class="col-xs-8 filter-selected-wrapper">
+            <span class="filter-selected">Fee </span>
+            <span class="arrow-bottom">&#9660;</sapn>
+            <span class="arrow-top">&#9650;</span>
+        </div>
+    </div>
+    <div class="clearfix filter-tab-wrapper">
+    <div class="filter_options">
+    {{#facets}}
     {{#count}}
     
     <div class="facet {{ facet_categorie_name }}" id="{{ facet_categorie_name }}">
