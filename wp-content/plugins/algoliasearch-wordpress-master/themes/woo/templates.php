@@ -120,7 +120,7 @@
                     unset($_SESSION['alogolia_notfound']);
                 else:
             ?>           
-            Result{{^nbHits_one}}s{{/nbHits_one}} for <strong>{{query}}</strong> ({{nbHits}} courses)
+            Result{{^nbHits_one}}s{{/nbHits_one}} for <span>{{query}}</span> ({{nbHits}} courses)
             <?php endif; ?>
             </div>
             

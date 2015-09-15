@@ -192,14 +192,6 @@
 /*    margin-top: 10px;
 */}
 
-#algolia_instant_selector .facet .name {
-    padding: 10px;
-    text-align: left;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-family: robotobold;
-    color:#2c3e50;
-}
 #algolia_instant_selector .facet .sub_facet
 {
     padding: 5px 10px;
@@ -284,14 +276,14 @@
 {
     border: solid 1px #dddddd;
     background-color: white;
-    margin: 10px;
+    margin: 0 10px 20px;
     border-radius: 10px;
     overflow: hidden;
 }
 
 #algolia_instant_selector .list .result
 {
-    margin: 5px 0;
+    margin: 0 0 10px;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -686,7 +678,14 @@ display: inline-block;
 margin-right: 4px;
 }
 #index_to_use{margin-top:5px;}
-.changelook{padding: 0;background-color: transparent;margin: 0}
+.changelook{outline: 1px solid transparent;padding: 1px;background-color: transparent;margin: 0}
+
+button.changelook:focus, button.changelook:hover{
+    outline: 1px solid #999;
+    padding: 1px;
+    box-shadow: none;
+    background-color:#fff;
+}
 
 .dock_undock{
     background:url("../../../../themes/flatsome-gh/images/detail-tab-icon.png");
@@ -996,7 +995,12 @@ margin-right: 4px;
 }
 #result_for{
     text-align: center;
+    color: #BCC2C2;
 }
+#result_for span{
+    color: #2c3e50;    
+}
+
 .arrow-bottom,.arrow-top{
     font-size: 10px;
     position: relative;
@@ -1117,9 +1121,18 @@ margin-right: 4px;
     #algolia_instant_selector{
         background-color: #F4F6F5;
     }
-    .desk-filter-wrapper{
+    .desk-filter-wrapper > div{
         background-color: #fff;
     }
+    #algolia_instant_selector .facet .name {
+        padding: 10px;
+        text-align: left;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-family: robotobold;
+        color:#2c3e50;
+    }
+
 /*-----Search page end-----*/    
 }
 

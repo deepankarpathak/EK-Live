@@ -373,7 +373,7 @@ jQuery(document).ready(function(){
 		        var data_tax = $(this).attr("data-tax");
 		        if($(this).is(':checked') == false){
 		            var raw_label_html = $(".raw_labels").html();
-		            $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>X</span></div>");
+		            $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");
 		        }
 		        else{
 		        	$(".raw_labels").find($(".label")).each(function(){

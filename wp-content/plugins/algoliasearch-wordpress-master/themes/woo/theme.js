@@ -184,6 +184,12 @@ jQuery(document).ready(function ($) {
 
 
             // Get Labels from footer on load of algolia search filter
+             if($(".raw_labels").html() != ""){
+               $(".labels").css("margin-bottom", "15px");
+             }
+             else{
+               $(".labels").css("margin-bottom", "0px");   
+             }
             $(".labels").html($(".raw_labels").html());
             // Get Banner from footer on load of algolia search filter
             $(".banner_img_container").html($(".raw_banner_image").html());
