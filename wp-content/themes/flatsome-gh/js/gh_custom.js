@@ -509,7 +509,7 @@ jQuery(document).ready(function(){
 		            if(university_data[i].name == data_name){
 		                if((university_data[i].logo.substr(university_data[i].logo.length - 3) == "jpg" || university_data[i].logo.substr(university_data[i].logo.length - 3) == "png") && university_data[i].description != ""){
 		                    $(".raw_university_logo_desc .univ_logo img").attr("src", university_data[i].logo);
-		                    $(".raw_university_logo_desc .univ_description").html("<h2>"+university_data[i].name+"</h2>"+university_data[i].description);
+		                    $(".raw_university_logo_desc .univ_description").html("<h2 class='univ_name'>"+university_data[i].name+"</h2>"+university_data[i].description);
 		                    $(".raw_banner_image img").attr("src", "");
 		                }
 	                	else{
