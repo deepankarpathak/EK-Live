@@ -15,7 +15,6 @@
 </script>
 
 <script type="text/template" id="instant-content-template">
-
     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 min-pad hits{{#facets_count}} with_facets{{/facets_count}}">
         <span class="filter-icon sprite"></span>
         <div style="clear: both;"></div>
@@ -24,12 +23,12 @@
         <ul id="view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearfix">
             {{#hits}}
             
-            <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 <?php if ( wp_is_mobile() ){echo 'list';}else{echo 'grid';}?>">
+            <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 list">
                     <div class="result">
                         <div class="result-content clearfix">          
-                            <div class="<?php if ( wp_is_mobile() ){echo 'result-sub-content-list';}else{echo 'result-sub-content-grid';}?> clearfix">
+                            <div class="result-sub-content-list clearfix">
                                 <div class="result-thumbnail">
-                                    <div class="<?php if ( wp_is_mobile() ){echo 'list-images';}else{echo 'grid-images';}?>">
+                                    <div class="list-images">
                                         {{#featureImage}}
                                             <img src="{{{ featureImage.file }}}" />
 
@@ -53,7 +52,7 @@
                                     {{#pa_referral-cashback.length}}
                                     <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
                                     {{/pa_referral-cashback.length}}
-                                    <div class="<?php if ( wp_is_mobile() ){echo 'list-grid';}else{echo 'price-grid';}?>"> Rs. {{_price}}</div>
+                                    <div class="list-grid"> Rs. {{_price}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +79,6 @@
         
         <div style="clear: both;"></div>
     </div>
-
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min-pad right-pad-none custom-hide-small">
         <div class="button-123 hidden-xs">
          {{#hits.length}}

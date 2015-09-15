@@ -193,19 +193,28 @@ jQuery(document).ready(function ($) {
             $(".labels").html($(".raw_labels").html());
             // Get Banner from footer on load of algolia search filter
             $(".banner_img_container").html($(".raw_banner_image").html());
+            /*setTimeout(
+                function(){
+                $(".banner_img_container").html($(".raw_banner_image").html());
+            }, 2000);*/
+                        
             //Get university institute logo and description
             
             if($(".raw_university_logo_desc .univ_logo img").attr("src") != undefined){
                 $(".univ_logo_outer").show();
                 $(".university_logo_desc").html($(".raw_university_logo_desc").html());
+                if($(".raw_banner_image img").attr("src") == ""){
+                    $(".banner_img_container").hide();
+                }
             }
 
             updateSliderValues();
             $(".algolia-slider").parent().prev().css("display","none");
-           if(list)
-           {
+
+            if(list)
+            {
                $("button.list").trigger("click");
-           }
+            }
         }
 
         function activateInstant()

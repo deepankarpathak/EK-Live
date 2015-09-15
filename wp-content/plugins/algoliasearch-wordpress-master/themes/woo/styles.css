@@ -872,6 +872,9 @@ button.changelook:focus, button.changelook:hover{
     border: 1px solid #fff;
     color: #fff;
 }
+.compare_link{
+    display:none !important;
+}
 .quick_view_link:hover{
     background-color: black;
     border: 1px solid #fff;
@@ -1132,7 +1135,6 @@ button.changelook:focus, button.changelook:hover{
         font-family: robotobold;
         color:#2c3e50;
     }
-
 /*-----Search page end-----*/    
 }
 
