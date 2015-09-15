@@ -136,7 +136,7 @@ jQuery(document).ready(function ($) {
         {
             var html_content = "";
 
-            html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix' style='background:#ccc;display:none'><div class='university_logo_desc row'></div></div><div class='row'><div class='banner_img_container custom-hide-small' style='text-align:center;'></div>";
+            html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix'><div class='university_logo_desc row'></div></div><div class='row'><div class='banner_img_container custom-hide-small' style='text-align:center;'></div>";
 
             var facets = [];
             var pages = [];
@@ -184,6 +184,12 @@ jQuery(document).ready(function ($) {
 
 
             // Get Labels from footer on load of algolia search filter
+             if($(".raw_labels").html() != ""){
+               $(".labels").css("margin-bottom", "15px");
+             }
+             else{
+               $(".labels").css("margin-bottom", "0px");   
+             }
             $(".labels").html($(".raw_labels").html());
             // Get Banner from footer on load of algolia search filter
             $(".banner_img_container").html($(".raw_banner_image").html());

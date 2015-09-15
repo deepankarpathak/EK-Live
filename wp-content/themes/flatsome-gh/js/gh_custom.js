@@ -297,7 +297,7 @@ jQuery(document).ready(function(){
 		        var data_tax = $(this).attr("data-tax");
 		        if($(this).is(':checked') == true){
 		            var raw_label_html = $(".raw_labels").html();
-		            $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>X</span></div>");
+		            $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");
 		        }
 		        else{
 		        	$(".raw_labels").find($(".label")).each(function(){
@@ -509,7 +509,7 @@ jQuery(document).ready(function(){
 		            if(university_data[i].name == data_name){
 		                if((university_data[i].logo.substr(university_data[i].logo.length - 3) == "jpg" || university_data[i].logo.substr(university_data[i].logo.length - 3) == "png") && university_data[i].description != ""){
 		                    $(".raw_university_logo_desc .univ_logo img").attr("src", university_data[i].logo);
-		                    $(".raw_university_logo_desc .univ_description").text(university_data[i].description);
+		                    $(".raw_university_logo_desc .univ_description").html("<h2>"+university_data[i].name+"</h2>"+university_data[i].description);
 		                    $(".raw_banner_image img").attr("src", "");
 		                }
 	                	else{
@@ -519,6 +519,12 @@ jQuery(document).ready(function(){
 	                	}	
 		            }
 		        }
+		    }
+		    else{
+		    	$(".raw_university_logo_desc .univ_logo img").attr("src", "");
+		        $(".raw_university_logo_desc .univ_description").text("");
+	            $(".raw_banner_image img").attr("src", default_banner);
+		    	$(".raw_banner_image img").attr("src", default_banner);
 		    }
 		}
 // Algolia functions end
