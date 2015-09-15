@@ -279,7 +279,7 @@ function gh_remove_sku_from_front_end(){
 }
 
 function gh_edit_product_tabs($tabs){
-    unset( $tabs['reviews'] ); 			// Remove the reviews tab
+   // unset( $tabs['reviews'] ); 			// Remove the reviews tab
     $tabs['description']['title'] = __( 'Course Description' );		// Rename the Course Description tab
     $tabs['additional_information']['callback'] = 'gh_additional_information_tab_content';	// Custom description callback
     
@@ -557,3 +557,6 @@ function wc_empty_cart_redirect_url() {
 add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
 
 include 'functions-lk.php';
+
+
+//add_action( 'woocommerce_product_tabs', 'woocommerce_product_reviews_tab', 100 );
