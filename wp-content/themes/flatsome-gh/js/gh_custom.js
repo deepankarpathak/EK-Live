@@ -307,13 +307,13 @@ jQuery(document).ready(function(){
 		        	});
 		        }
 		    });
-
+/*
 		    if(facet.attr("data-tax") == "product_cat"){
 		    	getCategoryBanner(facet);
 		    }
 		    if(facet.attr("data-tax") == "university"){
 		    	getUniversityLogoDesc(facet);
-		    }
+		    }*/
 
 		});
 
@@ -454,77 +454,56 @@ jQuery(document).ready(function(){
 		    $(args).children('.dock_undock').toggleClass("dock_down");;
 		}
 
-		// Category banner
-		function getCategoryBanner(facet){
-			var parent = facet.parent().parent().parent();
-		    var checkboxes = parent.find("input[type='checkbox']");
-		    if(facet.is(':checked') == true){
-	   			var data_name = facet.attr("data-name");
-		        for(var i=0; i<cat_banners.length; i++){
-		            if(cat_banners[i].name == data_name){
-		                if(cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "jpg" || cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "png"){
-		                    $(".raw_banner_image img").attr("src", cat_banners[i].banner);
-		                    $(".raw_university_logo_desc .univ_logo img").attr("src", "");
-		   					$(".raw_university_logo_desc .univ_description").text("");
-		                }
-		                else{
-		                	$(".raw_banner_image img").attr("src", default_banner);	
-		                }
-		            }
-		        }
-		    }else{
-		    	var count = 0;
-		    	var data_name;
-		    	checkboxes.each(function (i) {
-		    		if($(this).is(':checked')){
-		    			data_name = $(this).attr("data-name");
-		    			count++;
-		    		}
-		    	});
-		    	if(count == 1){
-		    		for(var i=0; i<cat_banners.length; i++){
-			            if(cat_banners[i].name == data_name){
-			                if(cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "jpg" || cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "png"){
-			                    $(".raw_banner_image img").attr("src", cat_banners[i].banner);
-			                    $(".raw_university_logo_desc .univ_logo img").attr("src", "");
-			   					$(".raw_university_logo_desc .univ_description").text("");
-			                }
-			                else{
-			                	$(".raw_banner_image img").attr("src", default_banner);	
-			                }
-			            }
-		        	}
-		        }
-		        else{
-		      		$(".raw_banner_image img").attr("src", default_banner);	
-		      	}
-		    }
+		function setDefaultBanner(){
+			$(".raw_banner_image img").attr("src", default_banner);
+			$(".raw_university_logo_desc .univ_logo img").attr("src", "");
+	   		$(".raw_university_logo_desc .univ_description").text("");
 		}
+		// Category banner
+		function getCategoryBanner(data_name){
+	        for(var i=0; i<cat_banners.length; i++){
+	            if(cat_banners[i].name == data_name){
+	                if(cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "jpg" || cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "png"){
+	                    $(".raw_banner_image img").attr("src", cat_banners[i].banner);
+	                    $(".raw_university_logo_desc .univ_logo img").attr("src", "");
+	   					$(".raw_university_logo_desc .univ_description").text("");
+	   					return false;
+	                }
+	                else{
+	                	$(".raw_banner_image img").attr("src", default_banner);	
+	                }
+	            }
+	        }
+	    }
 		// University LOGO and Description
-		function getUniversityLogoDesc(facet){
-			var parent = facet.parent().parent().parent(); 
-		    var checkboxes = parent.find("input[type='checkbox']");
-		    if(facet.is(':checked') == true){
-	   			var data_name = facet.attr("data-name");
-		        for(var i=0; i<university_data.length; i++){
-		            if(university_data[i].name == data_name){
-		                if((university_data[i].logo.substr(university_data[i].logo.length - 3) == "jpg" || university_data[i].logo.substr(university_data[i].logo.length - 3) == "png") && university_data[i].description != ""){
-		                    $(".raw_university_logo_desc .univ_logo img").attr("src", university_data[i].logo);
-		                    $(".raw_university_logo_desc .univ_description").html("<h2 class='univ_name'>"+university_data[i].name+"</h2>"+university_data[i].description);
-		                    $(".raw_banner_image img").attr("src", "");
-		                }
-	                	else{
-	                		$(".raw_university_logo_desc .univ_logo img").attr("src", "");
-		                    $(".raw_university_logo_desc .univ_description").text("");
-	                	    $(".raw_banner_image img").attr("src", default_banner);
-	                	}	
-		            }
-		        }
-		    }
-		    else{
-		    	$(".raw_university_logo_desc .univ_logo img").attr("src", "");
-		        $(".raw_university_logo_desc .univ_description").text("");
-		    	$(".raw_banner_image img").attr("src", default_banner);
-		    }
+		function getUniversityLogoDesc(data_name){
+	        for(var i=0; i<university_data.length; i++){
+	            if(university_data[i].name == data_name){
+	                if((university_data[i].logo.substr(university_data[i].logo.length - 3) == "jpg" || university_data[i].logo.substr(university_data[i].logo.length - 3) == "png") && university_data[i].description != ""){
+	                    $(".raw_university_logo_desc .univ_logo img").attr("src", university_data[i].logo);
+	                    $(".raw_university_logo_desc .univ_description").html("<h2 class='univ_name'>"+university_data[i].name+"</h2>"+university_data[i].description);
+	                    $(".raw_banner_image img").attr("src", "");
+	                    return false;
+	                }
+                	else{
+                		$(".raw_university_logo_desc .univ_logo img").attr("src", "");
+	                    $(".raw_university_logo_desc .univ_description").text("");
+                	    $(".raw_banner_image img").attr("src", default_banner);
+                	}	
+	            }
+	        }
+		}
+
+		function getMobileFeesFilter(){
+			//alert($( "#index_to_use" ).val());
+			if($( "#index_to_use" ).val() == $("#index_to_use").find("option")[1].value){
+				$(".arrow-bottom").css("display", "none");  
+                engine.helper.setIndex($("#index_to_use").find("option")[1].value);
+            }
+            else{
+                $(".arrow-bottom").css("display", "inline");  
+                engine.helper.setIndex($("#index_to_use").find("option")[0].value);
+            }
+            engine.helper.setCurrentPage(0);
 		}
 // Algolia functions end

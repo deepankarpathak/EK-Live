@@ -1012,7 +1012,7 @@ button.changelook:focus, button.changelook:hover{
     font-size: 10px;
     position: relative;
     top: -1px;
-    display: none;
+    /*display: none;*/
 }
 .sort-arrow{
     display: inline;

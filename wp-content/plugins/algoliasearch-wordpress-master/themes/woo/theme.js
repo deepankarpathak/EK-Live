@@ -163,23 +163,41 @@ jQuery(document).ready(function ($) {
             html_content += "</div></div>";
             $(algoliaSettings.instant_jquery_selector).html(html_content);
 
-            $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
+            // Get selected filters
+            var count = 0;
+            var which_tax, which_name;
+            $(".sub_facet").find("input[type='checkbox']").each(function (i) {
+               // User will not be able to click on checkbox
+               $(this).attr("disabled", "disabled");
                if($(this).is(':checked') == true){
-                    $(this).parent().addClass('change_color');
+                    var data_name = $(this).attr("data-name");
+                    var data_tax = $(this).attr("data-tax");
+                    var raw_label_html = $(".raw_labels").html();
+                    raw_label_html = raw_label_html.replace("&amp;","&");
+                    if(raw_label_html.indexOf(data_name)<=0){
+                        $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");
+                        }
+                    if($(this).attr("data-tax") == "product_cat"){
+                        count++;
+                        which_tax = "product_cat";
+                        which_name = data_name;
+                    }
+                    if($(this).attr("data-tax") == "university"){
+                        count++;
+                        which_tax = "university";
+                        which_name = data_name;
+                    }
                 }
             });
-            // Get selected filters
-            $(".sub_facet").find("input[type='checkbox']").each(function (i) {
-               if($(this).is(':checked') == true){
-                var data_name = $(this).attr("data-name");
-                var data_tax = $(this).attr("data-tax");
-                var raw_label_html = $(".raw_labels").html();
-                raw_label_html = raw_label_html.replace("&amp;","&");
-                if(raw_label_html.indexOf(data_name)<=0){
-                    $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");
-                    }
-               }
-            });       
+            if(count == 1 && which_tax == "product_cat"){
+                getCategoryBanner(which_name);
+            }
+            else if(count == 1 && which_tax == "university"){
+                getUniversityLogoDesc(which_name);
+            }                  
+            else{
+                setDefaultBanner();
+            }
 
             // Get Labels from footer on load of algolia search filter
              if($(".raw_labels").html() != ""){
@@ -432,6 +450,12 @@ jQuery(document).ready(function ($) {
         });
 
         // Mobile filters
+        $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
+               if($(this).is(':checked') == true){
+                    $(this).parent().addClass('change_color');
+                }
+        });
+        //getMobileFeesFilter();
         $("body").on("click", ".sub_facet_mobile", function () {
                 $(this).toggleClass('change_color');
                 $(this).find("input[type='checkbox']").each(function (i) {
@@ -439,17 +463,12 @@ jQuery(document).ready(function ($) {
 
                 engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
             });
-
-            $("body").on("click", ".apply", function () {
-                engine.helper.search(engine.helper.state.query);
-                engine.updateUrl(true);
-            });
         });
         
         $("body").on("click", ".reset", function () {
             $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
                if($(this).is(':checked') == true){
-                    $(this).toggleClass('change_color');
+                    $(this).parent().toggleClass('change_color');
                     $(this).prop("checked", !$(this).prop("checked"));
                     engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
                 }
@@ -457,8 +476,10 @@ jQuery(document).ready(function ($) {
             var slide_dom = $(".algolia-slider");
             engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
             engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
-            engine.helper.search(engine.helper.state.query);
-            engine.updateUrl(true);
+        });
+
+        $("body").on("click", ".mobile-filter  .filter-selected", function(){
+            getMobileFeesFilter();
         });
 
         $("body").on("click", ".mobile-filter .facet", function () {
@@ -474,6 +495,13 @@ jQuery(document).ready(function ($) {
             $(".all_results").hide();
             $(".result_"+cls).show();
         });
+
+        $("body").on("click", ".apply", function () {
+                engine.helper.search(engine.helper.state.query);
+                performQueries(true);
+                engine.updateUrl(true);
+        });
+
         // Mobile filters end
 
         $("body").on("slide", "", function (event, ui) {
@@ -482,9 +510,7 @@ jQuery(document).ready(function ($) {
 
         $("body").on("change", "#index_to_use", function () {
             engine.helper.setIndex($(this).val());
-
             engine.helper.setCurrentPage(0);
-
             performQueries(true);
         });
 
@@ -519,21 +545,6 @@ jQuery(document).ready(function ($) {
 
             return false;
         });
-
-  /*      $('button').on('click',function(e) {
-    if ($(this).hasClass('grid')) {
-        alert("GRID");
-        $('#view ul').removeClass('list').addClass('grid');
-    }
-    else if($(this).hasClass('list')) {
-        alert("LIST");
-        $('#view ul').removeClass('grid').addClass('list');
-    }
-    else
-    {
-        alert("Here!");
-    }
-});*/
         
         $(algoliaSettings.search_input_selector).keyup(function (e) {
             e.preventDefault();

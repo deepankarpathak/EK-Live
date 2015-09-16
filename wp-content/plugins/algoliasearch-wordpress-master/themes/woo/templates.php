@@ -205,9 +205,11 @@
     <div class="sort-by-wrapper clearfix">
         <div class="col-xs-4 sort-by-titl">Sort by</div>
         <div class="col-xs-8 filter-selected-wrapper">
-            <span class="filter-selected">Fee </span>
-            <span class="arrow-bottom">&#9660;</sapn>
-            <span class="arrow-top">&#9650;</span>
+            <span class="filter-selected">Fee 
+                <span class="arrow-bottom">&#9660;</span>
+                <?php //<span class="arrow-top">&#9650;</span> ?>
+            </span>
+            
         </div>
     </div>
     <div class="clearfix filter-tab-wrapper">
