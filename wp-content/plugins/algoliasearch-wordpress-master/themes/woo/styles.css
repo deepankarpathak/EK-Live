@@ -1040,7 +1040,7 @@ border-right:none;
     font-size: 10px;
     position: relative;
     top: -1px;
-    display: none;
+    /*display: none;*/
 }
 .sort-arrow{
     display: inline;
