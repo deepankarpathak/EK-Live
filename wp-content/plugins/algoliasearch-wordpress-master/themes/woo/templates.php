@@ -107,7 +107,7 @@
             {{/sorting_indices.length}}
             {{/hits.length}}
             <div class="list-grid-wrapper">
-            <button class="list changelook" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');"><img src="<?php echo get_site_url(); ?>/images/list.png"/></button>
+            <button class="list changelook view-active" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');"><img src="<?php echo get_site_url(); ?>/images/list.png"/></button>
             <button class="grid changelook" onclick="$('#view li').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" ><img src="<?php echo get_site_url(); ?>/images/grid.png"/></button>
             </div>
         </div>
@@ -214,7 +214,7 @@
 <?php } else{ ?>
 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 facets{{#count}} with_facets{{/count}} mobile-filter">
     <div class="filter-head clearfix">
-        <div class="pull-left filters-titl"><span class="sprite close_filter"></span><span>Filters</span></div>
+        <div class="pull-left filters-titl"><span class="sprite close_filter"></span><span class="filter-txt">Filters</span></div>
         <div class="pull-right reset">reset</div>
     </div>
     <div class="sort-by-wrapper clearfix">

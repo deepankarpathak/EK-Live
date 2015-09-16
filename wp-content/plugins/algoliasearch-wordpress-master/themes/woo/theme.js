@@ -686,5 +686,9 @@ jQuery(document).ready(function ($) {
             $(".quick_view_overlay_display_data").fadeOut("slow");
         });
     });
+    $("body").on("click",".changelook", function(){
+        $(".changelook").removeClass("view-active");
+        $(this).addClass("view-active");
+    });
 
 });
