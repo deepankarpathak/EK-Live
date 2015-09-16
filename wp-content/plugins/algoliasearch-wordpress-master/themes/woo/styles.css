@@ -680,7 +680,7 @@ margin-right: 4px;
 #index_to_use{margin-top:5px;}
 .changelook{outline: 1px solid transparent;padding: 1px;background-color: transparent;margin: 0}
 
-button.changelook:focus, button.changelook:hover{
+button.changelook:focus, button.changelook:hover,button.changelook.view-active{
     outline: 1px solid #999;
     padding: 1px;
     box-shadow: none;
@@ -793,11 +793,19 @@ button.changelook:focus, button.changelook:hover{
 
 
 /*-----Search page start-----*/
+.clear_all:hover{
+    background: #fff;
+    color: #222;
+    border-color: #222;
+    box-shadow:none;
+}
+
 .close_filter{
-    background-position: -210px -208px;
-    width: 20px;
-    height: 16px;
-    margin: 0 2px 0 8px;
+    background-position: -207px -203px;
+    width: 25px;
+    height: 25px;
+    position: absolute !important;
+    top: 5px !important;
 }
 
 .banner_img_container img{
@@ -830,6 +838,10 @@ button.changelook:focus, button.changelook:hover{
     width: 120px;
 }
 
+/*#algolia_instant_selector .list .result .referral{
+    display: none;
+}
+*/
 #algolia_instant_selector .list .result .result-title, #algolia_instant_selector .list .result .institute, #algolia_instant_selector .list .result .mode-duration-wrapper {
     padding-left: 10px;
 }
@@ -843,6 +855,7 @@ button.changelook:focus, button.changelook:hover{
 }
 #algolia_instant_selector .list .result .result-excerpt .title-institute-wrapper{
     min-height: 76px;
+    width: 68%;
 }
 #algolia_instant_selector .list .result .result-excerpt .mode{
     padding: 0 10px;
@@ -875,6 +888,7 @@ border-right:none;
 }
 #algolia_instant_selector .list .result .duration{
     display: inline-block;
+    float: left;
 }
 .quick_view_link, .learn_more_link,.compare_link{
     border: 1px solid #fff;
@@ -983,8 +997,16 @@ border-right:none;
     font-size: 14.58px;
     font-family: robotoregular;
 }
+.filter-txt{
+    padding-left: 30px;
+}
 .filters-titl > span{
     vertical-align: middle;
+}
+.filters-titl span:first-child{
+    padding-left: 30px;
+    position: relative;
+    top: 1px;
 }
 
 .sort-by-wrapper{
@@ -1060,6 +1082,13 @@ border-right:none;
     color: #17a959;
     font-size: 18px;
     font-family: robotobold;
+}
+.calander-img{
+    margin-right: 5px;
+}
+.facet_value{
+    position: relative;
+    top: 2px;
 }
 
 /*By GAmbheer*/
