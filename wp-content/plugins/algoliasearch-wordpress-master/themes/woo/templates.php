@@ -40,22 +40,22 @@
                                 </div>
                                 <div class="result-excerpt clearfix">
                                     <div class="title-institute-wrapper">
-                                    <h4 class="result-title">
-                                        {{{ _highlightResult.title.value }}} - {{pa_specialization}}
-                                    </h4>
-                                    <div class="institute">{{university}}</div>
+                                        <h4 class="result-title">
+                                            {{{ _highlightResult.title.value }}} - {{pa_specialization}}
+                                        </h4>
+                                        <div class="institute">{{university}}</div>
                                     </div>
-                                    <div class="mode-duration-wrapper">
-                                    <div class="mode">{{pa_study-content}}</div>
-                                    <div class="duration"><img class="calander-img" alt="calander-img" src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>"{{pa_duration}}</div>
+                                    <div class="mode-duration-wrapper clearfix">
+                                        <div class="mode">{{pa_study-content}}</div>
+                                        <div class="duration pull-left"><img class="calander-img" alt="calander-img" src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>"{{pa_duration}}</div>
+                                    </div>
                                     <div class="price-coupan-wrapper">
-                                    {{#pa_referral-cashback.length}}
-                                    <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
-                                    {{/pa_referral-cashback.length}}
-                                    <div class="list-grid"> Rs. {{_price}}</div>
+                                        {{#pa_referral-cashback.length}}
+                                        <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
+                                        {{/pa_referral-cashback.length}}
+                                        <div class="list-grid"> Rs. {{_price}}</div>
                                     </div>
                                 </div>
-                            </div>
                             
                                 <div class="quick_view_overlay">
                                     <div class="btn-wrapper"> 
@@ -93,8 +93,10 @@
             </div>
             {{/sorting_indices.length}}
             {{/hits.length}}
+            <div class="list-grid-wrapper">
             <button class="list changelook" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');"><img src="<?php echo get_site_url(); ?>/images/list.png"/></button>
             <button class="grid changelook" onclick="$('#view li').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" ><img src="<?php echo get_site_url(); ?>/images/grid.png"/></button>
+            </div>
         </div>
         <?php echo do_shortcode('[block id="advertisement"]'); ?>
     </div>

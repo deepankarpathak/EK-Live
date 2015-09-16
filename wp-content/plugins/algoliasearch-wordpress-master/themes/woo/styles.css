@@ -329,7 +329,7 @@
 }
 #algolia_instant_selector .result .result-excerpt .institute{
   padding-bottom: 5px;
-  font-size: 11px;
+  font-size: 12px;
   color: #999;
 }
 
@@ -846,9 +846,15 @@ button.changelook:focus, button.changelook:hover{
 }
 #algolia_instant_selector .list .result .result-excerpt .mode{
     padding: 0 10px;
-    border-right: 1px solid #ddd;
-    border-left: 1px solid #ddd;
 }
+#algolia_instant_selector .list .mode-duration-wrapper > div{
+border-right: 1px solid #ddd;
+}
+
+#algolia_instant_selector .list .mode-duration-wrapper > div:last-child{
+border-right:none;
+}
+
 #algolia_instant_selector .result .result-excerpt .price-coupan-wrapper{
     border-top: 1px solid #ddd;
     padding-top: 5px;
@@ -859,7 +865,7 @@ button.changelook:focus, button.changelook:hover{
 }
 #algolia_instant_selector .result .result-excerpt .mode-duration-wrapper{
     border-top: 1px solid #ddd;
-    padding: 5px 0; 
+    padding: 5px; 
 }
 #algolia_instant_selector .list .result .result-excerpt .price-list {
     padding-top: 0;
@@ -1047,6 +1053,14 @@ button.changelook:focus, button.changelook:hover{
 .university_logo_desc{
     padding: 10px 0;
 }
+.list-grid-wrapper{
+    display: inline-block;
+}
+#algolia_instant_selector .result .result-excerpt .list-grid {
+    color: #17a959;
+    font-size: 18px;
+    font-family: robotobold;
+}
 
 /*By GAmbheer*/
 .all_results{
@@ -1124,6 +1138,15 @@ button.changelook:focus, button.changelook:hover{
 /*By GAmbheer End*/
 /*-----Search page end-----*/
 
+@media screen and (max-width: 1020px){
+    .button-123 select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .list-grid-wrapper ,.default_sorting {
+        display: block;
+    }
+}
 
 @media screen and (max-width: 800px){
     .hidden-xs{
@@ -1284,11 +1307,6 @@ button.changelook:focus, button.changelook:hover{
     }
     #algolia_instant_selector .result .result-excerpt .institute, #algolia_instant_selector .list .result .result-excerpt .mode, .calander-img {
         display: none;
-    }
-    #algolia_instant_selector .result .result-excerpt .list-grid {
-        color: #17a959;
-        font-size: 18px;
-        font-family: robotobold;
     }
     #algolia_instant_selector .list .result .result-excerpt .title-institute-wrapper {
         min-height: auto;
