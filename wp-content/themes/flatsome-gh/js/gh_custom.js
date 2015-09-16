@@ -197,7 +197,6 @@ jQuery(document).ready(function () {
     }
 jQuery(document).ready(function(){
 	/*Nishu : Review and rating js*/
-  console.log($("p.stars span a"));
           $("p.stars span a"). mouseenter(function() {                     
             var star_index = $("p.stars span a").index(this);
             $.each($("p.stars span a"), function(index, value) {
@@ -310,13 +309,16 @@ jQuery(document).ready(function(){
 	        $(".apply").show();
 	        $("body").css("overflow","hidden");
 	        $(".jPanelMenu").css("overflow","hidden");
-	        $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
-               if($(this).is(':checked') == true){
-                    $(this).parent().addClass('change_color');
-                }
-        	});
-        	$(".facet").removeClass("active-tab");
-        	$(".facet:first-child").addClass("active-tab");
+	        if($("#index_to_use").val().indexOf("asc")>-1){ 
+	        	$(".sortby-price .arrow-bottom").html("&#9660;");
+	        	$(".sortby-price").addClass("asc");
+	        }
+	        else if($("#index_to_use").val().indexOf("desc") > -1){ 
+	        	$(".sortby-price .arrow-bottom").html("&#9650;");
+	        	$(".sortby-price").removeClass("asc");
+	        }
+	        else
+	        	$(".sortby-price .arrow-bottom").html("");
 	    });
 	    $("body").on("click", ".close_filter, .apply ", function () {
 	        $("#algolia_instant_selector").removeClass("toggle-filter");
@@ -509,18 +511,5 @@ jQuery(document).ready(function(){
                 	}	
 	            }
 	        }
-		}
-
-		function getMobileFeesFilter(){
-			//alert($( "#index_to_use" ).val());
-			if($( "#index_to_use" ).val() == $("#index_to_use").find("option")[1].value){
-				$(".arrow-bottom").css("display", "none");  
-                engine.helper.setIndex($("#index_to_use").find("option")[1].value);
-            }
-            else{
-                $(".arrow-bottom").css("display", "inline");  
-                engine.helper.setIndex($("#index_to_use").find("option")[0].value);
-            }
-            engine.helper.setCurrentPage(0);
 		}
 // Algolia functions end

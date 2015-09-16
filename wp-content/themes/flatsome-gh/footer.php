@@ -218,9 +218,11 @@ jQuery(document).ready(function() {
 	var theme_dir = $("#theme_dir").val();
 	$("#mega-menu").slideUp();
 	if($(".search_home").val().length == 0){
+		$(".raw_labels").html("");
 	    engine.helper.removeNumericRefinement("_price", ">=");
 	    engine.helper.removeNumericRefinement("_price", "<=");
-	    $.getScript( theme_dir+'/wp-content/themes/flatsome/js/after_algolia.js', function( data, textStatus, jqxhr ) {
+	    $(engine.helper.state.disjunctiveFacets).each(function(a){engine.helper.clearRefinements(this.toString());});
+		$.getScript( theme_dir+'/wp-content/themes/flatsome/js/after_algolia.js', function( data, textStatus, jqxhr ) {
 	     });  
 	    <?php if(is_front_page()) {?>
 	    	if($( window ).width() > 768){

@@ -15,6 +15,7 @@
 </script>
 
 <script type="text/template" id="instant-content-template">
+{{#hits.length}}
     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 min-pad hits{{#facets_count}} with_facets{{/facets_count}}">
         <span class="filter-icon sprite"></span>
         <div style="clear: both;"></div>
@@ -106,10 +107,9 @@
         
         <div style="clear: both;"></div>
     </div>
-    {{#hits.length}}
+  
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min-pad right-pad-none custom-hide-small">
         <div class="button-123 hidden-xs">
-         {{#hits.length}}
            {{#sorting_indices.length}}
             <div class="default_sorting">
                 <select id="index_to_use">
@@ -120,7 +120,6 @@
                 </select>
             </div>
             {{/sorting_indices.length}}
-            {{/hits.length}}
             <div class="list-grid-wrapper">
             <button class="list changelook view-active" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');"><img src="<?php echo get_site_url(); ?>/images/list.png"/></button>
             <button class="grid changelook" onclick="$('#view li').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" ><img src="<?php echo get_site_url(); ?>/images/grid.png"/></button>
@@ -129,7 +128,6 @@
         <?php echo do_shortcode('[block id="advertisement"]'); ?>
     </div>
 {{/hits.length}}
-
 {{^hits.length}}
         <div class="row">
             <div class="col-lg-12 col-md-12 ">Sorry, You’re looking for <strong>{{query}}</strong> which isn’t here. However, we have wide range of courses which will help you enhance your skills.<br/><br/>For Certificates, <a href="http://edukart.com/edukart/#q=certificate&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22
@@ -236,11 +234,9 @@
     <div class="sort-by-wrapper clearfix">
         <div class="col-xs-4 sort-by-titl">Sort by</div>
         <div class="col-xs-8 filter-selected-wrapper">
-            <span class="filter-selected">Fee 
-                <span class="arrow-bottom">&#9660;</span>
-                <?php //<span class="arrow-top">&#9650;</span> ?>
+             <span class="filter-selected sortby-price" asc="{{relevance_index_name}}__price_asc" desc="{{relevance_index_name}}__price_desc">Fee 
+                <span class="arrow-bottom"></span>
             </span>
-            
         </div>
     </div>
     <div class="clearfix filter-tab-wrapper">
