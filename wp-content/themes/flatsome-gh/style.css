@@ -3741,6 +3741,33 @@ float: none;
 }
 
 
+/* Nishu Css*/
+.woocommerce p.stars span, .woocommerce-page p.stars span {
+	width: auto;
+}
+.single-product.woocommerce p.stars span a{
+	position: relative;
+	background-image: url("images/star-disabled.png");
+	background-repeat:no-repeat;
+	background-size: 17px;
+	height: 16px;
+	width: 16px;
+	margin-right: 2px;
+}
+/*.single-product.woocommerce p.stars span a:hover, .single-product.woocommerce-page p.stars span a:hover,.single-product.woocommerce p.stars span a:focus, .single-product.woocommerce-page p.stars span a:focus,.single-product.woocommerce p.stars span a.active, .single-product.woocommerce-page p.stars span a.active, .single-product.woocommerce p.stars span a.temp-active, .single-product.woocommerce-page p.stars span a.temp-active{
+	background: none;
+	background-image: url("images/star.png");
+	background-size: 17px;
+}*/
+.single-product.woocommerce p.stars span a.active, .single-product.woocommerce-page p.stars span a.active, .single-product.woocommerce p.stars span a.temp-active, .single-product.woocommerce-page p.stars span a.temp-active,.single-product.woocommerce p.stars span a.active-rate, .single-product.woocommerce-page p.stars span a.active-rate{
+	background: none;
+	background-image: url("images/star.png");
+	background-size: 17px;
+}
+.single-product .avatar-60{
+	display: none;
+}
+
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
