@@ -43,17 +43,30 @@
                                         <h4 class="result-title">
                                             {{{ _highlightResult.title.value }}} - {{pa_specialization}}
                                         </h4>
-                                        <div class="institute">{{university}}</div>
+                                        <div class="institute">{{university}}<br>
+                                            {{#pa_affiliation}}<span class="affiliation">{{.}}</span>{{/pa_affiliation}}
+                                        </div>
                                     </div>
                                     <div class="mode-duration-wrapper clearfix">
-                                        <div class="mode">{{pa_study-content}}</div>
-                                        <div class="duration pull-left"><img class="calander-img" alt="calander-img" src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>"{{pa_duration}}</div>
-                                    </div>
-                                    <div class="price-coupan-wrapper">
-                                        {{#pa_referral-cashback.length}}
-                                        <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
-                                        {{/pa_referral-cashback.length}}
-                                        <div class="list-grid"> Rs. {{_price}}</div>
+                                        <div class="mode"><span class="study-content">Study Content: </span>{{pa_study-content}}</div>
+                                        <div class="duration-provider-wrapper">
+                                            {{#pa_duration}}
+                                            <div class="duration">
+                                              <img class="calander-img" alt="calander-img" src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>" /> {{pa_duration}}
+                                            </div>
+                                            {{/pa_duration}}
+                                            {{#pa_providers}}
+                                                <div class="provider">
+                                                Providers ({{pa_providers}})
+                                                </div>
+                                            {{/pa_providers}}    
+                                        </div>
+                                        <div class="price-coupan-wrapper">
+                                            {{#pa_referral-cashback.length}}
+                                            <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
+                                            {{/pa_referral-cashback.length}}
+                                            <div class="list-grid"> Rs. {{_price}}</div>
+                                        </div>
                                     </div>
                                 </div>
                             
@@ -127,11 +140,11 @@
             
         </div>
         
-        {{/hits.length}}
+{{/hits.length}}
 <?php if(!wp_is_mobile()) { ?>
 
 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad desk-filter-wrapper facets{{#count}} with_facets{{/count}}">
-    <div class="clear_all_div">
+    <div class="clear_all_div"><div class="number_of_results">{{#hits.length}}{{nbHits}}{{/hits.length}} Results</div>
        <button class="clear_all" onclick="clear_all()"><span class="refresh sprite"></span><span class="clear-btn">Clear All</span></button>
     </div> 
     

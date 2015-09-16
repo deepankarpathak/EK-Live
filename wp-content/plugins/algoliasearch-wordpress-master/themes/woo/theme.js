@@ -134,6 +134,7 @@ jQuery(document).ready(function ($) {
 
         function searchCallback(content)
         {
+            //console.log(content);
             var html_content = "";
 
             html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix'><div class='university_logo_desc row'></div></div><div class='row'><div class='banner_img_container custom-hide-small' style='text-align:center;'></div>";
@@ -166,17 +167,18 @@ jQuery(document).ready(function ($) {
             // Get selected filters
             var count = 0;
             var which_tax, which_name;
+            var data_name, data_tax;
             $(".sub_facet").find("input[type='checkbox']").each(function (i) {
                // User will not be able to click on checkbox
-               $(this).attr("disabled", "disabled");
+               //$(this).attr("disabled", "disabled");
+               data_name = $(this).attr("data-name");
+               data_tax = $(this).attr("data-tax");
                if($(this).is(':checked') == true){
-                    var data_name = $(this).attr("data-name");
-                    var data_tax = $(this).attr("data-tax");
                     var raw_label_html = $(".raw_labels").html();
                     raw_label_html = raw_label_html.replace("&amp;","&");
                     if(raw_label_html.indexOf(data_name)<=0){
                         $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");
-                        }
+                    }
                     if($(this).attr("data-tax") == "product_cat"){
                         count++;
                         which_tax = "product_cat";
@@ -188,7 +190,15 @@ jQuery(document).ready(function ($) {
                         which_name = data_name;
                     }
                 }
+                else{
+                    $(".raw_labels").find($(".label")).each(function(){
+                        if(data_name == $(this).attr("data-name")){
+                            $(this).remove();
+                        }
+                    });
+                }
             });
+
             if(count == 1 && which_tax == "product_cat"){
                 getCategoryBanner(which_name);
             }
@@ -443,6 +453,15 @@ jQuery(document).ready(function ($) {
             $(this).find("input[type='checkbox']").each(function (i) {
                 $(this).prop("checked", !$(this).prop("checked"));
 
+                engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
+            });
+
+            performQueries(true);
+        });
+
+        $("body").on("click", ".sub_facet input[type='checkbox']", function (e) {
+            e.stopPropagation();
+            $(this).parent().find("input[type='checkbox']").each(function (i) {
                 engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
             });
 

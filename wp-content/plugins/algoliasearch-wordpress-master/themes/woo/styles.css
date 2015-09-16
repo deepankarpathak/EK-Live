@@ -332,7 +332,14 @@
   font-size: 12px;
   color: #999;
 }
-
+#algolia_instant_selector .result .result-excerpt .institute .affiliation{
+    padding: 0px 2px;
+    border: 1px solid #bbb;
+    font-size: 17px;
+    font-family: robotobold;
+    margin-right: 5px;
+    color: #bbb;
+}
 #algolia_instant_selector .list-images
 {
     height: auto; width: 100%; float: left;text-align: center;
@@ -767,6 +774,14 @@ button.changelook:focus, button.changelook:hover{
     padding: 5px;
 }
 
+.clear_all_div .number_of_results{
+    float:left;
+    color: #2c3e50;
+    font-size: 12px;
+    font-family: robotoregular;
+    padding: 5px;
+}
+
 .clear_all_div button{
     background:#fff;
     height:22px;
@@ -833,22 +848,18 @@ button.changelook:focus, button.changelook:hover{
 #algolia_instant_selector .list .result .result-title, #algolia_instant_selector .list .result .institute, #algolia_instant_selector .list .result .mode-duration-wrapper {
     padding-left: 10px;
 }
-#algolia_instant_selector .list .result .mode-duration-wrapper {
-    text-align: right;
-}
 #algolia_instant_selector .result .result-excerpt .mode{
-    color: #555;
+    color: #666;
     font-family: robotoregular;
-    font-size: 14px;
 }
 #algolia_instant_selector .list .result .result-excerpt .title-institute-wrapper{
     min-height: 76px;
 }
 #algolia_instant_selector .list .result .result-excerpt .mode{
-    padding: 0 10px;
+    padding: 0 5px;
 }
 #algolia_instant_selector .list .mode-duration-wrapper > div{
-border-right: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 
 #algolia_instant_selector .list .mode-duration-wrapper > div:last-child{
@@ -861,11 +872,15 @@ border-right:none;
 }
 #algolia_instant_selector .list .result .result-excerpt .price-coupan-wrapper{
     border:none;
-    padding: 0 10px;
+    padding: 0 5px;
+    float:right;
 }
 #algolia_instant_selector .result .result-excerpt .mode-duration-wrapper{
     border-top: 1px solid #ddd;
-    padding: 5px; 
+    color: #666; 
+}
+#algolia_instant_selector .list .result .result-excerpt .mode-duration-wrapper{
+    padding: 5px;
 }
 #algolia_instant_selector .list .result .result-excerpt .price-list {
     padding-top: 0;
@@ -873,8 +888,27 @@ border-right:none;
 #algolia_instant_selector .list .result .mode,#algolia_instant_selector .list .result .price-coupan-wrapper{
     display: inline-block;
 }
-#algolia_instant_selector .list .result .duration{
+#algolia_instant_selector .result .duration-provider-wrapper{
     display: inline-block;
+}
+#algolia_instant_selector .list .result .duration-provider-wrapper{
+    float: left;
+}
+#algolia_instant_selector .result .duration,#algolia_instant_selector .result .provider{
+    display: inline-block;
+}
+#algolia_instant_selector .grid .result .provider,#algolia_instant_selector .list .result .provider{
+    border-left: 1px solid #ddd; 
+}
+#algolia_instant_selector .grid .study-content{
+    display:none;
+}
+#algolia_instant_selector .grid .result .duration{
+    padding-bottom: 5px;
+}
+#algolia_instant_selector .result .duration,#algolia_instant_selector .result .provider{
+    display: inline-block;
+    padding:0 5px;
 }
 .quick_view_link, .learn_more_link,.compare_link{
     border: 1px solid #fff;

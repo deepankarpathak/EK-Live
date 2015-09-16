@@ -288,34 +288,6 @@ jQuery(document).ready(function(){
 		        }
 		    });
 		});
-		
-		/* Algolia labels AND Banner Images AND University Logo and description*/
-		$("body").on("click", ".sub_facet", function () {
-			var facet = $(this).find("input[type='checkbox']");
-		    facet.each(function (i) {
-		        var data_name = $(this).attr("data-name");
-		        var data_tax = $(this).attr("data-tax");
-		        if($(this).is(':checked') == true){
-		            /*var raw_label_html = $(".raw_labels").html();
-		            $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");*/
-		        }
-		        else{
-		        	$(".raw_labels").find($(".label")).each(function(){
-		        		if(data_name == $(this).attr("data-name")){
-		        			$(this).remove();
-		        		}
-		        	});
-		        }
-		    });
-/*
-		    if(facet.attr("data-tax") == "product_cat"){
-		    	getCategoryBanner(facet);
-		    }
-		    if(facet.attr("data-tax") == "university"){
-		    	getUniversityLogoDesc(facet);
-		    }*/
-
-		});
 
 	        /* Third Party Apis */
 	        /*AdRoll code starts */
