@@ -1145,7 +1145,7 @@ if (!class_exists('YITH_WooCommerce_Advanced_Reviews')) {
             }
 
             if ($this->enable_title) {
-                echo '<p class="comment-form-title"><label for="title">' . __('Review title', 'ywar') . '</label><input type="text" name="title" id="title"/></p>';
+                echo '<p class="comment-form-title"><label for="title">' . __('Review title', 'ywar') . '</label><input type="text" name="title" id="title" maxlength="250"/></p>';
             }
         }
 
@@ -1250,7 +1250,7 @@ if (!class_exists('YITH_WooCommerce_Advanced_Reviews')) {
 
             if (get_option('woocommerce_enable_review_rating') === 'yes') {
                 $comment_form['comment_field'] = '<p class="' . $hide_rating . ' comment-form-rating">
-				<label for="rating">' . __('Your Rate', 'ywar') . '</label>
+				<label for="rating">' . __('Your Rate', 'ywar') . ' <span style="  color: rgb(205, 25, 25);">*</span></label>
 				<select name="rating" id="rating">
 							<option value="">' . __('Rate&hellip;', 'ywar') . '</option>
 							<option value="5">' . __('Perfect', 'ywar') . '</option>
@@ -1349,7 +1349,7 @@ if (!class_exists('YITH_WooCommerce_Advanced_Reviews')) {
             global $product;
 
             if (isset($tabs['reviews'])) {
-                $tabs['reviews']['title'] = sprintf(__('Reviews(%d)', 'ywar'), count($this->get_product_reviews_by_rating($product->id)));
+                $tabs['reviews']['title'] = sprintf(__('Reviews (%d)', 'ywar'), count($this->get_product_reviews_by_rating($product->id)));
             }
 
             return $tabs;

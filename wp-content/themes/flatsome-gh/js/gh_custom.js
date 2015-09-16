@@ -196,7 +196,46 @@ jQuery(document).ready(function () {
         });
     }
 jQuery(document).ready(function(){
-	
+	/*Nishu : Review and rating js*/
+  console.log($("p.stars span a"));
+          $("p.stars span a"). mouseenter(function() {                     
+            var star_index = $("p.stars span a").index(this);
+            $.each($("p.stars span a"), function(index, value) {
+                if (star_index >= index)
+                    $(this).addClass("temp-active");
+                else
+                    $(this).removeClass("temp-active");
+            });
+        }).mouseleave(function() {
+            $.each($("p.stars span a"), function(index, value) {
+                $(this).removeClass("temp-active");
+            });
+        });
+
+        $("p.stars span a").click(function() {
+            var star_index = $("p.stars span a").index(this);
+            $.each($("p.stars span a"), function(index, value) {
+            //console.log(this);
+           
+                if (star_index >= index){
+                    $(this).addClass("active-rate");
+                    $(this).addClass("temp-active");
+                }
+                else{
+                    $(this).removeClass("active-rate");
+                    $(this).removeClass("temp-active");
+                }    
+            });
+        });
+        $('#commentform').submit(function(e) {
+		    if($('#comment').val() == ""){
+		        alert('Your Review is mandatory.');
+		        return false;
+		    }else{
+		        return true;
+		    }
+		});
+/*Nishu review & rating js ends*/
 	$('.product_detail_referral a, .coupon_successful a').click(function() {
 		$(".referal_tc").dialog({
 		title: "Terms & Conditions",
