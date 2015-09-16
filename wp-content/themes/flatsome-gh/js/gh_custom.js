@@ -303,13 +303,20 @@ jQuery(document).ready(function(){
 			$("#mega-menu").slideToggle();
 		});
 
-		/*Algolia filter menu*/
+		/*Algolia mobile filter menu*/
 		$("body").on("click", ".filter-icon", function () {
 	        $("#algolia_instant_selector").addClass("toggle-filter");
 	        $(".header-wrapper").css("display","none");
 	        $(".apply").show();
 	        $("body").css("overflow","hidden");
 	        $(".jPanelMenu").css("overflow","hidden");
+	        $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
+               if($(this).is(':checked') == true){
+                    $(this).parent().addClass('change_color');
+                }
+        	});
+        	$(".facet").removeClass("active-tab");
+        	$(".facet:first-child").addClass("active-tab");
 	    });
 	    $("body").on("click", ".close_filter, .apply ", function () {
 	        $("#algolia_instant_selector").removeClass("toggle-filter");
@@ -317,56 +324,15 @@ jQuery(document).ready(function(){
 	        $(".apply").hide();
 	        $("body").css("overflow","initial");
 	        $(".jPanelMenu").css("overflow","initial");
+	        $(".facet").removeClass("active-tab");
+        	$(".facet:first-child").addClass("active-tab");
+        	$(".all_results").hide();
+        	$(".all_results:first-child").show();
 	    });
-
-
 	    /*Algolia scrips start*/
 		
 		//  Labels and refinement
-		$("body").on("click", ".labels .close_label", function () {
-		    var data_tax = $(this).parent().attr("data-tax");
-		    var data_name = $(this).parent().attr("data-name");
-		    $(".sub_facet").find("input[type='checkbox']").each(function (i) {
-		        if($(this).attr("data-tax") == data_tax && $(this).attr("data-name") == data_name){
-		            $(this).prop("checked", false);
-		            engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
-		        }
-		    });
-		    engine.helper.search(engine.helper.state.query, function(){});
-		    $(".raw_labels").find($(".label")).each(function(){
-		        if(data_name == $(this).attr("data-name")){
-		            $(this).remove();
-		        }
-		    });
-		});
 		
-		/* Algolia labels AND Banner Images AND University Logo and description*/
-		$("body").on("click", ".sub_facet", function () {
-			var facet = $(this).find("input[type='checkbox']");
-		    facet.each(function (i) {
-		        var data_name = $(this).attr("data-name");
-		        var data_tax = $(this).attr("data-tax");
-		        if($(this).is(':checked') == true){
-		            /*var raw_label_html = $(".raw_labels").html();
-		            $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");*/
-		        }
-		        else{
-		        	$(".raw_labels").find($(".label")).each(function(){
-		        		if(data_name == $(this).attr("data-name")){
-		        			$(this).remove();
-		        		}
-		        	});
-		        }
-		    });
-/*
-		    if(facet.attr("data-tax") == "product_cat"){
-		    	getCategoryBanner(facet);
-		    }
-		    if(facet.attr("data-tax") == "university"){
-		    	getUniversityLogoDesc(facet);
-		    }*/
-
-		});
 
 	        /* Third Party Apis */
 	        /*AdRoll code starts */
@@ -530,9 +496,9 @@ jQuery(document).ready(function(){
 		function getUniversityLogoDesc(data_name){
 	        for(var i=0; i<university_data.length; i++){
 	            if(university_data[i].name == data_name){
-	                if((university_data[i].logo.substr(university_data[i].logo.length - 3) == "jpg" || university_data[i].logo.substr(university_data[i].logo.length - 3) == "png") && university_data[i].description != ""){
+	                if((university_data[i].logo.substr(university_data[i].logo.length - 3) == "jpg" || university_data[i].logo.substr(university_data[i].logo.length - 3) == "png") && $.trim(university_data[i].description) != ""){
 	                    $(".raw_university_logo_desc .univ_logo img").attr("src", university_data[i].logo);
-	                    $(".raw_university_logo_desc .univ_description").html("<h2 class='univ_name'>"+university_data[i].name+"</h2>"+university_data[i].description);
+	                    $(".raw_university_logo_desc .univ_description").html("<h2 class='univ_name'>"+$.trim(university_data[i].name)+"</h2>"+$.trim(university_data[i].description));
 	                    $(".raw_banner_image img").attr("src", "");
 	                    return false;
 	                }

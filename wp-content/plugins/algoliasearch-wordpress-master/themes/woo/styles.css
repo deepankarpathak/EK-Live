@@ -220,12 +220,13 @@
 #algolia_instant_selector .pagination-wrapper
 {
     width: 100%;
+    float:right;
 }
 
 #algolia_instant_selector .pagination-wrapper.with_facets
 {
-    width: 80%;
-    margin-left: 20%;
+    /*width: 80%;
+    margin-left: 20%;*/
 }
 
 #algolia_instant_selector .algolia-pagination
@@ -332,7 +333,14 @@
   font-size: 12px;
   color: #999;
 }
-
+#algolia_instant_selector .result .result-excerpt .affiliation{
+    padding: 0px 2px;
+    border: 1px solid #bbb;
+    font-size: 17px;
+    font-family: robotobold;
+    margin-right: 5px;
+    color: #bbb;
+}
 #algolia_instant_selector .list-images
 {
     height: auto; width: 100%; float: left;text-align: center;
@@ -376,6 +384,10 @@
 */#algolia_instant_selector .facets.with_facets .scroll-pane .algolia-slider{
 	width: 90%;
 	margin: 20px auto 0;
+}
+.count-checkbox{
+    font-family: robotoregular;
+    font-size: 12px;
 }
 #view{padding: 0;}
 #view li{ list-style: none; }
@@ -461,19 +473,16 @@
 }
 
 .list .referral {
-    background: #ffffa7 none repeat scroll 0 0;
-    border: 2px dotted #f07746;
     height: 22px !important;
     margin: 0 0 4px 0;
-    font-size:15px;
-    line-height:20px;
-    color: #8A5926;
+    font-size: 15px;
     width: 100%;
     max-width: 142px;
     display: inline-block;
     position: absolute;
     right: 0;
-    top: 38px;
+    bottom: 0;
+    text-align: center;
 }
 .grid .referral {
     background: #ffffa7 none repeat scroll 0 0;
@@ -680,7 +689,7 @@ margin-right: 4px;
 #index_to_use{margin-top:5px;}
 .changelook{outline: 1px solid transparent;padding: 1px;background-color: transparent;margin: 0}
 
-button.changelook:focus, button.changelook:hover{
+button.changelook:focus, button.changelook:hover,button.changelook.view-active{
     outline: 1px solid #999;
     padding: 1px;
     box-shadow: none;
@@ -767,6 +776,14 @@ button.changelook:focus, button.changelook:hover{
     padding: 5px;
 }
 
+.clear_all_div .number_of_results{
+    float:left;
+    color: #2c3e50;
+    font-size: 12px;
+    font-family: robotoregular;
+    padding: 5px;
+}
+
 .clear_all_div button{
     background:#fff;
     height:22px;
@@ -793,11 +810,69 @@ button.changelook:focus, button.changelook:hover{
 
 
 /*-----Search page start-----*/
+.list .search-tags,.grid .search-tags{
+    color: #fff;
+    padding: 0 2px;
+    font-family: robotobold;
+    line-height: 18px;
+    display: inline-block;
+}
+.list .search-tags{
+    font-size: 12px;    
+}
+.grid .search-tags{
+    line-height: 18px;
+    font-size: 17px;
+}
+.tag-cyan{
+    background:#3698D9;
+}
+.tag-green{
+    background:#17A084;
+}
+.tag-yellow{
+    background:#F39C0F;
+}
+.tag-red{
+    background: #EC4B39;
+}
+
+.affiliation-wrapper{
+    padding-left: 10px;
+}
+.grid .tag-coupon-wrapper .referral{
+    display: none;
+}
+.list .tag-coupon-wrapper,.list .title-institute-wrapper{
+    float: left;
+}
+.list .institute-tag-wrapper{
+    position: relative;
+}
+.list .tag-coupon-wrapper{
+    width: 30%;
+    text-align: right;
+}
+.grid .tag-coupon-wrapper{
+    position: absolute;
+    top: 8px;
+    left: 0;
+    text-align: left;
+}
+
+.clear_all:hover{
+    background: #fff;
+    color: #222;
+    border-color: #222;
+    box-shadow:none;
+}
+
 .close_filter{
-    background-position: -210px -208px;
-    width: 20px;
-    height: 16px;
-    margin: 0 2px 0 8px;
+    background-position: -207px -203px;
+    width: 25px;
+    height: 25px;
+    position: absolute !important;
+    top: 5px !important;
 }
 
 .banner_img_container img{
@@ -830,25 +905,26 @@ button.changelook:focus, button.changelook:hover{
     width: 120px;
 }
 
+#algolia_instant_selector .list .result .mode-duration-wrapper .referral{
+    display: none;
+}
+
 #algolia_instant_selector .list .result .result-title, #algolia_instant_selector .list .result .institute, #algolia_instant_selector .list .result .mode-duration-wrapper {
     padding-left: 10px;
 }
-#algolia_instant_selector .list .result .mode-duration-wrapper {
-    text-align: right;
-}
 #algolia_instant_selector .result .result-excerpt .mode{
-    color: #555;
+    color: #666;
     font-family: robotoregular;
-    font-size: 14px;
 }
 #algolia_instant_selector .list .result .result-excerpt .title-institute-wrapper{
     min-height: 76px;
+    width: 70%;
 }
 #algolia_instant_selector .list .result .result-excerpt .mode{
-    padding: 0 10px;
+    padding: 0 5px;
 }
 #algolia_instant_selector .list .mode-duration-wrapper > div{
-border-right: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 
 #algolia_instant_selector .list .mode-duration-wrapper > div:last-child{
@@ -861,11 +937,15 @@ border-right:none;
 }
 #algolia_instant_selector .list .result .result-excerpt .price-coupan-wrapper{
     border:none;
-    padding: 0 10px;
+    padding: 0 5px;
+    float:right;
 }
 #algolia_instant_selector .result .result-excerpt .mode-duration-wrapper{
     border-top: 1px solid #ddd;
-    padding: 5px; 
+    color: #666; 
+}
+#algolia_instant_selector .list .result .result-excerpt .mode-duration-wrapper{
+    padding: 5px;
 }
 #algolia_instant_selector .list .result .result-excerpt .price-list {
     padding-top: 0;
@@ -873,8 +953,30 @@ border-right:none;
 #algolia_instant_selector .list .result .mode,#algolia_instant_selector .list .result .price-coupan-wrapper{
     display: inline-block;
 }
-#algolia_instant_selector .list .result .duration{
+#algolia_instant_selector .result .duration-provider-wrapper{
     display: inline-block;
+}
+#algolia_instant_selector .result .duration-provider-wrapper div:first-child{
+    border:none;
+}
+#algolia_instant_selector .list .result .duration-provider-wrapper{
+    float: left;
+}
+#algolia_instant_selector .result .duration,#algolia_instant_selector .result .provider{
+    display: inline-block;
+}
+#algolia_instant_selector .grid .result .provider,#algolia_instant_selector .list .result .provider{
+    border-left: 1px solid #ddd; 
+}
+#algolia_instant_selector .grid .study-content{
+    display:none;
+}
+#algolia_instant_selector .grid .result .duration{
+    padding-bottom: 5px;
+}
+#algolia_instant_selector .result .duration,#algolia_instant_selector .result .provider{
+    display: inline-block;
+    padding:0 5px;
 }
 .quick_view_link, .learn_more_link,.compare_link{
     border: 1px solid #fff;
@@ -983,8 +1085,16 @@ border-right:none;
     font-size: 14.58px;
     font-family: robotoregular;
 }
+.filter-txt{
+    padding-left: 30px;
+}
 .filters-titl > span{
     vertical-align: middle;
+}
+.filters-titl span:first-child{
+    padding-left: 30px;
+    position: relative;
+    top: 1px;
 }
 
 .sort-by-wrapper{
@@ -1060,6 +1170,13 @@ border-right:none;
     color: #17a959;
     font-size: 18px;
     font-family: robotobold;
+}
+.calander-img{
+    margin-right: 5px;
+}
+.facet_value{
+    position: relative;
+    top: 2px;
 }
 
 /*By GAmbheer*/
@@ -1138,7 +1255,7 @@ border-right:none;
 /*By GAmbheer End*/
 /*-----Search page end-----*/
 
-@media screen and (max-width: 1020px){
+@media screen and (max-width: 1025px){
     .button-123 select {
         width: 100%;
         margin-bottom: 10px;
@@ -1146,6 +1263,9 @@ border-right:none;
     .list-grid-wrapper ,.default_sorting {
         display: block;
     }
+    .default_sorting {
+        display: block;
+    }    
 }
 
 @media screen and (max-width: 800px){
@@ -1241,6 +1361,10 @@ border-right:none;
     }
     .filter-icon.sprite{
         display: block !important;
+    }
+    #algolia_instant_selector .active-tab .name{
+        color:#169f84;
+        font-family: robotobold;    
     }
     #algolia_instant_selector .active-tab.facet:after, #algolia_instant_selector .active-tab.facet:before {
         content: "";

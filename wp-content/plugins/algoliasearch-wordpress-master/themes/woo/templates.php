@@ -38,22 +38,49 @@
                                     <div style="height: 50px;"></div>
                                 {{/featureImage}}
                                 </div>
-                                <div class="result-excerpt clearfix">
-                                    <div class="title-institute-wrapper">
-                                        <h4 class="result-title">
-                                            {{{ _highlightResult.title.value }}} - {{pa_specialization}}
-                                        </h4>
-                                        <div class="institute">{{university}}</div>
+                                <div class="result-excerpt">
+                                    <div class="clearfix institute-tag-wrapper">
+                                        <div class="title-institute-wrapper">
+                                            <h4 class="result-title">
+                                                {{{ _highlightResult.title.value }}} - {{pa_specialization}}
+                                            </h4>
+                                            <div class="institute">
+                                                {{university}}                                          
+                                            </div>
+                                            <div class="affiliation-wrapper">
+                                                {{#pa_affiliation}}
+                                                    <span class="affiliation">{{.}}</span>
+                                                {{/pa_affiliation}}
+                                            </div>
+                                        </div>
+                                        <div class="tag-coupon-wrapper">
+                                            <div><span class="search-tags tag-cyan">Scholorship</span></div>
+                                            <div><span class="search-tags tag-green">Trending</span></div>
+                                            {{#pa_referral-cashback.length}}                                                                                                                
+                                                <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
+                                            {{/pa_referral-cashback.length}}
+                                        </div>
                                     </div>
                                     <div class="mode-duration-wrapper clearfix">
-                                        <div class="mode">{{pa_study-content}}</div>
-                                        <div class="duration pull-left"><img class="calander-img" alt="calander-img" src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>"{{pa_duration}}</div>
-                                    </div>
-                                    <div class="price-coupan-wrapper">
-                                        {{#pa_referral-cashback.length}}
-                                        <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
-                                        {{/pa_referral-cashback.length}}
-                                        <div class="list-grid"> Rs. {{_price}}</div>
+                                        <div class="mode"><span class="study-content">Study Content: </span>{{pa_study-content}}</div>
+                                        <div class="duration-provider-wrapper">
+                                            {{#pa_duration}}
+                                            <div class="duration">
+                                              <img class="calander-img" alt="calander-img" src="<?php echo get_site_url().'/images/product-detail-calander.png'; ?>" /> {{pa_duration}}
+                                            </div>
+                                            {{/pa_duration}}
+                                            {{#pa_providers}}
+                                                <div class="provider">
+                                                Providers ({{pa_providers}})
+                                                </div>
+                                            {{/pa_providers}}    
+                                        </div>
+                                        <div class="price-coupan-wrapper">
+                                            {{#pa_referral-cashback.length}}
+                                            <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
+                                            {{/pa_referral-cashback.length}}
+                                            <div class="list-grid"> Rs. {{_price}}</div>
+                                        </div>
                                     </div>
                                 </div>
                             
@@ -79,6 +106,7 @@
         
         <div style="clear: both;"></div>
     </div>
+    {{#hits.length}}
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min-pad right-pad-none custom-hide-small">
         <div class="button-123 hidden-xs">
          {{#hits.length}}
@@ -94,12 +122,13 @@
             {{/sorting_indices.length}}
             {{/hits.length}}
             <div class="list-grid-wrapper">
-            <button class="list changelook" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');"><img src="<?php echo get_site_url(); ?>/images/list.png"/></button>
+            <button class="list changelook view-active" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');"><img src="<?php echo get_site_url(); ?>/images/list.png"/></button>
             <button class="grid changelook" onclick="$('#view li').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" ><img src="<?php echo get_site_url(); ?>/images/grid.png"/></button>
             </div>
         </div>
         <?php echo do_shortcode('[block id="advertisement"]'); ?>
     </div>
+{{/hits.length}}
 
 {{^hits.length}}
         <div class="row">
@@ -127,11 +156,11 @@
             
         </div>
         
-        {{/hits.length}}
+{{/hits.length}}
 <?php if(!wp_is_mobile()) { ?>
 
 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad desk-filter-wrapper facets{{#count}} with_facets{{/count}}">
-    <div class="clear_all_div">
+    <div class="clear_all_div"><div class="number_of_results">{{#hits.length}}{{nbHits}}{{/hits.length}} Results</div>
        <button class="clear_all" onclick="clear_all()"><span class="refresh sprite"></span><span class="clear-btn">Clear All</span></button>
     </div> 
     
@@ -140,7 +169,7 @@
 
     <div class="facet">
         <div class="name" onclick="dock_undock(this)">
-            {{ facet_categorie_name }}
+            {{ facet_categorie_name }} <span class="count-checkbox">({{count}})</span>
             
             <button class="dock_undock"></button>     
         </div>
@@ -201,7 +230,7 @@
 <?php } else{ ?>
 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 facets{{#count}} with_facets{{/count}} mobile-filter">
     <div class="filter-head clearfix">
-        <div class="pull-left filters-titl"><span class="sprite close_filter"></span><span>Filters</span></div>
+        <div class="pull-left filters-titl"><span class="sprite close_filter"></span><span class="filter-txt">Filters</span></div>
         <div class="pull-right reset">reset</div>
     </div>
     <div class="sort-by-wrapper clearfix">
@@ -219,7 +248,7 @@
     {{#facets}}
     {{#count}}
     
-    <div class="facet {{ facet_categorie_name }}" id="{{ facet_categorie_name }}">
+    <div class="facet {{ facet_categorie_name }}{{count}}">
         <div class="name">
             {{ facet_categorie_name }}
         </div>
@@ -231,7 +260,7 @@
     <div class="filter_options_result">
     {{#facets}}
     {{#count}}
-    <div class ="all_results result_{{ facet_categorie_name }}">
+    <div class ="all_results {{ facet_categorie_name }}{{count}}_result">
             <div class = "scroll-pane" >
                 {{#sub_facets}}
 
@@ -282,7 +311,7 @@
 </script>
 
 <script type="text/template" id="instant-pagination-template">
-<div class="pagination-wrapper{{#facets_count}} with_facets{{/facets_count}} custom-hide-small">
+<div class="pagination-wrapper{{#facets_count}} with_facets{{/facets_count}}">
     <div class="text-center">
         <ul class="algolia-pagination">
             <a href="#" data-page="{{prev_page}}">

@@ -711,10 +711,11 @@ ul.top-bar-nav li:first-child {
 }
 .edu-quickview-info h1 a {
 	color: #354b63;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: normal;
 	line-height: 14px !important;
 	text-transform: uppercase;
+	font-family: robotoregular;
 }
 .edu-quickview-info .tx-div.small {
 	display: block;
@@ -1249,12 +1250,14 @@ ul.payment_methods p{
 	margin: 0;
 }
 .product-page .product-info p {
-	color: #b3b3b3;
+	color: #555;
 	margin: 0;
 }
 .product-page .product-info p.duration_below_title {
 	border-bottom: 1px solid #d1d1d1;
 	border-top: 1px solid #d1d1d1;
+    font-family: robotoregular;
+    color: #999;
 }
 .product-page .product-info .duration_provider_below_title {
 	border-bottom: 1px solid #cccccc;
@@ -1270,6 +1273,7 @@ ul.payment_methods p{
 	font-size: 15px;
 	line-height: 22px;
 	margin: 10px 0;
+    font-family: robotoregular;
 }
 .product-page .product-info table {
 	float: left;
@@ -1824,6 +1828,7 @@ h1.logo-slider-h1 span {
 }
 .custom select {
 	font-size:100% !important;
+	background: #fff;
 }
 .custom select option {
 	padding-bottom: 3px;
@@ -2049,6 +2054,8 @@ h1.logo-slider-h1 span {
 	display: block;
 	padding-bottom: 0;
 	width: 100%;
+	font-family: robotoregular;
+	font-size: 12px;
 }
 .edu-quickview-info .see_fee {
 	display: none;
@@ -3778,6 +3785,12 @@ float: none;
 		padding-right: 15px;
 	}
 }
+@media only screen and (max-width: 1024px) {
+	#masthead #logo {
+	    max-width: 180px;
+	}
+}
+
 @media only screen and (max-width: 1000px) {
 	ul.top-bar-nav li{
 		padding: 5px;
