@@ -332,7 +332,7 @@
   font-size: 12px;
   color: #999;
 }
-#algolia_instant_selector .result .result-excerpt .institute .affiliation{
+#algolia_instant_selector .result .result-excerpt .affiliation{
     padding: 0px 2px;
     border: 1px solid #bbb;
     font-size: 17px;
@@ -468,19 +468,16 @@
 }
 
 .list .referral {
-    background: #ffffa7 none repeat scroll 0 0;
-    border: 2px dotted #f07746;
     height: 22px !important;
     margin: 0 0 4px 0;
-    font-size:15px;
-    line-height:20px;
-    color: #8A5926;
+    font-size: 15px;
     width: 100%;
     max-width: 142px;
     display: inline-block;
     position: absolute;
     right: 0;
-    top: 38px;
+    bottom: 0;
+    text-align: center;
 }
 .grid .referral {
     background: #ffffa7 none repeat scroll 0 0;
@@ -808,6 +805,56 @@ button.changelook:focus, button.changelook:hover,button.changelook.view-active{
 
 
 /*-----Search page start-----*/
+.list .search-tags,.grid .search-tags{
+    color: #fff;
+    padding: 0 2px;
+    font-family: robotobold;
+    line-height: 18px;
+    display: inline-block;
+}
+.list .search-tags{
+    font-size: 12px;    
+}
+.grid .search-tags{
+    line-height: 18px;
+    font-size: 17px;
+}
+.tag-cyan{
+    background:#3698D9;
+}
+.tag-green{
+    background:#17A084;
+}
+.tag-yellow{
+    background:#F39C0F;
+}
+.tag-red{
+    background: #EC4B39;
+}
+
+.affiliation-wrapper{
+    padding-left: 10px;
+}
+.grid .tag-coupon-wrapper .referral{
+    display: none;
+}
+.list .tag-coupon-wrapper,.list .title-institute-wrapper{
+    float: left;
+}
+.list .institute-tag-wrapper{
+    position: relative;
+}
+.list .tag-coupon-wrapper{
+    width: 30%;
+    text-align: right;
+}
+.grid .tag-coupon-wrapper{
+    position: absolute;
+    top: 8px;
+    left: 0;
+    text-align: left;
+}
+
 .clear_all:hover{
     background: #fff;
     color: #222;
@@ -853,10 +900,10 @@ button.changelook:focus, button.changelook:hover,button.changelook.view-active{
     width: 120px;
 }
 
-/*#algolia_instant_selector .list .result .referral{
+#algolia_instant_selector .list .result .mode-duration-wrapper .referral{
     display: none;
 }
-*/
+
 #algolia_instant_selector .list .result .result-title, #algolia_instant_selector .list .result .institute, #algolia_instant_selector .list .result .mode-duration-wrapper {
     padding-left: 10px;
 }
@@ -866,7 +913,7 @@ button.changelook:focus, button.changelook:hover,button.changelook.view-active{
 }
 #algolia_instant_selector .list .result .result-excerpt .title-institute-wrapper{
     min-height: 76px;
-    width: 68%;
+    width: 70%;
 }
 #algolia_instant_selector .list .result .result-excerpt .mode{
     padding: 0 5px;
@@ -903,6 +950,9 @@ border-right:none;
 }
 #algolia_instant_selector .result .duration-provider-wrapper{
     display: inline-block;
+}
+#algolia_instant_selector .result .duration-provider-wrapper div:first-child{
+    border:none;
 }
 #algolia_instant_selector .list .result .duration-provider-wrapper{
     float: left;
@@ -1200,7 +1250,7 @@ border-right:none;
 /*By GAmbheer End*/
 /*-----Search page end-----*/
 
-@media screen and (max-width: 1020px){
+@media screen and (max-width: 1025px){
     .button-123 select {
         width: 100%;
         margin-bottom: 10px;
@@ -1208,6 +1258,9 @@ border-right:none;
     .list-grid-wrapper ,.default_sorting {
         display: block;
     }
+    .default_sorting {
+        display: block;
+    }    
 }
 
 @media screen and (max-width: 800px){

@@ -38,13 +38,27 @@
                                     <div style="height: 50px;"></div>
                                 {{/featureImage}}
                                 </div>
-                                <div class="result-excerpt clearfix">
-                                    <div class="title-institute-wrapper">
-                                        <h4 class="result-title">
-                                            {{{ _highlightResult.title.value }}} - {{pa_specialization}}
-                                        </h4>
-                                        <div class="institute">{{university}}<br>
-                                            {{#pa_affiliation}}<span class="affiliation">{{.}}</span>{{/pa_affiliation}}
+                                <div class="result-excerpt">
+                                    <div class="clearfix institute-tag-wrapper">
+                                        <div class="title-institute-wrapper">
+                                            <h4 class="result-title">
+                                                {{{ _highlightResult.title.value }}} - {{pa_specialization}}
+                                            </h4>
+                                            <div class="institute">
+                                                {{university}}                                          
+                                            </div>
+                                            <div class="affiliation-wrapper">
+                                                {{#pa_affiliation}}
+                                                    <span class="affiliation">{{.}}</span>
+                                                {{/pa_affiliation}}
+                                            </div>
+                                        </div>
+                                        <div class="tag-coupon-wrapper">
+                                            <div><span class="search-tags tag-cyan">Scholorship</span></div>
+                                            <div><span class="search-tags tag-green">Trending</span></div>
+                                            {{#pa_referral-cashback.length}}                                                                                                                
+                                                <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
+                                            {{/pa_referral-cashback.length}}
                                         </div>
                                     </div>
                                     <div class="mode-duration-wrapper clearfix">
