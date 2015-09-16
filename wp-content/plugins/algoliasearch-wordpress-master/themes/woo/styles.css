@@ -220,12 +220,13 @@
 #algolia_instant_selector .pagination-wrapper
 {
     width: 100%;
+    float:right;
 }
 
 #algolia_instant_selector .pagination-wrapper.with_facets
 {
-    width: 80%;
-    margin-left: 20%;
+    /*width: 80%;
+    margin-left: 20%;*/
 }
 
 #algolia_instant_selector .algolia-pagination
@@ -383,6 +384,10 @@
 */#algolia_instant_selector .facets.with_facets .scroll-pane .algolia-slider{
 	width: 90%;
 	margin: 20px auto 0;
+}
+.count-checkbox{
+    font-family: robotoregular;
+    font-size: 12px;
 }
 #view{padding: 0;}
 #view li{ list-style: none; }
@@ -1303,6 +1308,10 @@ border-right:none;
     }
     .filter-icon.sprite{
         display: block !important;
+    }
+    #algolia_instant_selector .active-tab .name{
+        color:#169f84;
+        font-family: robotobold;    
     }
     #algolia_instant_selector .active-tab.facet:after, #algolia_instant_selector .active-tab.facet:before {
         content: "";

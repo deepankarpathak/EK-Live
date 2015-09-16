@@ -92,6 +92,7 @@
         
         <div style="clear: both;"></div>
     </div>
+    {{#hits.length}}
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min-pad right-pad-none custom-hide-small">
         <div class="button-123 hidden-xs">
          {{#hits.length}}
@@ -113,6 +114,7 @@
         </div>
         <?php echo do_shortcode('[block id="advertisement"]'); ?>
     </div>
+{{/hits.length}}
 
 {{^hits.length}}
         <div class="row">
@@ -153,7 +155,7 @@
 
     <div class="facet">
         <div class="name" onclick="dock_undock(this)">
-            {{ facet_categorie_name }}
+            {{ facet_categorie_name }} <span class="count-checkbox">({{count}})</span>
             
             <button class="dock_undock"></button>     
         </div>
@@ -232,7 +234,7 @@
     {{#facets}}
     {{#count}}
     
-    <div class="facet {{ facet_categorie_name }}" id="{{ facet_categorie_name }}">
+    <div class="facet {{ facet_categorie_name }}{{count}}">
         <div class="name">
             {{ facet_categorie_name }}
         </div>
@@ -244,7 +246,7 @@
     <div class="filter_options_result">
     {{#facets}}
     {{#count}}
-    <div class ="all_results result_{{ facet_categorie_name }}">
+    <div class ="all_results {{ facet_categorie_name }}{{count}}_result">
             <div class = "scroll-pane" >
                 {{#sub_facets}}
 
@@ -296,7 +298,7 @@
 
 
 <script type="text/template" id="instant-pagination-template">
-<div class="pagination-wrapper{{#facets_count}} with_facets{{/facets_count}} custom-hide-small">
+<div class="pagination-wrapper{{#facets_count}} with_facets{{/facets_count}}">
     <div class="text-center">
         <ul class="algolia-pagination">
             <a href="#" data-page="{{prev_page}}">
