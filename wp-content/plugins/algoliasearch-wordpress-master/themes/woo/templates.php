@@ -54,12 +54,22 @@
                                                 {{/pa_affiliation}}
                                             </div>
                                         </div>
-                                        <div class="tag-coupon-wrapper">
-                                            <div><span class="search-tags tag-cyan">Scholorship</span></div>
-                                            <div><span class="search-tags tag-green">Trending</span></div>
-                                            {{#pa_referral-cashback.length}}                                                                                                                
-                                                <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
-                                            {{/pa_referral-cashback.length}}
+                                        <div class="tag-coupon-wrapper custom-hide-small">
+                                        {{#pa_scholarship}}
+                                            <div><span class="search-tags tag-cyan">{{pa_scholarship}}</span></div>
+                                        {{/pa_scholarship}}
+                                        {{#pa_trending}}
+                                            <div><span class="search-tags tag-green">{{pa_trending}}</span></div>
+                                        {{/pa_trending}}
+                                        {{#pa_cashback}}
+                                            <div><span class="search-tags tag-green">{{pa_cashback}}</span></div>
+                                        {{/pa_cashback}}  
+                                        {{#pa_new}}
+                                            <div><span class="search-tags tag-green">{{pa_new}}</span></div>
+                                        {{/pa_new}}      
+                                        {{#pa_referral-cashback.length}}
+                                            <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
+                                        {{/pa_referral-cashback.length}}
                                         </div>
                                     </div>
                                     <div class="mode-duration-wrapper clearfix">
