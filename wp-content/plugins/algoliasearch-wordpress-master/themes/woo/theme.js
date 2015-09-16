@@ -151,55 +151,49 @@ jQuery(document).ready(function ($) {
 
             html_content += engine.getHtmlForResults(resultsTemplate, content, facets);
             
-            list=0
+            grid=0
             if($('#view li')[0]!==undefined)
             {
-                if($($('#view li')[0]).hasClass("list"))
-                    list=1;
+                if($($('#view li')[0]).hasClass("grid"))
+                    grid=1;
             }            
             if (content.hits.length > 0)
                 html_content += engine.getHtmlForPagination(paginationTemplate, content, pages, facets);
 
             html_content += "</div></div>";
             $(algoliaSettings.instant_jquery_selector).html(html_content);
-            
-            // Create labels on algolia search page:Gambheer
+
+            $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
+               if($(this).is(':checked') == true){
+                    $(this).parent().addClass('change_color');
+                }
+            });
             // Get selected filters
             $(".sub_facet").find("input[type='checkbox']").each(function (i) {
                if($(this).is(':checked') == true){
                 var data_name = $(this).attr("data-name");
                 var data_tax = $(this).attr("data-tax");
                 var raw_label_html = $(".raw_labels").html();
-                if($(".raw_labels").html().indexOf(data_name)<=0){
+                raw_label_html = raw_label_html.replace("&amp;","&");
+                if(raw_label_html.indexOf(data_name)<=0){
                     $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");
                     }
                }
-            });
-
-            $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
-               if($(this).is(':checked') == true){
-                    $(this).parent().addClass('change_color');
-                }
             });       
-
 
             // Get Labels from footer on load of algolia search filter
              if($(".raw_labels").html() != ""){
                $(".labels").css("margin-bottom", "15px");
+               $(".labels").html($(".raw_labels").html());
              }
              else{
                $(".labels").css("margin-bottom", "0px");   
              }
-            $(".labels").html($(".raw_labels").html());
+            
+
             // Get Banner from footer on load of algolia search filter
             $(".banner_img_container").html($(".raw_banner_image").html());
-            /*setTimeout(
-                function(){
-                $(".banner_img_container").html($(".raw_banner_image").html());
-            }, 2000);*/
-                        
             //Get university institute logo and description
-            
             if($(".raw_university_logo_desc .univ_logo img").attr("src") != undefined){
                 $(".univ_logo_outer").show();
                 $(".university_logo_desc").html($(".raw_university_logo_desc").html());
@@ -207,13 +201,16 @@ jQuery(document).ready(function ($) {
                     $(".banner_img_container").hide();
                 }
             }
+            if($(".raw_university_logo_desc .univ_logo img").attr("src") == "")
+                $(".univ_logo_outer").hide();
+
 
             updateSliderValues();
             $(".algolia-slider").parent().prev().css("display","none");
-
-            if(list)
+            
+            if(grid)
             {
-               $("button.list").trigger("click");
+               $("button.grid").trigger("click");
             }
         }
 
@@ -474,8 +471,8 @@ jQuery(document).ready(function ($) {
             else
               var cls = $(this).attr("id");  
             
-            $(".all_results").fadeOut();
-            $(".result_"+cls).fadeIn();
+            $(".all_results").hide();
+            $(".result_"+cls).show();
         });
         // Mobile filters end
 
