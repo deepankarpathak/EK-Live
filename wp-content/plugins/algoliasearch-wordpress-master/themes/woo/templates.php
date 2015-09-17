@@ -1,3 +1,4 @@
+<?php if (!(is_page("checkout") || is_page("checkout"))): ?>
 <script type="text/template" id="autocomplete-template">
     <div class="result">
         <div class="title">
@@ -122,7 +123,6 @@
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 min-pad right-pad-none custom-hide-small">
         <div class="button-123 hidden-xs">
-         {{#hits.length}}
            {{#sorting_indices.length}}
             <div class="default_sorting">
                 <select id="index_to_use">
@@ -133,7 +133,6 @@
                 </select>
             </div>
             {{/sorting_indices.length}}
-            {{/hits.length}}
             <div class="list-grid-wrapper">
             <button class="list changelook view-active" onclick="$('#view li').removeClass('grid').addClass('list'); $('#view .grid-images').removeClass('grid-images').addClass('list-images'); $('#view .result-sub-content-grid').removeClass('result-sub-content-grid').addClass('result-sub-content-list'); $('#view .price-grid').removeClass('price-grid').addClass('price-list');"><img src="<?php echo get_site_url(); ?>/images/list.png"title="List View" /></button>
             <button class="grid changelook" onclick="$('#view li').removeClass('list').addClass('grid'); $('#view .list-images').removeClass('list-images').addClass('grid-images'); $('#view .result-sub-content-list').removeClass('result-sub-content-list').addClass('result-sub-content-grid'); $('#view .price-list').removeClass('price-list').addClass('price-grid');" ><img src="<?php echo get_site_url(); ?>/images/grid.png" title="Grid View"/></button>
@@ -347,3 +346,4 @@
     </div>
 </div>
 </script>
+<?php endif;?>

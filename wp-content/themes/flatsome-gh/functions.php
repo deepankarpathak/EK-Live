@@ -159,6 +159,12 @@ function gh_remove_woocommerce_styles_from_unwanted_places_func(){
 			wp_dequeue_script( 'fancybox' );
 			wp_dequeue_script( 'jqueryui' );	*/
 		}
+		
+		if(is_cart() || is_checkout())
+		{
+			wp_dequeue_script( 'algolia_main.js' );
+			wp_dequeue_script( 'theme.js' );
+		}
 	}
 }
 
