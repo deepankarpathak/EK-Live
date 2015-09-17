@@ -4296,6 +4296,13 @@ float: none;
 	#four_highlights .column-inner{
 		text-align: left;
 	}
+	.row .woocommerce-message.message-success{
+		padding: 0 15px;
+		line-height: 22px;
+		text-align: center;
+		font-size: 16px;
+		font-family: robotoregular;
+	}
 }
 @media only screen and (max-width: 620px) {
 	.entry-content .woocommerce:nth-of-type(2) .email-text{
