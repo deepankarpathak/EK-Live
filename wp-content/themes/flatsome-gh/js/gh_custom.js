@@ -309,6 +309,13 @@ jQuery(document).ready(function(){
 	        $(".apply").show();
 	        $("body").css("overflow","hidden");
 	        $(".jPanelMenu").css("overflow","hidden");
+	        $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
+               if($(this).is(':checked') == true){
+                    $(this).parent().addClass('change_color');
+                }
+        	});
+        	$(".facet").removeClass("active-tab");
+        	$(".facet:first-child").addClass("active-tab")
 	        if($("#index_to_use").val().indexOf("asc")>-1){ 
 	        	$(".sortby-price .arrow-bottom").html("&#9660;");
 	        	$(".sortby-price").addClass("asc");
