@@ -15,7 +15,6 @@ Template:     flatsome
 @import url("css/foundation5/foundation.min.css");
 */
 @import url("css/foundation.css?v=2.0.5");
-
 ul{
 	list-style-type: none;
 }
@@ -2831,25 +2830,18 @@ margin:35px 0px;
 /* Algolia search page CSS*/
 .labels .label{
   display: inline-block;
+  background: #E5E7E6;
   color: #222;
   border: 1px solid #ccc;
-  margin: 8px 3px;
+  margin: 0px 10px 10px 0px;
   font-size: 10px;
   font-family: robotoregular;
   padding: 3px;
-  border-radius: 3px;
-}
-
-.with_facets > div.labels{
-  text-align: left;
-  background: #EEE;
-  padding: 0 3px;
+  border-radius: 5px;
 }
 
 .labels .label .close_label{
 	margin-left: 3px;
-	font-size: 11px;
-    font-weight: bold;
 }
 
 .labels .label .close_label:hover{
@@ -4351,7 +4343,12 @@ float: none;
 	.edu_footer_payment .textwidget p {
 		margin-bottom: 0 !important;	
 	}
-
+.row .woocommerce-message.message-success{
+		padding: 0 15px;
+		line-height: 22px;
+		text-align: center;
+		font-size: 16px;
+		font-family: robotoregular;
 }
 @media only screen and (max-width: 620px) {
 	.entry-content .woocommerce:nth-of-type(2) .email-text{
