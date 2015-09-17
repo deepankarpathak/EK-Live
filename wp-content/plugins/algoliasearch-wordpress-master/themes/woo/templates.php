@@ -1,3 +1,4 @@
+<?php if (!(is_page("checkout") || is_page("checkout"))) : ?>
 <script type="text/template" id="autocomplete-template">
     <div class="result">
         <div class="title">
@@ -56,6 +57,9 @@
                                             </div>
                                         </div>
                                         <div class="tag-coupon-wrapper custom-hide-small">
+                                        {{#pa_new}}
+                                            <div><span class="search-tags tag-yellow">{{pa_new}}</span></div>
+                                        {{/pa_new}} 
                                         {{#pa_scholarship}}
                                             <div><span class="search-tags tag-cyan">{{pa_scholarship}}</span></div>
                                         {{/pa_scholarship}}
@@ -63,11 +67,11 @@
                                             <div><span class="search-tags tag-green">{{pa_trending}}</span></div>
                                         {{/pa_trending}}
                                         {{#pa_cashback}}
-                                            <div><span class="search-tags tag-green">{{pa_cashback}}</span></div>
+                                            <div><span class="search-tags tag-yellow">{{pa_cashback}}</span></div>
                                         {{/pa_cashback}}  
-                                        {{#pa_new}}
-                                            <div><span class="search-tags tag-green">{{pa_new}}</span></div>
-                                        {{/pa_new}}      
+                                        {{#pa_hot}}
+                                            <div><span class="search-tags tag-red">{{pa_hot}}</span></div>
+                                        {{/pa_hot}}     
                                         {{#pa_referral-cashback.length}}
                                             <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>
                                         {{/pa_referral-cashback.length}}
@@ -343,3 +347,4 @@
     </div>
 </div>
 </script>
+<?php endif;?>
