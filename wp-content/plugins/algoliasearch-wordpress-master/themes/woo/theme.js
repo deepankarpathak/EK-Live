@@ -531,6 +531,7 @@ jQuery(document).ready(function ($) {
 
             if (parseInt(max) == parseInt(slide_dom.attr("data-max")))
                 engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
+            updateSlideInfos(ui);
         });
 
         $("body").on("change", "#index_to_use", function () {
