@@ -324,11 +324,10 @@ jQuery(document).ready(function() {
 ?>
 <script>
   /*Store in json format category banners and university logo and description*/
-  var cat_banners , university_data , default_banner;
-  default_banner = $("#theme_dir").val()+"/wp-content/uploads/default_banner.jpg";
-  default_logo = $("#theme_dir").val()+"/wp-content/uploads/edukart-logo1.png";
-  cat_banners = <?php echo json_encode($cat_banners); ?> 
-  university_data = <?php echo json_encode($university_data); ?>
+  var default_banner = $("#theme_dir").val()+"/wp-content/uploads/default_banner.jpg";
+  //var default_logo = $("#theme_dir").val()+"/wp-content/uploads/edukart-logo1.png";
+  var cat_banners = <?php echo json_encode($cat_banners); ?> ;
+  var university_data = <?php echo json_encode($university_data); ?>;
 </script>
 
 <div class="raw_labels" style="display:none"></div>
