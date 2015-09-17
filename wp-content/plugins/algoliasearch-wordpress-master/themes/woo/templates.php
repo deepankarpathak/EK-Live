@@ -249,7 +249,7 @@
 <div class="apply">Apply</div>
 <?php } else{?>
 
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad desk-filter-wrapper facets{{#count}} with_facets{{/count}}">
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad desk-filter-wrapper facets{{#count}} with_facets{{/count}} custom-hide-small">
     <div class="clear_all_div"><div class="number_of_results">{{#hits.length}}{{nbHits}}{{/hits.length}} Results</div>
        <button class="clear_all" onclick="clear_all()"><span class="refresh sprite"></span><span class="clear-btn">Clear All</span></button>
     </div> 
