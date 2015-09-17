@@ -25,6 +25,7 @@
             {{#hits}}
             
             <li class="col-lg-4 col-md-4 col-sm-6 col-xs-12 list">
+             <?php if(wp_is_mobile()){ ?><a href="{{permalink}}"> <?php }?>
                     <div class="result">
                         <div class="result-content clearfix">          
                             <div class="result-sub-content-list clearfix">
@@ -94,21 +95,20 @@
                                         </div>
                                     </div>
                                 </div>
-                            
+                            <?php if ( !wp_is_mobile() ){ ?>  
                                 <div class="quick_view_overlay">
                                     <div class="btn-wrapper"> 
-                                    <?php if ( !wp_is_mobile() ){ ?>                       
                                         <div class="compare_link link-btn" data-prod={{objectID}}>Compare</div>
                                         <div class="quick_view_link link-btn" data-prod={{objectID}}>Quick View</div>
-                                    <?php }?>
                                         <div class="learn_more_link link-btn"><a href="{{permalink}}" target="_blank">Learn More</a>
                                         </div>
                                     </div>
                                 </div>
+                            <?php }?>
                             
                         </div>
-                    </div>               
-                </a>
+                    </div> 
+                    <?php if(wp_is_mobile()){ ?></a> <?php }?>              
             </li>
             
             {{/hits}}
@@ -165,77 +165,7 @@
         </div>
         
 {{/hits.length}}
-<?php if(!wp_is_mobile()) { ?>
-
-<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad desk-filter-wrapper facets{{#count}} with_facets{{/count}}">
-    <div class="clear_all_div"><div class="number_of_results">{{#hits.length}}{{nbHits}}{{/hits.length}} Results</div>
-       <button class="clear_all" onclick="clear_all()"><span class="refresh sprite"></span><span class="clear-btn">Clear All</span></button>
-    </div> 
-    
-    {{#facets}}
-    {{#count}}
-
-    <div class="facet">
-        <div class="name" onclick="dock_undock(this)">
-            {{ facet_categorie_name }} <span class="count-checkbox">({{count}})</span>
-            
-            <button class="dock_undock"></button>     
-        </div>
-        <div class="dock_this">
-          <span id="clear" class="clear_filter" onclick="clear_filter(this)">CLEAR</span>
-          <div class="course-search">
-            <input type="text" id="filter_filter" class="filter_filter" placeholder="Type {{ facet_categorie_name }}" onkeyup="filter(this)" />    
-          </div>         
-          <div class = "scroll-pane" >
-                {{#sub_facets}}
-
-                {{#type.menu}}
-                <div data-tax="{{tax}}" data-name="{{nameattr}}" data-type="menu" class="{{#checked}}checked {{/checked}}sub_facet menu">
-                    <input style="display: none;" data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
-                    {{name}} {{#print_count}}({{count}}){{/print_count}}
-                </div>
-                {{/type.menu}}
-
-                {{#type.conjunctive}}
-                <div data-name="{{tax}}" data-type="conjunctive" class="{{#checked}}checked {{/checked}}sub_facet conjunctive">
-                    <input style="display: none;" data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
-                    {{name}} ({{count}})
-                </div>
-                {{/type.conjunctive}}
-                
-
-                {{#type.slider}}
-                <div class="algolia-slider algolia-slider-true" data-tax="{{tax}}" data-min="{{min}}" data-max="{{max}}" id="term"></div>
-                <div class="algolia-slider-info">
-                    <div class="min" style="float: left;">{{current_min}}</div>
-                    <div class="max" style="float: right;">{{current_max}}</div>
-                    <div style="clear: both"></div>
-                </div>
-                {{/type.slider}}
-
-                <div class="options">
-                {{#type.disjunctive}}
-                <div data-name="{{tax}}" data-type="disjunctive" class="{{#checked}}checked {{/checked}}sub_facet disjunctive">
-                    <input data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
-                    {{name}} ({{count}})
-                </div>
-                {{/type.disjunctive}}
-                </div>
-                
-
-            {{/sub_facets}}
-        </div>
-    </div>
-</div>
-    {{/count}}
-    {{/facets}}
-</div>
-<div class="quick_view_overlay_display_data">
-    <div class="data_quick_view">
-        <div class="close_quick_view">X</div>        
-    </div>
-</div>
-<?php } else{ ?>
+<?php if(wp_is_mobile() && (strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') == false)) { ?>
 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 facets{{#count}} with_facets{{/count}} mobile-filter">
     <div class="filter-head clearfix">
         <div class="pull-left filters-titl"><span class="sprite close_filter"></span><span class="filter-txt">Filters</span></div>
@@ -313,6 +243,76 @@
 </div>
 </div>
 <div class="apply">Apply</div>
+<?php } else{?>
+
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-pad-none min-pad desk-filter-wrapper facets{{#count}} with_facets{{/count}}">
+    <div class="clear_all_div"><div class="number_of_results">{{#hits.length}}{{nbHits}}{{/hits.length}} Results</div>
+       <button class="clear_all" onclick="clear_all()"><span class="refresh sprite"></span><span class="clear-btn">Clear All</span></button>
+    </div> 
+    
+    {{#facets}}
+    {{#count}}
+
+    <div class="facet">
+        <div class="name" onclick="dock_undock(this)">
+            {{ facet_categorie_name }} <span class="count-checkbox">({{count}})</span>
+            
+            <button class="dock_undock"></button>     
+        </div>
+        <div class="dock_this">
+          <span id="clear" class="clear_filter" onclick="clear_filter(this)">CLEAR</span>
+          <div class="course-search">
+            <input type="text" id="filter_filter" class="filter_filter" placeholder="Type {{ facet_categorie_name }}" onkeyup="filter(this)" />    
+          </div>         
+          <div class = "scroll-pane" >
+                {{#sub_facets}}
+
+                {{#type.menu}}
+                <div data-tax="{{tax}}" data-name="{{nameattr}}" data-type="menu" class="{{#checked}}checked {{/checked}}sub_facet menu">
+                    <input style="display: none;" data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
+                    {{name}} {{#print_count}}({{count}}){{/print_count}}
+                </div>
+                {{/type.menu}}
+
+                {{#type.conjunctive}}
+                <div data-name="{{tax}}" data-type="conjunctive" class="{{#checked}}checked {{/checked}}sub_facet conjunctive">
+                    <input style="display: none;" data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
+                    {{name}} ({{count}})
+                </div>
+                {{/type.conjunctive}}
+                
+
+                {{#type.slider}}
+                <div class="algolia-slider algolia-slider-true" data-tax="{{tax}}" data-min="{{min}}" data-max="{{max}}" id="term"></div>
+                <div class="algolia-slider-info">
+                    <div class="min" style="float: left;">{{current_min}}</div>
+                    <div class="max" style="float: right;">{{current_max}}</div>
+                    <div style="clear: both"></div>
+                </div>
+                {{/type.slider}}
+
+                <div class="options">
+                {{#type.disjunctive}}
+                <div data-name="{{tax}}" data-type="disjunctive" class="{{#checked}}checked {{/checked}}sub_facet disjunctive">
+                    <input data-tax="{{tax}}" {{#checked}}checked{{/checked}} data-name="{{nameattr}}" class="facet_value" type="checkbox" />
+                    {{name}} ({{count}})
+                </div>
+                {{/type.disjunctive}}
+                </div>
+                
+
+            {{/sub_facets}}
+        </div>
+    </div>
+</div>
+    {{/count}}
+    {{/facets}}
+</div>
+<div class="quick_view_overlay_display_data">
+    <div class="data_quick_view">
+        <div class="close_quick_view">X</div>        
+    </div>
+</div>
 <?php }?>
 </script>
 
