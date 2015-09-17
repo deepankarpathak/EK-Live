@@ -904,6 +904,10 @@ ul.top-bar-nav li:first-child {
 	background-color: #2ecc71 !important;
 	color: #fff !important;
 }
+.woocommerce-message{
+	padding-right: 0;
+	text-align: center;
+}
 .showlogin {
 	background: none repeat scroll 0 0 #cccccc;
 	color: #666666;
@@ -1054,10 +1058,10 @@ input[type="checkbox"]{
 	width: 25px;
 	height: 25px;
 	display: inline-block;
-	background: #ededed url("images/sprite/sprites.png") repeat scroll -108px -204px;
+	background: #ededed url("images/sprite/sprites.png") repeat scroll -7px -252px;
 }
 .custom-cart .cart_item .remove-product .icon-close:hover{
-	background: #ddd url("images/sprite/sprites.png") repeat scroll -108px -204px;
+	background: #ededed url("images/sprite/sprites.png") repeat scroll -7px -252px;
 }
 .custom-cart .cart_item .remove-product .icon-close:before{
 	content: "" !important;
@@ -2934,6 +2938,7 @@ margin:35px 0px;
 @media only screen and (max-width: 1024px) {
 	#masthead #logo {
 	    max-width: 180px;
+	    padding: 0;
 	}
 }
 
@@ -3061,6 +3066,15 @@ margin:35px 0px;
 	}
 	.edu-contact-detail div span:last-child{
 		position: absolute;
+	}
+	#edu_popular_courses .inner-wrap .quick-view,.product-small .inner-wrap p.name {
+	    font-size: 13px;
+	}
+	.gh_min_price_in_loop, .gh_max_price_in_loop {
+	    font-size: 14px;
+	}
+	.logo-slider h1,.edu_pg_pc span{
+	    font-size: 36px;
 	}
 }
 @media only screen and (min-width: 768px) {
@@ -5272,6 +5286,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     margin-top: 2px;
     text-transform: uppercase;
     padding-left:3px;
+    margin-right: 5px;
 }
 .product_detail_referral {
     background-color: #ffffa7;
@@ -5534,6 +5549,7 @@ margin-right: 4px;
 }
 .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable{
  font-family: "robotolight",arial,sans-serif !important;
+ box-shadow: 0px 0px 5px #555;
 }
 .ui-dialog-title {
     font-family: "robotolight",arial,sans-serif !important;
@@ -5553,9 +5569,10 @@ margin-right: 4px;
 }
 .ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only.ui-dialog-titlebar-close {
     background-color: #fff !important;
-    border-radius: 35px;
-    height: 35px;
-    width: 35px;
+    height: 24px;
+    width: 25px;
+    border:none;
+    top: 12px;
     background-image: url("images/cross.png") !important;
     background-repeat:no-repeat;
 }
