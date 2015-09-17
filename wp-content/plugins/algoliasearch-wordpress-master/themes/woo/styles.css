@@ -873,7 +873,7 @@ button.changelook:focus, button.changelook:hover,button.changelook.view-active{
     background: #fff;
     color: #222;
     border-color: #222;
-    box-shadow:none;
+    box-shadow:none !important;
     box-shadow: 0px 150px 20px 50px rgba(0, 0, 0, 0.2) inset;
 
 }
@@ -933,7 +933,23 @@ button.changelook:focus, button.changelook:hover,button.changelook.view-active{
 }
 #algolia_instant_selector .list .result .result-excerpt .mode{
     padding: 0 5px;
+    white-space: nowrap;
+    width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
+#algolia_instant_selector .list .result .result-excerpt .mode{
+    display: none;
+}
+#algolia_instant_selector .list .result .result-excerpt .mode.list-mode{
+    display: inline-block;
+    float: left;
+}
+#algolia_instant_selector .grid .result .result-excerpt .mode.list-mode{
+    display: inline-block;
+}
+
 #algolia_instant_selector .list .mode-duration-wrapper > div{
     border-right: 1px solid #ddd;
 }

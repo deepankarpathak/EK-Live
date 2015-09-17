@@ -91,6 +91,7 @@
                                                 </div>
                                             {{/pa_providers}}    
                                         </div>
+                                        <div class="mode list-mode"><span class="study-content">Study Content: </span>{{pa_study-content}}</div>
                                         <div class="price-coupan-wrapper">
                                             {{#pa_referral-cashback.length}}
                                             <div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs. {{pa_referral-cashback}}</div>

@@ -907,7 +907,6 @@ ul.top-bar-nav li:first-child {
 }
 .woocommerce-message{
 	padding-right: 0;
-	text-align: center;
 }
 .showlogin {
 	background: none repeat scroll 0 0 #cccccc;
@@ -2833,11 +2832,17 @@ margin:35px 0px;
   background: #E5E7E6;
   color: #222;
   border: 1px solid #ccc;
-  margin: 0px 10px 10px 0px;
+  margin: 10px 5px;
   font-size: 10px;
   font-family: robotoregular;
   padding: 3px;
   border-radius: 5px;
+}
+
+.with_facets > div.labels{
+  text-align: left;
+  background: #EEE;
+  padding: 0 3px;
 }
 
 .labels .label .close_label{
