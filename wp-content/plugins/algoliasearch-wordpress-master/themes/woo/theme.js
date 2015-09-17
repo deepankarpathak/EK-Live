@@ -168,9 +168,8 @@ jQuery(document).ready(function ($) {
             var count = 0;
             var which_tax, which_name;
             var data_name, data_tax;
+            var all_labels;
             $(".sub_facet").find("input[type='checkbox']").each(function (i) {
-               // User will not be able to click on checkbox
-               //$(this).attr("disabled", "disabled");
                data_name = $(this).attr("data-name");
                data_tax = $(this).attr("data-tax");
                if($(this).is(':checked') == true){
@@ -178,6 +177,7 @@ jQuery(document).ready(function ($) {
                     raw_label_html = raw_label_html.replace("&amp;","&");
                     if(raw_label_html.indexOf(data_name)<=0){
                         $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");
+                        all_labels = $(".raw_labels").html();
                     }
                     if($(this).attr("data-tax") == "product_cat"){
                         count++;
@@ -198,6 +198,14 @@ jQuery(document).ready(function ($) {
                     });
                 }
             });
+            // Get Labels from footer on load of algolia search filter
+            if(all_labels != ""){
+               $(".labels").css("margin-bottom", "15px");
+               $(".labels").html(all_labels);
+            }
+             else{
+               $(".labels").css("margin-bottom", "0px");   
+             }
 
             if(count == 1 && which_tax == "product_cat"){
                 getCategoryBanner(which_name);
@@ -209,15 +217,6 @@ jQuery(document).ready(function ($) {
                 setDefaultBanner();
             }
 
-            // Get Labels from footer on load of algolia search filter
-             if($(".raw_labels").html() != ""){
-               $(".labels").css("margin-bottom", "15px");
-               $(".labels").html($(".raw_labels").html());
-             }
-             else{
-               $(".labels").css("margin-bottom", "0px");   
-             }
-            
 
             // Get Banner from footer on load of algolia search filter
             $(".banner_img_container").html($(".raw_banner_image").html());
