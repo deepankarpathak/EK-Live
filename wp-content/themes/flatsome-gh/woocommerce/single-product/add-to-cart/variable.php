@@ -31,6 +31,8 @@ global $woocommerce, $product, $post;
 </script>
 <form class="variations_form cart" method="post" enctype='multipart/form-data' data-product_id="<?php echo $post->ID; ?>" data-product_variations="<?php echo esc_attr( json_encode( $available_variations ) ) ?>">
     <script type="text/javascript">
+    var variation_id = <?php echo $available_variations[0]['variation_id']; ?>;
+    jQuery("[name='variation_id']").val(variation_id); 
         jQuery(document).ready(function (){
         jQuery('.single_popup_button').click(function(){ 	
 	jQuery('#edu-enquiry-popup').css('display', 'block');

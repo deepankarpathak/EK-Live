@@ -913,7 +913,8 @@ if ( ! function_exists( 'woocommerce_product_reviews_tab' ) ) {
 	 * @subpackage	Product/Tabs
 	 */
 	function woocommerce_product_reviews_tab() {
-		wc_get_template( 'single-product/tabs/reviews.php' );
+		wc_get_template( '../../yith-woocommerce-advanced-reviews-premium/templates/ywar-product-reviews.php' );
+		//wc_get_template( 'single-product-reviews.php' );
 	}
 }
 
@@ -947,13 +948,25 @@ if ( ! function_exists( 'woocommerce_default_product_tabs' ) ) {
 		}
 
 		// Reviews tab - shows comments
-		if ( comments_open() ) {
+		// if ( comments_open($post->ID) ) {
+		// 	$tabs['reviews'] = array(
+		// 		'title'    => sprintf( __( 'Reviews (%d)', 'woocommerce' ), $product->get_review_count() ),
+		// 		'priority' => 100,
+		// 		//'callback' => 'comments_template'
+		// 	);
+		// }
+		
+		// Reviews tab - shows comments
+		if ( comments_open($post->ID) ) {
 			$tabs['reviews'] = array(
-				'title'    => sprintf( __( 'Reviews (%d)', 'woocommerce' ), $product->get_review_count() ),
-				'priority' => 30,
-				'callback' => 'comments_template'
+			'title'    => sprintf( __( 'Reviews (%d)', 'woocommerce' ), $product->get_review_count() ),
+			'priority' => 100,
+			'callback' => 'woocommerce_product_reviews_tab'
+			//'callback' => 'comments_template'
 			);
+
 		}
+		
 
 		return $tabs;
 	}
