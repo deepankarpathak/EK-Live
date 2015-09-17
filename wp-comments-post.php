@@ -133,12 +133,13 @@ if ( '' == $comment_content ) {
 $comment_parent = isset($_POST['comment_parent']) ? absint($_POST['comment_parent']) : 0;
 
 $commentdata = compact('comment_post_ID', 'comment_author', 'comment_author_email', 'comment_author_url', 'comment_content', 'comment_type', 'comment_parent', 'user_ID');
-
+$review_done =  'no';
 $comment_id = wp_new_comment( $commentdata );
 if ( ! $comment_id ) {
+	$review_done= 'no';
 	wp_die( __( "<strong>ERROR</strong>: The comment could not be saved. Please try again later." ) );
 }
-
+$review_done= 'yes';
 $comment = get_comment( $comment_id );
 
 /**
@@ -162,6 +163,8 @@ $location = empty($_POST['redirect_to']) ? get_comment_link($comment_id) : $_POS
  * @param object $comment  Comment object.
  */
 $location = apply_filters( 'comment_post_redirect', $location, $comment );
-
-wp_safe_redirect( $location );
+if($review_done == 'yes'){
+	$location .= '?review_done='.$review_done;
+}
+wp_safe_redirect( $location);
 exit;

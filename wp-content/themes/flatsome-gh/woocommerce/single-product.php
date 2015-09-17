@@ -16,6 +16,11 @@ get_header('shop'); ?>
 <?php
 echo '<div id="ses_de_gh" style="display:none;">'.$wp_session['ip'].' | '.$wp_session['country'].' | '.$wp_session['currency'].' | '.$wp_session['conversion_rate'].' | '.$wp_session['ip_type'].' | '.$wp_session['all_ip'].'</div>';
 ?>
+<?php if(@$_GET['review_done'] == 'yes'){ ?>
+	<div class="woocommerce-message message-success">
+		<?php _e( 'Your Review has been saved, After approval it will display.', 'woocommerce' ); ?>
+	</div>
+<?php } ?>
 
 <div class="row product-page">
 <div class="large-12 columns">
