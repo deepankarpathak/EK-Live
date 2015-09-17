@@ -488,10 +488,7 @@ jQuery(document).ready(function ($) {
             engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
         });
 
-        $("body").on("click", ".mobile-filter  .filter-selected", function(){
-            getMobileFeesFilter();
-        });
-
+        
         $("body").on("click", ".mobile-filter .facet", function () {
             var classList = $(this).attr('class').split(/\s+/);
             var last;
@@ -674,7 +671,18 @@ jQuery(document).ready(function ($) {
     if($(".search_home").val() != ""){
         $("#mega-menu").hide();  
     }    
- 
+    $('body').on('click',".sortby-price",function(e){
+        if($(this).hasClass("asc")) {
+            $(this).removeClass("asc");
+            $(this).find(".arrow-bottom").html("&#9660;");
+            engine.helper.setIndex($(this).attr("asc"));
+        }else{
+            $(this).addClass("asc");
+            $(this).find(".arrow-bottom").html("&#9650;");
+            engine.helper.setIndex($(this).attr("desc"));
+        }
+        engine.helper.setCurrentPage(0);
+    });
     // Quick View in algolia search page
     $("body").on("click", ".quick_view_link", function (e) {
        /* add loader  */
