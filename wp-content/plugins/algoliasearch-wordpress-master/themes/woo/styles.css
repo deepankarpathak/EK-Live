@@ -953,7 +953,7 @@ button.changelook:focus, button.changelook:hover,button.changelook.view-active{
     float: left;
 }
 #algolia_instant_selector .grid .result .result-excerpt .mode.list-mode{
-    display: inline-block;
+    display: none;
 }
 
 #algolia_instant_selector .list .mode-duration-wrapper > div{
@@ -1010,9 +1010,17 @@ border-right:none;
 #algolia_instant_selector .grid .result .duration{
     padding-bottom: 5px;
 }
+#algolia_instant_selector .result .duration{
+    max-width:100px; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 #algolia_instant_selector .result .duration,#algolia_instant_selector .result .provider{
     display: inline-block;
     padding:0 5px;
+    vertical-align: middle;
 }
 .quick_view_link, .learn_more_link,.compare_link{
     border: 1px solid #fff;
