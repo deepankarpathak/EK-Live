@@ -575,12 +575,6 @@
     margin-top: 20px;
     padding: 5px 10px;
 }
-.product-lightbox-inner .product_detail_referral {
-    float: left;
-    font-size: 10px;
-    height: 32px;
-    width: 100%;
-}
 .product-lightbox-inner .product_detail_cashback {
     border-bottom: 11px solid #f07746;
     border-right: 12px solid #ffffa7;
@@ -1008,7 +1002,7 @@ border-right:none;
     display:none;
 }
 #algolia_instant_selector .grid .result .duration{
-    padding-bottom: 5px;
+    padding-bottom:0 5px;
 }
 #algolia_instant_selector .result .duration{
     max-width:100px; 
