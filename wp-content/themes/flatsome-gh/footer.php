@@ -324,7 +324,7 @@ jQuery(document).ready(function() {
 ?>
 <script>
   /*Store in json format category banners and university logo and description*/
-  var default_banner = $("#theme_dir").val()+"/wp-content/uploads/default_banner.jpg";
+  var default_banner = $("#theme_dir").val()+"/wp-content/themes/flatsome-gh/images/default_banner.png";
   //var default_logo = $("#theme_dir").val()+"/wp-content/uploads/edukart-logo1.png";
   var cat_banners = <?php echo json_encode($cat_banners); ?> ;
   var university_data = <?php echo json_encode($university_data); ?>;
@@ -332,7 +332,7 @@ jQuery(document).ready(function() {
 
 <div class="raw_labels" style="display:none"></div>
 <div class="raw_banner_image" style="display:none">
-	<img src="<?php echo get_site_url();?>/wp-content/uploads/default_banner.jpg" height="50"/>
+	<img src="<?php echo get_site_url();?>/wp-content/themes/flatsome-gh/images/default_banner.png" height="50"/>
 </div>
 <div class="raw_university_logo_desc" style="display:none">
 	<div class="large-2 columns univ_logo"><img /></div>
