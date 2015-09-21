@@ -6,6 +6,7 @@
  * @package 	WooCommerce/Templates
  * @version     2.2.0
  */
+
 ?>
 <?php if ($order->payment_method_title != 'Cash on Delivery'){ ?>
 <script type="text/javascript" charset="utf-8">
@@ -17,7 +18,7 @@ $(".woocommerce")[0].style.display="none";
 
 <?php } ?>
 <?php
-//print_r($order->get_items());
+
 //$order = wc_get_order( $order_id );
 	$i = 0;
 	foreach( $order->get_items() as $item ) {
@@ -160,4 +161,9 @@ if ( $order ) : ?>
 	$http_val = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
 	print $http_val.'www.ref-r.com/campaign/t1/settings?bid_e=E1B12D0338B46F598D8123D7C78E9598&bid=1576&t=420&event='.$event.'&email='.$email.'&orderID='.$orderID.'&purchaseValue='.$purchaseValue.'&mobile='.$mobile.'&userParams='.$userParams.'&userCustomParams='.$userCustomParams;
 ?>" style="position:absolute; visibility:hidden" />
-<img src="https://scandid.postaffiliatepro.com/scripts/sale.php?AccountId=5a54cdb8&TotalCost=&OrderID=&ProductID=&AffiliateID=a52b98c1&CampaignID=d173b18b&data1=&data2=" width="1" height="1" >
+<?php foreach( $order->get_items() as $item ): ?>
+		
+		<img src="https://scandid.postaffiliatepro.com/scripts/sale.php?AccountId=5a54cdb8&TotalCost=<?php echo $item['line_total']; ?>&OrderID=<?php echo $order->id; ?>&ProductID=<?php echo $item['product_id'];?>&AffiliateID=a52b98c1&CampaignID=d173b18b&data1=&data2=" width="1" height="1" >
+		
+	<?php endforeach;?>
+
