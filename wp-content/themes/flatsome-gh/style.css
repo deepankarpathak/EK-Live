@@ -3188,7 +3188,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 [class*="column"] + [class*="column"]:last-child {
     max-height: 550px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x:hidden;
 }
 .edu-quickview-info .gh_min_price_in_loop {
   display: block;
