@@ -45,7 +45,7 @@
                                     <div class="clearfix institute-tag-wrapper">
                                         <div class="title-institute-wrapper">
                                             <h4 class="result-title">
-                                                {{{ _highlightResult.title.value }}} - {{pa_specialization}}
+                                                {{{ _highlightResult.title.value }}} {{#pa_specialization}}- {{pa_specialization}} {{/pa_specialization}}
                                             </h4>
                                             <div class="institute">
                                                 {{university}}                                          

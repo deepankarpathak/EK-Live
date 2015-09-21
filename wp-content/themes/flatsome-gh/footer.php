@@ -238,10 +238,12 @@ jQuery(document).ready(function() {
 	}
 	else{
 		// Scroll up the screen when searching through sticky search text
-		$('html, body').animate({scrollTop: '0px'}, 1000);
-		setTimeout(function(){
-    		$(".search_home").focus();
-		}, 1200);
+    if(!$(".before-sticky").length){
+  		$('html, body').animate({scrollTop: '0px'}, 1000);
+  		setTimeout(function(){
+      		$(".search_home").focus();
+  		}, 1200);
+    }
 	}
 });
 	var offset = 100;
