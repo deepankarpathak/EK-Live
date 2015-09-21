@@ -119,11 +119,25 @@ jQuery(document).ready(function ($) {
             engine.updateUrl(push_state);
         }
 
+        $(function()
+        {
+            $('.scroll-pane')
+            .jScrollPane()
+            .bind(
+                'mousewheel',
+                function(e)
+                {
+                    e.preventDefault();
+                }
+            );
+        });
+
         function searchCallback(content)
         {
+            //console.log(content);
             var html_content = "";
 
-            html_content += "<div id='algolia_instant_selector'>";
+            html_content += "<div id='algolia_instant_selector'><div class='univ_logo_outer  clearfix'><div class='university_logo_desc row'></div></div><div class='row'><div class='banner_img_container custom-hide-small' style='text-align:center;'></div>";
 
             var facets = [];
             var pages = [];
@@ -133,49 +147,96 @@ jQuery(document).ready(function ($) {
                 facets = engine.getFacets(content);
                 pages = engine.getPages(content);
 
-                html_content += engine.getHtmlForFacets(facetsTemplate, facets);
+                html_content += engine.getHtmlForFacets(facetsTemplate, facets,content);
             }
 
             html_content += engine.getHtmlForResults(resultsTemplate, content, facets);
             
-            list=0
+            grid=0
             if($('#view li')[0]!==undefined)
             {
-                if($($('#view li')[0]).hasClass("list"))
-                    list=1;
+                if($($('#view li')[0]).hasClass("grid"))
+                    grid=1;
             }            
             if (content.hits.length > 0)
                 html_content += engine.getHtmlForPagination(paginationTemplate, content, pages, facets);
 
-            html_content += "</div>";
+            html_content += "</div></div>";
             $(algoliaSettings.instant_jquery_selector).html(html_content);
-            
-            // Create labels on algolia serach page:Gambheer
-            // Get selected filters
-            $(".sub_facet").find("input[type='checkbox']").each(function (i) {
-               if($(this).is(':checked') == true){
-                var data_name = $(this).attr("data-name");
-                var data_tax = $(this).attr("data-tax");
-               }
-            });
 
+            // Get selected filters
+            var count = 0;
+            var which_tax, which_name;
+            var data_name, data_tax;
+            $(".sub_facet").find("input[type='checkbox']").each(function (i) {
+               data_name = $(this).attr("data-name");
+               data_tax = $(this).attr("data-tax");
+               if($(this).is(':checked') == true){
+                    var raw_label_html = $(".raw_labels").html();
+                    raw_label_html = raw_label_html.replace(/&amp;/g, '&');
+                    if(raw_label_html.indexOf(data_name)<=0){
+                        $(".raw_labels").html(raw_label_html+"<div class='label' data-tax='"+data_tax+"' data-name='"+data_name+"'>"+data_name+"<span class='close_label'>x</span></div>");
+                    }
+                    if($(this).attr("data-tax") == "product_cat"){
+                        count++;
+                        which_tax = "product_cat";
+                        which_name = data_name;
+                    }
+                    if($(this).attr("data-tax") == "university"){
+                        count++;
+                        which_tax = "university";
+                        which_name = data_name;
+                    }
+                }
+                else{
+                    $(".raw_labels").find($(".label")).each(function(){
+                        if(data_name == $(this).attr("data-name") && data_tax == $(this).attr("data-tax")){
+                            $(this).remove();
+                        }
+                    });
+                }
+            });
             // Get Labels from footer on load of algolia search filter
-            $(".labels").html($(".raw_labels").html());
+            if($(".raw_labels").html() != ""){
+               $(".labels").css("margin-bottom", "15px");
+               $(".labels").html($(".raw_labels").html());
+            }
+             else{
+               $(".labels").css("margin-bottom", "0px");   
+             }
+
+            if(count == 1 && which_tax == "product_cat"){
+                getCategoryBanner(which_name);
+            }
+            else if(count == 1 && which_tax == "university"){
+                getUniversityLogoDesc(which_name);
+            }                  
+            else{
+                setDefaultBanner();
+            }
+
+
             // Get Banner from footer on load of algolia search filter
             $(".banner_img_container").html($(".raw_banner_image").html());
             //Get university institute logo and description
-            
             if($(".raw_university_logo_desc .univ_logo img").attr("src") != undefined){
                 $(".univ_logo_outer").show();
                 $(".university_logo_desc").html($(".raw_university_logo_desc").html());
+                if($(".raw_banner_image img").attr("src") == ""){
+                    $(".banner_img_container").hide();
+                }
             }
+            if($(".raw_university_logo_desc .univ_logo img").attr("src") == "")
+                $(".univ_logo_outer").hide();
+
 
             updateSliderValues();
             $(".algolia-slider").parent().prev().css("display","none");
-           if(list)
-           {
-               $("button.list").trigger("click");
-           }
+            
+            if(grid)
+            {
+               $("button.grid").trigger("click");
+            }
         }
 
         function activateInstant()
@@ -395,20 +456,91 @@ jQuery(document).ready(function ($) {
             performQueries(true);
         });
 
+        $("body").on("click", ".sub_facet input[type='checkbox']", function (e) {
+            e.stopPropagation();
+            $(this).parent().find("input[type='checkbox']").each(function (i) {
+                engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
+            });
 
-        $("body").on("slide", "", function (event, ui) {
+            performQueries(true);
+        });
+
+        //getMobileFeesFilter();
+        $("body").on("click", ".sub_facet_mobile", function () {
+                $(this).toggleClass('change_color');
+                $(this).find("input[type='checkbox']").each(function (i) {
+                $(this).prop("checked", !$(this).prop("checked"));
+
+                engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
+            });
+        });
+        
+        $("body").on("click", ".reset", function () {
+            $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
+               if($(this).is(':checked') == true){
+                    $(this).parent().toggleClass('change_color');
+                    $(this).prop("checked", !$(this).prop("checked"));
+                    engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
+                }
+            });
+            var slide_dom = $(".algolia-slider");
+            engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
+            engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
+        });
+
+        
+        $("body").on("click", ".mobile-filter .facet", function () {
+            var classList = $(this).attr('class').split(/\s+/);
+            var last;
+            $.each( classList, function(index, item){
+                last = item;
+            });
+           
+            $(".mobile-filter .facet").removeClass("active-tab");
+            $(this).addClass("active-tab");
+            $(this).removeClass(last);
+            $(this).addClass(last);
+            
+            $(".all_results").hide();
+            $("."+last+"_result").show();
+            $(".mobile-filter .all_results .scroll-pane").css("overflow","scroll");
+            $(".mobile-filter .all_results .scroll-pane").css("width","98%");
+        });
+
+        $("body").on("click", ".apply", function () {
+                engine.helper.search(engine.helper.state.query);
+                performQueries(true);
+                engine.updateUrl(true);
+        });
+
+        // Mobile filters end
+
+        $("body").on("slidechange", ".mobile-filter .algolia-slider-true", function (event, ui) {
+            event.stopPropagation();
+            var slide_dom = $(ui.handle).closest(".algolia-slider");
+            var min = slide_dom.slider("values")[0];
+            var max = slide_dom.slider("values")[1];
+
+            if (parseInt(slide_dom.slider("values")[0]) >= parseInt(slide_dom.attr("data-min")))
+                engine.helper.addNumericRefinement(slide_dom.attr("data-tax"), ">=", min);
+            if (parseInt(slide_dom.slider("values")[1]) <= parseInt(slide_dom.attr("data-max")))
+                engine.helper.addNumericRefinement(slide_dom.attr("data-tax"), "<=", max);
+
+            if (parseInt(min) == parseInt(slide_dom.attr("data-min")))
+                engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
+
+            if (parseInt(max) == parseInt(slide_dom.attr("data-max")))
+                engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
             updateSlideInfos(ui);
         });
 
         $("body").on("change", "#index_to_use", function () {
             engine.helper.setIndex($(this).val());
-
             engine.helper.setCurrentPage(0);
-
             performQueries(true);
         });
 
-        $("body").on("slidechange", ".algolia-slider-true", function (event, ui) {
+        $("body").on("slidechange", ".desk-filter-wrapper .algolia-slider-true", function (event, ui) {
 
             var slide_dom = $(ui.handle).closest(".algolia-slider");
             var min = slide_dom.slider("values")[0];
@@ -439,21 +571,6 @@ jQuery(document).ready(function ($) {
 
             return false;
         });
-
-  /*      $('button').on('click',function(e) {
-    if ($(this).hasClass('grid')) {
-        alert("GRID");
-        $('#view ul').removeClass('list').addClass('grid');
-    }
-    else if($(this).hasClass('list')) {
-        alert("LIST");
-        $('#view ul').removeClass('grid').addClass('list');
-    }
-    else
-    {
-        alert("Here!");
-    }
-});*/
         
         $(algoliaSettings.search_input_selector).keyup(function (e) {
             e.preventDefault();
@@ -555,9 +672,19 @@ jQuery(document).ready(function ($) {
     if($(".search_home").val() != ""){
         $("#mega-menu").hide();  
     }    
- 
+    $('body').on('click',".sortby-price",function(e){
+        if($(this).hasClass("asc")) {
+            $(this).removeClass("asc");
+            $(this).find(".arrow-bottom").html("&#9660;");
+            engine.helper.setIndex($(this).attr("asc"));
+        }else{
+            $(this).addClass("asc");
+            $(this).find(".arrow-bottom").html("&#9650;");
+            engine.helper.setIndex($(this).attr("desc"));
+        }
+        engine.helper.setCurrentPage(0);
+    });
     // Quick View in algolia search page
-
     $("body").on("click", ".quick_view_link", function (e) {
        /* add loader  */
        $(this).after('<div class="loading dark" style="background:green; color:red;"><i></i><i></i><i></i><i></i></div>');
@@ -575,6 +702,29 @@ jQuery(document).ready(function ($) {
         $("body").on("click", ".close_quick_view", function (e) {
             $(".quick_view_overlay_display_data").fadeOut("slow");
         });
+    });
+    // Change Look
+    $("body").on("click",".changelook", function(){
+        $(".changelook").removeClass("view-active");
+        $(this).addClass("view-active");
+    });
+    // Close Labels
+    $("body").on("click", ".labels .close_label", function () {
+            var data_tax = $(this).parent().attr("data-tax");
+            var data_name = $(this).parent().attr("data-name");
+            $(".sub_facet").find("input[type='checkbox']").each(function (i) {
+                if($(this).attr("data-tax") == data_tax && $(this).attr("data-name") == data_name){
+                    $(this).prop("checked", false);
+                    engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
+                }
+            });
+            $(".raw_labels").find($(".label")).each(function(){
+                if(data_name == $(this).attr("data-name")){
+                    $(this).remove();
+                }
+            });
+            engine.helper.search(engine.helper.state.query, searchCallback);
+            engine.updateUrl(true);
     });
 
 });

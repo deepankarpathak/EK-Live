@@ -386,9 +386,11 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 					</div>
 					<div id="mega-menu" <?php if (!is_front_page()){echo "style='display:none';";}?> >
 						<?php 
-							if(!preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"])){
+							if(!preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"])){
 							  	echo do_shortcode('[block id="mega-menu"]'); 
 							}
+							if (preg_match("/(iPad)/i",$_SERVER["HTTP_USER_AGENT"]))
+							   echo do_shortcode('[block id="mega-menu"]');
 						?>
 					</div>
 				</div>

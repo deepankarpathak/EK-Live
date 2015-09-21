@@ -218,9 +218,11 @@ jQuery(document).ready(function() {
 	var theme_dir = $("#theme_dir").val();
 	$("#mega-menu").slideUp();
 	if($(".search_home").val().length == 0){
+		$(".raw_labels").html("");
 	    engine.helper.removeNumericRefinement("_price", ">=");
 	    engine.helper.removeNumericRefinement("_price", "<=");
-	    $.getScript( theme_dir+'/wp-content/themes/flatsome/js/after_algolia.js', function( data, textStatus, jqxhr ) {
+	    $(engine.helper.state.disjunctiveFacets).each(function(a){engine.helper.clearRefinements(this.toString());});
+		$.getScript( theme_dir+'/wp-content/themes/flatsome/js/after_algolia.js', function( data, textStatus, jqxhr ) {
 	     });  
 	    <?php if(is_front_page()) {?>
 	    	if($( window ).width() > 768){
@@ -298,5 +300,44 @@ jQuery(document).ready(function() {
   }]
 }
 </script>
+
+<?php 
+  /*Algolia page product category banner and university logo and description*/
+    $terms = get_terms('product_cat');
+    $cat_banners = array(); $i = 0;
+    foreach ($terms as $t){
+        $cat_banners[$i]['term_id'] = $t->term_id;
+        $cat_banners[$i]['name'] = $t->name;
+        $cat_banners[$i]['banner'] = get_the_guid ( get_woocommerce_term_meta($t->term_id, 'banner_img_id', true) );
+        $i++;
+    } 
+
+    $univ = get_terms('university');
+    $university_data = array(); $i = 0;
+    foreach ($univ as $u){
+        $university_data[$i]['term_id'] = $u->term_id;
+        $university_data[$i]['name'] = $u->name;
+        $university_data[$i]['logo'] = get_the_guid ( get_term_meta($u->term_id, 'university_logo_image', true) );
+        $university_data[$i]['description'] = get_term($u->term_id, 'university')->description;
+        $i++;
+    } 
+?>
+<script>
+  /*Store in json format category banners and university logo and description*/
+  var default_banner = $("#theme_dir").val()+"/wp-content/uploads/default_banner.jpg";
+  //var default_logo = $("#theme_dir").val()+"/wp-content/uploads/edukart-logo1.png";
+  var cat_banners = <?php echo json_encode($cat_banners); ?> ;
+  var university_data = <?php echo json_encode($university_data); ?>;
+</script>
+
+<div class="raw_labels" style="display:none"></div>
+<div class="raw_banner_image" style="display:none">
+	<img src="<?php echo get_site_url();?>/wp-content/uploads/default_banner.jpg" height="50"/>
+</div>
+<div class="raw_university_logo_desc" style="display:none">
+	<div class="large-2 columns univ_logo"><img /></div>
+	<div class="large-10 columns univ_description"></div>
+</div>
+
 </body>
 </html>

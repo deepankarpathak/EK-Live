@@ -64,11 +64,20 @@ class Indexer
         $posts = $wpdb->get_results($query);
 
         $objects = array();
-
+		$hide=array();
         if ($posts)
-            foreach ($posts as $post)
-                $objects[] = $this->wordpress_fetcher->getPostObj($post);
-
+            foreach ($posts as $post){
+        		$obj=$this->wordpress_fetcher->getPostObj($post);
+        		
+        		if(@$obj["pa_hide_prod"] && @$obj["pa_hide_prod"][0] && strtolower($obj["pa_hide_prod"][0])=="yes")
+        		{		
+        			$hide[]=$obj;
+        			
+        		}
+        		else
+        			$objects[] = $obj;
+                
+        }
         return $objects;
     }
 

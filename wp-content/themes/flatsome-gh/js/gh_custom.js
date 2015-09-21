@@ -196,7 +196,45 @@ jQuery(document).ready(function () {
         });
     }
 jQuery(document).ready(function(){
-	
+	/*Nishu : Review and rating js*/
+          $("p.stars span a"). mouseenter(function() {                     
+            var star_index = $("p.stars span a").index(this);
+            $.each($("p.stars span a"), function(index, value) {
+                if (star_index >= index)
+                    $(this).addClass("temp-active");
+                else
+                    $(this).removeClass("temp-active");
+            });
+        }).mouseleave(function() {
+            $.each($("p.stars span a"), function(index, value) {
+                $(this).removeClass("temp-active");
+            });
+        });
+
+        $("p.stars span a").click(function() {
+            var star_index = $("p.stars span a").index(this);
+            $.each($("p.stars span a"), function(index, value) {
+            //console.log(this);
+           
+                if (star_index >= index){
+                    $(this).addClass("active-rate");
+                    $(this).addClass("temp-active");
+                }
+                else{
+                    $(this).removeClass("active-rate");
+                    $(this).removeClass("temp-active");
+                }    
+            });
+        });
+        $('#commentform').submit(function(e) {
+		    if($('#comment').val() == ""){
+		        alert('Your Review is mandatory.');
+		        return false;
+		    }else{
+		        return true;
+		    }
+		});
+/*Nishu review & rating js ends*/
 	$('.product_detail_referral a, .coupon_successful a').click(function() {
 		$(".referal_tc").dialog({
 		title: "Terms & Conditions",
@@ -263,25 +301,48 @@ jQuery(document).ready(function(){
 		$("#browse-cat").click(function(){
 			$("#mega-menu").slideToggle();
 		});
+
+		/*Algolia mobile filter menu*/
+		$("body").on("click", ".filter-icon", function () {
+	        $("#algolia_instant_selector").addClass("toggle-filter");
+	        $(".header-wrapper").css("display","none");
+	        $(".apply").show();
+	        $("body").css("overflow","hidden");
+	        $(".jPanelMenu").css("overflow","hidden");
+	        $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
+               if($(this).is(':checked') == true){
+                    $(this).parent().addClass('change_color');
+                }
+        	});
+        	$(".facet").removeClass("active-tab");
+        	$(".facet:first-child").addClass("active-tab")
+	        if($("#index_to_use").val().indexOf("asc")>-1){ 
+	        	$(".sortby-price .arrow-bottom").html("&#9660;");
+	        	$(".sortby-price").addClass("asc");
+	        }
+	        else if($("#index_to_use").val().indexOf("desc") > -1){ 
+	        	$(".sortby-price .arrow-bottom").html("&#9650;");
+	        	$(".sortby-price").removeClass("asc");
+	        }
+	        else
+	        	$(".sortby-price .arrow-bottom").html("");
+	    });
+	    $("body").on("click", ".close_filter, .apply ", function () {
+	        $("#algolia_instant_selector").removeClass("toggle-filter");
+	        $(".header-wrapper").css("display","block");
+	        $(".apply").hide();
+	        $("body").css("overflow","initial");
+	        $(".jPanelMenu").css("overflow","initial");
+	        $(".facet").removeClass("active-tab");
+        	$(".facet:first-child").addClass("active-tab");
+        	$(".all_results").hide();
+        	$(".all_results:first-child").show();
+	    });
 	    /*Algolia scrips start*/
-		// Clear Labels and refinement
-		$("body").on("click", ".labels .close_label", function () {
-		    var data_tax = $(this).parent().attr("data-tax");
-		    var data_name = $(this).parent().attr("data-name");
-		    $(".sub_facet").find("input[type='checkbox']").each(function (i) {
-		        if($(this).attr("data-tax") == data_tax && $(this).attr("data-name") == data_name){
-		            $(this).prop("checked", false);
-		            engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
-		        }
-		    });
-		    engine.helper.search(engine.helper.state.query, function(){});
-		    $(".raw_labels").find($(".label")).each(function(){
-		        if(data_name == $(this).attr("data-name")){
-		            $(this).remove();
-		        }
-		    });
-		})/* Algolia ends */
-	        
+		
+		//  Labels and refinement
+		
+
 	        /* Third Party Apis */
 	        /*AdRoll code starts */
 	        adroll_adv_id = "KFQPYGFXBVFOVMVN7J3KS2";
@@ -321,80 +382,141 @@ jQuery(document).ready(function(){
 	        		showWidget : '' 
 	        	};
 	        	var script = document.createElement('script');script.async = true; script.src = (document.location.protocol == 'https:' ? "//d11yp7khhhspcr.cloudfront.net" : "//cdn.invitereferrals.com") + '/js/invite-referrals-1.0.js'; var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBefore(script, entry); })(); 
+
+        	$('button').on('click',function(e) {
+			    if ($(this).hasClass('grid')) {
+			        $('#view li').removeClass('list').addClass('grid');
+			    }
+			    else if($(this).hasClass('list')) {
+			        $('#view li').removeClass('grid').addClass('list');
+			    }
+			});
 });
-function dock_undock(args){
-    $(args).next('.dock_this').slideToggle();
-    $(args).children('.dock_undock').toggleClass("dock_down");;
-}
 
-/*Gambheer Filter search*/
-function filter(args){
-    var course_search = $(args).parent();
-    var scroll_pane = $(course_search).next(".scroll-pane");
-    var len = scroll_pane.find(".options").length;
-    var i=0;
-    var arr = [];
-    var ch = ($(args).val()).trim().toLowerCase();
-    
-    for(i=0; i<len; i++){
-        var child = $(scroll_pane.children(".options")[i]);
-        arr[i] = child['context'].textContent.toLowerCase();
-    }
-    
-    for(i=0; i<len; i++){
-      if(ch.length > 0){  
-          if(arr[i].indexOf(ch) > 0){
-            $(scroll_pane.children(".options")[i]).show();
-          }
-          else{
-            $(scroll_pane.children(".options")[i]).hide();
-          }
-      }
-      else{
-        $(scroll_pane.children(".options")).show();
-      }    
-    }
-}
+// Algolia Functions
+        function clear_all(){
+		    $(".facets").find("input[type='checkbox']").each(function (i) {
+		        $(this).prop("checked", false);
+		        engine.helper.clearRefinements($(this).attr("data-tax"));
+		        var data_name = $(this).attr("data-name");
+		        var data_tax = $(this).attr("data-tax");
+		        	$(".raw_labels").find($(".label")).each(function(){
+		        		if(data_name == $(this).attr("data-name")){
+		        			$(this).remove();
+		        		}
+		        });
+		    });
+		    clear_price_slider();
+		    engine.helper.search(engine.helper.state.query, function(){});  
+		    // Remove banner and university logo and description when clear all filters
+		    $(".raw_university_logo_desc .univ_logo img").attr("src", "");
+		    $(".raw_university_logo_desc .univ_description").text("");
+		    $(".raw_banner_image img").attr("src", default_banner);
+		}
 
-function clear_all(){
-    $(".facets").find("input[type='checkbox']").each(function (i) {
-        $(this).prop("checked", false);
-        engine.helper.clearRefinements($(this).attr("data-tax"));
-    });
-    clear_price_slider();
-    engine.helper.search(engine.helper.state.query, function(){});  
-    // Remove banner and university logo and description when clear all filters
-    $(".raw_university_logo_desc .univ_logo img").attr("src", "");
-    $(".raw_university_logo_desc .univ_description").text("");
-    $(".raw_banner_image img").attr("src", "<?php echo get_site_url()?>/wp-content/uploads/Default_banner.jpg");
-}
+		function clear_filter(args){
+		    var slider = jQuery(args).nextAll('.scroll-pane').find(".algolia-slider");
+		    if(slider[0]){
+		        clear_price_slider();
+		        engine.helper.search(engine.helper.state.query, function(){});
+		    }
+		    else{
+		        $(args).nextAll('.scroll-pane').find("input[type='checkbox']").each(function (i) {
+		            $(this).prop("checked", false);
+                    engine.helper.clearRefinements($(this).attr("data-tax"));
+                });
+		        engine.helper.search(engine.helper.state.query, function(){});
+		    } 
 
-function clear_filter(args){
-    var slider = jQuery(args).nextAll('.scroll-pane').find(".algolia-slider");
-    if(slider[0]){
-        clear_price_slider();
-        engine.helper.search(engine.helper.state.query, function(){});
-    }
-    else{
-        $(args).nextAll('.scroll-pane').find("input[type='checkbox']").each(function (i) {
-                        $(this).prop("checked", false);
+		    var facet = jQuery(args).nextAll('.scroll-pane').find("input[type='checkbox']");
+		    var data_tax = facet.attr("data-tax");
+		    
+		    facet.each(function (i) {
+	        	$(".raw_labels").find($(".label")).each(function(){
+	        		if(data_tax == $(this).attr("data-tax")){
+	        			$(this).remove();
+	        		}
+	        	});
+		    });   
+		    $(".raw_banner_image img").attr("src", default_banner);	 	
+		}
 
-                        engine.helper.clearRefinements($(this).attr("data-tax"));
-                    });
-        engine.helper.search(engine.helper.state.query, function(){});
-    } 
-}
+		function filter(args){
+		    var course_search = $(args).parent();
+		    var scroll_pane = $(course_search).next(".scroll-pane");
+		    var len = scroll_pane.find(".options").length;
+		    var i=0;
+		    var arr = [];
+		    var ch = ($(args).val()).trim().toLowerCase();
+		    
+		    for(i=0; i<len; i++){
+		        var child = $(scroll_pane.children(".options")[i]);
+		        arr[i] = child['context'].textContent.toLowerCase();
+		    }
+		    
+		    for(i=0; i<len; i++){
+		      if(ch.length > 0){  
+		          if(arr[i].indexOf(ch) > 0){
+		            $(scroll_pane.children(".options")[i]).show();
+		          }
+		          else{
+		            $(scroll_pane.children(".options")[i]).hide();
+		          }
+		      }
+		      else{
+		        $(scroll_pane.children(".options")).show();
+		      }    
+		    }
+		}
 
-function clear_price_slider(){
-    var slide_dom = $(".algolia-slider");
-    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
-    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
-}
-$('button').on('click',function(e) {
-    if ($(this).hasClass('grid')) {
-        $('#view li').removeClass('list').addClass('grid');
-    }
-    else if($(this).hasClass('list')) {
-        $('#view li').removeClass('grid').addClass('list');
-    }
-});
+		function clear_price_slider(){
+		    var slide_dom = $(".algolia-slider");
+		    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), ">=");
+		    engine.helper.removeNumericRefinement(slide_dom.attr("data-tax"), "<=");
+		}
+
+		function dock_undock(args){
+		    $(args).next('.dock_this').slideToggle();
+		    $(args).children('.dock_undock').toggleClass("dock_down");;
+		}
+
+		function setDefaultBanner(){
+			$(".raw_banner_image img").attr("src", default_banner);
+			$(".raw_university_logo_desc .univ_logo img").attr("src", "");
+	   		$(".raw_university_logo_desc .univ_description").text("");
+		}
+		// Category banner
+		function getCategoryBanner(data_name){
+	        for(var i=0; i<cat_banners.length; i++){
+	            if(cat_banners[i].name == data_name){
+	                if(cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "jpg" || cat_banners[i].banner.substr(cat_banners[i].banner.length - 3) == "png"){
+	                    $(".raw_banner_image img").attr("src", cat_banners[i].banner);
+	                    $(".raw_university_logo_desc .univ_logo img").attr("src", "");
+	   					$(".raw_university_logo_desc .univ_description").text("");
+	   					return false;
+	                }
+	                else{
+	                	$(".raw_banner_image img").attr("src", default_banner);	
+	                }
+	            }
+	        }
+	    }
+		// University LOGO and Description
+		function getUniversityLogoDesc(data_name){
+	        for(var i=0; i<university_data.length; i++){
+	            if(university_data[i].name == data_name){
+	                if((university_data[i].logo.substr(university_data[i].logo.length - 3) == "jpg" ||university_data[i].logo.substr(university_data[i].logo.length - 3) == "peg"|| university_data[i].logo.substr(university_data[i].logo.length - 3) == "png") && $.trim(university_data[i].description) != ""){
+	                    $(".raw_university_logo_desc .univ_logo img").attr("src", university_data[i].logo);
+	                    $(".raw_university_logo_desc .univ_description").html("<h2 class='univ_name'>"+$.trim(university_data[i].name)+"</h2>"+$.trim(university_data[i].description));
+	                    $(".raw_banner_image img").attr("src", "");
+	                    return false;
+	                }
+                	else{
+                		$(".raw_university_logo_desc .univ_logo img").attr("src", "");
+	                    $(".raw_university_logo_desc .univ_description").text("");
+                	    $(".raw_banner_image img").attr("src", default_banner);
+                	}	
+	            }
+	        }
+		}
+// Algolia functions end
