@@ -3187,10 +3187,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   margin-bottom: 30px;
 }
 [class*="column"] + [class*="column"]:last-child {
+	float: right;
+}
+
+.edu_quickview [class*="column"] + [class*="column"]:last-child {
     max-height: 550px;
     overflow-y: auto;
     overflow-x:hidden;
 }
+
+
 .edu-quickview-info .gh_min_price_in_loop {
   display: block;
   padding: 18px 0 0;
@@ -3882,6 +3888,9 @@ float: none;
 	.stuck ul.top-bar-nav {
 	    margin-top: 0;
 	}
+	#algolia_instant_selector .facet .name {
+	    font-size: 12px;
+	}
 }
 @media only screen and (max-width:912px) {
 	.edu-nave ul.edu_mainnave li {
@@ -3916,11 +3925,21 @@ float: none;
 	}
 }
 @media only screen and (max-width:850px) {
-	.header_logo {
+	#masthead #logo {
     	width: 120px !important;
 	}
 	.header-logo{
+		width: 16% !important;
 		top: 10px !important;
+	}
+	#masthead #logo a {
+	    max-width: 130px !important;
+	}
+	.call_icon {
+	    background-position: -1px -37px;
+	    width: 29px;
+	    height: 29px;
+	    background-size: 190px;
 	}
 	.edu-contact-detail {
 	    margin: 18px 0px 0px;
