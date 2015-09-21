@@ -1415,7 +1415,7 @@ border-right:none;
         position: fixed;
         right: 25px;
         bottom: 80px;
-        z-index: 5;
+        z-index: 205;
         background-position: -152px -193px;
     }
     .filter-icon.sprite{
