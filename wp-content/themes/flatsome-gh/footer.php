@@ -77,6 +77,11 @@ global $flatsome_opt;
             </ul>
             <?php } ?>
      <div class="edu_footer_payment columns">
+     <script>
+            setTimeout(function(){
+                $("#billing_postcode_field").insertAfter($("#billing_city_field"));
+           }, 3000);
+     </script>
    		<?php dynamic_sidebar('gh_footer_payment_logos_widget_area'); ?>  
         </div>      
 	</div><!-- end row -->

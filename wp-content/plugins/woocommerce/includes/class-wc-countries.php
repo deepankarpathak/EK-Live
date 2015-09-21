@@ -490,7 +490,7 @@ class WC_Countries {
 			),
 			'address_1' => array(
 				'label'       => __( 'Address', 'woocommerce' ),
-				'placeholder' => _x( 'Street address', 'placeholder', 'woocommerce' ),
+				'placeholder' => _x( 'Enter Complete Address', 'placeholder', 'woocommerce' ),
 				'required'    => true,
 				'class'       => array( 'form-row-wide', 'address-field' )
 			),
