@@ -10,7 +10,7 @@
 ?>
 <?php if ($order->payment_method_title != 'Cash on Delivery'){ ?>
 <script type="text/javascript" charset="utf-8">
-$(".woocommerce")[0].style.display="none";
+jQuery(".woocommerce")[0].style.display="none";
   window.setTimeout(function() {
     document.forms['referral_generate'].submit()
   }, 20000);
@@ -36,11 +36,11 @@ $(".woocommerce")[0].style.display="none";
     vertical: "ecommerce",
     type: "thank_you",
     pid1: <?php echo $productid[0]; ?>, 
-    pid2: <?php echo $productid[1]; ?>, 
-    pid3: <?php echo $productid[2]; ?>, 
+    pid2: '<?php echo $productid[1]; ?>', 
+    pid3: '<?php echo $productid[2]; ?>', 
     orderid: <?php echo $order->id; ?>, 
     orderprice: <?php echo $order->get_total(); ?>, 
-    currency: <order currency>
+    currency: '<order currency>'
  };
 
 (function(){try{var viz = document.createElement("script"); viz.type = "text/javascript";viz.async = true; viz.src = ("https:" == document.location.protocol ?"https://in-tags.vizury.com" : "http://in-tags.vizury.com")+ "/analyze/pixel.php?account_id=vst";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(viz, s);viz.onload = function() {try {pixel.parse();} catch(i){}};viz.onreadystatechange = function() {if (viz.readyState == "complete" || viz.readyState == "loaded"){try {pixel.parse();}catch(i){}}};}catch(i){}})();

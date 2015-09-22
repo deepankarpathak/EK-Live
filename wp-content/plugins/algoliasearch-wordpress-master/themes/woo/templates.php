@@ -45,7 +45,7 @@
                                     <div class="clearfix institute-tag-wrapper">
                                         <div class="title-institute-wrapper">
                                             <h4 class="result-title">
-                                                {{{ _highlightResult.title.value }}} {{#pa_specialization}}- {{pa_specialization}} {{/pa_specialization}}
+                                                {{{ _highlightResult.title.value }}}{{#pa_specialization}}- {{pa_specialization}}{{/pa_specialization}}
                                             </h4>
                                             <div class="institute">
                                                 {{university}}                                          
@@ -144,8 +144,8 @@
 {{/hits.length}}
 {{^hits.length}}
         <div class="row">
-            <div class="col-lg-12 col-md-12 ">Sorry, You’re looking for <strong>{{query}}</strong> which isn’t here. However, we have wide range of courses which will help you enhance your skills.<br/><br/>For Certificates, <a href="http://edukart.com/edukart/#q=certificate&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22
-">Click here</a>  |   For Entrance Coaching, <a href="http://edukart.com/edukart/#q=entrance&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here.</a>  |  For School Education, <a href="http://edukart.com/edukart/#q=class&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a>   |   For Degree Programs, <a href="http://edukart.com/edukart/#q=degree&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a>  |   For Diplomas, <a href="http://edukart.com/edukart/#q=diploma&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22tryall%22">Click here</a><br/>
+            <div class="col-lg-12 col-md-12 ">Sorry, You’re looking for <strong>{{query}}</strong> which isn’t here. However, we have wide range of courses which will help you enhance your skills.<br/><br/>For Certificates, <a href="http://edukart.com/#q=certificate&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22ekdpliveall%22
+">Click here</a>  |   For Entrance Coaching, <a href="http://edukart.com/#q=entrance&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22ekdpliveall%22">Click here.</a>  |  For School Education, <a href="http://edukart.com/#q=class&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22ekdpliveall%22">Click here</a>   |   For Degree Programs, <a href="http://edukart.com/#q=degree&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22ekdpliveall%22">Click here</a>  |   For Diplomas, <a href="http://edukart.com/#q=diploma&page=0&refinements=%5B%5D&numerics_refinements=%7B%7D&index_name=%22ekdpliveall%22">Click here</a><br/>
             </div>
         </div>
         {{/hits.length}}
