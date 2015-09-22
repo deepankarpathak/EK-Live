@@ -1469,6 +1469,9 @@ border-right:none;
 }
 
 @media screen and (max-width: 480px){
+    .zopim{
+        display:none;
+    }
     .dock_this{
         display: none;
     }

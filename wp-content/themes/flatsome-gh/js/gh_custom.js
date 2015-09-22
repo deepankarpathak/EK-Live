@@ -305,6 +305,7 @@ jQuery(document).ready(function(){
 		/*Algolia mobile filter menu*/
 		$("body").on("click", ".filter-icon", function () {
 	        $("#algolia_instant_selector").addClass("toggle-filter");
+	        $(".connecto-overlay").hide();
 	        $(".header-wrapper").css("display","none");
 	        $(".apply").show();
 	        $("body").css("overflow","hidden");
@@ -328,6 +329,7 @@ jQuery(document).ready(function(){
 	        	$(".sortby-price .arrow-bottom").html("");
 	    });
 	    $("body").on("click", ".close_filter, .apply ", function () {
+	    	$(".connecto-overlay").show();
 	        $("#algolia_instant_selector").removeClass("toggle-filter");
 	        $(".header-wrapper").css("display","block");
 	        $(".apply").hide();
