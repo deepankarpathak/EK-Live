@@ -178,6 +178,7 @@
 #algolia_instant_selector .facets.with_facets .scroll-pane .options input
 {
 	margin: 0;
+    vertical-align: bottom;
 }
 
 #algolia_instant_selector .facet
@@ -297,7 +298,7 @@
 #algolia_instant_selector .result .result-sub-content-grid
 {
     padding: 10px;
-    min-height: 387px;
+    min-height: 400px;
     text-align: center;
 }
 
@@ -765,7 +766,8 @@ button.changelook:focus, button.changelook:hover,button.changelook.view-active{
 }
 */
 .dock_undock{
-    float:right;
+    position: absolute;
+    right: 15px;
 }
 
 .clear_all_div{
@@ -1216,7 +1218,6 @@ border-right:none;
 }
 .facet_value{
     position: relative;
-    top: 2px;
 }
 
 /*By GAmbheer*/
@@ -1331,8 +1332,8 @@ border-right:none;
     #algolia_instant_selector .list .result .link-btn{
         margin: 2px;
     }
-    #algolia_instant_selector .facet .name {
-        font-size: 12px;
+    #algolia_instant_selector .facet .name ,.clear_filter {
+        font-size: 10px !important;
     }
     .clear_all_div button {
         font-size: 12px;
@@ -1365,11 +1366,12 @@ border-right:none;
         background-color: #fff;
     }
     #algolia_instant_selector .facet .name {
-        padding: 10px;
         text-align: left;
         text-transform: uppercase;
         font-family: robotobold;
         color:#2c3e50;
+        max-width: 72%;
+        padding: 10px;
     }
 /*-----Search page end-----*/    
 }
