@@ -18,7 +18,7 @@
 <script type="text/template" id="instant-content-template">
 {{#hits.length}}
     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 min-pad hits{{#facets_count}} with_facets{{/facets_count}}">
-        <span class="filter-icon sprite"></span>
+        <div class="filter-icon-wrapper"><span class="filter-icon sprite"></span></div>
         <div style="clear: both;"></div>
         <div class="labels custom-hide-small"></div>
 

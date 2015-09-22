@@ -119,19 +119,6 @@ jQuery(document).ready(function ($) {
             engine.updateUrl(push_state);
         }
 
-        $(function()
-        {
-            $('.scroll-pane')
-            .jScrollPane()
-            .bind(
-                'mousewheel',
-                function(e)
-                {
-                    e.preventDefault();
-                }
-            );
-        });
-
         function searchCallback(content)
         {
             //console.log(content);
@@ -466,6 +453,18 @@ jQuery(document).ready(function ($) {
         });
 
         //getMobileFeesFilter();
+        var ua = navigator.userAgent.toLowerCase();
+if ((ua.indexOf("iphone") > 0) || (ua.indexOf("ipad")>0) || (ua.indexOf("ipod")>0)) {
+        $("body").on("touchstart", ".sub_facet_mobile", function () {
+                $(this).toggleClass('change_color');
+                $(this).find("input[type='checkbox']").each(function (i) {
+                $(this).prop("checked", !$(this).prop("checked"));
+
+                engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
+            });
+        });
+}
+else{
         $("body").on("click", ".sub_facet_mobile", function () {
                 $(this).toggleClass('change_color');
                 $(this).find("input[type='checkbox']").each(function (i) {
@@ -474,8 +473,9 @@ jQuery(document).ready(function ($) {
                 engine.helper.toggleRefine($(this).attr("data-tax"), $(this).attr("data-name"));
             });
         });
-        
-        $("body").on("click", ".reset", function () {
+} 
+
+        $("body").on("click touchstart", ".reset", function () {
             $(".sub_facet_mobile").find("input[type='checkbox']").each(function (i) {
                if($(this).is(':checked') == true){
                     $(this).parent().toggleClass('change_color');
@@ -489,7 +489,7 @@ jQuery(document).ready(function ($) {
         });
 
         
-        $("body").on("click", ".mobile-filter .facet", function () {
+        $("body").on("click touchstart", ".mobile-filter .facet", function () {
             var classList = $(this).attr('class').split(/\s+/);
             var last;
             $.each( classList, function(index, item){
@@ -507,7 +507,7 @@ jQuery(document).ready(function ($) {
             $(".mobile-filter .all_results .scroll-pane").css("width","98%");
         });
 
-        $("body").on("click", ".apply", function () {
+        $("body").on("click touchstart", ".apply", function () {
                 engine.helper.search(engine.helper.state.query);
                 performQueries(true);
                 engine.updateUrl(true);
@@ -672,7 +672,7 @@ jQuery(document).ready(function ($) {
     if($(".search_home").val() != ""){
         $("#mega-menu").hide();  
     }    
-    $('body').on('click',".sortby-price",function(e){
+    $('body').on('click touchstart',".sortby-price",function(e){
         if($(this).hasClass("asc")) {
             $(this).removeClass("asc");
             $(this).find(".arrow-bottom").html("&#9660;");

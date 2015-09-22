@@ -576,6 +576,12 @@
     margin-top: 20px;
     padding: 5px 10px;
 }
+.product-lightbox-inner .product_detail_referral {
+    float: left;
+    font-size: 10px;
+    height: 32px;
+    width: 100%;
+}
 .product-lightbox-inner .product_detail_cashback {
     border-bottom: 11px solid #f07746;
     border-right: 12px solid #ffffa7;
@@ -1409,16 +1415,23 @@ border-right:none;
     #algolia_instant_selector .mobile-filter{
         margin: 0;
     }
-    .filter-icon{
-        height: 38px;
-        width: 38px;
-        background: #E64D3F;
-        border-radius: 50%;
+    .filter-icon-wrapper{
+        height: 100px;
+        width: 100px;
+        border-radius: 100px;
         position: fixed;
         right: 25px;
         bottom: 80px;
-        z-index: 205;
-        background-position: -152px -193px;
+        z-index: 5;
+    }
+
+    .filter-icon{
+        height: 45px;
+        width: 45px;
+        border-radius: 100px;
+        background: #E64D3F;
+        margin:28px auto;
+        background-position: -148px -190px;
     }
     .filter-icon.sprite{
         display: block !important;

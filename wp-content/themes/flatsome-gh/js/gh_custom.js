@@ -303,8 +303,8 @@ jQuery(document).ready(function(){
 		});
 
 		/*Algolia mobile filter menu*/
-		$("body").on("click", ".filter-icon", function () {
-	        $("#algolia_instant_selector").addClass("toggle-filter");
+		$("body").on("click touchstart", ".filter-icon", function () {
+			$("#algolia_instant_selector").addClass("toggle-filter");
 	        $(".header-wrapper").css("display","none");
 	        $(".apply").show();
 	        $("body").css("overflow","hidden");
@@ -327,7 +327,24 @@ jQuery(document).ready(function(){
 	        else
 	        	$(".sortby-price .arrow-bottom").html("");
 	    });
-	    $("body").on("click", ".close_filter, .apply ", function () {
+
+
+var ua = navigator.userAgent.toLowerCase();
+if ((ua.indexOf("iphone") > 0) || (ua.indexOf("ipad")>0) || (ua.indexOf("ipod")>0)) {
+	    $("body").on("touchstart", ".close_filter, .apply ", function () {
+	        $("#algolia_instant_selector").removeClass("toggle-filter");
+	        $(".header-wrapper").css("display","block");
+	        $(".apply").hide();
+	        $("body").css("overflow","initial");
+	        $(".jPanelMenu").css("overflow","initial");
+	        $(".facet").removeClass("active-tab");
+        	$(".facet:first-child").addClass("active-tab");
+        	$(".all_results").hide();
+        	$(".all_results:first-child").show();return false;
+	    });
+}
+else{
+		    $("body").on("click", ".close_filter, .apply ", function () {
 	        $("#algolia_instant_selector").removeClass("toggle-filter");
 	        $(".header-wrapper").css("display","block");
 	        $(".apply").hide();
@@ -338,6 +355,8 @@ jQuery(document).ready(function(){
         	$(".all_results").hide();
         	$(".all_results:first-child").show();
 	    });
+}
+
 	    /*Algolia scrips start*/
 		
 		//  Labels and refinement
