@@ -45,7 +45,7 @@
                                     <div class="clearfix institute-tag-wrapper">
                                         <div class="title-institute-wrapper">
                                             <h4 class="result-title">
-                                                {{{ _highlightResult.title.value }}} - {{pa_specialization}}
+                                                {{{ _highlightResult.title.value }}} {{#pa_specialization}}- {{pa_specialization}} {{/pa_specialization}}
                                             </h4>
                                             <div class="institute">
                                                 {{university}}                                          
@@ -103,7 +103,7 @@
                             <?php if ( !wp_is_mobile() ){ ?>  
                                 <div class="quick_view_overlay">
                                     <div class="btn-wrapper"> 
-                                        <div class="compare_link link-btn" data-prod={{objectID}}>Compare</div>
+                                        <div class="compare_link link-btn" data-prod_id={{objectID}}>Compare</div>
                                         <div class="quick_view_link link-btn" data-prod={{objectID}}>Quick View</div>
                                         <div class="learn_more_link link-btn"><a href="{{permalink}}" target="_blank">Learn More</a>
                                         </div>
