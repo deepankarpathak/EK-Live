@@ -163,6 +163,7 @@ if( !class_exists( 'YITH_Woocompare_Frontend' ) ) {
         public function fields() {
 
             $fields = get_option( 'yith_woocompare_fields', array() );
+            $fields['institute'] = "Institute";
             $fields['pa_study-mode'] = 0;
             $fields['stock'] = 0;
             $fields['pa_inquire-now'] = 0;
@@ -174,7 +175,7 @@ if( !class_exists( 'YITH_Woocompare_Frontend' ) ) {
             $fields['pa_scholarship'] = 0;
             $fields['pa_new'] = 0;
             $fields['pa_course-type'] = 0;
-            //print_r($fields); die;
+
             foreach ( $fields as $field => $show ) {
                 if ( $show ) {
                     if ( isset( $this->default_fields[$field] ) ) {
@@ -277,6 +278,10 @@ if( !class_exists( 'YITH_Woocompare_Frontend' ) ) {
                             }
                             $product->fields[$field] = sprintf( '<span class="%s">%s</span>', esc_attr( $availability['class'] ), esc_html( $availability['availability'] ) );
                             break;
+                        case 'institute':
+                            $institute = wc_get_product_terms($product_id, 'university')[0];
+                            $product->fields[$field] = $institute->name;
+                        break;
                         default:
                             if ( taxonomy_exists( $field ) ) {
                                 $product->fields[$field] = array();
@@ -294,7 +299,6 @@ if( !class_exists( 'YITH_Woocompare_Frontend' ) ) {
                             break;
                     }
                 }
-
                 $list[] = $product;
             }
 
