@@ -1483,6 +1483,9 @@ border-right:none;
     .options{
         margin: 8px 0;
     }       
+    .filters-titl span:first-child{
+    padding: 0px;
+	}
 }
 
 @media screen and (max-width: 480px){
