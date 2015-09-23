@@ -58,7 +58,7 @@ get_header();
 				echo get_avatar( $user_id, 60 );
 	    ?>
 
-	    <span class="user-name"><?php echo $current_user->display_name?> <em><?php echo '#'.$user_id;?></em></span>
+	    <span class="user-name"><?php echo $current_user->display_name?> <!-- <em><?php //echo '#'.$user_id;?></em> --></span>
 	   	<span class="logout-link"><a href="<?php echo wp_logout_url(); ?>"><?php _e('Logout','woocommerce'); ?></a></span>		 
 
 	    <br>

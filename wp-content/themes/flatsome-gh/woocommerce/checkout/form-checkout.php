@@ -150,7 +150,7 @@ if (is_user_logged_in()) {
     <div class="clear"></div>
 
     <div class="large-12 small-12 columns customer-info custom-form-row">
-            <h2>Address</h2>
+            <h2>Student Details</h2>
             <div id="customer_details_filled">
                 <div id="name_phone"></div>
                 <div id="full_address"></div>

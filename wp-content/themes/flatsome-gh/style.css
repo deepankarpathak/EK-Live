@@ -26,6 +26,19 @@ ul{
 #logo a img.header_logo {
 	max-height: 100%;
 }
+/*Banner*/
+
+.bx-controls.bx-has-pager.bx-has-controls-direction.bx-has-controls-auto {
+	margin: 0px auto !important;
+}
+
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+    bottom: 0;
+    left: 50%;
+    margin-left: -70px;
+    padding-top:0;
+}
+
 #edu-filter-bg.active {
 	background: none repeat scroll 0 0 #000;
 	height: 100%;
@@ -551,8 +564,9 @@ ul.top-bar-nav li:first-child {
 	font-size: 13px;
 	width: 25%;
 }
-.product-small.grid1 .loading {
+.loading {
 	border:1px solid #000;
+	background: green;
 }
 .edu-catgery-page .woocommerce-ordering select {
 	color: #a3a3a3;
@@ -709,9 +723,12 @@ ul.top-bar-nav li:first-child {
 	min-width: inherit;
 	width: auto !important;
 }
+h1.entry-title{
+	line-height: 1.3;
+}
 .edu-quickview-info h1 a {
 	color: #354b63;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: normal;
 	line-height: 14px !important;
 	text-transform: uppercase;
@@ -744,8 +761,11 @@ ul.top-bar-nav li:first-child {
 	border-top:2px solid #d1d1d1;
 	font-size: 13px;
 	line-height: 18px;
-	min-height: 92px !important;
+	min-height: 75px !important;
 	padding: 10px 0;
+}
+.product-lightbox-inner .short-description {
+	max-height: 75px;
 }
 /*---------quicklook-end-------*/
 /*--------------category-page-end----------*/
@@ -2738,7 +2758,7 @@ margin:35px 0px;
 #customer_details_filled{
 	display:none;
 	float: right;
-	width: 84%;
+	width: 75%;
 }
 .customer-info h2{
 	display: inline-block;
@@ -3177,7 +3197,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 .edu-quickview-info .button.alt {
   margin: 0;
+  margin-bottom: 30px;
 }
+[class*="column"] + [class*="column"]:last-child {
+	float: right;
+}
+
+.edu_quickview [class*="column"] + [class*="column"]:last-child {
+    max-height: 550px;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+
+
 .edu-quickview-info .gh_min_price_in_loop {
   display: block;
   padding: 18px 0 0;
@@ -3270,9 +3302,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     column-count: inherit;
 }
 /******For cart icon gh ***********/
-.edu-quickview-info .single_add_to_cart_button.button.alt {
-    margin: 0 20px;
-}
 .active .nav-dropdown{
 	display:none !important;
 }
@@ -3358,13 +3387,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     padding-left:3px;
 }
 .product_detail_referral {
-    background-color: #ffffa7;
+/*    background-color: #ffffa7;
     border: 2px dotted #f07746;
     color: #8a5926;
     font-size: 13px;
     height: auto;
-    line-height:15px;
+    min-height: 36px;
     margin-bottom: 5px;
+
+*/  background-color: #ffffa7;
+    border: 2px dotted #f07746;
+    color: #8a5926;
+    font-size: 13px;
+    height: auto;
+    margin-bottom: 5px;
+    min-height: 36px;
+    vertical-align: middle;
+    padding: 5px 0;
 }
 .product_detail_cashback {
     background-color: #f07746;
@@ -3379,7 +3418,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     line-height: 2px;
     margin-left: 0 !important;
     margin-right: 5px !important;
-    margin-top: 3px;
+    margin-top: -0.3%;
     padding-left: 4px;
     text-transform: uppercase;
 }
@@ -3429,7 +3468,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 .product-lightbox-inner .product_detail_referral {
     float: left;
     font-size: 10px;
-    height: 35px;
+    min-height: 35px;
     width: 100%;
 }
 .product-lightbox-inner .product_detail_cashback {
@@ -3443,7 +3482,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
     line-height: 3px;
     margin-left: 0 !important;
     margin-right: 5px !important;
-    margin-top: 3px;
+    margin-top: -.3%;
     padding-left: 4px;
     text-transform: uppercase;
 }
@@ -3777,6 +3816,14 @@ float: none;
 	display: none;
 }
 
+#best_education .container{
+	padding: 0;
+}
+
+#best_education .container .columns{
+	padding: 0 8px;
+}
+
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
@@ -3854,6 +3901,9 @@ float: none;
 	.stuck ul.top-bar-nav {
 	    margin-top: 0;
 	}
+	#algolia_instant_selector .facet .name {
+	    font-size: 12px;
+	}
 }
 @media only screen and (max-width:912px) {
 	.edu-nave ul.edu_mainnave li {
@@ -3888,11 +3938,21 @@ float: none;
 	}
 }
 @media only screen and (max-width:850px) {
-	.header_logo {
+	#masthead #logo {
     	width: 120px !important;
 	}
 	.header-logo{
+		width: 16% !important;
 		top: 10px !important;
+	}
+	#masthead #logo a {
+	    max-width: 130px !important;
+	}
+	.call_icon {
+	    background-position: -1px -37px;
+	    width: 29px;
+	    height: 29px;
+	    background-size: 190px;
 	}
 	.edu-contact-detail {
 	    margin: 18px 0px 0px;
@@ -4405,6 +4465,11 @@ float: none;
 
 }				
 @media only screen and (max-width: 480px) {
+	#best_education .container{
+		padding: 0 10px;
+		margin-bottom: 30px
+	}
+
 	.logo-slider h1,h2.logo-slider-h1,.edu-best,.edu_pg_pc span{
     	font-size: 20px;
 	}
