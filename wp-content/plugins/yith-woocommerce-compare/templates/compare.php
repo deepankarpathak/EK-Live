@@ -82,6 +82,7 @@ $localized_table_text = function_exists( 'icl_translate' ) ? icl_translate( 'Plu
         echo "<div style='color:red;font-weight:bold;background:pink; padding:3px 3px 3px 35%;'>Only 4 products can be added in compare list !</div>";
     }
 ?>
+<div class="compare-course-wrapper">
 <table class="compare-list" cellpadding="0" cellspacing="0"<?php if ( empty( $products ) ) echo ' style="width:100%"' ?>>
     <thead>
     <tr>
@@ -176,7 +177,7 @@ $localized_table_text = function_exists( 'icl_translate' ) ? icl_translate( 'Plu
 
     </tbody>
 </table>
-
+</div>
 <?php do_action( 'yith_woocompare_after_main_table' ); ?>
 
 <?php if( wp_script_is( 'responsive-theme', 'enqueued' ) ) wp_dequeue_script( 'responsive-theme' ) ?><?php if( wp_script_is( 'responsive-theme', 'enqueued' ) ) wp_dequeue_script( 'responsive-theme' ) ?>

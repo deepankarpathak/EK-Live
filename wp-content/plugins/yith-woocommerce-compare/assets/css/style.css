@@ -37,7 +37,8 @@ table.compare-list thead th, h1 {
      border-bottom: 2px solid #fff;
      display: block;
      text-transform: uppercase;
-     font-size: 1.076em;
+     font-size: 23px;
+     text-align: center;
 }
 
 table.compare-list thead th a.close, h1 a.close {
@@ -55,28 +56,28 @@ table.compare-list th, table.compare-list .price.repeated td {
 }
 
 table.compare-list th, table.compare-list td {
-    border-bottom: 1px solid #D6D6D6;
+    border-bottom: 2px solid #D6D6D6;
 }
 
-table.compare-list tr.remove th, table.compare-list tr.remove td,
+/*table.compare-list tr.remove th, table.compare-list tr.remove td,
 table.compare-list tr.image th,  table.compare-list tr.image td,
 table.compare-list tr.title th,  table.compare-list tr.title td,
 table.compare-list tr.price th,  table.compare-list tr.price td {
     border-bottom: 0;
     padding-bottom: 0;
-}
+}*/
 
 table.compare-list tr.image th,  table.compare-list tr.image td {
     height: 186px;
 }
 
-table.compare-list tr.image th, table.compare-list tr.image td,
+/*table.compare-list tr.image th, table.compare-list tr.image td,
 table.compare-list tr.title th, table.compare-list tr.title td,
 table.compare-list tr.price th, table.compare-list tr.price td {
     color: #333;
     text-transform: uppercase;
     font-size: 1.076em;
-}
+}*/
 
 table.compare-list tr.image th, table.compare-list tr.image td,
 table.compare-list tr.price th, table.compare-list tr.price td,
@@ -84,14 +85,17 @@ table.compare-list tr.add-to-cart th, table.compare-list tr.add-to-cart td {
     padding-top: 4px;
 }
 
-table.compare-list tr.image th,
 table.compare-list tr.title th,
 table.compare-list tr.price th,
 table.compare-list tr.add-to-cart th {
-    text-indent: 150%;
     overflow: hidden;
     white-space: nowrap;
 }
+
+table.compare-list tr.image th{
+    text-indent: 150%;
+}
+
 
 table.compare-list .remove td a {
     color: #747373;
@@ -157,27 +161,38 @@ table.compare-list th .fixed-th {
     width: 205px;
 }
 
-table.compare-list th {
-    width: 205px;
-    max-width: 205px;
-    min-width: 205px;
+table.compare-list th,table.compare-list .title,table.compare-list .pa_referral-cashback {
+    width: 20%;
+    max-width: 280px;
+    min-width: 200px;
     overflow: hidden;
     text-align: left;
-    font-size: 1.076em;
-    color: #333333;
+    font-size: 18px;
+    color: #2D3E50;
     font-weight: 400;
-    text-transform: uppercase;
 }
 
 table.compare-list td {
-    width: 230px;
-    max-width: 230px;
-    min-width: 230px;
+    width: 20%;
+    max-width: 290px;
+    min-width: 200px;
     text-align: center;
+    font-size: 16px;
+    color: #777;
+}
+
+.compare-course-wrapper{
+    overflow-x:auto;
+}
+
+table.compare-list td .gh_max_price_in_loop{
+    font-size: 24px;
+    color: #17a959;
+    font-weight: bold;
 }
 
 table.compare-list td.odd {
-    background: #F7F7F7;
+    background: #F1F1F1;
 }
 
 table.compare-list td.even {
