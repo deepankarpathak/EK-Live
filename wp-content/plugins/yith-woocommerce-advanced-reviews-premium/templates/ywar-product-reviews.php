@@ -49,8 +49,12 @@ $reviews_count = count( $YWAR_AdvancedReview->get_product_reviews_by_rating( $pr
 		<?php endif; ?>
 	</div>
 
-	<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->id ) ) : ?>
-
+	<?php 
+	if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->id ) ) : 
+		$args = array('user_id' => get_current_user_id(), 'post_id' => $product->id);
+		//echo count(get_comments($args)).'    '.$product->id;
+		if (count(get_comments($args)) <= 0 ) : 
+	?>
 		<div id="review_form_wrapper">
 			<div id="review_form">
 				<?php
@@ -79,13 +83,12 @@ $reviews_count = count( $YWAR_AdvancedReview->get_product_reviews_by_rating( $pr
 				?>
 			</div>
 		</div>
-
+		<?php else : ?>
+			<p class="woocommerce-verification-required"><?php _e( 'A customer can comment only once for specific product.', 'ywar' ); ?></p>
+		<?php endif; ?>
 	<?php else : ?>
-
 		<p class="woocommerce-verification-required"><?php _e( 'Only logged in customers who have purchased this product may write a review.', 'ywar' ); ?></p>
-
 	<?php endif; ?>
 
 	<div class="clear"></div>
 </div>
-
