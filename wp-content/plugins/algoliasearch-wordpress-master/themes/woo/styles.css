@@ -1121,6 +1121,10 @@ border-right:none;
     font-size: 14.58px;
     color: #888;
 }
+.reset:active,.reset:focus{
+    border: 1px solid #333;
+    color: #333;
+}
 .filter-head {
     padding: 5px 5px 4px;
     border-bottom: 1px solid #999;

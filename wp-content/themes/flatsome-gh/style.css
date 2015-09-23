@@ -26,6 +26,19 @@ ul{
 #logo a img.header_logo {
 	max-height: 100%;
 }
+/*Banner*/
+
+.bx-controls.bx-has-pager.bx-has-controls-direction.bx-has-controls-auto {
+	margin: 0px auto !important;
+}
+
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+    bottom: 0;
+    left: 50%;
+    margin-left: -70px;
+    padding-top:0;
+}
+
 #edu-filter-bg.active {
 	background: none repeat scroll 0 0 #000;
 	height: 100%;
@@ -4453,7 +4466,7 @@ float: none;
 }				
 @media only screen and (max-width: 480px) {
 	#best_education .container{
-		padding: 0;
+		padding: 0 10px;
 		margin-bottom: 30px
 	}
 
