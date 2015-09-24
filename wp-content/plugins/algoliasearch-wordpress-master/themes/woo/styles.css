@@ -1284,6 +1284,7 @@ border-right:none;
      height: 88%;
      overflow-x:hidden;
      overflow-y:auto;
+     -webkit-overflow-scrolling: touch;
 }
 .filter_options_result .scroll_pane{
     margin:10px;
@@ -1531,7 +1532,7 @@ border-right:none;
         display: none !important;
     }
     #algolia_instant_selector .list .result .result-excerpt .title-institute-wrapper {
-        min-height: auto;
+        min-height: auto !important;
     }
     #algolia_instant_selector .list .result .result-thumbnail {
         border: none;
