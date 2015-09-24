@@ -211,6 +211,32 @@ table.compare-list td img {
     max-width: none;
 }
 
+.referral {
+    background: #ffffa7 none repeat scroll 0 0;
+    border: 2px dotted #f07746;
+    height: 25px !important;
+    margin: 0 8px 4px;
+    font-size: 18px;
+    line-height: 20px;
+    color: #8A5926;
+}
+.cashback {
+    background-color: #f07746;
+    border-bottom: 8px solid #f07746;
+    border-right: 7px solid #ffffa7;
+    border-top: 8px solid #f07746;
+    color: #fff;
+    float: left;
+    font-size: 17px;
+    font-weight: bold;
+    height: 1px;
+    line-height: 1px;
+    margin-left: 0 !important;
+    margin-top: 2px;
+    text-transform: uppercase;
+    padding-left: 3px;
+}
+
 /** Fixed Header Table Style */
 /*!
 * jquery.fixedHeaderTable. The jQuery fixedHeaderTable plugin

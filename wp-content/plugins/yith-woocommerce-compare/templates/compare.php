@@ -117,7 +117,27 @@ $localized_table_text = function_exists( 'icl_translate' ) ? icl_translate( 'Plu
                 </td>
             <?php endforeach ?>
         </tr>
-
+<?php //echo "<pre>"; print_r($fields);  die;
+    $fields = array();
+    $fields['image'] = 'Image';
+    $fields['title'] = 'Title';
+    $fields['price'] = 'Fee';
+    $fields['pa_referral-cashback'] = 'Referral Cashback';
+    $fields['institute'] = 'Institute';
+    $fields['description'] = 'Description';
+    $fields['pa_certification-type'] = 'Certification Type';
+    $fields['pa_specialization'] = 'Specialization';
+    $fields['pa_fee-type'] = 'Fee Type';
+    $fields['pa_exam-center'] = 'Exam Center';
+    $fields['pa_duration'] = 'Duration';
+    $fields['pa_exam-mode'] = 'Exam Mode';
+    $fields['pa_eligibility'] = 'Eligibility';
+    $fields['pa_show-specialization'] = 'Show specialization';
+    $fields['pa_domain'] = 'Domain';
+    $fields['pa_product-category'] = 'Product Category';
+    $fields['pa_study-content'] = 'Study Content';
+    $fields['add-to-cart'] = 'Explore More';
+?>
         <?php foreach ( $fields as $field => $name ) : ?>
 
             <tr class="<?php echo $field ?>">
@@ -138,6 +158,13 @@ $localized_table_text = function_exists( 'icl_translate' ) ? icl_translate( 'Plu
                             case 'add-to-cart':
                                 $wc_get_template( 'loop/add-to-cart.php' );
                                 break;
+
+                            case 'pa_referral-cashback':
+                                if(empty($product->fields[$field])){
+                                    $product->fields[$field] = "NA";
+                                }
+                                echo '<div class="referral custom-hide-small"><span class="cashback">Cashback</span> Rs.'.$product->fields[$field].'</div>';
+                            break;
 
                             default:
                                 echo empty( $product->fields[$field] ) ? '&nbsp;' : $product->fields[$field];
