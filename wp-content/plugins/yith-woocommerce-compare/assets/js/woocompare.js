@@ -243,5 +243,4 @@ jQuery(document).ready(function($) {
         //again, do what you will here
         return s;
     }
-
 });

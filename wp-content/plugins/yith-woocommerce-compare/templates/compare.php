@@ -14,6 +14,7 @@ $is_iframe = (bool)( isset( $_REQUEST['iframe'] ) && $_REQUEST['iframe'] );
 
 wp_enqueue_script( 'jquery-fixedheadertable', YITH_WOOCOMPARE_ASSETS_URL . '/js/jquery.dataTables.min.js', array('jquery'), '1.3', true );
 wp_enqueue_script( 'jquery-fixedcolumns', YITH_WOOCOMPARE_ASSETS_URL . '/js/FixedColumns.min.js', array('jquery', 'jquery-fixedheadertable'), '1.3', true );
+wp_enqueue_script( 'jquery-fixedcolumns', YITH_WOOCOMPARE_ASSETS_URL . 'assets/js/jquery.colorbox-min.js', array('jquery', 'jquery-fixedheadertable'), '1.3', true );
 
 $widths = array();
 foreach( $products as $product ) $widths[] = '{ "sWidth": "205px", resizeable:true }';
@@ -77,8 +78,8 @@ $localized_table_text = function_exists( 'icl_translate' ) ? icl_translate( 'Plu
 </h1>
 
 <?php do_action( 'yith_woocompare_before_main_table' );?>
-<?php 
-    if(count($products) == 4){
+<?php  $product_num = count($products);
+    if($product_num == 4){
         echo "<div style='color:red;font-weight:bold;background:pink; padding:3px 3px 3px 35%;'>Only 4 products can be added in compare list !</div>";
     }
 ?>
@@ -116,6 +117,9 @@ $localized_table_text = function_exists( 'icl_translate' ) ? icl_translate( 'Plu
                     <a href="<?php echo add_query_arg( 'redirect', 'view', $this->remove_product_url( $product->id ) ) ?>" data-product_id="<?php echo $product->id; ?>"><?php _e( 'Remove', 'yit' ) ?> <span class="remove">x</span></a>
                 </td>
             <?php endforeach ?>
+            <?php if($product_num > 0 && $product_num < 4){ ?>
+            <td style="background: #F1F1F1;border-left: 1px solid #DDD;"></td>
+            <?php }?>
         </tr>
 <?php //echo "<pre>"; print_r($fields);  die;
     $fields = array();
@@ -173,7 +177,9 @@ $localized_table_text = function_exists( 'icl_translate' ) ? icl_translate( 'Plu
                         ?>
                     </td>
                 <?php endforeach ?>
-
+                <?php if($product_num > 0 && $product_num < 4){ ?>
+                    <td class="add_more_course" style="background: #F1F1F1;border-left: 1px solid #DDD;"><img class="add_more_compare" src="<?php echo get_site_url()?>/wp-content/themes/flatsome-gh/images/add_more_compare.png"/></td>
+                <?php }?>
             </tr>
 
         <?php endforeach; ?>
@@ -316,7 +322,12 @@ $localized_table_text = function_exists( 'icl_translate' ) ? icl_translate( 'Plu
             }
         });
     });
-
+$(".add_more_compare").hide();
+$(".add_more_compare:first").show();
+jQuery(document).on( 'click', '.add_more_compare', function(e){
+    console.log(jQuery().colorbox);
+    jQuery().colorbox.close();
+});
 </script>
 
 </body>

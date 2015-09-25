@@ -15,6 +15,10 @@ body {
     background: none !important;
 }
 
+.add_more_compare:hover{
+    cursor: pointer;
+}
+
 table.compare-list {
     margin: 10px;
     table-layout: fixed;
@@ -82,7 +86,7 @@ table.compare-list tr.price th, table.compare-list tr.price td {
 table.compare-list tr.image th, table.compare-list tr.image td,
 table.compare-list tr.price th, table.compare-list tr.price td,
 table.compare-list tr.add-to-cart th, table.compare-list tr.add-to-cart td {
-    padding-top: 4px;
+    padding: 10px;
 }
 
 table.compare-list tr.title th,
@@ -205,7 +209,7 @@ table.compare-list td img {
     height: auto;
     max-width: 100%;
     padding: 3px;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
     max-width: none;
 }
 
