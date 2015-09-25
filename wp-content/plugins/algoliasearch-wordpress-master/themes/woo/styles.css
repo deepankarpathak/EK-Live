@@ -1016,7 +1016,12 @@ border-right:none;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+.image-wrap img{
+    height: 100%;
+    width: 100%;
+    max-width: 236px;
+    max-height: 236px
+}
 #algolia_instant_selector .result .duration,#algolia_instant_selector .result .provider{
     display: inline-block;
     padding:0 5px;

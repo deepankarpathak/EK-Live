@@ -41,6 +41,8 @@ jQuery(document).ready(function($) {
                     $('body').trigger( 'yith_woocompare_open_popup', { response: response.table_url, button: button } );
             }
         });
+        $("body").css("overflow-y","hidden");
+        $(document).one('cbox_closed', function () { $("body").css("overflow-y","auto"); });
     });
 
 
