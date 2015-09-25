@@ -33,7 +33,7 @@ table.compare-list thead, table.compare-list tfoot {
     width: 100%;
 }
 
-table.compare-list thead th, h1 {
+table.compare-list thead th,h1 {
      background: #4F4F4F;
      color: #fff;
      font-weight: 800;
@@ -43,6 +43,13 @@ table.compare-list thead th, h1 {
      text-transform: uppercase;
      font-size: 23px;
      text-align: center;
+     position: fixed;
+     width: 100%;
+}
+
+#cboxContent{
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 table.compare-list thead th a.close, h1 a.close {
@@ -111,16 +118,11 @@ table.compare-list .remove td a:hover {
 }
 
 table.compare-list .remove td a .remove {
-    border-radius: 100% 100% 100% 100%;
-    color: red;
-    display: inline-block;
+    color: #747373;
     font-size: 1em;
     font-weight: 600;
-    height: 1em;
-    line-height: 0.81em;
-    text-align: center;
     text-decoration: none;
-    width: 1em;
+    padding:3px;
 }
 
 .yith-woocompare-widget ul.products-list a.remove {
@@ -128,8 +130,7 @@ table.compare-list .remove td a .remove {
 }
 
 table.compare-list .remove td a:hover .remove {
-    background-color: red;
-    color: #ffffff;
+    color: red;
 }
 
 table.compare-list .add-to-cart td a {
@@ -157,9 +158,9 @@ table.compare-list .stock td span.out-of-stock {
     color: #990000;
 }
 
-table.compare-list .price td {
+/*table.compare-list .price td {
     text-decoration: underline;
-}
+}*/
 
 table.compare-list th .fixed-th {
     width: 205px;
@@ -187,6 +188,7 @@ table.compare-list td {
 
 .compare-course-wrapper{
     overflow-x:auto;
+    padding-top: 22px;
 }
 
 table.compare-list td .gh_max_price_in_loop{
@@ -211,32 +213,6 @@ table.compare-list td img {
     padding: 3px;
     /*margin-bottom: 20px;*/
     max-width: none;
-}
-
-.referral {
-    background: #ffffa7 none repeat scroll 0 0;
-    border: 2px dotted #f07746;
-    height: 25px !important;
-    margin: 0 8px 4px;
-    font-size: 18px;
-    line-height: 20px;
-    color: #8A5926;
-}
-.cashback {
-    background-color: #f07746;
-    border-bottom: 8px solid #f07746;
-    border-right: 7px solid #ffffa7;
-    border-top: 8px solid #f07746;
-    color: #fff;
-    float: left;
-    font-size: 17px;
-    font-weight: bold;
-    height: 1px;
-    line-height: 1px;
-    margin-left: 0 !important;
-    margin-top: 2px;
-    text-transform: uppercase;
-    padding-left: 3px;
 }
 
 /** Fixed Header Table Style */
