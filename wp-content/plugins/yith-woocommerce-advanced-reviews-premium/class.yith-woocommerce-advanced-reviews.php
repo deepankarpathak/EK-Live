@@ -524,7 +524,7 @@ if (!class_exists('YITH_WooCommerce_Advanced_Reviews')) {
             if ($count > 0) {
                 echo '<div class="woocommerce-product-rating">
                     <div class="star-rating" title="' . sprintf(__('Rated %s out of 5', 'ywar'), $average) . '">
-                        <span  style="width:' . (($average / 5) * 100) . '%"></span>
+                        <span  style="width:' . ($average * 16 ) . 'px"></span>
                     </div>
                     <span class="ywar_review_count">' . sprintf("%d %s", $count, _n(" review", " reviews", $count, 'ywar')) . '</span><span class="review-rating-value"> ' . esc_html($average) . ' ' . __("out of 5 stars", 'ywar') . '</span>
                 </div>';

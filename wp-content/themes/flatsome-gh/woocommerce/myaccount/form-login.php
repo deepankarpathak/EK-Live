@@ -29,7 +29,7 @@ global $woocommerce,$flatsome_opt; ?>
 		<form method="post" class="login">
 
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
-
+			<input type="hidden" name="redirect" id="redirect" value="<?php echo @$_GET['redirect_to'];?>" />
 			<p class="form-row form-row-wide">
 				<label for="username"><?php _e( 'Username or email address', 'woocommerce' ); ?> <span class="required">*</span></label>
 				<input type="text" class="input-text" name="username" id="username" />

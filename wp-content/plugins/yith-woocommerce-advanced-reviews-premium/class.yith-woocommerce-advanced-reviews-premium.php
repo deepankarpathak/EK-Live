@@ -1208,14 +1208,18 @@ class YITH_WooCommerce_Advanced_Reviews_Premium extends YITH_WooCommerce_Advance
 			//  is user is not logged in and visitators can't vote, pass through login page before going to voting url
 			if ( ! is_user_logged_in() && ! $this->enable_visitators_vote ) {
 
-				$voting_yes_url = home_url().'/my-account/'; //wp_login_url( $voting_yes_url );
-				$voting_no_url  = home_url().'/my-account/';//wp_login_url( $voting_no_url );
+				$voting_yes_url = wp_login_url( $voting_yes_url,false,'/my-account/'); 
+				//home_url().'/my-account/'; //wp_login_url( $voting_yes_url );
+				$voting_no_url  = wp_login_url( $voting_no_url,false,'/my-account/'); 
+				//wp_login_url( $voting_no_url );
 			}
 
 			$div_yes_not = '<div class="review_vote">
 <span class="review_helpful">' . __( "Was this review helpful to you?", 'ywar' ) . '</span>
+<div>
 <a id="vote_yes_' . $review->ID . '" class="' . $yes_class . '" href="' . $voting_yes_url . '" data-vote_review="1" data-id_review="' . $review->ID . '" title="This reviews is helpful">&nbsp;</a>
-<a id="vote_no_' . $review->ID . '" class="' . $no_class . '" href="' . $voting_no_url . '" data-vote_review="-1" data-id_review="' . $review->ID . '" title="This reviews is not helpful">&nbsp;</a>';
+<a id="vote_no_' . $review->ID . '" class="' . $no_class . '" href="' . $voting_no_url . '" data-vote_review="-1" data-id_review="' . $review->ID . '" title="This reviews is not helpful">&nbsp;</a>
+</div>';
 
 			$div_helpfull_msg = '<span class="ywar_review_helpful">' . $this->get_review_is_helpful_text( $review->ID ) . '</span>';
 
@@ -1441,7 +1445,7 @@ class YITH_WooCommerce_Advanced_Reviews_Premium extends YITH_WooCommerce_Advance
 			$redirect_to = add_query_arg( 'review_id', $id_review, $redirect_to );
 			$redirect_to = add_query_arg( '_wpnonce', $wp_nonce, $redirect_to );
 
-			$goto_url = home_url().'/my-account/'; //wp_login_url( $redirect_to );
+			$goto_url = wp_login_url( $redirect_to,false,'/my-account/' ); //home_url().'/my-account/'; //wp_login_url( $redirect_to );
 			wp_send_json( array( "code" => - 1, "value" => $goto_url ) );
 		}
 
