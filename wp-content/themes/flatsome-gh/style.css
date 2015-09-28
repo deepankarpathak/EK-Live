@@ -3828,6 +3828,210 @@ font-weight: inherit !important;
 	padding: 0 8px;
 }
 
+
+/*----- Guided Search Start -----*/
+.page-guided-search{
+	background: #E6E6E6;
+}
+
+.guided-search{
+	max-width: 900px;
+	margin: 0 auto;
+    text-align: center;
+}
+.guided-search-title{
+    font-size: 40px;
+    color: #4693C9;
+    margin: 30px 0;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.courses-offered-title{
+    display: inline-block;
+    font-size: 17px;
+    color: #fff;
+    background-color: #F39C11;
+    padding: 13px;
+    font-family: robotoregular;
+    position: relative;
+    padding-left: 35px;
+    margin: 35px 0 18px 30px;
+    border-radius: 4px;
+}
+
+.courses-offered-title .img-wrapper{
+	height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 5px solid #F39C11;
+    position: absolute;
+    left: -30px;
+    top: -8px;
+}
+
+.courses-offered-title .img-wrapper:before{
+	content: "";
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-left: 16px solid transparent;
+    border-right: 17px solid transparent;
+    border-top: 14px solid #F39C11;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    bottom: -14px;
+}
+
+.offered-course-wrapper,.ug-pg-wrapper,.exam-center-wrapper,.study-mode-wrapper,.degree-wrapper,.specialisation-wrapper{
+	padding: 60px 15px 30px;
+	background: #fff;
+	border-radius: 12px;
+}
+
+.exam-center-wrapper,.specialisation-wrapper{
+	padding: 30px;
+}
+
+.degree-wrapper{
+	padding: 50px 30px;	
+}
+
+.offered-course-wrapper > div{
+	padding: 0;
+}
+
+.guided-search .content-title,.degree-title{
+	text-transform: uppercase;
+    font-size: 18px;
+    color: #888;
+    font-family: robotoregular;
+    line-height: 24px;
+}
+
+.guided-search .content-title:hover, .guided-search .content-title:hover .ug-pg-course-title{
+    color: #F39C11;
+    font-family: robotobold;
+    cursor: pointer;
+}
+
+.col-md-offset-3 {
+    margin-left: 25%;
+}
+
+.ug-pg-course-title{
+	font-size: 54px;
+    font-family: robotobold;
+    color: #888;
+    line-height: 50px;
+    padding-bottom: 10px;
+}
+
+
+.exam-center-wrapper ul li,.degree-wrapper ul li,.specialisation-wrapper ul li{
+	display: inline-block;
+	padding: 0 12px;
+}
+
+.degree-wrapper ul li{
+	padding: 0 30px;
+}
+
+.specialisation-wrapper ul li{
+	padding: 5px 3px;
+}
+
+.degree-title{
+	border:1px solid #ddd;
+	padding: 3px 10px;
+	border-radius: 3px;
+}
+
+.degree-title:hover,.degree-title.active{
+	color:#30B6E9;
+	border:1px solid #30B6E9;
+}
+
+input[type="radio"]{
+	display: none;
+}
+
+input[type="radio"] + span{
+	height: 11px;
+    width: 11px;
+    display: inline-block;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #bbb;
+    margin-left: 10px;
+}
+
+input[type="radio"]:checked + span{
+	background: #30B6E9;
+	border-color: #fff;
+	box-shadow: 0px 0px 1px #30B6E9; 
+}
+
+input[type="text"].guided-search-bar{
+	max-width: 750px;
+	margin: 0 auto;
+	padding-left: 55px;
+	height: 40px;
+	border-radius: 5px;
+	font-size: 18px;
+    font-family: robotoregular;
+}
+
+.guided-bredcrums-wrapper{
+	text-align: left;
+	padding: 15px 0;
+}
+
+.guided-bredcrums{
+	display: inline-block;
+    border: 1px solid #bbb;
+    padding: 2px 5px;
+    font-size: 14px;
+    font-family: robotoregular;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    border-left: none;
+    padding-left: 15px;
+    position: relative;
+    color: #999;
+}
+
+.guided-bredcrums:first-child{
+	border-right: 1px solid #bbb;
+    padding-left: 5px;
+}
+
+.guided-bredcrums:after,.guided-bredcrums:before{
+    content: "";
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    position: absolute;
+    top: -1px;
+}
+
+.guided-bredcrums:after{
+    border-left: 8px solid #e6e6e6;
+    right: -6px;
+}
+
+.guided-bredcrums:before{
+    border-left: 8px solid #bbb;
+    right: -7px;
+}
+
+
+
+/*----- Guided Search End -----*/
+
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
