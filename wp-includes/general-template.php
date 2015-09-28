@@ -333,15 +333,22 @@ function wp_logout_url($redirect = '') {
  * @param bool $force_reauth Whether to force reauthorization, even if a cookie is present. Default is false.
  * @return string A log in URL.
  */
-function wp_login_url($redirect = '', $force_reauth = false) {
-	$login_url = site_url('wp-login.php', 'login');
+function wp_login_url($redirect = '', $force_reauth = false,$optional_url = '') {
+	if($optional_url == ''){
+		$login_url = site_url('wp-login.php', 'login');
+	}
+	else{
 
-	if ( !empty($redirect) )
+		$login_url = site_url($optional_url, 'login');
+	}
+
+	if ( !empty($redirect) ){
 		$login_url = add_query_arg('redirect_to', urlencode($redirect), $login_url);
+		add_filter( 'login_redirect', function() { return site_url($redirect); } );
+	}
 
 	if ( $force_reauth )
 		$login_url = add_query_arg('reauth', '1', $login_url);
-
 	/**
 	 * Filter the login URL.
 	 *

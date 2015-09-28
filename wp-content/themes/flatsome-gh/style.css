@@ -3737,7 +3737,7 @@ float: none;
 .woocommerce p.stars span, .woocommerce-page p.stars span {
 	width: auto;
 }
-.single-product.woocommerce p.stars span a{
+.single-product.woocommerce p.stars span a,.single-product.woocommerce p.stars span a:focus{
 	position: relative;
 	background-image: url("images/star-disabled.png");
 	background-repeat:no-repeat;
@@ -3758,6 +3758,10 @@ float: none;
 }
 .single-product .avatar-60{
 	display: none;
+}
+/*Review and Rating*/
+.star-rating span {
+font-weight: inherit !important;
 }
 
 /*------------------------------------*\

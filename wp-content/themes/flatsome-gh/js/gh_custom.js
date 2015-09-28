@@ -197,8 +197,10 @@ jQuery(document).ready(function () {
     }
 jQuery(document).ready(function(){
 	/*Nishu : Review and rating js*/
-  console.log($("p.stars span a"));
-          $("p.stars span a"). mouseenter(function() {                     
+ 		$.each($("p.stars span a"), function(index, value) {
+                $(this).attr("tabIndex",-5);
+            });
+        $("p.stars span a"). mouseenter(function() {                     
             var star_index = $("p.stars span a").index(this);
             $.each($("p.stars span a"), function(index, value) {
                 if (star_index >= index)
