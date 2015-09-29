@@ -3916,7 +3916,7 @@ font-weight: inherit !important;
 	margin-bottom: 40px;
 }
 
-.guided-block:after,.guided-block:before{
+#back,.guided-block:before{
 	display: block;
 	height: 43px;
 	width: 43px;
@@ -3931,7 +3931,7 @@ font-weight: inherit !important;
 	z-index: 50;
 }
 
-.guided-block:after{
+#back{
     background-position: -104px -256px;
    	left: -22px;
 }

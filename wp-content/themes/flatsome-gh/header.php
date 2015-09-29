@@ -367,7 +367,7 @@ if($flatsome_opt['html_intro'] && is_front_page()) echo '<div class="home-intro"
 	?>
 </div>	
 <div class="large-12 search-menu-container">
-	<?php if (!is_page(array('cart', 'checkout'))){ ?>
+	<?php if (!is_page(array('cart', 'checkout','guided-search'))){ ?>
 				<div class="search-box-row search-div large-8 small-12">
 					<div class="row collapse search-wrapper">
 						<form method="GET" id="searchform" class="searchform clearfix" action="<?php echo site_url();?>/courses/">
