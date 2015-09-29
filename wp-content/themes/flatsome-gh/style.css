@@ -3885,13 +3885,86 @@ font-weight: inherit !important;
 }
 
 .offered-course-wrapper,.ug-pg-wrapper,.exam-center-wrapper,.study-mode-wrapper,.degree-wrapper,.specialisation-wrapper{
-	padding: 60px 15px 30px;
+	padding: 45px 15px 30px;
 	background: #fff;
 	border-radius: 12px;
+	position: relative;
+}
+
+.loading-wait{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+	z-index: 100;
+	display: none;
+}
+
+
+.loading-wait img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -22px;
+	margin-left: -22px;
+}
+
+.guided-block{
+	position: relative;
+	margin-bottom: 40px;
+}
+
+.guided-block:after,.guided-block:before{
+	display: block;
+	height: 43px;
+	width: 43px;
+	content: "";
+	position: absolute;	
+	background-color: #666666;
+	background-image: url("images/sprite/sprites.png");
+	border-radius: 50%;
+	top: 50%;
+	margin-top: -22px;
+	border: 3px solid #E6E6E6;
+	z-index: 50;
+}
+
+.guided-block:after{
+    background-position: -104px -256px;
+   	left: -22px;
+}
+
+.guided-block:before{
+	background-position: -154px -256px;
+	right: -22px;
+	opacity: .5;
+}
+
+.guided-block:hover:after{
+   	cursor: pointer;
 }
 
 .exam-center-wrapper,.specialisation-wrapper{
 	padding: 30px;
+}
+
+.exam-center-wrapper ul{
+	padding-top: 40px;
+	position: relative;
+}
+
+.exam-center-wrapper ul:before{
+	display: block;
+    height: 50px;
+    width: 43px;
+    content: "";
+    position: absolute;
+    background-image: url("images/sprite/sprites.png");
+    background-position: 75px 81px;
+    top: -15px;
+    left: 76px;
 }
 
 .degree-wrapper{
@@ -3910,7 +3983,7 @@ font-weight: inherit !important;
     line-height: 24px;
 }
 
-.guided-search .content-title:hover, .guided-search .content-title:hover .ug-pg-course-title{
+.guided-search .content-title:hover,.guided-search .content-title.active, .guided-search .content-title:hover .ug-pg-course-title, .guided-search .content-title.active .ug-pg-course-title{
     color: #F39C11;
     font-family: robotobold;
     cursor: pointer;
@@ -3975,17 +4048,31 @@ input[type="radio"]:checked + span{
 
 input[type="text"].guided-search-bar{
 	max-width: 750px;
-	margin: 0 auto;
 	padding-left: 55px;
 	height: 40px;
 	border-radius: 5px;
 	font-size: 18px;
     font-family: robotoregular;
 }
+.guided-search-bar-wrapper{
+    position: relative;
+	max-width: 750px;
+	margin: 0 auto;
+}
+.guided-search-bar-wrapper:before{
+    display: block;
+    height: 40px;
+    width: 48px;
+    content: "";
+    background-image: url("images/sprite/sprites.png");
+    position: absolute;
+    left: 0;
+    background-position: 276px 77px;
+}
 
 .guided-bredcrums-wrapper{
 	text-align: left;
-	padding: 15px 0;
+	padding: 10px 0;
 }
 
 .guided-bredcrums{
@@ -3994,17 +4081,24 @@ input[type="text"].guided-search-bar{
     padding: 2px 5px;
     font-size: 14px;
     font-family: robotoregular;
-    border-radius: 5px 0 0 5px;
     border-right: none;
     border-left: none;
-    padding-left: 15px;
+    padding-left: 20px;
     position: relative;
     color: #999;
+    margin-left: -5px;
 }
 
 .guided-bredcrums:first-child{
-	border-right: 1px solid #bbb;
+	border-left: 1px solid #bbb;
     padding-left: 5px;
+    margin-left: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+.guided-bredcrums:hover{
+    color: #555;
+    cursor: pointer;
 }
 
 .guided-bredcrums:after,.guided-bredcrums:before{
@@ -4019,16 +4113,46 @@ input[type="text"].guided-search-bar{
 }
 
 .guided-bredcrums:after{
-    border-left: 8px solid #e6e6e6;
-    right: -6px;
+    border-left: 13px solid #e6e6e6;
+    right: -11px;
 }
 
 .guided-bredcrums:before{
-    border-left: 8px solid #bbb;
-    right: -7px;
+	border-left: 13px solid #bbb;
+    right: -12px;
+}
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+	margin-bottom: 20px;
 }
 
+.icon-CertificateCourses {
+	width: 4em;
+	height: 2.7em;
+}
 
+.icon-DiplomaCourses {
+	width: 4em;
+	height: 2.7em;
+}
+
+.icon-FreeCourses {
+	width: 4em;
+	height: 2.7em;
+}
+
+.icon-SchoolEducation {
+	width: 4em;
+	height: 2.7em;
+}
+
+.icon-EntranceCoching{
+	width: 4em;
+	height: 2.7em;
+}
 
 /*----- Guided Search End -----*/
 
