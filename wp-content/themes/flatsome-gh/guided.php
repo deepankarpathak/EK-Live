@@ -18,11 +18,13 @@ get_header(); ?>
 
 <div class="guided-search">
 	<h2 class="guided-search-title">one search for education in india</h2>
-	<div class="courses-offered-title">
-		<div class="img-wrapper">
-			<img src="http://edukart.com/wp-content/uploads/2015/01/1000o-plus-enrolled-students.png">
+	<div class="outer-offered-title">
+		<div class="courses-offered-title">
+			<div class="img-wrapper">
+				<img src="http://edukart.com/wp-content/uploads/2015/01/1000o-plus-enrolled-students.png">
+			</div>
+			<span id="msg"><strong>Good Morning!</strong> Choose from variety of long term & short term courses we offer.</span>
 		</div>
-		<span id="msg"><strong>Good Morning!</strong> Choose from variety of long term & short term courses we offer.</span>
 	</div>
 <!-- Course wrapper start-->
 	<div class="loading-wait"><img src="<?php echo get_site_url();?>/wp-content/themes/flatsome-gh/images/loader.gif"></div>
@@ -92,7 +94,6 @@ get_header(); ?>
 				<input type="text" class="guided-search-bar" placeholder="or search your specialisation">
 			</div>
 		</div>
-	
 	<!-- Exam-center wrapper end-->
 
 	<!-- Study mode wrapper start-->
@@ -121,7 +122,9 @@ get_header(); ?>
 				<li><label class="degree-title" for="mca">MCA<input id="mca" type="radio" name="degree"><span></span></label></li>					
 				<li><label class="degree-title" for="mtech">Mtech<input id="mtech" type="radio" name="degree"><span></span></label></li>					
 			</ul>
-			<input type="text" class="guided-search-bar" placeholder="or search your specialisation">
+			<div class="guided-search-bar-wrapper">
+				<input type="text" class="guided-search-bar" placeholder="or search your specialisation">
+			</div>
 		</div>
 	
 	 <!-- Degree wrapper end-->
@@ -141,16 +144,17 @@ get_header(); ?>
 				<li><label class="degree-title" for="mca">MCA<input id="mca" type="radio" name="degree"><span></span></label></li>					
 				<li><label class="degree-title" for="mtech">Mtech<input id="mtech" type="radio" name="degree"><span></span></label></li>					
 			</ul>
-			<input type="text" class="guided-search-bar" id="spec-input" placeholder="or search your specialisation">
+			<div class="guided-search-bar-wrapper">
+				<input type="text" class="guided-search-bar" id="spec-input" placeholder="or search your specialisation">
+			</div>
 		</div>
-		<ul class="guided-bredcrums-wrapper">
-		</ul>
+		
 		<span id="back"></span>
 	 <!-- specialisation wrapper end-->
 </div>
 
+<ul class="guided-bredcrums-wrapper"></ul>
 
-</div>
 
 </div><!-- end #content large-12 -->
 </div><!-- end row -->

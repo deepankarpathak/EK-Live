@@ -3838,6 +3838,7 @@ font-weight: inherit !important;
 	max-width: 900px;
 	margin: 0 auto;
     text-align: center;
+    margin-bottom: 40px;
 }
 .guided-search-title{
     font-size: 40px;
@@ -3846,6 +3847,12 @@ font-weight: inherit !important;
     text-transform: uppercase;
     font-weight: normal;
 }
+
+.outer-offered-title{
+	text-align: left;
+	margin-left: 12%;
+}
+
 .courses-offered-title{
     display: inline-block;
     font-size: 17px;
@@ -3867,6 +3874,7 @@ font-weight: inherit !important;
     position: absolute;
     left: -30px;
     top: -8px;
+    background-color: #F39C11;
 }
 
 .courses-offered-title .img-wrapper:before{
@@ -3913,7 +3921,6 @@ font-weight: inherit !important;
 
 .guided-block{
 	position: relative;
-	margin-bottom: 40px;
 }
 
 #back,.guided-block:before{
@@ -3942,8 +3949,9 @@ font-weight: inherit !important;
 	opacity: .5;
 }
 
-.guided-block:hover:after{
+#back:hover{
    	cursor: pointer;
+   	box-shadow: 0px 0px 5px #555;
 }
 
 .exam-center-wrapper,.specialisation-wrapper{
@@ -3952,10 +3960,13 @@ font-weight: inherit !important;
 
 .exam-center-wrapper ul{
 	padding-top: 40px;
+}
+
+.exam-center-wrapper ul li{
 	position: relative;
 }
 
-.exam-center-wrapper ul:before{
+.exam-center-wrapper ul li:first-child:before{
 	display: block;
     height: 50px;
     width: 43px;
@@ -3963,8 +3974,10 @@ font-weight: inherit !important;
     position: absolute;
     background-image: url("images/sprite/sprites.png");
     background-position: 75px 81px;
-    top: -15px;
-    left: 76px;
+    top: -55px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 
 .degree-wrapper{
@@ -4268,6 +4281,9 @@ input[type="text"].guided-search-bar{
 	.minicart{
 		width:34.5%;
 	}
+	.guided-search {
+		margin: 0 15px;
+	}
 }
 @media only screen and (max-width:850px) {
 	#masthead #logo {
@@ -4327,6 +4343,15 @@ input[type="text"].guided-search-bar{
 	}
 	.logo-slider h1,.edu_pg_pc span{
 	    font-size: 36px;
+	}
+	.outer-offered-title {
+    	margin-left: 7%;
+	}
+	.courses-offered-title,.guided-search .content-title, .degree-title ,.guided-search-bar{
+	    font-size: 15px;
+	}
+	.courses-offered-title{
+		margin: 35px 0 20px 30px;
 	}
 }
 @media only screen and (min-width: 768px) {
