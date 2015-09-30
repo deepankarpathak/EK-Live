@@ -3780,6 +3780,103 @@ float: none;
 .featured_courses .products li{
 	width:100% !important;
 }
+
+.main-category {
+    padding: 15px 0 30px;
+}
+.main-category #breadcrumbs{
+	margin-bottom: 10px;
+	padding: 0 15px;
+}
+.main-category #breadcrumbs,.main-category #breadcrumbs a{
+	color: #2D3E50;
+}
+.main-category .left-panel{
+	width: 29%;
+}
+.left-panel h2{
+	font-size: 18px;
+	color: #2D3E50;
+}
+.left-panel p{
+	padding: 2px 0;
+	margin: 0;
+}
+.left-panel p a{
+	color: #555C66;
+    font-size: 15px;
+}
+.left-panel p a:hover{
+	font-weight: bold;
+}
+.left-panel{
+	padding: 0;
+}
+.main-category .right-panel{
+	width: 71%;
+}
+.main-cat-specializations,.main-cat-institutes{
+	border-top: 1px solid #ddd;
+	padding: 10px 0px 10px 15px;
+	margin-right: 20px;
+}
+.main-cat-video{
+	margin: 20px 0;
+}
+.right-panel .page_name h2{
+	margin: 0 0 3px;
+	font-weight: bold;
+    font-family: robotoregular;
+    font-size: 27px;
+    color: #2D3E50;
+    text-transform: uppercase;
+}
+.right-panel h2{
+	display: inline-block;
+    padding-right: 15px;
+    color: #2D3E50;
+    font-size: 32px;
+    font-weight: normal;
+    font-family: robotoregular;
+}
+
+.right-panel .featured_courses a,.right-panel .explore_categories a{
+	font-size: 19px;
+    color: #F1AA38;
+    font-family: robotolight;
+}
+
+.right-panel .featured_courses a:hover,.right-panel .explore_categories a:hover{
+	color:#E67F22;
+}
+
+.right-panel .featured_courses,.right-panel .explore_categories{
+	border-top:1px solid #bbb;
+	padding-top: 15px;
+}
+
+.right-panel .iosSlider{
+	border: 1px solid #ddd;
+}
+
+.featured_courses .products{
+	margin-bottom: 0;
+	padding: 10px;
+}
+
+.page_description h2{
+	font-size: 33px;
+    font-weight: normal;
+    font-family: robotoregular;
+    color: #2D3E50;
+}
+
+.page_description p{
+	font-family: robotoregular;
+    font-size: 15px;
+    color: #999;
+}
+
 /*Landing page css Ended*/
 /*------------------------------------*\
    modify-css-educart-Media Queries
