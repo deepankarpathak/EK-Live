@@ -3776,7 +3776,11 @@ float: none;
 .single-product .avatar-60{
 	display: none;
 }
-
+/*Landing page css start*/
+.featured_courses .products li{
+	width:100% !important;
+}
+/*Landing page css Ended*/
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/

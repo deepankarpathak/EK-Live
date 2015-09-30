@@ -1,6 +1,6 @@
 <?php
 /*
-Template name: Main Category
+Template name: Sub Category
 */
 get_header(); ?>
 
