@@ -10,15 +10,15 @@ get_header(); ?>
 </div>
 <?php } ?>
 
-<div  class="page-wrapper">
+<div  class="page-wrapper main-category">
 <div class="row">
-<div id="content" class="large-12 columns" role="main">
+<div id="content" role="main">
 <?php if ( function_exists('yoast_breadcrumb') ) {
   yoast_breadcrumb('<p id="breadcrumbs">','</p>');
 }
 ?>
 <?php // get_field("institute") is used to get value in variable?>
-<div class="large-4 columns">
+<div class="large-4 left-panel columns">
 	<div class="main-cat-institutes">
 		<h2>INSTITUTE</h2>
 		<?php the_field('institutes'); ?>
@@ -36,12 +36,12 @@ get_header(); ?>
 	</div>
 </div>
 
-<div class="large-8 columns">
+<div class="large-8 right-panel columns">
 	<div class="page_name">
-		<h1 style="margin-bottom:10px; text-transform: uppercase; font-weight:bold"><?php echo get_the_title(); ?></h1></div>
+		<h2 ><?php echo get_the_title(); ?></h2></div>
 	<?php the_field('slider'); ?>
 	<div class="explore_courses">
-		<h1 style="display:inline-block; margin-right:10px">Explore Courses</h1><a href="<?php the_field('explore_courses_see_all_link'); ?>" style="font-weight:bold">See All</a>
+		<h2 >Explore Courses</h2><a href="<?php the_field('explore_courses_see_all_link'); ?>" >See All</a>
 		<div class="explore_courses"> 
 			<?php the_field('explore_courses');?>
 		</div>

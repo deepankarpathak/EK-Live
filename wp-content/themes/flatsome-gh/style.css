@@ -3840,17 +3840,17 @@ float: none;
     font-family: robotoregular;
 }
 
-.right-panel .featured_courses a,.right-panel .explore_categories a{
+.right-panel .featured_courses a,.right-panel .explore_categories a, .right-panel .explore_courses a{
 	font-size: 19px;
     color: #F1AA38;
     font-family: robotolight;
 }
 
-.right-panel .featured_courses a:hover,.right-panel .explore_categories a:hover{
+.right-panel .featured_courses a:hover,.right-panel .explore_categories a:hover, .right-panel .explore_courses a:hover{
 	color:#E67F22;
 }
 
-.right-panel .featured_courses,.right-panel .explore_categories{
+.right-panel .featured_courses,.right-panel .explore_categories,.right-panel .explore_courses{
 	border-top:1px solid #bbb;
 	padding-top: 15px;
 }
