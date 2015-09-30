@@ -3779,6 +3779,8 @@ float: none;
 /*Landing page css start*/
 .featured_courses .products li{
 	width:100% !important;
+	margin:0px;
+	padding: 10px 10px 13px;
 }
 
 .main-category {
@@ -3861,7 +3863,7 @@ float: none;
 
 .featured_courses .products{
 	margin-bottom: 0;
-	padding: 10px;
+	padding:0;
 }
 
 .page_description h2{
@@ -3875,6 +3877,18 @@ float: none;
 	font-family: robotoregular;
     font-size: 15px;
     color: #999;
+}
+.explore_categories_gallery img{
+    border: 1px solid #ddd !important;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.featured_courses .product-small .inner-wrap{
+	min-height: 310px;
+}
+.course_slider{
+	background:#E6E6E6;
 }
 
 /*Landing page css Ended*/
