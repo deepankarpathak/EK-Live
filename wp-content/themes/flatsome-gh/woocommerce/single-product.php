@@ -64,3 +64,9 @@ echo '<div id="ses_de_gh" style="display:none;">'.$wp_session['ip'].' | '.$wp_se
 </div><!-- end row product-page -->
 
 <?php get_footer('shop'); ?>
+<script type="text/javascript">
+  var hashValue = location.hash;  
+  hashValue = hashValue.replace(/^#/, '');  
+  if(hashValue == 'tab-reviews')
+  	$('#tab-reviews').addClass('active');
+</script>

@@ -3764,6 +3764,16 @@ float: none;
 font-weight: inherit !important;
 }
 
+.product-info .custom-rating{
+	margin: 10px 0px 0px 0;
+	display: inline-block;
+}
+
+.product-info .scroll-to-reviews{
+	font-size: 15px;
+	color: #999;
+	text-transform: uppercase;
+}
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
