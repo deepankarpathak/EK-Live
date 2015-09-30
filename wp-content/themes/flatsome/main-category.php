@@ -38,7 +38,7 @@ get_header(); ?>
 				<?php the_field('slider'); ?>
 				<div class="featured_courses">
 					<h1 style="display:inline-block; margin-right:10px">Featured Courses</h1><a href="<?php the_field('featured_courses_see_all_link'); ?>" style="font-weight:bold">See All</a>
-					<div class="course_slider" style="background:#EBEBEB; min-height:300px; padding:10px 0px"> 
+					<div class="course_slider" style="background:#EBEBEB; padding:10px 0px"> 
 						<?php the_field('featured_courses');?>
 					</div>
 				</div>

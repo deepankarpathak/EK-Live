@@ -28,7 +28,8 @@ get_header(); ?>
 		<?php the_field('specializations'); ?>
 	</div>
 	<div class= "expert-form">
-		<?php the_widget('WP_Widget_Connecto'); ?> 
+		<ins class="connecto-notification" style="display:block" data-connecto-slot="course-form-slot">
+		</ins>
 	</div>
 	<div class="main-cat-video">
 	    <iframe width="310" height="250" src="<?php the_field('video'); ?>" frameborder="0" allowfullscreen></iframe>

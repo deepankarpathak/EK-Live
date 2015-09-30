@@ -129,6 +129,7 @@ if (!isset($flatsome_opt['grid_style']) || $flatsome_opt['grid_style'] == "grid1
     $univ = get_option("taxonomy_" . $university_name->term_id);
     $univ_shrt_name = get_term_meta($university_name->term_id, 'university_short_name', true);
     $cashback = $product->get_attribute("referral-cashback");
+    $studycontent = $product->get_attribute("study-content");
     ?>
                     <p class="name"><?php if ($show_specialization == 'Yes') {
                     echo  $prod_name .'('.$specialization . ')-' . $univ_shrt_name;
@@ -152,13 +153,19 @@ if (!isset($flatsome_opt['grid_style']) || $flatsome_opt['grid_style'] == "grid1
                     ?></span>
                     <span class="learn_more">Learn More</span>
 
-                    <?php if(!is_front_page()){
-                            if ($cashback) {?>
-                            <div class="referral"><span class="cashback">Cashback</span> <?php echo'Rs.' . number_format_i18n((int) $cashback); ?></div>
-                    <?php }} ?>
+                    <?php if(is_page_template('category-course.php')){
+                             echo '<div class="duration_below_title-list"><div class="clear"></div><span class="edu-study-mode"><p class="exam-mode"><b>Study Content: </b>' . $studycontent . '</p></span><span class="short-description_sapn"><p class="">' . $duration . '</p></span></div>';
+                    }?>
 
-                <?php do_action('woocommerce_after_shop_loop_item_title'); ?>
-                <?php if (in_array('yith-woocommerce-wishlist/init.php', apply_filters('active_plugins', get_option('active_plugins')))) { ?>
+                    <?php do_action('woocommerce_after_shop_loop_item_title'); ?>
+
+                    <?php 
+                    if(is_page_template('category-course.php')){
+                        if ($cashback) {?>
+                            <div class="referral"><span class="cashback">Cashback</span> <?php echo'Rs.' . number_format_i18n((int) $cashback); ?></div>
+                    <?php }}?>        
+
+                    <?php if (in_array('yith-woocommerce-wishlist/init.php', apply_filters('active_plugins', get_option('active_plugins')))) { ?>
                     <?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
     <?php } ?>
                 </div><!-- end info -->
