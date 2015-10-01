@@ -3980,7 +3980,7 @@ font-weight: inherit !important;
     content: "";
     position: absolute;
     background-image: url("images/sprite/sprites.png");
-    background-position: 75px 81px;
+	background-position: -200px -248px;
     top: -55px;
     left: 0;
     right: 0;
@@ -4087,7 +4087,7 @@ font-weight: inherit !important;
     background-image: url("images/sprite/sprites.png");
     position: absolute;
     left: 0;
-    background-position: 276px 77px;
+    background-position: 0px -253px;;
 }
 
 .guided-bredcrums-wrapper{
