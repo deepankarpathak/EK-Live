@@ -82,16 +82,9 @@ get_header(); ?>
 	
 		<div class="exam-center-wrapper" id="exam-center-wrapper" style="display: none">
 			<ul>
-				<li class="content-title">Delhi</li>					
-				<li class="content-title">Mumbai</li>					
-				<li class="content-title">Kolkata</li>					
-				<li class="content-title">Chennai</li>					
-				<li class="content-title">Bangalore</li>					
-				<li class="content-title">Jaipur</li>					
-				<li class="content-title">Lukhnow</li>					
 			</ul>
-			<div class="guided-search-bar-wrapper" id="exam-center-input">
-				<input type="text" class="guided-search-bar" placeholder="or search your specialisation">
+			<div class="guided-search-bar-wrapper" >
+				<input type="text" class="guided-search-bar" id="exam-center-input" placeholder="or search your Exam Center">
 			</div>
 		</div>
 	<!-- Exam-center wrapper end-->
@@ -116,15 +109,7 @@ get_header(); ?>
 	
 		<div class="degree-wrapper clearfix"  id="degree-wrapper" style="display: none">
 			<ul>
-				<li><label class="degree-title" for="mscit">MSCIT<input id="mscit" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="ma">MA<input id="ma" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="mba">MBA<input id="mba" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="mca">MCA<input id="mca" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="mtech">Mtech<input id="mtech" type="radio" name="degree"><span></span></label></li>					
 			</ul>
-			<div class="guided-search-bar-wrapper">
-				<input type="text" class="guided-search-bar" placeholder="or search your specialisation">
-			</div>
 		</div>
 	
 	 <!-- Degree wrapper end-->
@@ -133,16 +118,6 @@ get_header(); ?>
 	
 		<div class="specialisation-wrapper clearfix" id="specialisation-wrapper" style="display:none">
 			<ul>
-				<li><label class="degree-title" for="mscit">MSCIT<input id="mscit" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="ma">MA<input id="ma" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="mba">MBA<input id="mba" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="mca">MCA<input id="mca" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="mtech">Mtech<input id="mtech" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="mscit">MSCIT<input id="mscit" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="ma">MA<input id="ma" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="mba">MBA<input id="mba" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="mca">MCA<input id="mca" type="radio" name="degree"><span></span></label></li>					
-				<li><label class="degree-title" for="mtech">Mtech<input id="mtech" type="radio" name="degree"><span></span></label></li>					
 			</ul>
 			<div class="guided-search-bar-wrapper">
 				<input type="text" class="guided-search-bar" id="spec-input" placeholder="or search your specialisation">
@@ -308,7 +283,7 @@ function ugpg_course()
 			jQuery(".guided-bredcrums-wrapper").append('<li class="guided-bredcrums">'+courses[jQuery(this).parents("li").index()]+"</li>");
 			query=courses[jQuery(this).parents("li").index()];
 			show_waiting();
-			index.search(courses[jQuery(this).parents("li").index()], {
+			index.search(query, {
 	            facets: '*',facetFilters:filter_array}, ugpc_specialization);
 			});
 }
