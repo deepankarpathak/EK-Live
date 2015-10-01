@@ -3889,7 +3889,7 @@ float: none;
 	min-height: 310px;
 }
 .course_slider{
-	background:#E6E6E6;
+	background:#EBEBEB;
 }
 
 .course_slider .columns{
@@ -3912,6 +3912,10 @@ float: none;
 	background-position: -5px -307px;
 }
 
+.explore_categories_gallery .gallery-item{
+	width:31% !important;
+	margin:0 2% 2% 0 !important;
+}
 
 /*Landing page css Ended*/
 /*------------------------------------*\
