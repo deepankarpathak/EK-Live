@@ -4175,7 +4175,148 @@ font-weight: inherit !important;
 }
 
 /*----- Guided Search End -----*/
+/*Landing page css start*/
+.featured_courses .products li{
+	width:100% !important;
+	margin:0px;
+	padding: 10px 10px 13px;
+}
 
+.main-category {
+    padding: 15px 0 30px;
+}
+.main-category #breadcrumbs{
+	margin-bottom: 10px;
+	padding: 0 15px;
+}
+.main-category #breadcrumbs,.main-category #breadcrumbs a{
+	color: #2D3E50;
+}
+.main-category .left-panel{
+	width: 29%;
+}
+.left-panel h2{
+	font-size: 18px;
+	color: #2D3E50;
+}
+.left-panel p{
+	padding: 2px 0;
+	margin: 0;
+}
+.left-panel p a{
+	color: #555C66;
+    font-size: 15px;
+}
+.left-panel p a:hover{
+	font-weight: bold;
+}
+.left-panel{
+	padding: 0;
+}
+.main-category .right-panel{
+	width: 71%;
+}
+.main-cat-specializations,.main-cat-institutes{
+	border-top: 1px solid #ddd;
+	padding: 10px 0px 10px 15px;
+	margin-right: 20px;
+}
+.main-cat-video{
+	margin: 20px 0;
+}
+.right-panel .page_name h2{
+	margin: 0 0 3px;
+	font-weight: bold;
+    font-family: robotoregular;
+    font-size: 27px;
+    color: #2D3E50;
+    text-transform: uppercase;
+}
+.right-panel h2{
+	display: inline-block;
+    padding-right: 15px;
+    color: #2D3E50;
+    font-size: 32px;
+    font-weight: normal;
+    font-family: robotoregular;
+}
+
+.right-panel .featured_courses a,.right-panel .explore_categories a, .right-panel .explore_courses a{
+	font-size: 19px;
+    color: #F1AA38;
+    font-family: robotolight;
+}
+
+.right-panel .featured_courses a:hover,.right-panel .explore_categories a:hover, .right-panel .explore_courses a:hover{
+	color:#E67F22;
+}
+
+.right-panel .featured_courses,.right-panel .explore_categories,.right-panel .explore_courses{
+	border-top:1px solid #bbb;
+	padding-top: 15px;
+}
+
+.right-panel .iosSlider{
+	border: 1px solid #ddd;
+}
+
+.featured_courses .products{
+	margin-bottom: 0;
+	padding:0;
+}
+
+.page_description h2{
+	font-size: 33px;
+    font-weight: normal;
+    font-family: robotoregular;
+    color: #2D3E50;
+    margin: 0;
+}
+
+.page_description p{
+	font-family: robotoregular;
+    font-size: 15px;
+    color: #999;
+}
+.explore_categories_gallery img{
+    border: 1px solid #ddd !important;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.featured_courses .product-small .inner-wrap{
+	min-height: 310px;
+}
+.course_slider{
+	background:#EBEBEB;
+}
+
+.course_slider .columns{
+	padding: 0 10px;
+}
+
+.right-panel .feature-course-icon,.right-panel .explore-categories{
+	height: 38px;
+    width: 38px;
+    vertical-align: text-bottom;
+    margin-right: 10px;
+}
+
+
+.right-panel .feature-course-icon{
+    background-position: -56px -308px;
+}
+
+.right-panel .explore-categories{
+	background-position: -5px -307px;
+}
+
+.explore_categories_gallery .gallery-item{
+	width:31% !important;
+	margin:0 2% 2% 0 !important;
+}
+
+/*Landing page css Ended*/
 /*------------------------------------*\
    modify-css-educart-Media Queries
 \*------------------------------------*/
@@ -4206,6 +4347,9 @@ font-weight: inherit !important;
 	}
 	#logo a img.header_logo {
 		width: 95%;
+	}
+	.main-category .page_description{
+		padding: 0 15px;
 	}
 }
 @media only screen and (max-width:960px) {
@@ -4255,6 +4399,9 @@ font-weight: inherit !important;
 	}
 	#algolia_instant_selector .facet .name {
 	    font-size: 12px;
+	}
+.course_slider .columns{
+		padding: 0 6px;
 	}
 }
 @media only screen and (max-width:912px) {
@@ -4334,7 +4481,7 @@ font-weight: inherit !important;
 	.edu-contact-detail div span:last-child{
 		position: absolute;
 	}
-.browse-cat {
+	.browse-cat {
 	    font-size: 15px !important;
 	}
 	.edu-trust {
@@ -4342,7 +4489,7 @@ font-weight: inherit !important;
 	    top: 4px;
 	    width: 60px;
 	}
-#edu_popular_courses .inner-wrap .quick-view,.product-small .inner-wrap p.name {
+	#edu_popular_courses .inner-wrap .quick-view,.product-small .inner-wrap p.name {
 	    font-size: 13px;
 	}
 	.gh_min_price_in_loop, .gh_max_price_in_loop {
@@ -4359,6 +4506,17 @@ font-weight: inherit !important;
 	}
 	.courses-offered-title{
 		margin: 35px 0 20px 30px;
+	}
+.featured_courses .product-small .inner-wrap {
+	    min-height: 285px;
+	}
+	.main-cat-video iframe{
+		width: 100%;
+	    height: auto;
+	}
+	.ytp-title {
+		font-size: 130%;
+		padding-left: 5px;
 	}
 }
 @media only screen and (min-width: 768px) {

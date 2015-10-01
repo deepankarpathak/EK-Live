@@ -462,7 +462,7 @@ function wp_print_media_templates() {
 		if ( data.describe ) {
 			if ( 'image' === data.type ) { #>
 				<input type="text" value="{{ data.caption }}" class="describe" data-setting="caption"
-					placeholder="<?php esc_attr_e('Caption this image&hellip;'); ?>" {{ maybeReadOnly }} />
+					placeholder="<?php esc_attr_e('Link this image&hellip;'); ?>" {{ maybeReadOnly }} />
 			<# } else { #>
 				<input type="text" value="{{ data.title }}" class="describe" data-setting="title"
 					<# if ( 'video' === data.type ) { #>
