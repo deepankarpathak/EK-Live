@@ -1078,10 +1078,10 @@ input[type="checkbox"]{
 	width: 25px;
 	height: 25px;
 	display: inline-block;
-	background: #ededed url("images/sprite/sprites.png") repeat scroll -7px -252px;
+	background: #ededed url("images/sprite/sprites.png") no-repeat scroll -63px -262px;
 }
 .custom-cart .cart_item .remove-product .icon-close:hover{
-	background: #ededed url("images/sprite/sprites.png") repeat scroll -7px -252px;
+	background: #cecece url("images/sprite/sprites.png") no-repeat scroll -63px -262px;
 }
 .custom-cart .cart_item .remove-product .icon-close:before{
 	content: "" !important;
@@ -4035,22 +4035,22 @@ font-weight: inherit !important;
 	padding: 5px 3px;
 }
 
-.degree-title{
+.guided-search .degree-title{
 	border:1px solid #ddd;
 	padding: 3px 10px;
 	border-radius: 3px;
 }
 
-.degree-title:hover,.degree-title.active{
+.guided-search .degree-title:hover,.degree-title.active{
 	color:#30B6E9;
 	border:1px solid #30B6E9;
 }
 
-input[type="radio"]{
+.guided-search input[type="radio"]{
 	display: none;
 }
 
-input[type="radio"] + span{
+.guided-search input[type="radio"] + span{
 	height: 11px;
     width: 11px;
     display: inline-block;
@@ -4060,13 +4060,13 @@ input[type="radio"] + span{
     margin-left: 10px;
 }
 
-input[type="radio"]:checked + span{
+.guided-search input[type="radio"]:checked + span{
 	background: #30B6E9;
 	border-color: #fff;
 	box-shadow: 0px 0px 1px #30B6E9; 
 }
 
-input[type="text"].guided-search-bar{
+.guided-search input[type="text"].guided-search-bar{
 	max-width: 750px;
 	padding-left: 55px;
 	height: 40px;
@@ -4141,7 +4141,7 @@ input[type="text"].guided-search-bar{
 	border-left: 13px solid #bbb;
     right: -12px;
 }
-.icon {
+.guided-search .icon {
 	display: inline-block;
 	width: 1em;
 	height: 1em;
@@ -4149,27 +4149,27 @@ input[type="text"].guided-search-bar{
 	margin-bottom: 20px;
 }
 
-.icon-CertificateCourses {
+.guided-search .icon-CertificateCourses {
 	width: 4em;
 	height: 2.7em;
 }
 
-.icon-DiplomaCourses {
+.guided-search .icon-DiplomaCourses {
 	width: 4em;
 	height: 2.7em;
 }
 
-.icon-FreeCourses {
+.guided-search .icon-FreeCourses {
 	width: 4em;
 	height: 2.7em;
 }
 
-.icon-SchoolEducation {
+.guided-search .icon-SchoolEducation {
 	width: 4em;
 	height: 2.7em;
 }
 
-.icon-EntranceCoching{
+.guided-search .icon-EntranceCoching{
 	width: 4em;
 	height: 2.7em;
 }
