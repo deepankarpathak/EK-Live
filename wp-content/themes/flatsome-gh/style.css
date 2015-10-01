@@ -3888,9 +3888,13 @@ float: none;
 	min-height: 310px;
 }
 .course_slider{
-	background:#E6E6E6;
+	background:#EBEBEB;
 }
 
+.explore_categories_gallery .gallery-item{
+	width:31% !important;
+	margin:0 2% 2% 0 !important;
+}
 /*Landing page css Ended*/
 /*------------------------------------*\
    modify-css-educart-Media Queries
