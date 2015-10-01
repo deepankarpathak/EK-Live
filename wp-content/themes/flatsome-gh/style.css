@@ -3871,6 +3871,7 @@ float: none;
     font-weight: normal;
     font-family: robotoregular;
     color: #2D3E50;
+    margin: 0;
 }
 
 .page_description p{
@@ -3890,6 +3891,23 @@ float: none;
 .course_slider{
 	background:#E6E6E6;
 }
+
+.right-panel .feature-course-icon,.right-panel .explore-categories{
+	height: 38px;
+    width: 38px;
+    vertical-align: text-bottom;
+    margin-right: 10px;
+}
+
+
+.right-panel .feature-course-icon{
+    background-position: -56px -308px;
+}
+
+.right-panel .explore-categories{
+	background-position: -5px -307px;
+}
+
 
 /*Landing page css Ended*/
 /*------------------------------------*\

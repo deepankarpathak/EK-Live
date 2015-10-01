@@ -37,14 +37,14 @@ get_header(); ?>
 					<h2><?php echo get_the_title(); ?></h2></div>
 				<?php the_field('slider'); ?>
 				<div class="featured_courses">
-					<h2>Featured Courses</h2><a href="<?php the_field('featured_courses_see_all_link'); ?>">See All</a>
+					<h2><span class="sprite feature-course-icon"></span>Featured Courses</h2><a href="<?php the_field('featured_courses_see_all_link'); ?>">See All</a>
 					<div class="course_slider"> 
 						<?php the_field('featured_courses');?>
 					</div>
 				</div>
 
 				<div class="explore_categories">
-					<h2>Explore Categories</h2><a href="<?php the_field('explore_categories_see_all_link'); ?>">See All</a>
+					<h2><span class="sprite explore-categories"></span>Explore Categories</h2><a href="<?php the_field('explore_categories_see_all_link'); ?>">See All</a>
 					<div class="explore_categories_gallery"> 
 						<?php the_field('explore_categories');?>
 					</div>

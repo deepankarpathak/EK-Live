@@ -41,7 +41,7 @@ get_header(); ?>
 		<h2 ><?php echo get_the_title(); ?></h2></div>
 	<?php the_field('slider'); ?>
 	<div class="explore_courses">
-		<h2 >Explore Courses</h2><a href="<?php the_field('explore_courses_see_all_link'); ?>" >See All</a>
+		<h2><span class="sprite explore-categories"></span>Explore Courses</h2><a href="<?php the_field('explore_courses_see_all_link'); ?>" >See All</a>
 		<div class="explore_courses"> 
 			<?php the_field('explore_courses');?>
 		</div>
