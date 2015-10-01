@@ -3827,8 +3827,15 @@ font-weight: inherit !important;
 #best_education .container .columns{
 	padding: 0 8px;
 }
-
-
+.product-info .custom-rating{
+	margin: 10px 0px 0px 0;
+	display: inline-block;
+}
+.product-info .scroll-to-reviews{
+	font-size: 15px;
+	color: #999;
+	text-transform: uppercase;
+}
 /*----- Guided Search Start -----*/
 .page-guided-search{
 	background: #E6E6E6;

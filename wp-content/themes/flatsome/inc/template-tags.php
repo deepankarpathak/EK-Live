@@ -340,8 +340,11 @@ function flatsome_add_to_cart_dropdown( $fragments ) {
             
                     $average = number_format($rating / $count, 2);
             
-                    echo '<a href="#tab-reviews" class="scroll-to-reviews"><div class="star-rating tip-top" title="'.$count.' review(s)"><span style="width:'.($average*16).'px"><span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="rating"><span itemprop="ratingValue">'.$average.'</span><span itemprop="reviewCount" class="hidden">'.$count.'</span></span> '.__('out of 5', 'woocommerce').'</span></div></a>';
+                    echo '<a href="#tab-reviews" class="scroll-to-reviews"><div class="star-rating custom-rating tip-top" title="'.$count.' review(s)"><span style="width:'.($average*16).'px"><span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="rating"><span itemprop="ratingValue">'.$average.'</span><span itemprop="reviewCount" class="hidden">'.$count.'</span></span> '.__('out of 5', 'woocommerce').'</span></div>'.$count.' review(s)</a>';
 
+                }else{
+                    $average = 0;
+                    echo '<a href="#tab-reviews" class="scroll-to-reviews"><div class="star-rating custom-rating tip-top" title="'.$count.' review(s)"><span style="width:'.($average*16).'px"><span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="rating"><span itemprop="ratingValue">'.$average.'</span><span itemprop="reviewCount" class="hidden">'.$count.'</span></span> '.__('out of 5', 'woocommerce').'</span></div>No Ratings</a>';
                 }
                 
             }}

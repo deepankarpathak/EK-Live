@@ -16,6 +16,7 @@ $order = wc_get_order( $order_id );
 	<thead>
 		<tr>
 			<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
+			<th class="product-name"><?php _e( '', 'woocommerce' ); ?></th>
 			<th class="product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
 		</tr>
 	</thead>
@@ -55,6 +56,9 @@ $order = wc_get_order( $order_id );
 								echo '<br/>' . implode( '<br/>', $links );
 							}
 						?>
+					</td>
+					<td>
+						<?php echo apply_filters( 'woocommerce_order_item_name', sprintf( '<a href="%s#tab-reviews" target="_blank">%s</a>', get_permalink($item['product_id']),'Rate Product...' ), $item ); ?>
 					</td>
 					<td class="product-total">
 						<?php echo $order->get_formatted_line_subtotal( $item ); ?>
@@ -97,6 +101,7 @@ $order = wc_get_order( $order_id );
 			?>
 			<tr>
 				<th scope="row"><?php echo $total['label']; ?></th>
+				<th></th>
 				<td><?php echo $total['value']; ?></td>
 			</tr>
 			<?php
