@@ -3892,6 +3892,10 @@ float: none;
 	background:#E6E6E6;
 }
 
+.course_slider .columns{
+	padding: 0 10px;
+}
+
 .right-panel .feature-course-icon,.right-panel .explore-categories{
 	height: 38px;
     width: 38px;
@@ -3941,6 +3945,9 @@ float: none;
 	#logo a img.header_logo {
 		width: 95%;
 	}
+	.main-category .page_description{
+		padding: 0 15px;
+	}
 }
 @media only screen and (max-width:960px) {
 	.menu-features {
@@ -3986,6 +3993,9 @@ float: none;
 	}
 	.stuck ul.top-bar-nav {
 	    margin-top: 0;
+	}
+	.course_slider .columns{
+		padding: 0 6px;
 	}
 }
 @media only screen and (max-width:912px) {
@@ -4052,7 +4062,7 @@ float: none;
 	.edu-contact-detail div span:last-child{
 		position: absolute;
 	}
-.browse-cat {
+	.browse-cat {
 	    font-size: 15px !important;
 	}
 	.edu-trust {
@@ -4060,7 +4070,7 @@ float: none;
 	    top: 4px;
 	    width: 60px;
 	}
-#edu_popular_courses .inner-wrap .quick-view,.product-small .inner-wrap p.name {
+	#edu_popular_courses .inner-wrap .quick-view,.product-small .inner-wrap p.name {
 	    font-size: 13px;
 	}
 	.gh_min_price_in_loop, .gh_max_price_in_loop {
@@ -4068,6 +4078,17 @@ float: none;
 	}
 	.logo-slider h1,.edu_pg_pc span{
 	    font-size: 36px;
+	}
+	.featured_courses .product-small .inner-wrap {
+	    min-height: 285px;
+	}
+	.main-cat-video iframe{
+		width: 100%;
+	    height: auto;
+	}
+	.ytp-title {
+		font-size: 130%;
+		padding-left: 5px;
 	}
 }
 @media only screen and (min-width: 768px) {
