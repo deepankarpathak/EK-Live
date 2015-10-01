@@ -3871,6 +3871,7 @@ float: none;
     font-weight: normal;
     font-family: robotoregular;
     color: #2D3E50;
+    margin: 0;
 }
 
 .page_description p{
@@ -3891,10 +3892,27 @@ float: none;
 	background:#EBEBEB;
 }
 
+.right-panel .feature-course-icon,.right-panel .explore-categories{
+	height: 38px;
+    width: 38px;
+    vertical-align: text-bottom;
+    margin-right: 10px;
+}
+
+
+.right-panel .feature-course-icon{
+    background-position: -56px -308px;
+}
+
+.right-panel .explore-categories{
+	background-position: -5px -307px;
+}
+
 .explore_categories_gallery .gallery-item{
 	width:31% !important;
 	margin:0 2% 2% 0 !important;
 }
+
 /*Landing page css Ended*/
 /*------------------------------------*\
    modify-css-educart-Media Queries
