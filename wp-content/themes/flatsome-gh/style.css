@@ -566,7 +566,7 @@ ul.top-bar-nav li:first-child {
 }
 .loading {
 	border:1px solid #000;
-	background: green;
+	background: rgba(0,0,0,.7);
 }
 .edu-catgery-page .woocommerce-ordering select {
 	color: #a3a3a3;
