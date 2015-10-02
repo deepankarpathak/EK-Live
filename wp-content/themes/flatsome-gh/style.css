@@ -3917,6 +3917,10 @@ float: none;
 	margin:0 2% 2% 0 !important;
 }
 
+.right-panel .banner-bg{
+	background-size: 100% 100%;
+}
+
 /*Landing page css Ended*/
 /*------------------------------------*\
    modify-css-educart-Media Queries
@@ -3933,6 +3937,12 @@ float: none;
 	    max-width: 180px;
 	    padding: 0;
 	}
+	.main-cat-video iframe{
+		padding-left: 15px;
+		width: 100%;
+		height: 211px;
+	}
+
 }
 
 @media only screen and (max-width: 1000px) {
@@ -4092,7 +4102,16 @@ float: none;
 	}
 	.ytp-title {
 		font-size: 130%;
-		padding-left: 5px;
+	}
+	.product-small .inner-wrap .quick-view {
+		font-size: 12px;
+		text-decoration: none;
+	}
+	.product-small .inner-wrap .quick-view:hover{
+		text-decoration: underline;
+	}
+	.right-panel .iosSlider .slider > .ux_banner {
+		height: 270px !important;
 	}
 }
 @media only screen and (min-width: 768px) {
@@ -4131,6 +4150,12 @@ float: none;
 	.custom-cart{
 		border:none;
 		padding-right: 15px;
+	}
+	.quick-view {
+		display: none !important;
+	}
+	.product-image:hover .quick-view{
+		display: block !important;
 	}
 }
 @media only screen and (max-width: 767px) {
