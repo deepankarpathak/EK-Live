@@ -1748,7 +1748,7 @@ ul.payment_methods p{
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
-	min-height: 310px;
+	min-height: 330px;
 }
 #edu_popular_courses .product-small.grid1 {
 	margin: 0;
@@ -1902,7 +1902,7 @@ h1.logo-slider-h1 span {
 .product-small .inner-wrap p {
 	color: #9a9a9a;
 	font-size: 12px;
-	margin: 3px 0;
+	margin: 3px;
 }
 .edu-catgery-page .breadcrumb-row .large-3.small-4.columns {
 	padding: 0;
@@ -4741,8 +4741,8 @@ font-weight: inherit !important;
 		display: none;
 	}
 	.mobile-side-menu .edu-nave ul.edu_mainnave ul.edu_subnave li:hover {
-	  background-color: transparent !important;
-	  color: #555;
+		background-color: transparent !important;
+		color: #555;
 	}
 	.mobile-side-menu .edu-nave ul li ul.edu_subnave li {
 	    font-size: 12px;
@@ -4752,9 +4752,9 @@ font-weight: inherit !important;
 	}
 
 	.edu-nave ul li:hover ul.edu_subnave li {
-	  font-size: 12px;
-	  padding-bottom: 0px;
-	  padding-top: 0px;
+		font-size: 12px;
+		padding-bottom: 0px;
+		padding-top: 0px;
 	}
 
 	.slide-menu .mobile-side-menu{
@@ -4955,12 +4955,16 @@ font-weight: inherit !important;
 	.edu_footer_payment .textwidget p {
 		margin-bottom: 0 !important;	
 	}
-.row .woocommerce-message.message-success{
-		padding: 0 15px;
-		line-height: 22px;
-		text-align: center;
-		font-size: 16px;
-		font-family: robotoregular;
+	.row .woocommerce-message.message-success{
+			padding: 0 15px;
+			line-height: 22px;
+			text-align: center;
+			font-size: 16px;
+			font-family: robotoregular;
+	}
+	.course_slider .slider > div{
+		width: 33.33%;
+	}
 }
 @media only screen and (max-width: 620px) {
 	.entry-content .woocommerce:nth-of-type(2) .email-text{
@@ -4977,6 +4981,12 @@ font-weight: inherit !important;
 	}
 	.custom-form-row::before {
 		top:14px;
+	}
+	.main-category .right-panel,.main-category .left-panel{
+		width: 100%;
+	}
+	.main-cat-video iframe{
+	    max-width: 310px;
 	}
 }
 @media only screen and (max-width: 538px) {
@@ -5081,11 +5091,34 @@ font-weight: inherit !important;
 	    padding-top: 0;
 	    font-size: 10px;
 	}
+	.right-panel h2 {
+		font-size: 20px;
+	}
+	.right-panel .featured_courses a, .right-panel .explore_categories a, .right-panel .explore_courses a {
+	    font-size: 12px;
+	    font-family: robotoregular;
+	}
+	.page_description h2 {
+    	font-size: 22px;
+    	margin-bottom: 10px;
+	}
+	.right-panel .iosSlider .slider > .ux_banner {
+	    height: 150px !important;
+	}
+	.sliderBullets {
+    	bottom: 7px;
+	}
+	.right-panel .feature-course-icon, .right-panel .explore-categories {
+	    vertical-align: middle;
+	}
 }
 @media only screen and (max-width: 420px) {
 	.pro-totl-rem .product-subtotal .variation{
 		display:block;
 		padding-left: 0;
+	}
+	.course_slider .slider > div{
+		width: 50%;
 	}
 }
 @media only screen and (max-width: 380px) {
@@ -5126,6 +5159,10 @@ font-weight: inherit !important;
 	.checkout-group.woo-billing {
     	padding: 0;
 	}
+	.course_slider .slider > div{
+		width: 100%;
+	}
+
 }
  @media only screen and (min-width: 280px) and (max-width: 767px) {
 /******* for referal ********/
