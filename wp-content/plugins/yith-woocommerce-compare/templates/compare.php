@@ -283,26 +283,22 @@ $localized_table_text = function_exists( 'icl_translate' ) ? icl_translate( 'Plu
                 if( typeof woocommerce_params != 'undefined' ) {
                     button.unblock();
                 }
-
                 // in compare table
                 var table = $(response).filter('table.compare-list');
                 $('body > table.compare-list').replaceWith( table );
-
+                $(".add_more_compare").hide();
+                $(".add_more_compare:first").show();
                 // removed trigger
                 $(window).trigger('yith_woocompare_product_removed');
             }
         });
     });
+
 $(".add_more_compare").hide();
 $(".add_more_compare:first").show();
-jQuery(document).on( 'click', '.add_more_compare', function(e){
-    console.log(jQuery().colorbox);
-    jQuery().colorbox.close();
-});
 if ($(".error-compare").length>0){
- $('table.compare-list').css("margin-top","55px");
+    $('table.compare-list').css("margin-top","55px");
 }
 </script>
-
 </body>
 </html>
